@@ -1,0 +1,6 @@
+{
+  "require": {
+    "gabordemooij/redbean": "dev-master",
+    "sendpulse/rest-api": "^1.0"
+  }
+}

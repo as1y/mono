@@ -1,0 +1,10 @@
+.idea/*
+vendor/*
+composer.lock
+config/main-local.php
+logs/*
+temp_load/*
+tmp/*
+!logs/.gitkeep
+!temp_load/.gitkeep
+!tmp/.gitkeep
