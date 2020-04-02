@@ -206,7 +206,7 @@
 
 
         <!-- Sidebar content -->
-        <div class="sidebar-content">
+        <div class="sidebar-content nav-item-divider">
             <div class="card card-sidebar-mobile">
 
                 <!-- Header -->
