@@ -80,13 +80,13 @@
         <ul class="navbar-nav ml-xl-auto">
 
             <li class="nav-item dropdown">
-                <a href="#" class="navbar-nav-link dropdown-toggle caret-0" data-toggle="dropdown" aria-expanded="true">
+                <a href="#" class="navbar-nav-link dropdown-toggle caret-0" data-toggle="dropdown">
                     <i class="icon-bubbles5"></i>
                     <span class="d-md-none ml-2">Messages</span>
                     <span class="badge badge-pill badge-mark bg-orange-400 border-orange-400 ml-auto ml-md-0"></span>
                 </a>
 
-                <div class="dropdown-menu dropdown-menu-right dropdown-content wmin-md-350 show">
+                <div class="dropdown-menu dropdown-menu-right dropdown-content wmin-md-350">
                     <div class="dropdown-content-header">
                         <span class="font-weight-semibold">Messages</span>
                         <a href="#" class="text-default"><i class="icon-compose"></i></a>
