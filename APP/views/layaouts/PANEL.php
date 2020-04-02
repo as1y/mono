@@ -67,7 +67,8 @@
 
         </a>
     </div>
-
+    <span class="badge bg-success-400 ml-md-auto mr-md-3">Active</span>
+    
     <div class="d-md-none">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-mobile">
             <i class="icon-tree5"></i>
@@ -179,7 +180,7 @@
             </li>
         </ul>
 
-        <span class="badge bg-success-400 ml-md-auto mr-md-3">Active</span>
+
 
         <ul class="navbar-nav">
             <li class="nav-item dropdown">
