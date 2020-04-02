@@ -59,20 +59,14 @@
 
 
     <ul class="navbar-nav">
-        <li class="nav-item dropdown">
+        <li class="nav-item">
             <a href="#" class="navbar-nav-link dropdown-toggle" data-toggle="dropdown">
                 <img src="../../../../global_assets/images/dribbble.png" class="align-top mr-2 rounded" width="20" height="20" alt="">
                 Image
             </a>
 
-            <div class="dropdown-menu">
-                <a href="#" class="dropdown-item"><i class="icon-train2"></i> Train tickets</a>
-                <a href="#" class="dropdown-item"><i class="icon-bus"></i> Bus tickets</a>
-                <a href="#" class="dropdown-item"><i class="icon-ship"></i> Ferry tickets</a>
-                <div class="dropdown-divider"></div>
-                <a href="#" class="dropdown-item"><i class="icon-car2"></i> Taxi</a>
-                <a href="#" class="dropdown-item"><i class="icon-car"></i> Car rental</a>
-            </div>
+
+
         </li>
     </ul>
 
