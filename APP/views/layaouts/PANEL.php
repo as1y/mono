@@ -56,9 +56,15 @@
 
 <!-- Main navbar -->
 <div class="navbar navbar-expand-md navbar-dark">
+
+
     <div class="navbar-brand wmin-200">
         <a href="index.html" class="d-inline-block">
-            <img src="../../../../global_assets/images/logo_light.png" alt="">
+
+
+           CASHCALL
+
+
         </a>
     </div>
 
@@ -339,7 +345,7 @@
         </div>
     </div>
 
-    
+
 </div>
 <!-- /page header -->
 
