@@ -88,7 +88,7 @@
 
                 <div class="dropdown-menu dropdown-menu-right dropdown-content wmin-md-350">
                     <div class="dropdown-content-header">
-                        <span class="font-weight-semibold">Messages</span>
+                        <span class="font-weight-semibold">Сообщения</span>
                         <a href="#" class="text-default"><i class="icon-compose"></i></a>
                     </div>
 
