@@ -57,9 +57,9 @@
 <!-- Main navbar -->
 <div class="navbar navbar-dark navbar-expand-xl rounded-top">
 
-    <a href="/panel/" class="navbar-nav-link dropdown-toggle" >
+    <a href="/panel/"  >
         <img src="../../../../global_assets/images/dribbble.png" class="align-top mr-2 rounded" width="20" height="20" alt="">
-        Image
+        <b>CASHCALL.RU</b>
     </a>
 
 
