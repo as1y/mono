@@ -62,7 +62,7 @@
         <a href="/" class="d-inline-block">
 
 
-            <img src="<?=CONFIG['LOGO']?>" alt="">
+            <img src="<?=CONFIG['LOGO']?>" width="50" alt="">
 
 
         </a>
