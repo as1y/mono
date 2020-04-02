@@ -70,11 +70,11 @@
 
     <div class="navbar-collapse collapse" id="navbar-demo1-mobile">
 
-        
+
 
         <span class="navbar-text ml-xl-3">
-											<span class="badge bg-success">Online</span>
-										</span>
+            <span class="badge bg-success">Операторов онлайн: <b>8</b></span>
+        </span>
 
         <ul class="navbar-nav ml-xl-auto">
             <li class="nav-item">
