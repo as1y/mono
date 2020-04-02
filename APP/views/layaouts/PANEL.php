@@ -123,11 +123,7 @@
             </div>
         </li>
     </ul>
-    <div class="navbar-brand wmin-200">
-        <a href="index.html" class="d-inline-block">
-            <img src="<?=CONFIG['LOGO']?>" alt="">
-        </a>
-    </div>
+
 
     <div class="d-xl-none">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-demo1-mobile">
