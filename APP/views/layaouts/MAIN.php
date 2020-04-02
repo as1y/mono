@@ -9,7 +9,7 @@
 
   <body>
 
-   <h1>ZAGOLOVOK</h1>
+   <h1>ZAGOLOVOK1111</h1>
 
    <img src=<?=CONFIG['LOGO']?>><br>
 
