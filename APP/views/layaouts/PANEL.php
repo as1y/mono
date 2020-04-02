@@ -79,7 +79,7 @@
 
         <ul class="navbar-nav ml-xl-auto">
 
-            <li class="nav-item dropdown show">
+            <li class="nav-item dropdown">
                 <a href="#" class="navbar-nav-link dropdown-toggle caret-0" data-toggle="dropdown" aria-expanded="true">
                     <i class="icon-bubbles5"></i>
                     <span class="d-md-none ml-2">Messages</span>
