@@ -211,12 +211,8 @@
 
                 <!-- Header -->
                 <div class="card-header header-elements-inline">
-                    <h6 class="card-title">Navigation</h6>
-                    <div class="header-elements">
-                        <div class="list-icons">
-                            <a class="list-icons-item" data-action="collapse"></a>
-                        </div>
-                    </div>
+                    <h6 class="card-title">Кабинет рекламодателя</h6>
+
                 </div>
 
                 <!-- User menu -->
