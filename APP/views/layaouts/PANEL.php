@@ -74,7 +74,7 @@
 
 
         <span class="navbar-text ml-xl-3">
-        Операторов онлайн: <span class="badge bg-success"><b>8</b></span>
+        <span class="badge bg-success"> Операторов онлайн:</span> <b>8</b>
         </span>
 
         <ul class="navbar-nav ml-xl-auto">
