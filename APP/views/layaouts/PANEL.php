@@ -83,7 +83,7 @@
                 <a href="#" class="navbar-nav-link">
                     <i class="icon-bubbles4"></i>
                     <span class="d-xl-none ml-2">Messages</span>
-                    <span class="badge badge-pill bg-warning-400 ml-auto ml-xl-0">2</span>
+                    <span class="badge badge-pill bg-warning-400 ml-auto ml-xl-0">1</span>
 
                 </a>
             </li>
