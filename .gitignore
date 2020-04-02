@@ -4,6 +4,8 @@ composer.lock
 config/main-local.php
 logs/*
 temp_load/*
+temp_load/*
+global_assets/*
 tmp/*
 !logs/.gitkeep
 !temp_load/.gitkeep
