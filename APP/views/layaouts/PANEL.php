@@ -59,10 +59,10 @@
 
 
     <div class="navbar-brand wmin-200">
-        <a href="index.html" class="d-inline-block">
+        <a href="/" class="d-inline-block">
 
 
-           CASHCALL
+            <img src="<?=CONFIG['LOGO']?>" alt="">
 
 
         </a>
