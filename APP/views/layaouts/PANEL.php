@@ -58,7 +58,7 @@
 <div class="navbar navbar-dark navbar-expand-xl rounded-top">
     <div class="navbar-brand wmin-200">
         <a href="index.html" class="d-inline-block">
-            <img src="../../../../global_assets/images/logo_light.png" alt="">
+            <img src="<?=CONFIG['LOGO']?>" alt="">
         </a>
     </div>
 
@@ -69,18 +69,8 @@
     </div>
 
     <div class="navbar-collapse collapse" id="navbar-demo1-mobile">
-        <ul class="navbar-nav">
-            <li class="nav-item"><a href="#" class="navbar-nav-link">Link</a></li>
-            <li class="nav-item dropdown">
-                <a href="#" class="navbar-nav-link dropdown-toggle" data-toggle="dropdown">Dropdown</a>
-                <div class="dropdown-menu dropdown-menu-right">
-                    <a href="#" class="dropdown-item">Action</a>
-                    <a href="#" class="dropdown-item">Another action</a>
-                    <a href="#" class="dropdown-item">Something else here</a>
-                    <a href="#" class="dropdown-item">One more line</a>
-                </div>
-            </li>
-        </ul>
+
+        
 
         <span class="navbar-text ml-xl-3">
 											<span class="badge bg-success">Online</span>
