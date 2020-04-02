@@ -78,15 +78,7 @@
         </span>
 
         <ul class="navbar-nav ml-xl-auto">
-            <li class="nav-item">
-                <a href="#" class="navbar-nav-link">
-                    <i class="icon-bell2"></i>
-                    <span class="d-xl-none ml-2">Notifications</span>
-                    <span class="badge badge-pill bg-warning-400 ml-auto ml-xl-0">2</span>
-                </a>
-            </li>
-
-
+            
             <li class="nav-item">
                 <a href="#" class="navbar-nav-link">
                     <i class="icon-bubbles4"></i>
