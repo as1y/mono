@@ -74,7 +74,7 @@
 
 
         <span class="navbar-text ml-xl-3">
-      Всего операторов: 200   <span class="badge bg-success">Онлайн: <b>8</b></span>
+      Всего операторов: 200  Онлайн:  <span class="badge bg-success"><b>8</b></span>
         </span>
 
         <ul class="navbar-nav ml-xl-auto">
