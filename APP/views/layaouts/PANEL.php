@@ -110,71 +110,9 @@
                                     <span class="text-muted">who knows, maybe that would be the best thing for me...</span>
                                 </div>
                             </li>
+                            
 
-                            <li class="media">
-                                <div class="mr-3 position-relative">
-                                    <img src="../../../../global_assets/images/placeholders/placeholder.jpg" width="36" height="36" class="rounded-circle" alt="">
-                                </div>
 
-                                <div class="media-body">
-                                    <div class="media-title">
-                                        <a href="#">
-                                            <span class="font-weight-semibold">Margo Baker</span>
-                                            <span class="text-muted float-right font-size-sm">12:16</span>
-                                        </a>
-                                    </div>
-
-                                    <span class="text-muted">That was something he was unable to do because...</span>
-                                </div>
-                            </li>
-
-                            <li class="media">
-                                <div class="mr-3">
-                                    <img src="../../../../global_assets/images/placeholders/placeholder.jpg" width="36" height="36" class="rounded-circle" alt="">
-                                </div>
-                                <div class="media-body">
-                                    <div class="media-title">
-                                        <a href="#">
-                                            <span class="font-weight-semibold">Jeremy Victorino</span>
-                                            <span class="text-muted float-right font-size-sm">22:48</span>
-                                        </a>
-                                    </div>
-
-                                    <span class="text-muted">But that would be extremely strained and suspicious...</span>
-                                </div>
-                            </li>
-
-                            <li class="media">
-                                <div class="mr-3">
-                                    <img src="../../../../global_assets/images/placeholders/placeholder.jpg" width="36" height="36" class="rounded-circle" alt="">
-                                </div>
-                                <div class="media-body">
-                                    <div class="media-title">
-                                        <a href="#">
-                                            <span class="font-weight-semibold">Beatrix Diaz</span>
-                                            <span class="text-muted float-right font-size-sm">Tue</span>
-                                        </a>
-                                    </div>
-
-                                    <span class="text-muted">What a strenuous career it is that I've chosen...</span>
-                                </div>
-                            </li>
-
-                            <li class="media">
-                                <div class="mr-3">
-                                    <img src="../../../../global_assets/images/placeholders/placeholder.jpg" width="36" height="36" class="rounded-circle" alt="">
-                                </div>
-                                <div class="media-body">
-                                    <div class="media-title">
-                                        <a href="#">
-                                            <span class="font-weight-semibold">Richard Vango</span>
-                                            <span class="text-muted float-right font-size-sm">Mon</span>
-                                        </a>
-                                    </div>
-
-                                    <span class="text-muted">Other travelling salesmen live a life of luxury...</span>
-                                </div>
-                            </li>
                         </ul>
                     </div>
 
