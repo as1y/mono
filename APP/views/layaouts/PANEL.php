@@ -59,7 +59,7 @@
 
     <a href="/panel/" class="navbar-nav-link " >
         <img src="../../../../global_assets/images/dribbble.png" class="align-top mr-2 rounded" width="20" height="20" alt="">
-        CASHCALL
+        <b>CASHCALL</b>
     </a>
 
 
