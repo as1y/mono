@@ -208,12 +208,7 @@
         <!-- Sidebar content -->
         <div class="sidebar-content nav-item-divider">
             <div class="card card-sidebar-mobile">
-
-                <!-- Header -->
-                <div class="card-header header-elements-inline">
-                    <h6 class="card-title">Кабинет рекламодателя</h6>
-
-                </div>
+                
 
                 <!-- User menu -->
                 <div class="sidebar-user">
