@@ -57,18 +57,10 @@
 <!-- Main navbar -->
 <div class="navbar navbar-dark navbar-expand-xl rounded-top">
 
-
-    <ul class="navbar-nav">
-        <li class="nav-item">
-            <a href="#" class="navbar-nav-link dropdown-toggle" data-toggle="dropdown">
-                <img src="../../../../global_assets/images/dribbble.png" class="align-top mr-2 rounded" width="20" height="20" alt="">
-                Image
-            </a>
-
-
-
-        </li>
-    </ul>
+    <a href="#" class="navbar-nav-link dropdown-toggle" data-toggle="dropdown">
+        <img src="../../../../global_assets/images/dribbble.png" class="align-top mr-2 rounded" width="20" height="20" alt="">
+        Image
+    </a>
 
 
     <div class="d-xl-none">
