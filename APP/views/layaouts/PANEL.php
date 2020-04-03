@@ -24,7 +24,6 @@
     <!-- /global stylesheets -->
 
 
-
     <!-- Core JS files -->
     <script src="../../../../global_assets/js/main/jquery.min.js"></script>
     <script src="../../../../global_assets/js/main/bootstrap.bundle.min.js"></script>

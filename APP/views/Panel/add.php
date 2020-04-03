@@ -1,6 +1,6 @@
 <div class="card">
     <div class="card-header bg-white header-elements-inline">
-        <h6 class="card-title">Wizard with validation</h6>
+        <h6 class="card-title">Saving wizard state</h6>
         <div class="header-elements">
             <div class="list-icons">
                 <a class="list-icons-item" data-action="collapse"></a>
@@ -10,15 +10,15 @@
         </div>
     </div>
 
-    <form class="wizard-form steps-validation wizard clearfix" action="#" data-fouc="" role="application" id="steps-uid-5" novalidate="novalidate"><div class="steps clearfix"><ul role="tablist"><li role="tab" class="first current" aria-disabled="false" aria-selected="true"><a id="steps-uid-5-t-0" href="#steps-uid-5-h-0" aria-controls="steps-uid-5-p-0" class=""><span class="current-info audible">current step: </span><span class="number">1</span> Personal data</a></li><li role="tab" class="disabled" aria-disabled="true"><a id="steps-uid-5-t-1" href="#steps-uid-5-h-1" aria-controls="steps-uid-5-p-1" class="disabled"><span class="number">2</span> Your education</a></li><li role="tab" class="disabled" aria-disabled="true"><a id="steps-uid-5-t-2" href="#steps-uid-5-h-2" aria-controls="steps-uid-5-p-2" class="disabled"><span class="number">3</span> Your experience</a></li><li role="tab" class="disabled last" aria-disabled="true"><a id="steps-uid-5-t-3" href="#steps-uid-5-h-3" aria-controls="steps-uid-5-p-3" class="disabled"><span class="number">4</span> Additional info</a></li></ul></div><div class="content clearfix">
-            <h6 id="steps-uid-5-h-0" tabindex="-1" class="title current">Personal data</h6>
-            <fieldset id="steps-uid-5-p-0" role="tabpanel" aria-labelledby="steps-uid-5-h-0" class="body current" aria-hidden="false">
+    <form class="wizard-form steps-state-saving wizard clearfix" action="#" data-fouc="" id="steps-uid-2" role="application"><div class="steps clearfix"><ul role="tablist"><li role="tab" class="first current" aria-disabled="false" aria-selected="true"><a id="steps-uid-2-t-0" href="#steps-uid-2-h-0" aria-controls="steps-uid-2-p-0" class=""><span class="current-info audible">current step: </span><span class="number">1</span> Personal data</a></li><li role="tab" class="disabled" aria-disabled="true"><a id="steps-uid-2-t-1" href="#steps-uid-2-h-1" aria-controls="steps-uid-2-p-1" class="disabled"><span class="number">2</span> Your education</a></li><li role="tab" class="disabled" aria-disabled="true"><a id="steps-uid-2-t-2" href="#steps-uid-2-h-2" aria-controls="steps-uid-2-p-2" class="disabled"><span class="number">3</span> Your experience</a></li><li role="tab" class="disabled last" aria-disabled="true"><a id="steps-uid-2-t-3" href="#steps-uid-2-h-3" aria-controls="steps-uid-2-p-3" class="disabled"><span class="number">4</span> Additional info</a></li></ul></div><div class="content clearfix">
+            <h6 id="steps-uid-2-h-0" tabindex="-1" class="title current">Personal data</h6>
+            <fieldset id="steps-uid-2-p-0" role="tabpanel" aria-labelledby="steps-uid-2-h-0" class="body current" aria-hidden="false">
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label>Select location: <span class="text-danger">*</span></label>
-                            <select name="location" data-placeholder="Select position" class="form-control form-control-select2 required select2-hidden-accessible" data-fouc="" data-select2-id="46" tabindex="-1" aria-hidden="true">
-                                <option data-select2-id="48"></option>
+                            <label>Select location:</label>
+                            <select name="location" data-placeholder="Select position" class="form-control form-control-select2 select2-hidden-accessible" data-fouc="" data-select2-id="91" tabindex="-1" aria-hidden="true">
+                                <option data-select2-id="93"></option>
                                 <optgroup label="North America">
                                     <option value="1">United States</option>
                                     <option value="2">Canada</option>
@@ -37,15 +37,15 @@
                                     <option value="10">Ukraine</option>
                                     <option value="11">Greece</option>
                                 </optgroup>
-                            </select><span class="select2 select2-container select2-container--default" dir="ltr" data-select2-id="47" style="width: 100%;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-disabled="false" aria-labelledby="select2-location-mu-container"><span class="select2-selection__rendered" id="select2-location-mu-container" role="textbox" aria-readonly="true"><span class="select2-selection__placeholder">Select position</span></span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
+                            </select><span class="select2 select2-container select2-container--default" dir="ltr" data-select2-id="92" style="width: 100%;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-disabled="false" aria-labelledby="select2-location-6m-container"><span class="select2-selection__rendered" id="select2-location-6m-container" role="textbox" aria-readonly="true"><span class="select2-selection__placeholder">Select position</span></span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
                         </div>
                     </div>
 
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label>Select position: <span class="text-danger">*</span></label>
-                            <select name="position" data-placeholder="Select position" class="form-control form-control-select2 required select2-hidden-accessible" data-fouc="" data-select2-id="49" tabindex="-1" aria-hidden="true">
-                                <option data-select2-id="51"></option>
+                            <label>Select position:</label>
+                            <select name="position" data-placeholder="Select position" class="form-control form-control-select2 select2-hidden-accessible" data-fouc="" data-select2-id="94" tabindex="-1" aria-hidden="true">
+                                <option data-select2-id="96"></option>
                                 <optgroup label="Developer Relations">
                                     <option value="1">Sales Engineer</option>
                                     <option value="2">Ads Solutions Consultant</option>
@@ -59,14 +59,7 @@
                                     <option value="7">Software Engineer</option>
                                     <option value="8">Information Security Engineer</option>
                                 </optgroup>
-
-                                <optgroup label="Marketing &amp; Communications">
-                                    <option value="13">Media Outreach Manager</option>
-                                    <option value="14">Research Manager</option>
-                                    <option value="15">Marketing Intern</option>
-                                    <option value="16">Business Intern</option>
-                                </optgroup>
-                            </select><span class="select2 select2-container select2-container--default" dir="ltr" data-select2-id="50" style="width: 100%;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-disabled="false" aria-labelledby="select2-position-mj-container"><span class="select2-selection__rendered" id="select2-position-mj-container" role="textbox" aria-readonly="true"><span class="select2-selection__placeholder">Select position</span></span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
+                            </select><span class="select2 select2-container select2-container--default" dir="ltr" data-select2-id="95" style="width: 100%;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-disabled="false" aria-labelledby="select2-position-l1-container"><span class="select2-selection__rendered" id="select2-position-l1-container" role="textbox" aria-readonly="true"><span class="select2-selection__placeholder">Select position</span></span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
                         </div>
                     </div>
                 </div>
@@ -74,15 +67,15 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label>Applicant name: <span class="text-danger">*</span></label>
-                            <input type="text" name="name" class="form-control required" placeholder="John Doe">
+                            <label>Applicant name:</label>
+                            <input type="text" name="name" class="form-control" placeholder="John Doe">
                         </div>
                     </div>
 
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label>Email address: <span class="text-danger">*</span></label>
-                            <input type="email" name="email" class="form-control required" placeholder="your@email.com">
+                            <label>Email address:</label>
+                            <input type="email" name="email" class="form-control" placeholder="your@email.com">
                         </div>
                     </div>
                 </div>
@@ -100,8 +93,8 @@
                         <div class="row">
                             <div class="col-md-4">
                                 <div class="form-group">
-                                    <select name="birth-month" data-placeholder="Month" class="form-control form-control-select2 select2-hidden-accessible" data-fouc="" data-select2-id="52" tabindex="-1" aria-hidden="true">
-                                        <option data-select2-id="54"></option>
+                                    <select name="birth-month" data-placeholder="Month" class="form-control form-control-select2 select2-hidden-accessible" data-fouc="" data-select2-id="97" tabindex="-1" aria-hidden="true">
+                                        <option data-select2-id="99"></option>
                                         <option value="1">January</option>
                                         <option value="2">February</option>
                                         <option value="3">March</option>
@@ -114,14 +107,14 @@
                                         <option value="10">October</option>
                                         <option value="11">November</option>
                                         <option value="12">December</option>
-                                    </select><span class="select2 select2-container select2-container--default" dir="ltr" data-select2-id="53" style="width: 100%;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-disabled="false" aria-labelledby="select2-birth-month-78-container"><span class="select2-selection__rendered" id="select2-birth-month-78-container" role="textbox" aria-readonly="true"><span class="select2-selection__placeholder">Month</span></span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
+                                    </select><span class="select2 select2-container select2-container--default" dir="ltr" data-select2-id="98" style="width: 100%;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-disabled="false" aria-labelledby="select2-birth-month-c2-container"><span class="select2-selection__rendered" id="select2-birth-month-c2-container" role="textbox" aria-readonly="true"><span class="select2-selection__placeholder">Month</span></span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
                                 </div>
                             </div>
 
                             <div class="col-md-4">
                                 <div class="form-group">
-                                    <select name="birth-day" data-placeholder="Day" class="form-control form-control-select2 select2-hidden-accessible" data-fouc="" data-select2-id="55" tabindex="-1" aria-hidden="true">
-                                        <option data-select2-id="57"></option>
+                                    <select name="birth-day" data-placeholder="Day" class="form-control form-control-select2 select2-hidden-accessible" data-fouc="" data-select2-id="100" tabindex="-1" aria-hidden="true">
+                                        <option data-select2-id="102"></option>
                                         <option value="1">1</option>
                                         <option value="2">2</option>
                                         <option value="3">3</option>
@@ -133,14 +126,14 @@
                                         <option value="9">9</option>
                                         <option value="...">...</option>
                                         <option value="31">31</option>
-                                    </select><span class="select2 select2-container select2-container--default" dir="ltr" data-select2-id="56" style="width: 100%;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-disabled="false" aria-labelledby="select2-birth-day-ub-container"><span class="select2-selection__rendered" id="select2-birth-day-ub-container" role="textbox" aria-readonly="true"><span class="select2-selection__placeholder">Day</span></span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
+                                    </select><span class="select2 select2-container select2-container--default" dir="ltr" data-select2-id="101" style="width: 100%;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-disabled="false" aria-labelledby="select2-birth-day-df-container"><span class="select2-selection__rendered" id="select2-birth-day-df-container" role="textbox" aria-readonly="true"><span class="select2-selection__placeholder">Day</span></span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
                                 </div>
                             </div>
 
                             <div class="col-md-4">
                                 <div class="form-group">
-                                    <select name="birth-year" data-placeholder="Year" class="form-control form-control-select2 select2-hidden-accessible" data-fouc="" data-select2-id="58" tabindex="-1" aria-hidden="true">
-                                        <option data-select2-id="60"></option>
+                                    <select name="birth-year" data-placeholder="Year" class="form-control form-control-select2 select2-hidden-accessible" data-fouc="" data-select2-id="103" tabindex="-1" aria-hidden="true">
+                                        <option data-select2-id="105"></option>
                                         <option value="1">1980</option>
                                         <option value="2">1981</option>
                                         <option value="3">1982</option>
@@ -152,7 +145,7 @@
                                         <option value="9">1988</option>
                                         <option value="10">1989</option>
                                         <option value="11">1990</option>
-                                    </select><span class="select2 select2-container select2-container--default" dir="ltr" data-select2-id="59" style="width: 100%;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-disabled="false" aria-labelledby="select2-birth-year-tp-container"><span class="select2-selection__rendered" id="select2-birth-year-tp-container" role="textbox" aria-readonly="true"><span class="select2-selection__placeholder">Year</span></span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
+                                    </select><span class="select2 select2-container select2-container--default" dir="ltr" data-select2-id="104" style="width: 100%;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-disabled="false" aria-labelledby="select2-birth-year-d1-container"><span class="select2-selection__rendered" id="select2-birth-year-d1-container" role="textbox" aria-readonly="true"><span class="select2-selection__placeholder">Year</span></span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
                                 </div>
                             </div>
                         </div>
@@ -160,26 +153,26 @@
                 </div>
             </fieldset>
 
-            <h6 id="steps-uid-5-h-1" tabindex="-1" class="title">Your education</h6>
-            <fieldset id="steps-uid-5-p-1" role="tabpanel" aria-labelledby="steps-uid-5-h-1" class="body" aria-hidden="true" style="display: none;">
+            <h6 id="steps-uid-2-h-1" tabindex="-1" class="title">Your education</h6>
+            <fieldset id="steps-uid-2-p-1" role="tabpanel" aria-labelledby="steps-uid-2-h-1" class="body" aria-hidden="true" style="display: none;">
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label>University: <span class="text-danger">*</span></label>
-                            <input type="text" name="university" placeholder="University name" class="form-control required">
+                            <label>University:</label>
+                            <input type="text" name="university" placeholder="University name" class="form-control">
                         </div>
                     </div>
 
                     <div class="col-md-6">
                         <div class="form-group">
                             <label>Country:</label>
-                            <select name="university-country" data-placeholder="Choose a Country..." class="form-control form-control-select2 select2-hidden-accessible" data-fouc="" data-select2-id="61" tabindex="-1" aria-hidden="true">
-                                <option data-select2-id="63"></option>
+                            <select name="university-country" data-placeholder="Choose a Country..." class="form-control form-control-select2 select2-hidden-accessible" data-fouc="" data-select2-id="106" tabindex="-1" aria-hidden="true">
+                                <option data-select2-id="108"></option>
                                 <option value="1">United States</option>
                                 <option value="2">France</option>
                                 <option value="3">Germany</option>
                                 <option value="4">Spain</option>
-                            </select><span class="select2 select2-container select2-container--default" dir="ltr" data-select2-id="62" style="width: 100%;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-disabled="false" aria-labelledby="select2-university-country-29-container"><span class="select2-selection__rendered" id="select2-university-country-29-container" role="textbox" aria-readonly="true"><span class="select2-selection__placeholder">Choose a Country...</span></span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
+                            </select><span class="select2 select2-container select2-container--default" dir="ltr" data-select2-id="107" style="width: 100%;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-disabled="false" aria-labelledby="select2-university-country-be-container"><span class="select2-selection__rendered" id="select2-university-country-be-container" role="textbox" aria-readonly="true"><span class="select2-selection__placeholder">Choose a Country...</span></span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
                         </div>
                     </div>
                 </div>
@@ -187,8 +180,8 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label>Degree level: <span class="text-danger">*</span></label>
-                            <input type="text" name="degree-level" placeholder="Bachelor, Master etc." class="form-control required">
+                            <label>Degree level:</label>
+                            <input type="text" name="degree-level" placeholder="Bachelor, Master etc." class="form-control">
                         </div>
 
                         <div class="form-group">
@@ -204,23 +197,23 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <select name="education-from-month" data-placeholder="Month" class="form-control form-control-select2 select2-hidden-accessible" data-fouc="" data-select2-id="64" tabindex="-1" aria-hidden="true">
-                                                <option data-select2-id="66"></option>
+                                            <select name="education-from-month" data-placeholder="Month" class="form-control form-control-select2 select2-hidden-accessible" data-fouc="" data-select2-id="109" tabindex="-1" aria-hidden="true">
+                                                <option data-select2-id="111"></option>
                                                 <option value="January">January</option>
                                                 <option value="...">...</option>
                                                 <option value="December">December</option>
-                                            </select><span class="select2 select2-container select2-container--default" dir="ltr" data-select2-id="65" style="width: 100%;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-disabled="false" aria-labelledby="select2-education-from-month-fe-container"><span class="select2-selection__rendered" id="select2-education-from-month-fe-container" role="textbox" aria-readonly="true"><span class="select2-selection__placeholder">Month</span></span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
+                                            </select><span class="select2 select2-container select2-container--default" dir="ltr" data-select2-id="110" style="width: 100%;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-disabled="false" aria-labelledby="select2-education-from-month-55-container"><span class="select2-selection__rendered" id="select2-education-from-month-55-container" role="textbox" aria-readonly="true"><span class="select2-selection__placeholder">Month</span></span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
                                         </div>
                                     </div>
 
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <select name="education-from-year" data-placeholder="Year" class="form-control form-control-select2 select2-hidden-accessible" data-fouc="" data-select2-id="67" tabindex="-1" aria-hidden="true">
-                                                <option data-select2-id="69"></option>
+                                            <select name="education-from-year" data-placeholder="Year" class="form-control form-control-select2 select2-hidden-accessible" data-fouc="" data-select2-id="112" tabindex="-1" aria-hidden="true">
+                                                <option data-select2-id="114"></option>
                                                 <option value="1995">1995</option>
                                                 <option value="...">...</option>
                                                 <option value="1980">1980</option>
-                                            </select><span class="select2 select2-container select2-container--default" dir="ltr" data-select2-id="68" style="width: 100%;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-disabled="false" aria-labelledby="select2-education-from-year-ve-container"><span class="select2-selection__rendered" id="select2-education-from-year-ve-container" role="textbox" aria-readonly="true"><span class="select2-selection__placeholder">Year</span></span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
+                                            </select><span class="select2 select2-container select2-container--default" dir="ltr" data-select2-id="113" style="width: 100%;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-disabled="false" aria-labelledby="select2-education-from-year-tq-container"><span class="select2-selection__rendered" id="select2-education-from-year-tq-container" role="textbox" aria-readonly="true"><span class="select2-selection__placeholder">Year</span></span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
                                         </div>
                                     </div>
                                 </div>
@@ -231,23 +224,23 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <select name="education-to-month" data-placeholder="Month" class="form-control form-control-select2 select2-hidden-accessible" data-fouc="" data-select2-id="70" tabindex="-1" aria-hidden="true">
-                                                <option data-select2-id="72"></option>
+                                            <select name="education-to-month" data-placeholder="Month" class="form-control form-control-select2 select2-hidden-accessible" data-fouc="" data-select2-id="115" tabindex="-1" aria-hidden="true">
+                                                <option data-select2-id="117"></option>
                                                 <option value="January">January</option>
                                                 <option value="...">...</option>
                                                 <option value="December">December</option>
-                                            </select><span class="select2 select2-container select2-container--default" dir="ltr" data-select2-id="71" style="width: 100%;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-disabled="false" aria-labelledby="select2-education-to-month-fa-container"><span class="select2-selection__rendered" id="select2-education-to-month-fa-container" role="textbox" aria-readonly="true"><span class="select2-selection__placeholder">Month</span></span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
+                                            </select><span class="select2 select2-container select2-container--default" dir="ltr" data-select2-id="116" style="width: 100%;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-disabled="false" aria-labelledby="select2-education-to-month-92-container"><span class="select2-selection__rendered" id="select2-education-to-month-92-container" role="textbox" aria-readonly="true"><span class="select2-selection__placeholder">Month</span></span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
                                         </div>
                                     </div>
 
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <select name="education-to-year" data-placeholder="Year" class="form-control form-control-select2 select2-hidden-accessible" data-fouc="" data-select2-id="73" tabindex="-1" aria-hidden="true">
-                                                <option data-select2-id="75"></option>
+                                            <select name="education-to-year" data-placeholder="Year" class="form-control form-control-select2 select2-hidden-accessible" data-fouc="" data-select2-id="118" tabindex="-1" aria-hidden="true">
+                                                <option data-select2-id="120"></option>
                                                 <option value="1995">1995</option>
                                                 <option value="...">...</option>
                                                 <option value="1980">1980</option>
-                                            </select><span class="select2 select2-container select2-container--default" dir="ltr" data-select2-id="74" style="width: 100%;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-disabled="false" aria-labelledby="select2-education-to-year-ai-container"><span class="select2-selection__rendered" id="select2-education-to-year-ai-container" role="textbox" aria-readonly="true"><span class="select2-selection__placeholder">Year</span></span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
+                                            </select><span class="select2 select2-container select2-container--default" dir="ltr" data-select2-id="119" style="width: 100%;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-disabled="false" aria-labelledby="select2-education-to-year-jy-container"><span class="select2-selection__rendered" id="select2-education-to-year-jy-container" role="textbox" aria-readonly="true"><span class="select2-selection__placeholder">Year</span></span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
                                         </div>
                                     </div>
                                 </div>
@@ -262,18 +255,18 @@
                 </div>
             </fieldset>
 
-            <h6 id="steps-uid-5-h-2" tabindex="-1" class="title">Your experience</h6>
-            <fieldset id="steps-uid-5-p-2" role="tabpanel" aria-labelledby="steps-uid-5-h-2" class="body" aria-hidden="true" style="display: none;">
+            <h6 id="steps-uid-2-h-2" tabindex="-1" class="title">Your experience</h6>
+            <fieldset id="steps-uid-2-p-2" role="tabpanel" aria-labelledby="steps-uid-2-h-2" class="body" aria-hidden="true" style="display: none;">
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label>Company: <span class="text-danger">*</span></label>
-                            <input type="text" name="experience-company" placeholder="Company name" class="form-control required">
+                            <label>Company:</label>
+                            <input type="text" name="experience-company" placeholder="Company name" class="form-control">
                         </div>
 
                         <div class="form-group">
-                            <label>Position: <span class="text-danger">*</span></label>
-                            <input type="text" name="experience-position" placeholder="Company name" class="form-control required">
+                            <label>Position:</label>
+                            <input type="text" name="experience-position" placeholder="Company name" class="form-control">
                         </div>
 
                         <div class="row">
@@ -282,23 +275,23 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <select name="education-from-month" data-placeholder="Month" class="form-control form-control-select2 select2-hidden-accessible" data-fouc="" data-select2-id="76" tabindex="-1" aria-hidden="true">
-                                                <option data-select2-id="78"></option>
+                                            <select name="education-from-month" data-placeholder="Month" class="form-control form-control-select2 select2-hidden-accessible" data-fouc="" data-select2-id="121" tabindex="-1" aria-hidden="true">
+                                                <option data-select2-id="123"></option>
                                                 <option value="January">January</option>
                                                 <option value="...">...</option>
                                                 <option value="December">December</option>
-                                            </select><span class="select2 select2-container select2-container--default" dir="ltr" data-select2-id="77" style="width: 100%;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-disabled="false" aria-labelledby="select2-education-from-month-eh-container"><span class="select2-selection__rendered" id="select2-education-from-month-eh-container" role="textbox" aria-readonly="true"><span class="select2-selection__placeholder">Month</span></span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
+                                            </select><span class="select2 select2-container select2-container--default" dir="ltr" data-select2-id="122" style="width: 100%;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-disabled="false" aria-labelledby="select2-education-from-month-lm-container"><span class="select2-selection__rendered" id="select2-education-from-month-lm-container" role="textbox" aria-readonly="true"><span class="select2-selection__placeholder">Month</span></span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
                                         </div>
                                     </div>
 
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <select name="education-from-year" data-placeholder="Year" class="form-control form-control-select2 select2-hidden-accessible" data-fouc="" data-select2-id="79" tabindex="-1" aria-hidden="true">
-                                                <option data-select2-id="81"></option>
+                                            <select name="education-from-year" data-placeholder="Year" class="form-control form-control-select2 select2-hidden-accessible" data-fouc="" data-select2-id="124" tabindex="-1" aria-hidden="true">
+                                                <option data-select2-id="126"></option>
                                                 <option value="1995">1995</option>
                                                 <option value="...">...</option>
                                                 <option value="1980">1980</option>
-                                            </select><span class="select2 select2-container select2-container--default" dir="ltr" data-select2-id="80" style="width: 100%;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-disabled="false" aria-labelledby="select2-education-from-year-9x-container"><span class="select2-selection__rendered" id="select2-education-from-year-9x-container" role="textbox" aria-readonly="true"><span class="select2-selection__placeholder">Year</span></span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
+                                            </select><span class="select2 select2-container select2-container--default" dir="ltr" data-select2-id="125" style="width: 100%;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-disabled="false" aria-labelledby="select2-education-from-year-jp-container"><span class="select2-selection__rendered" id="select2-education-from-year-jp-container" role="textbox" aria-readonly="true"><span class="select2-selection__placeholder">Year</span></span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
                                         </div>
                                     </div>
                                 </div>
@@ -309,23 +302,23 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <select name="education-to-month" data-placeholder="Month" class="form-control form-control-select2 select2-hidden-accessible" data-fouc="" data-select2-id="82" tabindex="-1" aria-hidden="true">
-                                                <option data-select2-id="84"></option>
+                                            <select name="education-to-month" data-placeholder="Month" class="form-control form-control-select2 select2-hidden-accessible" data-fouc="" data-select2-id="127" tabindex="-1" aria-hidden="true">
+                                                <option data-select2-id="129"></option>
                                                 <option value="January">January</option>
                                                 <option value="...">...</option>
                                                 <option value="December">December</option>
-                                            </select><span class="select2 select2-container select2-container--default" dir="ltr" data-select2-id="83" style="width: 100%;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-disabled="false" aria-labelledby="select2-education-to-month-vd-container"><span class="select2-selection__rendered" id="select2-education-to-month-vd-container" role="textbox" aria-readonly="true"><span class="select2-selection__placeholder">Month</span></span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
+                                            </select><span class="select2 select2-container select2-container--default" dir="ltr" data-select2-id="128" style="width: 100%;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-disabled="false" aria-labelledby="select2-education-to-month-qh-container"><span class="select2-selection__rendered" id="select2-education-to-month-qh-container" role="textbox" aria-readonly="true"><span class="select2-selection__placeholder">Month</span></span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
                                         </div>
                                     </div>
 
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <select name="education-to-year" data-placeholder="Year" class="form-control form-control-select2 select2-hidden-accessible" data-fouc="" data-select2-id="85" tabindex="-1" aria-hidden="true">
-                                                <option data-select2-id="87"></option>
+                                            <select name="education-to-year" data-placeholder="Year" class="form-control form-control-select2 select2-hidden-accessible" data-fouc="" data-select2-id="130" tabindex="-1" aria-hidden="true">
+                                                <option data-select2-id="132"></option>
                                                 <option value="1995">1995</option>
                                                 <option value="...">...</option>
                                                 <option value="1980">1980</option>
-                                            </select><span class="select2 select2-container select2-container--default" dir="ltr" data-select2-id="86" style="width: 100%;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-disabled="false" aria-labelledby="select2-education-to-year-0i-container"><span class="select2-selection__rendered" id="select2-education-to-year-0i-container" role="textbox" aria-readonly="true"><span class="select2-selection__placeholder">Year</span></span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
+                                            </select><span class="select2 select2-container select2-container--default" dir="ltr" data-select2-id="131" style="width: 100%;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-disabled="false" aria-labelledby="select2-education-to-year-5m-container"><span class="select2-selection__rendered" id="select2-education-to-year-5m-container" role="textbox" aria-readonly="true"><span class="select2-selection__placeholder">Year</span></span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
                                         </div>
                                     </div>
                                 </div>
@@ -348,8 +341,8 @@
                 </div>
             </fieldset>
 
-            <h6 id="steps-uid-5-h-3" tabindex="-1" class="title">Additional info</h6>
-            <fieldset id="steps-uid-5-p-3" role="tabpanel" aria-labelledby="steps-uid-5-h-3" class="body" aria-hidden="true" style="display: none;">
+            <h6 id="steps-uid-2-h-3" tabindex="-1" class="title">Additional info</h6>
+            <fieldset id="steps-uid-2-p-3" role="tabpanel" aria-labelledby="steps-uid-2-h-3" class="body" aria-hidden="true" style="display: none;">
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">
@@ -361,15 +354,15 @@
 
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label>Where did you find us? <span class="text-danger">*</span></label>
-                            <select name="source" data-placeholder="Choose an option..." class="form-control form-control-select2 required select2-hidden-accessible" data-fouc="" data-select2-id="88" tabindex="-1" aria-hidden="true">
-                                <option data-select2-id="90"></option>
+                            <label>Where did you find us?</label>
+                            <select name="source" data-placeholder="Choose an option..." class="form-control form-control-select2 select2-hidden-accessible" data-fouc="" data-select2-id="133" tabindex="-1" aria-hidden="true">
+                                <option data-select2-id="135"></option>
                                 <option value="monster">Monster.com</option>
                                 <option value="linkedin">LinkedIn</option>
                                 <option value="google">Google</option>
                                 <option value="adwords">Google AdWords</option>
                                 <option value="other">Other source</option>
-                            </select><span class="select2 select2-container select2-container--default" dir="ltr" data-select2-id="89" style="width: 100%;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-disabled="false" aria-labelledby="select2-source-gq-container"><span class="select2-selection__rendered" id="select2-source-gq-container" role="textbox" aria-readonly="true"><span class="select2-selection__placeholder">Choose an option...</span></span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
+                            </select><span class="select2 select2-container select2-container--default" dir="ltr" data-select2-id="134" style="width: 100%;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-disabled="false" aria-labelledby="select2-source-bi-container"><span class="select2-selection__rendered" id="select2-source-bi-container" role="textbox" aria-readonly="true"><span class="select2-selection__placeholder">Choose an option...</span></span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
                         </div>
                     </div>
                 </div>
@@ -377,10 +370,10 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label>Availability: <span class="text-danger">*</span></label>
+                            <label>Availability:</label>
                             <div class="form-check">
                                 <label class="form-check-label">
-                                    <div class="uniform-choice"><span><input type="radio" name="availability" class="form-input-styled required" data-fouc=""></span></div>
+                                    <div class="uniform-choice"><span><input type="radio" name="availability" class="form-input-styled" data-fouc=""></span></div>
                                     Immediately
                                 </label>
                             </div>
