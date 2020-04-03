@@ -248,9 +248,7 @@
                 <!-- /user menu -->
 
                 <?php
-                $active[$this->route['action']] = 'class="active"';
-
-                show($this->route['action']);
+                $active[$this->route['action']] = 'active';
                 ?>
 
 
