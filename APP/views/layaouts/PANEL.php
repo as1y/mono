@@ -261,6 +261,8 @@
                             <a href="#" class="nav-link">
                                 <i class="icon-home4"></i>
                                 <span>	Операторы </span>
+                                <span class="badge badge-pill bg-pink-400 ml-auto">39</span>
+
                             </a>
                         </li>
 
