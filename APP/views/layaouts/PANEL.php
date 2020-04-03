@@ -2203,7 +2203,7 @@
 			</span>
 
         <ul class="navbar-nav ml-lg-auto">
-            <li class="nav-item"><a href="tal: <?=CONFIG['BASETEL']?>" class="navbar-nav-link" target="_blank"><i class="icon-lifebuoy mr-2"></i> <?=CONFIG['BASETEL']?></a></li>
+            <li class="nav-item"><a href="mailto: <?=CONFIG['BASEMAIL']['email']?>" class="navbar-nav-link" target="_blank"><i class="fa fa-envelope mr-2"></i> <?=CONFIG['BASETEL']?></a></li>
 
 
         </ul>
