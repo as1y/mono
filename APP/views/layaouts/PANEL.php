@@ -257,6 +257,21 @@
                             <div class="text-uppercase font-size-sm line-height-sm">ОБЗОР БИРЖИ</div>
                         </li>
 
+                        <li class="nav-item">
+                            <a href="#" class="nav-link active">
+                                <i class="icon-home4"></i>
+                                <span>	Каталог операторов </span>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="#" class="nav-link active">
+                                <i class="icon-home4"></i>
+                                <span>	Каталог проектов </span>
+                            </a>
+                        </li>
+
+
 
 
 
