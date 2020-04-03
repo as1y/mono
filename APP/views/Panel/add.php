@@ -8,7 +8,7 @@
     </div>
 
     <form class="wizard-form steps-validation" action="#" data-fouc>
-        <h6>Personal data</h6>
+        <h6>Компания</h6>
         <fieldset>
             <div class="row">
                 <div class="col-md-6">
@@ -66,8 +66,6 @@
                         </select>
                     </div>
                 </div>
-
-
             </div>
 
             <div class="row">
@@ -157,6 +155,9 @@
                     </div>
                 </div>
             </div>
+
+
+
         </fieldset>
 
         <h6>Your education</h6>
