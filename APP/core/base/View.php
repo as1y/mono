@@ -5,6 +5,8 @@ class View {
 	public $view;
 	public $layaout;
 	static $meta = ["title"=> CONFIG['NAME'], "desc"=> "", "keywords"=> ""];
+    static $Breadcrumbs = ["HOME" => [], "DATA" => []];
+
 	public function __construct($route, $layaout='', $view=''){
 		$this->route = $route;
 		if ($layaout === false){
@@ -43,15 +45,75 @@ class View {
 			}
 		}
 	}
+
+
 	public static function getMeta(){
 		echo '<title>'.self::$meta['title'].'</title>
 			<meta name="description" content="'.self::$meta['desc'].'" />
 			<meta name="keywords" content="'.self::$meta['keywords'].'" />';
 	}
-	public static function setMeta($title = "", $desc ="", $keywords=""){
-		self::$meta['title'] = $title;
-		self::$meta['desc'] = $desc;
-		self::$meta['keywords'] = $keywords;
-	}
+
+
+    public static function setMeta($META){
+
+        if (!empty($META['title'])) self::$meta['title'] = $META['title'];
+        if (!empty($META['description'])) self::$meta['description'] = $META['description'];
+        if (!empty($META['keywords'])) self::$meta['keywords'] = $META['keywords'];
+
+    }
+    public static function setBreadcrumbs($Breadcrumbs){
+
+        if (!empty($Breadcrumbs['HOME'])) self::$Breadcrumbs['HOME'] = $Breadcrumbs['HOME'];
+        if (!empty($Breadcrumbs['DATA'])) self::$Breadcrumbs['DATA'] = $Breadcrumbs['DATA'];
+
+    }
+
+
+
+    public static function getBreadcrumbs(){
+
+        if (!isset(self::$Breadcrumbs['HOME']['Label'])) self::$Breadcrumbs['HOME']['Label'] = self::$meta['title'];
+        if (!isset(self::$Breadcrumbs['HOME']['Url'])) self::$Breadcrumbs['HOME']['Url'] = "/";
+
+
+
+        ?>
+
+
+        <a href="index.html" class="breadcrumb-item"><i class="icon-home2 mr-2"></i> <?=self::$Breadcrumbs['HOME']['Label'];?></a>
+
+
+
+        <?php foreach(self::$Breadcrumbs['DATA'] as $val):?>
+
+
+            <?php if (!empty($val['Url'])):?>
+                <b>
+                    <a href="<?=$val['Url']?>" class="breadcrumb-item">  <?=$val['Label']?> </a>
+                </b>
+            <?php else:?>
+                <span class="breadcrumb-item active"><?=$val['Label']?></span>
+            <?php endif;?>
+
+
+
+        <?php endforeach;?>
+
+
+
+
+
+
+
+
+
+
+
+
+        <?php
+
+    }
+
+
 }
 ?>
