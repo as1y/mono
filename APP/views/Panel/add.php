@@ -9,8 +9,8 @@
 
     <form class="wizard-form steps-validation" action="#" data-fouc>
         <h6>Проект</h6>
-        <fieldset class="align-content-center">
-            <div class="row>
+        <fieldset>
+            <div class="align-content-center">
                 <div class="col-md-6">
                     <div class="form-group">
                         <label>Select location: <span class="text-danger">*</span></label>
