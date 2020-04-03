@@ -189,7 +189,7 @@
 <div class="page-content pt-0">
 
     <!-- Main sidebar -->
-    <div class="sidebar sidebar-light sidebar-main sidebar-expand-md align-self-start">
+    <div class="sidebar sidebar-dark sidebar-main sidebar-expand-md align-self-start">
 
         <!-- Sidebar mobile toggler -->
         <div class="sidebar-mobile-toggler text-center">
