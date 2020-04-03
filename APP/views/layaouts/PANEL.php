@@ -19,13 +19,15 @@
     <link href="/assets/css/components.min.css" rel="stylesheet" type="text/css">
     <link href="/assets/css/colors.min.css" rel="stylesheet" type="text/css">
     <!-- /global stylesheets -->
-    
 
     <!-- Core JS files -->
-    <script src="../../../../global_assets/js/main/jquery.min.js"></script>
-    <script src="../../../../global_assets/js/main/bootstrap.bundle.min.js"></script>
-    <script src="../../../../global_assets/js/plugins/loaders/blockui.min.js"></script>
+    <script src="/global_assets/js/main/jquery.min.js"></script>
+    <script src="/global_assets/js/main/bootstrap.bundle.min.js"></script>
+    <script src="/global_assets/js/plugins/loaders/blockui.min.js"></script>
     <!-- /core JS files -->
+
+
+
 
     <!-- Theme JS files -->
     <script src="../../../../global_assets/js/plugins/forms/validation/validate.min.js"></script>
@@ -42,13 +44,6 @@
 
 
 
-<!---->
-<!---->
-<!--    <!-- Core JS files -->-->
-<!--    <script src="/global_assets/js/main/jquery.min.js"></script>-->
-<!--    <script src="/global_assets/js/main/bootstrap.bundle.min.js"></script>-->
-<!--    <script src="/global_assets/js/plugins/loaders/blockui.min.js"></script>-->
-<!--    <!-- /core JS files -->-->
 <!---->
 <!---->
 <!---->
