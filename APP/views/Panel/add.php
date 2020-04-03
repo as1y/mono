@@ -10,7 +10,7 @@
     <form class="wizard-form steps-validation" action="#" data-fouc>
         <h6>Проект</h6>
         <fieldset>
-            <div class="row">
+            <div class="row text-center">
                 <div class="col-md-6">
                     <div class="form-group">
                         <label>Select location: <span class="text-danger">*</span></label>
