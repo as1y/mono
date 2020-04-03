@@ -258,14 +258,14 @@
                         </li>
 
                         <li class="nav-item">
-                            <a href="#" class="nav-link active">
+                            <a href="#" class="nav-link">
                                 <i class="icon-home4"></i>
                                 <span>	Каталог операторов </span>
                             </a>
                         </li>
 
                         <li class="nav-item">
-                            <a href="#" class="nav-link active">
+                            <a href="#" class="nav-link">
                                 <i class="icon-home4"></i>
                                 <span>	Каталог проектов </span>
                             </a>
