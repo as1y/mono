@@ -246,9 +246,9 @@
                                 <span>		Мои проекты	</span>
                             </a>
                         </li>
-                        <li class="nav-item"><a href="#" class="nav-link"><i class="icon-width"></i> <span>Добавить проект</span></a></li>
+                        <li class="nav-item"><a href="#" class="nav-link"><i class="icon-phone-plus"></i> <span>Добавить проект</span></a></li>
                         <!-- /main -->
-                        
+
 
                     </ul>
                 </div>
