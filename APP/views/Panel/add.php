@@ -3,7 +3,7 @@
     <div class="card-header bg-white header-elements-inline">
         <h6 class="card-title">Добавление проекта</h6>
 
-        
+
 
     </div>
 
@@ -11,7 +11,7 @@
         <h6>Personal data</h6>
         <fieldset>
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-8">
                     <div class="form-group">
                         <label>Select location: <span class="text-danger">*</span></label>
                         <select name="location" data-placeholder="Select position" class="form-control form-control-select2 required" data-fouc>
@@ -38,34 +38,8 @@
                     </div>
                 </div>
 
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <label>Select position: <span class="text-danger">*</span></label>
-                        <select name="position" data-placeholder="Select position" class="form-control form-control-select2 required" data-fouc>
-                            <option></option>
-                            <optgroup label="Developer Relations">
-                                <option value="1">Sales Engineer</option>
-                                <option value="2">Ads Solutions Consultant</option>
-                                <option value="3">Technical Solutions Consultant</option>
-                                <option value="4">Business Intern</option>
-                            </optgroup>
 
-                            <optgroup label="Engineering &amp; Design">
-                                <option value="5">Interaction Designer</option>
-                                <option value="6">Technical Program Manager</option>
-                                <option value="7">Software Engineer</option>
-                                <option value="8">Information Security Engineer</option>
-                            </optgroup>
 
-                            <optgroup label="Marketing &amp; Communications">
-                                <option value="13">Media Outreach Manager</option>
-                                <option value="14">Research Manager</option>
-                                <option value="15">Marketing Intern</option>
-                                <option value="16">Business Intern</option>
-                            </optgroup>
-                        </select>
-                    </div>
-                </div>
             </div>
 
             <div class="row">
