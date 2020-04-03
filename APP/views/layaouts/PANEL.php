@@ -239,7 +239,7 @@
                     <ul class="nav nav-sidebar" data-nav-type="accordion">
 
                         <!-- Main -->
-                        <li class="nav-item-header mt-0"> <i class="icon-menu" title="Main"></i></li>
+ 
 
                         <li class="nav-item-header">
                             <div class="text-uppercase font-size-sm line-height-sm">МОИ ПРОЕКТЫ</div>
