@@ -418,3 +418,33 @@
             </fieldset>
         </div><div class="actions clearfix"><ul role="menu" aria-label="Pagination"><li class="disabled" aria-disabled="true"><a href="#previous" class="btn btn-light disabled" role="menuitem"><i class="icon-arrow-left13 mr-2"></i> Previous</a></li><li aria-hidden="false" aria-disabled="false"><a href="#next" class="btn btn-primary" role="menuitem">Next <i class="icon-arrow-right14 ml-2"></i></a></li><li aria-hidden="true" style="display: none;"><a href="#finish" class="btn btn-primary" role="menuitem">Submit form <i class="icon-arrow-right14 ml-2"></i></a></li></ul></div></form>
 </div>
+
+
+<!-- Remote content source -->
+<div class="card">
+    <div class="card-header bg-white header-elements-inline">
+        <h6 class="card-title">Remote content source</h6>
+        <div class="header-elements">
+            <div class="list-icons">
+                <a class="list-icons-item" data-action="collapse"></a>
+                <a class="list-icons-item" data-action="reload"></a>
+                <a class="list-icons-item" data-action="remove"></a>
+            </div>
+        </div>
+    </div>
+
+    <form class="wizard-form steps-async" action="#" data-fouc>
+        <h6>Personal data</h6>
+        <fieldset data-mode="async" data-url="../../../../global_assets/demo_data/wizard/personal_data.html"></fieldset>
+
+        <h6>Your education</h6>
+        <fieldset data-mode="async" data-url="../../../../global_assets/demo_data/wizard/education.html"></fieldset>
+
+        <h6>Your experience</h6>
+        <fieldset data-mode="async" data-url="../../../../global_assets/demo_data/wizard/experience.html"></fieldset>
+
+        <h6>Additional info</h6>
+        <fieldset data-mode="async" data-url="../../../../global_assets/demo_data/wizard/additional.html"></fieldset>
+    </form>
+</div>
+<!-- /remote content source -->
