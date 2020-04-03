@@ -16,9 +16,9 @@ class PanelController extends AppController {
         //Информация о компаниях клиента
 
         \APP\core\base\View::setMeta('Панель управления - ' . CONFIG['NAME'] . ' ', 'Панель управления', 'Панель управления');
-        $testpar = "test";
 
-        $this->set(compact('testpar'));
+
+//        $this->set(compact('testpar'));
 
 
     }
