@@ -27,7 +27,7 @@ class PanelController extends AppController {
         ];
 
         $BREADCRUMBS['HOME'] = ['Label' => $this->BreadcrumbsControllerLabel, 'Url' => $this->BreadcrumbsControllerUrl];
-        $BREADCRUMBS['DATA'][] = ['Label' => "Проекты"];
+        $BREADCRUMBS['DATA'][] = ['Label' => "Мои проекты"];
 
         \APP\core\base\View::setMeta($META);
         \APP\core\base\View::setBreadcrumbs($BREADCRUMBS);
