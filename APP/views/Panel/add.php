@@ -15,12 +15,12 @@
 
                 <div class="col-md-6">
                     <div class="form-group">
-                        <label>Applicant name:</label>
+                        <label>Название проекта:</label>
                         <input type="text" name="name" class="form-control" placeholder="John Doe">
                     </div>
                 </div>
 
-                
+
 
 
 
