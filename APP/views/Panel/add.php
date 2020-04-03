@@ -10,10 +10,10 @@
     <form class="wizard-form steps-validation wizard clearfix" action="#" data-fouc="" role="application" id="steps-uid-5" novalidate="novalidate">
 
 
-        <div class="steps clearfix">
+        <div class="steps">
             <ul role="tablist">
 
-                
+
                 <li role="tab" class="first current" aria-disabled="false" aria-selected="true"><a id="steps-uid-5-t-0"
                                                                                                    href="#steps-uid-5-h-0"
                                                                                                    aria-controls="steps-uid-5-p-0"
