@@ -2199,7 +2199,7 @@
 
     <div class="navbar-collapse collapse" id="navbar-footer">
 			<span class="navbar-text">
-				&copy; 2020 <b><a href="/panel/">CASHCALL.RU</a></b> - Коммуникационная CPL платформа. Биржа удаленных операторов на телефоне.
+				&copy; 2020 <b><a href="/panel/">CASHCALL.RU</a></b> - Биржа удаленных операторов на телефоне.
 			</span>
 
         <ul class="navbar-nav ml-lg-auto">
