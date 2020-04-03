@@ -45,7 +45,7 @@
     </div>
 
 
-    <form class="wizard-form steps-async" action="#" data-fouc>
+    <form class="wizard-form steps-validation wizard clearfix" action="#" data-fouc="" role="application" id="steps-uid-5" novalidate="novalidate">
         <div class="steps clearfix">
             <ul role="tablist">
                 <li role="tab" class="first current" aria-disabled="false" aria-selected="true"><a id="steps-uid-5-t-0"
