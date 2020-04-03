@@ -28,7 +28,7 @@
     <!-- /core JS files -->
 
     <!-- Theme JS files -->
-
+    <script src="../../../../global_assets/js/plugins/forms/wizards/steps.min.js"></script>
     <script src="../../../../global_assets/js/plugins/forms/selects/select2.min.js"></script>
     <script src="../../../../global_assets/js/plugins/forms/styling/uniform.min.js"></script>
     <script src="../../../../global_assets/js/plugins/forms/inputs/inputmask.js"></script>
