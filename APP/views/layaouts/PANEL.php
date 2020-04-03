@@ -60,7 +60,7 @@
             <i class="icon-grid3"></i>
         </button>
     </div>
- 
+
     <div class="navbar-collapse collapse" id="navbar-demo1-mobile">
 
 
@@ -192,7 +192,7 @@
 
 
 <!-- Page content -->
-<div class="page-content pt-0">
+<div class="page-content">
 
     <!-- Main sidebar -->
     <div class="sidebar sidebar-dark sidebar-main sidebar-expand-md align-self-start">
