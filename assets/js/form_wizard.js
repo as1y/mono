@@ -20,7 +20,7 @@ var FormWizard = function() {
     // Wizard
     var _componentWizard = function() {
         if (!$().steps) {
-            console.warn('Warning - steps.min.js is not loaded.');
+            console.log('Warning - steps.min.js is not loaded.');
             return;
         }
 
@@ -40,7 +40,82 @@ var FormWizard = function() {
             }
         });
 
+        // Async content loading
+        $('.steps-async').steps({
+            headerTag: 'h6',
+            bodyTag: 'fieldset',
+            transitionEffect: 'fade',
+            titleTemplate: '<span class="number">#index#</span> #title#',
+            loadingTemplate: '<div class="card-body text-center"><i class="icon-spinner2 spinner mr-2"></i>  #text#</div>',
+            labels: {
+                previous: '<i class="icon-arrow-left13 mr-2" /> Previous',
+                next: 'Next <i class="icon-arrow-right14 ml-2" />',
+                finish: 'Submit form <i class="icon-arrow-right14 ml-2" />'
+            },
+            onContentLoaded: function (event, currentIndex) {
+                $(this).find('.card-body').addClass('hide');
 
+                // Re-initialize components
+                _componentSelect2();
+                _componentUniform();
+            },
+            onFinished: function (event, currentIndex) {
+                alert('Form submitted.');
+            }
+        });
+
+        // Saving wizard state
+        $('.steps-state-saving').steps({
+            headerTag: 'h6',
+            bodyTag: 'fieldset',
+            titleTemplate: '<span class="number">#index#</span> #title#',
+            labels: {
+                previous: '<i class="icon-arrow-left13 mr-2" /> Previous',
+                next: 'Next <i class="icon-arrow-right14 ml-2" />',
+                finish: 'Submit form <i class="icon-arrow-right14 ml-2" />'
+            },
+            transitionEffect: 'fade',
+            saveState: true,
+            autoFocus: true,
+            onFinished: function (event, currentIndex) {
+                alert('Form submitted.');
+            }
+        });
+
+        // Specify custom starting step
+        $('.steps-starting-step').steps({
+            headerTag: 'h6',
+            bodyTag: 'fieldset',
+            titleTemplate: '<span class="number">#index#</span> #title#',
+            labels: {
+                previous: '<i class="icon-arrow-left13 mr-2" /> Previous',
+                next: 'Next <i class="icon-arrow-right14 ml-2" />',
+                finish: 'Submit form <i class="icon-arrow-right14 ml-2" />'
+            },
+            transitionEffect: 'fade',
+            startIndex: 2,
+            autoFocus: true,
+            onFinished: function (event, currentIndex) {
+                alert('Form submitted.');
+            }
+        });
+
+        // Enable all steps and make them clickable
+        $('.steps-enable-all').steps({
+            headerTag: 'h6',
+            bodyTag: 'fieldset',
+            transitionEffect: 'fade',
+            enableAllSteps: true,
+            titleTemplate: '<span class="number">#index#</span> #title#',
+            labels: {
+                previous: '<i class="icon-arrow-left13 mr-2" /> Previous',
+                next: 'Next <i class="icon-arrow-right14 ml-2" />',
+                finish: 'Submit form <i class="icon-arrow-right14 ml-2" />'
+            },
+            onFinished: function (event, currentIndex) {
+                alert('Form submitted.');
+            }
+        });
 
 
         //
