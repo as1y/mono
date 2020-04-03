@@ -269,7 +269,7 @@
                                 <span>	Проекты </span>
                             </a>
                         </li>
-                        <li class="nav-item"><a href="/panel/add" class="nav-link <?=isset($active['index']) ? $active['index'] : ''; ?>"><i class="icon-phone-plus"></i> <span>Добавить проект</span></a></li>
+                        <li class="nav-item"><a href="/panel/add" class="nav-link <?=isset($active['add']) ? $active['add'] : ''; ?>"><i class="icon-phone-plus"></i> <span>Добавить проект</span></a></li>
                         <!-- /main -->
 
                         <li class="nav-item-header">
