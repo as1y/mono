@@ -41,6 +41,32 @@ class PanelController extends AppController {
     }
 
 
+    public function addAction()
+    {
+
+        //Информация о компаниях клиента
+
+        $META = [
+            'title' => 'Добавление проекта',
+            'description' => 'Добавление проекта',
+            'keywords' => 'Добавление проекта',
+        ];
+
+        $BREADCRUMBS['HOME'] = ['Label' => $this->BreadcrumbsControllerLabel, 'Url' => $this->BreadcrumbsControllerUrl];
+        $BREADCRUMBS['DATA'][] = ['Label' => "Добавление проекта"];
+
+        \APP\core\base\View::setMeta($META);
+        \APP\core\base\View::setBreadcrumbs($BREADCRUMBS);
+
+
+
+
+//        $this->set(compact('testpar'));
+
+
+    }
+
+
 
 
 }
