@@ -247,7 +247,7 @@
                         <li class="nav-item">
                             <a href="#" class="nav-link active">
                                 <i class="icon-home4"></i>
-                                <span>		Статистика	</span>
+                                <span>		Проекты	</span>
                             </a>
                         </li>
                         <li class="nav-item"><a href="#" class="nav-link"><i class="icon-phone-plus"></i> <span>Добавить проект</span></a></li>
