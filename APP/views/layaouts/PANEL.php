@@ -249,7 +249,10 @@
 
                 <?php
                 $active[$this->route['action']] = 'class="active"';
+
+                show($this->route['action']);
                 ?>
+
 
 
                 <!-- Main navigation -->
