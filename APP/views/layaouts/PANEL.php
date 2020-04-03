@@ -21,6 +21,14 @@
     <link href="/assets/css/colors.min.css" rel="stylesheet" type="text/css">
     <!-- /global stylesheets -->
 
+
+    <!-- Core JS files -->
+    <script src="/global_assets/js/main/jquery.min.js"></script>
+    <script src="/global_assets/js/main/bootstrap.bundle.min.js"></script>
+    <script src="/global_assets/js/plugins/loaders/blockui.min.js"></script>
+    <!-- /core JS files -->
+
+
     <!-- Theme JS files -->
     <script src="/global_assets/js/plugins/forms/wizards/steps.min.js"></script>
     <script src="/global_assets/js/plugins/forms/selects/select2.min.js"></script>
