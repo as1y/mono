@@ -253,8 +253,7 @@ var FormWizard = function() {
 
     return {
         init: function() {
-            _componentWizard();
-
+ 
         }
     }
 }();
