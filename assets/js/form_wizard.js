@@ -214,26 +214,20 @@ var FormWizard = function() {
         });
     };
 
-
-
-    // Select2 select
-    var _componentSelect2 = function() {
-        if (!$().select2) {
-            console.warn('Warning - select2.min.js is not loaded.');
+    // Uniform
+    var _componentUniform = function() {
+        if (!$().uniform) {
+            console.warn('Warning - uniform.min.js is not loaded.');
             return;
         }
 
         // Initialize
-        var $select = $('.form-control-select2').select2({
-            minimumResultsForSearch: Infinity,
-            width: '100%'
-        });
-
-        // Trigger value change when selection is made
-        $select.on('change', function() {
-            $(this).trigger('blur');
+        $('.form-input-styled').uniform({
+            fileButtonClass: 'action btn bg-blue'
         });
     };
+
+
 
 
     //
