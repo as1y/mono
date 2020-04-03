@@ -22,15 +22,15 @@
     <!-- /global stylesheets -->
 
     <!-- Theme JS files -->
-    <script src="../../../../global_assets/js/plugins/forms/validation/validate.min.js"></script>
-    <script src="../../../../global_assets/js/plugins/forms/inputs/touchspin.min.js"></script>
+    <script src="../../../../global_assets/js/plugins/forms/wizards/steps.min.js"></script>
     <script src="../../../../global_assets/js/plugins/forms/selects/select2.min.js"></script>
-    <script src="../../../../global_assets/js/plugins/forms/styling/switch.min.js"></script>
-    <script src="../../../../global_assets/js/plugins/forms/styling/switchery.min.js"></script>
     <script src="../../../../global_assets/js/plugins/forms/styling/uniform.min.js"></script>
+    <script src="../../../../global_assets/js/plugins/forms/inputs/inputmask.js"></script>
+    <script src="../../../../global_assets/js/plugins/forms/validation/validate.min.js"></script>
+    <script src="../../../../global_assets/js/plugins/extensions/cookie.js"></script>
 
     <script src="assets/js/app.js"></script>
-    <script src="../../../../global_assets/js/demo_pages/form_validation.js"></script>
+    <script src="../../../../global_assets/js/demo_pages/form_wizard.js"></script>
     <!-- /theme JS files -->
 
 
