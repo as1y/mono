@@ -8,153 +8,36 @@
     </div>
 
     <form class="wizard-form steps-validation" action="#" data-fouc>
-        <h6>Компания</h6>
+        <h6>Проект</h6>
         <fieldset>
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <label>Select location: <span class="text-danger">*</span></label>
-                        <select name="location" data-placeholder="Select position" class="form-control form-control-select2 required" data-fouc>
-                            <option></option>
-                            <optgroup label="North America">
-                                <option value="1">United States</option>
-                                <option value="2">Canada</option>
-                            </optgroup>
+            <div class="col-md-8">
+                <div class="form-group">
+                    <label>Select location: <span class="text-danger">*</span></label>
+                    <select name="location" data-placeholder="Select position" class="form-control form-control-select2 required" data-fouc>
+                        <option></option>
+                        <optgroup label="North America">
+                            <option value="1">United States</option>
+                            <option value="2">Canada</option>
+                        </optgroup>
 
-                            <optgroup label="Latin America">
-                                <option value="3">Chile</option>
-                                <option value="4">Argentina</option>
-                                <option value="5">Colombia</option>
-                                <option value="6">Peru</option>
-                            </optgroup>
+                        <optgroup label="Latin America">
+                            <option value="3">Chile</option>
+                            <option value="4">Argentina</option>
+                            <option value="5">Colombia</option>
+                            <option value="6">Peru</option>
+                        </optgroup>
 
-                            <optgroup label="Europe">
-                                <option value="8">Croatia</option>
-                                <option value="9">Hungary</option>
-                                <option value="10">Ukraine</option>
-                                <option value="11">Greece</option>
-                            </optgroup>
-                        </select>
-                    </div>
-                </div>
-
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <label>Select position: <span class="text-danger">*</span></label>
-                        <select name="position" data-placeholder="Select position" class="form-control form-control-select2 required" data-fouc>
-                            <option></option>
-                            <optgroup label="Developer Relations">
-                                <option value="1">Sales Engineer</option>
-                                <option value="2">Ads Solutions Consultant</option>
-                                <option value="3">Technical Solutions Consultant</option>
-                                <option value="4">Business Intern</option>
-                            </optgroup>
-
-                            <optgroup label="Engineering &amp; Design">
-                                <option value="5">Interaction Designer</option>
-                                <option value="6">Technical Program Manager</option>
-                                <option value="7">Software Engineer</option>
-                                <option value="8">Information Security Engineer</option>
-                            </optgroup>
-
-                            <optgroup label="Marketing &amp; Communications">
-                                <option value="13">Media Outreach Manager</option>
-                                <option value="14">Research Manager</option>
-                                <option value="15">Marketing Intern</option>
-                                <option value="16">Business Intern</option>
-                            </optgroup>
-                        </select>
-                    </div>
+                        <optgroup label="Europe">
+                            <option value="8">Croatia</option>
+                            <option value="9">Hungary</option>
+                            <option value="10">Ukraine</option>
+                            <option value="11">Greece</option>
+                        </optgroup>
+                    </select>
                 </div>
             </div>
 
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <label>Applicant name: <span class="text-danger">*</span></label>
-                        <input type="text" name="name" class="form-control required" placeholder="John Doe">
-                    </div>
-                </div>
 
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <label>Email address: <span class="text-danger">*</span></label>
-                        <input type="email" name="email" class="form-control required" placeholder="your@email.com">
-                    </div>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <label>Phone #:</label>
-                        <input type="text" name="tel" class="form-control" placeholder="+99-99-9999-9999" data-mask="+99-99-9999-9999">
-                    </div>
-                </div>
-
-                <div class="col-md-6">
-                    <label>Date of birth:</label>
-                    <div class="row">
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                <select name="birth-month" data-placeholder="Month" class="form-control form-control-select2" data-fouc>
-                                    <option></option>
-                                    <option value="1">January</option>
-                                    <option value="2">February</option>
-                                    <option value="3">March</option>
-                                    <option value="4">April</option>
-                                    <option value="5">May</option>
-                                    <option value="6">June</option>
-                                    <option value="7">July</option>
-                                    <option value="8">August</option>
-                                    <option value="9">September</option>
-                                    <option value="10">October</option>
-                                    <option value="11">November</option>
-                                    <option value="12">December</option>
-                                </select>
-                            </div>
-                        </div>
-
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                <select name="birth-day" data-placeholder="Day" class="form-control form-control-select2" data-fouc>
-                                    <option></option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5</option>
-                                    <option value="6">6</option>
-                                    <option value="7">7</option>
-                                    <option value="8">8</option>
-                                    <option value="9">9</option>
-                                    <option value="...">...</option>
-                                    <option value="31">31</option>
-                                </select>
-                            </div>
-                        </div>
-
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                <select name="birth-year" data-placeholder="Year" class="form-control form-control-select2" data-fouc>
-                                    <option></option>
-                                    <option value="1">1980</option>
-                                    <option value="2">1981</option>
-                                    <option value="3">1982</option>
-                                    <option value="4">1983</option>
-                                    <option value="5">1984</option>
-                                    <option value="6">1985</option>
-                                    <option value="7">1986</option>
-                                    <option value="8">1987</option>
-                                    <option value="9">1988</option>
-                                    <option value="10">1989</option>
-                                    <option value="11">1990</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
 
 
