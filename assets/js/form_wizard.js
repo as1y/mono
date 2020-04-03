@@ -214,18 +214,7 @@ var FormWizard = function() {
         });
     };
 
-    // Uniform
-    var _componentUniform = function() {
-        if (!$().uniform) {
-            console.warn('Warning - uniform.min.js is not loaded.');
-            return;
-        }
 
-        // Initialize
-        $('.form-input-styled').uniform({
-            fileButtonClass: 'action btn bg-blue'
-        });
-    };
 
     // Select2 select
     var _componentSelect2 = function() {
