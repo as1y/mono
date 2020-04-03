@@ -14,7 +14,12 @@
 
     <form class="wizard-form steps-async" action="#" data-fouc>
         <h6>Personal data</h6>
-        <fieldset data-mode="async" data-url="../../../../global_assets/demo_data/wizard/personal_data.html"></fieldset>
+        <fieldset data-mode="async" data-url="../../../../global_assets/demo_data/wizard/personal_data.html">
+
+
+
+
+        </fieldset>
 
         <h6>Your education</h6>
         <fieldset data-mode="async" data-url="../../../../global_assets/demo_data/wizard/education.html"></fieldset>
@@ -44,21 +49,6 @@
         </div>
     </div>
 
-    <form class="wizard-form steps-async" action="#" data-fouc>
-        <h6>Personal data</h6>
-        <fieldset data-mode="async" data-url="../../../../global_assets/demo_data/wizard/personal_data.html"></fieldset>
-
-        <h6>Your education</h6>
-        <fieldset data-mode="async" data-url="../../../../global_assets/demo_data/wizard/education.html"></fieldset>
-
-        <h6>Your experience</h6>
-        <fieldset data-mode="async" data-url="../../../../global_assets/demo_data/wizard/experience.html"></fieldset>
-
-        <h6>Additional info</h6>
-        <fieldset data-mode="async" data-url="../../../../global_assets/demo_data/wizard/additional.html"></fieldset>
-    </form>
-
-    
 
     <form class="wizard-form steps-validation wizard clearfix" action="#" data-fouc="" role="application" id="steps-uid-5" novalidate="novalidate">
         <div class="steps clearfix">
