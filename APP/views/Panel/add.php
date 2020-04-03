@@ -1,13 +1,11 @@
 <div class="card" style="zoom: 1;">
     <div class="card-header bg-white header-elements-inline">
-        <h6 class="card-title">Wizard with validation</h6>
-        <div class="header-elements">
-            <div class="list-icons">
-                <a class="list-icons-item" data-action="collapse"></a>
-                <a class="list-icons-item" data-action="reload"></a>
-                <a class="list-icons-item" data-action="remove"></a>
-            </div>
-        </div>
+        <h6 class="card-title">Добавление проекта</h6>
+
+
+
+
+
     </div>
 
     <form class="wizard-form steps-validation wizard clearfix" action="#" data-fouc="" role="application" id="steps-uid-5" novalidate="novalidate"><div class="steps clearfix"><ul role="tablist"><li role="tab" class="first current" aria-disabled="false" aria-selected="true"><a id="steps-uid-5-t-0" href="#steps-uid-5-h-0" aria-controls="steps-uid-5-p-0" class=""><span class="current-info audible">current step: </span><span class="number">1</span> Personal data</a></li><li role="tab" class="disabled" aria-disabled="true"><a id="steps-uid-5-t-1" href="#steps-uid-5-h-1" aria-controls="steps-uid-5-p-1" class="disabled"><span class="number">2</span> Your education</a></li><li role="tab" class="disabled" aria-disabled="true"><a id="steps-uid-5-t-2" href="#steps-uid-5-h-2" aria-controls="steps-uid-5-p-2" class="disabled"><span class="number">3</span> Your experience</a></li><li role="tab" class="disabled last" aria-disabled="true"><a id="steps-uid-5-t-3" href="#steps-uid-5-h-3" aria-controls="steps-uid-5-p-3" class="disabled"><span class="number">4</span> Additional info</a></li></ul></div><div class="content clearfix">
