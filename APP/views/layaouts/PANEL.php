@@ -168,8 +168,17 @@
 
                 <a href="#" class="breadcrumb-elements-item">
                     <i class="icon-comment-discussion mr-2"></i>
-                    Помощь
+                    Прочитать FAQ
                 </a>
+
+                
+                <a href="#" class="breadcrumb-elements-item">
+                    <i class="icon-comment-discussion mr-2"></i>
+                    Написать тикет
+                </a>
+
+
+
 
 
 
