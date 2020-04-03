@@ -241,14 +241,12 @@
                         <!-- Main -->
                         <li class="nav-item-header mt-0"> <i class="icon-menu" title="Main"></i></li>
                         <li class="nav-item">
-                            <a href="index.html" class="nav-link active">
+                            <a href="#" class="nav-link active">
                                 <i class="icon-home4"></i>
-                                <span>
-										Dashboard
-									</span>
+                                <span>		Мои проекты	</span>
                             </a>
                         </li>
-                        <li class="nav-item"><a href="../../../RTL/default/full/index.html" class="nav-link"><i class="icon-width"></i> <span>RTL version</span></a></li>
+                        <li class="nav-item"><a href="#" class="nav-link"><i class="icon-width"></i> <span>Добавить проект</span></a></li>
                         <!-- /main -->
 
                         <!-- Layout -->
