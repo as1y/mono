@@ -10,7 +10,7 @@
     <form class="wizard-form steps-validation wizard clearfix" action="#" data-fouc="" role="application" id="steps-uid-5" novalidate="novalidate">
 
 
-        <div class="steps">
+        <div >
             <ul role="tablist">
 
 
