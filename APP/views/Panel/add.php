@@ -1,7 +1,8 @@
 
 <div class="card">
+
     <div class="card-header bg-white header-elements-inline">
-        <h6 class="card-title">Wizard with validation</h6>
+        <h6 class="card-title">Remote content source</h6>
         <div class="header-elements">
             <div class="list-icons">
                 <a class="list-icons-item" data-action="collapse"></a>
@@ -424,6 +425,7 @@
 
 <!-- Remote content source -->
 <div class="card">
+
     <div class="card-header bg-white header-elements-inline">
         <h6 class="card-title">Remote content source</h6>
         <div class="header-elements">
