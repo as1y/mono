@@ -239,8 +239,6 @@
                     <ul class="nav nav-sidebar" data-nav-type="accordion">
 
                         <!-- Main -->
- 
-
                         <li class="nav-item-header">
                             <div class="text-uppercase font-size-sm line-height-sm">МОИ ПРОЕКТЫ</div>
                         </li>
@@ -254,6 +252,12 @@
                         </li>
                         <li class="nav-item"><a href="#" class="nav-link"><i class="icon-phone-plus"></i> <span>Добавить проект</span></a></li>
                         <!-- /main -->
+
+                        <li class="nav-item-header">
+                            <div class="text-uppercase font-size-sm line-height-sm">ОБЗОР БИРЖИ</div>
+                        </li>
+
+
 
 
                     </ul>
