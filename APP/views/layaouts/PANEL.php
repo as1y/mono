@@ -313,11 +313,7 @@
         <div class="content">
 
             <!-- Main charts -->
-            <div class="row">
-
-                <?=$content?>
-
-        </div>
+            <?=$content?>
             <!-- /main charts -->
 
 
