@@ -247,6 +247,10 @@
                 </div>
                 <!-- /user menu -->
 
+                <?php
+                $active[$this->route['action']] = 'class="active"';
+                ?>
+
 
                 <!-- Main navigation -->
                 <div class="card-body p-0">
@@ -259,12 +263,12 @@
 
 
                         <li class="nav-item">
-                            <a href="#" class="nav-link active">
+                            <a href="/panel/" class="nav-link <?=isset($active['index']) ? $active['index'] : ''; ?>">
                                 <i class="icon-home4"></i>
                                 <span>	Проекты </span>
                             </a>
                         </li>
-                        <li class="nav-item"><a href="#" class="nav-link"><i class="icon-phone-plus"></i> <span>Добавить проект</span></a></li>
+                        <li class="nav-item"><a href="/panel/add" class="nav-link <?=isset($active['index']) ? $active['index'] : ''; ?>"><i class="icon-phone-plus"></i> <span>Добавить проект</span></a></li>
                         <!-- /main -->
 
                         <li class="nav-item-header">
