@@ -260,14 +260,14 @@
                         <li class="nav-item">
                             <a href="#" class="nav-link">
                                 <i class="icon-home4"></i>
-                                <span>	Каталог операторов </span>
+                                <span>	Операторы </span>
                             </a>
                         </li>
 
                         <li class="nav-item">
                             <a href="#" class="nav-link">
                                 <i class="icon-home4"></i>
-                                <span>	Каталог проектов </span>
+                                <span>	Проекты </span>
                             </a>
                         </li>
 
