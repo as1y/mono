@@ -729,28 +729,7 @@
         <!-- /content area -->
 
 
-        <!-- Footer -->
-        <div class="navbar navbar-expand-lg navbar-dark">
-            <div class="text-center d-lg-none w-100">
-                <button type="button" class="navbar-toggler dropdown-toggle" data-toggle="collapse" data-target="#navbar-footer">
-                    <i class="icon-unfold mr-2"></i>
-                    Footer
-                </button>
-            </div>
 
-            <div class="navbar-collapse collapse" id="navbar-footer">
-			<span class="navbar-text">
-				&copy; 2020 <b><a href="/panel/">CASHCALL.RU</a></b> - Биржа удаленных операторов на телефоне.
-			</span>
-
-                <ul class="navbar-nav ml-lg-auto">
-                    <li class="nav-item"><a href="mailto: <?=CONFIG['BASEMAIL']['email']?>" class="navbar-nav-link" target="_blank"><i class="icon-mail-read mr-2"></i> <?=CONFIG['BASEMAIL']['email']?></a></li>
-
-
-                </ul>
-            </div>
-        </div>
-        <!-- /footer -->
 
     </div>
     <!-- /content wrapper -->
@@ -760,6 +739,31 @@
 
 </div>
 <!-- /page content -->
+
+
+<!-- Footer -->
+<div class="navbar navbar-expand-lg navbar-dark">
+    <div class="text-center d-lg-none w-100">
+        <button type="button" class="navbar-toggler dropdown-toggle" data-toggle="collapse" data-target="#navbar-footer">
+            <i class="icon-unfold mr-2"></i>
+            Footer
+        </button>
+    </div>
+
+    <div class="navbar-collapse collapse" id="navbar-footer">
+			<span class="navbar-text">
+				&copy; 2020 <b><a href="/panel/">CASHCALL.RU</a></b> - Биржа удаленных операторов на телефоне.
+			</span>
+
+        <ul class="navbar-nav ml-lg-auto">
+            <li class="nav-item"><a href="mailto: <?=CONFIG['BASEMAIL']['email']?>" class="navbar-nav-link" target="_blank"><i class="icon-mail-read mr-2"></i> <?=CONFIG['BASEMAIL']['email']?></a></li>
+
+
+        </ul>
+    </div>
+</div>
+<!-- /footer -->
+
 
 </body>
 </html>
