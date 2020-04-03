@@ -11,7 +11,7 @@
         <h6>Проект</h6>
         <fieldset>
             <div class="text-center">
-                <div class="col-md-6">
+                <div class="col-md-6 text-center">
                     <div class="form-group">
                         <label>Select location: <span class="text-danger">*</span></label>
                         <select name="location" data-placeholder="Select position" class="form-control form-control-select2 required" data-fouc>
