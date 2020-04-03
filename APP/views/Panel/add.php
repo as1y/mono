@@ -13,7 +13,7 @@
     <div class="card-body">
         <p class="mb-4">Validate.js makes simple clientside form validation easy, whilst still offering plenty of customization options. The plugin comes bundled with a useful set of validation methods, including URL and email validation, while providing an API to write your own methods. All bundled methods come with default error messages in english and translations into 37 other languages. <strong>Note:</strong> <code>success</code> callback is configured for demo purposes only and can be removed in validation setup.</p>
 
-        <form class="form-validate-jquery" action="#" novalidate="novalidate">
+        <form class="form-validate-jquery" action="/panel/add/" novalidate="novalidate">
             <fieldset class="mb-3">
                 <legend class="text-uppercase font-size-sm font-weight-bold">Basic inputs</legend>
 
