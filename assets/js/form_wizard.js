@@ -40,29 +40,7 @@ var FormWizard = function() {
             }
         });
 
-        // Async content loading
-        $('.steps-async').steps({
-            headerTag: 'h6',
-            bodyTag: 'fieldset',
-            transitionEffect: 'fade',
-            titleTemplate: '<span class="number">#index#</span> #title#',
-            loadingTemplate: '<div class="card-body text-center"><i class="icon-spinner2 spinner mr-2"></i>  #text#</div>',
-            labels: {
-                previous: '<i class="icon-arrow-left13 mr-2" /> Previous',
-                next: 'Next <i class="icon-arrow-right14 ml-2" />',
-                finish: 'Submit form <i class="icon-arrow-right14 ml-2" />'
-            },
-            onContentLoaded: function (event, currentIndex) {
-                $(this).find('.card-body').addClass('hide');
 
-                // Re-initialize components
-                _componentSelect2();
-                _componentUniform();
-            },
-            onFinished: function (event, currentIndex) {
-                alert('Form submitted.');
-            }
-        });
 
         // Saving wizard state
         $('.steps-state-saving').steps({
@@ -254,10 +232,9 @@ var FormWizard = function() {
     return {
         init: function() {
             _componentWizard();
-            // _componentUniform();
-
-            // _componentSelect2();
             _componentUniform();
+            _componentSelect2();
+
         }
     }
 }();
