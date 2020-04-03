@@ -255,8 +255,8 @@ var FormWizard = function() {
         init: function() {
             // _componentWizard();
             // _componentUniform();
-            // _componentSelect2();
-
+            
+            _componentSelect2();
             _componentUniform();
         }
     }
