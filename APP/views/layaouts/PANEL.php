@@ -117,7 +117,7 @@
                     </div>
 
                     <div class="dropdown-content-footer justify-content-center p-0">
-                        <a href="#" class="bg-light text-grey w-100 py-2" data-popup="tooltip" title="" data-original-title="Load more"><i class="icon-menu7 d-block top-0"></i></a>
+                        <a href="#" class="bg-light text-grey w-100 py-2" data-popup="tooltip" title="" data-original-title="Показать все"><i class="icon-menu7 d-block top-0"></i></a>
                     </div>
                 </div>
             </li>
@@ -2189,7 +2189,7 @@
 
 
 <!-- Footer -->
-<div class="navbar navbar-expand-lg navbar-light">
+<div class="navbar navbar-expand-lg navbar-dark">
     <div class="text-center d-lg-none w-100">
         <button type="button" class="navbar-toggler dropdown-toggle" data-toggle="collapse" data-target="#navbar-footer">
             <i class="icon-unfold mr-2"></i>
@@ -2199,7 +2199,7 @@
 
     <div class="navbar-collapse collapse" id="navbar-footer">
 			<span class="navbar-text">
-				&copy; 2015 - 2018. <a href="#">Limitless Web App Kit</a> by <a href="http://themeforest.net/user/Kopyov" target="_blank">Eugene Kopyov</a>
+				&copy; 2020 <a href="/panel/">CASHCALL.RU</a> - Коммуникационная CPL платформа. Биржа удаленных операторов на телефоне.
 			</span>
 
         <ul class="navbar-nav ml-lg-auto">
