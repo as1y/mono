@@ -17,6 +17,7 @@
                     <div class="form-group">
                         <label>Название проекта: <span class="text-danger">*</span></label>
                         <input type="text" name="name" class="form-control required" placeholder="John Doe">
+                        <span class="form-text text-muted">Left aligned helper</span>
                     </div>
                 </div>
 
@@ -24,6 +25,7 @@
                     <div class="form-group">
                         <label>ТРАНСКРИПЦИЯ: <span class="text-danger">*</span></label>
                         <input type="text" name="name" class="form-control required" placeholder="John Doe">
+                        <span class="form-text text-muted">Left aligned helper</span>
                     </div>
                 </div>
 
@@ -32,6 +34,7 @@
                     <div class="form-group">
                         <label>URL сайта: <span class="text-danger">*</span></label>
                         <input type="text" name="name" class="form-control required" placeholder="John Doe">
+                        <span class="form-text text-muted">Left aligned helper</span>
                     </div>
                 </div>
 
@@ -40,6 +43,8 @@
                     <div class="form-group">
                         <label>Адрес нахождения: <span class="text-danger">*</span></label>
                         <input type="text" name="name" class="form-control required" placeholder="John Doe">
+                        <span class="form-text text-muted">Left aligned helper</span>
+
                     </div>
                 </div>
 
