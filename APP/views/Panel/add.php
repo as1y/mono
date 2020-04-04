@@ -54,8 +54,8 @@
 
 
                     <div class="form-group">
-                        <label>Сфера деятельности:</label>
-                        <select name="location" data-placeholder="Выберете направление" class="form-control form-control-select2" data-fouc>
+                        <label>Сфера деятельности:</label> <span class="text-danger">*</span>
+                        <select name="location" data-placeholder="Выберете направление" class="form-control form-control-select2 required" data-fouc>
 
                             <option></option>
                             <option value="1">Digital</option>
