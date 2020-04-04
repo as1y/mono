@@ -48,14 +48,14 @@
                     </div>
                 </div>
 
-
+                <div class="col-md-12">
                 <div class="form-group row">
                     <label class="col-form-label col-lg-3">Basic textarea <span class="text-danger">*</span></label>
                     <div class="col-lg-9">
                         <textarea rows="5" cols="5" name="textarea" class="form-control" required="" placeholder="Default textarea"></textarea>
                     </div>
                 </div>
-
+                </div>
 
 
             </div>
