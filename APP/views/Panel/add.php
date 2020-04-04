@@ -50,9 +50,9 @@
 
 
                 <div class="col-md-12">
-                    <div class="form-group row">
+                    <div class="form-group">
                         <label>Логотип:</label>
-                        
+
                             <div class="uniform-uploader"><input type="file" class="form-control-uniform-custom"><span class="filename" style="user-select: none;">No file selected</span><span class="action btn bg-blue" style="user-select: none;">Choose File</span></div>
                         <span class="form-text text-muted">Left aligned helper</span>
 
