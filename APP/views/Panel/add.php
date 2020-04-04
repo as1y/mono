@@ -29,7 +29,9 @@
                     </div>
                 </div>
 
+            </div>
 
+            <div class="row">
                 <div class="col-md-6">
                     <div class="form-group">
                         <label>URL сайта: <span class="text-danger">*</span></label>
@@ -37,8 +39,6 @@
                         <span class="form-text text-muted">Left aligned helper</span>
                     </div>
                 </div>
-
-
                 <div class="col-md-6">
                     <div class="form-group">
                         <label>Адрес нахождения: <span class="text-danger">*</span></label>
@@ -48,6 +48,7 @@
                     </div>
                 </div>
 
+            </div>
 
 
                 <div class="col-md-6">
