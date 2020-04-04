@@ -48,15 +48,29 @@
                     </div>
                 </div>
 
-                <div class="col-md-12">
 
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label class="col-form-label col-lg-2">Логотип</label>
+
+                        <div class="col-lg-10">
+                            <div class="uniform-uploader"><input type="file" class="form-control-uniform-custom"><span class="filename" style="user-select: none;">No file selected</span><span class="action btn bg-blue" style="user-select: none;">Choose File</span></div>
+                        </div>
+                        <span class="form-text text-muted">Left aligned helper</span>
+
+
+
+                    </div>
+                </div>
+
+
+
+                <div class="col-md-12">
                 <div class="form-group">
                     <label>О компании: <span class="text-danger">*</span></label>
                         <textarea rows="5" cols="5" name="textarea" class="form-control required"  placeholder="Default textarea"></textarea>
 
                     <span class="form-text text-muted">Left aligned helper</span>
-
-
                 </div>
                 </div>
 
