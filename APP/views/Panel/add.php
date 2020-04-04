@@ -15,8 +15,8 @@
 
                 <div class="col-md-6">
                     <div class="form-group">
-                        <label>Название проекта:</label>
-                        <input type="text" name="name" class="form-control" placeholder="John Doe">
+                        <label>Applicant name: <span class="text-danger">*</span></label>
+                        <input type="text" name="name" class="form-control required" placeholder="John Doe">
                     </div>
                 </div>
 
