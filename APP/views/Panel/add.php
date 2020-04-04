@@ -16,7 +16,7 @@
                 <div class="col-md-6">
                     <div class="form-group">
                         <label>Компания: <span class="text-danger">*</span></label>
-                        <input type="text" name="name" class="form-control required" placeholder="John Doe">
+                        <input type="text" name="company" class="form-control required" placeholder="John Doe">
                         <span class="form-text text-muted">Left aligned helper</span>
                     </div>
                 </div>
@@ -24,7 +24,7 @@
                 <div class="col-md-6">
                     <div class="form-group">
                         <label>ТРАНСКРИПЦИЯ: <span class="text-danger">*</span></label>
-                        <input type="text" name="name" class="form-control required" placeholder="John Doe">
+                        <input type="text" name="transkr" class="form-control required" placeholder="John Doe">
                         <span class="form-text text-muted">Left aligned helper</span>
                     </div>
                 </div>
