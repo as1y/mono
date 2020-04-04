@@ -36,6 +36,14 @@
                 </div>
 
 
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>Адрес нахождения: <span class="text-danger">*</span></label>
+                        <input type="text" name="name" class="form-control required" placeholder="John Doe">
+                    </div>
+                </div>
+
+
 
 
 
