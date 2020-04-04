@@ -8,7 +8,7 @@
     </div>
 
     <form class="wizard-form steps-validation" action="#" data-fouc>
-        <h6>Проект</h6>
+        <h6>Компания</h6>
         <fieldset>
             <div class="row">
 
@@ -50,18 +50,33 @@
 
 
 
-                <div class="col-md-8">
-                <div class="form-group">
-                    <label>О компании: <span class="text-danger">*</span></label>
-                        <textarea rows="5" cols="5" name="textarea" class="form-control required"  placeholder="Default textarea"></textarea>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>Тематика бизнеса:</label>
 
-                    <span class="form-text text-muted">Left aligned helper</span>
+
+                        <select data-placeholder="Выбере направление деятельности..." class="form-control select" data-fouc>
+                            <option></option>
+                            <optgroup label="Mountain Time Zone">
+                                <option value="AZ">Arizona</option>
+                                <option value="CO">Colorado</option>
+                                <option value="ID">Idaho</option>
+                                <option value="WY">Wyoming</option>
+                            </optgroup>
+                        </select>
+
+
+
+                        <span class="form-text text-muted">Left aligned helper</span>
+
+                    </div>
                 </div>
-                </div>
 
 
 
-                <div class="col-md-4">
+
+
+                <div class="col-md-6">
                     <div class="form-group">
                         <label>Логотип:</label>
 
@@ -70,6 +85,17 @@
 
                     </div>
                 </div>
+
+
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label>О компании: <span class="text-danger">*</span></label>
+                        <textarea rows="5" cols="5" name="textarea" class="form-control required"  placeholder="Default textarea"></textarea>
+
+                        <span class="form-text text-muted">Left aligned helper</span>
+                    </div>
+                </div>
+
 
 
 
