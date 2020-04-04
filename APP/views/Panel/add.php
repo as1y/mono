@@ -15,7 +15,7 @@
 
                 <div class="col-md-6">
                     <div class="form-group">
-                        <label>Название проекта: <span class="text-danger">*</span></label>
+                        <label>Компания: <span class="text-danger">*</span></label>
                         <input type="text" name="name" class="form-control required" placeholder="John Doe">
                         <span class="form-text text-muted">Left aligned helper</span>
                     </div>
