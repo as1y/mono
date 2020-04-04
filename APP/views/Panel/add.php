@@ -106,7 +106,7 @@
 
         </fieldset>
 
-        <h6>Your education</h6>
+        <h6>Продукт</h6>
         <fieldset>
             <div class="row">
                 <div class="col-md-6">
@@ -208,7 +208,7 @@
             </div>
         </fieldset>
 
-        <h6>Your experience</h6>
+        <h6>Оффер</h6>
         <fieldset>
             <div class="row">
                 <div class="col-md-6">
@@ -294,7 +294,7 @@
             </div>
         </fieldset>
 
-        <h6>Additional info</h6>
+        <h6>Настройки</h6>
         <fieldset>
             <div class="row">
                 <div class="col-md-6">
