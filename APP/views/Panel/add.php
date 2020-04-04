@@ -29,9 +29,7 @@
                     </div>
                 </div>
 
-            </div>
 
-            <div class="row">
                 <div class="col-md-6">
                     <div class="form-group">
                         <label>URL сайта: <span class="text-danger">*</span></label>
@@ -39,6 +37,8 @@
                         <span class="form-text text-muted">Left aligned helper</span>
                     </div>
                 </div>
+
+
                 <div class="col-md-6">
                     <div class="form-group">
                         <label>Адрес нахождения: <span class="text-danger">*</span></label>
@@ -48,14 +48,13 @@
                     </div>
                 </div>
 
-            </div>
 
 
                 <div class="col-md-6">
 
 
                     <div class="form-group">
-                        <label>Сфера деятельности:</label> <span class="text-danger">*</span>
+                        <label>Сфера деятельности:</label>
                         <select name="location" data-placeholder="Выберете направление" class="form-control form-control-select2 required" data-fouc>
 
                             <option></option>
