@@ -49,18 +49,6 @@
                 </div>
 
 
-
-                <div class="col-md-8">
-                <div class="form-group">
-                    <label>О компании: <span class="text-danger">*</span></label>
-                        <textarea rows="5" cols="5" name="textarea" class="form-control required"  placeholder="Default textarea"></textarea>
-
-                    <span class="form-text text-muted">Left aligned helper</span>
-                </div>
-                </div>
-
-
-
                 <div class="col-md-4">
                     <div class="form-group">
                         <label>Логотип:</label>
@@ -70,6 +58,20 @@
 
                     </div>
                 </div>
+
+
+                <div class="col-md-8">
+                <div class="form-group">
+                    <label>Описание компании для операторов: <span class="text-danger">*</span></label>
+                        <textarea rows="5" cols="5" name="textarea" class="form-control required"  placeholder="Default textarea"></textarea>
+
+                    <span class="form-text text-muted">Left aligned helper</span>
+                </div>
+                </div>
+
+
+
+
 
 
 
