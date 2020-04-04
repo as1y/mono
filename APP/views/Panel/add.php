@@ -15,7 +15,14 @@
 
                 <div class="col-md-6">
                     <div class="form-group">
-                        <label>Applicant name: <span class="text-danger">*</span></label>
+                        <label>Название проекта: <span class="text-danger">*</span></label>
+                        <input type="text" name="name" class="form-control required" placeholder="John Doe">
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>ТРАНСКРИПЦИЯ: <span class="text-danger">*</span></label>
                         <input type="text" name="name" class="form-control required" placeholder="John Doe">
                     </div>
                 </div>
