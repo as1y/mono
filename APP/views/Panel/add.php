@@ -49,10 +49,10 @@
                 </div>
 
                 <div class="col-md-12">
-                    
+
                 <div class="form-group">
                     <label>О компании: <span class="text-danger">*</span></label>
-                        <textarea rows="5" cols="5" name="textarea" class="form-control" required="" placeholder="Default textarea"></textarea>
+                        <textarea rows="5" cols="5" name="textarea" class="form-control required"  placeholder="Default textarea"></textarea>
 
                     <span class="form-text text-muted">Left aligned helper</span>
 
