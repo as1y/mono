@@ -51,17 +51,32 @@
 
 
                 <div class="col-md-6">
+
+
                     <div class="form-group">
                         <label>Select location:</label>
-                        <select name="location" data-placeholder="Select position" class="form-control form-control-select2 select2-hidden-accessible" data-fouc="" data-select2-id="1" tabindex="-1" aria-hidden="true">
-                            <option data-select2-id="3"></option>
+                        <select name="location" data-placeholder="Select position" class="form-control form-control-select2" data-fouc>
+                            <option></option>
                             <optgroup label="North America">
                                 <option value="1">United States</option>
                                 <option value="2">Canada</option>
                             </optgroup>
-
-                        </select><span class="select2 select2-container select2-container--default" dir="ltr" data-select2-id="2" style="width: 100%;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-disabled="false" aria-labelledby="select2-location-m3-container"><span class="select2-selection__rendered" id="select2-location-m3-container" role="textbox" aria-readonly="true"><span class="select2-selection__placeholder">Select position</span></span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
+                            <optgroup label="Latin America">
+                                <option value="3">Chile</option>
+                                <option value="4">Argentina</option>
+                                <option value="5">Colombia</option>
+                                <option value="6">Peru</option>
+                            </optgroup>
+                            <optgroup label="Europe">
+                                <option value="8">Croatia</option>
+                                <option value="9">Hungary</option>
+                                <option value="10">Ukraine</option>
+                                <option value="11">Greece</option>
+                            </optgroup>
+                        </select>
                     </div>
+
+                    
                 </div>
 
 
