@@ -54,29 +54,21 @@
 
 
                     <div class="form-group">
-                        <label>Select location:</label>
-                        <select name="location" data-placeholder="Select position" class="form-control form-control-select2" data-fouc>
+                        <label>Сфера деятельности:</label>
+                        <select name="location" data-placeholder="Выберете направление" class="form-control form-control-select2" data-fouc>
+
                             <option></option>
-                            <optgroup label="North America">
-                                <option value="1">United States</option>
-                                <option value="2">Canada</option>
-                            </optgroup>
-                            <optgroup label="Latin America">
-                                <option value="3">Chile</option>
-                                <option value="4">Argentina</option>
-                                <option value="5">Colombia</option>
-                                <option value="6">Peru</option>
-                            </optgroup>
-                            <optgroup label="Europe">
-                                <option value="8">Croatia</option>
-                                <option value="9">Hungary</option>
-                                <option value="10">Ukraine</option>
-                                <option value="11">Greece</option>
-                            </optgroup>
+                            <option value="1">Digital</option>
+                            <option value="2">Медицина</option>
+                            <option value="3">Банковский сектр</option>
+                            <option value="4">Страховка</option>
+
+
+
                         </select>
                     </div>
 
-                    
+
                 </div>
 
 
