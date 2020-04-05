@@ -14,7 +14,7 @@
             <div class="card-header bg-white header-elements-inline">
                 <h6 class="card-title">Проект: <b><?=$row['name']?></b></h6>
                 <div class="header-elements">
-                    <button type="button" class="btn bg-success-400 btn-icon"><i class="icon-task"></i></button>
+                    <button type="button" class="btn bg-success-400 btn-icon">РЕДАКТИРОВАТЬ</button>
                 </div>
             </div>
             <div class="card-body">
