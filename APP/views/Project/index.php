@@ -106,7 +106,7 @@
 
     <div class="card">
         <div class="card-header bg-white header-elements-inline">
-            <h6 class="card-title">Управление <b><?=$company['name']?></b></h6>
+            <h6 class="card-title">Статус проекта <b><?=$company['name']?></b></h6>
 
             <div class="header-elements">
                 <div class="list-icons">
@@ -218,7 +218,7 @@
                         <?endif;?>
 
                         <h5 class="card-title">Баланс <?=$balnow?> руб.</h5>
-                        
+
                         <a href="/panel/balance/" class="btn bg-success"><i class="icon-coins ml-2"></i> ПОПОЛНИТЬ</a>
 
 
