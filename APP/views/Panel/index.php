@@ -33,7 +33,7 @@
 
 
             </div>
-            <div class="card-body">
+            <div class="card-body justify-content-center text-center">
 
                 <div class="row">
 
