@@ -55,7 +55,7 @@
 
                     <!-- Main -->
                     <li class="nav-item-header">
-                        <div class="text-uppercase font-size-sm line-height-sm">МОИ ПРОЕКТЫ</div>
+                        <div class="text-uppercase font-size-sm line-height-sm">УПРАВЛЕНИЕ ПРОЕКТОМ</div>
                     </li>
 
 
