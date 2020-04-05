@@ -27,23 +27,35 @@ class Addp extends \APP\core\base\Model {
     // Правила валидации
     public $rules = [
         'required' => [
-            ['signup-username'],
-            ['signup-email'],
-            ['signup-password'],
-            ['signup-password-confirm'],
+            ['company'],
+            ['transkr'],
+            ['adress'],
+            ['tematika'],
+            ['aboutcompany'],
+            ['nameproduct'],
+            ['minimumprice'],
+            ['type'],
+            ['priceresult'],
+            ['mincall'],
+            ['timecall'],
+
+
+
         ],
         'email' =>[
-            ['signup-email'],
+            ['email'],
         ],
-        'lengthMin' =>[
-            ['signup-password',5],
-            ['signup-password-confirm',5],
-        ],
-        'lengthMax' =>[
-            ['signup-password',30],
-            ['signup-password-confirm',30],
-            ['signup-username',30],
-        ],
+
+
+//        'lengthMin' =>[
+//            ['signup-password',5],
+//            ['signup-password-confirm',5],
+//        ],
+//        'lengthMax' =>[
+//            ['signup-password',30],
+//            ['signup-password-confirm',30],
+//            ['signup-username',30],
+//        ],
 
 
 
