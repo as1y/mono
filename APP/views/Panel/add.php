@@ -268,9 +268,9 @@
 
 
             </div>
-            <legend class="text-uppercase font-size-sm font-weight-bold"></legend>
-            <div class="row text-center">
 
+            <div class="row text-center">
+                <legend class="text-uppercase font-size-sm font-weight-bold"></legend>
                 <div class="col-md-4">
 
                 </div>
