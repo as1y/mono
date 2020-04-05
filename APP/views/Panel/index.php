@@ -30,28 +30,7 @@
 
                     <div class="col-md-6">
 
-                        <div class="row text-center">
-                            <div class="col-4">
-                                <div class="mb-3">
-                                    <h5 class="font-weight-semibold mb-0">5,689</h5>
-                                    <span class="text-muted font-size-sm">new orders</span>
-                                </div>
-                            </div>
-
-                            <div class="col-4">
-                                <div class="mb-3">
-                                    <h5 class="font-weight-semibold mb-0">32,568</h5>
-                                    <span class="text-muted font-size-sm">this month</span>
-                                </div>
-                            </div>
-
-                            <div class="col-4">
-                                <div class="mb-3">
-                                    <h5 class="font-weight-semibold mb-0">$23,464</h5>
-                                    <span class="text-muted font-size-sm">expected profit</span>
-                                </div>
-                            </div>
-                        </div>
+    
 
                         <div class="card-body d-md-flex align-items-md-center justify-content-md-between flex-md-wrap">
 
