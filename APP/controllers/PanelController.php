@@ -3,10 +3,7 @@ namespace APP\controllers;
 use APP\core\Cache;
 use APP\models\Addp;
 use APP\models\Panel;
-use APP\models\Project;
-use APP\models\Add;
-use APP\models\Profile;
-use APP\models\Help;
+use APP\core\base\Model;
 
 
 class PanelController extends AppController {
