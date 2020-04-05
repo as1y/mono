@@ -130,14 +130,23 @@
             </div>
 
             <div class="row">
+                <div class="col-md-12">
 
 
-                <div class="form-group">
-                    <label>Для кого продукт: <span class="text-danger">*</span></label>
-                    <textarea rows="5" cols="5" name="aboutcompany" class="form-control required"  placeholder="Продукт для малого бизнеса. ЛПР владельцы ИП"></textarea>
-                    <span class="form-text text-muted">Целевая аудитория продукта. Кто ЛПР.</span>
+
+                    <div class="form-group">
+                        <label>Для кого продукт: <span class="text-danger">*</span></label>
+                        <textarea rows="5" cols="5" name="aboutcompany" class="form-control required"  placeholder="Продукт для малого бизнеса. ЛПР владельцы ИП"></textarea>
+                        <span class="form-text text-muted">Целевая аудитория продукта. Кто ЛПР.</span>
+
+                    </div>
+
 
                 </div>
+
+
+
+
 
             </div>
 
