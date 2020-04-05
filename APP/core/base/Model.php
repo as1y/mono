@@ -56,6 +56,43 @@ abstract class Model
 	// Красивый вывод ошибок валидации
 
 
+    public function loaduser($table,$iduser) {
+        return R::load($table, $iduser);
+    }
+
+    public function checkbalance($table) {
+        $balnow = R::load($table, $_SESSION['ulogin']['id']);
+        return $balnow['balance'];
+    }
+
+    public function allcontact($iduser) {
+        $mass = R::find("contact", "WHERE users_id = ?", [$iduser]);
+        return $mass;
+    }
+
+    public function allresult($iduser) {
+        $mass = R::find("result", "WHERE users_id = ?", [$iduser]);
+        return $mass;
+    }
+
+
+
+
+
+    public function online (){
+
+        if ($_SESSION['ulogin']) $user = $_SESSION['ulogin']['username'];
+        else $user = "guest";
+
+        $online = R::find("onlone", "WHERE ip = ?", [$_SERVER['REMOTE_ADDR']]);
+
+
+
+    }
+
+
+
+
 	//ОТПРАВКА E - MAIL
 }
 ?>
