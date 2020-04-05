@@ -56,7 +56,7 @@
                 </div>
 
                 <div class="ml-3 align-self-center">
-                    <i class="icon-bubbles4 icon-3x opacity-75"></i>
+                    <i class="icon-percent icon-3x opacity-75"></i>
                 </div>
             </div>
         </div>
