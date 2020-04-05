@@ -132,8 +132,18 @@
                             <span class="form-text text-muted">В среднем оператор в смену совершает от 100 звонков</span>
                         </div>
                         <div class="col-md-6">
+
+                            
+
+
                             <label>Вознаграждение:</label>
                             <input type="text" name="priceresult" placeholder="500" class="form-control required">
+
+                            <div class="form-control-feedback form-control-feedback-lg">
+                                <i class="icon-make-group"></i>
+                            </div>
+
+
                             <span class="form-text text-muted">Для мотивации рекомендуем поставить вознаграждение за совершения минимально кол-ва звонков</span>
                         </div>
 
