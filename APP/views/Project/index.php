@@ -48,7 +48,7 @@
 
 
     <div class="col-sm-6 col-xl-3">
-        <div class="card card-body bg-blue-400 has-bg-image">
+        <div class="card card-body bg-warning-400 has-bg-image">
             <div class="media">
                 <div class="media-body">
                     <h3 class="mb-0">0</h3>
