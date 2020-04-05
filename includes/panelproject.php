@@ -41,7 +41,7 @@
 
                     <!-- Main -->
                     <li class="nav-item-header">
-                        <div class="text-uppercase font-size-sm line-height-sm">УПРАВЛЕНИЕ ПРОЕКТОМ</div>
+                        <div class="text-uppercase font-size-sm line-height-sm">ИНФОРМАЦИЯ</div>
                     </li>
 
 
@@ -53,12 +53,6 @@
                     </li>
 
 
-                    <li class="nav-item">
-                        <a href="/project/set/?id=<?=$_GET['id']?>" class="nav-link <?=isset($active['set']) ? $active['set'] : ''; ?>">
-                            <i class="icon-home4"></i>
-                            <span>	Настройки </span>
-                        </a>
-                    </li>
 
                     <li class="nav-item">
                         <a href="/project/result/?id=<?=$_GET['id']?>" class="nav-link <?=isset($active['result']) ? $active['result'] : ''; ?>">
@@ -73,6 +67,18 @@
                         <a href="/project/operator/?id=<?=$_GET['id']?>" class="nav-link <?=isset($active['operator']) ? $active['operator'] : ''; ?>">
                             <i class="icon-home4"></i>
                             <span>	Операторы </span>
+                        </a>
+                    </li>
+
+
+                    <li class="nav-item-header">
+                        <div class="text-uppercase font-size-sm line-height-sm">УПРАВЛЕНИЕ ПРОЕКТОМ</div>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="/project/set/?id=<?=$_GET['id']?>" class="nav-link <?=isset($active['set']) ? $active['set'] : ''; ?>">
+                            <i class="icon-home4"></i>
+                            <span>	Настройки </span>
                         </a>
                     </li>
 
