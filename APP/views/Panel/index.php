@@ -44,10 +44,10 @@
 
                     </div>
 
-                    
 
 
-                    <div class="col-md-6">
+
+                    <div class="col-md-8">
 
                         <div class="card-body d-md-flex align-items-md-center justify-content-md-between flex-md-wrap">
 
