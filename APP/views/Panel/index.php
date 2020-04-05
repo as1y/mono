@@ -72,7 +72,7 @@
                             <a href="#" class="list-group-item list-group-item-action">
 									<span class="font-weight-semibold">
 										<i class="icon-grid mr-2"></i>
-										Новых сообщений
+										Сообщения, требующие ответа
 									</span>
                                 <span class="badge bg-success ml-auto">0</span>
                             </a>
