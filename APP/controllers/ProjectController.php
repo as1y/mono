@@ -31,7 +31,7 @@ class ProjectController extends AppController {
         \APP\core\base\View::setBreadcrumbs($BREADCRUMBS);
 
 
-        
+
 
 
 //		//Переменные

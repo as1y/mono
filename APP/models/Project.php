@@ -1,7 +1,11 @@
 <?php
 namespace APP\models;
 class Project extends \APP\core\base\Model {
+
+
 	public function getcom($idc) {
+
+
 		if( isset($_SESSION['ulogin']['woof']) || $_SESSION['ulogin']['woof'] == "1") {
 			$company = \R::findOne('company', 'WHERE id = ? LIMIT 1', [$idc]);
 		} else {
@@ -10,6 +14,8 @@ class Project extends \APP\core\base\Model {
 		if(!isset($company)) redir('/panel');
 		return $company;
 	}
+
+
 	public function contact($idc) {
 		$mass = \R::find("contact", "WHERE company_id = ?", [$idc]);
 		$contact['all'] = '0';
