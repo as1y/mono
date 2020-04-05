@@ -23,7 +23,7 @@
             <!-- User menu -->
             <div  class="sidebar-user align-self-center">
                 <div class="card">
-                    <button type="button" class="btn btn-primary"><i class="icon-cog3 mr-2"></i> Вернуться назад</button>
+                    <a href="/panel/"  class="btn btn-primary"><i class="icon-cog3 mr-2"></i> Вернуться назад</a>
                 </div>
 
             </div>
