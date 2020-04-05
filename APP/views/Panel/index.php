@@ -68,7 +68,7 @@
                                 <span class="text-muted font-size-sm">revenue</span>
                             </div>
                         </div>
-                        
+
                         <ul class="list-group list-group-flush">
                             <a href="#" class="list-group-item list-group-item-action">
 									<span class="font-weight-semibold">
@@ -84,15 +84,8 @@
 
                     <div class="col-md-2 align-self-center">
 
-                        <div class="media">
-
-                        <div>
-                            <a href="#" class="btn bg-indigo-300"><i class="icon-statistics mr-2"></i> УПРАВЛЕНИЕ</a>
-                        </div>
-
-
-                    </div>
-
+                        <i class="icon-book icon-2x text-success-400 border-success-400 border-3 rounded-round p-3 mb-3 mt-1"></i>
+                        <a href="#" class="btn bg-indigo-300"><i class="icon-statistics mr-2"></i> УПРАВЛЕНИЕ</a>
 
                 </div>
 
