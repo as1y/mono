@@ -14,10 +14,7 @@ class ProjectController extends AppController {
 		//Переменные
 
         $project = new Project;
-
         $company = $project->getcom($_GET['id']);
-
-
 
         $META = [
             'title' => 'Кабинет рекламодателя',
@@ -55,13 +52,16 @@ class ProjectController extends AppController {
 		}
 		$status['script'] = $project->checkscript($_GET['id']);
 		if(isset($_GET['action']) && $_GET['action'] == "play" && isset($_GET['id'])) $project->tryplay($_GET, $status, $_GET['id']);
-		if(isset($_GET['action']) && $_GET['action'] == "stop" && isset($_GET['id']) )  $project->pstop($_GET, $idc);
+		if(isset($_GET['action']) && $_GET['action'] == "stop" && isset($_GET['id']) )  $project->pstop($_GET, $_GET['id']);
 		$this->set(compact('idc','razdel','company','contact','result','type','convert', 'balnow', 'status'));
 
 
 
 
 	}
+
+
+
 	public function resultAction() {
 		$project = new Project;
 		$razdel = "РЕЗУЛЬТАТЫ";
