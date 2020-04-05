@@ -49,8 +49,6 @@ class PanelController extends AppController {
         }
 
 
-        show($company);
-
 
 
 
