@@ -100,6 +100,9 @@
 
 <div class="row">
 
+    <div class="card">
+
+
     <div class="card-header bg-white header-elements-inline">
         <h6 class="card-title">Проект: <b><?=$company['name']?></b></h6>
 
@@ -117,5 +120,7 @@
     </div>
 
 
+        
+    </div>
 
 </div>
