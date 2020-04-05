@@ -34,8 +34,6 @@ class ProjectController extends AppController {
 
 
 
-
-
 //		//Переменные
 //		$contact =  $project->contact($idc);
 //		$result = $project->getres($idc);
