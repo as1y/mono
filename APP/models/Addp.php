@@ -70,7 +70,7 @@ class Addp extends \APP\core\base\Model {
             'datastart' => date("Y-m-d H:i:s"),
         ];
 
-        array_unshift($DATA, $uniq);
+        $DATA = array_merge($uniq, $DATA);
 
         show($DATA);
 
