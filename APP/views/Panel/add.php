@@ -19,11 +19,12 @@
                         <b><i class="icon-checkmark"></i></b>
                         Создать проект
                     </button>
+                    <h2>СОЗДАТЬ ПРОЕКТ</h2>
                 </div>
                 <div class="col-md-4">
                 </div>
-                
-                <h2>СОЗДАТЬ ПРОЕКТ</h2>
+
+
             </div>
 
             <div class="row">
