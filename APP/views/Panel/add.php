@@ -132,7 +132,7 @@
                             <div class="input-group">
 											<span class="input-group-prepend">
 												<span class="input-group-text">
-                                              <i class="icon-user"></i>
+                                              <i class="icon-phone"></i>
                                                 </span>
 											</span>
                                 <input type="text" name="mincall" placeholder="100" class="form-control required">
