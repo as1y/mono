@@ -19,7 +19,7 @@
         <div class="card card-body bg-success-400 has-bg-image">
             <div class="media">
                 <div class="mr-3 align-self-center">
-                    <i class="icon-pointer icon-3x opacity-75"></i>
+                    <i class="icon-target2 icon-3x opacity-75"></i>
                 </div>
 
                 <div class="media-body text-right">
