@@ -100,7 +100,7 @@ abstract class Model
         if ($user == "guest"){
             $online = R::findOne("online", "WHERE ip = ?", [$_SERVER['REMOTE_ADDR']]);
             if ($online) {
-                $online->time = time();
+                $online->timestamp = time();
                 R::store($online);
             }
 
