@@ -209,11 +209,21 @@
 
 
                     <div class="card-body">
-                        <i class="icon-cross2 icon-2x text-danger border-danger border-3 rounded-round p-3 mb-3"></i>
-                        <h5 class="card-title">Center alignment</h5>
-                        <p class="mb-3">Use <code>.text-center</code> alignment utility class to center content horizontally. Responsive options are also available</p>
 
-                        <a href="#" class="btn bg-success">Read more <i class="icon-arrow-right14 ml-2"></i></a>
+
+                        <? if($status['balance'] === FALSE):?>
+                            <i class="icon-cross2 icon-2x text-danger border-danger border-3 rounded-round p-3 mb-3"></i>
+                        <?else:?>
+                            <i class="icon-checkmark icon-2x text-success border-success border-3 rounded-round p-3 mb-3"></i>
+                        <?endif;?>
+
+                        <h5 class="card-title">Баланс <?=$balnow?> руб.</h5>
+                        <p class="mb-3">Небходимо минимум <b>10</b> контактов</p>
+
+                        <a href="/panel/balance/" class="btn bg-success"><i class="icon-plus3 ml-2"></i> ПОПОЛНИТЬ</a>
+
+
+
                     </div>
 
 
