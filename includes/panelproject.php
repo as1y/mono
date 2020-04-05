@@ -60,9 +60,17 @@
                         </a>
                     </li>
 
+                    <li class="nav-item">
+                        <a href="/project/result/?id=<?=$_GET['id']?>" class="nav-link <?=isset($active['result']) ? $active['result'] : ''; ?>">
+                            <i class="icon-home4"></i>
+                            <span>	Результаты </span>
+                        </a>
+                    </li>
+
+
 
                     <li class="nav-item">
-                        <a href="/project/set/?id=<?=$_GET['id']?>" class="nav-link <?=isset($active['operator']) ? $active['operator'] : ''; ?>">
+                        <a href="/project/operator/?id=<?=$_GET['id']?>" class="nav-link <?=isset($active['operator']) ? $active['operator'] : ''; ?>">
                             <i class="icon-home4"></i>
                             <span>	Операторы </span>
                         </a>
