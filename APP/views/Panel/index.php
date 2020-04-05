@@ -78,7 +78,7 @@
 									</span>
                                 <span class="badge bg-success ml-auto">New</span>
                             </a>
-                            
+
 
                         </ul>
 
@@ -86,6 +86,8 @@
 
                     <div class="col-md-2">
 
+                        <span class="align-middle">middle</span>
+                        
                         <div>
                             <a href="#" class="btn bg-indigo-300"><i class="icon-statistics mr-2"></i> View report</a>
                         </div>
