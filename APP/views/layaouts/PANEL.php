@@ -185,9 +185,9 @@
         // Вставка панели на главной странице
         <?php
 
-        if ($this->route['controller'] == "Panel") require_once( 'includes/panel1.php' );
+        if ($this->route['controller'] == "Panel") require_once( 'includes/panelrecl.php' );
 
-        if ($this->route['controller'] == "Project") require_once( 'includes/panel2.php' );
+        if ($this->route['controller'] == "Project") require_once( 'includes/panelproject.php' );
 
 
 
