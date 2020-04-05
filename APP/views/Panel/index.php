@@ -88,7 +88,7 @@
 
                         <div class="row text-center">
                             <div class="col-4">
-                                <p><i class="icon-users2 icon-2x d-inline-block text-info"></i></p>
+                                <p><i class="icon-phone2 icon-2x d-inline-block text-info"></i></p>
                                 <h5 class="font-weight-semibold mb-0">0</h5>
                                 <span class="text-muted font-size-sm">Звонков сегодня</span>
                             </div>
