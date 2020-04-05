@@ -9,7 +9,7 @@
         <div class="card-body justify-content-center text-center-end">
 
 
-            <div class="row-fluid">
+            <div class="col-lg-12">
 
                 <div class="col-sm-6 col-xl-3">
 
