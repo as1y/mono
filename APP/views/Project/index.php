@@ -3,7 +3,7 @@
 
     <div class="card">
         <div class="card-header bg-white header-elements-inline">
-            <h6 class="card-title">Статистика проекта: <b><?=$company['name']?></b></h6>
+            <h6 class="card-title">Статистика <b><?=$company['name']?></b></h6>
 
         </div>
         <div class="card-body justify-content-center">
@@ -101,7 +101,7 @@
 
     <div class="card">
         <div class="card-header bg-white header-elements-inline">
-            <h6 class="card-title">Статистика проекта: <b><?=$company['name']?></b></h6>
+            <h6 class="card-title">Управление <b><?=$company['name']?></b></h6>
 
         </div>
         <div class="card-body justify-content-center">
