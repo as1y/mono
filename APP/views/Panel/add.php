@@ -10,6 +10,7 @@
     <form class="wizard-form steps-validation" action="/panel/add/" method="post" data-fouc>
         <h6>Компания</h6>
         <fieldset>
+            <hr>
             <div class="row">
 
 
