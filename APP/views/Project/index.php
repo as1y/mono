@@ -3,8 +3,8 @@
         <div class="card card-body bg-blue-400 has-bg-image">
             <div class="media">
                 <div class="media-body">
-                    <h3 class="mb-0">54,390</h3>
-                    <span class="text-uppercase font-size-xs">total comments</span>
+                    <h3 class="mb-0">0</h3>
+                    <span class="text-uppercase font-size-xs">Звонков</span>
                 </div>
 
                 <div class="ml-3 align-self-center">
@@ -18,8 +18,8 @@
         <div class="card card-body bg-danger-400 has-bg-image">
             <div class="media">
                 <div class="media-body">
-                    <h3 class="mb-0">389,438</h3>
-                    <span class="text-uppercase font-size-xs">total orders</span>
+                    <h3 class="mb-0">0</h3>
+                    <span class="text-uppercase font-size-xs">На модерации</span>
                 </div>
 
                 <div class="ml-3 align-self-center">
@@ -37,8 +37,8 @@
                 </div>
 
                 <div class="media-body text-right">
-                    <h3 class="mb-0">652,549</h3>
-                    <span class="text-uppercase font-size-xs">total clicks</span>
+                    <h3 class="mb-0">0</h3>
+                    <span class="text-uppercase font-size-xs">Результатов</span>
                 </div>
             </div>
         </div>
@@ -52,8 +52,8 @@
                 </div>
 
                 <div class="media-body text-right">
-                    <h3 class="mb-0">245,382</h3>
-                    <span class="text-uppercase font-size-xs">total visits</span>
+                    <h3 class="mb-0">0</h3>
+                    <span class="text-uppercase font-size-xs">Конверсия</span>
                 </div>
             </div>
         </div>
