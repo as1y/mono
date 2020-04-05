@@ -56,7 +56,7 @@
 
                     <li class="nav-item">
                         <a href="/project/result/?id=<?=$_GET['id']?>" class="nav-link <?=isset($active['result']) ? $active['result'] : ''; ?>">
-                            <i class="icon-home4"></i>
+                            <i class="icon-target2"></i>
                             <span>	Результаты </span>
                         </a>
                     </li>
