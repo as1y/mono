@@ -30,7 +30,7 @@
                     </div>
                 </div>
 
-                
+
 
             </div>
             <div class="card-body">
@@ -91,9 +91,15 @@
 
                     <div class="col-md-3">
 
-                        <a href="/project/?id=140" class="btn btn-success mr-5 mb-5">
-                            <i class="si si-settings mr-5"></i>УПРАВЛЕНИЕ <i class="si si-settings mr-5"></i>
-                        </a>
+                        <div class="card-body d-md-flex align-items-md-center justify-content-md-between flex-md-wrap">
+
+                            <a href="/project/?id=140" class="btn btn-success mr-5 mb-5">
+                                <i class="si si-settings mr-5"></i>УПРАВЛЕНИЕ <i class="si si-settings mr-5"></i>
+                            </a>
+
+                            
+                        </div>
+
 
                     </div>
 
