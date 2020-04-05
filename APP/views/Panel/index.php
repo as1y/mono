@@ -84,7 +84,7 @@
 
                     </div>
 
-                    <div class="col-md-2 align-middle">
+                    <div class="col-md-2 align-self-center">
 
                         <span class="align-middle">middle</span>
 
