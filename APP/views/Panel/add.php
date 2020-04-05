@@ -11,7 +11,7 @@
         <h6>Компания</h6>
         <fieldset>
 
-            <legend class="text-uppercase font-size-sm font-weight-bold"></legend>
+
 
             <div class="row">
 
@@ -268,7 +268,7 @@
 
 
             </div>
-            <hr>
+            <legend class="text-uppercase font-size-sm font-weight-bold"></legend>
             <div class="row text-center">
 
                 <div class="col-md-4">
