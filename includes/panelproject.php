@@ -22,7 +22,7 @@
 
             <!-- User menu -->
             <div  class="sidebar-user align-self-center">
-                <div>
+                <div class="card">
                     <button type="button" class="btn btn-primary"><i class="icon-cog3 mr-2"></i> Вернуться назад</button>
                 </div>
 
