@@ -41,7 +41,7 @@
 
                     <!-- Main -->
                     <li class="nav-item-header">
-                        <div class="text-uppercase font-size-sm line-height-sm">ИНФОРМАЦИЯ</div>
+                        <div class="text-uppercase font-size-sm line-height-sm">РАБОЧАЯ ПАНЕЛЬ</div>
                     </li>
 
 
