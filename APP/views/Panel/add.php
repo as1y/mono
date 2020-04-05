@@ -98,7 +98,23 @@
 
             </div>
 
+            <div class="row">
 
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>Время звонков <span class="text-danger">*</span></label>
+
+
+                        <select name="timecall" class="form-control form-control-select2 required" data-fouc>
+                            <option value="standart">Будние дни, рабочее время (09:00-19:00)</option>
+                            <option value="maximum">Будние дни, расширенное время (09:00-21:00)</option>
+                            <option value="ultra">Будни + выходные, расширенное время (09:00-21:00)</option>
+                        </select>
+
+
+                    </div>
+                </div>
+            </div>
 
 
         </fieldset>
@@ -156,7 +172,6 @@
 
 
         <h6>Оффер</h6>
-
         <fieldset>
             <h2>Сколько и за что платить оператору</h2>
             <div class="row">
@@ -243,13 +258,15 @@
 
         <h6>Настройки</h6>
         <fieldset>
+
+
             <div class="row">
 
                 <div class="col-md-6">
                     <div class="form-group">
                         <label>Время звонков <span class="text-danger">*</span></label>
 
-                        
+
                         <select name="timecall" class="form-control form-control-select2 required" data-fouc>
                             <option value="standart">Будние дни, рабочее время (09:00-19:00)</option>
                             <option value="maximum">Будние дни, расширенное время (09:00-21:00)</option>
@@ -261,47 +278,9 @@
                 </div>
             </div>
 
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <label>Availability: <span class="text-danger">*</span></label>
-                        <div class="form-check">
-                            <label class="form-check-label">
-                                <input type="radio" name="availability" class="form-input-styled required" data-fouc>
-                                Immediately
-                            </label>
-                        </div>
 
-                        <div class="form-check">
-                            <label class="form-check-label">
-                                <input type="radio" name="availability" class="form-input-styled" data-fouc>
-                                1 - 2 weeks
-                            </label>
-                        </div>
 
-                        <div class="form-check">
-                            <label class="form-check-label">
-                                <input type="radio" name="availability" class="form-input-styled" data-fouc>
-                                3 - 4 weeks
-                            </label>
-                        </div>
 
-                        <div class="form-check">
-                            <label class="form-check-label">
-                                <input type="radio" name="availability" class="form-input-styled" data-fouc>
-                                More than 1 month
-                            </label>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <label>Additional information:</label>
-                        <textarea name="additional-info" rows="5" cols="5" placeholder="If you want to add any info, do it here." class="form-control"></textarea>
-                    </div>
-                </div>
-            </div>
         </fieldset>
     </form>
 </div>
