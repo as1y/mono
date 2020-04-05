@@ -138,18 +138,22 @@
                                 <?endif;?>
 
                                 <?if ($company['status'] == 3):?>
-                                    <div class="font-size-h4 font-w600"><div class="badge badge-info">НЕ РАБОЧЕЕ ВРЕМЯ</div></div>
-                                    <div class="text-muted">Звонки сегодня запрещены</div>
+                                <h5 class="card-title">НЕ РАБОЧЕЕ ВРЕМЯ</h5>
+                                <p class="mb-3">Звонки сегодня запрещены</p>
+
                                 <?endif;?>
 
                                 <?if ($company['status'] == 4):?>
-                                    <div class="font-size-h4 font-w600"><div class="badge badge-info">НЕ РАБОЧЕЕ ВРЕМЯ</div></div>
-                                    <div class="text-muted">Звонки в данное время запрещены</div>
+                                <h5 class="card-title">НЕ РАБОЧЕЕ ВРЕМЯ</h5>
+                                <p class="mb-3">Звонки в данное время запрещены</p>
+
                                 <?endif;?>
 
                                 <?if ($company['status'] == 5):?>
-                                    <div class="font-size-h4 font-w600"><div class="badge badge-info">ДОСТИГНУТ ДНЕВНОЙ ЛИМИТ</div></div>
-                                    <div class="text-muted">Достигнут дневной лимит</div>
+
+                                <h5 class="card-title">ДОСТИГНУТ ДНЕВНОЙ ЛИМИТ</h5>
+                                <p class="mb-3">Достигнут дневной лимит</p>
+
                                 <?endif;?>
 
 
