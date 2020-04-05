@@ -91,7 +91,7 @@
                     </div>
 
 
-                    <div class="col-md-2 align-self-center">
+                    <div class="col-md-2 text-center align-self-center">
 
 
 
