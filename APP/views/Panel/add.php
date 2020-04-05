@@ -11,10 +11,12 @@
         <h6>Компания</h6>
         <fieldset>
             <div class="row text-center">
-            <button type="button" type="submit" class="btn btn-primary btn-labeled btn-labeled-left btn-lg">
+                <center>
+            <button type="button" type="submit" class="btn btn-success btn-labeled btn-labeled-left btn-lg">
                 <b><i class="icon-pin-alt"></i></b>
                 Создать проект
             </button>
+                </center>
             </div>
 
             <div class="row">
