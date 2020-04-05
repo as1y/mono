@@ -25,9 +25,7 @@
                 <div class="card-body">
                     <div class="media">
 
-                        <div class="ml-3 align-self-center">
-                            <a href="/panel/profile/" class="text-white"><i class="icon-cog3"></i></a>
-                        </div>
+                        <button type="button" class="btn btn-primary"><i class="icon-cog3 mr-2"></i> Вернуться назад</button>
 
 
 
