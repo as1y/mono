@@ -49,7 +49,7 @@
 
                     <div class="col-md-6">
 
-                        <ul class="list-group list-group-flush border-top">
+                        <ul class="list-group list-group-flush border-down">
 
                             <a href="#" class="list-group-item list-group-item-action">
 									<span class="font-weight-semibold">
