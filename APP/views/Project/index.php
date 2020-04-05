@@ -123,7 +123,7 @@
                 <div class="col-sm-6 col-xl-3">
 
                     <div class="card-body">
-                        <? if($status['company'] === true):?>
+                        <? if($status['company'] === false):?>
 
                         <i class="icon-cross2 icon-2x text-danger border-danger border-3 rounded-round p-3 mb-3"></i>
 
