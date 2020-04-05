@@ -62,9 +62,12 @@
                             <option value="3">Банковский сектр</option>
                             <option value="4">Страховка</option>
                         </select>
+
+                        <span class="form-text text-muted">Укажите сферу деятельности, чтобы привлечь операторов с релевантным опытом</span>
+                        
                     </div>
 
-                    <span class="form-text text-muted">Укажите сферу деятельности, чтобы привлечь операторов с релевантным опытом</span>
+
                 </div>
 
 
