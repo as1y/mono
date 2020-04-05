@@ -112,9 +112,7 @@
                 </div>
 
 
-            </div>
-
-
+                
             <div class="col-md-6">
                 <label>E-mail: <span class="text-danger">*</span></label>
                 <input type="text" name="transkr" class="form-control required email" placeholder="E-mail" value="<?=$_SESSION['ulogin']['email']?>">
@@ -122,6 +120,9 @@
 
             </div>
 
+
+
+            </div>
 
 
         </fieldset>
