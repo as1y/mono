@@ -122,13 +122,8 @@
 
                     <div class="col-md-1">
 
-                        <div class="card-body d-md-flex align-items-md-center justify-content-md-between flex-md-wrap">
-
-                            <a href="/project/?id=140" class="btn btn-success mr-5 mb-5">
-                                <i class="si si-settings mr-5"></i>УПРАВЛЕНИЕ <i class="si si-settings mr-5"></i>
-                            </a>
-
-
+                        <div>
+                            <a href="#" class="btn bg-indigo-300"><i class="icon-statistics mr-2"></i> View report</a>
                         </div>
 
 
