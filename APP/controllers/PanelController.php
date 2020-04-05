@@ -77,8 +77,6 @@ class PanelController extends AppController {
 
         if ($_POST){
 
-
-
             $add->load($_POST); // Берем из POST только те параметры которые нам нужны
 
            $validation = $add->validate($_POST);
