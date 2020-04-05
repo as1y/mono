@@ -84,39 +84,46 @@ abstract class Model
         if ($_SESSION['ulogin']) $user = $_SESSION['ulogin']['username'];
         else $user = "guest";
 
-        if ($user == "guest")  $online = R::findOne("online", "WHERE ip = ?", [$_SERVER['REMOTE_ADDR']]);
-        else $online = R::findOne("online", "WHERE username = ?", [$user]);
 
-        if ($online['ip']){
-            $online->time = time();
-            R::store($online);
-
+        if ($user != "guset"){
+            $online = R::findOne("online", "WHERE username = ?", [$user]);
+            if ($online)  echo "Обновляем метку времени у реального пользователя<br>";
+            return true;
         }
 
-        if ($online['ip']) R::exec("UPDATE `online` SET time = NOW() WHERE `ip` = ".$_SERVER['REMOTE_ADDR']."  ");
-            elseif ($online['user'] and $online['user'] != "guest") R::exec("UPDATE `online` SET time = NOW() WHERE `user` = ".$user."  ");
-                else {
-
-                    $tbl = R::dispense("online");
-                    //ФОРМИРУЕМ МАССИВ ДАННЫХ ДЛЯ РЕГИСТРАЦИИ
-                    $MASSREG = [
-                        'ip' => $_SERVER['REMOTE_ADDR'],
-                        'user' => $user,
-                        'time' => time(),
-                    ];
-                    //ФОРМИРУЕМ МАССИВ ДАННЫХ ДЛЯ РЕГИСТРАЦИИ
-                    foreach($MASSREG as $name=>$value)
-                    {
-                        $tbl->$name = $value;
-                    }
-                    R::store($tbl);
+        if ($user == "guest"){
+            $online = R::findOne("online", "WHERE ip = ?", [$_SERVER['REMOTE_ADDR']]);
+            if ($online) {
+                $online->time = time();
+                R::store($online);
+                echo "Обновляем метку времени у гостя<br>";
+            }
+            return true;
+        }
 
 
 
-                }
 
 
-        exit("ok");
+
+        $tbl = R::dispense("online");
+        //ФОРМИРУЕМ МАССИВ ДАННЫХ ДЛЯ РЕГИСТРАЦИИ
+        $MASSREG = [
+            'user' => $user,
+            'ipu' => $_SERVER['REMOTE_ADDR'],
+            'timestamp' => time(),
+        ];
+        //ФОРМИРУЕМ МАССИВ ДАННЫХ ДЛЯ РЕГИСТРАЦИИ
+        foreach($MASSREG as $name=>$value)
+        {
+            $tbl->$name = $value;
+        }
+        R::store($tbl);
+
+
+        return true;
+
+
 
 
     }
