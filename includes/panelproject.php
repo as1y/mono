@@ -78,7 +78,7 @@
                     <li class="nav-item">
                         <a href="/project/set/?id=<?=$_GET['id']?>" class="nav-link <?=isset($active['set']) ? $active['set'] : ''; ?>">
                             <i class="icon-home4"></i>
-                            <span>	Настройки </span>
+                            <span>	Общие настройки </span>
                         </a>
                     </li>
 
@@ -86,6 +86,20 @@
                         <a href="/project/set/?id=<?=$_GET['id']?>" class="nav-link <?=isset($active['set']) ? $active['set'] : ''; ?>">
                             <i class="icon-home4"></i>
                             <span>	База данных </span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="/project/set/?id=<?=$_GET['id']?>" class="nav-link <?=isset($active['set']) ? $active['set'] : ''; ?>">
+                            <i class="icon-home4"></i>
+                            <span>	Скрипт разговора </span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="/project/set/?id=<?=$_GET['id']?>" class="nav-link <?=isset($active['set']) ? $active['set'] : ''; ?>">
+                            <i class="icon-home4"></i>
+                            <span>	Форма результата </span>
                         </a>
                     </li>
 
