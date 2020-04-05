@@ -17,7 +17,6 @@ class ProjectController extends AppController {
 
         $company = $project->getcom($_GET['id']);
 
-        show($company);
 
 
         $META = [
@@ -28,7 +27,7 @@ class ProjectController extends AppController {
 
 
         $BREADCRUMBS['HOME'] = ['Label' => $this->BreadcrumbsControllerLabel, 'Url' => $this->BreadcrumbsControllerUrl];
-        $BREADCRUMBS['DATA'][] = ['Label' => "Проект"];
+        $BREADCRUMBS['DATA'][] = ['Label' => "Проект ".$company['name']];
 
         \APP\core\base\View::setMeta($META);
         \APP\core\base\View::setBreadcrumbs($BREADCRUMBS);
