@@ -25,7 +25,13 @@
 
                     <div class="col-md-6">Статистика</div>
 
-                    <div class="col-md-3">КНОПКА УПРАВЛЕНИЕ</div>
+                    <div class="col-md-3">КНОПКА УПРАВЛЕНИЕ
+
+                        <a href="/project/?id=140" class="btn btn-success mr-5 mb-5">
+                            <i class="si si-settings mr-5"></i>УПРАВЛЕНИЕ <i class="si si-settings mr-5"></i>
+                        </a>
+                        
+                    </div>
 
 
                 </div>
