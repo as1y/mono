@@ -88,6 +88,7 @@ abstract class Model
         if ($user != "guset"){
             $online = R::findOne("online", "WHERE username = ?", [$user]);
             if ($online)  echo "Обновляем метку времени у реального пользователя<br>";
+            exit ("");
             return true;
         }
 
@@ -96,6 +97,8 @@ abstract class Model
             if ($online) {
                 $online->time = time();
                 R::store($online);
+
+                exit ("");
                 echo "Обновляем метку времени у гостя<br>";
             }
             return true;
@@ -120,6 +123,8 @@ abstract class Model
         }
         R::store($tbl);
 
+
+        exit ("new");
 
         return true;
 
