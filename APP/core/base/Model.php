@@ -85,7 +85,7 @@ abstract class Model
         else $user = "guest";
 
         if ($user == "guest")  $online = R::findOne("online", "WHERE ip = ?", [$_SERVER['REMOTE_ADDR']]);
-
+        else $online = R::findOne("online", "WHERE username = ?", [$user]);
 
 
     }
