@@ -88,7 +88,6 @@
 
                         <div class="media">
 
-
                         <div>
                             <a href="#" class="btn bg-indigo-300"><i class="icon-statistics mr-2"></i> УПРАВЛЕНИЕ</a>
                         </div>
