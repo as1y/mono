@@ -119,7 +119,7 @@
                     <div class="form-group">
                         <div class="form-group">
                             <label>Минимальная ценовая планка: <span class="text-danger">*</span></label>
-                            <input type="text" name="nameproduct" placeholder="Например: от 10.000" class="form-control required">
+                            <input type="text" name="minimumprice" placeholder="Например: от 10.000" class="form-control required">
                             <span class="form-text text-muted">Минимальная цена сделки или контракта</span>
                         </div>
                     </div>
