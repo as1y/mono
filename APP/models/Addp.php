@@ -38,8 +38,7 @@ class Addp extends \APP\core\base\Model {
             ['priceresult'],
             ['mincall'],
             ['timecall'],
-
-
+            ['logo'],
 
         ],
         'email' =>[
