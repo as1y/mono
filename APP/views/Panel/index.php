@@ -39,14 +39,32 @@
 
                     <div class="col-md-3">
 
-                        <img class="card-img-top" src="../../../../global_assets/images/placeholders/placeholder.jpg" width="50" height="100" alt="">
+                        <img class="card-img-top" src="../../../../global_assets/images/placeholders/placeholder.jpg" width="50" height="150" alt="">
 
 
                     </div>
 
                     <div class="col-md-6">
 
-
+                        <ul class="list-group list-group-flush border-top">
+                            <li class="list-group-item">
+                                Sheared coasted so concurrent
+                                <span class="badge badge-dark ml-auto">New</span>
+                            </li>
+                            <li class="list-group-item">
+                                Goodness instead gull vulture
+                                <span class="badge bg-pink-400 badge-pill ml-auto">38</span>
+                            </li>
+                            <li class="list-group-item">
+                                Devilish yellow unsafe jerkily
+                                <span class="badge bg-indigo-400 ml-auto">Fixed</span>
+                            </li>
+                            <li class="list-group-item">
+                                Relentless ouch essentially
+                                <span class="badge bg-success badge-pill ml-auto">40</span>
+                            </li>
+                        </ul>
+                        
 
                         <div class="card-body d-md-flex align-items-md-center justify-content-md-between flex-md-wrap">
 
