@@ -98,6 +98,67 @@
 
             </div>
 
+
+
+
+        </fieldset>
+
+        <h6>Продукт</h6>
+        <fieldset>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>Название продукта: <span class="text-danger">*</span></label>
+                        <input type="text" name="nameproduct" placeholder="Название продукта" class="form-control required">
+                        <span class="form-text text-muted">Название продукта который планируется предлагать</span>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <div class="form-group">
+                            <label>Минимальная ценовая планка: <span class="text-danger">*</span></label>
+                            <input type="text" name="minimumprice" placeholder="Например: от 10.000" class="form-control required">
+                            <span class="form-text text-muted">Минимальная цена сделки или контракта</span>
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+
+
+
+                    <div class="form-group">
+                        <label>Для кого продукт: <span class="text-danger">*</span></label>
+                        <textarea rows="5" cols="5" name="aboutcompany" class="form-control required"  placeholder="Продукт для малого бизнеса. ЛПР владельцы ИП"></textarea>
+                        <span class="form-text text-muted">Целевая аудитория продукта. Кто ЛПР.</span>
+
+                    </div>
+
+
+                </div>
+
+
+
+
+
+            </div>
+
+
+        </fieldset>
+
+
+
+
+        <h6>Оффер</h6>
+
+        <fieldset>
+            <h2>Сколько и за что платить оператору</h2>
             <div class="row">
 
                 <div class="col-md-6">
@@ -173,67 +234,6 @@
 
 
             </div>
-
-
-
-        </fieldset>
-
-        <h6>Продукт</h6>
-        <fieldset>
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <label>Название продукта: <span class="text-danger">*</span></label>
-                        <input type="text" name="nameproduct" placeholder="Название продукта" class="form-control required">
-                        <span class="form-text text-muted">Название продукта который планируется предлагать</span>
-                    </div>
-                </div>
-
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <div class="form-group">
-                            <label>Минимальная ценовая планка: <span class="text-danger">*</span></label>
-                            <input type="text" name="minimumprice" placeholder="Например: от 10.000" class="form-control required">
-                            <span class="form-text text-muted">Минимальная цена сделки или контракта</span>
-                        </div>
-                    </div>
-                </div>
-
-
-
-            </div>
-
-            <div class="row">
-                <div class="col-md-12">
-
-
-
-                    <div class="form-group">
-                        <label>Для кого продукт: <span class="text-danger">*</span></label>
-                        <textarea rows="5" cols="5" name="aboutcompany" class="form-control required"  placeholder="Продукт для малого бизнеса. ЛПР владельцы ИП"></textarea>
-                        <span class="form-text text-muted">Целевая аудитория продукта. Кто ЛПР.</span>
-
-                    </div>
-
-
-                </div>
-
-
-
-
-
-            </div>
-
-
-        </fieldset>
-
-
-
-
-        <h6>Оффер</h6>
-
-        <fieldset>
-            <h2>Сколько и за что платить оператору</h2>
 
 
 
