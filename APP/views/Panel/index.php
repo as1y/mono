@@ -37,14 +37,14 @@
 
                 <div class="row">
 
-                    <div class="col-md-3">
+                    <div class="col-md-2">
 
                         <img class="card-img-top" src="../../../../global_assets/images/placeholders/placeholder.jpg" width="50" height="150" alt="">
 
 
                     </div>
 
-                    <div class="col-md-6">
+                    <div class="col-md-8">
 
                         <div class="card-body d-md-flex align-items-md-center justify-content-md-between flex-md-wrap">
 
@@ -83,7 +83,7 @@
 
                         </div>
 
-                        
+
                         <ul class="list-group list-group-flush">
                             <a href="#" class="list-group-item list-group-item-action">
 									<span class="font-weight-semibold">
@@ -117,7 +117,7 @@
 
                     </div>
 
-                    <div class="col-md-3">
+                    <div class="col-md-2">
 
                         <div class="card-body d-md-flex align-items-md-center justify-content-md-between flex-md-wrap">
 
