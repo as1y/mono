@@ -5,14 +5,15 @@ use APP\core\Cache;
 class ProjectController extends AppController {
 
 
-	public $layaout = 'PANEK';
+	public $layaout = 'PANEL';
 
 
 
 	public function indexAction() {
 		//Переменные
 
-        
+
+
 
 //		$project = new Project;
 //		$razdel = "СВОДКА";
