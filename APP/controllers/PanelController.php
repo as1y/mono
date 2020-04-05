@@ -67,7 +67,11 @@ class PanelController extends AppController {
 
             $add->load($_POST); // Берем из POST только те параметры которые нам нужны
 
-            $add->addproject($_POST);
+          $res =  $add->validate($_POST);
+
+            show($res);
+
+         //   $add->addproject($_POST);
 
 
             echo "ok";
