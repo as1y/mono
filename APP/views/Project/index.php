@@ -166,6 +166,11 @@
                             <i class="icon-checkmark icon-2x text-success border-success border-3 rounded-round p-3 mb-3"></i>
 
 
+
+                            <a href="/project/?id=<?=$_GET['id']?>&action=stop" class="btn bg-danger"><i class="icon-play4 ml-2"></i> ОСТАНОВИТЬ ПРОЕКТ</a>
+
+
+
                             <form action="/project/stop/" method="post">
                                 <div class="py-20 text-center">
                                     <div class="mb-20">
