@@ -23,8 +23,8 @@
 
                     <div class="col-md-3">
 
-                        <img src="../../../../global_assets/images/placeholders/placeholder.jpg" alt="" class="img-preview rounded">
-                        
+                        <img src="../../../../global_assets/images/placeholders/placeholder.jpg" alt="" >
+
 
                     </div>
 
