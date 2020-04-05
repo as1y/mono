@@ -56,7 +56,7 @@
 										<i class="icon-grid mr-2"></i>
 										Новых звонков на одобрение
 									</span>
-                                <span class="badge bg-success ml-auto">New</span>
+                                <span class="badge bg-success ml-auto">0</span>
                             </a>
 
 
@@ -65,7 +65,7 @@
 										<i class="icon-grid mr-2"></i>
 										Новых операторов на одобрение
 									</span>
-                                <span class="badge bg-success ml-auto">New</span>
+                                <span class="badge bg-success ml-auto">0</span>
                             </a>
 
 
@@ -74,7 +74,7 @@
 										<i class="icon-grid mr-2"></i>
 										Новых сообщений
 									</span>
-                                <span class="badge bg-success ml-auto">New</span>
+                                <span class="badge bg-success ml-auto">0</span>
                             </a>
 
 
