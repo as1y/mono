@@ -56,15 +56,11 @@
                     <div class="form-group">
                         <label>Сфера деятельности:</label>
                         <select name="location" data-placeholder="Выберете направление" class="form-control form-control-select2 required" data-fouc>
-
                             <option></option>
                             <option value="1">Digital</option>
                             <option value="2">Медицина</option>
                             <option value="3">Банковский сектр</option>
                             <option value="4">Страховка</option>
-
-
-
                         </select>
                     </div>
 
@@ -80,7 +76,7 @@
                         <label>Логотип:</label>
 
                         <div class="uniform-uploader"><input type="file" class="form-control-uniform-custom"><span class="filename" style="user-select: none;">Файл не выбран</span><span class="action btn bg-warning" style="user-select: none;">Загрузить</span></div>
-                        <span class="form-text text-muted">Left aligned helper</span>
+                        <span class="form-text text-muted">С логотипом предложение для операторов будет выглядеть привлекательно.</span>
 
                     </div>
                 </div>
@@ -89,9 +85,9 @@
                 <div class="col-md-12">
                     <div class="form-group">
                         <label>О компании: <span class="text-danger">*</span></label>
-                        <textarea rows="5" cols="5" name="textarea" class="form-control required"  placeholder="Default textarea"></textarea>
+                        <textarea rows="5" cols="5" name="textarea" class="form-control required"  placeholder="О компани"></textarea>
 
-                        <span class="form-text text-muted">Left aligned helper</span>
+                        <span class="form-text text-muted">Короткие и важные факты о компании.</span>
                     </div>
                 </div>
 
