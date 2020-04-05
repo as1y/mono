@@ -244,25 +244,19 @@
         <h6>Настройки</h6>
         <fieldset>
             <div class="row">
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <label class="d-block">Applicant resume:</label>
-                        <input type="file" name="resume" class="form-input-styled" data-fouc>
-                        <span class="form-text text-muted">Accepted formats: pdf, doc. Max file size 2Mb</span>
-                    </div>
-                </div>
 
                 <div class="col-md-6">
                     <div class="form-group">
-                        <label>Where did you find us? <span class="text-danger">*</span></label>
-                        <select name="source" data-placeholder="Choose an option..." class="form-control form-control-select2 required" data-fouc>
-                            <option></option>
-                            <option value="monster">Monster.com</option>
-                            <option value="linkedin">LinkedIn</option>
-                            <option value="google">Google</option>
-                            <option value="adwords">Google AdWords</option>
-                            <option value="other">Other source</option>
+                        <label>Время звонков <span class="text-danger">*</span></label>
+
+                        
+                        <select name="timecall" class="form-control form-control-select2 required" data-fouc>
+                            <option value="standart">Будние дни, рабочее время (09:00-19:00)</option>
+                            <option value="maximum">Будние дни, расширенное время (09:00-21:00)</option>
+                            <option value="ultra">Будни + выходные, расширенное время (09:00-21:00)</option>
                         </select>
+
+
                     </div>
                 </div>
             </div>
