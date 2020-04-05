@@ -65,14 +65,14 @@ class Addp extends \APP\core\base\Model {
 
         //ФОРМИРУЕМ МАССИВ ДАННЫХ ДЛЯ РЕГИСТРАЦИИ
         $uniq = [
-            'client_id' => $_SESSION['uload']['id'],
+            'client_id' => $_SESSION['ulogin']['id'],
             'status' => "1",
             'datastart' => date("Y-m-d H:i:s"),
         ];
 
         array_unshift($DATA, $uniq);
 
-        
+
         //ФОРМИРУЕМ МАССИВ ДАННЫХ ДЛЯ РЕГИСТРАЦИИ
         foreach($DATA as $name=>$value)
         {
