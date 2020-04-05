@@ -46,26 +46,6 @@
 
                     <div class="col-md-6">
 
-                        <ul class="list-group list-group-flush border-top">
-                            <li class="list-group-item">
-                                Sheared coasted so concurrent
-                                <span class="badge badge-dark ml-auto">New</span>
-                            </li>
-                            <li class="list-group-item">
-                                Goodness instead gull vulture
-                                <span class="badge bg-pink-400 badge-pill ml-auto">38</span>
-                            </li>
-                            <li class="list-group-item">
-                                Devilish yellow unsafe jerkily
-                                <span class="badge bg-indigo-400 ml-auto">Fixed</span>
-                            </li>
-                            <li class="list-group-item">
-                                Relentless ouch essentially
-                                <span class="badge bg-success badge-pill ml-auto">40</span>
-                            </li>
-                        </ul>
-                        
-
                         <div class="card-body d-md-flex align-items-md-center justify-content-md-between flex-md-wrap">
 
                             <div class="d-flex align-items-center mb-3 mb-md-0">
@@ -103,7 +83,37 @@
 
                         </div>
 
-
+                        
+                        <ul class="list-group list-group-flush">
+                            <a href="#" class="list-group-item list-group-item-action">
+									<span class="font-weight-semibold">
+										<i class="icon-grid mr-2"></i>
+										Basic components
+									</span>
+                                <span class="badge bg-success ml-auto">New</span>
+                            </a>
+                            <a href="#" class="list-group-item list-group-item-action active">
+									<span class="font-weight-semibold">
+										<i class="icon-alignment-unalign mr-2"></i>
+										Data tables extensions
+									</span>
+                                <span class="badge bg-indigo-400 badge-pill ml-auto">38</span>
+                            </a>
+                            <a href="#" class="list-group-item list-group-item-action">
+									<span class="font-weight-semibold">
+										<i class="icon-cube3 mr-2"></i>
+										Application pages
+									</span>
+                                <span class="badge bg-pink-400 ml-auto">Fixed</span>
+                            </a>
+                            <a href="#" class="list-group-item list-group-item-action disabled">
+									<span class="font-weight-semibold">
+										<i class="icon-transmission mr-2"></i>
+										Horizontal navigation
+									</span>
+                                <span class="badge bg-dark badge-pill ml-auto">40</span>
+                            </a>
+                        </ul>
 
                     </div>
 
