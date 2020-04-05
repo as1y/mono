@@ -39,7 +39,7 @@
 
                     <div class="col-md-3">
 
-                        <img src="../../../../global_assets/images/placeholders/placeholder.jpg" alt="" height="100" width="200">
+                        <img class="card-img-top img-fluid" src="../../../../global_assets/images/placeholders/placeholder.jpg" alt="">
 
 
                     </div>
@@ -97,7 +97,7 @@
                                 <i class="si si-settings mr-5"></i>УПРАВЛЕНИЕ <i class="si si-settings mr-5"></i>
                             </a>
 
-                            
+
                         </div>
 
 
