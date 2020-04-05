@@ -88,13 +88,17 @@ abstract class Model
         else $online = R::findOne("online", "WHERE username = ?", [$user]);
 
         if ($online['ip']){
-
-            $online->timestamp = time();
+            $online->time = time();
             R::store($online);
 
         }
 
+        if ($online['ip'])
+            else if ($online['user'] and $online['user'] != "guest") echo "Обновляем юзера";
+                else if echo "Добавляем юзера в таблицу";
 
+
+        exit("ok");
 
 
     }
