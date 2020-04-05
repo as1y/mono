@@ -180,10 +180,16 @@
 <!-- Page content -->
 <div class="page-content">
 
+    <?php
+     show($this->route);
+    ?>
 
+        // Вставка панели на главной странице
         <?php require_once( 'includes/panel1.php' ); ?>
 
 
+
+    // Вставка панели внутри проекта
 
 
 
