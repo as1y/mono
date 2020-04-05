@@ -133,13 +133,14 @@
                         </div>
                         <div class="col-md-6">
 
-                            
+
 
 
                             <label>Вознаграждение:</label>
-                            <input type="text" name="priceresult" placeholder="500" class="form-control required">
+                      
 
                             <div class="form-control-feedback form-control-feedback-lg">
+                                <input type="text" name="priceresult" placeholder="500" class="form-control required">
                                 <i class="icon-make-group"></i>
                             </div>
 
