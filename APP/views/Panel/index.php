@@ -37,7 +37,7 @@
 
                 <div class="row">
 
-                    <div class="col-md-2">
+                    <div class="col-md-2 justify-content-center">
 
                         <img class="card-img-top" src="../../../../global_assets/images/placeholders/placeholder.jpg" width="50" height="150" alt="">
 
