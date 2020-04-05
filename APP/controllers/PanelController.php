@@ -71,6 +71,8 @@ class PanelController extends AppController {
 
             show($res);
 
+            show($add->errors);
+
          //   $add->addproject($_POST);
 
 
