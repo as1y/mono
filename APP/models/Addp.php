@@ -22,7 +22,7 @@ class Addp extends \APP\core\base\Model {
         'bonuscall' => '',
         'timecall' => '',
         'email' => '',
-        
+
     ];
     // Правила валидации
     public $rules = [

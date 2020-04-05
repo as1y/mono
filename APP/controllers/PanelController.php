@@ -65,6 +65,8 @@ class PanelController extends AppController {
 
             $add = new Addp(); //Вызываем Моудль
 
+            $add->load($_POST); // Берем из POST только те параметры которые нам нужны
+
             $add->addproject($_POST);
 
 
