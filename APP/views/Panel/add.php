@@ -42,7 +42,7 @@
                 <div class="col-md-6">
                     <div class="form-group">
                         <label>Адрес нахождения: <span class="text-danger">*</span></label>
-                        <input type="text" name="name" class="form-control required" placeholder="Москва, Орликов переулок дом 1">
+                        <input type="text" name="adress" class="form-control required" placeholder="Москва, Орликов переулок дом 1">
                         <span class="form-text text-muted">Клиенты иногда спрашивают точное местонахождение.</span>
 
                     </div>
@@ -55,7 +55,7 @@
 
                     <div class="form-group">
                         <label>Сфера деятельности:</label>
-                        <select name="location" data-placeholder="Выберете направление" class="form-control form-control-select2 required" data-fouc>
+                        <select name="tematika" data-placeholder="Выберете направление" class="form-control form-control-select2 required" data-fouc>
                             <option></option>
                             <option value="1">Digital</option>
                             <option value="2">Медицина</option>
@@ -64,7 +64,7 @@
                         </select>
 
                         <span class="form-text text-muted">Укажите сферу деятельности, чтобы привлечь операторов с релевантным опытом</span>
-                        
+
                     </div>
 
 
@@ -78,7 +78,7 @@
                     <div class="form-group">
                         <label>Логотип:</label>
 
-                        <div class="uniform-uploader"><input type="file" class="form-control-uniform-custom"><span class="filename" style="user-select: none;">Файл не выбран</span><span class="action btn bg-warning" style="user-select: none;">Загрузить</span></div>
+                        <div class="uniform-uploader"><input type="file" name="logo" class="form-control-uniform-custom"><span class="filename" style="user-select: none;">Файл не выбран</span><span class="action btn bg-warning" style="user-select: none;">Загрузить</span></div>
                         <span class="form-text text-muted">С логотипом предложение для операторов будет выглядеть привлекательно.</span>
 
                     </div>
@@ -88,7 +88,7 @@
                 <div class="col-md-12">
                     <div class="form-group">
                         <label>О компании: <span class="text-danger">*</span></label>
-                        <textarea rows="5" cols="5" name="textarea" class="form-control required"  placeholder="О компани"></textarea>
+                        <textarea rows="5" cols="5" name="aboutcompany" class="form-control required"  placeholder="О компани"></textarea>
 
                         <span class="form-text text-muted">Короткие и важные факты о компании.</span>
                     </div>
