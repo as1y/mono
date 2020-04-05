@@ -3,37 +3,49 @@ namespace APP\controllers;
 use APP\models\Project;
 use APP\core\Cache;
 class ProjectController extends AppController {
-	public $layaout = 'PROJECT';
+
+
+	public $layaout = 'PANEK';
+
+
+
 	public function indexAction() {
 		//Переменные
-		$project = new Project;
-		$razdel = "СВОДКА";
-		$idc = $_GET['id'];
-		$company = $project->getcom($idc);
-		//Переменные
-		$contact =  $project->contact($idc);
-		$result = $project->getres($idc);
-		//Конверсия и тип компании
-		if($contact['ready'] != 0)  $convert = round( (($result['all']/$contact['ready'])*100), 2  )  ;
-		if ($result['all']=="0") $convert = 0;
-		$type = $company['type'];
-		//Конверсия и тип компании
-		$balnow = $project->checkbalanceinproject("client",$idc);
-		$status['balance'] = $project->validbalance($balnow,$company);
-		if ($contact['free'] >= '10') {
-			$status['contact'] = true;
-		} else{
-			$status['contact'] = false;
-		}
-		if ($company['status'] == 1) {
-			$status['company'] = true;
-		} else{
-			$status['company'] = false;
-		}
-		$status['script'] = $project->checkscript($idc);
-		if(isset($_GET['action']) && $_GET['action'] == "play" && isset($_GET['id'])) $project->tryplay($_GET, $status, $idc);
-		if(isset($_GET['action']) && $_GET['action'] == "stop" && isset($_GET['id']) )  $project->pstop($_GET, $idc);
-		$this->set(compact('idc','razdel','company','contact','result','type','convert', 'balnow', 'status'));
+
+        
+
+//		$project = new Project;
+//		$razdel = "СВОДКА";
+//		$idc = $_GET['id'];
+//		$company = $project->getcom($idc);
+//		//Переменные
+//		$contact =  $project->contact($idc);
+//		$result = $project->getres($idc);
+//		//Конверсия и тип компании
+//		if($contact['ready'] != 0)  $convert = round( (($result['all']/$contact['ready'])*100), 2  )  ;
+//		if ($result['all']=="0") $convert = 0;
+//		$type = $company['type'];
+//		//Конверсия и тип компании
+//		$balnow = $project->checkbalanceinproject("client",$idc);
+//		$status['balance'] = $project->validbalance($balnow,$company);
+//		if ($contact['free'] >= '10') {
+//			$status['contact'] = true;
+//		} else{
+//			$status['contact'] = false;
+//		}
+//		if ($company['status'] == 1) {
+//			$status['company'] = true;
+//		} else{
+//			$status['company'] = false;
+//		}
+//		$status['script'] = $project->checkscript($idc);
+//		if(isset($_GET['action']) && $_GET['action'] == "play" && isset($_GET['id'])) $project->tryplay($_GET, $status, $idc);
+//		if(isset($_GET['action']) && $_GET['action'] == "stop" && isset($_GET['id']) )  $project->pstop($_GET, $idc);
+//		$this->set(compact('idc','razdel','company','contact','result','type','convert', 'balnow', 'status'));
+
+
+
+
 	}
 	public function resultAction() {
 		$project = new Project;
