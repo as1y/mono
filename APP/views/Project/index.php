@@ -4,7 +4,7 @@
         <div class="card card-body bg-indigo-400 has-bg-image">
             <div class="media">
                 <div class="mr-3 align-self-center">
-                    <i class="icon-enter6 icon-3x opacity-75"></i>
+                    <i class="icon-phone2 icon-3x opacity-75"></i>
                 </div>
 
                 <div class="media-body text-right">
@@ -30,7 +30,7 @@
         </div>
     </div>
 
-    
+
     <div class="col-sm-6 col-xl-3">
         <div class="card card-body bg-danger-400 has-bg-image">
             <div class="media">
