@@ -2,17 +2,17 @@
 namespace APP\models;
 use RedBeanPHP\R;
 
-class Panel extends \APP\core\base\Model {
+class Addproject extends \APP\core\base\Model {
 
 
 
 
 	public function addproject($DATA) {
 
-
-
             show($DATA);
 
+
+            // По поводу валидации
 
 
 

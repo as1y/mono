@@ -63,9 +63,9 @@ class PanelController extends AppController {
         if ($_POST){
 
 
-            $panel = new Panel(); //Вызываем Моудль
+            $add = new Addproject(); //Вызываем Моудль
 
-            $panel->addproject($_POST);
+            $add->addproject($_POST);
 
 
             echo "ok";
