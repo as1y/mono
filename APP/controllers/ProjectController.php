@@ -5,9 +5,8 @@ use APP\core\Cache;
 class ProjectController extends AppController {
 
 
-
-	public $layaout = 'PANEL';
-
+    public $layaout = 'PANEL';
+    public $BreadcrumbsControllerLabel = "Кабинет рекламодателя";
 
 
 	public function indexAction() {
