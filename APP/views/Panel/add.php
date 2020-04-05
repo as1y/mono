@@ -128,13 +128,15 @@
 
                         <div class="col-md-6">
                             <label>Минимальное кол-во звонков:</label>
-                            <input type="text" name="priceresult" placeholder="Минимальное кол-во звонков" class="form-control required">
+                            <input type="text" name="priceresult" placeholder="100" class="form-control required">
+                            <span class="form-text text-muted">В среднем оператор в смену совершает от 100 звонков</span>
                         </div>
                         <div class="col-md-6">
                             <label>Вознаграждение:</label>
                             <input type="text" name="priceresult" placeholder="Вознаграждение" class="form-control required">
+                            <span class="form-text text-muted">Для мотивации рекомендуем поставить вознаграждение за совершения минимально кол-ва звонков</span>
                         </div>
-                        <span class="form-text text-muted">Чтобы смотивировать операторов рекомендуем ввести бонус за минимальное кол-во звонков</span>
+
                     </div>
 
 
