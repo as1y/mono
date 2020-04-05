@@ -12,7 +12,19 @@ class ProjectController extends AppController {
 	public function indexAction() {
 		//Переменные
 
+        $META = [
+            'title' => 'Кабинет рекламодателя',
+            'description' => 'Кабинет рекламодателя',
+            'keywords' => 'Кабинет рекламодателя ',
+        ];
 
+        $BREADCRUMBS['HOME'] = ['Label' => $this->BreadcrumbsControllerLabel, 'Url' => $this->BreadcrumbsControllerUrl];
+        $BREADCRUMBS['DATA'][] = ['Label' => "Мои проекты"];
+
+        \APP\core\base\View::setMeta($META);
+        \APP\core\base\View::setBreadcrumbs($BREADCRUMBS);
+
+        
 
 
 //		$project = new Project;
