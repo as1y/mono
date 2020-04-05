@@ -104,7 +104,7 @@
 
 
 
-    <div class="card">
+    <div class="card text-center">
         <div class="card-header bg-white header-elements-inline">
             <h6 class="card-title">Статус проекта <b><?=$company['name']?></b></h6>
 
