@@ -49,6 +49,19 @@
 
                     <div class="col-md-6">
 
+                        <ul class="list-group list-group-flush">
+                            <a href="#" class="list-group-item list-group-item-action">
+									<span class="font-weight-semibold">
+										<i class="icon-grid mr-2"></i>
+										Basic components
+									</span>
+                                <span class="badge bg-success ml-auto">New</span>
+                            </a>
+
+
+                        </ul>
+
+                        
                         <div class="row text-center">
                             <div class="col-4">
                                 <p><i class="icon-users2 icon-2x d-inline-block text-info"></i></p>
@@ -70,17 +83,7 @@
                         </div>
 
 
-                        <ul class="list-group list-group-flush">
-                            <a href="#" class="list-group-item list-group-item-action">
-									<span class="font-weight-semibold">
-										<i class="icon-grid mr-2"></i>
-										Basic components
-									</span>
-                                <span class="badge bg-success ml-auto">New</span>
-                            </a>
 
-
-                        </ul>
 
                     </div>
 
