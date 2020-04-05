@@ -87,7 +87,7 @@ abstract class Model
 
         if ($user != "guset"){
 
-            $online = R::findOne("online", "WHERE username = ?", [$user]);
+            $online = R::findOne("online", "WHERE user = ?", [$user]);
 
             var_dump($online);
 
