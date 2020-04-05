@@ -21,7 +21,12 @@
 
                 <div class="row">
 
-                    <div class="col-md-3">ЛОГОТИП</div>
+                    <div class="col-md-3">
+
+                        <img src="../../../../global_assets/images/placeholders/placeholder.jpg" alt="" class="img-preview rounded">
+                        
+
+                    </div>
 
                     <div class="col-md-6">Статистика</div>
 
