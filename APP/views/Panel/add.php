@@ -165,30 +165,17 @@
 
                 <div class="col-md-6">
                     <div class="form-group row">
-                        <label class="col-form-label col-lg-2">Multiple select</label>
+                        <label class="col-form-label col-lg-2">Выберите цель звонка</label>
                         <div class="col-lg-10">
-                            <select multiple="multiple" class="form-control">
-                                <option selected>Amsterdam</option>
-                                <option selected>Atlanta</option>
-                                <option>Baltimore</option>
-                                <option>Boston</option>
-                                <option>Buenos Aires</option>
-                                <option>Calgary</option>
-                                <option selected>Chicago</option>
-                                <option>Denver</option>
-                                <option>Dubai</option>
-                                <option>Frankfurt</option>
-                                <option>Hong Kong</option>
-                                <option>Honolulu</option>
-                                <option>Houston</option>
-                                <option>Kuala Lumpur</option>
-                                <option>London</option>
-                                <option>Los Angeles</option>
-                                <option>Melbourne</option>
-                                <option>Mexico City</option>
-                                <option>Miami</option>
-                                <option>Minneapolis</option>
+
+                            <select name="type" size="6" class=" form-control">
+                                <option value="1" selected="">ЛИД</option>
+                                <option value="2">ВСТРЕЧА</option>
+                                <option value="4">ПРИГЛАШЕНИЕ</option>
+                                <option value="5">АНКЕТИРОВАНИЕ</option>
+                                <option value="6">ЗА ЗВОНКИ</option>
                             </select>
+
                         </div>
                     </div>
 
@@ -197,8 +184,11 @@
 
                 <div class="col-md-6">
                     <div class="form-group">
-                        <label>Brief description:</label>
-                        <textarea name="experience-description" rows="4" cols="4" placeholder="Tasks and responsibilities" class="form-control"></textarea>
+                        <label>Оплата за достижение цели:</label>
+                        <input type="text" name="priceresult" placeholder="Цена за успешный результат" class="form-control required">
+                        <span class="form-text text-muted">Сколько вы готовы платить оператору за достижение цели</span>
+
+
                     </div>
 
 
