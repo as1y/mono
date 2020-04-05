@@ -95,7 +95,28 @@ abstract class Model
 
         if ($online['ip']) R::exec("UPDATE `online` SET time = NOW() WHERE `ip` = ".$_SERVER['REMOTE_ADDR']."  ");
             elseif ($online['user'] and $online['user'] != "guest") R::exec("UPDATE `online` SET time = NOW() WHERE `user` = ".$user."  ");
-                else echo "Добавляем юзера в таблицу";
+                else {
+
+                    $tbl = R::dispense("online");
+
+                    //ФОРМИРУЕМ МАССИВ ДАННЫХ ДЛЯ РЕГИСТРАЦИИ
+                    $MASSREG = [
+                        'username' => $_SESSION['confirm']['signup-username'],
+                        'email' => $_SESSION['confirm']['signup-email'],
+                        'pass' => $_SESSION['confirm']['signup-password'],
+                        'ref' => $_SESSION['confirm']['ref'],
+                        'datareg' => date("Y-m-d H:i:s"),
+                    ];
+                    //ФОРМИРУЕМ МАССИВ ДАННЫХ ДЛЯ РЕГИСТРАЦИИ
+                    foreach($MASSREG as $name=>$value)
+                    {
+                        $tbl->$name = $value;
+                    }
+                    return R::store("online");
+
+
+
+                }
 
 
         exit("ok");
