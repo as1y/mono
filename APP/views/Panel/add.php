@@ -11,12 +11,19 @@
         <h6>Компания</h6>
         <fieldset>
             <div class="row text-center">
-                <center>
-            <button type="button" type="submit" class="btn btn-success btn-labeled btn-labeled-left btn-lg">
-                <b><i class="icon-pin-alt"></i></b>
-                Создать проект
-            </button>
-                </center>
+            <div class="col-md-4">
+
+                </div>
+                <div class="col-md-4">
+                    <button type="button" type="submit" class="btn btn-success btn-labeled btn-labeled-left btn-lg">
+                        <b><i class="icon-checkmark"></i></b>
+                        Создать проект
+                    </button>
+                </div>
+                <div class="col-md-4">
+                </div>
+                
+                <h2>СОЗДАТЬ ПРОЕКТ</h2>
             </div>
 
             <div class="row">
