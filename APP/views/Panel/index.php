@@ -37,7 +37,7 @@
 
                 <div class="row">
 
-                    <div class="col-md-2 justify-content-center">
+                    <div class="col-md-2 align-self-center">
 
                         <img class="card-img-top" src="../../../../global_assets/images/placeholders/placeholder.jpg" width="50" height="150" alt="">
 
@@ -86,7 +86,7 @@
 
                     <div class="col-md-2 align-self-center">
 
-                        <span class="align-middle">middle</span>
+                       
 
                         <div>
                             <a href="#" class="btn bg-indigo-300"><i class="icon-statistics mr-2"></i> View report</a>
