@@ -103,18 +103,26 @@
                 <div class="col-md-6">
                     <div class="form-group">
                         <label>Время звонков <span class="text-danger">*</span></label>
-
-
                         <select name="timecall" class="form-control form-control-select2 required" data-fouc>
                             <option value="standart">Будние дни, рабочее время (09:00-19:00)</option>
                             <option value="maximum">Будние дни, расширенное время (09:00-21:00)</option>
                             <option value="ultra">Будни + выходные, расширенное время (09:00-21:00)</option>
                         </select>
-
-
                     </div>
                 </div>
+
+
             </div>
+
+
+            <div class="col-md-6">
+            <div class="form-group">
+                <label>E-mail: <span class="text-danger">*</span></label>
+                <input type="text" name="transkr" class="form-control required email" placeholder="E-mail">
+                <span class="form-text text-muted">На который будут приходить уведомления и результаты</span>
+            </div>
+            </div>
+
 
 
         </fieldset>
