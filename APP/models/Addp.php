@@ -78,7 +78,7 @@ class Addp extends \APP\core\base\Model {
         {
             $tbl->$name = $value;
         }
-        return R::store($tbl);
+        return R::store("company");
 
 
 
