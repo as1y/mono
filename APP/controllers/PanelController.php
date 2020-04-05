@@ -69,13 +69,19 @@ class PanelController extends AppController {
            $validation = $add->validate($_POST);
 
             if ($validation){
-                $add->addproject($_POST);
+                if ($add->addproject($_POST)){
+                    redir("/panel/");
+                }else{
+                    $_SESSION['errors'] = "Ошибка базы данных. Попробуйте позже.";
+                }
             }
 
 
 
             if (!$validation){
-                $add->getErrorsVali(); //Записываем ошибки в сессию
+                $_SESSION['errors'] = "Пошел на хуй. Ебаный хакер Хуй соси.";
+
+
             }
 
 

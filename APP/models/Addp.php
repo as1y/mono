@@ -82,12 +82,7 @@ class Addp extends \APP\core\base\Model {
         }
         return R::store($tbl);
 
-
-
             // По поводу валидации
-
-
-
 
 	}
 
