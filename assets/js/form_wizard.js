@@ -140,7 +140,9 @@ var FormWizard = function() {
             labels: {
                 previous: '<i class="icon-arrow-left13 mr-2" /> Назад',
                 next: 'Далее <i class="icon-arrow-right14 ml-2" />',
-                finish: 'Готово <i class="icon-arrow-right14 ml-2" />'
+                // finish: 'Готово <i class="icon-arrow-right14 ml-2" />'
+                // finish: 'Готово <i class="icon-arrow-right14 ml-2" />'
+
             },
             transitionEffect: 'fade',
             autoFocus: true,
