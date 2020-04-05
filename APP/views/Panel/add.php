@@ -10,6 +10,13 @@
     <form class="wizard-form steps-validation" action="/panel/add/" method="post" data-fouc>
         <h6>Компания</h6>
         <fieldset>
+
+            <button type="button" type="submit" class="btn btn-primary btn-labeled btn-labeled-left btn-lg">
+                <b><i class="icon-pin-alt"></i></b>
+                Создать проект
+            </button>
+
+            
             <div class="row">
 
 
@@ -266,7 +273,10 @@
 
             </div>
 
-            <button type="submit" class="btn btn-primary">Submit <i class="icon-paperplane ml-2"></i></button>
+
+
+
+
 
 
         </fieldset>
