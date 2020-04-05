@@ -24,8 +24,8 @@
                 <div class="col-md-6">
                     <div class="form-group">
                         <label>ТРАНСКРИПЦИЯ: <span class="text-danger">*</span></label>
-                        <input type="text" name="transkr" class="form-control required" placeholder="John Doe">
-                        <span class="form-text text-muted">Left aligned helper</span>
+                        <input type="text" name="transkr" class="form-control required" placeholder="ТранскрипциЯ">
+                        <span class="form-text text-muted">Операторы точно произносить название компании. Пример: "ЭЙ ВИ СИ ПРОДЖЭКТ"</span>
                     </div>
                 </div>
 
@@ -33,8 +33,8 @@
                 <div class="col-md-6">
                     <div class="form-group">
                         <label>URL сайта: <span class="text-danger">*</span></label>
-                        <input type="text" name="name" class="form-control required" placeholder="John Doe">
-                        <span class="form-text text-muted">Left aligned helper</span>
+                        <input type="text" name="name" class="form-control required" placeholder="URL сайта">
+                        <span class="form-text text-muted">Пример: www.site.ru</span>
                     </div>
                 </div>
 
@@ -42,8 +42,8 @@
                 <div class="col-md-6">
                     <div class="form-group">
                         <label>Адрес нахождения: <span class="text-danger">*</span></label>
-                        <input type="text" name="name" class="form-control required" placeholder="John Doe">
-                        <span class="form-text text-muted">Left aligned helper</span>
+                        <input type="text" name="name" class="form-control required" placeholder="Москва, Орликов переулок дом 1">
+                        <span class="form-text text-muted">Клиенты иногда спрашивают точное местонахождение.</span>
 
                     </div>
                 </div>
