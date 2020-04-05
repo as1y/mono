@@ -98,7 +98,7 @@
 
                     <li class="nav-item">
                         <a href="/project/set/?id=<?=$_GET['id']?>" class="nav-link <?=isset($active['set']) ? $active['set'] : ''; ?>">
-                            <i class="icon-home4"></i>
+                            <i class="icon-file-eye2"></i>
                             <span>	Форма результата </span>
                         </a>
                     </li>
