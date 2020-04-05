@@ -122,6 +122,7 @@
 
                 <div class="dropdown-menu dropdown-menu-right">
                     <a href="#" class="dropdown-item"><i class="icon-user-plus"></i> Мой профиль</a>
+                    <a href="#" class="dropdown-item"><i class="icon-cash"></i> Партнерскся программа</a>
                     <a href="#" class="dropdown-item"><i class="icon-coins"></i> Баланс</a>
                     <div class="dropdown-divider"></div>
                     <a href="#" class="dropdown-item"><i class="icon-cog5"></i> Настройки аккаунта</a>
