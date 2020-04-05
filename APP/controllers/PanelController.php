@@ -62,6 +62,8 @@ class PanelController extends AppController {
 
         if ($_POST){
 
+            show($_POST);
+
             echo "ok";
 
             exit();
