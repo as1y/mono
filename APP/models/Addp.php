@@ -2,7 +2,7 @@
 namespace APP\models;
 use RedBeanPHP\R;
 
-class Addproject extends \APP\core\base\Model {
+class Addp extends \APP\core\base\Model {
 
 
 

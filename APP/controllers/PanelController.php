@@ -1,7 +1,7 @@
 <?php
 namespace APP\controllers;
 use APP\core\Cache;
-use APP\models\Panel;
+use APP\models\Addp;
 use APP\models\Project;
 use APP\models\Add;
 use APP\models\Profile;
@@ -63,9 +63,9 @@ class PanelController extends AppController {
         if ($_POST){
 
 
-            $add = new Addproject(); //Вызываем Моудль
+            $add = new Addp(); //Вызываем Моудль
 
-            $add->addproject($_POST);
+            $add->Addp($_POST);
 
 
             echo "ok";
