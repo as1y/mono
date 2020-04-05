@@ -79,7 +79,7 @@ class PanelController extends AppController {
 
 
             if (!$validation){
-                $_SESSION['errors'] = "Пошел на хуй. Ебаный хакер Хуй соси.";
+                $_SESSION['errors'] = "Что-то пошло не так.";
 
 
             }
