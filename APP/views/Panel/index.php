@@ -23,7 +23,7 @@
 
                     <div class="col-md-3">
 
-                        <img src="../../../../global_assets/images/placeholders/placeholder.jpg" alt="" >
+                        <img src="../../../../global_assets/images/placeholders/placeholder.jpg" alt="" width="100">
 
 
                     </div>
