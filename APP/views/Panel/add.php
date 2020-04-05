@@ -159,74 +159,40 @@
         <h6>Оффер</h6>
 
         <fieldset>
-            <h2>Сколько платить оператору</h2>
+            <h2>Сколько и за что платить оператору</h2>
             <div class="row">
+
+
                 <div class="col-md-6">
-                    <div class="form-group">
-                        <label>Company: <span class="text-danger">*</span></label>
-                        <input type="text" name="experience-company" placeholder="Company name" class="form-control required">
-                    </div>
-
-                    <div class="form-group">
-                        <label>Position: <span class="text-danger">*</span></label>
-                        <input type="text" name="experience-position" placeholder="Company name" class="form-control required">
-                    </div>
-
-                    <div class="row">
-                        <div class="col-md-6">
-                            <label>From:</label>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <select name="education-from-month" data-placeholder="Month" class="form-control form-control-select2" data-fouc>
-                                            <option></option>
-                                            <option value="January">January</option>
-                                            <option value="...">...</option>
-                                            <option value="December">December</option>
-                                        </select>
-                                    </div>
-                                </div>
-
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <select name="education-from-year" data-placeholder="Year" class="form-control form-control-select2" data-fouc>
-                                            <option></option>
-                                            <option value="1995">1995</option>
-                                            <option value="...">...</option>
-                                            <option value="1980">1980</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-6">
-                            <label>To:</label>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <select name="education-to-month" data-placeholder="Month" class="form-control form-control-select2" data-fouc>
-                                            <option></option>
-                                            <option value="January">January</option>
-                                            <option value="...">...</option>
-                                            <option value="December">December</option>
-                                        </select>
-                                    </div>
-                                </div>
-
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <select name="education-to-year" data-placeholder="Year" class="form-control form-control-select2" data-fouc>
-                                            <option></option>
-                                            <option value="1995">1995</option>
-                                            <option value="...">...</option>
-                                            <option value="1980">1980</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
+                    <div class="form-group row">
+                        <label class="col-form-label col-lg-2">Multiple select</label>
+                        <div class="col-lg-10">
+                            <select multiple="multiple" class="form-control">
+                                <option selected>Amsterdam</option>
+                                <option selected>Atlanta</option>
+                                <option>Baltimore</option>
+                                <option>Boston</option>
+                                <option>Buenos Aires</option>
+                                <option>Calgary</option>
+                                <option selected>Chicago</option>
+                                <option>Denver</option>
+                                <option>Dubai</option>
+                                <option>Frankfurt</option>
+                                <option>Hong Kong</option>
+                                <option>Honolulu</option>
+                                <option>Houston</option>
+                                <option>Kuala Lumpur</option>
+                                <option>London</option>
+                                <option>Los Angeles</option>
+                                <option>Melbourne</option>
+                                <option>Mexico City</option>
+                                <option>Miami</option>
+                                <option>Minneapolis</option>
+                            </select>
                         </div>
                     </div>
+
+
                 </div>
 
                 <div class="col-md-6">
@@ -235,13 +201,16 @@
                         <textarea name="experience-description" rows="4" cols="4" placeholder="Tasks and responsibilities" class="form-control"></textarea>
                     </div>
 
-                    <div class="form-group">
-                        <label class="d-block">Recommendations:</label>
-                        <input name="recommendations" type="file" class="form-input-styled" data-fouc>
-                        <span class="form-text text-muted">Accepted formats: pdf, doc. Max file size 2Mb</span>
-                    </div>
+
+
                 </div>
+
+
             </div>
+
+
+
+
         </fieldset>
 
         <h6>Настройки</h6>
