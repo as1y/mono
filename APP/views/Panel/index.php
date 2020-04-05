@@ -69,6 +69,7 @@
                             </div>
                         </div>
 
+
                         <ul class="list-group list-group-flush">
                             <a href="#" class="list-group-item list-group-item-action">
 									<span class="font-weight-semibold">
@@ -77,14 +78,25 @@
 									</span>
                                 <span class="badge bg-success ml-auto">New</span>
                             </a>
+
+
                         </ul>
 
-                        
                     </div>
 
                     <div class="col-md-2 align-self-center">
 
                         <div class="media">
+                            <div class="media-body">
+                                <h3 class="mb-0">389,438</h3>
+                                <span class="text-uppercase font-size-xs">total orders</span>
+                            </div>
+
+                            <div class="ml-3 align-self-center">
+                                <i class="icon-bag icon-3x opacity-75"></i>
+                            </div>
+                        </div>
+
 
                         <div>
                             <a href="#" class="btn bg-indigo-300"><i class="icon-statistics mr-2"></i> УПРАВЛЕНИЕ</a>
