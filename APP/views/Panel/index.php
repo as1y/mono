@@ -78,7 +78,7 @@
                             </a>
 
 
-                            
+
 
                         </ul>
 
@@ -122,7 +122,7 @@
 
 
                         <div>
-                            <a href="#" class="btn bg-indigo-300"><i class="icon-statistics mr-2"></i> УПРАВЛЕНИЕ</a>
+                            <a href="#" class="btn bg-success-300"><i class="icon-cog2 mr-2"></i> УПРАВЛЕНИЕ</a>
                         </div>
 
 
