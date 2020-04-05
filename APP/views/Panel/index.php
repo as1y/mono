@@ -68,8 +68,7 @@
                                 <span class="text-muted font-size-sm">revenue</span>
                             </div>
                         </div>
-
-
+                        
                         <ul class="list-group list-group-flush">
                             <a href="#" class="list-group-item list-group-item-action">
 									<span class="font-weight-semibold">
@@ -78,9 +77,8 @@
 									</span>
                                 <span class="badge bg-success ml-auto">New</span>
                             </a>
-
-
                         </ul>
+
 
                     </div>
 
