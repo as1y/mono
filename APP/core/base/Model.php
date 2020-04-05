@@ -93,8 +93,8 @@ abstract class Model
 
         }
 
-        if ($online['ip'])  echo "Обновляем по IP";
-            elseif ($online['user'] and $online['user'] != "guest") echo "Обновляем юзера";
+        if ($online['ip']) R::exec("UPDATE `online` SET time = NOW() WHERE `ip` = ".$_SERVER['REMOTE_ADDR']."  ");
+            elseif ($online['user'] and $online['user'] != "guest") R::exec("UPDATE `online` SET time = NOW() WHERE `user` = ".$user."  ");
                 else echo "Добавляем юзера в таблицу";
 
 
