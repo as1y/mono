@@ -17,6 +17,9 @@ class ProjectController extends AppController {
 
         $company = $project->getcom($_GET['id']);
 
+        show($company);
+
+
         $META = [
             'title' => 'Кабинет рекламодателя',
             'description' => 'Кабинет рекламодателя',
