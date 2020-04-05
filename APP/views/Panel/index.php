@@ -85,7 +85,15 @@
                     <div class="col-md-2 align-self-center">
 
                         <i class="icon-book icon-2x text-success-400 border-success-400 border-3 rounded-round p-3 mb-3 mt-1"></i>
-                        <a href="#" class="btn bg-indigo-300"><i class="icon-statistics mr-2"></i> УПРАВЛЕНИЕ</a>
+                        <div class="media">
+
+                        <div>
+                            <a href="#" class="btn bg-indigo-300"><i class="icon-statistics mr-2"></i> УПРАВЛЕНИЕ</a>
+                        </div>
+
+
+                    </div>
+
 
                 </div>
 
