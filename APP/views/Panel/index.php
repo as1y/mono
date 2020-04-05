@@ -39,7 +39,7 @@
 
                     <div class="col-md-3">
 
-                        <img class="card-img-top img-fluid" src="../../../../global_assets/images/placeholders/placeholder.jpg" alt="">
+                        <img class="card-img-top" src="../../../../global_assets/images/placeholders/placeholder.jpg" alt="">
 
 
                     </div>
