@@ -10,7 +10,7 @@
     <div class="col-lg-12">
 
         <!-- Icon button -->
-        <div class="card card-body justify-content-center text-center-end"">
+        <div class="card">
             <div class="card-header bg-white header-elements-inline">
                 <h6 class="card-title">Проект: <b><?=$row['name']?></b></h6>
 
