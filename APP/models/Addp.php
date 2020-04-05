@@ -21,14 +21,8 @@ class Addp extends \APP\core\base\Model {
         'mincall' => '',
         'bonuscall' => '',
         'timecall' => '',
-
-
-
-
-        'signup-username' => '',
-        'signup-email' => '',
-        'signup-password' => '',
-        'signup-password-confirm' => '',
+        'email' => '',
+        
     ];
     // Правила валидации
     public $rules = [
