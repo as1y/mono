@@ -73,12 +73,12 @@ class PanelController extends AppController {
         \APP\core\base\View::setMeta($META);
         \APP\core\base\View::setBreadcrumbs($BREADCRUMBS);
 
-
+        $add = new Addp(); //Вызываем Моудль
 
         if ($_POST){
 
 
-            $add = new Addp(); //Вызываем Моудль
+
             $add->load($_POST); // Берем из POST только те параметры которые нам нужны
 
            $validation = $add->validate($_POST);
