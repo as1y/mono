@@ -49,41 +49,24 @@
 
                     <div class="col-md-8">
 
-                        <div class="card-body d-md-flex align-items-md-center justify-content-md-between flex-md-wrap">
-
-                            <div class="d-flex align-items-center mb-3 mb-md-0">
-                                <a href="#" class="btn bg-transparent border-indigo-400 text-indigo-400 rounded-round border-2 btn-icon">
-                                    <i class="icon-alarm-add"></i>
-                                </a>
-                                <div class="ml-3">
-                                    <h5 class="font-weight-semibold mb-0">1,132</h5>
-                                    <span class="text-muted">total tickets</span>
-                                </div>
+                        <div class="row text-center">
+                            <div class="col-4">
+                                <p><i class="icon-users2 icon-2x d-inline-block text-info"></i></p>
+                                <h5 class="font-weight-semibold mb-0">2,345</h5>
+                                <span class="text-muted font-size-sm">users</span>
                             </div>
 
-                            <div class="d-flex align-items-center mb-3 mb-md-0">
-                                <a href="#" class="btn bg-transparent border-indigo-400 text-indigo-400 rounded-round border-2 btn-icon">
-                                    <i class="icon-alarm-add"></i>
-                                </a>
-                                <div class="ml-3">
-                                    <h5 class="font-weight-semibold mb-0">1,132</h5>
-                                    <span class="text-muted">total tickets</span>
-                                </div>
+                            <div class="col-4">
+                                <p><i class="icon-point-up icon-2x d-inline-block text-warning"></i></p>
+                                <h5 class="font-weight-semibold mb-0">3,568</h5>
+                                <span class="text-muted font-size-sm">clicks</span>
                             </div>
 
-                            <div class="d-flex align-items-center mb-3 mb-md-0">
-                                <a href="#" class="btn bg-transparent border-indigo-400 text-indigo-400 rounded-round border-2 btn-icon">
-                                    <i class="icon-spinner11"></i>
-                                </a>
-                                <div class="ml-3">
-                                    <h5 class="font-weight-semibold mb-0">06:25:00</h5>
-                                    <span class="text-muted">response time</span>
-                                </div>
+                            <div class="col-4">
+                                <p><i class="icon-cash3 icon-2x d-inline-block text-success"></i></p>
+                                <h5 class="font-weight-semibold mb-0">$9,693</h5>
+                                <span class="text-muted font-size-sm">revenue</span>
                             </div>
-
-
-
-
                         </div>
 
 
