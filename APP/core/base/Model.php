@@ -98,14 +98,11 @@ abstract class Model
                 else {
 
                     $tbl = R::dispense("online");
-
                     //ФОРМИРУЕМ МАССИВ ДАННЫХ ДЛЯ РЕГИСТРАЦИИ
                     $MASSREG = [
-                        'username' => $_SESSION['confirm']['signup-username'],
-                        'email' => $_SESSION['confirm']['signup-email'],
-                        'pass' => $_SESSION['confirm']['signup-password'],
-                        'ref' => $_SESSION['confirm']['ref'],
-                        'datareg' => date("Y-m-d H:i:s"),
+                        'ip' => $_SERVER['REMOTE_ADDR'],
+                        'user' => $user,
+                        'time' => time(),
                     ];
                     //ФОРМИРУЕМ МАССИВ ДАННЫХ ДЛЯ РЕГИСТРАЦИИ
                     foreach($MASSREG as $name=>$value)
