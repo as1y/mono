@@ -16,8 +16,8 @@
                 <div class="col-md-6">
                     <div class="form-group">
                         <label>Компания: <span class="text-danger">*</span></label>
-                        <input type="text" name="company" class="form-control required" placeholder="John Doe">
-                        <span class="form-text text-muted">Left aligned helper</span>
+                        <input type="text" name="company" class="form-control required" placeholder="Пример: IVC PROJECT">
+                        <span class="form-text text-muted">Пример: IVC PROJECT</span>
                     </div>
                 </div>
 
