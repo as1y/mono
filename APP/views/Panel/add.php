@@ -132,9 +132,9 @@
                             <span class="form-text text-muted">В среднем оператор в смену совершает от 100 звонков</span>
                         </div>
                         <div class="col-md-6">
-
+                            <label>Вознаграждение:</label>
                             <div class="input-group">
-                                <label>Вознаграждение:</label>
+
 											<span class="input-group-prepend">
 												<span class="input-group-text">@</span>
 											</span>
