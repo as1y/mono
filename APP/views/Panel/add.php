@@ -157,7 +157,9 @@
 
 
         <h6>Оффер</h6>
+
         <fieldset>
+            <h2>Сколько платить оператору</h2>
             <div class="row">
                 <div class="col-md-6">
                     <div class="form-group">
