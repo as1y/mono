@@ -61,6 +61,14 @@
                     </li>
 
 
+                    <li class="nav-item">
+                        <a href="/project/set/?id=<?=$_GET['id']?>" class="nav-link <?=isset($active['operator']) ? $active['operator'] : ''; ?>">
+                            <i class="icon-home4"></i>
+                            <span>	Операторы </span>
+                        </a>
+                    </li>
+
+
 
 
 
