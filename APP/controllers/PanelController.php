@@ -41,6 +41,9 @@ class PanelController extends AppController {
         if($company){
 
 
+
+            $this->set(compact('company'));
+
         }else{
 
         }
