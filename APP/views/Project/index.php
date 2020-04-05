@@ -127,7 +127,7 @@
 
 
 
-                        <? if($status['company'] === FALSE):?>
+                        <? if($status['company'] == 1):?>
 
                         <i class="icon-cross2 icon-2x text-danger border-danger border-3 rounded-round p-3 mb-3"></i>
 
@@ -159,7 +159,7 @@
 
                         <?else:?>
 
-                        
+
                             <form action="/project/stop/" method="post">
                                 <div class="py-20 text-center">
                                     <div class="mb-20">
