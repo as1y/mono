@@ -88,6 +88,7 @@ abstract class Model
         if ($user != "guset"){
             $online = R::findOne("online", "WHERE username = ?", [$user]);
 
+            show($online);
 
             echo "Обновляем метку времени у реального пользователя<br>";
 
