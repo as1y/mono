@@ -86,7 +86,7 @@
 
 
                     <div class="col-md-2 text-center align-self-center">
-                        <i class="icon-book icon-2x text-success-400 border-danger-400 border-3 rounded-round p-3 mb-3 mt-1"></i>
+                        <i class="icon-book icon-2x text-danger-400 border-danger-400 border-3 rounded-round p-3 mb-3 mt-1"></i>
                         <h5 class="card-title">НЕ РАБОТАЕТ</h5>
 
                     </div>
