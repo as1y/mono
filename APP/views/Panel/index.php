@@ -87,9 +87,15 @@
                     <div class="col-md-2 align-self-center">
 
                         <div class="media">
-                            <div class="media-body">
-                                <h3 class="font-weight-semibold mb-0">НЕ РАБОТАЕТ</h3>
-                                <span class="text-uppercase font-size-sm text-muted">СТАТУС</span>
+                            <div class="media">
+                                <div class="media-body">
+                                    <h3 class="mb-0">389,438</h3>
+                                    <span class="text-uppercase font-size-xs">total orders</span>
+                                </div>
+
+                                <div class="ml-3 align-self-center">
+                                    <i class="icon-bag icon-3x opacity-75"></i>
+                                </div>
                             </div>
 
                             <div class="ml-3 align-self-center">
