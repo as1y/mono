@@ -98,7 +98,47 @@
 
             </div>
 
+            <div class="row">
 
+                <div class="col-md-6">
+                    <div class="form-group row">
+                        <label class="col-form-label col-lg-4">Выберите цель звонка</label>
+                        <div class="col-lg-8">
+                            <select name="type" size="4" class=" form-control">
+                                <option value="1" selected="">ЛИД</option>
+                                <option value="2">ВСТРЕЧА</option>
+                                <option value="4">ПРИГЛАШЕНИЕ</option>
+                                <option value="5">АНКЕТИРОВАНИЕ</option>
+                                <option value="6">ИНФОРМИРОВАНИЕ</option>
+                                <option value="7">ДРУГОЕ</option>
+                            </select>
+
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>Оплата за достижение цели:</label>
+                        <input type="text" name="priceresult" placeholder="Цена за успешный результат" class="form-control required">
+                        <span class="form-text text-muted">Сколько вы готовы платить оператору за достижение цели</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Минимальное кол-во звонков:</label>
+                        <input type="text" name="priceresult" placeholder="Ми" class="form-control required">
+                        <label>Вознаграждение:</label>
+                        <input type="text" name="priceresult" placeholder="Ми" class="form-control required">
+                        <span class="form-text text-muted">Чтобы смотивировать операторов рекомендуем ввести бонус за минимальное кол-во звонков</span>
+                    </div>
+
+
+
+
+                </div>
+
+
+            </div>
 
 
 
@@ -160,40 +200,7 @@
 
         <fieldset>
             <h2>Сколько и за что платить оператору</h2>
-            <div class="row">
 
-                <div class="col-md-6">
-                    <div class="form-group row">
-                        <label class="col-form-label col-lg-4">Выберите цель звонка</label>
-                        <div class="col-lg-8">
-                            <select name="type" size="4" class=" form-control">
-                                <option value="1" selected="">ЛИД</option>
-                                <option value="2">ВСТРЕЧА</option>
-                                <option value="4">ПРИГЛАШЕНИЕ</option>
-                                <option value="5">АНКЕТИРОВАНИЕ</option>
-                                <option value="6">ИНФОРМИРОВАНИЕ</option>
-                                <option value="7">ДРУГОЕ</option>
-                            </select>
-
-                        </div>
-                    </div>
-
-                </div>
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <label>Оплата за достижение цели:</label>
-                        <input type="text" name="priceresult" placeholder="Цена за успешный результат" class="form-control required">
-                        <span class="form-text text-muted">Сколько вы готовы платить оператору за достижение цели</span>
-
-
-                    </div>
-
-
-
-                </div>
-
-
-            </div>
 
 
 
