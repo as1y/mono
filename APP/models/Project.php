@@ -19,7 +19,7 @@ class Project extends \APP\core\base\Model {
 
 
 	public function contact($idc) {
-		$mass = \R::find("contact", "WHERE company_id = ?", [$idc]);
+		$mass = R::find("contact", "WHERE company_id = ?", [$idc]);
 		$contact['all'] = '0';
 		$contact['free'] = '0';
 		$contact['ready'] = '0';
@@ -39,7 +39,7 @@ class Project extends \APP\core\base\Model {
 		return $contact;
 	}
 	public function getres($idc) {
-		$mass = \R::find("result", "WHERE company_id = ?", [$idc]);
+		$mass = R::find("result", "WHERE company_id = ?", [$idc]);
 		$result['all'] = '0';
 		$result['moderation'] = '0';
 		$result['today'] = '0';
@@ -51,21 +51,21 @@ class Project extends \APP\core\base\Model {
 		return $result;
 	}
 	public function companyresult($idc) {
-		$company = \R::load('company', $idc);
-		$result = \R::dispense( 'result' ); //Таблица результат
+		$company = R::load('company', $idc);
+		$result = R::dispense( 'result' ); //Таблица результат
 		$company->ownResultList[] = $result;
 		return $company;
 	}
 	public function records($idc) {
-		$records = \R::find('zapisi_new','WHERE company_id = ?' , [$idc]);
+		$records = R::find('zapisi_new','WHERE company_id = ?' , [$idc]);
 		return $records;
 	}
 	public function operators($idc) {
-		$operators = \R::findAll( 'users' , ' ORDER BY `points` DESC ' );
+		$operators = R::findAll( 'users' , ' ORDER BY `points` DESC ' );
 		return $operators;
 	}
 	public function joincompany($idc) {
-		$joincompany = \R::findAll( 'joincompany' , 'WHERE company_id = ?',[$idc] );
+		$joincompany = R::findAll( 'joincompany' , 'WHERE company_id = ?',[$idc] );
 		foreach ($joincompany as $val) {
 			$join[$val['users_id']]['record'] = $val['record'];
 			$join[$val['users_id']]['message'] = $val['message'];
@@ -73,22 +73,22 @@ class Project extends \APP\core\base\Model {
 		return $join;
 	}
 	public function allrecord($idc) {
-		$allrecord = \R::find( 'contact' , 'WHERE  company_id = ? AND `status` != 1 AND `status` != 0 ORDER BY `id` DESC', [$idc] );
+		$allrecord = R::find( 'contact' , 'WHERE  company_id = ? AND `status` != 1 AND `status` != 0 ORDER BY `id` DESC', [$idc] );
 		return $allrecord;
 	}
 	public function zayavki($idc) {
-		$zayavki = \R::findAll("joincompany", "WHERE status = 1 AND company_id = ?", [$idc] );;
+		$zayavki = R::findAll("joincompany", "WHERE status = 1 AND company_id = ?", [$idc] );;
 		return $zayavki;
 	}
 	public function allcompany() {
-		return  \R::findAll("company");
+		return  R::findAll("company");
 	}
 	public function getscript($idc) {
-		$script = \R::findOne('script','WHERE  company_id = ?' , [$idc]);
+		$script = R::findOne('script','WHERE  company_id = ?' , [$idc]);
 		return $script;
 	}
 	public function opers($idc) {
-		$allop = \R::findAll( 'users' );
+		$allop = R::findAll( 'users' );
 		$opers = "";
 		foreach ($allop as $row) {
 			if ($row['mycamid']) {
@@ -121,7 +121,7 @@ class Project extends \APP\core\base\Model {
 	}
 	public function checkbalance($table) {
 		$balnow['bal'] = '0';
-		$balnow = \R::load($table, $_SESSION['ulogin']['id']);
+		$balnow = R::load($table, $_SESSION['ulogin']['id']);
 		return $balnow['bal'];
 	}
 	public function filterresult($company,$dataresult) {
@@ -135,10 +135,10 @@ class Project extends \APP\core\base\Model {
 	public function checkbalanceinproject($table,$idc) {
 		$balnow['bal'] = '0';
 		if( isset($_SESSION['ulogin']['woof']) || $_SESSION['ulogin']['woof'] == "1") {
-			$cid = \R::load("company", $idc);
-			$balnow = \R::load($table, $cid['client_id']);
+			$cid = R::load("company", $idc);
+			$balnow = R::load($table, $cid['client_id']);
 		} else {
-			$balnow = \R::load($table, $_SESSION['ulogin']['id']);
+			$balnow = R::load($table, $_SESSION['ulogin']['id']);
 		}
 		return $balnow['bal'];
 	}
@@ -148,7 +148,7 @@ class Project extends \APP\core\base\Model {
 		return false;
 	}
 	public function checkscript($idc) {
-		$script = \R::findOne('script','WHERE  company_id = ?' , [$idc]);
+		$script = R::findOne('script','WHERE  company_id = ?' , [$idc]);
 		if (strlen($script['text']) <= 100) return false;
 		return true;
 	}
@@ -161,20 +161,20 @@ class Project extends \APP\core\base\Model {
 		if($status['contact'] == false) mes('Проект НЕ активирован: Добавьте контактов.');
 		if($status['script'] == false) mes('Проект НЕ активирован: Отредактируйте скрипт разговора.');
 		if($status['balance'] == true &&  $status['contact'] == true && $status['script'] == true) {
-			\R::exec(" UPDATE `company` SET `status` = '1' WHERE `id` = '".$idc."' ");
+			R::exec(" UPDATE `company` SET `status` = '1' WHERE `id` = '".$idc."' ");
 		}
 		go2('project/?id='.$GET['id'].'');
 	}
 	public function pstop($GET, $idc) {
-		\R::exec(" UPDATE `company` SET `status` = '2' WHERE `id` = '".$idc."' ");
+		R::exec(" UPDATE `company` SET `status` = '2' WHERE `id` = '".$idc."' ");
 		go2('project/?id='.$GET['id'].'');
 	}
 	public function balancelog($idclient) {
-		$balancelog = \R::find('balancelogclient','WHERE client_id = ?',[$idclient]);
+		$balancelog = R::find('balancelogclient','WHERE client_id = ?',[$idclient]);
 		return $balancelog;
 	}
 	public function amoDB($idc) {
-		$amoDB_company = \R::findOne('amocrm','WHERE  company_id = ?' , [$idc]);
+		$amoDB_company = R::findOne('amocrm','WHERE  company_id = ?' , [$idc]);
 		return $amoDB_company;
 	}
 	// ОКОНЧАНИЕ КЛАССА
