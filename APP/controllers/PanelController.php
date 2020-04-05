@@ -60,6 +60,15 @@ class PanelController extends AppController {
 
 
 
+        if ($_POST){
+
+            echo "ok";
+
+            exit();
+        }
+
+
+
 
 //        $this->set(compact('testpar'));
 
