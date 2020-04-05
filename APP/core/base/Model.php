@@ -109,7 +109,7 @@ abstract class Model
                     {
                         $tbl->$name = $value;
                     }
-                    R::store("online");
+                    R::store($tbl);
 
 
 
