@@ -93,7 +93,7 @@ abstract class Model
 
         }
 
-        if ($online['ip'])  echo "fdgdfg";
+        if ($online['ip'])  echo "Обновляем по IP";
             elseif ($online['user'] and $online['user'] != "guest") echo "Обновляем юзера";
                 else echo "Добавляем юзера в таблицу";
 
