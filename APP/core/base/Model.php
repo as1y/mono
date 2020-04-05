@@ -88,11 +88,7 @@ abstract class Model
         if ($user != "guset"){
 
             $online = R::findOne("online", "WHERE user = ?", [$user]);
-
-            var_dump($online);
-
-            exit();
-
+            
             if ($online){
                 $online->time = time();
                 R::store($online);
