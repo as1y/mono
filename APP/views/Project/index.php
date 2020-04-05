@@ -7,7 +7,9 @@
 
         </div>
         <div class="card-body justify-content-center text-center-end">
-            <div class="row">
+
+
+            <div class="row-fluid">
 
                 <div class="col-sm-6 col-xl-3">
 
@@ -101,9 +103,9 @@
 
 
 
-
-
             </div>
+
+
         </div>
     </div>
 
