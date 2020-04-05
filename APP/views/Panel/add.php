@@ -266,7 +266,7 @@
 
             </div>
 
-
+            <button type="submit" class="btn btn-primary">Submit <i class="icon-paperplane ml-2"></i></button>
 
 
         </fieldset>
