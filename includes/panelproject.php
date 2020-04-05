@@ -62,32 +62,11 @@
                     <li class="nav-item">
                         <a href="/panel/" class="nav-link <?=isset($active['index']) ? $active['index'] : ''; ?>">
                             <i class="icon-home4"></i>
-                            <span>	Проекты </span>
-                        </a>
-                    </li>
-                    <li class="nav-item"><a href="/panel/add" class="nav-link <?=isset($active['add']) ? $active['add'] : ''; ?>"><i class="icon-phone-plus"></i> <span>Добавить проект</span></a></li>
-                    <!-- /main -->
-
-                    <li class="nav-item-header">
-                        <div class="text-uppercase font-size-sm line-height-sm">ОБЗОР БИРЖИ</div>
-                    </li>
-
-                    <li class="nav-item">
-                        <a href="#" class="nav-link">
-                            <i class="icon-users4"></i>
-                            <span>	Операторы </span>
-                            <span class="badge badge-pill bg-secondary ml-auto">39</span>
-
+                            <span>	Статистика </span>
                         </a>
                     </li>
 
-                    <li class="nav-item">
-                        <a href="#" class="nav-link">
-                            <i class="icon-stats-growth"></i>
-                            <span>	Проекты </span>
-                            <span class="badge badge-pill bg-secondary ml-auto">1</span>
-                        </a>
-                    </li>
+
 
 
 
