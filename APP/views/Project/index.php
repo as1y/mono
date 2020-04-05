@@ -163,6 +163,8 @@
 
                         <?else:?>
 
+                            <i class="icon-checkmark icon-2x text-success border-success border-3 rounded-round p-3 mb-3"></i>
+
 
                             <form action="/project/stop/" method="post">
                                 <div class="py-20 text-center">
@@ -172,9 +174,12 @@
                                     <div class="font-size-h4 font-w600"><div class="badge badge-success">ПРОЕКТ АКТИВЕН</div></div>
                                     <div class="text-muted">Статус проекта</div>
                                     <div class="pt-20">
+
+
                                         <a class="btn btn-sm btn-danger" id="pause" href="/project/?id=<?=$_GET['id']?>&action=stop">
                                             <i class="fa fa-stop mr-5"></i> ОСТАНОВИТЬ ПРОЕКТ
                                         </a>
+
 
                                     </div>
                                 </div>
