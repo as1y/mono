@@ -84,10 +84,10 @@
 
                     </div>
 
-                    <div class="col-md-2">
+                    <div class="col-md-2 align-middle">
 
                         <span class="align-middle">middle</span>
-                        
+
                         <div>
                             <a href="#" class="btn bg-indigo-300"><i class="icon-statistics mr-2"></i> View report</a>
                         </div>
