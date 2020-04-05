@@ -54,7 +54,7 @@
 
 
                     <div class="form-group">
-                        <label>Сфера деятельности:</label>
+                        <label>Сфера деятельности: <span class="text-danger">*</span> </label>
                         <select name="tematika" data-placeholder="Выберете направление" class="form-control form-control-select2 required" data-fouc>
                             <option></option>
                             <option value="1">Digital</option>
@@ -102,7 +102,7 @@
 
                 <div class="col-md-6">
                     <div class="form-group row">
-                        <label class="col-form-label col-lg-4">Выберите цель звонка</label>
+                        <label class="col-form-label col-lg-4">Выберите цель звонка<span class="text-danger">*</span></label>
                         <div class="col-lg-8">
                             <select name="type" size="6" class=" form-control">
                                 <option value="1" selected="">ЛИД</option>
@@ -119,7 +119,7 @@
                 </div>
                 <div class="col-md-6">
                     <div class="form-group">
-                        <label>Оплата за достижение цели:</label>
+                        <label>Оплата за достижение цели:<span class="text-danger">*</span></label>
                         <div class="input-group">
 											<span class="input-group-prepend">
 												<span class="input-group-text">РУБ.</span>
@@ -135,7 +135,7 @@
                     <div class="form-group row">
 
                         <div class="col-md-6">
-                            <label>Мини кол-во звонков за смену:</label>
+                            <label>Мини кол-во звонков за смену:<span class="text-danger">*</span></label>
 
                             <div class="input-group">
 											<span class="input-group-prepend">
@@ -151,7 +151,7 @@
                         </div>
 
                         <div class="col-md-6">
-                            <label>Вознаграждение:</label>
+                            <label>Вознаграждение:<span class="text-danger">*</span></label>
                             <div class="input-group">
 											<span class="input-group-prepend">
 												<span class="input-group-text">РУБ.</span>
