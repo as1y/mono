@@ -89,12 +89,16 @@ abstract class Model
 
             $online = R::findOne("online", "WHERE username = ?", [$user]);
 
+            var_dump($online);
+
+            exit();
+
             if ($online){
                 $online->time = time();
                 R::store($online);
                 return true;
             }
-            
+
         }
 
         if ($user == "guest"){
