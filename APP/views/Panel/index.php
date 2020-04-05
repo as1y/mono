@@ -1,6 +1,6 @@
 <?php
 
-show($company);
+//show($company);
 
 ?>
 
@@ -17,9 +17,24 @@ show($company);
                     <button type="button" class="btn bg-success-400 btn-icon"><i class="icon-task"></i></button>
                 </div>
             </div>
-
             <div class="card-body">
+
+                <div class="row">
+
+                    <div class="col-md-3">ЛОГОТИП</div>
+
+                    <div class="col-md-6">Статистика</div>
+
+                    <div class="col-md-3">КНОПКА УПРАВЛЕНИЕ</div>
+
+
+                </div>
+
+
                 Card header with single icon button
+
+
+
             </div>
         </div>
         <!-- /icon button -->
