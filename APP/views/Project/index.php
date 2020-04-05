@@ -153,7 +153,7 @@
                                 <?endif;?>
 
 
-                        <a href="/project/?id=<?=$_GET['id']?>&action=play" class="btn bg-success">ЗАПУСК<i class="icon-arrow-right14 ml-2"></i></a>
+                        <a href="/project/?id=<?=$_GET['id']?>&action=play" class="btn bg-success"><i class="icon-play4 ml-2"></i> ЗАПУСК</a>
 
 
 
