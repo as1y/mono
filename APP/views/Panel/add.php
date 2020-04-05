@@ -267,6 +267,7 @@
             </div>
 
             <div class="row text-center">
+                <hr>
                 <div class="col-md-4">
 
                 </div>
