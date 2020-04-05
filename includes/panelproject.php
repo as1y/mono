@@ -84,14 +84,14 @@
 
                     <li class="nav-item">
                         <a href="/project/set/?id=<?=$_GET['id']?>" class="nav-link <?=isset($active['set']) ? $active['set'] : ''; ?>">
-                            <i class="icon-home4"></i>
+                            <i class="icon-database"></i>
                             <span>	База данных </span>
                         </a>
                     </li>
 
                     <li class="nav-item">
                         <a href="/project/set/?id=<?=$_GET['id']?>" class="nav-link <?=isset($active['set']) ? $active['set'] : ''; ?>">
-                            <i class="icon-home4"></i>
+                            <i class="icon-file-text2"></i>
                             <span>	Скрипт разговора </span>
                         </a>
                     </li>
