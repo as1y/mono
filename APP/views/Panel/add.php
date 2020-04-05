@@ -89,7 +89,6 @@
                     <div class="form-group">
                         <label>О компании: <span class="text-danger">*</span></label>
                         <textarea rows="5" cols="5" name="aboutcompany" class="form-control required"  placeholder="О компани"></textarea>
-
                         <span class="form-text text-muted">Короткие и важные факты о компании.</span>
                     </div>
                 </div>
@@ -111,7 +110,8 @@
                 <div class="col-md-6">
                     <div class="form-group">
                         <label>Название продукта: <span class="text-danger">*</span></label>
-                        <input type="text" name="nameproduct" placeholder="University name" class="form-control required">
+                        <input type="text" name="nameproduct" placeholder="Название продукта" class="form-control required">
+                        <span class="form-text text-muted">Название продукта который планируется предлагать</span>
                     </div>
                 </div>
 
@@ -119,7 +119,8 @@
                     <div class="form-group">
                         <div class="form-group">
                             <label>Ценовая политика: <span class="text-danger">*</span></label>
-                            <input type="text" name="nameproduct" placeholder="University name" class="form-control required">
+                            <input type="text" name="nameproduct" placeholder="Например: от 10.000" class="form-control required">
+                            <span class="form-text text-muted">Минимальная цена сделки или контракта</span>
                         </div>
                     </div>
                 </div>
@@ -133,8 +134,10 @@
 
 
                     <div class="form-group">
-                        <label>Degree level: <span class="text-danger">*</span></label>
-                        <input type="text" name="degree-level" placeholder="Bachelor, Master etc." class="form-control required">
+                        <label>Для кого продукт: <span class="text-danger">*</span></label>
+                        <textarea rows="5" cols="5" name="aboutcompany" class="form-control required"  placeholder="Продукт для малого бизнеса. ЛПР владельцы ИП"></textarea>
+                        <span class="form-text text-muted">Целевая аудитория продукта. Кто ЛПР</span>
+
                     </div>
 
                     <div class="form-group">
