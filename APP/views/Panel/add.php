@@ -128,9 +128,20 @@
 
                         <div class="col-md-6">
                             <label>Минимальное кол-во звонков:</label>
-                            <input type="text" name="priceresult" placeholder="100" class="form-control required">
-                            <span class="form-text text-muted">В среднем оператор в смену совершает от 100 звонков</span>
+
+                            <div class="input-group">
+											<span class="input-group-prepend">
+												<span class="input-group-text">
+                                                <i class="fa fa-phone"></i>
+                                                </span>
+											</span>
+                                <input type="text" name="mincall" placeholder="100" class="form-control required">
+                            </div>
+
+
+
                         </div>
+
                         <div class="col-md-6">
                             <label>Вознаграждение:</label>
                             <div class="input-group">
@@ -144,7 +155,7 @@
 
                         <span class="form-text text-muted">Для мотивации рекомендуем поставить вознаграждение за совершения минимально кол-ва звонков</span>
 
-                        
+
                     </div>
 
 
