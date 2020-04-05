@@ -260,7 +260,7 @@
 
                 <div class="col-md-6">
                     <label>E-mail: <span class="text-danger">*</span></label>
-                    <input type="text" name="transkr" class="form-control required email" placeholder="E-mail" value="<?=$_SESSION['ulogin']['email']?>">
+                    <input type="text" name="email" class="form-control required email" placeholder="E-mail" value="<?=$_SESSION['ulogin']['email']?>">
                     <span class="form-text text-muted">На который будут приходить уведомления и результаты</span>
 
                 </div>

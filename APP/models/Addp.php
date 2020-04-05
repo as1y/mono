@@ -4,6 +4,58 @@ use RedBeanPHP\R;
 
 class Addp extends \APP\core\base\Model {
 
+    // АТРИБУТЫ КОТОРЫЕ ЗАБИРАЕМ ПРИ ДОБАВЛЕНИИ
+    public $ATR = [
+
+        'company' => '',
+        'transkr' => '',
+        'name' => '',
+        'adress' => '',
+        'tematika' => '',
+        'logo' => '',
+        'aboutcompany' => '',
+        'nameproduct' => '',
+        'minimumprice' => '',
+        'type' => '',
+        'priceresult' => '',
+        'mincall' => '',
+        'bonuscall' => '',
+        'timecall' => '',
+
+
+
+
+        'signup-username' => '',
+        'signup-email' => '',
+        'signup-password' => '',
+        'signup-password-confirm' => '',
+    ];
+    // Правила валидации
+    public $rules = [
+        'required' => [
+            ['signup-username'],
+            ['signup-email'],
+            ['signup-password'],
+            ['signup-password-confirm'],
+        ],
+        'email' =>[
+            ['signup-email'],
+        ],
+        'lengthMin' =>[
+            ['signup-password',5],
+            ['signup-password-confirm',5],
+        ],
+        'lengthMax' =>[
+            ['signup-password',30],
+            ['signup-password-confirm',30],
+            ['signup-username',30],
+        ],
+
+
+
+
+    ];
+
 
 
 
