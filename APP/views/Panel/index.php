@@ -120,7 +120,7 @@
 
                     </div>
 
-                    <div class="col-md-1">
+                    <div class="col-md-2">
 
                         <div>
                             <a href="#" class="btn bg-indigo-300"><i class="icon-statistics mr-2"></i> View report</a>
