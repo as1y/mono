@@ -23,7 +23,7 @@
             <!-- User menu -->
             <div  class="sidebar-user align-self-center">
                 <div class="card">
-                    <a href="/panel/"  class="btn bg-success-300"><i class="icon-square-left mr-2"></i> НАЗАД</a>
+                    <a href="/panel/"  class="btn btn-light"><i class="icon-square-left mr-2"></i> НАЗАД</a>
                 </div>
 
             </div>
