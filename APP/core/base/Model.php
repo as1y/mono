@@ -84,7 +84,7 @@ abstract class Model
         if ($_SESSION['ulogin']) $user = $_SESSION['ulogin']['username'];
         else $user = "guest";
 
-        $online = R::find("onlone", "WHERE ip = ?", [$_SERVER['REMOTE_ADDR']]);
+        if ($user == "guest")  $online = R::findOne("online", "WHERE ip = ?", [$_SERVER['REMOTE_ADDR']]);
 
 
 
