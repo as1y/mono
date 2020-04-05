@@ -10,12 +10,12 @@
     <form class="wizard-form steps-validation" action="/panel/add/" method="post" data-fouc>
         <h6>Компания</h6>
         <fieldset>
-
+            <div class="row text-center">
             <button type="button" type="submit" class="btn btn-primary btn-labeled btn-labeled-left btn-lg">
                 <b><i class="icon-pin-alt"></i></b>
                 Создать проект
             </button>
-
+            </div>
 
             <div class="row">
 
