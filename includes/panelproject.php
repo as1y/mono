@@ -22,13 +22,7 @@
 
             <!-- User menu -->
             <div class="sidebar-user">
-                <div class="card-body">
-
-
-                    <button type="button" class="btn btn-primary"><i class="icon-cog3 mr-2"></i> Вернуться назад</button>
-
-                    
-                </div>
+                <button type="button" class="btn btn-primary"><i class="icon-cog3 mr-2"></i> Вернуться назад</button>
             </div>
             <!-- /user menu -->
 
