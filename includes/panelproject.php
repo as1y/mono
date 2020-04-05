@@ -54,7 +54,7 @@
 
 
                     <li class="nav-item">
-                        <a href="/panel/" class="nav-link <?=isset($active['set']) ? $active['set'] : ''; ?>">
+                        <a href="/project/set/?id<?=$_GET['id']?>" class="nav-link <?=isset($active['set']) ? $active['set'] : ''; ?>">
                             <i class="icon-home4"></i>
                             <span>	Настройки </span>
                         </a>
