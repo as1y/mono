@@ -53,6 +53,13 @@
                     </li>
 
 
+                    <li class="nav-item">
+                        <a href="/panel/" class="nav-link <?=isset($active['index']) ? $active['index'] : ''; ?>">
+                            <i class="icon-home4"></i>
+                            <span>	Настройки </span>
+                        </a>
+                    </li>
+
 
 
 
