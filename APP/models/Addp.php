@@ -61,7 +61,7 @@ class Addp extends \APP\core\base\Model {
 
 	public function addproject($DATA) {
 
-        $tbl = R::dispense("company");
+
 
         //ФОРМИРУЕМ МАССИВ ДАННЫХ ДЛЯ РЕГИСТРАЦИИ
         $uniq = [
@@ -72,13 +72,15 @@ class Addp extends \APP\core\base\Model {
 
         array_unshift($DATA, $uniq);
 
+        show($DATA);
 
+        $tbl = R::dispense("company");
         //ФОРМИРУЕМ МАССИВ ДАННЫХ ДЛЯ РЕГИСТРАЦИИ
         foreach($DATA as $name=>$value)
         {
             $tbl->$name = $value;
         }
-        return R::store("company");
+        return R::store($tbl);
 
 
 
