@@ -44,8 +44,7 @@
 
                     </div>
 
-                    <div class="col-md-8">
-
+                    <div class="col-md-4">
                         <div class="card-body d-md-flex align-items-md-center justify-content-md-between flex-md-wrap">
 
                             <div class="d-flex align-items-center mb-3 mb-md-0">
@@ -83,6 +82,9 @@
 
                         </div>
 
+                    </div>
+
+                    <div class="col-md-4">
 
                         <ul class="list-group list-group-flush">
                             <a href="#" class="list-group-item list-group-item-action">
@@ -114,8 +116,17 @@
                                 <span class="badge bg-dark badge-pill ml-auto">40</span>
                             </a>
                         </ul>
-
                     </div>
+
+
+<!--                    <div class="col-md-6">-->
+<!---->
+<!---->
+<!---->
+<!---->
+<!---->
+<!---->
+<!--                    </div>-->
 
                     <div class="col-md-2">
 
