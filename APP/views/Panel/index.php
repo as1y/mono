@@ -87,19 +87,13 @@
                     <div class="col-md-2 align-self-center">
 
                         <div class="media">
-                            <div class="media">
-                                <div class="media-body">
-                                    <h3 class="mb-0">389,438</h3>
-                                    <span class="text-uppercase font-size-xs">total orders</span>
-                                </div>
-
-                                <div class="ml-3 align-self-center">
-                                    <i class="icon-bag icon-3x opacity-75"></i>
-                                </div>
+                            <div class="media-body">
+                                <h3 class="mb-0">389,438</h3>
+                                <span class="text-uppercase font-size-xs">total orders</span>
                             </div>
 
                             <div class="ml-3 align-self-center">
-                                <i class="icon-bag icon-3x text-danger-400"></i>
+                                <i class="icon-bag icon-3x opacity-75"></i>
                             </div>
                         </div>
 
