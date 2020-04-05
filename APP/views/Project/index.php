@@ -1,6 +1,10 @@
 <div class="row">
 
     <div class="col-sm-6 col-xl-3">
+
+
+        <a href="#">
+
         <div class="card card-body bg-indigo-400 has-bg-image">
             <div class="media">
                 <div class="mr-3 align-self-center">
@@ -13,9 +17,16 @@
                 </div>
             </div>
         </div>
+
+        </a>
+
+
     </div>
 
     <div class="col-sm-6 col-xl-3">
+
+        <a href="#">
+
         <div class="card card-body bg-success-400 has-bg-image">
             <div class="media">
                 <div class="mr-3 align-self-center">
@@ -28,13 +39,15 @@
                 </div>
             </div>
         </div>
+
+        </a>
+
     </div>
 
 
     <div class="col-sm-6 col-xl-3">
 
         <a href="#">
-
 
         <div class="card card-body bg-danger-400 has-bg-image">
             <div class="media">
@@ -51,11 +64,14 @@
         </a>
 
 
-        
+
     </div>
 
 
     <div class="col-sm-6 col-xl-3">
+
+        <a href="">
+
         <div class="card card-body bg-warning-400 has-bg-image">
             <div class="media">
                 <div class="media-body">
@@ -68,6 +84,10 @@
                 </div>
             </div>
         </div>
+
+
+        </a>
+
     </div>
 
 
