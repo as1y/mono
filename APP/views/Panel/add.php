@@ -104,7 +104,7 @@
                     <div class="form-group row">
                         <label class="col-form-label col-lg-4">Выберите цель звонка</label>
                         <div class="col-lg-8">
-                            <select name="type" size="4" class=" form-control">
+                            <select name="type" size="6" class=" form-control">
                                 <option value="1" selected="">ЛИД</option>
                                 <option value="2">ВСТРЕЧА</option>
                                 <option value="4">ПРИГЛАШЕНИЕ</option>
