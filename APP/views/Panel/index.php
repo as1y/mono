@@ -86,10 +86,20 @@
 
                     <div class="col-md-2 align-self-center">
 
-                       
+                        <div class="media">
+                            <div class="media-body">
+                                <h3 class="font-weight-semibold mb-0">НЕ РАБОТАЕТ</h3>
+                                <span class="text-uppercase font-size-sm text-muted">СТАТУС</span>
+                            </div>
+
+                            <div class="ml-3 align-self-center">
+                                <i class="icon-bag icon-3x text-danger-400"></i>
+                            </div>
+                        </div>
+
 
                         <div>
-                            <a href="#" class="btn bg-indigo-300"><i class="icon-statistics mr-2"></i> View report</a>
+                            <a href="#" class="btn bg-indigo-300"><i class="icon-statistics mr-2"></i> УПРАВЛЕНИЕ</a>
                         </div>
 
 
