@@ -11,7 +11,7 @@ class Panel extends \APP\core\base\Model {
 
 
 
-
+            show($DATA);
 
 
 
