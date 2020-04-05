@@ -118,7 +118,7 @@
                 <div class="col-md-6">
                     <div class="form-group">
                         <div class="form-group">
-                            <label>Ценовая политика: <span class="text-danger">*</span></label>
+                            <label>Минимальная ценовая планка: <span class="text-danger">*</span></label>
                             <input type="text" name="nameproduct" placeholder="Например: от 10.000" class="form-control required">
                             <span class="form-text text-muted">Минимальная цена сделки или контракта</span>
                         </div>
@@ -130,25 +130,14 @@
             </div>
 
             <div class="row">
-                <div class="col-md-6">
 
 
-                    <div class="form-group">
-                        <label>Для кого продукт: <span class="text-danger">*</span></label>
-                        <textarea rows="5" cols="5" name="aboutcompany" class="form-control required"  placeholder="Продукт для малого бизнеса. ЛПР владельцы ИП"></textarea>
-                        <span class="form-text text-muted">Целевая аудитория продукта. Кто ЛПР</span>
+                <div class="form-group">
+                    <label>Для кого продукт: <span class="text-danger">*</span></label>
+                    <textarea rows="5" cols="5" name="aboutcompany" class="form-control required"  placeholder="Продукт для малого бизнеса. ЛПР владельцы ИП"></textarea>
+                    <span class="form-text text-muted">Целевая аудитория продукта. Кто ЛПР.</span>
 
-                    </div>
-
-                    <div class="form-group">
-                        <label>Specialization:</label>
-                        <input type="text" name="specialization" placeholder="Design, Development etc." class="form-control">
-                    </div>
                 </div>
-
-
-
-
 
             </div>
 
