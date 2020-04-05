@@ -86,7 +86,7 @@
 
                     <div class="col-md-2 align-self-center">
 
-
+                        <i class="icon-book icon-2x text-success-400 border-success-400 border-3 rounded-round p-3 mb-3 mt-1"></i>
 
 
                         <div>
