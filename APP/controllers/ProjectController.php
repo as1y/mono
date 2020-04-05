@@ -7,6 +7,7 @@ class ProjectController extends AppController {
 
     public $layaout = 'PANEL';
     public $BreadcrumbsControllerLabel = "Кабинет рекламодателя";
+    public $BreadcrumbsControllerUrl = "/panel";
 
 
 	public function indexAction() {
@@ -24,7 +25,7 @@ class ProjectController extends AppController {
         \APP\core\base\View::setMeta($META);
         \APP\core\base\View::setBreadcrumbs($BREADCRUMBS);
 
-        
+
 
 
 //		$project = new Project;
