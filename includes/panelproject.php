@@ -21,8 +21,11 @@
 
 
             <!-- User menu -->
-            <div class="sidebar-user">
-                <button type="button" class="btn btn-primary"><i class="icon-cog3 mr-2"></i> Вернуться назад</button>
+            <div  class="sidebar-user align-self-center">
+                <div>
+                    <button type="button" class="btn btn-primary"><i class="icon-cog3 mr-2"></i> Вернуться назад</button>
+                </div>
+
             </div>
             <!-- /user menu -->
 
