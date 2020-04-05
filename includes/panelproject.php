@@ -1,3 +1,11 @@
+<div  class="sidebar-user align-self-center">
+    <div class="card">
+        <a href="/panel/"  class="btn bg-success-300"><i class="icon-square-left mr-2"></i> Вернуться назад</a>
+    </div>
+
+</div>
+
+
 <!-- Main sidebar -->
 <div class="sidebar sidebar-dark sidebar-main sidebar-expand-md align-self-start">
 
@@ -21,12 +29,7 @@
 
 
             <!-- User menu -->
-            <div  class="sidebar-user align-self-center">
-                <div class="card">
-                    <a href="/panel/"  class="btn bg-success-300"><i class="icon-square-left mr-2"></i> Вернуться назад</a>
-                </div>
 
-            </div>
             <!-- /user menu -->
 
             <?php
