@@ -97,10 +97,13 @@ abstract class Model
             if ($online) {
                 $online->time = time();
                 R::store($online);
-
-                exit ("");
                 echo "Обновляем метку времени у гостя<br>";
+
+
             }
+
+            exit ("");
+            
             return true;
         }
 
