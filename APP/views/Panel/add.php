@@ -120,15 +120,13 @@
                 <div class="col-md-6">
                     <div class="form-group">
                         <label>Оплата за достижение цели:</label>
-                        <input type="text" name="priceresult" placeholder="Цена за успешный результат" class="form-control required">
-
                         <div class="input-group">
 											<span class="input-group-prepend">
 												<span class="input-group-text">РУБ.</span>
 											</span>
                             <input type="text" name="priceresult" placeholder="500" class="form-control required">
                         </div>
-                        
+
                         <span class="form-text text-muted">Сколько вы готовы платить оператору за достижение цели</span>
 
 
