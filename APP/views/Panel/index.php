@@ -12,7 +12,7 @@
         <!-- Icon button -->
         <div class="card">
             <div class="card-header bg-white header-elements-inline">
-                <h6 class="card-title"><?=$row['name']?></h6>
+                <h6 class="card-title">Проект: <b><?=$row['name']?></b></h6>
                 <div class="header-elements">
                     <button type="button" class="btn bg-success-400 btn-icon"><i class="icon-task"></i></button>
                 </div>
