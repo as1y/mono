@@ -40,7 +40,7 @@
                 </div>
 
                 <div class="ml-3 align-self-center">
-                    <i class="icon-bag icon-3x opacity-75"></i>
+                    <i class="icon-crown icon-3x opacity-75"></i>
                 </div>
             </div>
         </div>
