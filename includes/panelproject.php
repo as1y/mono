@@ -1,10 +1,3 @@
-<div  class="sidebar-user align-self-center">
-    <div class="card">
-        <a href="/panel/"  class="btn bg-success-300"><i class="icon-square-left mr-2"></i> Вернуться назад</a>
-    </div>
-
-</div>
-
 
 <!-- Main sidebar -->
 <div class="sidebar sidebar-dark sidebar-main sidebar-expand-md align-self-start">
@@ -21,7 +14,12 @@
         </a>
     </div>
     <!-- /sidebar mobile toggler -->
+    <div  class="sidebar-user align-self-center">
+        <div class="card">
+            <a href="/panel/"  class="btn bg-success-300"><i class="icon-square-left mr-2"></i> Вернуться назад</a>
+        </div>
 
+    </div>
 
     <!-- Sidebar content -->
     <div class="sidebar-content nav-item-divider">
