@@ -120,7 +120,7 @@
 
                     </div>
 
-                    <div class="col-md-2">
+                    <div class="col-md-1">
 
                         <div class="card-body d-md-flex align-items-md-center justify-content-md-between flex-md-wrap">
 
