@@ -135,7 +135,7 @@
                     <div class="form-group row">
 
                         <div class="col-md-6">
-                            <label>Минимальное кол-во звонков:</label>
+                            <label>Мини кол-во звонков за смену:</label>
 
                             <div class="input-group">
 											<span class="input-group-prepend">
