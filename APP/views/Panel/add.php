@@ -124,7 +124,7 @@
                         <span class="form-text text-muted">Сколько вы готовы платить оператору за достижение цели</span>
                     </div>
 
-                    <div class="form-group">
+                    <div class="form-group row">
 
                         <div class="col-md-6">
                             <label>Минимальное кол-во звонков:</label>
