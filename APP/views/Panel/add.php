@@ -7,7 +7,7 @@
 
     </div>
 
-    <form class="wizard-form steps-validation" action="#" data-fouc>
+    <form class="wizard-form steps-validation" action="/panel/add/" data-fouc>
         <h6>Компания</h6>
         <fieldset>
             <div class="row">
@@ -148,9 +148,6 @@
 
         </fieldset>
 
-
-
-
         <h6>Оффер</h6>
         <fieldset>
             <h2>Сколько и за что платить оператору</h2>
@@ -273,6 +270,9 @@
 
 
         </fieldset>
+
+
+
     </form>
 </div>
 <!-- /wizard with validation -->
