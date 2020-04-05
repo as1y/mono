@@ -86,12 +86,14 @@ abstract class Model
 
 
         if ($user != "guset"){
-            $online = R::findOne("online", "WHERE user = ?", [$user]);
+
+            $online = \R::findOne("online", "WHERE user = ?", [$user]);
             if ($online){
                 $online->timestamp = time();
                 R::store($online);
                 return true;
             }
+
         }
 
         if ($user == "guest"){

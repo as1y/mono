@@ -102,13 +102,7 @@ class PanelController extends AppController {
 
             }
 
-
-
-
-
-
             echo "ok";
-
             exit();
         }
 
