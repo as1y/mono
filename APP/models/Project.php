@@ -7,9 +7,9 @@ class Project extends \APP\core\base\Model {
 
 
 		if( isset($_SESSION['ulogin']['woof']) || $_SESSION['ulogin']['woof'] == "1") {
-			$company = \R::findOne('company', 'WHERE id = ? LIMIT 1', [$idc]);
+			$company = R::findOne('company', 'WHERE id = ? LIMIT 1', [$idc]);
 		} else {
-			$company = \R::findOne('company', 'WHERE id = ? AND client_id = ? LIMIT 1', [$idc, $_SESSION['ulogin']['id']]);
+			$company = R::findOne('company', 'WHERE id = ? AND client_id = ? LIMIT 1', [$idc, $_SESSION['ulogin']['id']]);
 		}
 		if(!isset($company)) redir('/panel');
 		return $company;
