@@ -2,6 +2,7 @@
 namespace APP\controllers;
 use APP\core\Cache;
 use APP\models\Addp;
+use APP\models\Panel;
 use APP\models\Project;
 use APP\models\Add;
 use APP\models\Profile;
@@ -31,6 +32,22 @@ class PanelController extends AppController {
 
         \APP\core\base\View::setMeta($META);
         \APP\core\base\View::setBreadcrumbs($BREADCRUMBS);
+
+
+        $panel = new Panel(); //Вызываем Моудль
+
+        $company = $panel->allcompany($_SESSION['ulogin']['id']);
+
+        if($company){
+
+
+        }else{
+
+        }
+
+
+        show();
+
 
 
 
