@@ -134,22 +134,17 @@
                         <div class="col-md-6">
                             <label>Вознаграждение:</label>
                             <div class="input-group">
-
 											<span class="input-group-prepend">
-												<span class="input-group-text">@</span>
+												<span class="input-group-text">РУБ.</span>
 											</span>
                                 <input type="text" name="priceresult" placeholder="500" class="form-control required">
                             </div>
 
-
-
-
-
-
-
-                            <span class="form-text text-muted">Для мотивации рекомендуем поставить вознаграждение за совершения минимально кол-ва звонков</span>
                         </div>
 
+                        <span class="form-text text-muted">Для мотивации рекомендуем поставить вознаграждение за совершения минимально кол-ва звонков</span>
+
+                        
                     </div>
 
 
