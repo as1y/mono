@@ -33,31 +33,30 @@ class ProjectController extends AppController {
         \APP\core\base\View::setBreadcrumbs($BREADCRUMBS);
 
 
-
-//		//Переменные
-//		$contact =  $project->contact($idc);
-//		$result = $project->getres($idc);
-//		//Конверсия и тип компании
-//		if($contact['ready'] != 0)  $convert = round( (($result['all']/$contact['ready'])*100), 2  )  ;
-//		if ($result['all']=="0") $convert = 0;
-//		$type = $company['type'];
-//		//Конверсия и тип компании
-//		$balnow = $project->checkbalanceinproject("client",$idc);
-//		$status['balance'] = $project->validbalance($balnow,$company);
-//		if ($contact['free'] >= '10') {
-//			$status['contact'] = true;
-//		} else{
-//			$status['contact'] = false;
-//		}
-//		if ($company['status'] == 1) {
-//			$status['company'] = true;
-//		} else{
-//			$status['company'] = false;
-//		}
-//		$status['script'] = $project->checkscript($idc);
-//		if(isset($_GET['action']) && $_GET['action'] == "play" && isset($_GET['id'])) $project->tryplay($_GET, $status, $idc);
-//		if(isset($_GET['action']) && $_GET['action'] == "stop" && isset($_GET['id']) )  $project->pstop($_GET, $idc);
-//		$this->set(compact('idc','razdel','company','contact','result','type','convert', 'balnow', 'status'));
+		//Переменные
+		$contact =  $project->contact($_GET['id']);
+		$result = $project->getres($_GET['id']);
+		//Конверсия и тип компании
+		if($contact['ready'] != 0)  $convert = round( (($result['all']/$contact['ready'])*100), 2  )  ;
+		if ($result['all']=="0") $convert = 0;
+		$type = $company['type'];
+		//Конверсия и тип компании
+		$balnow = $project->checkbalanceinproject("client",$_GET['id']);
+		$status['balance'] = $project->validbalance($balnow,$company);
+		if ($contact['free'] >= '10') {
+			$status['contact'] = true;
+		} else{
+			$status['contact'] = false;
+		}
+		if ($company['status'] == 1) {
+			$status['company'] = true;
+		} else{
+			$status['company'] = false;
+		}
+		$status['script'] = $project->checkscript($_GET['id']);
+		if(isset($_GET['action']) && $_GET['action'] == "play" && isset($_GET['id'])) $project->tryplay($_GET, $status, $_GET['id']);
+		if(isset($_GET['action']) && $_GET['action'] == "stop" && isset($_GET['id']) )  $project->pstop($_GET, $idc);
+		$this->set(compact('idc','razdel','company','contact','result','type','convert', 'balnow', 'status'));
 
 
 
