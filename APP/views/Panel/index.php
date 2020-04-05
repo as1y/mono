@@ -78,27 +78,8 @@
 									</span>
                                 <span class="badge bg-success ml-auto">New</span>
                             </a>
-                            <a href="#" class="list-group-item list-group-item-action active">
-									<span class="font-weight-semibold">
-										<i class="icon-alignment-unalign mr-2"></i>
-										Data tables extensions
-									</span>
-                                <span class="badge bg-indigo-400 badge-pill ml-auto">38</span>
-                            </a>
-                            <a href="#" class="list-group-item list-group-item-action">
-									<span class="font-weight-semibold">
-										<i class="icon-cube3 mr-2"></i>
-										Application pages
-									</span>
-                                <span class="badge bg-pink-400 ml-auto">Fixed</span>
-                            </a>
-                            <a href="#" class="list-group-item list-group-item-action disabled">
-									<span class="font-weight-semibold">
-										<i class="icon-transmission mr-2"></i>
-										Horizontal navigation
-									</span>
-                                <span class="badge bg-dark badge-pill ml-auto">40</span>
-                            </a>
+                            
+
                         </ul>
 
                     </div>
