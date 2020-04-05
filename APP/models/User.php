@@ -129,6 +129,8 @@ class User extends \APP\core\base\Model
 			$tbl->$name = $value;
 		}
 		return R::store($tbl);
+
+
 	}
 	// SAVEUSER
 	// ПРОВЕРКА ЕСТЬ ЛИ ТАКОЙ ЕМЕЙЛ

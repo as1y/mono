@@ -38,13 +38,11 @@ class Addp extends \APP\core\base\Model {
             ['priceresult'],
             ['mincall'],
             ['timecall'],
-            ['logo'],
 
         ],
         'email' =>[
             ['email'],
         ],
-
 
 //        'lengthMin' =>[
 //            ['signup-password',5],
@@ -56,9 +54,6 @@ class Addp extends \APP\core\base\Model {
 //            ['signup-username',30],
 //        ],
 
-
-
-
     ];
 
 
@@ -66,7 +61,25 @@ class Addp extends \APP\core\base\Model {
 
 	public function addproject($DATA) {
 
-            show($DATA);
+        $tbl = R::dispense("company");
+
+        //ФОРМИРУЕМ МАССИВ ДАННЫХ ДЛЯ РЕГИСТРАЦИИ
+        $uniq = [
+            'client_id' => $_SESSION['uload']['id'],
+            'status' => "1",
+            'datastart' => date("Y-m-d H:i:s"),
+        ];
+
+        array_unshift($DATA, $uniq);
+
+        
+        //ФОРМИРУЕМ МАССИВ ДАННЫХ ДЛЯ РЕГИСТРАЦИИ
+        foreach($DATA as $name=>$value)
+        {
+            $tbl->$name = $value;
+        }
+        return R::store($tbl);
+
 
 
             // По поводу валидации

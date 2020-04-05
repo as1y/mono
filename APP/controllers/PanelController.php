@@ -64,16 +64,23 @@ class PanelController extends AppController {
 
 
             $add = new Addp(); //Вызываем Моудль
-
             $add->load($_POST); // Берем из POST только те параметры которые нам нужны
 
-          $res =  $add->validate($_POST);
+           $validation = $add->validate($_POST);
 
-            show($res);
+            if ($validation){
+                $add->addproject($_POST);
+            }
 
-            show($add->errors);
 
-         //   $add->addproject($_POST);
+
+            if (!$validation){
+                $add->getErrorsVali(); //Записываем ошибки в сессию
+            }
+
+
+
+
 
 
             echo "ok";
