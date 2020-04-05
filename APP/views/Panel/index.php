@@ -86,19 +86,19 @@
                         <div class="row text-center">
                             <div class="col-4">
                                 <p><i class="icon-users2 icon-2x d-inline-block text-info"></i></p>
-                                <h5 class="font-weight-semibold mb-0">2,345</h5>
+                                <h5 class="font-weight-semibold mb-0">0</h5>
                                 <span class="text-muted font-size-sm">Звонков сегодня</span>
                             </div>
 
                             <div class="col-4">
                                 <p><i class="icon-point-up icon-2x d-inline-block text-warning"></i></p>
-                                <h5 class="font-weight-semibold mb-0">3,568</h5>
+                                <h5 class="font-weight-semibold mb-0">0</h5>
                                 <span class="text-muted font-size-sm">Успешных</span>
                             </div>
 
                             <div class="col-4">
                                 <p><i class="icon-cash3 icon-2x d-inline-block text-success"></i></p>
-                                <h5 class="font-weight-semibold mb-0">$9,693</h5>
+                                <h5 class="font-weight-semibold mb-0">0</h5>
                                 <span class="text-muted font-size-sm">Конверсия</span>
                             </div>
                         </div>
