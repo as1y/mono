@@ -86,15 +86,12 @@ abstract class Model
 
 
         if ($user != "guset"){
-
             $online = R::findOne("online", "WHERE user = ?", [$user]);
-
             if ($online){
                 $online->timestamp = time();
                 R::store($online);
                 return true;
             }
-
         }
 
         if ($user == "guest"){
@@ -102,18 +99,9 @@ abstract class Model
             if ($online) {
                 $online->timestamp = time();
                 R::store($online);
+                return true;
             }
-
-            echo "Обновляем метку времени у гостя<br>";
-            exit ("");
-
-            return true;
         }
-
-
-
-
-
 
         $tbl = R::dispense("online");
         //ФОРМИРУЕМ МАССИВ ДАННЫХ ДЛЯ РЕГИСТРАЦИИ
@@ -129,8 +117,6 @@ abstract class Model
         }
         R::store($tbl);
 
-
-        exit ("new");
 
         return true;
 
