@@ -12,6 +12,34 @@
                 <div class="col-sm-6 col-xl-3">
 
 
+                    <div class="card-body">
+                        <i class="icon-cross2 icon-2x text-danger border-danger border-3 rounded-round p-3 mb-3"></i>
+                        <h5 class="card-title">Center alignment</h5>
+                        <p class="mb-3">Use <code>.text-center</code> alignment utility class to center content horizontally. Responsive options are also available</p>
+
+                        <a href="#" class="btn bg-danger-400">Read more <i class="icon-arrow-right14 ml-2"></i></a>
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+
+    <div class="card">
+        <div class="card-header bg-white header-elements-inline">
+            <h6 class="card-title">Управление <b><?=$company['name']?></b></h6>
+
+        </div>
+        <div class="card-body justify-content-center">
+
+            <div class="row">
+                <div class="col-sm-6 col-xl-3">
+
+
                     <a href="#">
 
                         <div class="card card-body bg-indigo-400 has-bg-image">
@@ -93,30 +121,6 @@
                     </a>
 
                 </div>
-            </div>
-
-        </div>
-    </div>
-
-
-    <div class="card">
-        <div class="card-header bg-white header-elements-inline">
-            <h6 class="card-title">Управление <b><?=$company['name']?></b></h6>
-
-        </div>
-        <div class="card-body justify-content-center">
-
-            <div class="row">
-                <div class="card-body">
-                    <i class="icon-cross2 icon-2x text-danger border-danger border-3 rounded-round p-3 mb-3"></i>
-                    <h5 class="card-title">Center alignment</h5>
-                    <p class="mb-3">Use <code>.text-center</code> alignment utility class to center content horizontally. Responsive options are also available</p>
-
-                    <a href="#" class="btn bg-danger-400">Read more <i class="icon-arrow-right14 ml-2"></i></a>
-                </div>
-
-
-
             </div>
 
         </div>
