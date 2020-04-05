@@ -46,7 +46,7 @@
 
 
                     <li class="nav-item">
-                        <a href="/panel/" class="nav-link <?=isset($active['index']) ? $active['index'] : ''; ?>">
+                        <a href="/project/?id<?=$_GET['id']?>" class="nav-link <?=isset($active['index']) ? $active['index'] : ''; ?>">
                             <i class="icon-home4"></i>
                             <span>	Статистика </span>
                         </a>
