@@ -116,7 +116,9 @@ class ProjectController extends AppController {
 
 
         if (!$validation){
-            $_SESSION['errors'] = "Что-то пошло не так.";
+
+            $settings->getErrorsVali();
+
         }
 
 
