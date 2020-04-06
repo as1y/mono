@@ -80,7 +80,12 @@
             <tr>
                 <td class="wmin-md-100"><b>ОПЛАТА ЗА ЦЕЛЬ:</b></td>
                 <td class="wmin-md-350">
-                    <?=$company['company']?>
+                    <div class="input-group">
+											<span class="input-group-prepend">
+												<span class="input-group-text">РУБ.</span>
+											</span>
+                        <input type="text" name="priceresult" placeholder="500" class="form-control required" aria-invalid="false">
+                    </div>
 
                 </td>
             </tr>
@@ -115,7 +120,6 @@
 
                 </td>
             </tr>
-
 
 
 
