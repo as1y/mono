@@ -19,7 +19,7 @@
             <tbody>
 
             <tr>
-                <td class="wmin-md-100 bold">НАЗВАНИЕ:</td>
+                <td class="wmin-md-100"><b>НАЗВАНИЕ:</b></td>
                 <td class="wmin-md-350">
                     <?=$company['company']?>
 
