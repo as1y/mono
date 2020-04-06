@@ -1,7 +1,7 @@
 <!-- Table components -->
 <div class="card">
     <div class="card-header header-elements-inline">
-        <h5 class="card-title">НАСТРОЙКИ <?=$company['company']?></h5>
+        <h5 class="card-title">НАСТРОЙКИ ПРОЕКТА <?=$company['company']?></h5>
         <div class="header-elements">
             <div class="list-icons">
                 <a class="list-icons-item" data-action="collapse"></a>
@@ -9,7 +9,7 @@
             </div>
         </div>
     </div>
-    
+
     <div class="table-responsive">
         <table class="table  table-bordered">
             <tbody>
