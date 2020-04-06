@@ -2,6 +2,8 @@
 namespace APP\controllers;
 use APP\models\Project;
 use APP\core\Cache;
+use APP\models\Settings;
+
 class ProjectController extends AppController {
 
 
@@ -93,12 +95,31 @@ class ProjectController extends AppController {
         \APP\core\base\View::setMeta($META);
         \APP\core\base\View::setBreadcrumbs($BREADCRUMBS);
 
-        if ($_POST){
+        $settings = new Settings();
+        $settings->load($_POST); // Берем из POST только те параметры которые нам нужны
 
-            show($_POST);
+        $validation = $settings->validate($_POST);
 
-            exit("ok");
+        if ($validation){
+            if ($settings->editsettingsroject($_POST)){
+                redir("/project/set/?id=".$_POST['idc']);
+            }else{
+                $_SESSION['errors'] = "Ошибка базы данных. Попробуйте позже.";
+            }
         }
+
+
+
+        if (!$validation){
+            $_SESSION['errors'] = "Что-то пошло не так.";
+
+
+        }
+
+        echo "ok";
+        exit();
+
+
 
 
 
