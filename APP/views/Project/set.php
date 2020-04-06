@@ -76,31 +76,43 @@
     <div class="table-responsive">
         <table class="table  table-bordered">
             <tbody>
+            
+
 
             <tr>
                 <td class="wmin-md-100"><b>ОПЛАТА ЗА ЦЕЛЬ:</b></td>
                 <td class="wmin-md-350">
-                    <div class="input-group">
+
+
+                    <div class="col-md-6">
+                        <label>ОПЛАТА ЗА ЦЕЛЬ:<span class="text-danger">*</span></label>
+
+                        <div class="input-group">
 											<span class="input-group-prepend">
 												<span class="input-group-text">РУБ.</span>
 											</span>
-                        <input type="text" name="priceresult" placeholder="500" class="form-control required" aria-invalid="false">
+                            <input type="text" name="priceresult" placeholder="500" class="form-control required" aria-invalid="false">
+                        </div>
+
+
+
                     </div>
 
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="wmin-md-100"><b>ЛИМИТ В ДЕНЬ:</b></td>
-                <td class="wmin-md-350">
-
-                    <div class="input-group">
+                    <div class="col-md-6">
+                        <label>Лимит в день:<span class="text-danger">*</span></label>
+                        <div class="input-group">
 											<span class="input-group-prepend">
 												<span class="input-group-text">ШТ.</span>
 											</span>
-                        <input type="text" name="priceresult" placeholder="50" value="<?=$company['priceresult']?>" class="form-control required" aria-invalid="false">
+                            <input type="text" name="priceresult" placeholder="50" value="<?=$company['priceresult']?>" class="form-control required" aria-invalid="false">
+                        </div>
+
                     </div>
+
+
+
+
+
 
 
                 </td>
