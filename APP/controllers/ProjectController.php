@@ -75,14 +75,36 @@ class ProjectController extends AppController {
 		}
 		$this->set(compact('idc','razdel','company','zapisi', 'dataresult' ));
 	}
+
+
+
 	public function setAction() {
+
+
 		$project = new Project;
-		$razdel = "Настройки";
-		$idc = $_GET['id'];
-		$company = $project->getcom($idc);
-		$amoDB = $project->amoDB($idc);
-		$this->set(compact('idc','razdel','company','amoDB'));
+		$company = $project->getcom($_GET['id']);
+
+
+        $META = [
+            'title' => 'Настройки проекта ',
+            'description' => 'Настройки проекта ',
+            'keywords' => 'Настройки проекта ',
+        ];
+
+
+        $BREADCRUMBS['HOME'] = ['Label' => $this->BreadcrumbsControllerLabel, 'Url' => $this->BreadcrumbsControllerUrl];
+        $BREADCRUMBS['DATA'][] = ['Label' => "Настрийки проекта ".$company['name']];
+
+        \APP\core\base\View::setMeta($META);
+        \APP\core\base\View::setBreadcrumbs($BREADCRUMBS);
+
+
+
+		$this->set(compact('idc','company'));
 	}
+
+
+
 	public function operatorAction() {
 		$project = new Project;
 		$razdel = "Операторы на проекте";
