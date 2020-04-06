@@ -15,7 +15,7 @@ abstract class Model
             R::setup(CONFIG['db']['dsn'],CONFIG['db']['user'],CONFIG['db']['pass']);
             //  R::fancyDebug( TRUE );
             //  R::freeze(TRUE);
-            
+
         }
 
 	}
