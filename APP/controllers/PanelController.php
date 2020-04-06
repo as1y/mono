@@ -111,6 +111,22 @@ class PanelController extends AppController {
 
 
 
+    public function refferalAction(){
+
+
+    }
+
+
+
+    public function balanceAction(){
+
+
+    }
+
+
+
+
+
 
 }
 ?>
