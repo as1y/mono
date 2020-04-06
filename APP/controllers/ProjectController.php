@@ -83,18 +83,31 @@ class ProjectController extends AppController {
 		$project = new Project;
 		$company = $project->getcom($_GET['id']);
 
-
         $META = [
             'title' => 'Настройки проекта ',
             'description' => 'Настройки проекта ',
             'keywords' => 'Настройки проекта ',
         ];
-
         $BREADCRUMBS['HOME'] = ['Label' => $this->BreadcrumbsControllerLabel, 'Url' => $this->BreadcrumbsControllerUrl];
         $BREADCRUMBS['DATA'][] = ['Label' => "Настрийки проекта ".$company['company']];
-
         \APP\core\base\View::setMeta($META);
         \APP\core\base\View::setBreadcrumbs($BREADCRUMBS);
+
+        if ($_POST){
+
+            show($_POST);
+
+            exit("ok");
+        }
+
+
+
+
+
+
+
+
+
 
 
 
