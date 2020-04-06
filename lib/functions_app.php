@@ -30,12 +30,12 @@ function leadteable ($status){
 	if ($status=="2") return "";
 }
 function companytype ($status){
-	if ($status=="1") return '   <i data-toggle="popover" title="" data-placement="right" data-content="Цель проекта: ЛИД" data-original-title="ЛИД" class="si si-target fa-2x"></i>';
+	if ($status=="1") return 'ЛИД';
 	if ($status=="2") return 'ВСТРЕЧА';
 	if ($status=="3") return 'УЧАСТИЕ В АКЦИИ';
 	if ($status=="4") return 'ПРИГЛАШЕНИЕ';
-	if ($status=="5") return '<i data-toggle="popover" title="" data-placement="right" data-content="Цель проекта: АНКЕТИРОВАНИЕ" data-original-title="АНКЕТИРОВАНИЕ" class="fa fa-info fa-2x"></i>';
-	if ($status=="6") return '<i data-toggle="popover" title="" data-placement="right" data-content="Цель проекта: ИНФОРМИРОВАНИЕ" data-original-title="ИНФОРМИРОВАНИЕ" class="fa fa-info fa-2x"></i>';
+	if ($status=="5") return 'АНКЕТИРОВАНИЕ';
+	if ($status=="6") return 'ИНФОРМИРОВАНИЕ';
 }
 function camstatus ($status, $id ){
 	if ($status=="1"){
