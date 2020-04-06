@@ -45,7 +45,7 @@ class Settings extends \APP\core\base\Model {
 
 	public function editsettingsroject($DATA) {
 
-        $tbl = R::FindOnt("company", "WHERE id = ?", [$DATA['idc']]);
+        $tbl = R::FindOne("company", "WHERE id = ?", [$DATA['idc']]);
         //ФОРМИРУЕМ МАССИВ ДАННЫХ ДЛЯ РЕГИСТРАЦИИ
         foreach($DATA as $name=>$value)
         {
