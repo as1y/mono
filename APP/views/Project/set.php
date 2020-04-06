@@ -91,7 +91,7 @@
 											<span class="input-group-prepend">
 												<span class="input-group-text">РУБ.</span>
 											</span>
-                            <input type="text" name="priceresult" placeholder="500" class="form-control required" aria-invalid="false">
+                            <input type="text" name="priceresult" placeholder="500" value="<?=$company['priceresult']?>" class="form-control required" aria-invalid="false">
                         </div>
 
 
