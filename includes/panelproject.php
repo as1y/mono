@@ -83,21 +83,21 @@
                     </li>
 
                     <li class="nav-item">
-                        <a href="/project/set/?id=<?=$_GET['id']?>" class="nav-link <?=isset($active['set']) ? $active['set'] : ''; ?>">
+                        <a href="/project/set/?id=<?=$_GET['id']?>" class="nav-link <?=isset($active['base']) ? $active['base'] : ''; ?>">
                             <i class="icon-database"></i>
                             <span>	База данных </span>
                         </a>
                     </li>
 
                     <li class="nav-item">
-                        <a href="/project/set/?id=<?=$_GET['id']?>" class="nav-link <?=isset($active['set']) ? $active['set'] : ''; ?>">
+                        <a href="/project/set/?id=<?=$_GET['id']?>" class="nav-link <?=isset($active['script']) ? $active['script'] : ''; ?>">
                             <i class="icon-file-text2"></i>
                             <span>	Скрипт разговора </span>
                         </a>
                     </li>
 
                     <li class="nav-item">
-                        <a href="/project/set/?id=<?=$_GET['id']?>" class="nav-link <?=isset($active['set']) ? $active['set'] : ''; ?>">
+                        <a href="/project/set/?id=<?=$_GET['id']?>" class="nav-link <?=isset($active['resultform']) ? $active['resultform'] : ''; ?>">
                             <i class="icon-file-eye2"></i>
                             <span>	Форма результата </span>
                         </a>
