@@ -36,7 +36,7 @@
                 <div class="col-md-6">
                     <div class="form-group">
                         <label>URL сайта: <span class="text-danger">*</span></label>
-                        <input type="text" name="name" class="form-control required" placeholder="URL сайта">
+                        <input type="text" name="url" class="form-control required" placeholder="URL сайта">
                         <span class="form-text text-muted">Пример: www.site.ru</span>
                     </div>
                 </div>
