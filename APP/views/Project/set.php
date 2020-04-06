@@ -76,14 +76,14 @@
     <div class="table-responsive">
         <table class="table  table-bordered">
             <tbody>
-            
+
 
 
             <tr>
                 <td class="wmin-md-100"><b>ОПЛАТА ЗА ЦЕЛЬ:</b></td>
                 <td class="wmin-md-350">
 
-
+                    <div class="form-group row">
                     <div class="col-md-6">
                         <label>ОПЛАТА ЗА ЦЕЛЬ:<span class="text-danger">*</span></label>
 
@@ -109,6 +109,7 @@
 
                     </div>
 
+                    </div>
 
 
 
