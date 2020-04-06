@@ -19,26 +19,18 @@
             <tbody>
 
             <tr>
-                <td class="wmin-md-100">Control links</td>
+                <td class="wmin-md-100">ID:</td>
                 <td class="wmin-md-350">
-                    <div class="list-icons">
-                        <a href="#" class="list-icons-item"><i class="icon-pencil7"></i></a>
-                        <a href="#" class="list-icons-item"><i class="icon-trash"></i></a>
-                        <a href="#" class="list-icons-item"><i class="icon-cog6"></i></a>
-                    </div>
+
+                    # <span id="idc"><?=$company['id']?></span>
+                    <?=camstatus($company['status'],$company['id'] )?>
+
+
                 </td>
             </tr>
 
-            <tr>
-                <td>Colored links</td>
-                <td>
-                    <div class="list-icons">
-                        <a href="#" class="list-icons-item text-primary-600"><i class="icon-pencil7"></i></a>
-                        <a href="#" class="list-icons-item text-danger-600"><i class="icon-trash"></i></a>
-                        <a href="#" class="list-icons-item text-teal-600"><i class="icon-cog6"></i></a>
-                    </div>
-                </td>
-            </tr>
+
+
 
             </tbody>
         </table>
@@ -60,8 +52,7 @@
 					<tr>
 						<td><b>ID:</b></td>
 						<td>
-							# <span id="idc"><?=$company['id']?></span> 
-							<?=camstatus($company['status'],$company['id'] )?>
+
 						</td>
 					</tr>
 					<tr>
