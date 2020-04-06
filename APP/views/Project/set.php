@@ -104,7 +104,7 @@
 											<span class="input-group-prepend">
 												<span class="input-group-text">ШТ.</span>
 											</span>
-                            <input type="text" name="priceresult" placeholder="50" value="<?=$company['priceresult']?>" class="form-control required" aria-invalid="false">
+                            <input type="text" name="daylimit" placeholder="50" value="<?=$company['daylimit']?>" class="form-control required" aria-invalid="false">
                         </div>
 
                     </div>
