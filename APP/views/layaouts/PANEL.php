@@ -154,13 +154,13 @@
             <div class="breadcrumb justify-content-center">
 
 
-                <a href="#" class="breadcrumb-elements-item">
+                <a href="/panel/faq/" class="breadcrumb-elements-item">
                     <i class="icon-comment-discussion mr-2"></i>
                     Прочитать FAQ
                 </a>
 
 
-                <a href="#" class="breadcrumb-elements-item">
+                <a href="/panel/ticket/" class="breadcrumb-elements-item">
                     <i class="icon-comment-discussion mr-2"></i>
                     Написать тикет
                 </a>
