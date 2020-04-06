@@ -18,7 +18,7 @@
         <table class="table table-bordered table-lg">
             <tbody>
 
-            <tr>
+            <tr width="30%">
                 <td class="wmin-md-300">Control links</td>
                 <td class="wmin-md-350">
                     <div class="list-icons">
