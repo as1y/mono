@@ -133,7 +133,7 @@ class PanelController extends AppController {
     public function settingsAction(){
         $Panel =  new Panel();
     }
-    
+
     public function faqAction(){
         $Panel =  new Panel();
     }
