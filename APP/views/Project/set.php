@@ -94,8 +94,15 @@
             <tr>
                 <td class="wmin-md-100"><b>ЛИМИТ В ДЕНЬ:</b></td>
                 <td class="wmin-md-350">
-                    # <span id="idc"><?=$company['id']?></span>
-                    <?=camstatus($company['status'],$company['id'] )?>
+
+                    <div class="input-group">
+											<span class="input-group-prepend">
+												<span class="input-group-text">ШТ.</span>
+											</span>
+                        <input type="text" name="priceresult" placeholder="10" class="form-control required" aria-invalid="false">
+                    </div>
+
+
                 </td>
             </tr>
 
