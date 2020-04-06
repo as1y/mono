@@ -215,12 +215,7 @@ class ProjectController extends AppController {
 		$script = $project->getscript($idc);
 		$this->set(compact('idc','razdel','company','script' ));
 	}
-	public function moderAction() {
-		$project = new Project;
-		$razdel = "Настройки модератора";
-		$idc = $_GET['id'];
-		$company = $project->getcom($idc);
-		$this->set(compact('idc','razdel','company'));
-	}
+
+	
 }
 ?>
