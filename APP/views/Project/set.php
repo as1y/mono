@@ -27,7 +27,6 @@
                         <a href="#" class="list-icons-item"><i class="icon-cog6"></i></a>
                     </div>
                 </td>
-                <td>Basic table row control buttons. These links appear as a list of links with icons</td>
             </tr>
             <tr>
                 <td>Colored links</td>
@@ -38,9 +37,8 @@
                         <a href="#" class="list-icons-item text-teal-600"><i class="icon-cog6"></i></a>
                     </div>
                 </td>
-                <td>Control links support different colors: default Bootstrap contextual colors and custom text colors from the custom color system. To use these colors add <code>.text-*</code> class to the parent <code>&lt;li></code> element</td>
             </tr>
-            
+
             </tbody>
         </table>
     </div>
