@@ -29,6 +29,10 @@ function leadteable ($status){
 	if ($status=="1") return "";
 	if ($status=="2") return "";
 }
+
+
+
+
 function companytype ($status){
 	if ($status=="1") return 'ЛИД';
 	if ($status=="2") return 'ВСТРЕЧА';
@@ -37,6 +41,20 @@ function companytype ($status){
 	if ($status=="5") return 'АНКЕТИРОВАНИЕ';
 	if ($status=="6") return 'ИНФОРМИРОВАНИЕ';
 }
+
+function timecall ($status){
+    if ($status=="standart") return 'Будние дни, рабочее время (09:00-19:00)';
+    if ($status=="maximum") return 'Будние дни, расширенное время (09:00-21:00)';
+    if ($status=="ultra") return 'Будни + выходные, расширенное время (09:00-21:00)';
+
+}
+
+
+
+
+
+
+
 function camstatus ($status, $id ){
 	if ($status=="1"){
 		return '<div id="stat'.$id.'" class="badge badge-success">РАБОТАЕТ</div>';

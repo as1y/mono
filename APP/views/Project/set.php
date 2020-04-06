@@ -36,6 +36,11 @@
                 <td class="wmin-md-350"><?=companytype($company['type'])?></td>
             </tr>
 
+            <tr>
+                <td class="wmin-md-100" ><b>ВРЕМЯ ЗВОНКОВ:</b></td>
+                <td class="wmin-md-350"><?=timecall($company['timecall'])?></td>
+            </tr>
+
 
 
 
@@ -167,6 +172,8 @@
 							</label>
 						</td>
 					</tr>
+
+
 					<tr>
 						<td><b>ВРЕМЯ ЗВОНКОВ:</b></td>
 						<td>
@@ -180,6 +187,8 @@
 							</div>
 						</td>
 					</tr>
+
+
 					<tr>
 						<td><b>E-MAIL:</b></td>
 						<td>
@@ -205,6 +214,8 @@
 <?endif;?>
 						</td>
 					</tr>
+
+
 					<tr>
 						<td><b>SMS клиенту:</b></td>
 						<td>
