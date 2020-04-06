@@ -54,6 +54,14 @@
             </tr>
 
 
+            <tr>
+                <td class="wmin-md-100" ><b>E-MAIL:</b></td>
+                <td class="wmin-md-350">
+                    <input type="text" name="email" class="form-control" placeholder="E-mail" value="<?=$company['email']?>">
+
+                </td>
+            </tr>
+
 
 
 
