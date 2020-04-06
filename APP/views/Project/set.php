@@ -15,10 +15,10 @@
     </div>
 
     <div class="table-responsive">
-        <table class="table table-bordered table-lg">
+        <table class="table table-bordered">
             <tbody>
 
-            <tr style="width: 30%;">
+            <tr>
                 <td class="wmin-md-300">Control links</td>
                 <td class="wmin-md-350">
                     <div class="list-icons">
