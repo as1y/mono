@@ -85,6 +85,9 @@ class ProjectController extends AppController {
 		$company = $project->getcom($_GET['id']);
 
 
+        show($company);
+
+
         $META = [
             'title' => 'Настройки проекта ',
             'description' => 'Настройки проекта ',
@@ -100,7 +103,7 @@ class ProjectController extends AppController {
 
 
 
-		$this->set(compact('idc','company'));
+		$this->set(compact('company'));
 	}
 
 
