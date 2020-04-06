@@ -59,16 +59,7 @@
 			</div>
 			<div class="panel-body">
 				<table class="table table-bordered">
-					<tr>
-						<td><b>ID:</b></td>
-						<td>
 
-						</td>
-					</tr>
-					<tr>
-						<td><b>Название:</b></td>
-						<td><?=$company['company']?></td>
-					</tr>
 					<tr>
 						<td><b>ТИП:</b></td>
 						<td><?=companytype($company['type'])?></td>
@@ -88,14 +79,6 @@
                         </td>
                     </tr>
 
-
-
-					<?if(!empty($company['manager'])):?>
-					<tr>
-						<td><b>Ваш менеджер:</b></td>
-						<td><?=$company['manager']?></td>
-					</tr>
-					<?endif;?>
 					<tr>
 						<td><b>ЛИМИТ:</b></td>
 						<td>
@@ -109,8 +92,7 @@
 							</div>
 						</td>
 					</tr>
-
-
+                    
 					<tr>
 						<td><b>Ограничение количества<br> операторов на проекте:</b></td>
 						<td>
