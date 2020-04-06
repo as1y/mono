@@ -59,6 +59,25 @@
                 <td class="wmin-md-350">
                     <input type="text" name="email" class="form-control" placeholder="E-mail" value="<?=$company['email']?>">
 
+                    <? if ($company['uvedomlenie'] == 'true'):?>
+                        <div class="custom-controls-stacked">
+                            <label class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" checked="" id="uvedomlenie">
+                                <span class="custom-control-indicator"></span>
+                                <span class="custom-control-description">Уведомлять</span>
+                            </label>
+                        </div>
+                    <?else:?>
+                        <div class="custom-controls-stacked">
+                            <label class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input"  id="uvedomlenie">
+                                <span class="custom-control-indicator"></span>
+                                <span class="custom-control-description">Уведомлять</span>
+                            </label>
+                        </div>
+                    <?endif;?>
+
+                    
                 </td>
             </tr>
 
