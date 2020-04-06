@@ -1,7 +1,7 @@
 <!-- Table components -->
 <div class="card">
     <div class="card-header header-elements-inline">
-        <h5 class="card-title">НАСТРОЙКИ <?=$company['name']?></h5>
+        <h5 class="card-title">НАСТРОЙКИ <?=$company['company']?></h5>
         <div class="header-elements">
             <div class="list-icons">
                 <a class="list-icons-item" data-action="collapse"></a>
@@ -9,11 +9,7 @@
             </div>
         </div>
     </div>
-
-    <div class="card-body">
-        Table below contains different examples of components that can be used in the table: form components, interface components, buttons, list of actions etc. All of them are adapted for different cases, such as multiple elements in the same table cell. These components support all available sizes and styles. Charts are also supported, but in certain sizes.
-    </div>
-
+    
     <div class="table-responsive">
         <table class="table  table-bordered">
             <tbody>
@@ -92,7 +88,7 @@
 							</div>
 						</td>
 					</tr>
-                    
+
 					<tr>
 						<td><b>Ограничение количества<br> операторов на проекте:</b></td>
 						<td>
