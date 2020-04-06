@@ -100,11 +100,11 @@ class ProjectController extends AppController {
 
 
             $settings = new Settings();
-            $settings->load($_POST); // Берем из POST только те параметры которые нам нужны
-
-            $validation = $settings->validate($_POST);
-
-            show($validation);
+//            $settings->load($_POST); // Берем из POST только те параметры которые нам нужны
+//
+//            $validation = $settings->validate($_POST);
+//
+//            show($validation);
 
 //        if ($validation){
 //            if ($settings->editsettingsroject($_POST)){
@@ -126,7 +126,7 @@ class ProjectController extends AppController {
             exit();
 
 
-            
+
         }
 
 
