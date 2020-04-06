@@ -22,7 +22,6 @@
                             <div class="dropdown-menu dropdown-menu-right" x-placement="bottom-end" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(33px, 19px, 0px);">
                                 <a href="/panel/edit/?id=<?=$row['id']?>" class="dropdown-item">Редактировать</a>
                                 <a href="/panel/delete/?id=<?=$row['id']?>" class="dropdown-item">Удалить</a>
-                                <a href="#" class="dropdown-item">Something else here</a>
                             </div>
                         </div>
                     </div>
@@ -49,7 +48,28 @@
 
                     <div class="col-md-6">
 
-                        <ul class="list-group list-group-flush border-bottom">
+                        <div class="row text-center">
+                            <div class="col-4">
+                                <p><i class="icon-phone2 icon-2x d-inline-block text-indigo-400"></i></p>
+                                <h5 class="font-weight-semibold mb-0">0</h5>
+                                <span class="text-muted font-size-sm">Звонков сегодня</span>
+                            </div>
+
+                            <div class="col-4">
+                                <p><i class="icon-target2 icon-2x d-inline-block text-success-400"></i></p>
+                                <h5 class="font-weight-semibold mb-0">0</h5>
+                                <span class="text-muted font-size-sm">Успешных</span>
+                            </div>
+
+                            <div class="col-4">
+                                <p><i class="icon-percent icon-2x d-inline-block text-warning-400"></i></p>
+                                <h5 class="font-weight-semibold mb-0">0</h5>
+                                <span class="text-muted font-size-sm">Конверсия</span>
+                            </div>
+                        </div>
+
+                        <br>
+                        <ul class="list-group list-group-flush border-top">
 
                             <a href="#" class="list-group-item list-group-item-action">
 									<span class="font-weight-semibold">
@@ -81,27 +101,9 @@
 
 
                         </ul>
-<br>
 
-                        <div class="row text-center">
-                            <div class="col-4">
-                                <p><i class="icon-phone2 icon-2x d-inline-block text-indigo-400"></i></p>
-                                <h5 class="font-weight-semibold mb-0">0</h5>
-                                <span class="text-muted font-size-sm">Звонков сегодня</span>
-                            </div>
 
-                            <div class="col-4">
-                                <p><i class="icon-target2 icon-2x d-inline-block text-success-400"></i></p>
-                                <h5 class="font-weight-semibold mb-0">0</h5>
-                                <span class="text-muted font-size-sm">Успешных</span>
-                            </div>
 
-                            <div class="col-4">
-                                <p><i class="icon-percent icon-2x d-inline-block text-warning-400"></i></p>
-                                <h5 class="font-weight-semibold mb-0">0</h5>
-                                <span class="text-muted font-size-sm">Конверсия</span>
-                            </div>
-                        </div>
 
 
 
