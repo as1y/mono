@@ -19,8 +19,8 @@
             <tbody>
 
             <tr>
-                <td>Control links</td>
-                <td>
+                <td class="wmin-md-100">Control links</td>
+                <td class="wmin-md-350">
                     <div class="list-icons">
                         <a href="#" class="list-icons-item"><i class="icon-pencil7"></i></a>
                         <a href="#" class="list-icons-item"><i class="icon-trash"></i></a>
