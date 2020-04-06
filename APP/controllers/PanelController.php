@@ -112,7 +112,7 @@ class PanelController extends AppController {
 
 
     public function refferalAction(){
-        new Model();
+       $Panel = new Panel();
 
 
     }
@@ -120,9 +120,9 @@ class PanelController extends AppController {
 
 
     public function balanceAction(){
-        new Model();
+        $Panel =  new Panel();
 
-        
+
 
     }
 
