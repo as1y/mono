@@ -31,7 +31,10 @@
                 </td>
             </tr>
 
-
+            <tr>
+                <td class="wmin-md-100" ><b>ТИП:</b></td>
+                <td class="wmin-md-350"><?=companytype($company['type'])?></td>
+            </tr>
 
 
 
@@ -56,10 +59,7 @@
 			<div class="panel-body">
 				<table class="table table-bordered">
 
-					<tr>
-						<td><b>ТИП:</b></td>
-						<td><?=companytype($company['type'])?></td>
-					</tr>
+
 
                     <tr>
                         <td><b>ОПЛАТА ЗА РЕЗУЛЬТАТ:</b></td>
@@ -124,6 +124,8 @@
 							</label>
 						</td>
 					</tr>
+
+
 					<tr>
 						<td><b>ДНИ НЕДЕЛИ:</b></td>
 						<td>
@@ -269,36 +271,11 @@ $CRIT[] = 'Разговор ТОЛЬКО с ЛПР';
 							</div>
 						</td>
 					</tr>
-					<tr>
-						<td>
-							<b>Интеграция с amoCRM:</b>
-							<div class=""><img src="/assets/img/logo/amocrm-logo-white.png" class="img-avatar img-avatar128"></div>
-						</td>
-						<td>
-							<div class="row form-group">
-								<div class="col-6">
-									<div class="input-group">
-										<span class="input-group-addon">E-mail</span>
-										<input type="text" class="form-control input-xsmall" id="amoCRM_email" value="<?if(isset($amoDB['email'])) echo($amoDB['email']);?>" placeholder="mail@example.ru">
-									</div>
-								</div>
-								<div class="col-6">
-									<div class="input-group">
-										<span class="input-group-addon">Домен <i style="margin-left: 5px;" data-toggle="popover" title="" data-placement="top" data-content="формат: example.amocrm.ru" class="fa fa-question-circle"></i></span>
-										<input type="text" class="form-control input-xsmall" id="amoCRM_domain" value="<?if(isset($amoDB['domain'])) echo($amoDB['domain']);?>" placeholder="example.amocrm.ru">
-									</div>
-								</div>
-							</div>
-							<div class="row form-group">
-								<div class="col-12">
-									<div class="input-group">
-										<span class="input-group-addon">API-ключ</span>
-										<input type="text" class="form-control input-xsmall" id="amoCRM_apikey" value="<?if(isset($amoDB['apikey'])) echo($amoDB['apikey']);?>">
-									</div>
-								</div>
-							</div>
-						</td>
-					</tr>
+
+
+
+
+
 				</table>
 				<p align="right">
 					<button class="btn btn-info" onclick="changeinformation()" >Изменить информацию</button>
