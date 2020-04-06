@@ -38,7 +38,19 @@
 
             <tr>
                 <td class="wmin-md-100" ><b>ВРЕМЯ ЗВОНКОВ:</b></td>
-                <td class="wmin-md-350"><?=timecall($company['timecall'])?></td>
+                <td class="wmin-md-350">
+
+                    <select name="timecall" class="form-control form-control-select2" data-fouc>
+                        <option value="standart" <?=$company['timecall'] == "standart" ? 'selected' : '';?>>Будние дни, рабочее время (09:00-19:00)</option>
+                        <option value="maximum" <?=$company['timecall'] == "maximum" ? 'selected' : '';?>>Будние дни, расширенное время (09:00-21:00)</option>
+                        <option value="ultra" <?=$company['timecall'] == "ultra" ? 'selected' : '';?>>Будни + выходные, расширенное время (09:00-21:00)</option>
+                    </select>
+
+
+
+
+
+                </td>
             </tr>
 
 
