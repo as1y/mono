@@ -108,6 +108,7 @@ class ProjectController extends AppController {
 
         if ($validation){
             if ($settings->editsettingsroject($_POST)){
+                $_SESSION['success'] = "Изменения внесены";
                 redir("/project/set/?id=".$_POST['idc']);
             }else{
                 $_SESSION['errors'] = "Ошибка базы данных. Попробуйте позже.";
@@ -119,7 +120,7 @@ class ProjectController extends AppController {
         }
 
 
-            $_SESSION['success'] = "Изменения внесены";
+
 
 
         }
