@@ -40,7 +40,7 @@
 
                     <div class="col-md-2 align-self-center">
 
-                        <img class="card-img-top" src="/client_logo/ingate.jpg" width="50" height="200" alt="">
+                        <img class="card-img-top" src="/client_logo/ingate.jpg" width="25" height="200" alt="">
 
 
                     </div>
