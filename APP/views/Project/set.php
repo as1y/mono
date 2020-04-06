@@ -1,3 +1,6 @@
+<form action="/project/set/" method="post" data-fouc>
+
+
 <div class="card">
     <div class="card-header header-elements-inline">
         <h5 class="card-title">ПРЕДЛОЖЕНИЕ ОПЕРАТОРАМ</h5>
@@ -101,9 +104,6 @@
     </div>
 </div>
 
-
-
-
 <div class="card">
     <div class="card-header header-elements-inline">
         <h5 class="card-title">НАСТРОЙКИ ПРОЕКТА <?=$company['company']?></h5>
@@ -167,4 +167,7 @@
 </div>
 
 
+    <input type="hidden" name="idc"  value="<?=$company['id']?>">
+
 <button type="submit" class=" btn btn-primary"><i class="icon-pencil mr-2"></i> СОХРАНИТЬ ИЗМЕНЕНИЯ</button>
+</form>
