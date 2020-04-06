@@ -9,6 +9,7 @@ class View {
 
 	public function __construct($route, $layaout='', $view=''){
 		$this->route = $route;
+
 		if ($layaout === false){
 			$this->layaout = false;
 		} else{
@@ -16,6 +17,8 @@ class View {
 		}
 		$this->view = $view;
 	}
+
+
 	public function render($DATA, $return = false){
 		if(is_array($DATA)) extract($DATA);
 		$file_view = WWW."/APP/views/".$this->route['controller']."/".$this->view.".php";
@@ -56,11 +59,16 @@ class View {
 
     public static function setMeta($META){
 
+	    show(self::route);
+	    
+
         if (!empty($META['title'])) self::$meta['title'] = $META['title'];
         if (!empty($META['description'])) self::$meta['description'] = $META['description'];
         if (!empty($META['keywords'])) self::$meta['keywords'] = $META['keywords'];
 
     }
+
+
     public static function setBreadcrumbs($Breadcrumbs){
 
         if (!empty($Breadcrumbs['HOME'])) self::$Breadcrumbs['HOME'] = $Breadcrumbs['HOME'];

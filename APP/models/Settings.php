@@ -43,7 +43,7 @@ class Settings extends \APP\core\base\Model {
 
 
 	public function editsettingsroject($DATA) {
-	    
+
         $tbl = R::load("company", $DATA['idc']);
         //ФОРМИРУЕМ МАССИВ ДАННЫХ ДЛЯ РЕГИСТРАЦИИ
         foreach($DATA as $name=>$value)
