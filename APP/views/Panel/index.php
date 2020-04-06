@@ -12,7 +12,7 @@
 
         <div class="card">
             <div class="card-header bg-white header-elements-inline">
-                <h6 class="card-title">Проект: <b><?=$row['name']?></b></h6>
+                <h6 class="card-title">Проект: <b><?=$row['company']?></b></h6>
 
 
                 <div class="header-elements">
@@ -41,7 +41,7 @@
                     <div class="col-md-2 align-self-center text-center">
 
                         <img class="card-img-top" src="/client_logo/ingate.jpg" width="25" height="100" alt="">
-                        <b><?=$row['name']?></b>
+                        <b><?=$row['company']?></b>
 
                     </div>
 
