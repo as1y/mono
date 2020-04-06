@@ -59,13 +59,13 @@
             </tr>
 
             <tr>
-                <td class="wmin-md-100" ><b>Мин. кол-во звонков за смену:</b></td>
+                <td class="wmin-md-100" ><b>Вознаграждение за смену:</b></td>
                 <td class="wmin-md-350">
 
                     <div class="form-group row">
 
                         <div class="col-md-6">
-                            <label>Бонус за регулярные звонки:<span class="text-danger">*</span></label>
+                            <label>Мин кол-во звонков:<span class="text-danger">*</span></label>
 
                             <div class="input-group">
 											<span class="input-group-prepend">
