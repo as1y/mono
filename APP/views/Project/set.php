@@ -32,7 +32,7 @@
             </tr>
 
             <tr>
-                <td class="wmin-md-100" ><b>ТИП:</b></td>
+                <td class="wmin-md-100" ><b>ЦЕЛЬ:</b></td>
                 <td class="wmin-md-350"><?=companytype($company['type'])?></td>
             </tr>
 
