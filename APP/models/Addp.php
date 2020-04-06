@@ -68,6 +68,7 @@ class Addp extends \APP\core\base\Model {
             'client_id' => $_SESSION['ulogin']['id'],
             'status' => "1",
             'datastart' => date("Y-m-d H:i:s"),
+            'daylimit' => "5",
         ];
 
         $DATA = array_merge($uniq, $DATA);
