@@ -73,7 +73,7 @@
                                               <i class="icon-phone"></i>
                                                 </span>
 											</span>
-                                <input type="text" name="mincall" placeholder="100" value="100" class="form-control required">
+                                <input type="text" name="mincall" value="<?=$company['mincall']?>" placeholder="100" value="100" class="form-control required">
                             </div>
 
 
