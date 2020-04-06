@@ -39,9 +39,10 @@
                 <div class="row">
 
                     <div class="col-md-2 align-self-center text-center">
-
-                        <img class="card-img-top" src="/client_logo/ingate.jpg" width="25" height="100" alt="">
                         <b><?=$row['company']?></b>
+                        
+                        <img class="card-img-top" src="/client_logo/ingate.jpg" width="25" height="100" alt="">
+
 
                     </div>
 
