@@ -1,4 +1,3 @@
-<!-- Table components -->
 <div class="card">
     <div class="card-header header-elements-inline">
         <h5 class="card-title">НАСТРОЙКИ ПРОЕКТА <?=$company['company']?></h5>
@@ -21,8 +20,6 @@
 
                 </td>
             </tr>
-
-
             <tr>
                 <td class="wmin-md-100"><b>ID:</b></td>
                 <td class="wmin-md-350">
@@ -52,12 +49,68 @@
 
                 </td>
             </tr>
-
-
             <tr>
                 <td class="wmin-md-100" ><b>E-MAIL:</b><br>для уведомлений</td>
                 <td class="wmin-md-350">
                     <input type="text" name="email" class="form-control" placeholder="E-mail" value="<?=$company['email']?>">
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+
+<div class="card">
+    <div class="card-header header-elements-inline">
+        <h5 class="card-title">НАСТРОЙКИ ОФФЕРА ОПЕРАТОРАМ <?=$company['company']?></h5>
+        <div class="header-elements">
+            <div class="list-icons">
+                <a class="list-icons-item" data-action="collapse"></a>
+                <a class="list-icons-item" data-action="reload"></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table  table-bordered">
+            <tbody>
+
+            <tr>
+                <td class="wmin-md-100"><b>ОПЛАТА ЗА ЦЕЛЬ:</b></td>
+                <td class="wmin-md-350">
+                    <?=$company['company']?>
+
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="wmin-md-100"><b>ЛИМИТ В ДЕНЬ:</b></td>
+                <td class="wmin-md-350">
+                    # <span id="idc"><?=$company['id']?></span>
+                    <?=camstatus($company['status'],$company['id'] )?>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="wmin-md-100" ><b>Мин. кол-во звонков за смену:</b></td>
+                <td class="wmin-md-350"><?=companytype($company['type'])?></td>
+            </tr>
+
+            <tr>
+                <td class="wmin-md-100" ><b>Вознаграждение за звонки:</b></td>
+                <td class="wmin-md-350">
+
+                    <select name="timecall" class="form-control form-control-select2" data-fouc>
+                        <option value="standart" <?=$company['timecall'] == "standart" ? 'selected' : '';?>>Будние дни, рабочее время (09:00-19:00)</option>
+                        <option value="maximum" <?=$company['timecall'] == "maximum" ? 'selected' : '';?>>Будние дни, расширенное время (09:00-21:00)</option>
+                        <option value="ultra" <?=$company['timecall'] == "ultra" ? 'selected' : '';?>>Будни + выходные, расширенное время (09:00-21:00)</option>
+                    </select>
+
+
+
 
 
                 </td>
@@ -66,12 +119,11 @@
 
 
 
-
             </tbody>
         </table>
     </div>
 </div>
-<!-- /table components -->
+
 
 
 
