@@ -1,4 +1,4 @@
-<form action="/project/set/" method="post" data-fouc>
+<form action="/project/set/?id=<?=$company['id']?>" method="post" data-fouc>
 
 
 <div class="card">
