@@ -114,17 +114,11 @@ class ProjectController extends AppController {
             }
         }
 
-
         if (!$validation){
-
             $settings->getErrorsVali();
-
         }
 
 
-            show($_SESSION['errors']);
-            echo "ok";
-            exit();
 
 
 

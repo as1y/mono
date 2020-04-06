@@ -213,6 +213,14 @@
         <div class="content">
 
 
+            <?php if(isset($_SESSION['errors'])): ?>
+                <div class="alert bg-danger text-white alert-dismissible">
+                    <button type="button" class="close" data-dismiss="alert"><span>×</span></button>
+                    <span class="font-weight-semibold">Ошибка!</span> <?=$_SESSION['errors']; unset($_SESSION['errors']);?>
+                </div>
+            <?php endif;?>
+
+
             <?=$content?>
 
 

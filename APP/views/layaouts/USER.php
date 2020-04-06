@@ -34,7 +34,6 @@
                     <h3 class="alert-heading font-size-h4 font-w400">Ошибка!</h3>
                     <p class="mb-0"> <?=$_SESSION['errors']; unset($_SESSION['errors']);?> </p>
                 </div>
-
             <?php endif;?>
 
             <center><a href="/"><img border="0" width="205" src ="/<?=CONFIG['LOGO']?>"  class="img-thumbnail" ></a></center>
