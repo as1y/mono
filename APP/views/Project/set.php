@@ -80,7 +80,7 @@
 
 
             <tr>
-                <td class="wmin-md-100"><b>ОПЛАТА ЗА ЦЕЛЬ:</b></td>
+                <td class="wmin-md-100"><b>Вознаграждение за цель:</b></td>
                 <td class="wmin-md-350">
 
                     <div class="form-group row">
