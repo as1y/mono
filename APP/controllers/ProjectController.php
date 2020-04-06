@@ -104,7 +104,7 @@ class ProjectController extends AppController {
 
             $validation = $settings->validate($_POST);
 
-            show($validation);
+            var_dump($validation);
 
 //        if ($validation){
 //            if ($settings->editsettingsroject($_POST)){
