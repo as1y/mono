@@ -119,7 +119,7 @@ class ProjectController extends AppController {
         }
 
 
-
+            $_SESSION['success'] = "Изменения внесены";
 
 
         }
