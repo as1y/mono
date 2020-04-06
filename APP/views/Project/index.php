@@ -218,7 +218,7 @@
                         <?endif;?>
 
                         <h5 class="card-title">Баланс <?=$balnow?> руб.</h5>
-
+                        <p class="mb-3">Для старта проекте необходимо минимум <b>5000</b> рублей</p>
                         <a href="/panel/balance/" class="btn bg-success"><i class="icon-coins ml-2"></i> ПОПОЛНИТЬ</a>
 
 
