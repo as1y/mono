@@ -220,6 +220,15 @@
                 </div>
             <?php endif;?>
 
+            <?php if(isset($_SESSION['success'])): ?>
+                <div class="alert alert-success alert-dismissible">
+                    <button type="button" class="close" data-dismiss="alert"><span>×</span></button>
+                    <span class="font-weight-semibold">Успех!</span> <?=$_SESSION['success']; unset($_SESSION['success']);?>
+                </div>
+
+            <?php endif;?>
+
+
 
             <?=$content?>
 

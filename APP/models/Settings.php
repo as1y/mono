@@ -42,19 +42,19 @@ class Settings extends \APP\core\base\Model {
 
 
 
-//	public function editsettingsroject($DATA) {
-//
-//        $tbl = R::FindOnt("company", "WHERE id = ?", [$DATA['idc']]);
-//        //ФОРМИРУЕМ МАССИВ ДАННЫХ ДЛЯ РЕГИСТРАЦИИ
-//        foreach($DATA as $name=>$value)
-//        {
-//            $tbl->$name = $value;
-//        }
-//        return R::store($tbl);
-//
-//            // По поводу валидации
-//
-//	}
+	public function editsettingsroject($DATA) {
+
+        $tbl = R::FindOnt("company", "WHERE id = ?", [$DATA['idc']]);
+        //ФОРМИРУЕМ МАССИВ ДАННЫХ ДЛЯ РЕГИСТРАЦИИ
+        foreach($DATA as $name=>$value)
+        {
+            $tbl->$name = $value;
+        }
+        return R::store($tbl);
+
+            // По поводу валидации
+
+	}
 
 
 
