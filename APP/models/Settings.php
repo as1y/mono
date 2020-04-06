@@ -7,6 +7,7 @@ class Settings extends \APP\core\base\Model {
     // АТРИБУТЫ КОТОРЫЕ ЗАБИРАЕМ ПРИ ДОБАВЛЕНИИ
     public $ATR = [
 
+        'idc' => '',
         'priceresult' => '',
         'daylimit' => '',
         'mincall' => '',
@@ -21,7 +22,7 @@ class Settings extends \APP\core\base\Model {
             ['daylimit'],
             ['mincall'],
             ['timecall'],
-
+            ['idc'],
         ],
         'email' =>[
             ['email'],
