@@ -109,24 +109,34 @@ class PanelController extends AppController {
 
     }
 
-
-
     public function refferalAction(){
        $Panel = new Panel();
 
-
     }
-
-
 
     public function balanceAction(){
         $Panel =  new Panel();
-
-
-
     }
 
 
+    public function ticketAction(){
+        $Panel =  new Panel();
+    }
+
+    public function profileAction(){
+        $Panel =  new Panel();
+    }
+    public function messagesAction(){
+        $Panel =  new Panel();
+    }
+
+    public function settingsAction(){
+        $Panel =  new Panel();
+    }
+    
+    public function faqAction(){
+        $Panel =  new Panel();
+    }
 
 
 
