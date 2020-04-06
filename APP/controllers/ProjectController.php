@@ -82,7 +82,7 @@ class ProjectController extends AppController {
 
 	public function setAction() {
 
-		$project = new Project;
+//		$project = new Project;
 		$company = $project->getcom($_GET['id']);
 
         $META = [
