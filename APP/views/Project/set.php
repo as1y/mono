@@ -19,7 +19,7 @@
             <tbody>
 
             <tr>
-                <td class="wmin-md-100">ID:</td>
+                <td class="wmin-md-100"><b>ID:</b></td>
                 <td class="wmin-md-350">
 
                     # <span id="idc"><?=$company['id']?></span>
