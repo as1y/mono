@@ -95,12 +95,16 @@ class ProjectController extends AppController {
         \APP\core\base\View::setMeta($META);
         \APP\core\base\View::setBreadcrumbs($BREADCRUMBS);
 
-        $settings = new Settings();
-        $settings->load($_POST); // Берем из POST только те параметры которые нам нужны
 
-        $validation = $settings->validate($_POST);
+        if ($_POST){
 
-        show($validation);
+
+            $settings = new Settings();
+            $settings->load($_POST); // Берем из POST только те параметры которые нам нужны
+
+            $validation = $settings->validate($_POST);
+
+            show($validation);
 
 //        if ($validation){
 //            if ($settings->editsettingsroject($_POST)){
@@ -118,8 +122,12 @@ class ProjectController extends AppController {
 //
 //        }
 
-        echo "ok";
-        exit();
+            echo "ok";
+            exit();
+
+
+            
+        }
 
 
 
