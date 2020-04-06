@@ -15,12 +15,12 @@
     </div>
 
     <div class="table-responsive">
-        <table class="table table-bordered">
+        <table class="table  table-bordered">
             <tbody>
 
             <tr>
-                <td class="wmin-md-300">Control links</td>
-                <td class="wmin-md-350">
+                <td>Control links</td>
+                <td>
                     <div class="list-icons">
                         <a href="#" class="list-icons-item"><i class="icon-pencil7"></i></a>
                         <a href="#" class="list-icons-item"><i class="icon-trash"></i></a>
@@ -28,6 +28,7 @@
                     </div>
                 </td>
             </tr>
+
             <tr>
                 <td>Colored links</td>
                 <td>
