@@ -95,7 +95,7 @@ class ProjectController extends AppController {
         \APP\core\base\View::setMeta($META);
         \APP\core\base\View::setBreadcrumbs($BREADCRUMBS);
 
- 
+
         if ($_POST){
 
 

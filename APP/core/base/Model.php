@@ -10,9 +10,14 @@ abstract class Model
 
 	public function __construct()
 	{
-		R::setup(CONFIG['db']['dsn'],CONFIG['db']['user'],CONFIG['db']['pass']);
-		//  R::fancyDebug( TRUE );
-		//  R::freeze(TRUE);
+        if(!R::testConnection()){
+
+            R::setup(CONFIG['db']['dsn'],CONFIG['db']['user'],CONFIG['db']['pass']);
+            //  R::fancyDebug( TRUE );
+            //  R::freeze(TRUE);
+            
+        }
+
 	}
 	// ЗАГРУЗКА ДАННЫХ ИЗ ФОРМЫ
 
