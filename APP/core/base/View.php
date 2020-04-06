@@ -59,8 +59,8 @@ class View {
 
     public static function setMeta($META){
 
-	    show(self::route);
-	    
+	    show($this->route);
+
 
         if (!empty($META['title'])) self::$meta['title'] = $META['title'];
         if (!empty($META['description'])) self::$meta['description'] = $META['description'];
