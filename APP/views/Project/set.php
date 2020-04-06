@@ -113,7 +113,7 @@
                     <div class="form-group row">
 
                         <div class="col-md-6">
-                            <label>>Бонус за регулярные звонки:<span class="text-danger">*</span></label>
+                            <label>Бонус за регулярные звонки:<span class="text-danger">*</span></label>
 
                             <div class="input-group">
 											<span class="input-group-prepend">
