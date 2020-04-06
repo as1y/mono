@@ -106,22 +106,21 @@ class ProjectController extends AppController {
 
             var_dump($validation);
 
-//        if ($validation){
-//            if ($settings->editsettingsroject($_POST)){
-//                redir("/project/set/?id=".$_POST['idc']);
-//            }else{
-//                $_SESSION['errors'] = "Ошибка базы данных. Попробуйте позже.";
-//            }
-//        }
-//
-//
-//
-//        if (!$validation){
-//            $_SESSION['errors'] = "Что-то пошло не так.";
-//
-//
-//        }
+        if ($validation){
+            if ($settings->editsettingsroject($_POST)){
+                redir("/project/set/?id=".$_POST['idc']);
+            }else{
+                $_SESSION['errors'] = "Ошибка базы данных. Попробуйте позже.";
+            }
+        }
 
+
+        if (!$validation){
+            $_SESSION['errors'] = "Что-то пошло не так.";
+        }
+
+
+            show($_SESSION['errors']);
             echo "ok";
             exit();
 
