@@ -147,7 +147,7 @@
 											<span class="input-group-prepend">
 												<span class="input-group-text">РУБ.</span>
 											</span>
-                                <input type="text" name="bonuscall" placeholder="500" class="form-control required" aria-invalid="false">
+                                <input type="text" name="bonuscall" value="<?=$company['bonuscall']?>" placeholder="500" class="form-control required" aria-invalid="false">
                             </div>
 
                         </div>
