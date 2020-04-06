@@ -57,7 +57,7 @@
 					</tr>
 					<tr>
 						<td><b>Название:</b></td>
-						<td><?=$company['name']?></td>
+						<td><?=$company['company']?></td>
 					</tr>
 					<tr>
 						<td><b>ТИП:</b></td>

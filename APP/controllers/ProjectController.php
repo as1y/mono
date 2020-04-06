@@ -80,12 +80,8 @@ class ProjectController extends AppController {
 
 	public function setAction() {
 
-
 		$project = new Project;
 		$company = $project->getcom($_GET['id']);
-
-
-        show($company);
 
 
         $META = [
@@ -93,7 +89,6 @@ class ProjectController extends AppController {
             'description' => 'Настройки проекта ',
             'keywords' => 'Настройки проекта ',
         ];
-
 
         $BREADCRUMBS['HOME'] = ['Label' => $this->BreadcrumbsControllerLabel, 'Url' => $this->BreadcrumbsControllerUrl];
         $BREADCRUMBS['DATA'][] = ['Label' => "Настрийки проекта ".$company['company']];
