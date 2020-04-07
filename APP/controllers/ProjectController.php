@@ -159,7 +159,13 @@ class ProjectController extends AppController {
 		$filename = WWW."/".$path;
 
 
-		if (!file_exists($filename)) redir("/project/?id=$idc");
+		if (!file_exists($filename)) {
+            $_SESSION['errors'] = "Ошибка при обработке файла";
+            redir("/project/?id=$idc");
+        }
+
+
+
 
 
 		$clientid = $company->client['id'];
