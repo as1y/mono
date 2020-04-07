@@ -34,28 +34,9 @@
 
 
 
-        
-
-        <div class="col-md-4">    <div class="table-responsive">
-                <table class="table  table-bordered">
-                    <tbody>
 
 
-
-                    <tr>
-                        <td class="wmin-md-100"><b>111</b></td>
-                        <td class="wmin-md-350">
-
-                            222
-                        </td>
-                    </tr>
-
-
-
-
-                    </tbody>
-                </table>
-            </div></div>
+        <div class="col-md-4">   </div>
 
 
     </div>
