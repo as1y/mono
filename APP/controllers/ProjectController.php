@@ -228,7 +228,8 @@ class ProjectController extends AppController {
 
              $project->setscript($_POST);
 
-
+             
+            exit("true");
 
 
         }

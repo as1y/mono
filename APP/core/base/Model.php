@@ -84,7 +84,7 @@ abstract class Model
 
 
     public function addnewBD($table, $DATA) {
-	    
+
         $tbl = R::dispense($table);
         //ФОРМИРУЕМ МАССИВ ДАННЫХ ДЛЯ РЕГИСТРАЦИИ
         foreach($DATA as $name=>$value)
