@@ -9,67 +9,65 @@
         </div>
     </div>
 
+
+
+
     <div class="card-body justify-content-center">
 
-        <div class="panel panel-default">
 
-            <div class="panel-body">
+        <div class="table-responsive">
+            <table class="table  table-bordered">
+                <tbody>
 
+                <tr>
+                    <td class="wmin-md-100"><b>Вознаграждение за цель:</b></td>
+                    <td class="wmin-md-350">
 
+                        <div class="form-group row">
+                            <div class="col-md-6">
+                                <label>ОПЛАТА ЗА ЦЕЛЬ:<span class="text-danger">*</span></label>
 
-                <div class="panel-body">
-                    <table class="table table-bordered " >
-                        <tr>
-                            <td><b>ВСЕГО ЗАГРУЖЕННО:</b></td>
-                            <td><?=$contact['all']?></td>
-                        </tr>
-
-
-                        <tr>
-                            <td><b>СВОБОДНЫХ:</b></td>
-                            <td><?=$contact['free']?></td>
-                        </tr>
-
-                        <tr>
-                            <td><b>ОБРАБОТАННО:</b></td>
-                            <td><?=$contact['ready']?></td>
-                        </tr>
+                                <div class="input-group">
+											<span class="input-group-prepend">
+												<span class="input-group-text">РУБ.</span>
+											</span>
+                                    <input type="text" name="priceresult" placeholder="500" value="<?=$company['priceresult']?>" class="form-control required" aria-invalid="false">
+                                </div>
 
 
-                        <tr>
-                            <td>ПЕРЕЗВОНИТЬ ПОЗЖЕ:</td>
-                            <td><?=$contact['late']?></td>
-                        </tr>
 
-                        <tr>
-                            <td>ОТКАЗ:</td>
-                            <td><?=$contact['otkaz']?> <button class='btn btn-success' onclick="switchotkaz('<?=$idc?>')" > <i class='fa fa-refresh'></i> ПОВТОРНО <i class='fa fa-refresh'></i></button></td>
+                            </div>
 
-                        </tr>
+                            <div class="col-md-6">
+                                <label>Лимит в день:<span class="text-danger">*</span></label>
+                                <div class="input-group">
+											<span class="input-group-prepend">
+												<span class="input-group-text">ШТ.</span>
+											</span>
+                                    <input type="text" name="daylimit" placeholder="50" value="<?=$company['daylimit']?>" class="form-control required" aria-invalid="false">
+                                </div>
 
-                        <tr>
-                            <td>ТЕЛЕФОН НЕ ДОСТУПЕН:</td>
-                            <td><?=$contact['bezdostupa']?> <button class='btn btn-success' onclick="switcnedostup('<?=$idc?>')" > <i class='fa fa-refresh'></i> ПОВТОРНО <i class='fa fa-refresh'></i></button></td>
-                        </tr>
-                        <tr>
-                            <td>ДУБЛИ:</td>
-                            <td><button class='btn btn-danger' onclick="dubli('<?=$idc?>')" > <i class='fa fa-refresh'></i> УДАЛИТЬ ДУБЛИ ТЕЛЕФОНОВ <i class='fa fa-refresh'></i></button></td>
-                        </tr>
+                            </div>
 
-                        <tr>
-                            <td>УСПЕШНО ВСЕГО:</td>
-                            <td><?=$result['all']?></td>
-                        </tr>
+                        </div>
 
 
-                    </table>
 
-                    <hr>
-                </div>
 
-            </div>
+
+
+                    </td>
+                </tr>
+
+
+
+
+
+
+
+                </tbody>
+            </table>
         </div>
-
 
 
 
