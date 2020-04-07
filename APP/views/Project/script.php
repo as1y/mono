@@ -16,8 +16,8 @@
             <button type="button" id="save" class="btn btn-success"><i class="icon-checkmark3 mr-2"></i> Save</button>
         </div>
 
-        
-        <div class="summernote">
+
+        <div class="click2edit">
             <h2>ЗАПОЛНИТЕ СКРИПТ РАЗГОВОРА</h2>
 
 
