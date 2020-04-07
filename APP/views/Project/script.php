@@ -49,7 +49,7 @@
         var textsc =  $('.click2edit').summernote('code');
 
         textsc = encodeURIComponent(textsc);
-        str = '&textsc=' + textsc + '&idc=' + <?=$company['id']?>
+        str = '&script=' + textsc + '&idc=' + <?=$company['id']?>
 
         $.ajax(
 

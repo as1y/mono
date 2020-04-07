@@ -22,7 +22,7 @@ class Project extends \APP\core\base\Model {
         $tbl = R::FindOne("script", "WHERE idc = ?", [$script['idc']]);
 
         if ($tbl){
-            $tbl->script = $script['textsc'];
+            $tbl->script = $script['script'];
             return R::store($tbl);
         }else{
 
