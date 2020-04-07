@@ -1,7 +1,7 @@
 <div class="row">
 
 
-<div class="col-md-4 card">
+<div class="col-md-6 card">
     <div class="card-header header-elements-inline">
         <h5 class="card-title">КОНСТРУКТОР ФОРМЫ РЕЗУЛЬТАТА</h5>
         <div class="header-elements">
@@ -34,7 +34,7 @@
 
 <div class="col-md-2"></div>
 
-<div class="col-md-6 card">
+<div class="col-md-4 card">
     <div class="card-header header-elements-inline">
         <h5 class="card-title">КОНСТРУКТОР ФОРМЫ РЕЗУЛЬТАТА</h5>
         <div class="header-elements">
