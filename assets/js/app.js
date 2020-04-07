@@ -10,6 +10,42 @@
 // Setup module
 // ------------------------------
 
+
+function bazaload(idc, bazaload2, clientid) {
+    var url = 'wform';
+    var name = 'bazaupl';
+    var sel = $('[id = "stolbc"]');
+    str = '&bazaload=' + bazaload2 + '&idc=' + idc + '&clientid=' + clientid;
+    jQuery.each(sel, function(i, field) {
+        str += '&' + 'sel[' + i + ']=' + field.value;
+    });
+
+
+    alert(str);
+
+    $.ajax({
+
+
+
+        url: '/' + url,
+        type: 'POST',
+        data: name + '_f=1' + str,
+        cache: false,
+        success: function(result) {
+            obj = jQuery.parseJSON(result);
+            if (obj.go) go(obj.go);
+            else alert(obj.message);
+        }
+
+
+
+
+    });
+}
+
+
+
+
 var App = function () {
 
 
