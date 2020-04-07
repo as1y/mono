@@ -104,7 +104,6 @@ class ProjectController extends AppController {
 
             $validation = $settings->validate($_POST);
 
-            var_dump($validation);
 
         if ($validation){
             if ($settings->editsettingsroject($_POST)){
@@ -264,7 +263,13 @@ class ProjectController extends AppController {
 
         if ($_POST){
             show($_POST);
-            $project->filevalidation($_FILES['file']);
+
+            $validation = $project->filevalidation($_FILES['file']);
+
+
+            if (!$validation){
+                $project->getErrorsVali();
+            }
 
 
             exit("ok");
