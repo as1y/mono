@@ -334,6 +334,22 @@ class ProjectController extends AppController {
 		$company = $project->getcom($idc);
 
 
+        $META = [
+            'title' => 'Конструктор формы результата',
+            'description' => 'онструктор формы результата',
+            'keywords' => 'онструктор формы результата',
+        ];
+
+
+        $BREADCRUMBS['HOME'] = ['Label' => $this->BreadcrumbsControllerLabel, 'Url' => $this->BreadcrumbsControllerUrl];
+        $BREADCRUMBS['DATA'][] = ['Label' => "Конструктор формы результата ".$company['company']];
+
+        \APP\core\base\View::setMeta($META);
+        \APP\core\base\View::setBreadcrumbs($BREADCRUMBS);
+
+
+
+
 
 		$this->set(compact('idc','company' ));
 	}
