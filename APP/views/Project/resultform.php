@@ -12,7 +12,7 @@
 
     <div class="card-body justify-content-center">
 
-
+    ТЕКУЩАЯ ФОРМА РЕЗУЛЬТАТА
 
         <?
             if (empty($company['resultform'])){
@@ -22,6 +22,27 @@
 
 
         ?>
+
+
+
+    </div>
+
+
+</div>
+
+
+<div class="col-md-6 card">
+    <div class="card-header header-elements-inline">
+        <h5 class="card-title">КОНСТРУКТОР ФОРМЫ РЕЗУЛЬТАТА</h5>
+        <div class="header-elements">
+            <div class="list-icons">
+                <a class="list-icons-item" data-action="collapse"></a>
+                <a class="list-icons-item" data-action="reload"></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="card-body justify-content-center">
 
 
         <div class="table-responsive">
@@ -34,7 +55,7 @@
                     <td class="wmin-md-100"><b>111</b></td>
                     <td class="wmin-md-350">
 
-222
+                        222
                     </td>
                 </tr>
 
@@ -47,8 +68,6 @@
 
 
 
-
-
     </div>
 
 
@@ -57,79 +76,6 @@
 
 
 
-
-
-
-<div class="col-md-6">
-
-
-<div class="panel panel-default">
-          <div class="panel-heading">
-			<h3 class="panel-title">СКРИПТ <?=$company['name']?></h3>
-           </div>                                        
-     <div class="panel-body">
-   
-   <div class="panel-body">
-   
-
- 
-
-<table class="table table-bordered "> 
-	<tr>
-		<td><b>ПОЛЕ/ВОПРОС</b></td>
-		<td><b>ТИП ВВОДА</b></td>
-		<td><b>ДОБАВИТЬ</b></td>
-	</tr>
-	
-	<tr>
-		<td><input type="text" class="form-control input-medium" id="NAME" placeholder="Например: Фамилия"></td>
-		
-		<td><select id="TYPE" class="form-control input-small">
-            <option value="1">ТЕКСТ</option>
-            <option value="2">ДАТА</option>
-					</select>
-			</td>
-                                                                    
-
-
-                                                                    <td>
-                                <button class="btn btn-success"  id="clone" ><i class="fa fa-plus" aria-hidden="true"></i></button>
-                                                                    	
-                                                                    </td>
-                                                                    
-                                                                    
-	</tr>
-	
-</table>
-
-
-       <div id = "formb" class="form-body">
-
-                                                                                                                                                                                          
-<?
-$MASS = json_decode($script['form'],TRUE);
-showmass($MASS, 1);
-
-//show($MASS);
-
-?>
-
-       </div>
-                                                  
-
-
-
-</div>
-
-
-
-
-<br>
-
-   
-	</div>
-</div>
-</div>
 
 
 <script>
