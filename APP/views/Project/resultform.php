@@ -28,12 +28,17 @@
 
            <?php
 
+
+           $company['formresult'] = '[{"NAME":"ИМЯ","TYPE":1}]';
+
+
+
            $FORMRESULT = json_decode($company['formresult'],TRUE);
 
 
            show($FORMRESULT);
 
-           
+
            renderform();
 
 
