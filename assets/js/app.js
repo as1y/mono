@@ -12,7 +12,7 @@
 
 
 function bazaload(idc, bazaload2, clientid) {
-    var name = 'bazaupl';
+
     var sel = $('[id = "stolbc"]');
     str = '&bazaload=' + bazaload2 + '&idc=' + idc + '&clientid=' + clientid;
     jQuery.each(sel, function(i, field) {
@@ -23,7 +23,7 @@ function bazaload(idc, bazaload2, clientid) {
 
         url: '/project/loadbasetel/',
         type: 'POST',
-        data: name + '_f=1' + str,
+        data:  str,
         cache: false,
         success: function(result) {
 
