@@ -12,11 +12,13 @@
 
     <div class="card-body justify-content-center">
 
-        <form action="/project/base/?id=<?=$company['id']?>" method="post"  data-fouc>
+        <form enctype="multipart/form-data" action="/project/base/?id=<?=$company['id']?>" method="post"  data-fouc>
 
         <div class="form-group row">
             <label class="col-form-label col-lg-2">Загрузите файл:</label>
             <div class="col-lg-10">
+
+                <input type="hidden" name="MAX_FILE_SIZE" value="300000" />
                 <input type="file" multiple accept=".csv" name="file" class="form-control-uniform-custom" data-fouc>
                 <span class="form-text text-muted">Формат .CSV Не более 1MB</span>
 
