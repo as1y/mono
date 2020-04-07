@@ -60,12 +60,7 @@
                 cache: false,
                 success: function( result ) {
 
-                    alert(result);
-
-                 //   obj = jQuery.parseJSON( result );
-
-
-
+                    console.log(result);
                 }
 
 
