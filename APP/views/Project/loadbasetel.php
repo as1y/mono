@@ -28,7 +28,7 @@
                 fclose($fp);
             }
 
-            $list = mb_convert_encoding($list, 'HTML-ENTITIES','UTF-8');
+            $list = mb_convert_encoding($list, 'WINDOWS-1251');
 
             $strok = count($list);
             $stolb = count($list['0']);
