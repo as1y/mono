@@ -139,17 +139,10 @@ class ProjectController extends AppController {
            $result =  $bazaupload->bazaupl($_POST);
 
 
-
-
-
             if ($result != 1)  message($result);
 
-
            if ($result === true) go("project/base/?id=".$_POST['idc']);
-
-
-            exit($result);
-
+           
 
 
 
