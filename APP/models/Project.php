@@ -13,6 +13,38 @@ class Project extends \APP\core\base\Model {
     }
 
 
+    public function switchotkaz($idc) {
+        //ОБНОВЛЯЕМ СБРАСЫВАЕМ СТАТУСЫ
+        \R::exec(" UPDATE `contact` SET `status` = '0', `users_id` = '0'   WHERE `company_id` = '".$idc."' AND `status` = 3; ");
+        //ОБНОВЛЯЕМ СБРАСЫВАЕМ СТАТУСЫ
+        return true;
+    }
+
+
+    public function dubli($idc) {
+
+        $result = R::getAll( "SELECT tel,id FROM `contact` WHERE  `status` = '0' AND `company_id` = '".$idc."' ");
+        $tel = array();
+        $dublcount = 0;
+        
+        foreach ($result as $row) {
+            unset($dubl);
+            $dubl = in_array($row['tel'], $tel);
+            if ($dubl) {
+                $row['tel'] = "ДУБЛЬ";
+                $dublcount++;
+                R::exec(" DELETE FROM `contact` WHERE `contact`.`id` = '".$row['id']."' ");
+            }
+            $tel[] = $row['tel'];
+        }
+        if (!isset($dublcount)) $dublcount = 0;
+
+        return 'Найдено и удалено '.$dublcount.' дублей ';
+
+    }
+
+
+
 
 
 	public function getcom($idc) {

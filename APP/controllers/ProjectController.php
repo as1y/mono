@@ -240,16 +240,32 @@ class ProjectController extends AppController {
         if (!empty($_GET['action']) && $_GET['action'] == "switcnedostup"){
 
            $result = $project->switcnedostup($idc);
-
             if ($result == true)  {
                 $_SESSION['success'] = "Статус контактов изменен";
                 redir("/project/base/?id=".$idc);
             }
-
-
-
-
         }
+
+
+        if (!empty($_GET['action']) && $_GET['action'] == "switchotkaz"){
+
+            $result = $project->switchotkaz($idc);
+            if ($result == true)  {
+                $_SESSION['success'] = "Статус контактов изменен";
+                redir("/project/base/?id=".$idc);
+            }
+        }
+
+
+        if (!empty($_GET['action']) && $_GET['action'] == "dubli"){
+
+            $result = $project->dubli($idc);
+            if ($result == true)  {
+                $_SESSION['success'] = "Статус контактов изменен";
+                redir("/project/base/?id=".$idc);
+            }
+        }
+
 
 
 
