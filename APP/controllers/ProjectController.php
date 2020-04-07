@@ -162,8 +162,10 @@ class ProjectController extends AppController {
 
 
            if ($result != true) $_SESSION['errors'] = $result;
-           if ($result == true) redir("project/base/?id=".$_POST['idc']);
+
            
+           if ($result == true) redir("project/base/?id=".$_POST['idc']);
+
             exit();
 
 
