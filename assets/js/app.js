@@ -27,11 +27,9 @@ function bazaload(idc, bazaload2, clientid) {
         cache: false,
         success: function(result) {
 
-            alert(result);
-
-            // obj = jQuery.parseJSON(result);
-            // if (obj.go) go(obj.go);
-            // else alert(obj.message);
+            obj = jQuery.parseJSON(result);
+            if (obj.go) go(obj.go);
+            else alert(obj.message);
 
         }
 
