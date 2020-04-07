@@ -18,7 +18,7 @@
         <div class="table-responsive">
             <table class="table  table-bordered">
                 <tbody>
-                
+
 
                 <tr>
                     <td class="wmin-md-100"><b>ВСЕГО ЗАГРУЖЕННО:</b></td>
@@ -27,39 +27,39 @@
 
 
                 <tr>
-                    <td><b>СВОБОДНЫХ:</b></td>
-                    <td><?=$contact['free']?></td>
+                    <td class="wmin-md-100"><b>СВОБОДНЫХ:</b></td>
+                    <td class="wmin-md-350"><?=$contact['free']?></td>
                 </tr>
 
                 <tr>
-                    <td><b>ОБРАБОТАННО:</b></td>
-                    <td><?=$contact['ready']?></td>
+                    <td class="wmin-md-100"><b>ОБРАБОТАННО:</b></td>
+                    <td class="wmin-md-350"><?=$contact['ready']?></td>
                 </tr>
 
 
                 <tr>
-                    <td>ПЕРЕЗВОНИТЬ ПОЗЖЕ:</td>
-                    <td><?=$contact['late']?></td>
+                    <td class="wmin-md-100">ПЕРЕЗВОНИТЬ ПОЗЖЕ:</td>
+                    <td class="wmin-md-350"><?=$contact['late']?></td>
                 </tr>
 
                 <tr>
-                    <td>ОТКАЗ:</td>
-                    <td><?=$contact['otkaz']?> <button class='btn btn-success' onclick="switchotkaz('<?=$idc?>')" > <i class='fa fa-refresh'></i> ПОВТОРНО <i class='fa fa-refresh'></i></button></td>
+                    <td class="wmin-md-100">ОТКАЗ:</td>
+                    <td class="wmin-md-350"><?=$contact['otkaz']?> <button class='btn btn-success' onclick="switchotkaz('<?=$idc?>')" > <i class='fa fa-refresh'></i> ПОВТОРНО <i class='fa fa-refresh'></i></button></td>
 
                 </tr>
 
                 <tr>
-                    <td>ТЕЛЕФОН НЕ ДОСТУПЕН:</td>
-                    <td><?=$contact['bezdostupa']?> <button class='btn btn-success' onclick="switcnedostup('<?=$idc?>')" > <i class='fa fa-refresh'></i> ПОВТОРНО <i class='fa fa-refresh'></i></button></td>
+                    <td class="wmin-md-100">ТЕЛЕФОН НЕ ДОСТУПЕН:</td>
+                    <td class="wmin-md-350"><?=$contact['bezdostupa']?> <button class='btn btn-success' onclick="switcnedostup('<?=$idc?>')" > <i class='fa fa-refresh'></i> ПОВТОРНО <i class='fa fa-refresh'></i></button></td>
                 </tr>
                 <tr>
-                    <td>ДУБЛИ:</td>
-                    <td><button class='btn btn-danger' onclick="dubli('<?=$idc?>')" > <i class='fa fa-refresh'></i> УДАЛИТЬ ДУБЛИ ТЕЛЕФОНОВ <i class='fa fa-refresh'></i></button></td>
+                    <td class="wmin-md-100">ДУБЛИ:</td>
+                    <td class="wmin-md-350"><button class='btn btn-danger' onclick="dubli('<?=$idc?>')" > <i class='fa fa-refresh'></i> УДАЛИТЬ ДУБЛИ ТЕЛЕФОНОВ <i class='fa fa-refresh'></i></button></td>
                 </tr>
 
                 <tr>
-                    <td>УСПЕШНО ВСЕГО:</td>
-                    <td><?=$result['all']?></td>
+                    <td class="wmin-md-100">УСПЕШНО ВСЕГО:</td>
+                    <td class="wmin-md-350"><?=$result['all']?></td>
                 </tr>
 
 
