@@ -37,6 +37,8 @@
 <script>
 
     var ab = $().summernote.data();
+    var ab ="l";
+
 
    alert(ab);
 </script>
