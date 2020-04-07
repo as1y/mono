@@ -12,7 +12,6 @@
 
 
 function bazaload(idc, bazaload2, clientid) {
-    var url = 'wform';
     var name = 'bazaupl';
     var sel = $('[id = "stolbc"]');
     str = '&bazaload=' + bazaload2 + '&idc=' + idc + '&clientid=' + clientid;
@@ -20,21 +19,22 @@ function bazaload(idc, bazaload2, clientid) {
         str += '&' + 'sel[' + i + ']=' + field.value;
     });
 
-
-    alert(str);
-
     $.ajax({
 
-
-
-        url: '/' + url,
+        url: '/project/loadbasetel/',
         type: 'POST',
         data: name + '_f=1' + str,
         cache: false,
         success: function(result) {
-            obj = jQuery.parseJSON(result);
-            if (obj.go) go(obj.go);
-            else alert(obj.message);
+
+            // obj = jQuery.parseJSON(result);
+            // if (obj.go) go(obj.go);
+            // else alert(obj.message);
+
+            alert(result);
+
+
+
         }
 
 

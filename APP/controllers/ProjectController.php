@@ -144,6 +144,18 @@ class ProjectController extends AppController {
 
 
 	public function loadbasetelAction() {
+
+
+
+        if($this->isAjax()){
+
+
+            exit ("yep");
+
+
+        }
+
+
 		$project = new Project;
 		$idc = $_GET['id'];
 		$company = $project->getcom($idc);
