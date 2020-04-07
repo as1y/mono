@@ -128,7 +128,7 @@ abstract class Model
 
         $ext = "/.csv\$/i";
 
-        if ($PARAMS['ext']) $ext = "/.".$PARAMS['ext']."\$/i";
+        if ( !empty($PARAMS['ext'])) $ext = "/.".$PARAMS['ext']."\$/i";
 
         if(!preg_match($ext, $FILE['name'])) {
             $this->errors[] = ['Файл' => "Не корректный формат" ];
