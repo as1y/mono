@@ -42,27 +42,40 @@
             </div>
 
             <div class="card-body">
-                <form action="#">
-                    <div class="form-group">
-                        <label>Your name:</label>
-                        <input type="text" class="form-control" placeholder="Eugene Kopyov">
-                    </div>
 
-                    <div class="form-group">
-                        <label>Your password:</label>
-                        <input type="password" class="form-control" placeholder="Your strong password">
-                    </div>
 
-                    <div class="form-group">
-                        <label>Your message:</label>
-                        <textarea rows="3" cols="3" class="form-control" placeholder="Enter your message here"></textarea>
-                    </div>
+                <table class="table table-bordered ">
+                    <tbody><tr>
+                        <td><b>ПОЛЕ/ВОПРОС</b></td>
+                        <td><b>ТИП ВВОДА</b></td>
+                        <td><b>ДОБАВИТЬ</b></td>
+                    </tr>
 
-                    <div class="d-flex justify-content-start align-items-center">
-                        <button type="submit" class="btn btn-light">Cancel</button>
-                        <button type="submit" class="btn bg-blue ml-3">Submit <i class="icon-paperplane ml-2"></i></button>
-                    </div>
-                </form>
+                    <tr>
+                        <td><input type="text" class="form-control input-medium" id="NAME" placeholder="Например: Фамилия"></td>
+
+                        <td><select id="TYPE" class="form-control input-small">
+                                <option value="1">ТЕКСТ</option>
+                                <option value="2">ДАТА</option>
+                            </select>
+                        </td>
+
+
+
+                        <td>
+                            <button class="btn btn-success" id="clone"><i class="fa fa-plus" aria-hidden="true"></i></button>
+
+                        </td>
+
+
+                    </tr>
+
+                    </tbody></table>
+
+                
+
+
+
             </div>
         </div>
         <!-- /left aligned buttons -->
