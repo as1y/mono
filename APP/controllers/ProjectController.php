@@ -151,7 +151,7 @@ class ProjectController extends AppController {
 
             show($_POST);
 
-//            exit ("yep");
+            exit ("yep");
 
 
         }
