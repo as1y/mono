@@ -29,7 +29,8 @@ var InputsBasic = function () {
 
         // Custom select
         $('.form-control-uniform-custom').uniform({
-            fileButtonHtml: 'Привет!',
+            fileDefaultHtml: 'Файл не выбран',
+            fileButtonHtml: 'Выбрать файл',
             fileButtonClass: 'action btn bg-blue',
             selectClass: 'uniform-select bg-pink-400 border-pink-400'
         });
