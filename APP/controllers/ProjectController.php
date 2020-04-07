@@ -262,8 +262,8 @@ class ProjectController extends AppController {
         $contact =  $project->contact($idc);
         $result = $project->getres($idc);
 
-        
-        $this->set(compact('idc','company', 'contact' ));
+
+        $this->set(compact('idc','company', 'contact', 'result' ));
     }
 
 
