@@ -6,6 +6,8 @@
 
     $FORMRESULT = json_decode($company['formresult'],TRUE);
 
+    var_dump($FORMRESULT);
+
     show($FORMRESULT);
 
 //    showmass($MASS, 1);
