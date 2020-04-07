@@ -142,7 +142,7 @@ class ProjectController extends AppController {
 
 
 
-            if ($result != true)  message($result);
+            if ($result !== true)  message($result);
 
 
            if ($result === true) go("project/base/?id=".$_POST['idc']);
