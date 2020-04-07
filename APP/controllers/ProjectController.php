@@ -146,11 +146,12 @@ class ProjectController extends AppController {
 	public function loadbasetelAction() {
 
 
-
         if($this->isAjax()){
 
 
-            exit ("yep");
+            show($_POST);
+
+//            exit ("yep");
 
 
         }
