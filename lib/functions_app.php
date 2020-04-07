@@ -53,7 +53,14 @@ function timecall ($status){
 
 
 
-function renderform ($par = "", $ch = ""){
+function renderform ($FORMRESULT){
+
+    foreach ($FORMRESULT as $key=>$val){
+
+
+    }
+
+
 
     ?>
 
