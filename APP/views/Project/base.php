@@ -12,19 +12,19 @@
 
     <div class="card-body justify-content-center">
 
-        <form action="/project/base/?id=<?=$company['id']?>" method="post" multiple accept=".csv" data-fouc>
+        <form action="/project/base/?id=<?=$company['id']?>" method="post"  data-fouc>
 
         <div class="form-group row">
             <label class="col-form-label col-lg-2">Загрузите файл:</label>
             <div class="col-lg-10">
-                <input type="file" name="file" class="form-control-uniform-custom" data-fouc>
+                <input type="file" multiple accept=".csv" name="file" class="form-control-uniform-custom" data-fouc>
                 <span class="form-text text-muted">Формат .CSV Не более 1MB</span>
 
             </div>
         </div>
 
         <input type="hidden" name="idc"  value="<?=$company['id']?>">
-        <button type="submit" class=" btn btn-primary"><i class="icon-file-upload2 mr-2"></i> НАЧАТЬ ЗАГРУЗКУ</button>
+        <button type="submit" class="btn btn-primary"><i class="icon-file-upload2 mr-2"></i> НАЧАТЬ ЗАГРУЗКУ</button>
 
         </form>
 
