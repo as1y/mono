@@ -37,10 +37,10 @@ class Bazaupload extends \APP\core\base\Model {
 
 
     public function bazaupl($DATA) {
+
+
         //ОПРЕДЕЛЯЕМ ПЕРЕМЕННЫЕ
-
         $SEL = $DATA['sel']; // Массив с выбраннами столбцами
-
 
 
         //ОПРЕДЕЛЯЕМ ПЕРЕМЕННЫЕ
