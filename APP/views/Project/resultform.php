@@ -51,6 +51,7 @@
 
             <div class="card-body">
 
+                <form action="/project/resultform/?id=<?=$company['id']?>" method="post" data-fouc>
 
                 <table class="table table-bordered ">
                     <tbody><tr>
@@ -69,9 +70,8 @@
                             </select>
                         </td>
 
-
                         <td>
-                            <button type="button" class="btn btn-success"><i class="icon-plus3 mr-2"></i></button>
+                            <button type="submit" class="btn btn-success"><i class="icon-plus3 mr-2"></i></button>
 
                         </td>
 
@@ -80,7 +80,7 @@
 
                     </tbody></table>
 
-
+                </form>
 
 
 

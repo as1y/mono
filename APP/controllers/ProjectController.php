@@ -334,6 +334,18 @@ class ProjectController extends AppController {
 		$company = $project->getcom($idc);
 
 
+		if ($_POST){
+
+            show($_POST);
+
+
+
+		    exit("ok");
+        }
+
+
+
+
         $META = [
             'title' => 'Конструктор формы результата',
             'description' => 'онструктор формы результата',
