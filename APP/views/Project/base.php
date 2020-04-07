@@ -15,6 +15,7 @@
         <form enctype="multipart/form-data" action="/project/base/?id=<?=$company['id']?>" method="post"  data-fouc>
 
         <div class="form-group row">
+
             <label class="col-form-label col-lg-2">Загрузите файл:</label>
             <div class="col-lg-10">
 
