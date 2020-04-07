@@ -33,14 +33,3 @@
 
 
 </div>
-
-<script>
-
-    var ab = summernote.data();
-    var ab ="l";
-
-
-  console.log("fgdfgfdg");
-
-
-</script>
