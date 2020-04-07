@@ -158,14 +158,10 @@ class ProjectController extends AppController {
            $result =  $bazaupload->bazaupl($_POST);
 
 
-           if ($result != true){
-               $_SESSION['errors'] = $result;
-           }
+           if ($result != true) $_SESSION['errors'] = $result;
 
            if ($result == true) redir("project/base/?id=".$_POST['idc']);
-
-
-
+           
 
 
 
