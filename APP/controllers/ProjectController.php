@@ -279,8 +279,9 @@ class ProjectController extends AppController {
                 copy($_FILES['file']['tmp_name'], $urlnew); // Копируем из общего котла в тизерку
                 $name = trim($name);
 
-                $_SESSION['success'] = "Изменения внесены";
-//                redir("/project/set/?id=".$_POST['idc']);
+                $path = "temp_load/".$name.".csv";
+                
+                redir("/project/loadbasetel/?id=".$_POST['idc']."&path=.$path);
 
 
             }
