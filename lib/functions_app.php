@@ -67,6 +67,26 @@ function renderform ($FORMRESULT){
             <?php
         }
 
+        if ($val['TYPE'] == 2){
+            ?>
+            <div class="form-group">
+                <label><?=$val['NAME']?><span class="text-danger">*</span></label>
+                <input type="text" class="form-control" placeholder="<?=$val['NAME']?>">
+            </div>
+            <?php
+        }
+
+
+
+        if ($val['TYPE'] == 3){
+            ?>
+            <div class="form-group">
+                <label><?=$val['NAME']?><span class="text-danger">*</span></label>
+                <textarea rows="3" cols="3" class="form-control" placeholder="<?=$val['NAME']?>"></textarea>
+            </div>
+            <?php
+        }
+
 
 
 
