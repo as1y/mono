@@ -200,12 +200,30 @@ class ProjectController extends AppController {
 		$this->set(compact('idc','razdel','company', 'idc','path' ,'clientid', 'filename' ));
 	}
 	public function scriptAction() {
+
 		$project = new Project;
-		$razdel = "Скрипт";
 		$idc = $_GET['id'];
 		$company = $project->getcom($idc);
 		$script = $project->getscript($idc);
-		$this->set(compact('idc','razdel','company','script' ));
+
+
+        $META = [
+            'title' => 'Скрипт звонка',
+            'description' => 'Скрипт звонка',
+            'keywords' => 'Скрипт звонка ',
+        ];
+
+
+        $BREADCRUMBS['HOME'] = ['Label' => $this->BreadcrumbsControllerLabel, 'Url' => $this->BreadcrumbsControllerUrl];
+        $BREADCRUMBS['DATA'][] = ['Label' => "Скрипт звонка ".$company['company']];
+
+        \APP\core\base\View::setMeta($META);
+        \APP\core\base\View::setBreadcrumbs($BREADCRUMBS);
+
+
+
+
+		$this->set(compact('idc','company','script' ));
 	}
 
 

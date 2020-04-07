@@ -44,9 +44,38 @@
 
     // Save
     $('#save').on('click', function() {
-        var aHTML = $('.click2edit').summernote('code');
 
-        alert(aHTML);
+        var url='wform';
+        var name = 'changescript';
+        var idc = <?=$company['id']?>;
+        var textsc =  $('.click2edit').summernote('code');
+
+        textsc = encodeURIComponent(textsc);
+        str = '&textsc=' + textsc + '&idc=' + idc
+
+        $.ajax(
+
+            {
+                url : '/' + url,
+                type: 'POST',
+                data: name + '_f=1' + str,
+                cache: false,
+                success: function( result ) {
+
+                    obj = jQuery.parseJSON( result );
+
+                    if ( obj.go ) go( obj.go );
+                    else alert( obj.message );
+                    location.reload();
+
+                }
+
+
+            }
+
+        );
+
+
 
         $('.click2edit').summernote('destroy');
 
