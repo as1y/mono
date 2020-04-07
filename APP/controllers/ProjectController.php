@@ -241,8 +241,11 @@ class ProjectController extends AppController {
 
            $result = $project->switcnedostup($idc);
 
-            if ($result == true)  $_SESSION['success'] = "Статус контактов изменен";
-            
+            if ($result == true)  {
+                $_SESSION['success'] = "Статус контактов изменен";
+                redir("project/base/?id=".$idc);
+            }
+
 
 
 
