@@ -158,9 +158,6 @@ class ProjectController extends AppController {
 
 		$filename = WWW."/".$path;
 
-		show($filename);
-
-		exit();
 
 		if (!file_exists($filename)) redir("/project/?id=$idc");
 
