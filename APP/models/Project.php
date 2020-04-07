@@ -39,7 +39,7 @@ class Project extends \APP\core\base\Model {
         }
         if (!isset($dublcount)) $dublcount = 0;
 
-        return 'Найдено и удалено '.$dublcount.' дублей ';
+        return "Найдено и удалено <b> ".$dublcount." </b> дублей ";
 
     }
 

@@ -260,7 +260,7 @@ class ProjectController extends AppController {
         if (!empty($_GET['action']) && $_GET['action'] == "dubli"){
 
             $result = $project->dubli($idc);
-        
+
                 $_SESSION['success'] = $result;
                 redir("/project/base/?id=".$idc);
 
