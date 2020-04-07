@@ -266,6 +266,7 @@ class ProjectController extends AppController {
 
             $validation = $project->filevalidation($_FILES['file']);
 
+            var_dump($validation);
 
             if (!$validation){
                 $project->getErrorsVali();
