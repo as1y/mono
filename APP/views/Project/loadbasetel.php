@@ -1,6 +1,6 @@
 <div class="card">
     <div class="card-header header-elements-inline">
-        <h5 class="card-title">ОПРЕДЕЛЕНИЕ ПОЛЕЙ</h5>
+        <h5 class="card-title"><a href="/project/base/?id=<?=$idc?>" class="btn btn-light"><i class="icon-square-left mr-2"></i> НАЗАД</a>ОПРЕДЕЛЕНИЕ ПОЛЕЙ</h5>
         <div class="header-elements">
             <button onclick="bazaload('<?=$idc?>','<?=$path?>','<?=$company['client_id']?>')" class="btn btn-warning"><i class="icon-database-insert mr-2"></i>ДОБАВИТЬ КОНТАКТЫ</button>
         </div>
