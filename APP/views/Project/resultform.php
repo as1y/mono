@@ -4,7 +4,7 @@
         <!-- Left aligned buttons -->
         <div class="card">
             <div class="card-header  justify-content-between align-items-center bg-teal-400 border-top-0">
-                <h6 class="card-title">Форма заполнения успешного звонка</h6><br>
+                <h6 class="card-title">Форма заполнения успешного звонка</h6>
             </div>
 
             <div class="card-body">
