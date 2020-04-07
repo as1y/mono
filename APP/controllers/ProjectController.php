@@ -156,10 +156,14 @@ class ProjectController extends AppController {
 		}
 
 
-		$filename = "/home/bitrix/ext_www/cashcall.ru/$path";
+		$filename = WWW.$path;
+
+
 		if (!file_exists($filename)) redir("/project/?id=$idc");
+
+
 		$clientid = $company->client['id'];
-		$this->set(compact('idc','razdel','company', 'idc','path' ,'clientid', 'filename' ));
+		$this->set(compact('idc','company', 'idc','path' ,'clientid', 'filename' ));
 	}
 
 

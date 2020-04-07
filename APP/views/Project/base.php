@@ -1,13 +1,4 @@
 
-<?php
-
-
-show(WWW);
-
-
-
-?>
-
 <div class="card">
     <div class="card-header header-elements-inline">
         <h5 class="card-title">ЗАГРУЗИТЬ БАЗУ</h5>
