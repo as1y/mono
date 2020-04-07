@@ -55,8 +55,9 @@
                         <td><input type="text" class="form-control input-medium" id="NAME" placeholder="Например: Фамилия"></td>
 
                         <td><select id="TYPE" class="form-control input-small">
-                                <option value="1">ТЕКСТ</option>
-                                <option value="2">ДАТА</option>
+                                <option value="1">Текст</option>
+                                <option value="2">Дата</option>
+                                <option value="3">Текстовое поле</option>
                             </select>
                         </td>
 
@@ -72,7 +73,7 @@
 
                     </tbody></table>
 
-                
+
 
 
 
