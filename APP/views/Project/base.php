@@ -12,7 +12,7 @@
 
     <div class="card-body justify-content-center">
 
-        <form  action="/project/base/?id=<?=$company['id']?>" method="post"  data-fouc>
+        <form enctype="multipart/form-data" action="/project/base/?id=<?=$company['id']?>" method="post"  data-fouc>
 
         <div class="form-group row">
 
