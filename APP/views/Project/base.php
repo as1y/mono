@@ -74,13 +74,13 @@
                 </tr>
                 <tr>
                     <td class="wmin-md-100">ОТКАЗ:</td>
-                    <td class="wmin-md-350"><?=$contact['otkaz']?> <button class='btn btn-success' onclick="switchotkaz('<?=$idc?>')" > <i class='icon-database-refresh'></i> Обработать повтороно <i class='fa fa-refresh'></i></button></td>
+                    <td class="wmin-md-350"><?=$contact['otkaz']?> <a href class='btn btn-success' onclick="switchotkaz('<?=$idc?>')" > <i class='icon-database-refresh'></i> Обработать повтороно <i class='fa fa-refresh'></i></a></td>
 
                 </tr>
 
                 <tr>
                     <td class="wmin-md-100">ТЕЛЕФОН НЕ ДОСТУПЕН:</td>
-                    <td class="wmin-md-350"><?=$contact['bezdostupa']?> <button class='btn btn-success' onclick="switcnedostup('<?=$idc?>')" > <i class='icon-database-refresh'></i> Обработать повторно <i class='fa fa-refresh'></i></button></td>
+                    <td class="wmin-md-350"><?=$contact['bezdostupa']?> <a href="/base/?id=<?=$idc?>&action=switcnedostup" class='btn btn-success' > <i class='icon-database-refresh'></i> Обработать повторно <i class='fa fa-refresh'></i></a></td>
                 </tr>
                 <tr>
                     <td class="wmin-md-100">ДУБЛИ:</td>

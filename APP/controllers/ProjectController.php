@@ -142,7 +142,7 @@ class ProjectController extends AppController {
             if ($result != 1)  message($result);
 
            if ($result === true) go("project/base/?id=".$_POST['idc']);
-           
+
 
 
 
@@ -236,6 +236,18 @@ class ProjectController extends AppController {
         $project = new Project;
         $idc = $_GET['id'];
         $company = $project->getcom($idc);
+
+        if ($_GET['action'] == "switcnedostup"){
+
+
+
+            exit("prihod");
+
+
+
+        }
+
+
 
 
         $META = [
