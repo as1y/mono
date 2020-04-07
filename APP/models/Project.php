@@ -109,7 +109,7 @@ class Project extends \APP\core\base\Model {
 		return  R::findAll("company");
 	}
 	public function getscript($idc) {
-		$script = R::findOne('script','WHERE  company_id = ?' , [$idc]);
+		$script = R::findOne('script','WHERE  idc = ?' , [$idc]);
 		return $script;
 	}
 
