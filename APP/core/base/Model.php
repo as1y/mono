@@ -102,13 +102,13 @@ abstract class Model
 
 
         if ($FILE['size'] > 3000000) {
-            $this->errors = "Размер не должен превышать 3МБ";
+            $this->errors[] = "Размер не должен превышать 3МБ";
             show( $this->errors);
             return false;
         }
 
         if ($FILE['size'] < 50000) {
-            $this->errors['file'] = "Размер не может быть меньше 50КБ";
+            $this->errors[] = "Размер не может быть меньше 50КБ";
             show( $this->errors);
             return false;
         }
