@@ -1,7 +1,7 @@
 
 <div class="card">
     <div class="card-header header-elements-inline">
-        <h5 class="card-title">ФОРМА РЕЗУЛЬТАТА</h5>
+        <h5 class="card-title">КОНСТРУКТОР ФОРМЫ РЕЗУЛЬТАТА</h5>
         <div class="header-elements">
             <div class="list-icons">
                 <a class="list-icons-item" data-action="collapse"></a>
@@ -22,6 +22,30 @@
 
 
         ?>
+
+
+        <div class="table-responsive">
+            <table class="table  table-bordered">
+                <tbody>
+
+
+
+                <tr>
+                    <td class="wmin-md-100"><b>111</b></td>
+                    <td class="wmin-md-350">
+
+222
+                    </td>
+                </tr>
+
+
+
+
+                </tbody>
+            </table>
+        </div>
+
+
 
 
 
