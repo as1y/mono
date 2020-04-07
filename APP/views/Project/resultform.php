@@ -1,5 +1,5 @@
 
-<div class="card">
+<div class="col-md-6 card">
     <div class="card-header header-elements-inline">
         <h5 class="card-title">КОНСТРУКТОР ФОРМЫ РЕЗУЛЬТАТА</h5>
         <div class="header-elements">
