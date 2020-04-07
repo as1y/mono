@@ -48,6 +48,8 @@ abstract class Model
 
 	public function getErrorsVali()
 	{
+	    var_dump($this->errors);
+
 		$errors = "<ul>";
 		foreach($this->errors as $error) {
 			foreach($error as $item)
