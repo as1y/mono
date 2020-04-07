@@ -97,7 +97,7 @@ abstract class Model
 
     }
 
-    public function filevalidation($FILE){
+    public function filevalidation($FILE, $PARAMS = []){
 
 
 
@@ -125,7 +125,11 @@ abstract class Model
         }
         }
 
-        if(!preg_match("/.csv\$/i", $FILE['name'])) {
+
+        $ext = "/.csv\$/i";
+        if (!$PARAMS['ext']) $ext = $PARAMS['ext'];
+
+        if(!preg_match($ext, $FILE['name'])) {
             $this->errors[] = ['Файл' => "Не корректный формат" ];
             return false;
         }

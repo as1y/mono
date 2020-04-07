@@ -264,17 +264,28 @@ class ProjectController extends AppController {
         if ($_POST){
 
             show($_FILES['file']);
-
             $validation = $project->filevalidation($_FILES['file']);
 
-            var_dump($validation);
 
             if (!$validation){
                 $project->getErrorsVali();
             }
 
+            if ($validation){
 
-            exit("ok");
+
+                $name = md5(uniqid(rand(),1));
+                $urlnew = "temp_load/".$name.".csv";
+                copy($_FILES['tmp_name'], $urlnew); // Копируем из общего котла в тизерку
+                $name = trim($name);
+
+                $_SESSION['success'] = "Изменения внесены";
+//                redir("/project/set/?id=".$_POST['idc']);
+
+
+            }
+
+
         }
 
 
