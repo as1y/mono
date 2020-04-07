@@ -207,6 +207,8 @@ class ProjectController extends AppController {
 		$script = $project->getscript($idc);
 		$this->set(compact('idc','razdel','company','script' ));
 	}
+
+
 	public function resultformAction() {
 		$project = new Project;
 		$razdel = "Форма результата";
@@ -216,6 +218,6 @@ class ProjectController extends AppController {
 		$this->set(compact('idc','razdel','company','script' ));
 	}
 
-	
+
 }
 ?>
