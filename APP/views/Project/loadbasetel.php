@@ -23,7 +23,7 @@
 
             if (($fp = fopen($filename, "r")) !== FALSE) {
                 while (($data = fgetcsv($fp, 0, ";")) !== FALSE) {
-                    $list[] = $text = iconv('CP1251', 'UTF-8', $data);
+                    $list[]  = $data;
                 }
                 fclose($fp);
             }
