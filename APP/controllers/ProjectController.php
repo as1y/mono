@@ -156,7 +156,7 @@ class ProjectController extends AppController {
 		}
 
 
-		$filename = WWW.$path;
+		$filename = WWW."/".$path;
 
 		show($filename);
 
