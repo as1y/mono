@@ -21,7 +21,7 @@
                 renderform($FORMRESULT);
 
                 ?>
-                
+
 
 
             </div>
@@ -37,14 +37,8 @@
         <!-- Left aligned buttons -->
         <div class="card">
             <div class="card-header header-elements-inline">
-                <h6 class="card-title">Left aligned buttons</h6>
-                <div class="header-elements">
-                    <div class="list-icons">
-                        <a class="list-icons-item" data-action="collapse"></a>
-                        <a class="list-icons-item" data-action="reload"></a>
-                        <a class="list-icons-item" data-action="remove"></a>
-                    </div>
-                </div>
+                <h6 class="card-title">Редактирование формы результата звонка</h6>
+
             </div>
 
             <div class="card-body">
@@ -82,45 +76,6 @@
 </div>
 
 
-
-
-<div class="card">
-    <div class="card-header header-elements-inline">
-        <h5 class="card-title">ТЕКУЩАЯ ФОРМЫ РЕЗУЛЬТАТА</h5>
-        <div class="header-elements">
-            <div class="list-icons">
-                <a class="list-icons-item" data-action="collapse"></a>
-                <a class="list-icons-item" data-action="reload"></a>
-            </div>
-        </div>
-    </div>
-
-
-    <div class="row">
-       <div class="card-body justify-content-center">
-
-
-
-
-
-
-
-
-
-
-    </div>
-
-
-
-
-
-</div>
-
-
-
-
-
-</div>
 
 
 
