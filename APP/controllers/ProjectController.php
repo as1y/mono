@@ -224,9 +224,9 @@ class ProjectController extends AppController {
 
 
             $idc = $_POST['idc'];
-            $newscript = iconv_strlen($_POST['textsc'], 'UTF-8');
+            iconv_strlen($_POST['textsc'], 'UTF-8');
 
-             $project->setscript($newscript);
+             $project->setscript($_POST);
 
 
 

@@ -19,9 +19,21 @@ class Project extends \APP\core\base\Model {
 
     public  function setscript($script){
 
+        $tbl = R::FindOne("script", "WHERE idc = ?", [$script['idc']]);
+
+        if ($tbl){
+            $tbl->script = $script['textsc'];
+            return R::store($tbl);
+        }else{
 
 
-	    
+            echo "Создаем новую таблицу";
+        }
+
+
+
+
+
 
 	    return true;
     }
