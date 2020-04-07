@@ -262,6 +262,18 @@ class ProjectController extends AppController {
         $contact =  $project->contact($idc);
         $result = $project->getres($idc);
 
+        if ($_POST){
+
+            show($_POST);
+
+
+            exit("ok");
+        }
+
+
+
+
+
 
         $this->set(compact('idc','company', 'contact', 'result' ));
     }
