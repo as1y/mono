@@ -1,8 +1,8 @@
 <div class="card">
     <div class="card-header header-elements-inline">
         <h5 class="card-title">ЗАГРУЗИТЬ БАЗУ</h5>
-        <button onclick="bazaload('<?=$idc?>','<?=$path?>','<?=$clientid?>')" class="btn btn-warning"><i class="icon-database-insert mr-2"></i>ПОЕХАЛИ</button>
         <div class="header-elements">
+            <button onclick="bazaload('<?=$idc?>','<?=$path?>','<?=$clientid?>')" class="btn btn-warning"><i class="icon-database-insert mr-2"></i>ПОЕХАЛИ</button>
             <div class="list-icons">
                 <a class="list-icons-item" data-action="collapse"></a>
                 <a class="list-icons-item" data-action="reload"></a>
