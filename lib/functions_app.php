@@ -53,6 +53,26 @@ function timecall ($status){
 
 
 
+function renderform ($par = "", $ch = ""){
+
+    ?>
+
+    рендерим форму
+
+<?php
+
+
+
+
+}
+
+
+
+
+
+
+
+
 function camstatus ($status, $id ){
 	if ($status=="1"){
 		return '<div id="stat'.$id.'" class="badge badge-success">РАБОТАЕТ</div>';

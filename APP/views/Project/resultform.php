@@ -30,9 +30,13 @@
 
            $FORMRESULT = json_decode($company['formresult'],TRUE);
 
-           var_dump($FORMRESULT);
 
            show($FORMRESULT);
+
+           
+           renderform();
+
+
 
            //    showmass($MASS, 1);
 
@@ -40,7 +44,7 @@
            ?>
 
 
-           
+
 
 
 
