@@ -29,7 +29,7 @@ function bazaload(idc, bazaload2, clientid) {
 
             obj = jQuery.parseJSON(result);
             if (obj.go) go(obj.go);
-            
+            else location.reload();
 
 
 
