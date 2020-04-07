@@ -5,6 +5,16 @@ use RedBeanPHP\R;
 class Project extends \APP\core\base\Model {
 
 
+    public function switcnedostup($idc) {
+        //ОБНОВЛЯЕМ СБРАСЫВАЕМ СТАТУСЫ
+        R::exec(" UPDATE `contact` SET `status` = '0', `users_id` = '0'   WHERE `company_id` = '".$idc."' AND `status` = 4  ;	");
+        //ОБНОВЛЯЕМ СБРАСЫВАЕМ СТАТУСЫ
+        return true;
+    }
+
+
+
+
 	public function getcom($idc) {
 
 

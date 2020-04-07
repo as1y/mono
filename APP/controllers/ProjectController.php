@@ -239,9 +239,10 @@ class ProjectController extends AppController {
 
         if (!empty($_GET['action']) && $_GET['action'] == "switcnedostup"){
 
+           $result = $project->switcnedostup($idc);
 
-
-            exit("prihod");
+            if ($result == true)  $_SESSION['success'] = "Статус контактов изменен";
+            
 
 
 
