@@ -45,12 +45,11 @@
     // Save
     $('#save').on('click', function() {
 
-        var name = 'changescript';
-        var idc = <?=$company['id']?>;
+
         var textsc =  $('.click2edit').summernote('code');
 
         textsc = encodeURIComponent(textsc);
-        str = '&textsc=' + textsc + '&idc=' + idc
+        str = '&textsc=' + textsc + '&idc=' + <?=$company['id']?>
 
         $.ajax(
 

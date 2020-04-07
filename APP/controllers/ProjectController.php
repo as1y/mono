@@ -220,7 +220,13 @@ class ProjectController extends AppController {
         \APP\core\base\View::setMeta($META);
         \APP\core\base\View::setBreadcrumbs($BREADCRUMBS);
 
+        if($this->isAjax()){
 
+
+            exit("ok");
+
+
+        }
 
 
 		$this->set(compact('idc','company','script' ));
