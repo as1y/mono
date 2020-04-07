@@ -54,7 +54,7 @@
         $.ajax(
 
             {
-                url : '/script/?id=<?=$company['id']?>',
+                url : '/project/script/?id=<?=$company['id']?>',
                 type: 'POST',
                 data: str,
                 cache: false,
