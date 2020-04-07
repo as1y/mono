@@ -2,6 +2,17 @@
 
 
 
+    <?php
+
+    $FORMRESULT = json_decode($company['formresult'],TRUE);
+
+    show($FORMRESULT);
+
+//    showmass($MASS, 1);
+
+
+    ?>
+
 </div>
 
 
