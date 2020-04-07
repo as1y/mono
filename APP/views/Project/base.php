@@ -18,47 +18,49 @@
         <div class="table-responsive">
             <table class="table  table-bordered">
                 <tbody>
+                
 
                 <tr>
-                    <td class="wmin-md-100"><b>Вознаграждение за цель:</b></td>
-                    <td class="wmin-md-350">
-
-                        <div class="form-group row">
-                            <div class="col-md-6">
-                                <label>ОПЛАТА ЗА ЦЕЛЬ:<span class="text-danger">*</span></label>
-
-                                <div class="input-group">
-											<span class="input-group-prepend">
-												<span class="input-group-text">РУБ.</span>
-											</span>
-                                    <input type="text" name="priceresult" placeholder="500" value="<?=$company['priceresult']?>" class="form-control required" aria-invalid="false">
-                                </div>
-
-
-
-                            </div>
-
-                            <div class="col-md-6">
-                                <label>Лимит в день:<span class="text-danger">*</span></label>
-                                <div class="input-group">
-											<span class="input-group-prepend">
-												<span class="input-group-text">ШТ.</span>
-											</span>
-                                    <input type="text" name="daylimit" placeholder="50" value="<?=$company['daylimit']?>" class="form-control required" aria-invalid="false">
-                                </div>
-
-                            </div>
-
-                        </div>
-
-
-
-
-
-
-                    </td>
+                    <td class="wmin-md-100"><b>ВСЕГО ЗАГРУЖЕННО:</b></td>
+                    <td class="wmin-md-350"><?=$contact['all']?></td>
                 </tr>
 
+
+                <tr>
+                    <td><b>СВОБОДНЫХ:</b></td>
+                    <td><?=$contact['free']?></td>
+                </tr>
+
+                <tr>
+                    <td><b>ОБРАБОТАННО:</b></td>
+                    <td><?=$contact['ready']?></td>
+                </tr>
+
+
+                <tr>
+                    <td>ПЕРЕЗВОНИТЬ ПОЗЖЕ:</td>
+                    <td><?=$contact['late']?></td>
+                </tr>
+
+                <tr>
+                    <td>ОТКАЗ:</td>
+                    <td><?=$contact['otkaz']?> <button class='btn btn-success' onclick="switchotkaz('<?=$idc?>')" > <i class='fa fa-refresh'></i> ПОВТОРНО <i class='fa fa-refresh'></i></button></td>
+
+                </tr>
+
+                <tr>
+                    <td>ТЕЛЕФОН НЕ ДОСТУПЕН:</td>
+                    <td><?=$contact['bezdostupa']?> <button class='btn btn-success' onclick="switcnedostup('<?=$idc?>')" > <i class='fa fa-refresh'></i> ПОВТОРНО <i class='fa fa-refresh'></i></button></td>
+                </tr>
+                <tr>
+                    <td>ДУБЛИ:</td>
+                    <td><button class='btn btn-danger' onclick="dubli('<?=$idc?>')" > <i class='fa fa-refresh'></i> УДАЛИТЬ ДУБЛИ ТЕЛЕФОНОВ <i class='fa fa-refresh'></i></button></td>
+                </tr>
+
+                <tr>
+                    <td>УСПЕШНО ВСЕГО:</td>
+                    <td><?=$result['all']?></td>
+                </tr>
 
 
 
@@ -68,6 +70,11 @@
                 </tbody>
             </table>
         </div>
+
+
+
+
+
 
 
 
