@@ -142,14 +142,19 @@ class ProjectController extends AppController {
 
 
 
-            if ($result != true) $_SESSION['errors'] = $result;
+            if ($result != true) {
+
+                $_SESSION['errors'] = $result;
+                exit($result);
+
+            }
 
 
            if ($result === true) go("project/base/?id=".$_POST['idc']);
 
 
 
-            exit($result);
+
 
 
 
