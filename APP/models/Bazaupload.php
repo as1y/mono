@@ -64,7 +64,9 @@ class Bazaupload extends \APP\core\base\Model {
         $companykey = array_search('company', $SEL);
         $sitekey = array_search('site', $SEL);
         $commentkey = array_search('comment', $SEL);
-        if (  $telkey === FALSE )  message('Определите колонку ТЕЛЕФОН   ');
+        if (  $telkey === FALSE ) message('Определите колонку ТЕЛЕФОН');
+
+
         // ИЩЕМ ЗНАЧЕНИЯ СТОЛБЦОВ В МАССИВАХ
         // РАСКЛАДЫВАЕМ МАССИВ НА СТРОКИ
         $coun = 0;
