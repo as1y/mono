@@ -26,7 +26,7 @@ class Project extends \APP\core\base\Model {
         $result = R::getAll( "SELECT tel,id FROM `contact` WHERE  `status` = '0' AND `company_id` = '".$idc."' ");
         $tel = array();
         $dublcount = 0;
-        
+
         foreach ($result as $row) {
             unset($dubl);
             $dubl = in_array($row['tel'], $tel);
