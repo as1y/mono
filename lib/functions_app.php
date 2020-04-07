@@ -56,17 +56,23 @@ function timecall ($status){
 function renderform ($FORMRESULT){
 
     foreach ($FORMRESULT as $key=>$val){
+?>
 
 
+                     <div class="form-group">
+                        <label>Your name:</label>
+                        <input type="text" class="form-control" placeholder="Eugene Kopyov">
+                    </div>
+
+
+
+
+        <?php
     }
 
 
 
-    ?>
 
-    рендерим форму
-
-<?php
 
 
 

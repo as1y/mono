@@ -4,18 +4,33 @@
         <!-- Left aligned buttons -->
         <div class="card">
             <div class="card-header header-elements-inline">
-                <h6 class="card-title">ФОРМА РЕЗУЛЬАТАТА</h6>
+                <h6 class="card-title">ФОРМА РЕЗУЛЬАТАТА ЗВОНКА</h6>
             </div>
 
             <div class="card-body">
 
+                <?php
 
-                
+                $company['formresult'] = '[{"NAME":"ИМЯ","TYPE":1}]';
+
+                $FORMRESULT = json_decode($company['formresult'],TRUE);
+
+
+                show($FORMRESULT);
+
+                renderform($FORMRESULT);
+
+                ?>
+
+
+
+
                 <form action="#">
                     <div class="form-group">
                         <label>Your name:</label>
                         <input type="text" class="form-control" placeholder="Eugene Kopyov">
                     </div>
+
 
                     <div class="form-group">
                         <label>Your password:</label>
@@ -113,25 +128,6 @@
 
 
 
-           <?php
-
-
-           $company['formresult'] = '[{"NAME":"ИМЯ","TYPE":1}]';
-
-
-
-           $FORMRESULT = json_decode($company['formresult'],TRUE);
-
-
-
-           renderform($FORMRESULT);
-
-
-
-           //    showmass($MASS, 1);
-
-
-           ?>
 
 
 
