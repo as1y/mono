@@ -330,11 +330,13 @@ class ProjectController extends AppController {
 
 	public function resultformAction() {
 		$project = new Project;
-		$razdel = "Форма результата";
 		$idc = $_GET['id'];
 		$company = $project->getcom($idc);
-		$script = $project->getscript($idc);
-		$this->set(compact('idc','razdel','company','script' ));
+
+
+
+
+		$this->set(compact('idc','company' ));
 	}
 
 

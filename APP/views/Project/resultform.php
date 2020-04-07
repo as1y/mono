@@ -1,7 +1,35 @@
+
+<div class="card">
+    <div class="card-header header-elements-inline">
+        <h5 class="card-title">ФОРМА РЕЗУЛЬТАТА</h5>
+        <div class="header-elements">
+            <div class="list-icons">
+                <a class="list-icons-item" data-action="collapse"></a>
+                <a class="list-icons-item" data-action="reload"></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="card-body justify-content-center">
+
+
+
+        111
+
+
+
+    </div>
+
+
+</div>
+
+
+
+
+
+
+
 <div class="col-md-6">
-
-
-
 
 
 <div class="panel panel-default">
@@ -43,7 +71,8 @@
 	
 </table>
 
-                                                                    <div id = "formb" class="form-body">
+
+       <div id = "formb" class="form-body">
 
                                                                                                                                                                                           
 <?
@@ -54,11 +83,7 @@ showmass($MASS, 1);
 
 ?>
 
-
-
-
-
-                                                                    </div>
+       </div>
                                                   
 
 
