@@ -103,16 +103,19 @@ abstract class Model
 
         if ($FILE['size'] > 3000000) {
             $this->errors = "Размер не должен превышать 3МБ";
+            show( $this->errors);
             return false;
         }
 
         if ($FILE['size'] < 50000) {
             $this->errors = "Размер не может быть меньше 50КБ";
+            show( $this->errors);
             return false;
         }
 
         if ($FILE['type'] != "application/octet-stream") {
             $this->errors = "Не корректный формат";
+            show( $this->errors);
             return false;
         }
 
@@ -121,12 +124,14 @@ abstract class Model
         foreach ($blacklist as $item) {
             if(preg_match("/$item\$/i", $FILE['name'])) {
                 $this->errors = "Не корректный формат";
+                show( $this->errors);
                 return false;
         }
         }
 
         if(!preg_match("/.csv\$/i", $FILE['name'])) {
             $this->errors = "Не корректный формат";
+            show( $this->errors);
             return false;
         }
 
