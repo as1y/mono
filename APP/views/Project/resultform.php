@@ -159,7 +159,7 @@
                     <div class="d-flex justify-content-between align-items-center">
                         <div class="form-check form-check-inline">
                             <label class="form-check-label">
-                                <div class="uniform-checker"><span class="checked"><input type="checkbox" class="form-control-styled" checked="" data-fouc=""></span></div>
+                                <input type="checkbox" class="form-control-styled" checked data-fouc>
                                 Save as template
                             </label>
                         </div>
@@ -333,7 +333,7 @@
                     <div class="d-flex justify-content-between align-items-center">
                         <div class="form-check form-check-switchery mb-0">
                             <label class="form-check-label">
-                                <input type="checkbox" class="form-control-switchery" checked="" data-fouc="" data-switchery="true" style="display: none;"><span class="switchery switchery-default" style="background-color: rgb(100, 189, 99); border-color: rgb(100, 189, 99); box-shadow: rgb(100, 189, 99) 0px 0px 0px 10px inset; transition: border 0.4s ease 0s, box-shadow 0.4s ease 0s, background-color 1.2s ease 0s;"><small style="left: 18px; background-color: rgb(255, 255, 255); transition: background-color 0.4s ease 0s, left 0.2s ease 0s;"></small></span>
+                                <input type="checkbox" class="form-control-switchery" checked data-fouc>
                                 Start discussion
                             </label>
                         </div>
@@ -504,13 +504,13 @@
 
                     <div class="d-lg-flex justify-content-between align-items-center flex-wrap">
                         <div class="wmin-lg-200 mb-3 mb-lg-0">
-                            <select class="form-control form-control-select2 select2-hidden-accessible" data-placeholder="Actions" data-fouc="" data-select2-id="1" tabindex="-1" aria-hidden="true">
-                                <option data-select2-id="3"></option>
+                            <select class="form-control form-control-select2" data-placeholder="Actions" data-fouc>
+                                <option></option>
                                 <option value="1">Send to all contacts</option>
                                 <option value="2">Send to my contacts</option>
                                 <option value="3">Save as draft</option>
                                 <option value="4">Don't have in Sent</option>
-                            </select><span class="select2 select2-container select2-container--default" dir="ltr" data-select2-id="2" style="width: 100%;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-disabled="false" aria-labelledby="select2-c48q-container"><span class="select2-selection__rendered" id="select2-c48q-container" role="textbox" aria-readonly="true"><span class="select2-selection__placeholder">Actions</span></span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
+                            </select>
                         </div>
 
                         <button type="submit" class="btn bg-blue ml-lg-3">Submit <i class="icon-paperplane ml-2"></i></button>
@@ -522,8 +522,6 @@
 
     </div>
 </div>
-
-
 
 
 
