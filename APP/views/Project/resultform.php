@@ -61,10 +61,9 @@
                             </select>
                         </td>
 
-
-
+                        
                         <td>
-                            <button class="btn btn-success" id="clone"><i class="fa fa-plus" aria-hidden="true"></i></button>
+                            <button type="button" class="btn btn-success"><i class="icon-plus3 mr-2"></i></button>
 
                         </td>
 
