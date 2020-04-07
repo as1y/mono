@@ -1,7 +1,7 @@
 <div class="card">
     <div class="card-header header-elements-inline">
         <h5 class="card-title">ЗАГРУЗИТЬ БАЗУ</h5>
-        <button onclick="bazaload('<?=$idc?>','<?=$path?>','<?=$clientid?>')" class="btn btn-success">ПОЕХАЛИ</button>
+        <button onclick="bazaload('<?=$idc?>','<?=$path?>','<?=$clientid?>')" class="btn btn-warning"><i class="icon-database-insert mr-2"></i>ПОЕХАЛИ</button>
         <div class="header-elements">
             <div class="list-icons">
                 <a class="list-icons-item" data-action="collapse"></a>
@@ -28,7 +28,7 @@
                 fclose($fp);
             }
 
-            $list = mb_convert_encoding($list, 'WINDOWS-1251');
+//            $list = mb_convert_encoding($list, 'WINDOWS-1251');
 
             $strok = count($list);
             $stolb = count($list['0']);
