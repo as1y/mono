@@ -22,7 +22,10 @@
 
                 ?>
 
-
+                <div class="form-group mb-0">
+                    <label>Комментарий:</label>
+                    <textarea rows="3" cols="3" class="form-control" disabled placeholder="Комментарий оператора"></textarea>
+                </div>
 
             </div>
 
