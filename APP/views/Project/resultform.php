@@ -2,19 +2,6 @@
 
 
 
-    <?php
-
-    $FORMRESULT = json_decode($company['formresult'],TRUE);
-
-    var_dump($FORMRESULT);
-
-    show($FORMRESULT);
-
-//    showmass($MASS, 1);
-
-
-    ?>
-
 </div>
 
 
@@ -34,25 +21,26 @@
 
 
     <div class="row">
-        <div class="col-md-4">    <div class="card-body justify-content-center">
-
-                ТЕКУЩАЯ ФОРМА РЕЗУЛЬТАТА
-
-                <?
-                if (empty($company['resultform'])){
-                    echo "Форма результата пустая!";
-
-                }
-
-
-                ?>
+       <div class="card-body justify-content-center">
 
 
 
-            </div></div>
+
+           <?php
+
+           $FORMRESULT = json_decode($company['formresult'],TRUE);
+
+           var_dump($FORMRESULT);
+
+           show($FORMRESULT);
+
+           //    showmass($MASS, 1);
 
 
+           ?>
 
+
+           
 
 
 
