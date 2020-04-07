@@ -74,7 +74,7 @@
                 </tr>
                 <tr>
                     <td class="wmin-md-100">ОТКАЗ:</td>
-                    <td class="wmin-md-350"><?=$contact['otkaz']?> <a href class='btn btn-success' onclick="switchotkaz('<?=$idc?>')" > <i class='icon-database-refresh'></i> Обработать повтороно <i class='fa fa-refresh'></i></a></td>
+                    <td class="wmin-md-350"><?=$contact['otkaz']?> <a href href="/project/base/?id=<?=$idc?>&action=switchotkaz" class='btn btn-success'  > <i class='icon-database-refresh'></i> Обработать повтороно <i class='fa fa-refresh'></i></a></td>
 
                 </tr>
 
@@ -84,7 +84,7 @@
                 </tr>
                 <tr>
                     <td class="wmin-md-100">ДУБЛИ:</td>
-                    <td class="wmin-md-350"><button class='btn btn-danger' onclick="dubli('<?=$idc?>')" > <i class='icon-database-remove'></i> УДАЛИТЬ ДУБЛИ <i class='fa fa-refresh'></i></button></td>
+                    <td class="wmin-md-350"><a href="/project/base/?id=<?=$idc?>&action=dubli" class='btn btn-danger'  > <i class='icon-database-remove'></i> УДАЛИТЬ ДУБЛИ <i class='fa fa-refresh'></i></a></td>
                 </tr>
 
                 <tr>
