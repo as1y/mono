@@ -1,5 +1,6 @@
 <?php
 namespace APP\controllers;
+use APP\models\Bazaupload;
 use APP\models\Project;
 use APP\core\Cache;
 use APP\models\Settings;
@@ -148,8 +149,15 @@ class ProjectController extends AppController {
 
         if($this->isAjax()){
 
+            $bazaupload = new Bazaupload();
 
-            show($_POST);
+
+            //  $validate =  $bazaupload->validate($_POST);
+
+            $bazaupload->bazaupl($_POST);
+
+
+            
 
             exit ("yep");
 
