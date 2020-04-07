@@ -89,14 +89,14 @@ class Bazaupload extends \APP\core\base\Model {
 
 
 
-                $DATA = [
+                $MASSIV = [
                     'company_id' => $DATA['idc'],
                     'client_id' => $DATA['clientid'],
                     'status' => '0',
                     'tel' => $tel,
                 ];
 
-                $this->addnewBD("contact" ,$DATA);
+                $this->addnewBD("contact" ,$MASSIV);
 
 //                R::exec("
 //					INSERT INTO `contact` (`id`, `users_id`, `company_id`, `client_id`, `status`, `tel`, `name`, `company`, `site`, `comment`, `data`, `datacall`)
