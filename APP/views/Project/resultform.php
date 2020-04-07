@@ -28,7 +28,7 @@
 
 
             <div class="card-footer d-flex justify-content-between align-items-center bg-teal-400 border-top-0">
-                <button type="submit" class="btn bg-transparent text-white border-white border-2">Данная форма обязательна для заполнения оператором</button>
+                <span  class="btn bg-transparent text-white border-white border-2">Данная форма обязательна для заполнения оператором</span>
             </div>
 
 
