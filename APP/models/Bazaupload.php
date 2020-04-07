@@ -91,7 +91,7 @@ class Bazaupload extends \APP\core\base\Model {
 
                 $DATA = [
                     'company_id' => $DATA['idc'],
-                    'client_id' => $DATA['client_id'],
+                    'client_id' => $DATA['clientid'],
                     'status' => '0',
                     'tel' => $tel,
                 ];

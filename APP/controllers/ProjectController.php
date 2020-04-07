@@ -153,7 +153,7 @@ class ProjectController extends AppController {
 
 
             show($_POST);
-            exit ("yep");
+
 
 
 
@@ -162,7 +162,7 @@ class ProjectController extends AppController {
             $bazaupload->bazaupl($_POST);
 
 
-
+            exit ("yep");
 
 
 
