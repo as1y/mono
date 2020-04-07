@@ -48,8 +48,6 @@ abstract class Model
 
 	public function getErrorsVali()
 	{
-	    var_dump($this->errors);
-
 		$errors = "<ul>";
 		foreach($this->errors as $error) {
 			foreach($error as $item)
@@ -104,13 +102,13 @@ abstract class Model
 
 
         if ($FILE['size'] > 3000000) {
-            $this->errors[] = "Размер не должен превышать 3МБ";
+            $this->errors = "Размер не должен превышать 3МБ";
             show( $this->errors);
             return false;
         }
 
         if ($FILE['size'] < 50000) {
-            $this->errors[] = "Размер не может быть меньше 50КБ";
+            $this->errors = ['Файл' => "Размер не может быть меньше 50КБ" ];
             show( $this->errors);
             return false;
         }
