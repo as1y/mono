@@ -119,24 +119,7 @@ class ProjectController extends AppController {
             $settings->getErrorsVali();
         }
 
-
-
-
-
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 		$this->set(compact('company'));
 	}
@@ -152,18 +135,13 @@ class ProjectController extends AppController {
             $bazaupload = new Bazaupload();
 
 
-
             //  $validate =  $bazaupload->validate($_POST);
-
            $result =  $bazaupload->bazaupl($_POST);
-
-
-           show($result);
-
+           
 
            if ($result != true) $_SESSION['errors'] = $result;
 
-           
+
            if ($result == true) redir("project/base/?id=".$_POST['idc']);
 
             exit();
