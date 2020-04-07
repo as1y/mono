@@ -60,8 +60,8 @@ function renderform ($FORMRESULT){
 
 
                      <div class="form-group">
-                        <label>Your name:</label>
-                        <input type="text" class="form-control" placeholder="Eugene Kopyov">
+                        <label><?=$val['NAME']?></label>
+                        <input type="text" class="form-control" placeholder="<?=$val['NAME']?>">
                     </div>
 
 
