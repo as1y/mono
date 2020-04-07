@@ -33,3 +33,10 @@
 
 
 </div>
+
+<script>
+
+    var ab = $().summernote.data();
+
+   alert(ab);
+</script>
