@@ -2,7 +2,7 @@
     <div class="card-header header-elements-inline">
         <h5 class="card-title">ЗАГРУЗИТЬ БАЗУ</h5>
         <div class="header-elements">
-            <button onclick="bazaload('<?=$idc?>','<?=$path?>','<?=$clientid?>')" class="btn btn-warning"><i class="icon-database-insert mr-2"></i>ПОЕХАЛИ</button>
+            <button onclick="bazaload('<?=$idc?>','<?=$path?>','<?=$company['client_id']?>')" class="btn btn-warning"><i class="icon-database-insert mr-2"></i>ПОЕХАЛИ</button>
         </div>
     </div>
 
