@@ -45,7 +45,6 @@
     // Save
     $('#save').on('click', function() {
 
-        var url='wform';
         var name = 'changescript';
         var idc = <?=$company['id']?>;
         var textsc =  $('.click2edit').summernote('code');
@@ -56,7 +55,7 @@
         $.ajax(
 
             {
-                url : '/' + url,
+                url : '/script/?id='.<?=$company['id']?>,
                 type: 'POST',
                 data: name + '_f=1' + str,
                 cache: false,
