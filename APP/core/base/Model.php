@@ -97,7 +97,12 @@ abstract class Model
 
     }
 
+    public function filevalidation(){
 
+
+
+
+    }
 
 
     public static function online (){

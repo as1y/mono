@@ -266,7 +266,7 @@ class ProjectController extends AppController {
 
             show($_POST);
 
-            show($_FILES);
+            show($_FILES['file']);
 
             exit("ok");
         }
