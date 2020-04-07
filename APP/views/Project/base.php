@@ -14,14 +14,14 @@
 
 
         <div class="form-group row">
-            <label class="col-form-label col-lg-2">Styled file input</label>
+            <label class="col-form-label col-lg-2">Загрузите файл:</label>
             <div class="col-lg-10">
-                <div class="uniform-uploader"><input type="file" class="form-control-uniform" data-fouc=""><span class="filename" style="user-select: none;">Feb-11_17-20-17.txt</span><span class="action btn btn-light" style="user-select: none;">Choose File</span></div>
+                <input type="file" name="file" class="form-control-uniform" data-fouc>
             </div>
         </div>
 
 
-        
+
     </div>
 
 </div>
