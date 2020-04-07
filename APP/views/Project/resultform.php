@@ -1,7 +1,7 @@
-<div class="row">
 
 
-<div class="col-md-6 card">
+
+<div class="card">
     <div class="card-header header-elements-inline">
         <h5 class="card-title">ТЕКУЩАЯ ФОРМЫ РЕЗУЛЬТАТА</h5>
         <div class="header-elements">
@@ -12,69 +12,60 @@
         </div>
     </div>
 
-    <div class="card-body justify-content-center">
 
-    ТЕКУЩАЯ ФОРМА РЕЗУЛЬТАТА
+    <div class="row">
+        <div class="col-md-4">    <div class="card-body justify-content-center">
 
-        <?
-            if (empty($company['resultform'])){
-                echo "Форма результата пустая!";
+                ТЕКУЩАЯ ФОРМА РЕЗУЛЬТАТА
 
-            }
+                <?
+                if (empty($company['resultform'])){
+                    echo "Форма результата пустая!";
+
+                }
 
 
-        ?>
+                ?>
 
+
+
+            </div></div>
+
+
+
+
+        
+
+        <div class="col-md-4">    <div class="table-responsive">
+                <table class="table  table-bordered">
+                    <tbody>
+
+
+
+                    <tr>
+                        <td class="wmin-md-100"><b>111</b></td>
+                        <td class="wmin-md-350">
+
+                            222
+                        </td>
+                    </tr>
+
+
+
+
+                    </tbody>
+                </table>
+            </div></div>
 
 
     </div>
+
+
+
 
 
 </div>
 
-<div class="col-md-1"></div>
-
-<div class="col-md-4 card">
-    <div class="card-header header-elements-inline">
-        <h5 class="card-title">КОНСТРУКТОР ФОРМЫ РЕЗУЛЬТАТА</h5>
-        <div class="header-elements">
-            <div class="list-icons">
-                <a class="list-icons-item" data-action="collapse"></a>
-                <a class="list-icons-item" data-action="reload"></a>
-            </div>
-        </div>
-    </div>
-
-    <div class="card-body justify-content-center">
-
-
-        <div class="table-responsive">
-            <table class="table  table-bordered">
-                <tbody>
-
-
-
-                <tr>
-                    <td class="wmin-md-100"><b>111</b></td>
-                    <td class="wmin-md-350">
-
-                        222
-                    </td>
-                </tr>
-
-
-
-
-                </tbody>
-            </table>
-        </div>
-
-
-
-    </div>
-
-
-</div>
 
 
 
