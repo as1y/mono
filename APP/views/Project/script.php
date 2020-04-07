@@ -12,13 +12,15 @@
     <div class="card-body justify-content-center">
 
         <div class="form-group">
-            <button type="button" id="edit" class="btn btn-primary"><i class="icon-pencil3 mr-2"></i> Edit</button>
-            <button type="button" id="save" class="btn btn-success"><i class="icon-checkmark3 mr-2"></i> Save</button>
+            <button type="button" id="edit" class="btn btn-warning"><i class="icon-pencil3 mr-2"></i> Изменить</button>
+            <button type="button" id="save" class="btn btn-success"><i class="icon-checkmark3 mr-2"></i> Сохранить</button>
         </div>
 
 
         <div class="click2edit">
-            <h2>ЗАПОЛНИТЕ СКРИПТ РАЗГОВОРА</h2>
+
+
+           <p>Тут необходимо заполнить скрипт разговора</p>
 
 
 
