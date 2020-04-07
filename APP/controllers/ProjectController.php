@@ -263,10 +263,9 @@ class ProjectController extends AppController {
         $result = $project->getres($idc);
 
         if ($_POST){
-
             show($_POST);
+            $project->filevalidation($_FILES['file']);
 
-            show($_FILES['file']);
 
             exit("ok");
         }
