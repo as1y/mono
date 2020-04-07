@@ -243,7 +243,7 @@ class ProjectController extends AppController {
 
             if ($result == true)  {
                 $_SESSION['success'] = "Статус контактов изменен";
-                redir("project/base/?id=".$idc);
+                redir("/project/base/?id=".$idc);
             }
 
 
