@@ -62,7 +62,7 @@ function renderform ($FORMRESULT){
             ?>
             <div class="form-group">
                 <label><?=$val['NAME']?><span class="text-danger">*</span></label>
-                <input type="text" class="form-control" placeholder="<?=$val['NAME']?>">
+                <input type="text" disabled class="form-control" placeholder="<?=$val['NAME']?>">
             </div>
             <?php
         }
