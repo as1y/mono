@@ -259,9 +259,9 @@ class ProjectController extends AppController {
         \APP\core\base\View::setMeta($META);
         \APP\core\base\View::setBreadcrumbs($BREADCRUMBS);
 
+        $contact =  $project->contact($idc);
 
-
-        $this->set(compact('idc','company' ));
+        $this->set(compact('idc','company', 'contact' ));
     }
 
 
