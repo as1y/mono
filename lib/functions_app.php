@@ -56,18 +56,23 @@ function timecall ($status){
 function renderform ($FORMRESULT){
 
     foreach ($FORMRESULT as $key=>$val){
-?>
 
 
-                     <div class="form-group">
-                        <label><?=$val['NAME']?></label>
-                        <input type="text" class="form-control" placeholder="<?=$val['NAME']?>">
-                    </div>
+        if ($val['type'] == 1){
+            ?>
+            <div class="form-group">
+                <label><?=$val['NAME']?></label>
+                <input type="text" class="form-control" placeholder="<?=$val['NAME']?>">
+            </div>
+            <?php
+        }
 
 
 
+        
 
-        <?php
+
+
     }
 
 
