@@ -260,7 +260,9 @@ class ProjectController extends AppController {
         \APP\core\base\View::setBreadcrumbs($BREADCRUMBS);
 
         $contact =  $project->contact($idc);
+        $result = $project->getres($idc);
 
+        
         $this->set(compact('idc','company', 'contact' ));
     }
 
