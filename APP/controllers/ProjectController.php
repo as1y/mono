@@ -239,6 +239,33 @@ class ProjectController extends AppController {
 		$this->set(compact('idc','company','script' ));
 	}
 
+    public function baseAction() {
+
+        $project = new Project;
+        $idc = $_GET['id'];
+        $company = $project->getcom($idc);
+
+
+        $META = [
+            'title' => 'Работа с базой контактов',
+            'description' => 'Работа с базой контактов',
+            'keywords' => 'Работа с базой контактов ',
+        ];
+
+
+        $BREADCRUMBS['HOME'] = ['Label' => $this->BreadcrumbsControllerLabel, 'Url' => $this->BreadcrumbsControllerUrl];
+        $BREADCRUMBS['DATA'][] = ['Label' => "База контактов ".$company['company']];
+
+        \APP\core\base\View::setMeta($META);
+        \APP\core\base\View::setBreadcrumbs($BREADCRUMBS);
+
+
+
+        $this->set(compact('idc','company' ));
+    }
+
+
+
 
 	public function resultformAction() {
 		$project = new Project;
