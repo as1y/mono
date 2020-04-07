@@ -28,7 +28,7 @@
                 fclose($fp);
             }
 
-            $list = mb_convert_encoding($list, "UTF-8");
+            $list = mb_convert_encoding($list, "auto");
 
             $strok = count($list);
             $stolb = count($list['0']);
