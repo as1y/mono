@@ -26,7 +26,7 @@ function bazaload(idc, bazaload2, clientid) {
         data:  str,
         cache: false,
         success: function(result) {
-            
+
             obj = jQuery.parseJSON(result);
             if (obj.go) go(obj.go);
             else alert(obj.message);
