@@ -45,7 +45,7 @@
         <!-- Left aligned buttons -->
         <div class="card">
             <div class="card-header header-elements-inline">
-                <h6 class="card-title">Редактирование формы результата звонка</h6>
+                <h6 class="card-title">Добавление дополнительных полей</h6>
 
             </div>
 
