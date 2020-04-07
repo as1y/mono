@@ -17,7 +17,7 @@
         <div class="form-group row">
 
             <label class="col-form-label col-lg-2">Загрузите файл:</label>
-            <div class="col-lg-10">
+            <div class="col-lg-6">
 
                 <input type="hidden" name="MAX_FILE_SIZE" value="30000" />
                 <input type="file" multiple accept=".csv" name="file" class="form-control-uniform-custom" data-fouc>
