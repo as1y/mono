@@ -57,15 +57,15 @@
             {
                 url : '/script/?id=<?=$company['id']?>',
                 type: 'POST',
-                data: name + '_f=1' + str,
+                data: str,
                 cache: false,
                 success: function( result ) {
 
-                    obj = jQuery.parseJSON( result );
+                    alert(result);
 
-                    if ( obj.go ) go( obj.go );
-                    else alert( obj.message );
-                    location.reload();
+                 //   obj = jQuery.parseJSON( result );
+
+
 
                 }
 
