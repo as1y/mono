@@ -281,7 +281,7 @@ class ProjectController extends AppController {
 
                 $path = "temp_load/".$name.".csv";
                 
-                redir("/project/loadbasetel/?id=".$_POST['idc']."&path=.$path);
+                redir("/project/loadbasetel/?id=".$_POST['idc']."&path=".$path);
 
 
             }
