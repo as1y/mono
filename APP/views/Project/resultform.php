@@ -4,17 +4,13 @@
         <!-- Left aligned buttons -->
         <div class="card">
             <div class="card-header header-elements-inline">
-                <h6 class="card-title">Left aligned buttons</h6>
-                <div class="header-elements">
-                    <div class="list-icons">
-                        <a class="list-icons-item" data-action="collapse"></a>
-                        <a class="list-icons-item" data-action="reload"></a>
-                        <a class="list-icons-item" data-action="remove"></a>
-                    </div>
-                </div>
+                <h6 class="card-title">ФОРМА РЕЗУЛЬАТАТА</h6>
             </div>
 
             <div class="card-body">
+
+
+                
                 <form action="#">
                     <div class="form-group">
                         <label>Your name:</label>
@@ -36,6 +32,9 @@
                         <button type="submit" class="btn bg-blue ml-3">Submit <i class="icon-paperplane ml-2"></i></button>
                     </div>
                 </form>
+
+
+
             </div>
         </div>
         <!-- /left aligned buttons -->
