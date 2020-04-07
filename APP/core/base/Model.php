@@ -108,7 +108,7 @@ abstract class Model
         }
 
         if ($FILE['size'] < 50000) {
-            $this->errors = ['Файл' => "Размер не может быть меньше 50КБ" ];
+            $this->errors[] = ['Файл' => "Размер не может быть меньше 50КБ" ];
             show( $this->errors);
             return false;
         }
