@@ -1,6 +1,7 @@
 <div class="card">
     <div class="card-header header-elements-inline">
         <h5 class="card-title">ЗАГРУЗИТЬ БАЗУ</h5>
+        <button onclick="bazaload('<?=$idc?>','<?=$path?>','<?=$clientid?>')" class="btn btn-success">ПОЕХАЛИ</button>
         <div class="header-elements">
             <div class="list-icons">
                 <a class="list-icons-item" data-action="collapse"></a>
@@ -22,11 +23,12 @@
 
             if (($fp = fopen($filename, "r")) !== FALSE) {
                 while (($data = fgetcsv($fp, 0, ";")) !== FALSE) {
-                    $list[] = $data;
+                    $list[] = $text = iconv('CP1251', 'UTF-8', $data);
                 }
                 fclose($fp);
             }
 
+            $list = mb_convert_encoding($list, "UTF-8");
 
             $strok = count($list);
             $stolb = count($list['0']);
@@ -92,7 +94,7 @@
 
 
 
-        
+
 
     </div>
 
@@ -103,7 +105,6 @@
 
 
 
-<button onclick="bazaload('<?=$idc?>','<?=$path?>','<?=$clientid?>')" class="btn btn-success">ПОЕХАЛИ</button>
 
 
 
