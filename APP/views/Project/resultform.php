@@ -64,7 +64,7 @@
                         <td><select id="TYPE" class="form-control input-small">
                                 <option value="1">Текст</option>
                                 <option value="2">Дата</option>
-                                <option value="3">Текстовое поле</option>
+                                <option value="3">Описание</option>
                             </select>
                         </td>
 
