@@ -33,3 +33,26 @@
 
 
 </div>
+
+
+<script>
+
+    // Edit
+    $('#edit').on('click', function() {
+        $('.click2edit').summernote({focus: true});
+    })
+
+    // Save
+    $('#save').on('click', function() {
+        var aHTML = $('.click2edit').summernote('code');
+
+        alert(aHTML);
+
+        $('.click2edit').summernote('destroy');
+
+
+    });
+
+
+
+</script>
