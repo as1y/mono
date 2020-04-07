@@ -139,7 +139,7 @@ class ProjectController extends AppController {
            $result =  $bazaupload->bazaupl($_POST);
 
 
-            exit("gdfdgdfg");
+            exit($result);
 
 
 
