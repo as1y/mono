@@ -237,7 +237,7 @@ class ProjectController extends AppController {
         $idc = $_GET['id'];
         $company = $project->getcom($idc);
 
-        if ($_GET['action'] == "switcnedostup"){
+        if (!empty($_GET['action']) && $_GET['action'] == "switcnedostup"){
 
 
 
