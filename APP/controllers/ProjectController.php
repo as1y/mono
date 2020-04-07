@@ -165,9 +165,6 @@ class ProjectController extends AppController {
         }
 
 
-
-
-
 		$clientid = $company->client['id'];
 		$this->set(compact('idc','company', 'idc','path' ,'clientid', 'filename' ));
 	}
