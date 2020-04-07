@@ -5,9 +5,8 @@
         <div class="card">
             <div class="card-header  justify-content-between align-items-center bg-teal-400 border-top-0">
                 <h6 class="card-title">Форма заполнения успешного звонка</h6><br>
-                <span  class="btn bg-transparent text-white border-white border-2">Данная форма обязательна для заполнения оператором</span>
-
             </div>
+            <span  class="btn bg-transparent text-white border-white border-2">Данная форма обязательна для заполнения оператором</span>
 
             <div class="card-body">
 
