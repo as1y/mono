@@ -98,20 +98,13 @@ class Bazaupload extends \APP\core\base\Model {
 
                 $this->addnewBD("contact" ,$MASSIV);
 
-//                R::exec("
-//					INSERT INTO `contact` (`id`, `users_id`, `company_id`, `client_id`, `status`, `tel`, `name`, `company`, `site`, `comment`, `data`, `datacall`)
-//					VALUES (NULL, '0', '".$POST['idc']."', '".$clientid."', '0', '".$tel."', '".$name."', '".$company."', '".$site."', '".$comment."', '', '');
-//				");
-
-
-
                 // ОБРАБАТЫВАЕТ ТОЛЬКО ЕСТЬ ТЕЛЕФОН
             }
         }
 
 
         // РАСКЛАДЫВАЕМ МАССИВ НА СТРОКИ
-        redir("project/base/?id=".$POST['idc']);
+        redir("project/base/?id=".$DATA['idc']);
 
 
 
