@@ -85,7 +85,7 @@
                     <li class="nav-item">
                         <a href="/project/base/?id=<?=$_GET['id']?>" class="nav-link <?=isset($active['base']) ? $active['base'] : ''; ?>">
                             <i class="icon-database"></i>
-                            <span>	База телефонов </span>
+                            <span>	База контактов </span>
                         </a>
                     </li>
 
