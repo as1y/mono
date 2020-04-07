@@ -335,7 +335,6 @@ class ProjectController extends AppController {
 
 
 
-
 		$this->set(compact('idc','company' ));
 	}
 
