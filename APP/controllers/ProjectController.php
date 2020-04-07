@@ -142,62 +142,29 @@ class ProjectController extends AppController {
 
 
 
-	public function operatorAction() {
-		$project = new Project;
-		$razdel = "Операторы на проекте";
-		$idc = $_GET['id'];
-		$company = $project->getcom($idc);
-		$operators = $project->operators($idc);
-		$joincompany = $project->joincompany($idc);
-		$this->set(compact('idc','razdel','company', 'operators', 'joincompany' ));
-	}
-	public function kastingAction() {
-		$project = new Project;
-		$razdel = "Заявки операторов на проект";
-		$idc = $_GET['id'];
-		$company = $project->getcom($idc);
-		$zayavki = $project->zayavki($idc);
-		$this->set(compact('idc','razdel','company', 'zayavki' ));
-	}
-	public function recordAction() {
-		$project = new Project;
-		$razdel = "Записи";
-		$idc = $_GET['id'];
-		$company = $project->getcom($idc);
-		$oper = "nope";
-		$res = "nope";
-		$data = "Выбрать дату";
-		if (isset($_GET['oper'])) $oper = $_GET['oper'];
-		if (isset($_GET['res'])) $res = $_GET['res'];
-		if (isset($_GET['data'])) $data = $_GET['data'];
-		$allrecord = $project->allrecord($idc);
-		$allrecord = $project->frecord($allrecord, $idc, $oper, $res, $data);
-		$zapisi = $project->records($idc); // ПОЛУЧЕНИЕ ЗАПИСЕЙ
-		$opers = $project->opers($idc);
-		$this->set(compact('idc','razdel','company', 'allrecord', 'zapisi', 'data','res','oper','opers' ));
-	}
-	public function loadbaseAction() {
-		$project = new Project;
-		$razdel = "Загрузка базы";
-		$idc = $_GET['id'];
-		$company = $project->getcom($idc);
-		$this->set(compact('idc','razdel','company' ));
-	}
+
 	public function loadbasetelAction() {
 		$project = new Project;
-		$razdel = "Загрузка базы";
 		$idc = $_GET['id'];
 		$company = $project->getcom($idc);
+
+
 		if (isset($_GET['path'])) {
 			$path = $_GET['path'];
 		}else {
 			exit("Ошибка в пути файла");
 		}
-		$filename = "/home/bitrix/ext_www/cplplatform.com/$path";
+
+
+		$filename = "/home/bitrix/ext_www/cashcall.ru/$path";
 		if (!file_exists($filename)) redir("/project/?id=$idc");
 		$clientid = $company->client['id'];
 		$this->set(compact('idc','razdel','company', 'idc','path' ,'clientid', 'filename' ));
 	}
+
+
+
+	//Готово
 	public function scriptAction() {
 
 		$project = new Project;
@@ -237,6 +204,8 @@ class ProjectController extends AppController {
 
 		$this->set(compact('idc','company','script' ));
 	}
+    //Готово
+
 
     public function baseAction() {
 
