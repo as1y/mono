@@ -17,6 +17,29 @@ class Project extends \APP\core\base\Model {
 		return $company;
 	}
 
+    public  function setscript($script){
+
+        if ($script){
+
+            echo "Меняем скрипт";
+
+
+        }else{
+
+
+            echo "Создаем новый скрипт";
+
+
+
+        }
+
+
+	    return true;
+    }
+
+
+
+
 
 	public function contact($idc) {
 		$mass = R::find("contact", "WHERE company_id = ?", [$idc]);
@@ -87,6 +110,8 @@ class Project extends \APP\core\base\Model {
 		$script = R::findOne('script','WHERE  company_id = ?' , [$idc]);
 		return $script;
 	}
+
+
 	public function opers($idc) {
 		$allop = R::findAll( 'users' );
 		$opers = "";
@@ -173,10 +198,9 @@ class Project extends \APP\core\base\Model {
 		$balancelog = R::find('balancelogclient','WHERE client_id = ?',[$idclient]);
 		return $balancelog;
 	}
-	public function amoDB($idc) {
-		$amoDB_company = R::findOne('amocrm','WHERE  company_id = ?' , [$idc]);
-		return $amoDB_company;
-	}
+
+
+
 	// ОКОНЧАНИЕ КЛАССА
 }
 ?>
