@@ -40,7 +40,7 @@
     var ab ="l";
 
 
-   alert("gfgfgfgh");
+  console.log("fgdfgfdg");
 
 
 </script>
