@@ -58,10 +58,10 @@ function renderform ($FORMRESULT){
     foreach ($FORMRESULT as $key=>$val){
 
 
-        if ($val['type'] == 1){
+        if ($val['TYPE'] == 1){
             ?>
             <div class="form-group">
-                <label><?=$val['NAME']?></label>
+                <label><?=$val['NAME']?><span class="text-danger">*</span></label>
                 <input type="text" class="form-control" placeholder="<?=$val['NAME']?>">
             </div>
             <?php
@@ -69,7 +69,7 @@ function renderform ($FORMRESULT){
 
 
 
-        
+
 
 
 
