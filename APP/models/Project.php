@@ -19,20 +19,9 @@ class Project extends \APP\core\base\Model {
 
     public  function setscript($script){
 
-        if ($script){
-
-            echo "Меняем скрипт";
 
 
-        }else{
-
-
-            echo "Создаем новый скрипт";
-
-
-
-        }
-
+	    
 
 	    return true;
     }
