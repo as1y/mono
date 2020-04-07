@@ -168,19 +168,14 @@ abstract class Model
             }
         }
 
-        $tbl = R::dispense("online");
-        //ФОРМИРУЕМ МАССИВ ДАННЫХ ДЛЯ РЕГИСТРАЦИИ
+
         $MASSREG = [
             'user' => $user,
             'ipu' => $_SERVER['REMOTE_ADDR'],
             'timestamp' => time(),
         ];
-        //ФОРМИРУЕМ МАССИВ ДАННЫХ ДЛЯ РЕГИСТРАЦИИ
-        foreach($MASSREG as $name=>$value)
-        {
-            $tbl->$name = $value;
-        }
-        R::store($tbl);
+
+        self::addnewBD("online", $MASSREG);
 
 
         return true;

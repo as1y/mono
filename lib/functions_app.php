@@ -53,8 +53,6 @@ function timecall ($status){
 
 
 
-
-
 function camstatus ($status, $id ){
 	if ($status=="1"){
 		return '<div id="stat'.$id.'" class="badge badge-success">РАБОТАЕТ</div>';
