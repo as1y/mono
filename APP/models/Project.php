@@ -28,7 +28,7 @@ class Project extends \APP\core\base\Model {
 
             $this->addnewBD("script", $script);
 
-            echo "Создаем новую таблицу";
+
         }
 
 
