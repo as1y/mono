@@ -4,7 +4,7 @@
         <!-- Left aligned buttons -->
         <div class="card">
             <div class="card-header header-elements-inline">
-                <h6 class="card-title">ФОРМА РЕЗУЛЬАТАТА ЗВОНКА</h6>
+                <h6 class="card-title">ФОРМА РЕЗУЛЬТАТ ЗВОНКА</h6>
             </div>
 
             <div class="card-body">
@@ -16,38 +16,12 @@
                 $FORMRESULT = json_decode($company['formresult'],TRUE);
 
 
-                show($FORMRESULT);
+//                show($FORMRESULT);
 
                 renderform($FORMRESULT);
 
                 ?>
-
-
-
-
-                <form action="#">
-                    <div class="form-group">
-                        <label>Your name:</label>
-                        <input type="text" class="form-control" placeholder="Eugene Kopyov">
-                    </div>
-
-
-                    <div class="form-group">
-                        <label>Your password:</label>
-                        <input type="password" class="form-control" placeholder="Your strong password">
-                    </div>
-
-                    <div class="form-group">
-                        <label>Your message:</label>
-                        <textarea rows="3" cols="3" class="form-control" placeholder="Enter your message here"></textarea>
-                    </div>
-
-                    <div class="d-flex justify-content-start align-items-center">
-                        <button type="submit" class="btn btn-light">Cancel</button>
-                        <button type="submit" class="btn bg-blue ml-3">Submit <i class="icon-paperplane ml-2"></i></button>
-                    </div>
-                </form>
-
+                
 
 
             </div>
