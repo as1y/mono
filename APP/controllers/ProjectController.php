@@ -230,8 +230,6 @@ class ProjectController extends AppController {
 
 
 
-            exit("ok");
-
 
         }
 

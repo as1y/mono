@@ -21,13 +21,12 @@ class Project extends \APP\core\base\Model {
 
         $tbl = R::FindOne("script", "WHERE idc = ?", [$script['idc']]);
 
-        var_dump($tbl);
-
         if ($tbl){
             $tbl->script = $script['textsc'];
             return R::store($tbl);
         }else{
 
+            $this->addnewBD("script", $script);
 
             echo "Создаем новую таблицу";
         }
