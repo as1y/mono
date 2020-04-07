@@ -47,7 +47,7 @@ class Bazaupload extends \APP\core\base\Model {
         $filename = WWW."/".$DATA['bazaload']."";
 
 
-        if (!file_exists($filename)) return false;
+        if (!file_exists($filename)) return "Ошибка пути файла";
 
 
         // СПАРСИЛИ CSV В МАССИВ
@@ -64,7 +64,7 @@ class Bazaupload extends \APP\core\base\Model {
         $companykey = array_search('company', $SEL);
         $sitekey = array_search('site', $SEL);
         $commentkey = array_search('comment', $SEL);
-        if (  $telkey === FALSE ) message('Определите колонку ТЕЛЕФОН');
+        if (  $telkey === FALSE ) return "Определите колонку ТЕЛЕФОН";
 
 
         // ИЩЕМ ЗНАЧЕНИЯ СТОЛБЦОВ В МАССИВАХ
@@ -102,9 +102,9 @@ class Bazaupload extends \APP\core\base\Model {
             }
         }
 
-
+        return true;
         // РАСКЛАДЫВАЕМ МАССИВ НА СТРОКИ
-        redir("project/base/?id=".$DATA['idc']);
+
 
 
 
