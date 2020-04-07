@@ -39,7 +39,9 @@ function bazaload(idc, bazaload2, clientid) {
     });
 }
 
-
+function go(url) {
+    window.location.href = '/' + url;
+}
 
 
 var App = function () {
