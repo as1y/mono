@@ -8,7 +8,7 @@
             </div>
 
             <div class="card-body">
-                <span  class="btn bg-transparent text-white border-white border-2">Данная форма обязательна для заполнения оператором</span>
+                <span  class="badge-warning">Данная форма обязательна для заполнения оператором</span>
 
                 <?php
 
