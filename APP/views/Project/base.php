@@ -44,17 +44,17 @@
 
                 <tr>
                     <td class="wmin-md-100">ОТКАЗ:</td>
-                    <td class="wmin-md-350"><?=$contact['otkaz']?> <button class='btn btn-success' onclick="switchotkaz('<?=$idc?>')" > <i class='icon-database-refresh'></i> Обработать ПОВТОРНО <i class='fa fa-refresh'></i></button></td>
+                    <td class="wmin-md-350"><?=$contact['otkaz']?> <button class='btn btn-success' onclick="switchotkaz('<?=$idc?>')" > <i class='icon-database-refresh'></i> Обработать повтороно <i class='fa fa-refresh'></i></button></td>
 
                 </tr>
 
                 <tr>
                     <td class="wmin-md-100">ТЕЛЕФОН НЕ ДОСТУПЕН:</td>
-                    <td class="wmin-md-350"><?=$contact['bezdostupa']?> <button class='btn btn-success' onclick="switcnedostup('<?=$idc?>')" > <i class='icon-database-refresh'></i> Обработать ПОВТОРНО <i class='fa fa-refresh'></i></button></td>
+                    <td class="wmin-md-350"><?=$contact['bezdostupa']?> <button class='btn btn-success' onclick="switcnedostup('<?=$idc?>')" > <i class='icon-database-refresh'></i> Обработать повторно <i class='fa fa-refresh'></i></button></td>
                 </tr>
                 <tr>
                     <td class="wmin-md-100">ДУБЛИ:</td>
-                    <td class="wmin-md-350"><button class='btn btn-danger' onclick="dubli('<?=$idc?>')" > <i class='icon-database-remove'></i> УДАЛИТЬ ДУБЛИ ТЕЛЕФОНОВ <i class='fa fa-refresh'></i></button></td>
+                    <td class="wmin-md-350"><button class='btn btn-danger' onclick="dubli('<?=$idc?>')" > <i class='icon-database-remove'></i> УДАЛИТЬ ДУБЛИ <i class='fa fa-refresh'></i></button></td>
                 </tr>
 
                 <tr>
