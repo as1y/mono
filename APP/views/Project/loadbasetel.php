@@ -1,5 +1,10 @@
 
 
+<?php
+
+exit("loadbase");
+?>
+
 <table class="table table-bordered " >
 
 	
