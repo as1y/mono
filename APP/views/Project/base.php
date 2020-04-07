@@ -24,7 +24,7 @@
 
 
         <input type="hidden" name="idc"  value="<?=$company['id']?>">
-        <button type="submit" class=" btn btn-primary"><i class="icon-pencil mr-2"></i> НАЧАТЬ ЗАГРУЗКУ</button>
+        <button type="submit" class=" btn btn-primary"><i class="icon-file-upload2 mr-2"></i> НАЧАТЬ ЗАГРУЗКУ</button>
 
 
     </div>
