@@ -44,6 +44,8 @@
     <script src="/global_assets/js/demo_pages/editor_summernote.js"></script>
     <script src="/assets/js/form_inputs.js"></script>
 
+    <script src="/global_assets/js/demo_pages/form_actions.js"></script>
+
 
     <!-- /theme JS files -->
 
