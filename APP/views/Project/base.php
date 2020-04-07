@@ -17,6 +17,8 @@
             <label class="col-form-label col-lg-2">Загрузите файл:</label>
             <div class="col-lg-10">
                 <input type="file" name="file" class="form-control-uniform" data-fouc>
+                <span class="form-text text-muted">Формат .CSV Не более 1MB</span>
+
             </div>
         </div>
 
