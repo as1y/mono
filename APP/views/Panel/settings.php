@@ -17,22 +17,22 @@
                 <div class="row">
 
                     <div class="col-md-6">
-                        <label>Current password</label>
+                        <label>Текущий пароль</label>
                         <input type="password" value="password" readonly="readonly" class="form-control">
 
-                        <label>Repeat password</label>
+                        <label>Новый пароль</label>
+                        <input type="password" placeholder="Enter new password" class="form-control">
+
+                        <label>Повторите новый пароль</label>
                         <input type="password" placeholder="Repeat new password" class="form-control">
 
-                        <label>New password</label>
-                        <input type="password" placeholder="Enter new password" class="form-control">
-                        
 
                     </div>
 
 
                     <div class="col-md-6">
 
-                        <label>Notifications</label>
+                        <label>Уведомление</label>
 
                         <div class="form-check">
                             <label class="form-check-label">
