@@ -117,18 +117,18 @@ abstract class Model
         }
 
 
-        $blacklist = array(".php", ".phtml", ".php3", ".php4", ".js");
-        foreach ($blacklist as $item) {
-            if(preg_match("/$item\$/i", $FILE['name'])) {
-                $this->errors[] = ['Файл' => "Не корректный формат" ];
-                return false;
-        }
-        }
+//        $blacklist = array(".php", ".phtml", ".php3", ".php4", ".js");
+//        foreach ($blacklist as $item) {
+//            if(preg_match("/$item\$/i", $FILE['name'])) {
+//                $this->errors[] = ['Файл' => "Не корректный формат" ];
+//                return false;
+//        }
+//        }
 
 
         foreach ($PARAMS['ext'] as $item) {
             if(!preg_match("/$item\$/i", $FILE['name'])) {
-                $this->errors[] = ['Файл' => "Не корректный формат" ];
+                $this->errors[] = ['Файл' => "Не корректный формат1" ];
                 return false;
             }
         }
