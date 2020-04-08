@@ -76,6 +76,14 @@
                     <div class="row">
                         <div class="col-md-6">
 
+
+                            <div class="form-group">
+                                <label>Email</label>
+                                <input type="email" disabled value="<?=$_SESSION['ulogin']['email']?>" class="form-control">
+                                <span class="form-text text-muted">E-mail возможно изменить только через тикет</span>
+                            </div>
+
+
                             <div class="form-group">
                             <label>Имя Фамилия<span class="text-danger">*</span></label>
                             <input type="text" value="<?=$_SESSION['ulogin']['username']?>" class="form-control">
