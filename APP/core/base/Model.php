@@ -127,10 +127,12 @@ abstract class Model
 
 
         foreach ($PARAMS['ext'] as $item) {
+
             if(!preg_match("/$item\$/i", $FILE['name'])) {
                 $this->errors[] = ['Файл' => "Не корректный формат1" ];
                 return false;
             }
+            
         }
 
 
