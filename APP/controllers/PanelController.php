@@ -129,7 +129,7 @@ class PanelController extends AppController {
 
         if ($_POST){
 
-            $validation = $Panel->filevalidation($_FILES['file']);
+            $validation = $Panel->filevalidation($_FILES['file'], ['ext' => [".jpg",".png"]]);
 
 
             var_dump($validation);
@@ -138,7 +138,7 @@ class PanelController extends AppController {
                 $Panel->getErrorsVali();
             }
 
-            
+
 
 
             exit("fu");
