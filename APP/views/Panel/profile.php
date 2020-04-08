@@ -76,7 +76,15 @@
                             <div class="col-md-6">
                                 <label>Имя Фамилия<span class="text-danger">*</span></label>
                                 <input type="text" value="<?=$_SESSION['ulogin']['username']?>" class="form-control">
+
+                                <label>Имя Фамилия<span class="text-danger">*</span></label>
+                                <input type="text" value="<?=$_SESSION['ulogin']['username']?>" class="form-control">
+
+
                             </div>
+
+
+
                             <div class="col-md-6">
 
                                     <label>Аватар</label>
