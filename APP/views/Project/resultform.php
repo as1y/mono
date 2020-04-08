@@ -66,7 +66,7 @@
                         </td>
 
                         <td>
-                            <button type="submit" class="btn btn-success"><i class="icon-plus3 mr-2"></i></button>
+                            <button type="submit" class="btn btn-success btn-icon"><i class="icon-plus3 mr-2"></i></button>
 
                         </td>
 
