@@ -16,7 +16,7 @@
             <button type="button" class=" btn btn-info"><i class="icon-pencil mr-2"></i> Посмотреть профиль</button>
 
 
-            <ul class="list-group list-group-flush border-top">
+            <ul class="list-group  border-top">
 
                 <a href="#" class="list-group-item list-group-item-action">
 									<span class="font-weight-semibold">
