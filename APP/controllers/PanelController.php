@@ -203,6 +203,8 @@ class PanelController extends AppController {
 
             }else{
 
+                show($_POST);
+
                 $result = $Panel->changenotification($_POST);
                 $_SESSION['success'] = "Изменения сохранены";
             }

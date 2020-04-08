@@ -51,6 +51,8 @@ class Panel extends \APP\core\base\Model {
         $user = R::load("users", $_SESSION['ulogin']['id']);
 
         $messages = pole_valid ($DATA['messages'], 10, 's');
+
+
         if (!empty($messages['error'])) return $messages['error'];
 
         $news = pole_valid ($DATA['news'], 10, 's');
