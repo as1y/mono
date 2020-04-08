@@ -334,7 +334,7 @@ class ProjectController extends AppController {
 		$company = $project->getcom($idc);
 
 
-		if ($_GET['action'] == "delete"){
+		if (!empty($_GET['action']) && $_GET['action'] == "delete"){
 
 		    show($_GET);
 
