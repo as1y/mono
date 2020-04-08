@@ -78,7 +78,7 @@
 
 
                             <div class="form-group">
-                                <label>Email</label>
+                                <label>E-mail</label>
                                 <input type="email" disabled value="<?=$_SESSION['ulogin']['email']?>" class="form-control">
                                 <span class="form-text text-muted">E-mail возможно изменить только через тикет</span>
                             </div>
