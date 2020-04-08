@@ -14,7 +14,7 @@
                      width="150" height="150" alt="">
             </a>
 
-            <button type="button" class=" btn btn-info"><i class="icon-pencil mr-2"></i> Посмотреть профиль</button>
+            <button type="button" class=" btn btn-info"><i class="icon-eye mr-2"></i> Посмотреть профиль</button>
 
 
         </div>
