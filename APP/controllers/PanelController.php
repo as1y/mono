@@ -125,6 +125,23 @@ class PanelController extends AppController {
 
     public function profileAction(){
         $Panel =  new Panel();
+
+
+        $META = [
+            'title' => 'Профиль',
+            'description' => 'Профиль',
+            'keywords' => 'Профиль',
+        ];
+
+        $BREADCRUMBS['HOME'] = ['Label' => $this->BreadcrumbsControllerLabel, 'Url' => $this->BreadcrumbsControllerUrl];
+        $BREADCRUMBS['DATA'][] = ['Label' => "Мои проекты"];
+
+        \APP\core\base\View::setMeta($META);
+        \APP\core\base\View::setBreadcrumbs($BREADCRUMBS);
+
+
+
+
     }
     public function messagesAction(){
         $Panel =  new Panel();
