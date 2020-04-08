@@ -95,7 +95,7 @@ var FileUpload = function() {
                 modal: modalTemplate
             },
             initialCaption: "Файл не выбран",
-
+            fileTypeSettings: image,
             maxFilesNum: 1,
             allowedFileExtensions: ["jpg", "png"],
             maxFileSize: 1000,
