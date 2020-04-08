@@ -5,6 +5,7 @@ config/main-local.php
 logs/*
 temp_load/*
 temp_load/*
+uploads*
 global_assets/*
 tmp/*
 !logs/.gitkeep
