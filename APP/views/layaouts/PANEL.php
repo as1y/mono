@@ -57,7 +57,7 @@
 
 
 
-    <script src="/global_assets/js/demo_pages/uploader_bootstrap.js"></script>
+    <script src="/assets/js/uploader_bootstrap.js"></script>
 
 
     <!-- /theme JS files -->
