@@ -334,8 +334,16 @@ class ProjectController extends AppController {
 		$company = $project->getcom($idc);
 
 
-		if ($_POST){
+		if ($_GET['action'] == "delete"){
 
+		    show($_GET);
+
+
+		    exit("fa");
+        }
+
+
+		if ($_POST){
 
            $result =  $project->addpoleformresult($_POST,$idc);
             if ($result == 1){
