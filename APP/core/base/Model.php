@@ -124,7 +124,7 @@ abstract class Model
                 return false;
         }
         }
-        
+
 
         foreach ($PARAMS['ext'] as $item) {
             if(!preg_match("/$item\$/i", $FILE['name'])) {
