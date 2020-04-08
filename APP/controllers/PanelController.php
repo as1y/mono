@@ -142,9 +142,9 @@ class PanelController extends AppController {
             if ($validation){
 
                 $name = md5(uniqid(rand(),1));
-                $urlnew = "uploads/user_avatar/".$name.".jpg";
+                $urlnew = "/uploads/user_avatar/".$name.".jpg";
 
-                
+
                 copy($_FILES['file']['tmp_name'], $urlnew); // Копируем из общего котла в тизерку
 
 
