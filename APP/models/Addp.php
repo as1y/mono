@@ -69,6 +69,7 @@ class Addp extends \APP\core\base\Model {
             'status' => "1",
             'datastart' => date("Y-m-d H:i:s"),
             'daylimit' => "5",
+            'formresult' => '[{"NAME":"ИМЯ","TYPE":1}]',
         ];
 
         $DATA = array_merge($uniq, $DATA);

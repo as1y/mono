@@ -336,10 +336,7 @@ class ProjectController extends AppController {
 
 		if (!empty($_GET['action']) && $_GET['action'] == "delete"){
 
-		    show($_GET);
             $result = $project->delpoleformresult($_GET, $idc);
-
-
             if ($result == 1){
                 $_SESSION['success'] = "Поле удалено";
                 redir("/project/resultform/?id=".$idc);
