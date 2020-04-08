@@ -88,6 +88,19 @@ class Project extends \APP\core\base\Model {
         if (!empty($element['error'])) return $element['error'];
 
 
+        $company = R::findOne("company", "WHERE id = ?", [$idc]);
+
+
+        
+
+        $formresult = json_decode($company['formresult'],TRUE);
+        unset($formresult[$element]);
+        $formresult = json_encode($formresult,JSON_UNESCAPED_UNICODE);
+        $company->formresult = $formresult;
+        R::store($company);
+
+
+
         return true;
 
     }
