@@ -50,7 +50,7 @@ class Panel extends \APP\core\base\Model {
     public  function changenotification($DATA){
         $user = R::load("users", $_SESSION['ulogin']['id']);
 
-        if ($DATA['messages'] && $DATA['messages'] == "on"){
+        if (!empty($DATA['messages']) && $DATA['messages'] == "on"){
             $user->nmessages = 1;
             R::store($user);
         }
@@ -61,7 +61,7 @@ class Panel extends \APP\core\base\Model {
         }
 
 
-        if ($DATA['news'] && $DATA['news'] == "on"){
+        if (!empty($DATA['news']) && $DATA['news'] == "on"){
             $user->news = 1;
             R::store($user);
         }
