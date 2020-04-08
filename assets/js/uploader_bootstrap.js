@@ -95,8 +95,8 @@ var FileUpload = function() {
                 modal: modalTemplate
             },
             initialCaption: "Файл не выбран",
-            previewZoomButtonClasses: previewZoomButtonClasses,
-            previewZoomButtonIcons: previewZoomButtonIcons,
+            // previewZoomButtonClasses: previewZoomButtonClasses,
+            // previewZoomButtonIcons: previewZoomButtonIcons,
             fileActionSettings: fileActionSettings
         });
 
