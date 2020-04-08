@@ -337,7 +337,7 @@ class ProjectController extends AppController {
 		if ($_POST){
 
 
-            $project->addpoleformresult($_POST);
+            $project->addpoleformresult($_POST,$idc);
 
 
 

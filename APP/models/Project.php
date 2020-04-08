@@ -82,14 +82,14 @@ class Project extends \APP\core\base\Model {
     }
 
 
-    public function addpoleformresult ($DATA){
+    public function addpoleformresult ($DATA, $idc){
 
 
 
         $name = pole_valid ($DATA['NAME'], 100, 's');
         $type = pole_valid ($DATA['TYPE'], 5, 'i');
 
-        $company = R::findOne("company", "WHERE id = ?", [$DATA['idc']]);
+        $company = R::findOne("company", "WHERE id = ?", [$idc]);
 
         $formresult = json_decode($company['formresult'],TRUE);
 
