@@ -86,9 +86,13 @@ class Project extends \APP\core\base\Model {
 
 
         $name = pole_valid ($DATA['NAME'], 100, 's');
-        if ($name !=1) return $name;
+        if (!empty($name['error'])) return $name;
+        $name = $name['sucess'];
+
         $type = pole_valid ($DATA['TYPE'], 5, 'i');
-        if ($type !=1) return $type;
+        if (!empty($type['error'])) return $type;
+        $type = $type['sucess'];
+
 
 
         $company = R::findOne("company", "WHERE id = ?", [$idc]);
