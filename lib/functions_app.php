@@ -194,17 +194,17 @@ function pole_valid ($pole,$num,$type) {
 
 	if ($type == "i"){
 		$pole = intval($pole);
-		if (strlen($pole) > $num) return $result['error'] = ('Текст '.strlen($pole).' символов слишком большой. Нужно не больее '.$num.' ');
+		if (strlen($pole) > $num) return ['error' => 'Текст '.strlen($pole).' символов слишком большой. Нужно не больее '.$num.' '];
 	}
 	if ($type == "s"){
-		if (strlen($pole) > $num) return $result['error'] = ('Текст '.strlen($pole).' символов слишком большой. Нужно не больее '.$num.'');
+		if (strlen($pole) > $num) return ['error' => 'Текст '.strlen($pole).' символов слишком большой. Нужно не больее '.$num.''];
 		$pole = trim($pole);
 		$pole = strip_tags($pole);
 		$pole = htmlspecialchars($pole);
 		iconv_strlen($pole, 'UTF-8');
 	}
 	if ($type == "u"){
-		if (strlen($pole) > $num) return $result['error'] = ('Текст '.strlen($pole).' символов слишком большой. Нужно не больее '.$num.'');
+		if (strlen($pole) > $num) ['error' => 'Текст '.strlen($pole).' символов слишком большой. Нужно не больее '.$num.''];
 		$pole = trim($pole);
 		$pole = strip_tags($pole);
 		$pole = htmlspecialchars($pole);
