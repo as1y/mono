@@ -83,7 +83,7 @@ var FileUpload = function() {
         $('.file-input').fileinput({
             browseLabel: 'Выбрать',
             browseClass: ' btn btn-warning',
-            removeLabel: 'Удалить',
+            removeLabel: '',
             uploadLabel: 'Сохранить',
             uploadClass: ' btn btn-success',
             browseIcon: '<i class="icon-file-plus mr-2"></i>',
