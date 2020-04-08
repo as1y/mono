@@ -15,10 +15,7 @@
         <form action="#">
             <div class="form-group">
                 <div class="row">
-                    <div class="col-md-6">
-                        <label>Username</label>
-                        <input type="text" value="Kopyov" readonly="readonly" class="form-control">
-                    </div>
+
 
                     <div class="col-md-6">
                         <label>Current password</label>
