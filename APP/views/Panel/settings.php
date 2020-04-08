@@ -16,25 +16,61 @@
             <div class="form-group">
                 <div class="row">
 
-
                     <div class="col-md-6">
                         <label>Current password</label>
                         <input type="password" value="password" readonly="readonly" class="form-control">
+                    </div>
+
+                    <div class="col-md-6">
+                        <label>New password</label>
+                        <input type="password" placeholder="Enter new password" class="form-control">
+                    </div>
+                    <div class="col-md-6">
+                        <label>Repeat password</label>
+                        <input type="password" placeholder="Repeat new password" class="form-control">
                     </div>
                 </div>
             </div>
 
             <div class="form-group">
                 <div class="row">
-                    <div class="col-md-6">
-                        <label>New password</label>
-                        <input type="password" placeholder="Enter new password" class="form-control">
-                    </div>
 
                     <div class="col-md-6">
-                        <label>Repeat password</label>
-                        <input type="password" placeholder="Repeat new password" class="form-control">
+                        <label>Notifications</label>
+
+                        <div class="form-check">
+                            <label class="form-check-label">
+                                <input type="checkbox" class="form-input-styled" checked data-fouc>
+                                Password expiration notification
+                            </label>
+                        </div>
+
+                        <div class="form-check">
+                            <label class="form-check-label">
+                                <input type="checkbox" class="form-input-styled" checked data-fouc>
+                                New message notification
+                            </label>
+                        </div>
+
+                        <div class="form-check">
+                            <label class="form-check-label">
+                                <input type="checkbox" class="form-input-styled" checked data-fouc>
+                                New task notification
+                            </label>
+                        </div>
+
+                        <div class="form-check">
+                            <label class="form-check-label">
+                                <input type="checkbox" class="form-input-styled">
+                                New contact request notification
+                            </label>
+                        </div>
                     </div>
+
+
+
+
+
                 </div>
             </div>
 
