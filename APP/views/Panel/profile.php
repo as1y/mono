@@ -75,7 +75,7 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <label>Имя Фамилия</label>
-                                <input type="text" value="<?=$_SESSION['ulogin']['username']?>>" class="form-control">
+                                <input type="text" value="<?=$_SESSION['ulogin']['username']?>" class="form-control">
                             </div>
                             <div class="col-md-6">
                                 <label>Full name</label>
