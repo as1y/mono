@@ -14,7 +14,7 @@
 
                 $FORMRESULT = json_decode($company['formresult'],TRUE);
 
-                renderform($FORMRESULT);
+                renderform($FORMRESULT, $company['id']);
 
                 ?>
 
