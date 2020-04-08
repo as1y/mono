@@ -114,13 +114,13 @@
 
                         <div class="col-md-12">
                             <div class="form-group">
-                                <label>О компании: <span class="text-danger">*</span></label>
+                                <label>Моя презентация: <span class="text-danger">*</span></label>
                                 <textarea rows="5" cols="5" name="aboutcompany" class="form-control required" placeholder="О компани"></textarea>
-                                <span class="form-text text-muted">Короткие и важные факты о компании.</span>
+                                <span class="form-text text-muted">Это описание будут видеть рекламодаели.</span>
                             </div>
                         </div>
 
-                        
+
                     </div>
 
 
