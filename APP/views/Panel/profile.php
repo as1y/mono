@@ -74,7 +74,6 @@
 
 
                     <div class="row">
-
                         <div class="col-md-6">
 
                             <div class="form-group">
@@ -97,7 +96,6 @@
 
 
                         </div>
-
                         <div class="col-md-6">
 
                             <label>Аватар</label>
@@ -109,8 +107,22 @@
 
 
                         </div>
-
                     </div>
+
+
+                    <div class="row">
+
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label>О компании: <span class="text-danger">*</span></label>
+                                <textarea rows="5" cols="5" name="aboutcompany" class="form-control required" placeholder="О компани"></textarea>
+                                <span class="form-text text-muted">Короткие и важные факты о компании.</span>
+                            </div>
+                        </div>
+
+                        
+                    </div>
+
 
 
 
