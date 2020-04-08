@@ -9,7 +9,7 @@
 
             </div>
 
-  
+
 
             <a href="#" class="d-inline-block mb-3">
                 <img src="<?=$_SESSION['ulogin']['avatar']?>" class="rounded-round"

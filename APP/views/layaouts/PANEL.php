@@ -108,7 +108,7 @@
                         <ul class="media-list">
                             <li class="media">
                                 <div class="mr-3 position-relative">
-                                    <img src="../../../../global_assets/images/placeholders/placeholder.jpg" width="36" height="36" class="rounded-circle" alt="">
+                                    <img src="<?=$_SESSION['ulogin']['avatar']?>" width="36" height="36" class="rounded-circle" alt="">
                                 </div>
 
                                 <div class="media-body">
@@ -140,7 +140,7 @@
 
             <li class="nav-item dropdown dropdown-user">
                 <a href="#" class="navbar-nav-link d-flex align-items-center dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                    <img src="../../../../global_assets/images/placeholders/placeholder.jpg" class="rounded-circle mr-2" height="34" alt="">
+                    <img src="<?=$_SESSION['ulogin']['avatar']?>" class="rounded-circle mr-2" height="34" alt="">
                     <span><?=$_SESSION['ulogin']['username']?></span>
                 </a>
 
