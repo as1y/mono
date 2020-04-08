@@ -11,11 +11,9 @@
                 <span  class="badge-warning">Данная форма обязательна для заполнения оператором</span>
 
                 <?php
-                
+
                 $FORMRESULT = json_decode($company['formresult'],TRUE);
 
-
-//                show($FORMRESULT);
 
                 renderform($FORMRESULT);
 
