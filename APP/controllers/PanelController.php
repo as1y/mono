@@ -141,7 +141,6 @@ class PanelController extends AppController {
 
 
 
-            exit("fu");
         }
 
 
