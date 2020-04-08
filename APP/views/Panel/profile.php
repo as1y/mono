@@ -2,8 +2,11 @@
     <div class="col-xl-3 col-sm-6">
         <div class="card card-body text-center">
             <div class="mb-3">
-                <h6 class="font-weight-semibold mb-0 mt-1">Hanna Dorman</h6>
-                <span class="d-block text-muted">UX/UI designer</span>
+                <h6 class="font-weight-semibold mb-0 mt-1"><?=$_SESSION['ulogin']['username']?></h6>
+
+                <span class="d-block text-muted"><?=rendertypeaccount($_SESSION['ulogin']['type'])?></span>
+
+
             </div>
 
             <a href="#" class="d-inline-block mb-3">
@@ -31,7 +34,7 @@
         <!-- Profile info -->
         <div class="card">
             <div class="card-header header-elements-inline">
-                <h5 class="card-title">Profile information</h5>
+                <h5 class="card-title">МОЙ ПРОФИЛЬ</h5>
                 <div class="header-elements">
                     <div class="list-icons">
                         <a class="list-icons-item" data-action="collapse"></a>

@@ -52,6 +52,14 @@ function timecall ($status){
 
 
 
+function rendertypeaccount($type){
+    if ($type == NULL) return "Операторо";
+    if ($type == 2) return "Рекламодатель";
+}
+
+
+
+
 
 function renderform ($FORMRESULT, $idc){
 
