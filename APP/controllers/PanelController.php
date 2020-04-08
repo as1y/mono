@@ -132,9 +132,14 @@ class PanelController extends AppController {
             $validation = $Panel->filevalidation($_FILES['file']);
 
 
-            show($_POST);
+            var_dump($validation);
 
-            show($_FILES);
+            if (!$validation){
+                $Panel->getErrorsVali();
+            }
+
+            
+
 
             exit("fu");
         }
