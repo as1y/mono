@@ -83,6 +83,13 @@ abstract class Model
 
 
 
+    public function  changeBD ($table, $PARAM1, $PARAM2){
+
+
+
+    }
+
+
     public function addnewBD($table, $DATA) {
 
         $tbl = R::dispense($table);
