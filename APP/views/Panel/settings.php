@@ -19,23 +19,19 @@
                     <div class="col-md-6">
                         <label>Current password</label>
                         <input type="password" value="password" readonly="readonly" class="form-control">
-                    </div>
 
-                    <div class="col-md-6">
-                        <label>New password</label>
-                        <input type="password" placeholder="Enter new password" class="form-control">
-                    </div>
-                    <div class="col-md-6">
                         <label>Repeat password</label>
                         <input type="password" placeholder="Repeat new password" class="form-control">
-                    </div>
-                </div>
-            </div>
 
-            <div class="form-group">
-                <div class="row">
+                        <label>New password</label>
+                        <input type="password" placeholder="Enter new password" class="form-control">
+                        
+
+                    </div>
+
 
                     <div class="col-md-6">
+
                         <label>Notifications</label>
 
                         <div class="form-check">
@@ -65,9 +61,9 @@
                                 New contact request notification
                             </label>
                         </div>
+
+
                     </div>
-
-
 
 
 
@@ -76,8 +72,9 @@
 
 
 
-            <div class="text-right">
-                <button type="submit" class="btn btn-primary">Save changes</button>
+
+            <div class="text-left">
+                <button type="submit" class="btn btn-warning">Save changes</button>
             </div>
         </form>
     </div>
