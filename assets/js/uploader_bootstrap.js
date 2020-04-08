@@ -83,6 +83,9 @@ var FileUpload = function() {
         $('.file-input').fileinput({
             browseLabel: 'Загрузить аватар',
             browseClass: ' btn btn-warning',
+            removeLabel: 'Удалить',
+            uploadLabel: 'Загрузить',
+            uploadClass: ' btn btn-warning',
             browseIcon: '<i class="icon-file-plus mr-2"></i>',
             uploadIcon: '<i class="icon-file-upload2 mr-2"></i>',
             removeIcon: '<i class="icon-cross2 font-size-base mr-2"></i>',
