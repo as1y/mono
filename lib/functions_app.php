@@ -212,7 +212,7 @@ function pole_valid ($pole,$num,$type) {
 	}
 
 
-	return $result['success'] = $pole;
+	return $pole;
 }
 // Проверка на ограничение
 ?>
