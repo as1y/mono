@@ -111,7 +111,7 @@ abstract class Model
             return false;
         }
 
-        if ($FILE['type'] != "application/octet-stream") {
+        if ($FILE['type'] != $PARAMS['type']) {
             $this->errors[] = ['Файл' => "Не корректный формат" ];
             return false;
         }

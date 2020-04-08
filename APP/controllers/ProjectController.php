@@ -283,7 +283,7 @@ class ProjectController extends AppController {
         if ($_POST){
 
 //            show($_FILES['file']);
-            $validation = $project->filevalidation($_FILES['file'], ['ext' => [".csv"]]);
+            $validation = $project->filevalidation($_FILES['file'], ['ext' => [".csv"], 'type' => "application/octet-stream"]);
 
 
             if (!$validation){

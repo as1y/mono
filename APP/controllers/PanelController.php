@@ -132,7 +132,7 @@ class PanelController extends AppController {
 
             show($_FILES);
 
-            $validation = $Panel->filevalidation($_FILES['file'], ['ext' => ["jpg","png"]]);
+            $validation = $Panel->filevalidation($_FILES['file'], ['ext' => ["jpg","png"], 'type' => 'image/jpeg']);
 
             exit("fafa");
 
