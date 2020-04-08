@@ -21,10 +21,10 @@
                         <input type="password" value="password" readonly="readonly" class="form-control">
 
                         <label>Новый пароль</label>
-                        <input type="password" placeholder="Enter new password" class="form-control">
+                        <input type="password" placeholder="Новый пароль" class="form-control">
 
                         <label>Повторите новый пароль</label>
-                        <input type="password" placeholder="Repeat new password" class="form-control">
+                        <input type="password" placeholder="Повторите новый парол" class="form-control">
 
 
                     </div>
