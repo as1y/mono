@@ -61,10 +61,9 @@ function renderform ($FORMRESULT){
         if ($val['TYPE'] == 1){
             ?>
             <div class="input-group">
-                <a href="#" class="btn btn-danger btn-icon"><i class="icon-trash"></i></a>
                 <label><?=$val['NAME']?><span class="text-danger">*</span></label>
                 <input type="text" disabled class="form-control" placeholder="<?=$val['NAME']?>">
-
+                <a href="#" class="btn btn-danger btn-icon"><i class="icon-trash"></i></a>
             </div>
             <?php
         }
