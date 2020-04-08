@@ -127,6 +127,18 @@ class PanelController extends AppController {
         $Panel =  new Panel();
 
 
+        if ($_POST){
+
+
+            show($_POST);
+
+
+            exit("fu");
+        }
+
+
+
+
         $META = [
             'title' => 'Профиль',
             'description' => 'Профиль',
