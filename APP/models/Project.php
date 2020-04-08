@@ -91,8 +91,9 @@ class Project extends \APP\core\base\Model {
         $company = R::findOne("company", "WHERE id = ?", [$idc]);
 
 
-        
+        if (count($company) == 1) return "Нельзя удалить единственный элемент формы";
 
+        
         $formresult = json_decode($company['formresult'],TRUE);
         unset($formresult[$element]);
         $formresult = json_encode($formresult,JSON_UNESCAPED_UNICODE);
