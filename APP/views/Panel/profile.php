@@ -10,7 +10,7 @@
             </div>
 
             <?php
-            $_SESSION['ulogin']
+            show($_SESSION['ulogin']);
             ?>
 
             <a href="#" class="d-inline-block mb-3">
