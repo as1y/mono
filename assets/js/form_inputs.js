@@ -31,7 +31,7 @@ var InputsBasic = function () {
         $('.form-control-uniform-custom').uniform({
             fileDefaultHtml: 'Файл не выбран',
             filesButtonHtml: 'Выбрать файл',
-            fileButtonClass: 'action btn bg-blue',
+            fileButtonClass: 'action btn bg-success',
             selectClass: 'uniform-select bg-pink-400 border-pink-400'
         });
     };
