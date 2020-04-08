@@ -84,11 +84,10 @@ class Project extends \APP\core\base\Model {
 
     public function delpoleformresult($DATA, $idc){
 
+
+        if ($DATA['element'] == 0) return "Нельзя удалить единственный элемент формы";
+
         $element = pole_valid ($DATA['element'], 3, 'i');
-
-        if ($element == 0) return "Нельзя удалить единственный элемент формы";
-
-
         if (!empty($element['error'])) return $element['error'];
 
 
