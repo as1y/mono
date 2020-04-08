@@ -187,6 +187,23 @@ class PanelController extends AppController {
     public function settingsAction(){
         $Panel =  new Panel();
 
+
+        if ($_POST){
+
+            show($_POST);
+
+
+            exit("ok");
+
+
+
+        }
+
+
+
+
+
+
         $META = [
             'title' => 'Настройки аккаунта',
             'description' => 'Настройки аккаунта',
