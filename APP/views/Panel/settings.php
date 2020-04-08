@@ -21,7 +21,7 @@
 
                         <label>Повторите новый пароль</label>
                         <input type="password" name="newpassrepeat" placeholder="Повторите новый парол" class="form-control">
-
+                        <br>
                         <div class="text-left">
                             <button type="submit" class="btn btn-warning"><i class="icon-pencil mr-2"></i>Изменить пароль</button>
                         </div>
