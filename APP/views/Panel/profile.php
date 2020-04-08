@@ -79,7 +79,7 @@
                             </div>
                             <div class="col-md-6">
 
-                                <label>Аватар<span class="text-danger">*</span></label>
+                                    <label>Аватар</label>
                                     <input type="file" class="file-input" data-fouc>
                                     <span class="form-text text-muted">Automatically convert a file input to a bootstrap file input widget by setting its class as <code>file-input</code>.</span>
 
