@@ -22,6 +22,8 @@
                         <label>Повторите новый пароль</label>
                         <input type="password" name="newpassrepeat" placeholder="Повторите новый парол" class="form-control">
                         <br>
+                            <input type="hidden" name="changepassword" value="1">
+
                         <div class="text-left">
                             <button type="submit" class="btn btn-warning"><i class="icon-pencil mr-2"></i>Изменить пароль</button>
                         </div>
@@ -32,8 +34,8 @@
 
                     <div class="col-md-6">
 
+                        <form action="/panel/settings/" method="post" data-fouc>
                         <label>E-mail уведомления</label>
-
                         <div class="form-check">
                             <label class="form-check-label">
                                 <input type="checkbox" name="messages" class="form-input-styled" checked data-fouc>
@@ -47,6 +49,14 @@
                                 Системные уведомления
                             </label>
                         </div>
+
+                            <input type="hidden" name="changenotification" value="1">
+
+                            <div class="text-left">
+                                <button type="submit" class="btn btn-warning"><i class="icon-pencil mr-2"></i>Изменить уведомления</button>
+                            </div>
+                        </form>
+
 
 
 
