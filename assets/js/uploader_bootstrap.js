@@ -84,6 +84,7 @@ var FileUpload = function() {
             browseLabel: 'Выбрать',
             browseClass: ' btn btn-warning',
             removeLabel: '',
+            removeClass: 'btn btn-danger',
             uploadLabel: 'Сохранить',
             uploadClass: ' btn btn-success',
             browseIcon: '<i class="icon-file-plus mr-2"></i>',
