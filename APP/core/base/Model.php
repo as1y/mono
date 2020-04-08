@@ -85,7 +85,7 @@ abstract class Model
 
     public function  changeavatar ($url){
 
-        $user = R::load("user", $_SESSION['ulogin']['id']);
+        $user = R::load("users", $_SESSION['ulogin']['id']);
         $user->avatar = $url;
         R::store($user);
         return true;
