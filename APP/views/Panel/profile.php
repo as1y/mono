@@ -111,7 +111,7 @@
                         <div class="col-md-6">
 
                             <label>Аватар</label>
-                            <input type="file" name="file" class="file-input" data-fouc>
+                            <input type="file" accept="image/*" name="file" class="file-input" data-fouc>
                             <span class="form-text text-muted">Для полноценной работе в сервисе необходимо загрузить аватар</span>
 
 
