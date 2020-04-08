@@ -152,6 +152,7 @@ class PanelController extends AppController {
                 $Panel->changeavatar($urlnew);
                 $_SESSION['ulogin']['avatar'] = $urlnew;
 
+                $_SESSION['success'] = "Аватар изменен";
 
                 redir("/panel/profile");
             }
