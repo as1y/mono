@@ -65,7 +65,7 @@ function renderform ($FORMRESULT){
                 <label><?=$val['NAME']?><span class="text-danger">*</span></label>
                 <div class="input-group">
                 <input type="text" disabled class="form-control" placeholder="<?=$val['NAME']?>">
-                    <a href="/&action=sdfdsf" class="btn btn-danger btn-icon"><i class="icon-trash"></i></a>
+                    <a href="/project/resultform/?id=<?=$idc?>&action=delete&element=<?=$key?>" class="btn btn-danger btn-icon"><i class="icon-trash"></i></a>
                 </div>
 
             </div>
