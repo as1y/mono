@@ -70,7 +70,7 @@
             </div>
 
             <div class="card-body">
-                <form enctype="multipart/form-data"action="/panel/profile/" method="post" data-fouc>
+                <form enctype="multipart/form-data" action="/panel/profile/" method="post" data-fouc>
 
 
                     <div class="row">
@@ -111,7 +111,7 @@
                         <div class="col-md-6">
 
                             <label>Аватар</label>
-                            <input type="file" class="file-input" data-fouc>
+                            <input type="file" name="file" class="file-input" data-fouc>
                             <span class="form-text text-muted">Для полноценной работе в сервисе необходимо загрузить аватар</span>
 
 
