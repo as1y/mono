@@ -74,7 +74,7 @@
                     <div class="form-group">
                         <div class="row">
                             <div class="col-md-6">
-                                <label>Имя Фамилия</label>
+                                <label>Имя Фамилия<span class="text-danger">*</span></label>
                                 <input type="text" value="<?=$_SESSION['ulogin']['username']?>" class="form-control">
                             </div>
                             <div class="col-md-6">
