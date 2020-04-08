@@ -82,6 +82,37 @@ class Project extends \APP\core\base\Model {
     }
 
 
+    public function addpoleformresult ($DATA){
+
+
+        $idc = $POST['idc'];
+
+        $name = pole_valid ($DATA['NAME'], 100, 's');
+        $type = pole_valid ($DATA['TYPE'], 5, 'i');
+
+        $company = R::findOne("company", "WHERE id = ?", [$idc]);
+
+        $formresult = json_decode($company['formresult'],TRUE);
+
+
+
+        show($formresult);
+
+        exit();
+
+
+
+        $MASS = array_values($MASS);
+        $MASS = json_encode($MASS,JSON_UNESCAPED_UNICODE);
+        \R::exec("UPDATE `script` SET `form` = '".$MASS."' WHERE `company_id` = ".$idc.";");
+        message('done');
+
+
+
+
+    }
+
+
 
 
 

@@ -11,9 +11,7 @@
                 <span  class="badge-warning">Данная форма обязательна для заполнения оператором</span>
 
                 <?php
-
-                $company['formresult'] = '[{"NAME":"ИМЯ","TYPE":1}]';
-
+                
                 $FORMRESULT = json_decode($company['formresult'],TRUE);
 
 
