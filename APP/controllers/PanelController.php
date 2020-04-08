@@ -190,16 +190,12 @@ class PanelController extends AppController {
 
         if ($_POST){
 
-            show($_POST);
 
-            exit();
 
             $result = $Panel->changepassword($_POST);
-
             if ($result == 1){
-                $_SESSION['success'] = "Пароль сохранен";
+                $_SESSION['success'] = "Изменения сохранены";
                 redir("/panel/settings/");
-
             }else{
                 $_SESSION['errors'] = $result;
             }

@@ -35,8 +35,8 @@ class Panel extends \APP\core\base\Model {
 
         if ($DATA['now'] = $DATA['newpass']) return "Новый и старый пароль не должны быть одинаковые";
 
-        $name = pole_valid ($DATA['newpass'], 50, 's');
-        if (!empty($name['error'])) return $name['error'];
+        $newpass = pole_valid ($DATA['newpass'], 50, 's');
+        if (!empty($newpass['error'])) return $newpass['error'];
 
         $user->pass =  password_hash($DATA['newpass'] , PASSWORD_DEFAULT);
 
@@ -50,9 +50,15 @@ class Panel extends \APP\core\base\Model {
     public  function changenotification($DATA){
         $user = R::load("users", $_SESSION['ulogin']['id']);
 
-        $name = pole_valid ($DATA['newpass'], 50, 's');
-        if (!empty($name['error'])) return $name['error'];
+        $messages = pole_valid ($DATA['messages'], 10, 's');
+        if (!empty($messages['error'])) return $messages['error'];
 
+        $news = pole_valid ($DATA['news'], 10, 's');
+        if (!empty($news['error'])) return $news['error'];
+
+        $user->nnews = $news;
+        $user->nmessages = $messages;
+        R::store($user);
 
 
         return true;
