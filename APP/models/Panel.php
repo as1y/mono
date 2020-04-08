@@ -32,10 +32,14 @@ class Panel extends \APP\core\base\Model {
 
         if (!password_verify($DATA['now'], $user->pass)) return "Текущий пароль не верен";
 
+        if ($DATA['now'] = $DATA['newpass']) return "Новый и старый пароль не должны быть одинаковые";
 
         $name = pole_valid ($DATA['newpass'], 50, 's');
         if (!empty($name['error'])) return $name['error'];
 
+        $user->pass =  password_hash($DATA['newpass'] , PASSWORD_DEFAULT);
+
+        R::store($user);
 
 
         return true;
