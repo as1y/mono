@@ -84,8 +84,13 @@
                             <div class="form-group">
                                 <label>Роль: <span class="text-danger">*</span> </label>
                                 <select name="tematika" data-placeholder="Выберете направление" class="form-control form-control-select2 required" data-fouc>
-                                    <option value="NULL">Оператор</option>
-                                    <option value="2">Рекламодатель</option>
+
+
+                                    <option <?= ($_SESSION['ulogin']['type'] == NULL) ? 'selected' : ""?> >Оператор</option>
+                                    <option <?= ($_SESSION['ulogin']['type'] == 2) ? 'selected' : ""?>>Рекламодатель</option>
+
+
+
                                 </select>
 
                             </div>
