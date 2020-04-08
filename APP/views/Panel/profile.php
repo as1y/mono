@@ -72,20 +72,26 @@
             <div class="card-body">
                 <form action="/project/profile/" method="post" data-fouc>
 
-                    <div class="col-md-6">
-                        <label>Имя Фамилия<span class="text-danger">*</span></label>
-                        <input type="text" value="<?=$_SESSION['ulogin']['username']?>" class="form-control">
+
+                    <div class="row">
+
+                        <div class="col-md-6">
+                            <label>Имя Фамилия<span class="text-danger">*</span></label>
+                            <input type="text" value="<?=$_SESSION['ulogin']['username']?>" class="form-control">
+                        </div>
+                        <div class="col-md-6">
+
+                            <label>Аватар</label>
+                            <input type="file" class="file-input" data-fouc>
+                            <span class="form-text text-muted">Automatically convert a file input to a bootstrap file input widget by setting its class as <code>file-input</code>.</span>
+
+
+                        </div>
+
                     </div>
 
 
-                    <div class="col-md-6">
 
-                        <label>Аватар</label>
-                        <input type="file" class="file-input" data-fouc>
-                        <span class="form-text text-muted">Automatically convert a file input to a bootstrap file input widget by setting its class as <code>file-input</code>.</span>
-
-
-                    </div>
 
 
 
