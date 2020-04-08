@@ -48,6 +48,8 @@ class Panel extends \APP\core\base\Model {
 
 
     public  function changenotification($DATA){
+
+        
         $user = R::load("users", $_SESSION['ulogin']['id']);
 
         if (!empty($DATA['messages']) && $DATA['messages'] == "on"){
