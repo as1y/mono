@@ -168,5 +168,5 @@
 
 
     <input type="hidden" name="idc"  value="<?=$company['id']?>">
-<button type="submit" class=" btn btn-primary"><i class="icon-pencil mr-2"></i> СОХРАНИТЬ ИЗМЕНЕНИЯ</button>
+<button type="submit" class=" btn bnt-warning"><i class="icon-pencil mr-2"></i> СОХРАНИТЬ ИЗМЕНЕНИЯ</button>
 </form>
