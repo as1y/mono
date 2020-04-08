@@ -337,8 +337,10 @@ class ProjectController extends AppController {
 		if (!empty($_GET['action']) && $_GET['action'] == "delete"){
 
 		    show($_GET);
+            $result = $project->addpoleformresult($_GET, $idc);
 
 
+            
 		    exit("fa");
         }
 

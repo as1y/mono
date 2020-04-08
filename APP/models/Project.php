@@ -82,6 +82,13 @@ class Project extends \APP\core\base\Model {
     }
 
 
+    public function delpoleformresult($DATA, $idc){
+
+
+
+    }
+
+
     public function addpoleformresult ($DATA, $idc){
 
 
