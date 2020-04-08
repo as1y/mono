@@ -189,7 +189,7 @@ function showmass ($par, $ch){
 function pole_valid ($pole,$num,$type) {
 
 
-	if (!$pole) return $result['error'] = 'Поле пустое и не заполненно.';
+	if (!$pole) return ['error' => 'Поле пустое и не заполненно.'];
 
 
 	if ($type == "i"){
