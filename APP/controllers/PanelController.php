@@ -190,27 +190,14 @@ class PanelController extends AppController {
 
         if ($_POST){
 
-            if (!empty($_POST['now'])){
 
-                $result = $Panel->changepassword($_POST);
-                if ($result == 1){
-                    $_SESSION['success'] = "Изменения сохранены";
-                    redir("/panel/settings/");
-                }else{
-                    $_SESSION['errors'] = $result;
-                }
-
-
-            }else{
-
-                show($_POST);
-
-                $result = $Panel->changenotification($_POST);
+            $result = $Panel->changepassword($_POST);
+            if ($result == 1){
                 $_SESSION['success'] = "Изменения сохранены";
+                redir("/panel/settings/");
+            }else{
+                $_SESSION['errors'] = $result;
             }
-
-
-
 
 
 

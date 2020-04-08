@@ -6,11 +6,13 @@
     </div>
 
     <div class="card-body">
-        <form action="/panel/settings/" method="post" data-fouc>
+
             <div class="form-group">
                 <div class="row">
 
                     <div class="col-md-6">
+                        <form action="/panel/settings/" method="post" data-fouc>
+
                         <label>Текущий пароль</label>
                         <input type="password" name="now" placeholder="Текущий пароль" class="form-control">
 
@@ -20,6 +22,10 @@
                         <label>Повторите новый пароль</label>
                         <input type="password" name="newpassrepeat" placeholder="Повторите новый парол" class="form-control">
 
+                        <div class="text-left">
+                            <button type="submit" class="btn btn-warning"><i class="icon-pencil mr-2"></i>Изменить пароль</button>
+                        </div>
+                        </form>
 
                     </div>
 
@@ -54,9 +60,7 @@
 
 
 
-            <div class="text-left">
-                <button type="submit" class="btn btn-warning"><i class="icon-pencil mr-2"></i>Сохранить изменения</button>
-            </div>
+
         </form>
     </div>
 </div>
