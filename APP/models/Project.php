@@ -86,6 +86,9 @@ class Project extends \APP\core\base\Model {
 
 
         $name = pole_valid ($DATA['NAME'], 100, 's');
+        show($name);
+        exit();
+
         if (!empty($name['error'])) return $name['error'];
 
         $type = pole_valid ($DATA['TYPE'], 5, 'i');
