@@ -91,7 +91,7 @@
 
                             <div class="form-group">
                                 <label>Роль: <span class="text-danger">*</span> </label>
-                                <select name="tematika" data-placeholder="Выберете направление" class="form-control form-control-select2 required" data-fouc>
+                                <select name="type" data-placeholder="Выберете направление" class="form-control form-control-select2 required" data-fouc>
 
 
                                     <option <?= ($_SESSION['ulogin']['type'] == NULL) ? 'selected' : ""?> >Оператор</option>
