@@ -93,7 +93,7 @@ class Project extends \APP\core\base\Model {
 
         $formresult = json_decode($company['formresult'],TRUE);
 
-        $formresult[] = [$DATA['NAME'], $DATA['TYPE']] ;
+        $formresult[] = ["NAME" => $DATA['NAME'], "TYPE" => $DATA['TYPE']] ;
 
 
 
