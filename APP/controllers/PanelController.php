@@ -134,12 +134,16 @@ class PanelController extends AppController {
 
             $validation = $Panel->filevalidation($_FILES['file'], ['ext' => ["jpg","png"], 'type' => 'image/jpeg']);
 
-            exit("fafa");
 
             if (!$validation){
                 $Panel->getErrorsVali();
             }
 
+            if ($validation){
+
+
+                redir("/panel/profile");
+            }
 
 
 
