@@ -100,9 +100,6 @@ abstract class Model
     public function filevalidation($FILE, $PARAMS = []){
 
 
-        show($PARAMS);
-
-        exit("fu");
 
         if ($FILE['size'] > 3000000) {
             $this->errors[] = ['Файл' => "Размер не должен превышать 3МБ" ];
@@ -127,9 +124,7 @@ abstract class Model
                 return false;
         }
         }
-
-
-        $PARAMS['ext'] = [".jpg", ".png"];
+        
 
         foreach ($PARAMS['ext'] as $item) {
             if(!preg_match("/$item\$/i", $FILE['name'])) {
