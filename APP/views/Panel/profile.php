@@ -86,7 +86,7 @@
 
                             <div class="form-group">
                             <label>Имя Фамилия<span class="text-danger">*</span></label>
-                            <input type="text" value="<?=$_SESSION['ulogin']['username']?>" class="form-control">
+                            <input type="text" name="username" value="<?=$_SESSION['ulogin']['username']?>" class="form-control">
                             </div>
 
                             <div class="form-group">
