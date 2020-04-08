@@ -33,6 +33,10 @@ class Panel extends \APP\core\base\Model {
         if (!password_verify($DATA['now'], $user->pass)) return "Текущий пароль не верен";
 
 
+        $name = pole_valid ($DATA['newpass'], 50, 's');
+        if (!empty($name['error'])) return $name['error'];
+
+
 
         return true;
     }
