@@ -129,6 +129,8 @@ class PanelController extends AppController {
 
         if ($_POST){
 
+            $validation = $Panel->filevalidation($_FILES['file']);
+
 
             show($_POST);
 

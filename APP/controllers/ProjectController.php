@@ -245,8 +245,6 @@ class ProjectController extends AppController {
                 redir("/project/base/?id=".$idc);
             }
         }
-
-
         if (!empty($_GET['action']) && $_GET['action'] == "switchotkaz"){
 
             $result = $project->switchotkaz($idc);
@@ -255,8 +253,6 @@ class ProjectController extends AppController {
                 redir("/project/base/?id=".$idc);
             }
         }
-
-
         if (!empty($_GET['action']) && $_GET['action'] == "dubli"){
 
             $result = $project->dubli($idc);
@@ -265,8 +261,6 @@ class ProjectController extends AppController {
                 redir("/project/base/?id=".$idc);
 
         }
-
-
 
 
 

@@ -126,14 +126,25 @@ abstract class Model
         }
 
 
-        $ext = "/.csv\$/i";
+        show($PARAMS['ext']);
 
-        if ( !empty($PARAMS['ext'])) $ext = "/.".$PARAMS['ext']."\$/i";
+        exit();
 
-        if(!preg_match($ext, $FILE['name'])) {
-            $this->errors[] = ['Файл' => "Не корректный формат" ];
-            return false;
+        foreach ($PARAMS['ext'] as $val){
+
+            $val = "/.".$val."\$/i";
+
+            if(!preg_match($val, $FILE['name'])) {
+                $this->errors[] = ['Файл' => "Не корректный формат" ];
+                return false;
+            }
+
+
+
         }
+
+
+
 
 
 	    return true;
