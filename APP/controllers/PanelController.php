@@ -190,6 +190,9 @@ class PanelController extends AppController {
 
         if ($_POST){
 
+            show($_POST);
+
+            exit();
 
             $result = $Panel->changepassword($_POST);
 
@@ -201,7 +204,7 @@ class PanelController extends AppController {
                 $_SESSION['errors'] = $result;
             }
 
-            
+
 
 
 

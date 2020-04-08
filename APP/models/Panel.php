@@ -25,10 +25,11 @@ class Panel extends \APP\core\base\Model {
 
 
 
+        $user = R::load("users", $_SESSION['ulogin']['id']);
+
 
         if ($DATA['newpass'] != $DATA['newpassrepeat']) return "Новые пароли не совпадают";
 
-        $user = R::load("users", $_SESSION['ulogin']['id']);
 
         if (!password_verify($DATA['now'], $user->pass)) return "Текущий пароль не верен";
 
@@ -46,7 +47,17 @@ class Panel extends \APP\core\base\Model {
     }
 
 
+    public  function changenotification($DATA){
+        $user = R::load("users", $_SESSION['ulogin']['id']);
 
+        $name = pole_valid ($DATA['newpass'], 50, 's');
+        if (!empty($name['error'])) return $name['error'];
+
+
+
+        return true;
+
+    }
 
 
 
