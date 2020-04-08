@@ -65,7 +65,7 @@ function renderform ($FORMRESULT){
                 <label><?=$val['NAME']?><span class="text-danger">*</span></label>
                 <div class="input-group">
                 <input type="text" disabled class="form-control" placeholder="<?=$val['NAME']?>">
-                    <a href="#" class="btn btn-danger btn-icon"><i class="icon-trash"></i></a>
+                    <a href="/&action=sdfdsf" class="btn btn-danger btn-icon"><i class="icon-trash"></i></a>
                 </div>
 
             </div>
@@ -93,7 +93,13 @@ function renderform ($FORMRESULT){
             ?>
             <div class="form-group">
                 <label><?=$val['NAME']?><span class="text-danger">*</span></label>
+
+
+            <div class="input-group">
                 <textarea rows="3" cols="3" disabled class="form-control" placeholder="<?=$val['NAME']?>"></textarea>
+                <a href="#" class="btn btn-danger btn-icon"><i class="icon-trash"></i></a>
+            </div>
+
             </div>
             <?php
         }
