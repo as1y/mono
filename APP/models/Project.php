@@ -84,7 +84,11 @@ class Project extends \APP\core\base\Model {
 
     public function delpoleformresult($DATA, $idc){
 
+        $element = pole_valid ($DATA['element'], 3, 'i');
+        if (!empty($element['error'])) return $element['error'];
 
+
+        return true;
 
     }
 
