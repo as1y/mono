@@ -61,9 +61,9 @@
                     </tr>
 
                     <tr>
-                        <td><input type="text" class="form-control input-medium" id="NAME" placeholder="Например: Фамилия"></td>
+                        <td><input type="text" class="form-control input-medium" name="NAME" placeholder="Например: Фамилия"></td>
 
-                        <td><select id="TYPE" class="form-control input-small">
+                        <td><select name="TYPE" class="form-control input-small">
                                 <option value="1">Текст</option>
                                 <option value="2">Дата</option>
                                 <option value="3">Описание</option>
