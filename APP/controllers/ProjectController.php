@@ -341,9 +341,11 @@ class ProjectController extends AppController {
 
             if ($result == 1){
                 $_SESSION['success'] = "Дополнительное поле добавлено";
+                redir("/project/resultform/?id=".$idc);
+                
             }else{
                 $_SESSION['errors'] = $result;
-                redir("/project/resultform/?id=".$idc);
+
 
             }
 
