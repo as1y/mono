@@ -74,7 +74,7 @@
 
 
             <div class="text-left">
-                <button type="submit" class="btn btn-warning">Save changes</button>
+                <button type="submit" class="btn btn-warning">Изменить настройки</button>
             </div>
         </form>
     </div>
