@@ -81,7 +81,7 @@ var FileUpload = function() {
         //
 
         $('.file-input').fileinput({
-            browseLabel: 'Browse',
+            browseLabel: 'Загрузить аватар',
             browseIcon: '<i class="icon-file-plus mr-2"></i>',
             uploadIcon: '<i class="icon-file-upload2 mr-2"></i>',
             removeIcon: '<i class="icon-cross2 font-size-base mr-2"></i>',
@@ -89,7 +89,7 @@ var FileUpload = function() {
                 icon: '<i class="icon-file-check"></i>',
                 modal: modalTemplate
             },
-            initialCaption: "No file selected",
+            initialCaption: "Файл не выбран",
             previewZoomButtonClasses: previewZoomButtonClasses,
             previewZoomButtonIcons: previewZoomButtonIcons,
             fileActionSettings: fileActionSettings
