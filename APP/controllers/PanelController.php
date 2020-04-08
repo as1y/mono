@@ -149,7 +149,7 @@ class PanelController extends AppController {
 
                 if (!empty($_SESSION['ulogin']['avatar'])) unlink($_SESSION['ulogin']['avatar']);
 
-                $Panel->changeavatar($urlnew);
+                $Panel->changeavatar("/".$urlnew);
                 $_SESSION['ulogin']['avatar'] = $urlnew;
 
                 $_SESSION['success'] = "Аватар изменен";
