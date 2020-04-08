@@ -112,7 +112,7 @@ abstract class Model
         }
 
         if ($FILE['type'] != $PARAMS['type']) {
-            $this->errors[] = ['Файл' => "Не корректный формат" ];
+            $this->errors[] = ['Файл' => "Не корректный формат1" ];
             return false;
         }
 
