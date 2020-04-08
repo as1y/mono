@@ -16,47 +16,38 @@
             <button type="button" class=" btn btn-info"><i class="icon-pencil mr-2"></i> Посмотреть профиль</button>
 
 
-            <div class="card-body p-0">
-                <ul class="nav nav-sidebar mb-2">
-                    <li class="nav-item-header">Navigation</li>
-                    <li class="nav-item">
-                        <a href="#profile" class="nav-link active" data-toggle="tab">
-                            <i class="icon-user"></i>
-                            My profile
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#schedule" class="nav-link" data-toggle="tab">
-                            <i class="icon-calendar3"></i>
-                            Schedule
-                            <span class="font-size-sm font-weight-normal opacity-75 ml-auto">02:56pm</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#inbox" class="nav-link" data-toggle="tab">
-                            <i class="icon-envelop2"></i>
-                            Inbox
-                            <span class="badge bg-danger badge-pill ml-auto">29</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#orders" class="nav-link" data-toggle="tab">
-                            <i class="icon-cart2"></i>
-                            Orders
-                            <span class="badge bg-success badge-pill ml-auto">16</span>
-                        </a>
-                    </li>
-                    <li class="nav-item-divider"></li>
-                    <li class="nav-item">
-                        <a href="login_advanced.html" class="nav-link" data-toggle="tab">
-                            <i class="icon-switch2"></i>
-                            Logout
-                        </a>
-                    </li>
-                </ul>
-            </div>
+            <ul class="list-group list-group-flush border-top">
 
-            
+                <a href="#" class="list-group-item list-group-item-action">
+									<span class="font-weight-semibold">
+										<i class="icon-grid mr-2"></i>
+										Новых звонков на одобрение
+									</span>
+                    <span class="badge bg-success ml-auto">0</span>
+                </a>
+
+
+                <a href="#" class="list-group-item list-group-item-action">
+									<span class="font-weight-semibold">
+										<i class="icon-grid mr-2"></i>
+										Новых операторов на одобрение
+									</span>
+                    <span class="badge bg-success ml-auto">0</span>
+                </a>
+
+
+                <a href="#" class="list-group-item list-group-item-action">
+									<span class="font-weight-semibold">
+										<i class="icon-grid mr-2"></i>
+										Нужен ваш ответ
+									</span>
+                    <span class="badge bg-success ml-auto">0</span>
+                </a>
+
+
+
+
+            </ul>
         </div>
     </div>
 
