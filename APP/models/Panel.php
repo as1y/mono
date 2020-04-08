@@ -53,7 +53,9 @@ class Panel extends \APP\core\base\Model {
         $user = R::load("users", $_SESSION['ulogin']['id']);
 
 
+show($user);
 
+exit();
 
         if (!empty($DATA['messages'])){
             $user->nmessages = 1;
@@ -61,7 +63,7 @@ class Panel extends \APP\core\base\Model {
             $user->nmessages = NULL;
         }
 
-        
+
         if (!empty($DATA['news'])){
             $user->nnews = 1;
         }else{
