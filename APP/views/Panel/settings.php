@@ -18,7 +18,7 @@
 
                     <div class="col-md-6">
                         <label>Текущий пароль</label>
-                        <input type="password" value="password" readonly="readonly" class="form-control">
+                        <input type="password" placeholder="Текущий пароль" class="form-control">
 
                         <label>Новый пароль</label>
                         <input type="password" placeholder="Новый пароль" class="form-control">
