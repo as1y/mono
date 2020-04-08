@@ -147,7 +147,7 @@ class PanelController extends AppController {
 
                 copy($_FILES['file']['tmp_name'], $urlnew); // Копируем из общего котла в тизерку
 
-
+                $Panel->changeavatar($urlnew);
 
                 redir("/panel/profile");
             }

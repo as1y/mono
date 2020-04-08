@@ -83,8 +83,12 @@ abstract class Model
 
 
 
-    public function  changeBD ($table, $PARAM1, $PARAM2){
+    public function  changeavatar ($url){
 
+        $user = R::load("user", $_SESSION['ulogin']['id']);
+        $user->avatar = $url;
+        R::store($user);
+        return true;
 
 
     }
