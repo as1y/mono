@@ -42,7 +42,7 @@
             </div>
 
             <div class="card-body">
-                <form action="#">
+                <form action="/project/profile/" method="post" data-fouc>
                     <div class="form-group">
                         <div class="row">
                             <div class="col-md-6">
@@ -123,9 +123,9 @@
                     </div>
 
 
-                    
-                    <div class="text-right">
-                        <button type="submit" class="btn btn-primary">Save changes</button>
+
+                    <div class="text-left">
+                        <button type="submit" class=" btn btn-warning"><i class="icon-pencil mr-2"></i> СОХРАНИТЬ ИЗМЕНЕНИЯ</button>
                     </div>
 
 
