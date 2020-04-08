@@ -32,7 +32,7 @@
 
                     <div class="col-md-6">
 
-                        <label>Уведомление</label>
+                        <label>Уведомления</label>
 
                         <div class="form-check">
                             <label class="form-check-label">
