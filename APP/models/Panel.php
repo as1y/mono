@@ -52,26 +52,23 @@ class Panel extends \APP\core\base\Model {
 
         $user = R::load("users", $_SESSION['ulogin']['id']);
 
-        if (!empty($DATA['messages']) && $DATA['messages'] == "on"){
+
+
+
+        if (!empty($DATA['messages'])){
             $user->nmessages = 1;
-            R::store($user);
-        }
-
-        if (empty($DATA['messages'])){
+        }else{
             $user->nmessages = NULL;
-            R::store($user);
         }
 
-
-        if (!empty($DATA['news']) && $DATA['news'] == "on"){
+        
+        if (!empty($DATA['news'])){
             $user->nnews = 1;
-            R::store($user);
+        }else{
+            $user->nnews = NULL;
         }
 
-        if (empty($DATA['news'])){
-            $user->nnews = NULL;
-            R::store($user);
-        }
+        R::store($user);
 
 
 
