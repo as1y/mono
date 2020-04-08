@@ -70,7 +70,7 @@
             </div>
 
             <div class="card-body">
-                <form action="/project/profile/" method="post" data-fouc>
+                <form action="/panel/profile/" method="post" data-fouc>
 
 
                     <div class="row">
