@@ -75,8 +75,15 @@ function renderform ($FORMRESULT){
         if ($val['TYPE'] == 2){
             ?>
             <div class="form-group">
+
+
                 <label><?=$val['NAME']?><span class="text-danger">*</span></label>
+
+                <div class="input-group">
                 <input type="date" disabled class="form-control" placeholder="<?=$val['NAME']?>">
+                    <a href="#" class="btn btn-danger btn-icon"><i class="icon-trash"></i></a>
+                </div>
+
             </div>
             <?php
         }
