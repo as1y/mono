@@ -296,8 +296,9 @@ class ProjectController extends AppController {
                 $name = md5(uniqid(rand(),1));
                 $urlnew = "temp_load/".$name.".csv";
                 copy($_FILES['file']['tmp_name'], $urlnew); // Копируем из общего котла в тизерку
-                $name = trim($name);
 
+
+                $name = trim($name);
                 $path = "temp_load/".$name.".csv";
 
 
