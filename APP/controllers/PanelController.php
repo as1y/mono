@@ -188,16 +188,8 @@ class PanelController extends AppController {
         $Panel =  new Panel();
 
 
-        if ($_POST){
+        if ($_POST && $_POST['changepassword'] == 1){
 
-
-
-            show($_POST);
-
-
-            exit();
-
-            
             $result = $Panel->changepassword($_POST);
             if ($result == 1){
                 $_SESSION['success'] = "Изменения сохранены";
@@ -206,8 +198,13 @@ class PanelController extends AppController {
                 $_SESSION['errors'] = $result;
             }
 
+        }
 
+        if ($_POST && $_POST['changenotification'] == 1){
 
+            $result = $Panel->changenotification($_POST);
+
+            $_SESSION['success'] = "Изменения сохранены";
 
 
         }

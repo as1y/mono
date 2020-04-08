@@ -50,17 +50,27 @@ class Panel extends \APP\core\base\Model {
     public  function changenotification($DATA){
         $user = R::load("users", $_SESSION['ulogin']['id']);
 
-        $messages = pole_valid ($DATA['messages'], 10, 's');
+        if ($DATA['messages'] && $DATA['messages'] == "on"){
+            $user->nmessages = 1;
+            R::store($user);
+        }
+
+        if (empty($DATA['messages'])){
+            $user->nmessages = NULL;
+            R::store($user);
+        }
 
 
-        if (!empty($messages['error'])) return $messages['error'];
+        if ($DATA['news'] && $DATA['news'] == "on"){
+            $user->news = 1;
+            R::store($user);
+        }
 
-        $news = pole_valid ($DATA['news'], 10, 's');
-        if (!empty($news['error'])) return $news['error'];
+        if (empty($DATA['news'])){
+            $user->news = NULL;
+            R::store($user);
+        }
 
-        $user->nnews = $news;
-        $user->nmessages = $messages;
-        R::store($user);
 
 
         return true;
