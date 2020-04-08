@@ -191,9 +191,9 @@ class PanelController extends AppController {
         if ($_POST){
 
 
-            $Panel->changepassword($_POST);
+            $result = $Panel->changepassword($_POST);
 
-            show($_POST);
+            show($result);
 
 
             exit("ok");
