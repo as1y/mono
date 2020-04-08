@@ -70,7 +70,7 @@
             </div>
 
             <div class="card-body">
-                <form action="/panel/profile/" method="post" data-fouc>
+                <form enctype="multipart/form-data"action="/panel/profile/" method="post" data-fouc>
 
 
                     <div class="row">
