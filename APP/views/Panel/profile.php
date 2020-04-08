@@ -84,9 +84,8 @@
                             <div class="form-group">
                                 <label>Роль: <span class="text-danger">*</span> </label>
                                 <select name="tematika" data-placeholder="Выберете направление" class="form-control form-control-select2 required" data-fouc>
-                                    <option></option>
-                                    <option value="1">Рекламодатель</option>
-                                    <option value="2">Оператор</option>
+                                    <option value="1">Оператор</option>
+                                    <option value="2">Рекламодатель</option>
                                 </select>
 
                             </div>
