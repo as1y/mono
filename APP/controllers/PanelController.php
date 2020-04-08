@@ -132,6 +132,7 @@ class PanelController extends AppController {
 
             show($_POST);
 
+            show($_FILES);
 
             exit("fu");
         }
