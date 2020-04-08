@@ -71,18 +71,17 @@ function renderform ($FORMRESULT){
             ?>
             <div class="form-group">
                 <label><?=$val['NAME']?><span class="text-danger">*</span></label>
-                <input type="date" class="form-control" placeholder="<?=$val['NAME']?>">
+                <input type="date" disabled class="form-control" placeholder="<?=$val['NAME']?>">
             </div>
             <?php
         }
-
 
 
         if ($val['TYPE'] == 3){
             ?>
             <div class="form-group">
                 <label><?=$val['NAME']?><span class="text-danger">*</span></label>
-                <textarea rows="3" cols="3" class="form-control" placeholder="<?=$val['NAME']?>"></textarea>
+                <textarea rows="3" cols="3" disabled class="form-control" placeholder="<?=$val['NAME']?>"></textarea>
             </div>
             <?php
         }
