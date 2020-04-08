@@ -186,6 +186,23 @@ class PanelController extends AppController {
 
     public function settingsAction(){
         $Panel =  new Panel();
+
+        $META = [
+            'title' => 'Настройки аккаунта',
+            'description' => 'Настройки аккаунта',
+            'keywords' => 'Настройки аккаунта',
+        ];
+
+        $BREADCRUMBS['HOME'] = ['Label' => $this->BreadcrumbsControllerLabel, 'Url' => $this->BreadcrumbsControllerUrl];
+        $BREADCRUMBS['DATA'][] = ['Label' => "Настройки аккаунта"];
+
+        \APP\core\base\View::setMeta($META);
+        \APP\core\base\View::setBreadcrumbs($BREADCRUMBS);
+
+
+
+
+
     }
 
     public function faqAction(){
