@@ -95,18 +95,13 @@ class Project extends \APP\core\base\Model {
 
         $formresult[] = ["NAME" => $DATA['NAME'], "TYPE" => $DATA['TYPE']] ;
 
+        $formresult = json_encode($formresult,JSON_UNESCAPED_UNICODE);
+
+        $company->formresult = $formresult;
+        R::store($company);
 
 
-        show($formresult);
-
-        exit();
-
-
-
-        $MASS = array_values($MASS);
-        $MASS = json_encode($MASS,JSON_UNESCAPED_UNICODE);
-        \R::exec("UPDATE `script` SET `form` = '".$MASS."' WHERE `company_id` = ".$idc.";");
-        message('done');
+        return true;
 
 
 
