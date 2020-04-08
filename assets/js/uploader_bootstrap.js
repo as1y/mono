@@ -98,7 +98,7 @@ var FileUpload = function() {
 
             maxFilesNum: 1,
             allowedFileExtensions: ["jpg", "png"],
-            maxFileSize: 100,
+            maxFileSize: 1000,
 
             previewZoomButton: false,
             previewZoomButtonClasses: previewZoomButtonClasses,
