@@ -81,10 +81,10 @@ var FileUpload = function() {
         //
 
         $('.file-input').fileinput({
-            browseLabel: 'Загрузить аватар',
+            browseLabel: 'Загрузить',
             browseClass: ' btn btn-warning',
             removeLabel: 'Удалить',
-            uploadLabel: 'Загрузить',
+            uploadLabel: '+',
             uploadClass: ' btn btn-warning',
             browseIcon: '<i class="icon-file-plus mr-2"></i>',
             uploadIcon: '<i class="icon-file-upload2 mr-2"></i>',
