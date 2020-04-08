@@ -337,12 +337,16 @@ class ProjectController extends AppController {
 		if ($_POST){
 
 
-            $project->addpoleformresult($_POST,$idc);
+           $result =  $project->addpoleformresult($_POST,$idc);
+
+            if ($result == 1){
+                $_SESSION['success'] = "Дополнительное поле добавлено";
+            }else{
+
+                $_SESSION['errors'] = $result;
+            }
 
 
-
-
-		    exit("ok");
         }
 
 

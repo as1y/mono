@@ -187,26 +187,32 @@ function showmass ($par, $ch){
 // ВЫВОД МАССИВА ЧТОБЫ ОТОБРАЗИТЬ ФОРМУ С РЕЗУЛЬТАТОМ
 // Проверка на ограничение
 function pole_valid ($pole,$num,$type) {
-	if (!$pole) message('Поле пустое и не заполненно.');
+
+
+	if (!$pole) return 'Поле пустое и не заполненно.';
+
+
 	if ($type == "i"){
 		$pole = intval($pole);
-		if (strlen($pole) > $num) message('Текст '.strlen($pole).' символов слишком большой. Нужно не больее '.$num.' ');
+		if (strlen($pole) > $num) return ('Текст '.strlen($pole).' символов слишком большой. Нужно не больее '.$num.' ');
 	}
 	if ($type == "s"){
-		if (strlen($pole) > $num) message('Текст '.strlen($pole).' символов слишком большой. Нужно не больее '.$num.'');
+		if (strlen($pole) > $num) return ('Текст '.strlen($pole).' символов слишком большой. Нужно не больее '.$num.'');
 		$pole = trim($pole);
 		$pole = strip_tags($pole);
 		$pole = htmlspecialchars($pole);
 		iconv_strlen($pole, 'UTF-8');
 	}
 	if ($type == "u"){
-		if (strlen($pole) > $num) message('Текст '.strlen($pole).' символов слишком большой. Нужно не больее '.$num.'');
+		if (strlen($pole) > $num) return('Текст '.strlen($pole).' символов слишком большой. Нужно не больее '.$num.'');
 		$pole = trim($pole);
 		$pole = strip_tags($pole);
 		$pole = htmlspecialchars($pole);
 		iconv_strlen($pole, 'UTF-8');
 	}
-	return $pole;
+
+
+	return true;
 }
 // Проверка на ограничение
 ?>
