@@ -13,17 +13,10 @@
                 <img src="../../../../global_assets/images/placeholders/placeholder.jpg" class="rounded-round" width="150" height="150" alt="">
             </a>
 
-            <ul class="list-inline list-inline-condensed mb-0">
-                <li class="list-inline-item"><a href="#" class="btn btn-outline bg-success btn-icon text-success border-success border-2 rounded-round">
-                        <i class="icon-google-drive"></i></a>
-                </li>
-                <li class="list-inline-item"><a href="#" class="btn btn-outline bg-info btn-icon text-info border-info border-2 rounded-round">
-                        <i class="icon-twitter"></i></a>
-                </li>
-                <li class="list-inline-item"><a href="#" class="btn btn-outline bg-grey-800 btn-icon text-grey-800 border-grey-800 border-2 rounded-round">
-                        <i class="icon-github"></i></a>
-                </li>
-            </ul>
+            <button type="button" class=" btn btn-info"><i class="icon-pencil mr-2"></i> Посмотреть профиль</button>
+
+
+
         </div>
     </div>
 
