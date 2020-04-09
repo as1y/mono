@@ -97,13 +97,7 @@
         <ul class="navbar-nav ml-xl-auto">
 
 
-            <li class="nav-item">
 
-                        <span class="navbar-text ml-xl-3">
-   Операторов онлайн:  <span class="badge bg-success"><b><?= \APP\core\base\Model::countonline()?></b></span>
-        </span>
-
-            </li>
 
 
             <li class="nav-item dropdown">
@@ -192,7 +186,9 @@
         <div class="header-elements d-none">
             <div class="breadcrumb justify-content-center">
 
+                <button type="button" class="btn btn-danger btn-labeled btn-labeled-left"><b><i class="icon-pin-alt"></i></b> Default size</button>
 
+                
                 <a href="/panel/faq/" class="breadcrumb-elements-item">
                     <i class="icon-comment-discussion mr-2"></i>
                     Прочитать FAQ
