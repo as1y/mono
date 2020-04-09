@@ -12,7 +12,7 @@ class Panel extends \APP\core\base\Model {
 
 
     public function getrefferals(){
-        $allref = \R::findAll('users', 'WHERE ref = ?', [$_SESSION['ulogin']['id']]);
+        $allref = R::findAll('users', 'WHERE ref = ?', [$_SESSION['ulogin']['id']]);
         return $allref;
     }
 
