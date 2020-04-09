@@ -13,7 +13,7 @@
             <div class="card-body">
 
                 <div class="card card-table table-responsive shadow-0 mb-0">
-                    <table class="table">
+                    <table class="table table-xl">
                         <thead>
                         <tr>
                             <th>Заголовок</th>
