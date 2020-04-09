@@ -80,7 +80,7 @@ class Panel extends \APP\core\base\Model {
             'open' => date("y-m-d h:m:s") ,
             'messages' => $mes,
             'status' => 1 ,
-            'look' => NULL
+            'new' => NULL
         ];
 
         $DATA = array_merge($addpole, $DATA);

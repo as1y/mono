@@ -36,6 +36,10 @@
 
                 <?=count(json_decode($val['messages'], true))?>
 
+                <?php if ($val['new'] ==1) :?>
+                    <span class="badge badge-danger">new</span>
+                <?endif;?>
+
             </a>
         </td>
         <td>
