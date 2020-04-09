@@ -27,13 +27,13 @@
             <div class="card mb-2">
                 <div class="card-header">
                     <h6 class="card-title">
-                        <a class="text-default collapsed" data-toggle="collapse" href="#question1">
+                        <a class="text-default collapsed" data-toggle="collapse" href="#question2">
                             <i class="icon-help mr-2 text-slate"></i> Как происходят выплаты?
                         </a>
                     </h6>
                 </div>
 
-                <div id="question1" class="collapse">
+                <div id="question2" class="collapse">
                     <div class="card-body">
                         Выплату можно заказать от 500 рублей. Выплата производится в течении 3(трех) рабочих дней.
                     </div>
@@ -43,13 +43,13 @@
             <div class="card mb-2">
                 <div class="card-header">
                     <h6 class="card-title">
-                        <a class="text-default collapsed" data-toggle="collapse" href="#question1">
+                        <a class="text-default collapsed" data-toggle="collapse" href="#question3">
                             <i class="icon-help mr-2 text-slate"></i> Куда приходят выплаты?
                         </a>
                     </h6>
                 </div>
 
-                <div id="question1" class="collapse">
+                <div id="question3" class="collapse">
                     <div class="card-body">
                         На данный момент выплаты доступны на QIWI, WEBMONEY, Яндекс.Деньги
                     </div>
@@ -59,13 +59,13 @@
             <div class="card mb-2">
                 <div class="card-header">
                     <h6 class="card-title">
-                        <a class="text-default collapsed" data-toggle="collapse" href="#question1">
+                        <a class="text-default collapsed" data-toggle="collapse" href="#question4">
                             <i class="icon-help mr-2 text-slate"></i> Что делать если при звонке сервис выдает техническую ошибку?
                         </a>
                     </h6>
                 </div>
 
-                <div id="question1" class="collapse">
+                <div id="question4" class="collapse">
                     <div class="card-body">
                         Выберете результат звонка "ТЕЛЕФОН НЕ ДОСТУПЕН" и нажмите кнопку "СЛЕДУЮЩИЙ КОНТАКТ"
                     </div>
