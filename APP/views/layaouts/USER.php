@@ -113,7 +113,7 @@
 
 
         <?php if(isset($_SESSION['errors'])): ?>
-            <div style="width: 50%" class="alert alert-danger alert-dismissible">
+            <div style="width: 50%" class="alert alert-danger alert-dismissible justify-content-center">
                 <button type="button" class="close" data-dismiss="alert"><span>×</span></button>
                 <span class="font-weight-semibold">Ошибка!</span> <br><?=$_SESSION['errors']; unset($_SESSION['errors']);?>
             </div>
