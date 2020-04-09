@@ -141,7 +141,8 @@ class PanelController extends AppController {
         $balancelog = [];
         $balancelog = $Panel->balancelog();
 
-
+        show($balancelog);
+        exit();
 
         $META = [
             'title' => 'Баланс',
