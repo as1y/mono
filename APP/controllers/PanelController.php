@@ -158,7 +158,7 @@ class PanelController extends AppController {
         ];
 
         $BREADCRUMBS['HOME'] = ['Label' => $this->BreadcrumbsControllerLabel, 'Url' => $this->BreadcrumbsControllerUrl];
-        $BREADCRUMBS['DATA'][] = ['Label' => "Системные тикеты", 'Url' => "/panel/ticket/"];
+        $BREADCRUMBS['DATA'][] = ['Label' => "Тикеты", 'Url' => "/panel/ticket/"];
         $BREADCRUMBS['DATA'][] = ['Label' => "Тикет ".$tickets['zagolovok']];
 
 
@@ -190,7 +190,7 @@ class PanelController extends AppController {
             }else{
                 $_SESSION['errors'] = $result;
                 redir("/panel/ticket/");
-                
+
             }
 
 
@@ -204,7 +204,7 @@ class PanelController extends AppController {
         ];
 
         $BREADCRUMBS['HOME'] = ['Label' => $this->BreadcrumbsControllerLabel, 'Url' => $this->BreadcrumbsControllerUrl];
-        $BREADCRUMBS['DATA'][] = ['Label' => "Системные тикеты"];
+        $BREADCRUMBS['DATA'][] = ['Label' => "Тикеты"];
 
         \APP\core\base\View::setMeta($META);
         \APP\core\base\View::setBreadcrumbs($BREADCRUMBS);
