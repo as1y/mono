@@ -40,7 +40,7 @@
 
             <div class="card-body justify-content-center">
 
-                СПИСОК ТИКЕТОВ
+                НАПИСАТЬ ТИКЕТ
 
 
 
