@@ -48,7 +48,7 @@
                             ?>
 
                             <li class="media">
-                                <div class="mr-3 align-self-center">
+                                <div class="mr-3 align-self-bottom">
                                     <img src="/global_assets/images/placeholders/placeholder.jpg" class="rounded-circle" width="40" height="40" alt="">
                                 </div>
                                 <div class="media-body">
