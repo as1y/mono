@@ -16,69 +16,55 @@
 
 <!--                    <li class="media content-divider justify-content-center text-muted mx-0">Today</li>-->
 
-                    <li class="media media-chat-item-reverse">
-                        <div class="media-body">
-                            <div class="media-chat-item">Thus superb the tapir the wallaby blank frog execrably much since dalmatian by in hot. Uninspiringly arose mounted stared one curt safe</div>
-                            <div class="font-size-sm text-muted mt-2">Tue, 8:12 am <a href="#"></a></div>
-                        </div>
 
-                        <div class="ml-3">
-                            <a href="../../../../global_assets/images/placeholders/placeholder.jpg">
-                                <img src="../../../../global_assets/images/placeholders/placeholder.jpg" class="rounded-circle" width="40" height="40" alt="">
-                            </a>
-                        </div>
-                    </li>
+                    <?php
 
-                    <li class="media">
-                        <div class="mr-3">
-                            <a href="../../../../global_assets/images/placeholders/placeholder.jpg">
-                                <img src="../../../../global_assets/images/placeholders/placeholder.jpg" class="rounded-circle" width="40" height="40" alt="">
-                            </a>
-                        </div>
+                    foreach ($messages as $key=>$val){
 
-                        <div class="media-body">
-                            <div class="media-chat-item">Tolerantly some understood this stubbornly after snarlingly frog far added insect into snorted more auspiciously heedless drunkenly jeez foolhardy oh.</div>
-                            <div class="font-size-sm text-muted mt-2">Wed, 4:20 pm <a href="#"><i class="icon-pin-alt ml-2 text-muted"></i></a></div>
-                        </div>
-                    </li>
+                        if ($val['author'] == "me"){
+                            ?>
+                            <li class="media media-chat-item-reverse">
+                                <div class="media-body">
+                                    <div class="media-chat-item"><?=$val['message']?></div>
+                                    <div class="font-size-sm text-muted mt-2"><?=$val['date']?></div>
+                                </div>
+                                <div class="ml-3">
+                                        <img src="<?=$_SESSION['ulogin']['avatar']?>" class="rounded-circle" width="40" height="40" alt="">
+                                </div>
+                            </li>
+                            <?php
+                        }
 
-                    <li class="media media-chat-item-reverse">
-                        <div class="media-body">
-                            <div class="media-chat-item">Satisfactorily strenuously while sleazily dear frustratingly insect menially some shook far sardonic badger telepathic much jeepers immature much hey.</div>
-                            <div class="font-size-sm text-muted mt-2">2 hours ago <a href="#"><i class="icon-pin-alt ml-2 text-muted"></i></a></div>
-                        </div>
 
-                        <div class="ml-3">
-                            <a href="../../../../global_assets/images/placeholders/placeholder.jpg">
-                                <img src="../../../../global_assets/images/placeholders/placeholder.jpg" class="rounded-circle" width="40" height="40" alt="">
-                            </a>
-                        </div>
-                    </li>
 
-                    <li class="media">
-                        <div class="mr-3">
-                            <a href="../../../../global_assets/images/placeholders/placeholder.jpg">
-                                <img src="../../../../global_assets/images/placeholders/placeholder.jpg" class="rounded-circle" width="40" height="40" alt="">
-                            </a>
-                        </div>
+                        if ($val['author'] == "admin"){
+                            ?>
+                            <li class="media">
+                                <div class="mr-3">
+                                        <img src="/global_assets/images/placeholders/placeholder.jpg" class="rounded-circle" width="40" height="40" alt="">
+                                </div>
+                                <div class="media-body">
+                                    <div class="media-chat-item"><?=$val['message']?></div>
+                                    <div class="font-size-sm text-muted mt-2"><?=$val['date']?></a></div>
+                                </div>
+                            </li>
+                            <?php
+                        }
 
-                        <div class="media-body">
-                            <div class="media-chat-item">Grunted smirked and grew less but rewound much despite and impressive via alongside out and gosh easy manatee dear ineffective yikes.</div>
-                            <div class="font-size-sm text-muted mt-2">13 minutes ago <a href="#"><i class="icon-pin-alt ml-2 text-muted"></i></a></div>
-                        </div>
-                    </li>
 
-                    <li class="media media-chat-item-reverse">
-                        <div class="media-body">
-                            <div class="media-chat-item"><i class="icon-menu"></i></div>
-                        </div>
 
-                        <div class="ml-3">
-                            <a href="../../../../global_assets/images/placeholders/placeholder.jpg">
-                                <img src="../../../../global_assets/images/placeholders/placeholder.jpg" class="rounded-circle" width="40" height="40" alt="">
-                            </a>
-                        </div>
-                    </li>
+
+
+
+                    }
+
+
+                    ?>
+
+
+
+
+
                 </ul>
 
 

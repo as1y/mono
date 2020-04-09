@@ -76,6 +76,9 @@ class View {
 
 
 
+
+
+
     public static function getBreadcrumbs(){
 
         if (!isset(self::$Breadcrumbs['HOME']['Label'])) self::$Breadcrumbs['HOME']['Label'] = self::$meta['title'];
