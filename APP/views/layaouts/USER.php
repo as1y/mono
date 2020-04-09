@@ -64,7 +64,17 @@
 
             <li>
                 <div class="mb-3 mb-xl-0 ml-xl-auto">
-                    <a type="button" class="btn btn-success"><i class="icon-cog3 mr-2"></i> Регистрация</a>
+
+
+                    <?php
+
+                    show($this->route);
+
+
+                    ?>
+                    <a type="button" class="btn btn-success"><i class="icon-user-plus mr-2"></i> Регистрация</a>
+
+
                 </div>
             </li>
 
