@@ -32,17 +32,16 @@
           <?=ticketstatus($val['status'])?>
         </td>
         <td>
-            <a href="/panel/viewticket/?id=<?=$val['id']?>" class="badge bg-dark badge-pill">
-
-                <?=count(json_decode($val['messages'], true))?>
-            </a>
 
             <?php if ($val['new'] ==1) :?>
                 <span class="badge badge-danger">new</span>
             <?endif;?>
 
-
             
+            <a href="/panel/viewticket/?id=<?=$val['id']?>" class="badge bg-dark badge-pill">
+
+                <?=count(json_decode($val['messages'], true))?>
+            </a>
         </td>
         <td>
 
