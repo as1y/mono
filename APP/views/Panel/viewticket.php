@@ -52,8 +52,8 @@
                                     <img src="/global_assets/images/placeholders/placeholder.jpg" class="rounded-circle" width="40" height="40" alt="">
                                 </div>
                                 <div class="media-body">
+                                    <div class="font-size-sm text-muted mt-2"><b>Тех. поддержка</b> - <?=$val['date']?><br>
                                     <div class="media-chat-item"><?=$val['message']?></div>
-                                    <div class="font-size-sm text-muted mt-2"><?=$val['date']?></div>
                                 </div>
                             </li>
 
