@@ -6,7 +6,7 @@
         <div class="card">
             <div class="card-header header-elements-inline">
                 <h6 class="card-title">Тикет <?=$tickets['zagolovok']?></h6>
-                
+
 
             </div>
 
@@ -81,12 +81,10 @@
 
                 <textarea name="enter-message" class="form-control mb-3" rows="3" cols="1" placeholder="Enter your message..."></textarea>
 
-                <div class="d-flex align-items-center">
-                    <div class="list-icons list-icons-extended">
-                        <a href="#" class="list-icons-item" data-popup="tooltip" data-container="body" title="Send photo"><i class="icon-file-picture"></i></a>
-                        <a href="#" class="list-icons-item" data-popup="tooltip" data-container="body" title="Send video"><i class="icon-file-video"></i></a>
-                        <a href="#" class="list-icons-item" data-popup="tooltip" data-container="body" title="Send file"><i class="icon-file-plus"></i></a>
-                    </div>
+                <div class="d-flex align-items-left">
+                    
+
+
 
                     <button type="button" class="btn bg-teal-400 btn-labeled btn-labeled-right ml-auto"><b><i class="icon-paperplane"></i></b> Send</button>
                 </div>
