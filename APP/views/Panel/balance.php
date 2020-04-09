@@ -17,7 +17,7 @@
                             </div>
 
                             <div class="media-body text-right">
-                                <h3 class="font-weight-semibold mb-0">652,549</h3>
+                                <h3 class="font-weight-semibold mb-0"><?=$_SESSION['ulogin']['bal']?></h3>
                                 <span class="text-uppercase font-size-sm text-muted">РУБЛЕЙ</span>
                             </div>
                         </div>
