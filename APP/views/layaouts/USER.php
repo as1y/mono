@@ -58,6 +58,12 @@
    Операторов онлайн:  <span class="badge bg-success"><b>1</b></span>
         </span>
 
+        <a href="/panel/" class="navbar-nav-link ">
+            <img src="/global_assets/images/dribbble.png" class="align-top mr-2 rounded" width="20" height="20" alt="">
+            <b>CASHCALL.RU</b>
+        </a>
+
+        
         <ul class="navbar-nav ml-xl-auto">
 
 
