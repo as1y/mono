@@ -187,7 +187,7 @@
             <div class="breadcrumb justify-content-center">
 
                 <a href="/panel/balance/" type="button" class="breadcrumb-elements-item"><i class="icon-comment-discussion mr-2"></i>БАЛАНС
-                    <span class="badge badge-pill bg-warning-400 ml-auto ml-md-0">0</span>
+                    <span class="badge badge-success">Success</span>
 
                 </a>
 
