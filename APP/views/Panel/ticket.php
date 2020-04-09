@@ -35,14 +35,14 @@
             <div class="card-body">
                 <form action="#">
 
-                    <div class="form-group row">
+                    <div class="form-group">
                         <label class="col-form-label col-lg-2">Заголовок тикета:<span class="text-danger">*</span></label>
                         <div class="col-lg-10">
                             <input type="text" name="zagolovok" class="form-control required" placeholder="Заголовок тикета">
                         </div>
                     </div>
 
-                    <div class="form-group row">
+                    <div class="form-group">
                         <label class="col-form-label col-lg-2">Текст:<span class="text-danger">*</span></label>
                         <div class="col-lg-10">
                             <textarea rows="4" cols="4"  name="text" class="form-control required" placeholder="Сообщение"></textarea>
