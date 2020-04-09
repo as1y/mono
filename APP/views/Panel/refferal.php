@@ -23,12 +23,11 @@
         <table class="table datatable-basic">
             <thead>
             <tr>
-                <th>First Name</th>
-                <th>Last Name</th>
-                <th>Job Title</th>
-                <th>DOB</th>
-                <th>Status</th>
-                <th class="text-center">Actions</th>
+                <th>Имя Фамилия</th>
+                <th>Дата регистрации</th>
+                <th>Заработок</th>
+                <th>Написать</th>
+                
             </tr>
             </thead>
             <tbody>
