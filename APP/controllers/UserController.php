@@ -69,27 +69,11 @@ class UserController extends AppController
 
 
 
-
-        $META = [
-            'title' => 'Логин',
-            'description' => 'Логин',
-            'keywords' => 'Логин',
-        ];
-
-        $BREADCRUMBS['HOME'] = ['Label' => $this->BreadcrumbsControllerLabel, 'Url' => $this->BreadcrumbsControllerUrl];
-        $BREADCRUMBS['DATA'][] = ['Label' => "Логин"];
-
-        \APP\core\base\View::setMeta($META);
-        \APP\core\base\View::setBreadcrumbs($BREADCRUMBS);
-
-
-
 	    //Если юзер залогинен, то редиректим его на панель
 		if( isset($_SESSION['ulogin']['id']) ) redir('/panel/');
 
 
 		if(!empty($_POST)){
-
 
 		    exit("dfgfdg");
 
@@ -106,6 +90,22 @@ class UserController extends AppController
 				$_SESSION['errors'] = "Логин/Пароль введены не верно";
 			}
 		}
+
+
+        $META = [
+            'title' => 'Логин',
+            'description' => 'Логин',
+            'keywords' => 'Логин',
+        ];
+
+        $BREADCRUMBS['HOME'] = ['Label' => $this->BreadcrumbsControllerLabel, 'Url' => $this->BreadcrumbsControllerUrl];
+        $BREADCRUMBS['DATA'][] = ['Label' => "Логин"];
+
+        \APP\core\base\View::setMeta($META);
+        \APP\core\base\View::setBreadcrumbs($BREADCRUMBS);
+
+
+
 	}
 
 

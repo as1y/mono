@@ -6,30 +6,30 @@ class User extends \APP\core\base\Model
 {
 	// АТРИБУТЫ КОТОРЫЕ ЗАБИРАЕМ ПРИ РЕГИСТРАЦИИ
 	public $ATR = [
-	'signup-username' => '',
-	'signup-email' => '',
-	'signup-password' => '',
-	'signup-password-confirm' => '',
+	'username' => '',
+	'email' => '',
+	'password' => '',
+	'password-confirm' => '',
 	];
 	// Правила валидации
 	public $rules = [
 	'required' => [
-	['signup-username'],
-	['signup-email'],
-	['signup-password'],
-	['signup-password-confirm'],
+	['username'],
+	['email'],
+	['password'],
+	['password-confirm'],
 	],
 	'email' =>[
-	['signup-email'],
+	['email'],
 	],
 	'lengthMin' =>[
-	['signup-password',5],
-	['signup-password-confirm',5],
+	['password',5],
+	['password-confirm',5],
 	],
 	'lengthMax' =>[
-	['signup-password',30],
-	['signup-password-confirm',30],
-	['signup-username',30],
+	['password',30],
+	['password-confirm',30],
+	['username',30],
 	],
 	'equals' =>[
 	['signup-password', 'signup-password-confirm' ],
@@ -38,10 +38,10 @@ class User extends \APP\core\base\Model
 	// Валидация на код
 	public $rulesconfirm = [
 	'required' =>[
-	['confirm-code'],
+	['code'],
 	],
 	'lengthMax' =>[
-	['confirm-code',6],
+	['code',6],
 	],
 	];
 	// ПРОВЕРКА НА УНИКАЛЬНЫЙ ЕМЕЙЛ
@@ -83,8 +83,8 @@ class User extends \APP\core\base\Model
 */
 
 
-		$email = !empty(trim($_POST['login-email'])) ? trim($_POST['login-email']) : NULL;
-		$pass = !empty(trim($_POST['login-password'])) ? trim($_POST['login-password']) : NULL;
+		$email = !empty(trim($_POST['email'])) ? trim($_POST['email']) : NULL;
+		$pass = !empty(trim($_POST['password'])) ? trim($_POST['password']) : NULL;
 
 
 		if ($email && $pass){

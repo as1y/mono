@@ -1,4 +1,4 @@
-<form class="login-form" method="post" action="/user/">
+<form action="/user/" method="post"  class="login-form">
     <div class="card mb-0">
         <div class="card-body">
             <div class="text-center mb-3">
@@ -8,14 +8,14 @@
             </div>
 
             <div class="form-group form-group-feedback form-group-feedback-left">
-                <input type="email" class="form-control" placeholder="email">
+                <input type="email" name="email" class="form-control" placeholder="email">
                 <div class="form-control-feedback">
                     <i class="icon-user text-muted"></i>
                 </div>
             </div>
 
             <div class="form-group form-group-feedback form-group-feedback-left">
-                <input type="password" class="form-control" placeholder="Password">
+                <input type="password" name="password"  class="form-control" placeholder="Password">
                 <div class="form-control-feedback">
                     <i class="icon-lock2 text-muted"></i>
                 </div>
