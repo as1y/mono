@@ -152,6 +152,8 @@ class PanelController extends AppController {
 
         $tickets = $Panel->gettickets();
 
+        show($tickets);
+        exit();
 
         $this->set(compact('tickets'));
 
