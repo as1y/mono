@@ -29,7 +29,7 @@
     <tr>
         <td><?=$val['zagolovok']?></td>
         <td><?=$val['count']?></td>
-        <td>@<?=$val['status']?></td>
+        <td><?=$val['status']?></td>
         <td><a href="/viewticket/?id=<?=$val['id']?>" type="button" class="btn btn-success"><i class="icon-comment-discussion mr-2"></i>ПЕРЕЙТИ</a></td>
     </tr>
 
