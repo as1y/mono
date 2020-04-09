@@ -186,7 +186,10 @@
         <div class="header-elements d-none">
             <div class="breadcrumb justify-content-center">
 
-                <a href="/panel/balance/" type="button" class="breadcrumb-elements-item"><i class="icon-comment-discussion mr-2"></i>Сообщение</a>
+                <a href="/panel/balance/" type="button" class="breadcrumb-elements-item"><i class="icon-comment-discussion mr-2"></i>БАЛАНС
+                    <span class="badge badge-pill bg-warning-400 ml-auto ml-md-0">0</span>
+
+                </a>
 
 
                 <a href="/panel/faq/" class="breadcrumb-elements-item">
