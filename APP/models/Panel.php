@@ -39,26 +39,15 @@ class Panel extends \APP\core\base\Model {
         $messages = pole_valid ($DATA['messages'], 500, 's');
         if (!empty($messages['error'])) return $messages['error'];
 
-        // Переделываем в JSON формат сообщений
 
-
+        
         $mes[] = ["author" => "me" , "message" => $DATA['messages'], "date" => date("H:s:m")];
 
-
-        show($mes);
-
-        exit();
-
-        // Переделываем в JSON формат сообщений
-        //        $messages = [
-//            0 => ["author" => "me" , "message" => "Ответь мне на мой ответ пидор", "date" => date("H:s:m")],
-//            1 => ["author" => "admin" , "message" => "Сообщение от одмина", "date" => date("H:s:m")]
-//        ];
-
+        $mes = json_decode($mes, true);
+        unset($DATA['messages']);
 
 
         $ticketscount = R::count('tickets','WHERE  user_id = ? AND status = 1' , [$_SESSION['ulogin']['id']]);
-
         if ($ticketscount >= 5) return "Можно создать не более 5 открытых тикетов";
 
 
@@ -66,6 +55,7 @@ class Panel extends \APP\core\base\Model {
             'userId' => $_SESSION['ulogin']['id'],
             'parent' => 1 ,
             'open' => date("y-m-d h:m:s") ,
+            'messages' => $mes,
             'status' => 1 ,
             'count' => 1,
             'look' => NULL
