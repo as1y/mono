@@ -17,6 +17,7 @@ class ProjectController extends AppController {
 		//Переменные
 
         $project = new Project;
+        $idc = $_GET['id'];
         $company = $project->getcom($_GET['id']);
 
         $META = [
