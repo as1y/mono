@@ -98,7 +98,7 @@
 
             <a href="#" class="header-elements-toggle text-default d-md-none"><i class="icon-more"></i></a>
         </div>
-
+        
     </div>
 
 
@@ -112,7 +112,7 @@
     <div class="content-wrapper">
 
         <!-- Content area -->
-        <div class="content d-flex ">
+        <div class="content d-flex justify-content-center ">
 
             <?=$content?>
 
