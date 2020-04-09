@@ -26,7 +26,7 @@ class Panel extends \APP\core\base\Model {
         $tickets = R::findOne("tickets", "WHERE user_id = ? AND id = ? AND status = 1" , [ $_SESSION['ulogin']['id'], $idc ]);
 
 
-        if (!empty(pole_valid($DATA['enter-message'], "s", 50)) return pole_valid($DATA['enter-message'], "s", 50)['error'];
+        if (!empty(pole_valid($DATA['enter-message'], "s", 50)['error']))  return pole_valid($DATA['enter-message'], "s", 50)['error'];
 
 
         if ($tickets){
