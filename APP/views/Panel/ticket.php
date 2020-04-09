@@ -26,7 +26,7 @@
 
 <?php foreach ($tickets as $key=>$val):?>
 
-    <tr>
+    <tr class="text-center">
         <td><?=$val['zagolovok']?></td>
         <td>
           <?=ticketstatus($val['status'])?>
