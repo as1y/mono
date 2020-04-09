@@ -112,6 +112,7 @@
     <div class="content-wrapper">
 
         <div class="row">
+            <div class="col-md-4"></div>
             <div class="col-md-4">
             <?php if(isset($_SESSION['errors'])): ?>
                 <div class="alert alert-danger alert-dismissible">
