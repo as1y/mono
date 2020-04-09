@@ -186,9 +186,9 @@
         <div class="header-elements d-none">
             <div class="breadcrumb justify-content-center">
 
-                <button type="button" class="btn btn-danger btn-labeled btn-labeled-left"><b><i class="icon-pin-alt"></i></b> Default size</button>
+                <a type="button" class="btn btn-success btn-sm"><b><i class="icon-pin-alt"></i></b> Default size</a>
 
-                
+
                 <a href="/panel/faq/" class="breadcrumb-elements-item">
                     <i class="icon-comment-discussion mr-2"></i>
                     Прочитать FAQ
