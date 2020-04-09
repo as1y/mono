@@ -58,7 +58,25 @@
    Операторов онлайн:  <span class="badge bg-success"><b>1</b></span>
         </span>
 
+        <div class="navbar-collapse collapse" id="navbar-buttons">
+            <div class="my-3 my-xl-0">
+                <button type="button" class="btn btn-light mr-2">Button</button>
 
+                <div class="btn-group">
+                    <button type="button" class="btn btn-light dropdown-toggle" data-toggle="dropdown">Menu</button>
+                    <div class="dropdown-menu">
+                        <a href="#" class="dropdown-item">Action</a>
+                        <a href="#" class="dropdown-item">Another action</a>
+                        <a href="#" class="dropdown-item">Something else here</a>
+                        <a href="#" class="dropdown-item">One more line</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-3 mb-xl-0 ml-xl-auto">
+                <button type="button" class="btn btn-light"><i class="icon-cog3 mr-2"></i> Settings</button>
+            </div>
+        </div>
 
 
         <ul class="navbar-nav ml-xl-auto">
@@ -68,7 +86,7 @@
              <a href="/panel/register/" class="navbar-nav-link btn btn-primary ">
                     <b>РЕГИСТРАЦИЯ</b>
                  <i class="icon-cog3 mr-2"></i>
-                 
+
              </a>
             </li>
 
