@@ -139,6 +139,10 @@ class PanelController extends AppController {
         $Panel =  new Panel();
 
 
+        $balancelog = $Panel->balancelog();
+
+
+
         $META = [
             'title' => 'Баланс',
             'description' => 'Баланс',
@@ -153,7 +157,7 @@ class PanelController extends AppController {
 
 
 
-
+        $this->set(compact('balancelog'));
 
     }
 

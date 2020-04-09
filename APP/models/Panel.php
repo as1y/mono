@@ -11,6 +11,15 @@ class Panel extends \APP\core\base\Model {
     }
 
 
+    public function balancelog(){
+        $tickets = R::findOne("balancelog", "WHERE user_id = ?" , [ $_SESSION['ulogin']['id'] ]);
+
+        return $tickets;
+    }
+
+
+
+
     public function getrefferals(){
         $allref = R::findAll('users', 'WHERE ref = ?', [$_SESSION['ulogin']['id']]);
         return $allref;
