@@ -38,7 +38,7 @@
 
         <tr class="text-center">
             <td>
-                <div class="align-items-center">
+                <div class="d-flex align-items-center">
                     <div class="mr-3">
                         <a href="#">
                             <img src="../../../../global_assets/images/brands/spotify.png" class="rounded-circle" width="32" height="32" alt="">
