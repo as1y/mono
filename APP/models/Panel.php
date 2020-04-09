@@ -6,7 +6,7 @@ class Panel extends \APP\core\base\Model {
 
 
     public function gettickets(){
-        $tickets = R::findAll("tickets", "WHERE user_id = ? AND parent = 1 ORDER by id ASC LIMIT 30" , [$_SESSION['ulogin']['id']]);
+        $tickets = R::findAll("tickets", "WHERE user_id = ? AND parent = 1 ORDER by id ASC" , [$_SESSION['ulogin']['id']]);
         return $tickets;
     }
 
