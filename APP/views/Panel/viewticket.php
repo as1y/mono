@@ -8,7 +8,7 @@
         <div class="card">
             <div class="card-header header-elements-inline">
                 <a href="/panel/ticket" class="btn btn-light"><i class="icon-square-left mr-2"></i> НАЗАД</a>
-                <h5 class="card-title">Тикет <?=$tickets['zagolovok']?></h5>
+                <h5 class="card-title">Тикет <?=obrezanie($tickets['zagolovok'], 40)?></h5>
 
                 <div class="header-elements">
 
