@@ -26,7 +26,7 @@
 
     <table class="table datatable-basic">
         <thead>
-        <tr>
+        <tr class="text-center">
             <th>Имя Фамилия</th>
             <th>Дата регистрации</th>
             <th>Ваш заработок</th>
@@ -42,7 +42,7 @@
             <td>22 Jun 1972</td>
         </tr>
 
-        <tr>
+        <tr class="text-center">
             <td>Вася</td>
             <td>Traffic Court Referee</td>
             <td>22 Jun 1972</td>
