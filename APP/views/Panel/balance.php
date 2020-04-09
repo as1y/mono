@@ -1,4 +1,3 @@
-<!-- Basic datatable -->
 <div class="card">
     <div class="card-header header-elements-inline">
         <h5 class="card-title">Баланс</h5>
@@ -33,16 +32,14 @@
             <tbody>
 
 
-            <?php foreach ($allref as $key=>$val):?>
+            <?php foreach ($balancelog as $key=>$val):?>
 
                 <tr>
-                    <td><?=$val['username']?></td>
-                    <td class="text-center"><?=$val['datareg']?></td>
-                    <td class="text-center"><b>0 руб.</b></td>
-                    <td class="text-center"><b>0 руб.</b></td>
-                    <td class="text-center">
-                        <a href="/panel/messages/?id=<?=$val['id']?>" type="button" class="btn btn-success"><i class="icon-comment-discussion mr-2"></i>Сообщение</a>
-                    </td>
+                    <td><?=$val['date']?></td>
+                    <td class="text-center"><b><?=$val['summa']?></b></td>
+                    <td class="text-center"><?=$val['type']?></td>
+                    <td class="text-center"><?=$val['comment']?></td>
+
                 </tr>
 
 
@@ -59,104 +56,6 @@
         </table>
     </div>
 
-    <!--    <table class="table datatable-basic">-->
-    <!--        <thead>-->
-    <!--        <tr class="text-center">-->
-    <!--            <th>Имя Фамилия</th>-->
-    <!--            <th>Дата регистрации</th>-->
-    <!--            <th>Ваш заработок</th>-->
-    <!--        </tr>-->
-    <!--        </thead>-->
-    <!---->
-    <!---->
-    <!--        <tbody>-->
-    <!---->
-    <!--        <tr class="text-center">-->
-    <!--            <td>-->
-    <!--                Вася-->
-    <!--            </td>-->
-    <!--            <td>Traffic Court Referee</td>-->
-    <!--            <td>22 Jun 1972</td>-->
-    <!--        </tr>-->
-    <!---->
-    <!--        <tr class="text-center">-->
-    <!--            <td>Вася</td>-->
-    <!--            <td>Traffic Court Referee</td>-->
-    <!--            <td>22 Jun 1972</td>-->
-    <!--        </tr>-->
-    <!---->
-    <!---->
-    <!--        <tr class="text-center">-->
-    <!--            <td>Вася</td>-->
-    <!--            <td>Traffic Court Referee</td>-->
-    <!--            <td>22 Jun 1972</td>-->
-    <!--        </tr>        <tr class="text-center">-->
-    <!--            <td>Вася</td>-->
-    <!--            <td>Traffic Court Referee</td>-->
-    <!--            <td>22 Jun 1972</td>-->
-    <!--        </tr>        <tr class="text-center">-->
-    <!--            <td>Вася</td>-->
-    <!--            <td>Traffic Court Referee</td>-->
-    <!--            <td>22 Jun 1972</td>-->
-    <!--        </tr>        <tr class="text-center">-->
-    <!--            <td>Вася</td>-->
-    <!--            <td>Traffic Court Referee</td>-->
-    <!--            <td>22 Jun 1972</td>-->
-    <!--        </tr>        <tr class="text-center">-->
-    <!--            <td>Вася</td>-->
-    <!--            <td>Traffic Court Referee</td>-->
-    <!--            <td>22 Jun 1972</td>-->
-    <!--        </tr>        <tr class="text-center">-->
-    <!--            <td>Вася</td>-->
-    <!--            <td>Traffic Court Referee</td>-->
-    <!--            <td>22 Jun 1972</td>-->
-    <!--        </tr>        <tr class="text-center">-->
-    <!--            <td>Вася</td>-->
-    <!--            <td>Traffic Court Referee</td>-->
-    <!--            <td>22 Jun 1972</td>-->
-    <!--        </tr>        <tr class="text-center">-->
-    <!--            <td>Вася</td>-->
-    <!--            <td>Traffic Court Referee</td>-->
-    <!--            <td>22 Jun 1972</td>-->
-    <!--        </tr>        <tr class="text-center">-->
-    <!--            <td>Вася</td>-->
-    <!--            <td>Traffic Court Referee</td>-->
-    <!--            <td>22 Jun 1972</td>-->
-    <!--        </tr>        <tr class="text-center">-->
-    <!--            <td>Вася</td>-->
-    <!--            <td>Traffic Court Referee</td>-->
-    <!--            <td>22 Jun 1972</td>-->
-    <!--        </tr>        <tr class="text-center">-->
-    <!--            <td>Вася</td>-->
-    <!--            <td>Traffic Court Referee</td>-->
-    <!--            <td>22 Jun 1972</td>-->
-    <!--        </tr>        <tr class="text-center">-->
-    <!--            <td>Вася</td>-->
-    <!--            <td>Traffic Court Referee</td>-->
-    <!--            <td>22 Jun 1972</td>-->
-    <!--        </tr>        <tr class="text-center">-->
-    <!--            <td>Вася</td>-->
-    <!--            <td>Traffic Court Referee</td>-->
-    <!--            <td>22 Jun 1972</td>-->
-    <!--        </tr>        <tr class="text-center">-->
-    <!--            <td>Вася</td>-->
-    <!--            <td>Traffic Court Referee</td>-->
-    <!--            <td>22 Jun 1972</td>-->
-    <!--        </tr>        <tr class="text-center">-->
-    <!--            <td>Вася</td>-->
-    <!--            <td>Traffic Court Referee</td>-->
-    <!--            <td>22 Jun 1972</td>-->
-    <!--        </tr>        <tr class="text-center">-->
-    <!--            <td>Вася</td>-->
-    <!--            <td>Traffic Court Referee</td>-->
-    <!--            <td>22 Jun 1972</td>-->
-    <!--        </tr>-->
-    <!---->
-    <!---->
-    <!---->
-    <!--        </tbody>-->
-    <!--    </table>-->
 
 
 </div>
-<!-- /basic datatable -->
