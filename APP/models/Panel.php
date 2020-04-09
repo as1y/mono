@@ -6,7 +6,7 @@ class Panel extends \APP\core\base\Model {
 
 
     public function gettickets(){
-        $tickets = R::findAll("tickets", "WHERE user_id = ? AND parent=1", [$_SESSION['ulogin']['id']]);
+        $tickets = R::findAll("tickets", "WHERE user_id = ? AND parent = 1", [$_SESSION['ulogin']['id']]);
         return $tickets;
     }
 
@@ -28,7 +28,7 @@ class Panel extends \APP\core\base\Model {
 
         $addpole = [
             'userId' => $_SESSION['ulogin']['id'],
-            'parrent' => 1 ,
+            'parent' => 1 ,
             'open' => date("y-m-d h:m:s") ,
             'status' => 1 ,
             'count' => 1,
