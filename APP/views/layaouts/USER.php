@@ -111,8 +111,13 @@
     <!-- Main content -->
     <div class="content-wrapper">
 
-        <div class="row">
-            <div class="col-md-4"></div>
+
+
+
+
+
+        <!-- Content area -->
+        <div class="content d-flex justify-content-center ">
 
             <?php if(isset($_SESSION['errors'])): ?>
                 <div class="alert alert-danger alert-dismissible">
@@ -127,12 +132,7 @@
                     <span class="font-weight-semibold">Успех!</span> <?=$_SESSION['success']; unset($_SESSION['success']);?>
                 </div>
             <?php endif;?>
-            </div>
-
-
-        <!-- Content area -->
-        <div class="content d-flex justify-content-center ">
-
+            
             <?=$content?>
 
         </div>
