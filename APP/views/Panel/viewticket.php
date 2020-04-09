@@ -13,8 +13,8 @@
             <div class="card-body">
                 <ul class="media-list media-chat media-chat-scrollable mb-3">
 
-                    
-                    <li class="media content-divider justify-content-center text-muted mx-0">Today</li>
+
+<!--                    <li class="media content-divider justify-content-center text-muted mx-0">Today</li>-->
 
                     <li class="media media-chat-item-reverse">
                         <div class="media-body">
