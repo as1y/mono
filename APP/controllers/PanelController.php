@@ -120,7 +120,7 @@ class PanelController extends AppController {
 
 
 
-    public function ticketview($DATA){
+    public function  viewticket($DATA){
         $Panel =  new Panel();
 
         if ($_POST){
