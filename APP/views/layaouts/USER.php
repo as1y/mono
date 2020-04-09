@@ -109,7 +109,7 @@
 <div class="page-content">
 
     <!-- Main content -->
-    <div class="content-wrapper">
+    <div class="content-wrapper text-center">
 
 
         <?php if(isset($_SESSION['errors'])): ?>
