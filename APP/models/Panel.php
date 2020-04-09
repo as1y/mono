@@ -14,7 +14,7 @@ class Panel extends \APP\core\base\Model {
 
     public function addticket($DATA){
 
-        $zagolovok = pole_valid ($DATA['zagolovok'], 100, 's');
+        $zagolovok = pole_valid ($DATA['zagolovok'], 20, 's');
         if (!empty($zagolovok['error'])) return $zagolovok['error'];
 
         $text = pole_valid ($DATA['text'], 500, 's');
