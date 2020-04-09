@@ -24,7 +24,7 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <tr>
+                        <tr href="/panel">
                             <td>1</td>
                             <td>Eugene</td>
                             <td>Kopyov</td>
