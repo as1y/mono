@@ -24,13 +24,13 @@
                     </div>
 
 
-
+                <a href="/panel/viewticket/?id=3" type="button" class="btn btn-success"><i class="icon-plus-circle2 mr-2"></i>ПОПОЛНИТЬ БАЛАНС</a>
 
             </div>
 
 
             <div class="col-md-3 align-self-center">
-                <a href="/panel/viewticket/?id=3" type="button" class="btn btn-success"><i class="icon-plus-circle2 mr-2"></i>ПОПОЛНИТЬ БАЛАНС</a>
+
             </div>
 
         </div>
