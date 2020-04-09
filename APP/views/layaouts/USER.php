@@ -65,10 +65,11 @@
 
 
             <li>
-             <a href="/panel/" class="navbar-nav-link ">
-                    <b>CASHCALL.RU</b>
-                 <img src="/global_assets/images/dribbble.png" class="align-top mr-2 rounded" width="20" height="20" alt="">
-              </a>
+             <a href="/panel/register/" class="navbar-nav-link btn btn-primary ">
+                    <b>РЕГИСТРАЦИЯ</b>
+                 <i class="icon-cog3 mr-2"></i>
+                 
+             </a>
             </li>
 
 
