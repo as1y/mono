@@ -16,7 +16,9 @@
                      width="150" height="150" alt="">
             </a>
 
-            <button type="button" class=" btn btn-info"><i class="icon-eye mr-2"></i> Посмотреть профиль</button>
+            <a href="#" type="button" class=" btn btn-info"><i class="icon-eye mr-2"></i> Посмотреть профиль</a>
+            <br>
+            <a href="/panel/settings/" type="button" class=" btn btn-warning"><i class="icon-eye mr-2"></i> Настройки аккаунта</a>
 
 
         </div>
