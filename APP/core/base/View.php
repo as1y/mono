@@ -86,18 +86,25 @@ class View {
         ?>
 
 
-        <a href="index.html" class="breadcrumb-item"><i class="icon-home2 mr-2"></i> <?=self::$Breadcrumbs['HOME']['Label'];?></a>
+        <div class="breadcrumb">
+            <a href="index.html" class="breadcrumb-item"><i class="icon-home2 mr-2"></i> Home</a>
+            <a href="#" class="breadcrumb-item">Sidebars</a>
+            <span class="breadcrumb-item active">Default hideable</span>
+        </div>
+        
 
+        <a href="index.html" class="breadcrumb-item"><i class="icon-home2 mr-2"></i> <?=self::$Breadcrumbs['HOME']['Label'];?></a>
 
 
         <?php foreach(self::$Breadcrumbs['DATA'] as $val):?>
 
 
             <?php if (!empty($val['Url'])):?>
-                <b>
+
                     <a href="<?=$val['Url']?>" class="breadcrumb-item">  <?=$val['Label']?> </a>
-                </b>
-            <?php else:?>
+
+
+                            <?php else:?>
                 <span class="breadcrumb-item active"><?=$val['Label']?></span>
             <?php endif;?>
 
