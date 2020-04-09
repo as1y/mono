@@ -30,7 +30,7 @@
 
 
             <div class="col-md-3 align-self-center">
-                ПОПОЛНЕНИЕ БАЛАНСА
+                <a href="/panel/viewticket/?id=3" type="button" class="btn btn-success"><i class="icon-comment-discussion mr-2"></i>ПОПОЛНИТЬ БАЛАНС</a>
             </div>
 
         </div>
