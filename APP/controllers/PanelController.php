@@ -134,10 +134,10 @@ class PanelController extends AppController {
 
         if (!empty($_GET['action']) && $_GET['action'] == "close"){
 
-            show($_GET);
+            $Panel->closeticket($_GET['id']);
+            redir("/panel/ticket/");
 
 
-            exit("fufu");
         }
 
 

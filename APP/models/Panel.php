@@ -11,6 +11,15 @@ class Panel extends \APP\core\base\Model {
     }
 
 
+    public function closeticket($idc){
+        $tickets = R::findOne("tickets", "WHERE user_id = ? AND id = ?" , [ $_SESSION['ulogin']['id'], $idc ]);
+        $tickets->status=2;
+        R::store($tickets);
+
+    }
+
+
+
 
     public function addmessageticket($DATA, $idc){
 
