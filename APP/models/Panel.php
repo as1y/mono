@@ -23,7 +23,7 @@ class Panel extends \APP\core\base\Model {
 
     public function addmessageticket($DATA, $idc){
 
-        $tickets = R::findOne("tickets", "WHERE user_id = ? AND id = ?" , [ $_SESSION['ulogin']['id'], $idc ]);
+        $tickets = R::findOne("tickets", "WHERE user_id = ? AND id = ? AND status = 1" , [ $_SESSION['ulogin']['id'], $idc ]);
 
         $messages = json_decode($tickets->messages,TRUE);
 
