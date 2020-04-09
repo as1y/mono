@@ -19,7 +19,7 @@
                     <li class="media media-chat-item-reverse">
                         <div class="media-body">
                             <div class="media-chat-item">Thus superb the tapir the wallaby blank frog execrably much since dalmatian by in hot. Uninspiringly arose mounted stared one curt safe</div>
-                            <div class="font-size-sm text-muted mt-2">Tue, 8:12 am <a href="#"><i class="icon-pin-alt ml-2 text-muted"></i></a></div>
+                            <div class="font-size-sm text-muted mt-2">Tue, 8:12 am <a href="#"></a></div>
                         </div>
 
                         <div class="ml-3">
