@@ -67,7 +67,7 @@ class Panel extends \APP\core\base\Model {
             $user->nnews = NULL;
         }
 
-        
+
         $_SESSION['ulogin']['nnews'] = $user->nnews;
         $_SESSION['ulogin']['nmessages'] = $user->nmessages;
         R::store($user);

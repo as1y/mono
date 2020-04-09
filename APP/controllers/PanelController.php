@@ -204,7 +204,7 @@ class PanelController extends AppController {
 
             $result = $Panel->changenotification($_POST);
             $_SESSION['success'] = "Изменения сохранены";
-
+            redir("/panel/settings/");
         }
 
 
