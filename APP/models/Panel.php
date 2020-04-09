@@ -6,6 +6,27 @@ class Panel extends \APP\core\base\Model {
 
 
 
+
+    public function addticket($DATA){
+
+        $zagolovok = pole_valid ($DATA['zagolovok'], 100, 's');
+        if (!empty($zagolovok['error'])) return $zagolovok['error'];
+
+        $text = pole_valid ($DATA['text'], 500, 's');
+        if (!empty($text['error'])) return $text['error'];
+
+        $addpole = ['parrent' => 1 ];
+
+        
+        $DATA = array_merge($addpole, $DATA);
+
+
+        $this->addnewBD("tickets", $DATA);
+
+
+
+    }
+
     public function allcompany($idclient)
     {
         if($idclient == "Admin")
@@ -52,21 +73,17 @@ class Panel extends \APP\core\base\Model {
 
         $user = R::load("users", $_SESSION['ulogin']['id']);
 
-
-
         if (!empty($DATA['messages'])){
             $user->nmessages = 1;
         }else{
             $user->nmessages = NULL;
         }
 
-
         if (!empty($DATA['news'])){
             $user->nnews = 1;
         }else{
             $user->nnews = NULL;
         }
-
 
         $_SESSION['ulogin']['nnews'] = $user->nnews;
         $_SESSION['ulogin']['nmessages'] = $user->nmessages;
