@@ -54,7 +54,6 @@ var DatatableBasic = function() {
                     "next":       "Следующая",
                     "previous":   "Предыдущая"
                 },
-                search:    "ПОИСК:"
             },
 
             order: [[ 0, "desc" ]],
