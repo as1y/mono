@@ -67,11 +67,9 @@
 
 
             <li>
-             <a href="/panel/register/" class="navbar-nav-link btn btn-primary ">
-                    <b>РЕГИСТРАЦИЯ</b>
-                 <i class="icon-cog3 mr-2"></i>
-
-             </a>
+                <div class="mb-3 mb-xl-0 ml-xl-auto">
+                    <button type="button" class="btn btn-light"><i class="icon-cog3 mr-2"></i> Settings</button>
+                </div>
             </li>
 
 
