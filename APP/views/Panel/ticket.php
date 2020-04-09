@@ -37,9 +37,7 @@
 
                     <div class="form-group">
                         <label>Заголовок тикета: <span class="text-danger">*</span></label>
-                        <div class="col-lg-10">
-                            <input type="text" name="zagolovok" class="form-control required" placeholder="Заголовок тикета">
-                        </div>
+                        <input type="text" name="zagolovok" class="form-control required" placeholder="Заголовок тикета">
                     </div>
 
                     <div class="form-group">
