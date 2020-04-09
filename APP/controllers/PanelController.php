@@ -127,15 +127,17 @@ class PanelController extends AppController {
         $Panel =  new Panel();
 
         if ($_POST){
-
-
             $Panel->addmessageticket($_POST, $_GET['id']);
-
             redir("/panel/viewticket/?id=".$_GET['id']);
+        }
 
 
+        if (!empty($_GET['action']) && $_GET['action'] == "close"){
+
+            show($_GET);
 
 
+            exit("fufu");
         }
 
 
