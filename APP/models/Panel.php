@@ -23,7 +23,7 @@ class Panel extends \APP\core\base\Model {
 
         $tickets = R::count('tickets','WHERE  user_id = ? AND status = 1' , [$_SESSION['ulogin']['id']]);
 
-        if (count($tickets) >= 5) return "Можно создать не более 5 открытых тикетов";
+        if ($tickets >= 5) return "Можно создать не более 5 открытых тикетов";
 
 
         $addpole = [
