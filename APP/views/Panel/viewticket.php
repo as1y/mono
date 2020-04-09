@@ -11,7 +11,10 @@
                 <h5 class="card-title">Тикет <?=$tickets['zagolovok']?></h5>
 
                 <div class="header-elements">
+
+                    <?php if($tickets['status'] == 1):?>
                     <a href="/panel/viewticket/?id=<?=$tickets['id']?>&action=close"  class="btn bg-danger btn-labeled btn-labeled ml-auto"><i class="icon-magic-wand mr-2"></i> ЗАКРЫТЬ ТИКЕТ</a>
+                    <?php endif;?>
 
                 </div>
 
