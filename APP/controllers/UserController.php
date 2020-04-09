@@ -10,7 +10,22 @@ class UserController extends AppController
 
 	public function registerAction()
 	{
+
 		if( isset($_SESSION['ulogin']['id']) ) redir('/panel/');
+
+
+        $META = [
+            'title' => 'Регистрация пользователя',
+            'description' => 'Регистрация пользователя',
+            'keywords' => 'Регистрация пользователя',
+        ];
+
+        $BREADCRUMBS['HOME'] = ['Label' => $this->BreadcrumbsControllerLabel, 'Url' => $this->BreadcrumbsControllerUrl];
+        $BREADCRUMBS['DATA'][] = ['Label' => "Регистрация пользователя"];
+
+        \APP\core\base\View::setMeta($META);
+        \APP\core\base\View::setBreadcrumbs($BREADCRUMBS);
+
 
 
 		if(!empty($_POST))
@@ -100,10 +115,8 @@ class UserController extends AppController
 
 	public function confirmRegisterAction()
 	{
+
 		$user = new User;
-
-
-
 
 		if( !isset($_SESSION['confirm']['code']) )
 		{
@@ -142,6 +155,21 @@ class UserController extends AppController
 
 	public function recoveryAction()
 	{
+
+        $META = [
+            'title' => 'Восстановление пароля',
+            'description' => 'Восстановление пароля',
+            'keywords' => 'Восстановление пароля',
+        ];
+
+        $BREADCRUMBS['HOME'] = ['Label' => $this->BreadcrumbsControllerLabel, 'Url' => $this->BreadcrumbsControllerUrl];
+        $BREADCRUMBS['DATA'][] = ['Label' => "Восстановление пароля"];
+
+        \APP\core\base\View::setMeta($META);
+        \APP\core\base\View::setBreadcrumbs($BREADCRUMBS);
+
+
+
 		if(!empty($_POST)){
 			$user = new User;
 			if(filter_var($_POST['reminder-email'], FILTER_VALIDATE_EMAIL)){
