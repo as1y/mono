@@ -16,8 +16,10 @@ class Panel extends \APP\core\base\Model {
         if (!empty($text['error'])) return $text['error'];
 
         $addpole = [
+            'userId' => $_SESSION['ulogin']['id'],
             'parrent' => 1 ,
-            'userid' => $_SESSION['ulogin']['id']
+            'count' => 1,
+            'look' => NULL
         ];
 
         $DATA = array_merge($addpole, $DATA);
