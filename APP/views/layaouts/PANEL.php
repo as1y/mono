@@ -186,8 +186,8 @@
         <div class="header-elements d-none">
             <div class="breadcrumb justify-content-center">
 
-                <a href="/panel/balance/" type="button" class="breadcrumb-elements-item"><i class="icon-comment-discussion mr-2"></i>БАЛАНС
-                    <span class="badge badge-success">Success</span>
+                <a href="/panel/balance/" type="button" class="breadcrumb-elements-item"><i class="icon-wallet mr-2"></i>
+                    <span class="badge badge-success">Success</span> Руб.
 
                 </a>
 
