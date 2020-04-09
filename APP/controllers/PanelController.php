@@ -132,7 +132,7 @@ class PanelController extends AppController {
         }
 
 
-       // $tickets = $Panel->gettickets();
+        $tickets = $Panel->gettickets($_GET);
 
         $messages = [
             0 => ["author" => "me" , "message" => "pervoe soobwenie"]
@@ -154,7 +154,7 @@ class PanelController extends AppController {
 
 
 
-        $this->set(compact('messages'));
+        $this->set(compact('tickets'));
 
 
 

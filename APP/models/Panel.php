@@ -5,8 +5,8 @@ use RedBeanPHP\R;
 class Panel extends \APP\core\base\Model {
 
 
-    public function gettickets(){
-        $tickets = R::findAll("tickets", "WHERE user_id = ? AND parent = 1 ORDER by id desc LIMIT 20" , [$_SESSION['ulogin']['id']]);
+    public function gettickets($idc){
+        $tickets = R::findOne("tickets", "WHERE user_id = ? AND id = ?" , [$_SESSION['ulogin']['id']], $idc);
         return $tickets;
     }
 
