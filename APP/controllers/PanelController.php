@@ -121,6 +121,27 @@ class PanelController extends AppController {
 
     public function ticketAction(){
         $Panel =  new Panel();
+
+        $META = [
+            'title' => 'Системные тикеты',
+            'description' => 'Системные тикеты',
+            'keywords' => 'Системные тикеты',
+        ];
+
+        $BREADCRUMBS['HOME'] = ['Label' => $this->BreadcrumbsControllerLabel, 'Url' => $this->BreadcrumbsControllerUrl];
+        $BREADCRUMBS['DATA'][] = ['Label' => "Системные тикеты"];
+
+        \APP\core\base\View::setMeta($META);
+        \APP\core\base\View::setBreadcrumbs($BREADCRUMBS);
+
+
+
+
+
+        
+
+
+
     }
 
     public function profileAction(){
