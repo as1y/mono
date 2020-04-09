@@ -10,6 +10,12 @@
                 <h6 class="card-title">Тикет <?=$tickets['zagolovok']?></h6>
 
 
+                <div class="header-elements">
+gdfg
+                </div>
+
+
+
             </div>
 
             <div class="card-body">
@@ -87,8 +93,6 @@
                 <div class="align-items-left">
                     <button type="submit" class="btn bg-teal-400 btn-labeled btn-labeled-right ml-auto"><b><i class="icon-paperplane"></i></b> Отправить сообщение</button>
 
-
-                    <a  class="btn btn-danger"><i class="icon-pencil3 mr-2"></i> Закрыть тикет</a>
 
 
                 </div>
