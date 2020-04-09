@@ -41,10 +41,8 @@
                     </div>
 
                     <div class="form-group">
-                        <label class="col-form-label col-lg-2">Текст:<span class="text-danger">*</span></label>
-                        <div class="col-lg-10">
+                        <label>Текст: <span class="text-danger">*</span></label>
                             <textarea rows="4" cols="4"  name="text" class="form-control required" placeholder="Сообщение"></textarea>
-                        </div>
                     </div>
 
                     <div class="form-group row mb-0">
