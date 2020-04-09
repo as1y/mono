@@ -189,6 +189,15 @@
         <div class="header-elements d-none">
             <div class="breadcrumb justify-content-center">
 
+
+                <a href="/panel/ticket/" class="breadcrumb-elements-item">
+                    <i class="icon-comment-discussion mr-2"></i>
+                    Написать тикет
+                    <span class="badge badge-pill bg-warning-400 ml-auto ml-md-0">0</span>
+
+                </a>
+
+                
                 <a href="/panel/balance/" type="button" class="breadcrumb-elements-item"><i class="icon-wallet mr-2"></i>
                     <span class="badge badge-success"><b>0</b> Р.</span>
 
@@ -197,12 +206,7 @@
 
 
 
-                <a href="/panel/ticket/" class="breadcrumb-elements-item">
-                    <i class="icon-comment-discussion mr-2"></i>
-                    Написать тикет
-                    <span class="badge badge-pill bg-warning-400 ml-auto ml-md-0">0</span>
 
-                </a>
 
 
 
