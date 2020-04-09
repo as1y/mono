@@ -28,6 +28,7 @@ class Panel extends \APP\core\base\Model {
 
         if (!empty(pole_valid($DATA['enter-message'], "s", 50)['error']))  return pole_valid($DATA['enter-message'], "s", 50)['error'];
 
+        if ($tickets->status == 2) return "Данный тикет закрыт";
 
         if ($tickets){
             $messages = json_decode($tickets->messages,TRUE);
