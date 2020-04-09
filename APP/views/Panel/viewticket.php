@@ -53,7 +53,7 @@
                                 </div>
                                 <div class="media-body">
                                     <div class="font-size-sm text-muted mt-2"><b>Тех. поддержка</b> - <?=$val['date']?><br>
-                                    <div class="media-chat-item"><?=$val['message']?></div>
+                                    <div class="bg-info media-chat-item"><?=$val['message']?></div>
                                 </div>
                             </li>
 
