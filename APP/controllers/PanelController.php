@@ -131,8 +131,7 @@ class PanelController extends AppController {
 
             $Panel->addmessageticket($_POST, $_GET['id']);
 
-            show($_POST);
-            exit("ok");
+            redir("/panel/viewticket/?id=".$_GET['id']);
 
 
 
