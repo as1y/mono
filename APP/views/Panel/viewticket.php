@@ -5,18 +5,9 @@
         <!-- Messages -->
         <div class="card">
             <div class="card-header header-elements-inline">
-                <h6 class="card-title"><?=$tickets['zagolovok']?></h6>
-                <div class="header-elements">
-                    <div class="list-icons ml-3">
-                        <div class="dropdown">
-                            <a href="#" class="list-icons-item caret-0 dropdown-toggle" data-toggle="dropdown">
-                                <i class="icon-arrow-down12"></i>
-                            </a>
+                <h6 class="card-title">Тикет <?=$tickets['zagolovok']?></h6>
+                
 
-
-                        </div>
-                    </div>
-                </div>
             </div>
 
             <div class="card-body">
