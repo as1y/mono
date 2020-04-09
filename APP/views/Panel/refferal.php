@@ -15,7 +15,7 @@
             </div>
         </div>
 
-        <table class="table datatable-basic">
+        <table  class="table datatable-basic text-center">
             <thead>
             <tr>
                 <th>Имя Фамилия</th>
