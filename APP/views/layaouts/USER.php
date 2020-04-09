@@ -55,7 +55,7 @@
 
 
         <span class="navbar-text ml-xl-3">
-   Операторов онлайн:  <span class="badge bg-success"><b><?= \APP\core\base\Model::countonline()?></b></span>
+   Операторов онлайн:  <span class="badge bg-success"><b></b></span>
         </span>
 
         <ul class="navbar-nav ml-xl-auto">
