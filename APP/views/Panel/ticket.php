@@ -20,11 +20,11 @@
                             <th>ЗАГОЛОВОК</th>
                             <th>СООБЩЕНИЙ</th>
                             <th>СТАТУС</th>
-
+                            <th>ДЕЙСТВИЕ</th>
                         </tr>
                         </thead>
                         <tbody>
-                        <tr href="/panel">
+                        <tr a href="/panel">
                             <td>1</td>
                             <td>Eugene</td>
                             <td>Kopyov</td>
