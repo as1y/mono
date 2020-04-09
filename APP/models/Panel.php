@@ -20,6 +20,9 @@ class Panel extends \APP\core\base\Model {
 
         show($tickets);
 
+        exit(count($tickets));
+
+
         if (count($tickets) > 4) return "Можно создать не более 5 открытых тикетов";
 
 
