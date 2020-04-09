@@ -67,6 +67,9 @@ class UserController extends AppController
 	{
 
 
+
+
+
         $META = [
             'title' => 'Логин',
             'description' => 'Логин',
@@ -86,6 +89,10 @@ class UserController extends AppController
 
 
 		if(!empty($_POST)){
+
+
+		    exit("dfgfdg");
+
 			$user = new User;
 
 			if($user->login(CONFIG['USERTABLE']

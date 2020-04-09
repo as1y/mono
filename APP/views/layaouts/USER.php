@@ -129,7 +129,7 @@
 
             <?php endif;?>
 
-            
+
             <?=$content?>
 
         </div>
