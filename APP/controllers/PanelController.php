@@ -158,7 +158,7 @@ class PanelController extends AppController {
 
 
 
-        $this->set(compact('tickets'));
+        $this->set(compact('tickets', 'messages'));
 
 
 
