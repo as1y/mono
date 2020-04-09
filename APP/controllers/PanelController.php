@@ -147,7 +147,10 @@ class PanelController extends AppController {
         ];
 
         $BREADCRUMBS['HOME'] = ['Label' => $this->BreadcrumbsControllerLabel, 'Url' => $this->BreadcrumbsControllerUrl];
-        $BREADCRUMBS['DATA'][] = ['Label' => "Системные тикеты"];
+        $BREADCRUMBS['DATA'][] = ['Label' => "Системные тикеты", 'Url' => "/panel/tickets/"];
+        $BREADCRUMBS['DATA'][] = ['Label' => "Тикет ".$tickets['zagolovok']];
+
+
 
         \APP\core\base\View::setMeta($META);
         \APP\core\base\View::setBreadcrumbs($BREADCRUMBS);
