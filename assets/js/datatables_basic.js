@@ -47,7 +47,7 @@ var DatatableBasic = function() {
             columnDefs: [{
                 orderable: false,
                 width: 100,
-                targets: [ 3 ]
+                targets: [ 4 ]
             }],
 
 
