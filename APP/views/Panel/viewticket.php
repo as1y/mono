@@ -25,7 +25,7 @@
                             ?>
 
 
-                            <li class="media">
+                            <li class="media media-chat-item-reverse">
                                 <div class="mr-3">
                                     <img src="<?=$_SESSION['ulogin']['avatar']?>" class="rounded-circle" width="40" height="40" alt="">
                                 </div>
