@@ -18,7 +18,7 @@
 
             <a href="#" type="button" class=" btn btn-info"><i class="icon-eye mr-2"></i> Посмотреть профиль</a>
             <br>
-            <a href="/panel/settings/" type="button" class=" btn btn-warning"><i class="icon-eye mr-2"></i> Настройки аккаунта</a>
+            <a href="/panel/settings/" type="button" class=" btn btn-warning"><i class="icon-cog5 mr-2"></i> Настройки аккаунта</a>
 
 
         </div>
