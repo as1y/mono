@@ -43,6 +43,14 @@ var DatatableBasic = function() {
 
         // Basic datatable
         $('.datatable-basic').DataTable({
+
+            columnDefs: [{
+                orderable: false,
+                width: 100,
+                targets: [ 3 ]
+            }],
+
+
             pagingType: "simple",
             language: {
                 paginate: {'next': $('html').attr('dir') == 'rtl' ? 'Next &larr;' : 'Вперед &rarr;', 'previous': $('html').attr('dir') == 'rtl' ? '&rarr; Prev' : '&larr; Назад'}
