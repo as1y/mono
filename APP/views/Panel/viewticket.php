@@ -11,7 +11,7 @@
 
 
                 <div class="header-elements">
-                    <a  class="btn btn-primary"><i class="icon-cog3 mr-2"></i> ЗАКРЫТЬ ТИКЕТ</a>
+                    <a  class="btn bg-teal-400 btn-labeled btn-labeled-right ml-auto"><i class="icon-cog3 mr-2"></i> ЗАКРЫТЬ ТИКЕТ</a>
 
                 </div>
 
