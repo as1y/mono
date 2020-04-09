@@ -42,7 +42,14 @@ var DatatableBasic = function() {
         });
 
         // Basic datatable
-        $('.datatable-basic').DataTable();
+        $('.datatable-basic').DataTable({
+            pagingType: "simple",
+            language: {
+                paginate: {'next': $('html').attr('dir') == 'rtl' ? 'Next &larr;' : 'Next &rarr;', 'previous': $('html').attr('dir') == 'rtl' ? '&rarr; Prev' : '&larr; Prev'}
+            }
+        });
+
+
 
         // Alternative pagination
         $('.datatable-pagination').DataTable({
