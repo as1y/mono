@@ -33,7 +33,11 @@
                 <td>Имя Фамилия</td>
                 <td>Дата регистрации</td>
                 <td>Дата регистрации</td>
-                <td><a  class="btn btn-success"><i class="icon-bubbles5"></i> Сообщение</a></td>
+                <td>
+
+                    <a href="/panel/viewticket/?id=2" type="button" class="btn btn-success"><i class="icon-comment-discussion mr-2"></i>Сообщение</a>
+
+                </td>
 
             </tr>
 
@@ -42,7 +46,12 @@
                 <td>Имя Фамилия</td>
                 <td>Дата регистрации</td>
                 <td>Дата регистрации</td>
-                <td><a class="btn btn-success"><i class="icon-bubbles5"></i> Сообщение</a></td>
+                <td>
+
+                    <a href="/panel/viewticket/?id=2" type="button" class="btn btn-success"><i class="icon-comment-discussion mr-2"></i>Сообщение</a>
+
+
+                </td>
 
             </tr>
 
