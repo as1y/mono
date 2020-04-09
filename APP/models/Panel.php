@@ -43,6 +43,7 @@ class Panel extends \APP\core\base\Model {
 
 
         $messages = ["author" => "me" , "message" => $DATA['messages'], "date" => date("H:s:m")];
+        $messages[] = $messages;
         show($messages);
 
         exit();
