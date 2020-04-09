@@ -16,11 +16,11 @@ class Panel extends \APP\core\base\Model {
         if (!empty($text['error'])) return $text['error'];
 
 
-        $tickets = R::findOne('tickets','WHERE  user_id = ? AND status = 1' , [$_SESSION['ulogin']['id']]);
+        $tickets = R::count('tickets','WHERE  user_id = ? AND status = 1' , [$_SESSION['ulogin']['id']]);
 
         show($tickets);
 
-        exit(count($tickets));
+        exit("gfdg");
 
 
         if (count($tickets) > 4) return "Можно создать не более 5 открытых тикетов";
