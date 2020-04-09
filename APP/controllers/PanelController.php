@@ -113,9 +113,6 @@ class PanelController extends AppController {
        $Panel = new Panel();
 
 
-
-
-
         $META = [
             'title' => 'Партнерская программа',
             'description' => 'Партнерская программа',
@@ -140,6 +137,24 @@ class PanelController extends AppController {
 
     public function balanceAction(){
         $Panel =  new Panel();
+
+
+        $META = [
+            'title' => 'Баланс',
+            'description' => 'Баланс',
+            'keywords' => 'Баланс',
+        ];
+
+        $BREADCRUMBS['HOME'] = ['Label' => $this->BreadcrumbsControllerLabel, 'Url' => $this->BreadcrumbsControllerUrl];
+        $BREADCRUMBS['DATA'][] = ['Label' => "Баланс"];
+
+        \APP\core\base\View::setMeta($META);
+        \APP\core\base\View::setBreadcrumbs($BREADCRUMBS);
+
+
+
+
+
     }
 
 
