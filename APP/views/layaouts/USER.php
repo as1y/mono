@@ -63,54 +63,6 @@
 
 
 
-
-            <li class="nav-item dropdown">
-                <a href="#" class="navbar-nav-link dropdown-toggle caret-0" data-toggle="dropdown">
-                    <i class="icon-bubbles5"></i>
-                    <span class="d-md-none ml-2">Мои сообщения</span>
-                    <span class="badge badge-pill bg-warning-400 ml-auto ml-xl-0">1</span>
-                </a>
-
-                <div class="dropdown-menu dropdown-menu-right dropdown-content wmin-md-350">
-                    <div class="dropdown-content-header">
-                        <span class="font-weight-semibold">Сообщения</span>
-                        <a href="#" class="text-default"><i class="icon-compose"></i></a>
-                    </div>
-
-                    <div class="dropdown-content-body dropdown-scrollable">
-                        <ul class="media-list">
-                            <li class="media">
-                                <div class="mr-3 position-relative">
-                                    <img src="<?=$_SESSION['ulogin']['avatar']?>" width="36" height="36" class="rounded-circle" alt="">
-                                </div>
-
-                                <div class="media-body">
-                                    <div class="media-title">
-                                        <a href="#">
-                                            <span class="font-weight-semibold">James Alexander</span>
-                                            <span class="text-muted float-right font-size-sm">04:58</span>
-                                        </a>
-                                    </div>
-
-                                    <span class="text-muted">who knows, maybe that would be the best thing for me...</span>
-                                </div>
-                            </li>
-
-
-
-                        </ul>
-                    </div>
-
-                    <div class="dropdown-content-footer justify-content-center p-0">
-                        <a href="#" class="bg-light text-grey w-100 py-2" data-popup="tooltip" title="" data-original-title="Показать все"><i class="icon-menu7 d-block top-0"></i></a>
-                    </div>
-                </div>
-            </li>
-
-
-
-
-
             <li class="nav-item dropdown dropdown-user">
                 <a href="/panel/profile/" class="navbar-nav-link d-flex align-items-center dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
                     <img src="<?=$_SESSION['ulogin']['avatar']?>" class="rounded-circle mr-2" height="34" alt="">
