@@ -13,10 +13,13 @@
 
     <div class="card-body">
 
-        <div class="form-group">
-            <label>Your name:</label>
-            <input type="text" class="form-control" placeholder="Eugene Kopyov">
+        <div class="row">
+            <div class="col-md-6">
+                <label>Your name:</label>
+                <input type="text" class="form-control" placeholder="Eugene Kopyov">
+            </div>
         </div>
+
 
 
     </div>
