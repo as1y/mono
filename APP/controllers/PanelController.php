@@ -151,9 +151,7 @@ class PanelController extends AppController {
         \APP\core\base\View::setBreadcrumbs($BREADCRUMBS);
 
         $tickets = $Panel->gettickets();
-
-        show($tickets);
-        exit();
+        
 
         $this->set(compact('tickets'));
 
