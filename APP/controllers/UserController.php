@@ -71,9 +71,7 @@ class UserController extends AppController
 		if( isset($_SESSION['ulogin']['id']) ) redir('/panel/');
 
 		if($_POST){
-
-		    show($_POST);
-
+		    
 			$user = new User;
 
 			if($user->login(CONFIG['USERTABLE']
