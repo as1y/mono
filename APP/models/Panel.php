@@ -17,7 +17,10 @@ class Panel extends \APP\core\base\Model {
 
 
         $tickets = R::findOne('tickets','WHERE  user_id = ? AND status = 1' , [$_SESSION['ulogin']['id']]);
-        if (count($tickets) >= 5) return "Можно создать не более 5 открытых тикетов";
+
+        show($tickets);
+
+        if (count($tickets) > 4) return "Можно создать не более 5 открытых тикетов";
 
 
         $addpole = [
