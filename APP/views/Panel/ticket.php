@@ -32,9 +32,9 @@
           <?=ticketstatus($val['status'])?>
         </td>
         <td>
-            <a href="/viewticket/?id=<?=$val['id']?>" class="badge bg-dark badge-pill"><?=$val['count']?></a>
+            <a href="/viewticket/panel/?id=<?=$val['id']?>" class="badge bg-dark badge-pill"><?=$val['count']?></a>
         </td>
-        <td><a href="/viewticket/?id=<?=$val['id']?>" type="button" class="btn btn-success"><i class="icon-comment-discussion mr-2"></i>ПЕРЕЙТИ</a></td>
+        <td><a href="/viewticket/panel/?id=<?=$val['id']?>" type="button" class="btn btn-success"><i class="icon-comment-discussion mr-2"></i>ПЕРЕЙТИ</a></td>
     </tr>
 
 
