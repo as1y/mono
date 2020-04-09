@@ -112,6 +112,10 @@ class PanelController extends AppController {
     public function refferalAction(){
        $Panel = new Panel();
 
+
+
+
+
         $META = [
             'title' => 'Партнерская программа',
             'description' => 'Партнерская программа',
@@ -124,6 +128,9 @@ class PanelController extends AppController {
         \APP\core\base\View::setMeta($META);
         \APP\core\base\View::setBreadcrumbs($BREADCRUMBS);
 
+
+
+        $this->set(compact('refferals'));
 
 
 

@@ -33,7 +33,7 @@
                 <td>Имя Фамилия</td>
                 <td>Дата регистрации</td>
                 <td>Дата регистрации</td>
-                <td>Сообщение</td>
+                <td><button type="button" class="btn btn-success">Basic button</button></td>
 
             </tr>
 
@@ -42,7 +42,7 @@
                 <td>Имя Фамилия</td>
                 <td>Дата регистрации</td>
                 <td>Дата регистрации</td>
-                <td>Сообщение</td>
+                <td><button type="button" class="btn btn-success">Basic button</button></td>
 
             </tr>
 
