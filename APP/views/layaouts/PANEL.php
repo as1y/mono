@@ -187,7 +187,7 @@
             <div class="breadcrumb justify-content-center">
 
                 <a href="/panel/balance/" type="button" class="breadcrumb-elements-item"><i class="icon-wallet mr-2"></i>
-                    <span class="badge badge-success">Success</span> Руб.
+                    <span class="badge badge-success"><b>0</b>Руб.</span>
 
                 </a>
 
