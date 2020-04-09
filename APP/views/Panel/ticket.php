@@ -11,16 +11,16 @@
             </div>
 
             <div class="card-body">
-                <p class="mb-3">Example of a table placed inside <code>card body</code>. Such tables always have additional whitespace taken from <code>.card-body</code> element padding.</p>
 
                 <div class="table-responsive">
                     <table class="table">
                         <thead>
                         <tr>
                             <th>#</th>
-                            <th>First Name</th>
-                            <th>Last Name</th>
-                            <th>Username</th>
+                            <th>ЗАГОЛОВОК</th>
+                            <th>СООБЩЕНИЙ</th>
+                            <th>СТАТУС</th>
+                            <th>ДЕЙСТВИЯ</th>
                         </tr>
                         </thead>
                         <tbody>
