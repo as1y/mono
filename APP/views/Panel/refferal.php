@@ -35,7 +35,7 @@
                 <td>Дата регистрации</td>
                 <td>
 
-                    <a href="/panel/viewticket/?id=2" type="button" class="btn btn-success"><i class="icon-comment-discussion mr-2"></i>Сообщение</a>
+                    <a href="/panel/messages/?id=2" type="button" class="btn btn-success"><i class="icon-comment-discussion mr-2"></i>Сообщение</a>
 
                 </td>
 
@@ -48,7 +48,7 @@
                 <td>Дата регистрации</td>
                 <td>
 
-                    <a href="/panel/viewticket/?id=2" type="button" class="btn btn-success"><i class="icon-comment-discussion mr-2"></i>Сообщение</a>
+                    <a href="/panel/messages/?id=2" type="button" class="btn btn-success"><i class="icon-comment-discussion mr-2"></i>Сообщение</a>
 
 
                 </td>
