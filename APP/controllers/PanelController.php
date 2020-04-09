@@ -189,6 +189,8 @@ class PanelController extends AppController {
                 redir("/panel/ticket/");
             }else{
                 $_SESSION['errors'] = $result;
+                redir("/panel/ticket/");
+                
             }
 
 
