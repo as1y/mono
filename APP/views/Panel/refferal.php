@@ -38,12 +38,20 @@
 
         <tr class="text-center">
             <td>
-                <div class="mr-3">
-                    <a href="#" class="btn bg-primary-400 rounded-round btn-icon btn-sm">
-                        <span class="letter-icon">S</span>
-                    </a>
+                <div class="d-flex align-items-center">
+                    <div class="mr-3">
+                        <a href="#">
+                            <img src="../../../../global_assets/images/brands/spotify.png" class="rounded-circle" width="32" height="32" alt="">
+                        </a>
+                    </div>
+                    <div>
+                        <a href="#" class="text-default font-weight-semibold">Spotify ads</a>
+                        <div class="text-muted font-size-sm">
+                            <span class="badge badge-mark border-grey-400 mr-1"></span>
+                            10:00 - 11:00
+                        </div>
+                    </div>
                 </div>
-                Вася
             </td>
             <td>Traffic Court Referee</td>
             <td>22 Jun 1972</td>
