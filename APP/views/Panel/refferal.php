@@ -36,10 +36,11 @@
 
 
             <tr>
+                <td>Marth</td>
                 <td>Имя Фамилия</td>
                 <td>Дата регистрации</td>
                 <td>Заработок</td>
-                <td>Написать</td>
+                <td>Заработок</td>
 
 
                 <td class="text-center">
