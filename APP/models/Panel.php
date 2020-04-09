@@ -40,15 +40,16 @@ class Panel extends \APP\core\base\Model {
         if (!empty($messages['error'])) return $messages['error'];
 
 
-        
-        $mes[] = ["author" => "me" , "message" => $DATA['messages'], "date" => date("H:s:m")];
-
-        $mes = json_decode($mes, true);
-        unset($DATA['messages']);
-
-
         $ticketscount = R::count('tickets','WHERE  user_id = ? AND status = 1' , [$_SESSION['ulogin']['id']]);
         if ($ticketscount >= 5) return "Можно создать не более 5 открытых тикетов";
+
+
+
+
+        $mes[] = ["author" => "me" , "message" => $DATA['messages'], "date" => date("H:s:m")];
+        $mes = json_encode($mes, true);
+        
+        unset($DATA['messages']);
 
 
         $addpole = [
