@@ -38,14 +38,14 @@
                         <label>E-mail уведомления</label>
                         <div class="form-check">
                             <label class="form-check-label">
-                                <input type="checkbox" name="messages" class="form-input-styled" checked data-fouc>
+                                <input type="checkbox" name="messages" class="form-input-styled" <?=($_SESSION['ulogin']['nmessages'] == 1) ? "checked" : ""?> data-fouc>
                                 Личная переписка
                             </label>
                         </div>
 
                         <div class="form-check">
                             <label class="form-check-label">
-                                <input type="checkbox"  name="news" class="form-input-styled" checked data-fouc>
+                                <input type="checkbox"  name="news" class="form-input-styled"  <?=($_SESSION['ulogin']['nnews'] == 1) ? "checked" : ""?> data-fouc>
                                 Системные уведомления
                             </label>
                         </div>
