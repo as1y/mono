@@ -113,7 +113,7 @@
 
         <div class="row">
             <div class="col-md-4"></div>
-            <div class="col-md-4">
+            <div class="col-md-3">
             <?php if(isset($_SESSION['errors'])): ?>
                 <div class="alert alert-danger alert-dismissible">
                     <button type="button" class="close" data-dismiss="alert"><span>×</span></button>
