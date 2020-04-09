@@ -26,7 +26,7 @@ class Panel extends \APP\core\base\Model {
 
         $this->addnewBD("tickets", $DATA);
 
-
+        return true;
 
     }
 

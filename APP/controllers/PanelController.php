@@ -125,12 +125,16 @@ class PanelController extends AppController {
         if ($_POST){
 
 
-            show($_POST);
+           $result = $Panel->addticket($_POST);
 
+            if ($result == 1){
+                $_SESSION['success'] = "Тикет добавлен";
+                redir("/panel/ticket/");
+            }else{
+                $_SESSION['errors'] = $result;
+            }
 
-
-            exit("ok");
-
+            
         }
 
 
