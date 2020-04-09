@@ -20,16 +20,9 @@ class Panel extends \APP\core\base\Model {
 
         $messages[] = ["author" => "me" , "message" => $DATA['enter-message'], "date" => date("H:s:m")];
         $messages = json_encode($messages, true);
-
         $tickets->messages = $messages;
-
         R::store($tickets);
 
-
-        show($messages);
-
-        exit();
-//        $DATA['enter-message'] = json_encode()
 
     }
 
