@@ -12,6 +12,8 @@
 
             <div class="card-body">
                 <ul class="media-list media-chat media-chat-scrollable mb-3">
+
+                    
                     <li class="media content-divider justify-content-center text-muted mx-0">Today</li>
 
                     <li class="media media-chat-item-reverse">
@@ -78,6 +80,11 @@
                         </div>
                     </li>
                 </ul>
+
+
+
+
+
 
                 <textarea name="enter-message" class="form-control mb-3" rows="3" cols="1" placeholder="Enter your message..."></textarea>
 
