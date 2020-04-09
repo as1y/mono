@@ -132,7 +132,7 @@ class PanelController extends AppController {
         }
 
 
-        $tickets = $Panel->gettickets($_GET);
+        $tickets = $Panel->gettickets($_GET['id']);
 
         $messages = [
             0 => ["author" => "me" , "message" => "pervoe soobwenie"]
