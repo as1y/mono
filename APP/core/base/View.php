@@ -89,7 +89,7 @@ class View {
 
 
 
-        <a href="index.html" class="breadcrumb-item"><i class="icon-home2 mr-2"></i> <?=self::$Breadcrumbs['HOME']['Label'];?></a>
+        <a href="<?=self::$Breadcrumbs['HOME']['Url'];?>" class="breadcrumb-item"><i class="icon-home2 mr-2"></i> <?=self::$Breadcrumbs['HOME']['Label'];?></a>
 
 
         <?php foreach(self::$Breadcrumbs['DATA'] as $val):?>
