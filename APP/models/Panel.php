@@ -21,9 +21,9 @@ class Panel extends \APP\core\base\Model {
         if (!empty($text['error'])) return $text['error'];
 
 
-        $tickets = R::count('tickets','WHERE  user_id = ? AND status = 1' , [$_SESSION['ulogin']['id']]);
+        $ticketscount = R::count('tickets','WHERE  user_id = ? AND status = 1' , [$_SESSION['ulogin']['id']]);
 
-        if ($tickets >= 5) return "Можно создать не более 5 открытых тикетов";
+        if ($ticketscount >= 5) return "Можно создать не более 5 открытых тикетов";
 
 
         $addpole = [
