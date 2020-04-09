@@ -42,7 +42,7 @@ class Panel extends \APP\core\base\Model {
         // Переделываем в JSON формат сообщений
 
 
-        $jsonmessage[] = ["author" => "me" , "message" => $DATA['messages'], "date" => date("H:s:m")];
+        $messages = ["author" => "me" , "message" => $DATA['messages'], "date" => date("H:s:m")];
         show($messages);
 
         exit();
