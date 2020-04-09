@@ -37,7 +37,14 @@
         <tbody>
 
         <tr class="text-center">
-            <td>Вася</td>
+            <td>
+                <div class="mr-3">
+                    <a href="#" class="btn bg-primary-400 rounded-round btn-icon btn-sm">
+                        <span class="letter-icon">S</span>
+                    </a>
+                </div>
+                Вася
+            </td>
             <td>Traffic Court Referee</td>
             <td>22 Jun 1972</td>
         </tr>
