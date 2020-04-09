@@ -12,7 +12,13 @@
     </div>
 
     <div class="card-body">
-        The <code>DataTables</code> is a highly flexible tool, based upon the foundations of progressive enhancement, and will add advanced interaction controls to any HTML table. DataTables has most features enabled by default, so all you need to do to use it with your own tables is to call the construction function. Searching, ordering, paging etc goodness will be immediately added to the table, as shown in this example. <strong>Datatables support all available table styling.</strong>
+
+        <div class="form-group">
+            <label>Your name:</label>
+            <input type="text" class="form-control" placeholder="Eugene Kopyov">
+        </div>
+
+
     </div>
 
     <table class="table datatable-basic">
