@@ -24,6 +24,7 @@ class Panel extends \APP\core\base\Model {
         $addpole = [
             'userId' => $_SESSION['ulogin']['id'],
             'parrent' => 1 ,
+            'open' => date("y-m-d h:m:s") ,
             'status' => 1 ,
             'count' => 1,
             'look' => NULL
