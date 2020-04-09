@@ -27,7 +27,7 @@
 <?php foreach ($tickets as $key=>$val):?>
 
     <tr class="text-center">
-        <td><?=$val['zagolovok']?></td>
+        <td><?=obrezanie($val['zagolovok'], 20)?></td>
         <td>
           <?=ticketstatus($val['status'])?>
         </td>

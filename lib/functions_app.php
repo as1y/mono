@@ -51,6 +51,15 @@ function timecall ($status){
 
 
 
+function obrezanie ($text, $symbols){
+
+   $result = mb_strimwidth($text, 0, $symbols, "...");
+
+    return $result;
+
+}
+
+
 function ticketstatus ($status){
     if ($status=="1") return 'ОТКРЫТ';
     if ($status=="2") return 'ЗАКРЫТ';
