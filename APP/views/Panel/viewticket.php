@@ -11,7 +11,8 @@
 
 
                 <div class="header-elements">
-gdfg
+                    <a  class="btn btn-primary"><i class="icon-cog3 mr-2"></i> ЗАКРЫТЬ ТИКЕТ</a>
+
                 </div>
 
 
