@@ -10,7 +10,7 @@
         <div class="row">
             <div class="col-md-6">
                 <label>Ваша ссылка:</label>
-                <input type="text" class="form-control" placeholder="Disabled input field" value="https://<?=CONFIG['DOMAIN']?>/user/ref/?partner=<?=$_SESSION['ulogin']['id']?>">
+                <input type="text" disabled class="form-control"  value="https://<?=CONFIG['DOMAIN']?>/user/ref/?partner=<?=$_SESSION['ulogin']['id']?>">
             </div>
         </div>
 
