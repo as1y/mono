@@ -141,7 +141,7 @@ class PanelController extends AppController {
         $balancelog = [];
         $balancelog = $Panel->balancelog();
 
-        if (!empty($balancelog)) $balancelog = [];
+        if ($balancelog == NULL) $balancelog = [];
 
 
         var_dump($balancelog);
