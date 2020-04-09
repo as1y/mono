@@ -55,7 +55,7 @@
 
 
         <span class="navbar-text ml-xl-3">
-   Операторов онлайн:  <span class="badge bg-success"><b></b></span>
+   Операторов онлайн:  <span class="badge bg-success"><b>1</b></span>
         </span>
 
         <ul class="navbar-nav ml-xl-auto">
