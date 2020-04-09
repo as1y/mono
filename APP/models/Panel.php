@@ -15,11 +15,12 @@ class Panel extends \APP\core\base\Model {
         $text = pole_valid ($DATA['text'], 500, 's');
         if (!empty($text['error'])) return $text['error'];
 
-        $addpole = ['parrent' => 1 ];
+        $addpole = [
+            'parrent' => 1 ,
+            'userid' => $_SESSION['ulogin']['id']
+        ];
 
-        
         $DATA = array_merge($addpole, $DATA);
-
 
         $this->addnewBD("tickets", $DATA);
 
