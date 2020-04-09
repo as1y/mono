@@ -186,7 +186,7 @@
         <div class="header-elements d-none">
             <div class="breadcrumb justify-content-center">
 
-                <a type="button" class="btn btn-success btn-sm"><b><i class="icon-pin-alt"></i></b> Default size</a>
+                <a href="/panel/balance/" type="button" class="btn btn-success"><i class="icon-comment-discussion mr-2"></i>Сообщение</a>
 
 
                 <a href="/panel/faq/" class="breadcrumb-elements-item">
