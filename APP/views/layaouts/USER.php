@@ -66,13 +66,9 @@
                 <div class="mb-3 mb-xl-0 ml-xl-auto">
 
 
-                    <?php
-
-                    show($this->route);
-
-
-                    ?>
+                    <?php if($this->route['action'] == "index"): ?>
                     <a type="button" class="btn btn-success"><i class="icon-user-plus mr-2"></i> Регистрация</a>
+                    <?php endif;?>
 
 
                 </div>
