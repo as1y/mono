@@ -85,6 +85,7 @@ class ProjectController extends AppController {
 	public function setAction() {
 
 		$project = new Project;
+        $idc = $_GET['id'];
 		$company = $project->getcom($_GET['id']);
 
         $META = [
