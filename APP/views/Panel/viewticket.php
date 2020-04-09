@@ -1,7 +1,7 @@
 <div class="row">
     <div class="col-md-12">
 
-        <form  action="/panel/viewticket/?id=<?=$tickets['id']?>&action=close" method="post" data-fouc>
+        <form  action="/panel/viewticket/?id=<?=$tickets['id']?>" method="post" data-fouc>
 
 
         <!-- Messages -->
@@ -11,7 +11,7 @@
 
 
                 <div class="header-elements">
-                    <a  class="btn bg-danger btn-labeled btn-labeled ml-auto"><i class="icon-magic-wand mr-2"></i> ЗАКРЫТЬ ТИКЕТ</a>
+                    <a href="/panel/viewticket/?id=<?=$tickets['id']?>&action=close"  class="btn bg-danger btn-labeled btn-labeled ml-auto"><i class="icon-magic-wand mr-2"></i> ЗАКРЫТЬ ТИКЕТ</a>
 
                 </div>
 
