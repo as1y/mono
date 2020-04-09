@@ -38,7 +38,13 @@
 
             </a>
         </td>
-        <td><a href="/panel/viewticket/?id=<?=$val['id']?>" type="button" class="btn btn-success"><i class="icon-comment-discussion mr-2"></i>ПЕРЕЙТИ</a></td>
+        <td>
+
+            <?php if($val['status'] == 1): ?>
+            <a href="/panel/viewticket/?id=<?=$val['id']?>" type="button" class="btn btn-success"><i class="icon-comment-discussion mr-2"></i>ПЕРЕЙТИ</a>
+            <?php endif;?>
+
+        </td>
     </tr>
 
 
