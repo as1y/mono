@@ -7,8 +7,8 @@
         <!-- Messages -->
         <div class="card">
             <div class="card-header header-elements-inline">
+                <a href="/panel/ticket" class="btn btn-light"><i class="icon-square-left mr-2"></i> НАЗАД</a>
                 <h6 class="card-title">Тикет <?=$tickets['zagolovok']?></h6>
-
 
                 <div class="header-elements">
                     <a href="/panel/viewticket/?id=<?=$tickets['id']?>&action=close"  class="btn bg-danger btn-labeled btn-labeled ml-auto"><i class="icon-magic-wand mr-2"></i> ЗАКРЫТЬ ТИКЕТ</a>
