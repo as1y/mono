@@ -120,13 +120,18 @@ class PanelController extends AppController {
 
 
 
+
+
+
     public function  viewticketAction(){
         $Panel =  new Panel();
 
         if ($_POST){
 
-            show($_POST);
 
+            $Panel->addmessageticket($_POST, $_GET['id']);
+
+            show($_POST);
             exit("ok");
 
 
@@ -137,10 +142,9 @@ class PanelController extends AppController {
 
         $tickets = $Panel->gettickets($_GET['id']);
 
-        $messages = [
-            0 => ["author" => "me" , "message" => "Ответь мне на мой ответ пидор", "date" => date("H:s:m")],
-            1 => ["author" => "admin" , "message" => "Сообщение от одмина", "date" => date("H:s:m")]
-        ];
+        $messages = json_decode($tickets['messages'], true);
+
+
 
 
 

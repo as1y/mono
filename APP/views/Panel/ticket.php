@@ -75,7 +75,7 @@
 
                     <div class="form-group">
                         <label>Текст: <span class="text-danger">*</span></label>
-                            <textarea rows="4" cols="4"  name="text" class="form-control required" placeholder="Сообщение"></textarea>
+                            <textarea rows="4" cols="4"  name="messages" class="form-control required" placeholder="Сообщение"></textarea>
                     </div>
 
                     <div class="form-group row mb-0">

@@ -6,12 +6,21 @@ class Panel extends \APP\core\base\Model {
 
 
     public function gettickets($idc){
-
-
         $tickets = R::findOne("tickets", "WHERE user_id = ? AND id = ?" , [ $_SESSION['ulogin']['id'], $idc ]);
         return $tickets;
     }
 
+
+
+    public function addmessageticket($DATA, $idc){
+
+        $tickets = R::findOne("tickets", "WHERE user_id = ? AND id = ?" , [ $_SESSION['ulogin']['id'], $idc ]);
+
+        $messages = json_decode($tickets['messages'],TRUE);
+
+//        $DATA['enter-message'] = json_encode()
+
+    }
 
 
     public function getticket(){
@@ -27,8 +36,22 @@ class Panel extends \APP\core\base\Model {
         $zagolovok = pole_valid ($DATA['zagolovok'], 50, 's');
         if (!empty($zagolovok['error'])) return $zagolovok['error'];
 
-        $text = pole_valid ($DATA['text'], 500, 's');
-        if (!empty($text['error'])) return $text['error'];
+        $messages = pole_valid ($DATA['messages'], 500, 's');
+        if (!empty($messages['error'])) return $messages['error'];
+
+        // Переделываем в JSON формат сообщений
+
+
+        show($DATA['messages']);
+
+        exit();
+
+        // Переделываем в JSON формат сообщений
+        //        $messages = [
+//            0 => ["author" => "me" , "message" => "Ответь мне на мой ответ пидор", "date" => date("H:s:m")],
+//            1 => ["author" => "admin" , "message" => "Сообщение от одмина", "date" => date("H:s:m")]
+//        ];
+
 
 
         $ticketscount = R::count('tickets','WHERE  user_id = ? AND status = 1' , [$_SESSION['ulogin']['id']]);
