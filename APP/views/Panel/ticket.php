@@ -16,8 +16,8 @@
                     <table class="table">
                         <thead>
                         <tr>
-                            <th>ЗАГОЛОВОК</th>
-                            <th>СООБЩЕНИЙ</th>
+                            <th>Заголовок</th>
+                            <th>Сообщения</th>
                             <th>СТАТУС</th>
                             <th>ДЕЙСТВИЕ</th>
                         </tr>
@@ -28,7 +28,9 @@
 
     <tr>
         <td><?=$val['zagolovok']?></td>
-        <td><?=$val['count']?></td>
+        <td>
+            <a href="/viewticket/?id=<?=$val['id']?>" class="badge bg-dark badge-pill"><?=$val['count']?></a>
+        </td>
         <td><?=$val['status']?></td>
         <td><a href="/viewticket/?id=<?=$val['id']?>" type="button" class="btn btn-success"><i class="icon-comment-discussion mr-2"></i>ПЕРЕЙТИ</a></td>
     </tr>
