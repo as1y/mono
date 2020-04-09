@@ -1,6 +1,8 @@
 <div class="row">
     <div class="col-md-12">
 
+        <form  action="/panel/viewticket/?id=<?=$tickets['id']?>" method="post" data-fouc>
+
 
         <!-- Messages -->
         <div class="card">
@@ -82,12 +84,13 @@
 
 
                 <textarea name="enter-message" class="form-control mb-3" rows="3" cols="1" placeholder="Ваше ответ..."></textarea>
-
                 <div class="align-items-left">
-
-
-                    <button type="button" class="btn bg-teal-400 btn-labeled btn-labeled-right ml-auto"><b><i class="icon-paperplane"></i></b> Отправить сообщение</button>
+                    <button type="submit" class="btn bg-teal-400 btn-labeled btn-labeled-right ml-auto"><b><i class="icon-paperplane"></i></b> Отправить сообщение</button>
                 </div>
+
+            </form>
+
+
             </div>
         </div>
         <!-- /messages -->
