@@ -129,8 +129,10 @@ class PanelController extends AppController {
         \APP\core\base\View::setBreadcrumbs($BREADCRUMBS);
 
 
+       $allref =   $Panel->getrefferals();
 
-        $this->set(compact('refferals'));
+
+        $this->set(compact('allref'));
 
 
 

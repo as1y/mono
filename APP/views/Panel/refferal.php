@@ -11,6 +11,7 @@
             <div class="col-md-6">
                 <label>Ваша ссылка:</label>
                 <input type="text" disabled class="form-control"  value="https://<?=CONFIG['DOMAIN']?>/user/ref/?partner=<?=$_SESSION['ulogin']['id']?>">
+                <b>Кол-во реффералов: <b><?=count($allref);?></b> </b>
             </div>
         </div>
 
@@ -29,31 +30,23 @@
             <tbody>
 
 
-            <tr>
-                <td>Имя Фамилия</td>
-                <td>Дата регистрации</td>
-                <td>Дата регистрации</td>
-                <td>
+            <?php foreach ($allref as $key=>$val):?>
 
-                    <a href="/panel/messages/?id=2" type="button" class="btn btn-success"><i class="icon-comment-discussion mr-2"></i>Сообщение</a>
-
-                </td>
-
-            </tr>
-
-
-            <tr>
-                <td>Имя Фамилия</td>
-                <td>Дата регистрации</td>
-                <td>Дата регистрации</td>
-                <td>
-
-                    <a href="/panel/messages/?id=2" type="button" class="btn btn-success"><i class="icon-comment-discussion mr-2"></i>Сообщение</a>
+                <tr>
+                    <td><?=$val['username']?></td>
+                    <td><?=$val['datareg']?></td>
+                    <td>0</td>
+                    <td>
+                        <a href="/panel/messages/?id=<?=$val['id']?>" type="button" class="btn btn-success"><i class="icon-comment-discussion mr-2"></i>Сообщение</a>
+                    </td>
+                </tr>
 
 
-                </td>
+            <?php endforeach;?>
 
-            </tr>
+
+
+
 
 
 
