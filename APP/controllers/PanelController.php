@@ -141,7 +141,6 @@ class PanelController extends AppController {
 
 
         $tickets = $Panel->gettickets($_GET['id']);
-
         $messages = json_decode($tickets['messages'], true);
 
 

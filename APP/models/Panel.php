@@ -16,8 +16,16 @@ class Panel extends \APP\core\base\Model {
 
         $tickets = R::findOne("tickets", "WHERE user_id = ? AND id = ?" , [ $_SESSION['ulogin']['id'], $idc ]);
 
-        $messages = json_decode($tickets['messages'],TRUE);
+        $messages = json_decode($tickets->messages,TRUE);
 
+        $messages[] = ["author" => "me" , "message" => $DATA['enter-message'], "date" => date("H:s:m")];
+        $messages = json_encode($messages, true);
+
+
+
+        show($messages);
+
+        exit();
 //        $DATA['enter-message'] = json_encode()
 
     }
@@ -48,7 +56,7 @@ class Panel extends \APP\core\base\Model {
 
         $mes[] = ["author" => "me" , "message" => $DATA['messages'], "date" => date("H:s:m")];
         $mes = json_encode($mes, true);
-        
+
         unset($DATA['messages']);
 
 
