@@ -16,7 +16,6 @@
                     <table class="table">
                         <thead>
                         <tr>
-                            <th>#</th>
                             <th>ЗАГОЛОВОК</th>
                             <th>СООБЩЕНИЙ</th>
                             <th>СТАТУС</th>
@@ -24,14 +23,21 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <tr a href="/panel">
-                            <td>1</td>
-                            <td>Eugene</td>
-                            <td>Kopyov</td>
-                            <td>@Kopyov</td>
-                            <td><a href="#" type="button" class="btn btn-success"><i class="icon-comment-discussion mr-2"></i>ПЕРЕЙТИ</a></td>
 
-                        </tr>
+<?php foreach ($tickets as $key=>$val):?>
+
+    <tr>
+        <td><?=$val['zagolovok']?></td>
+        <td><?=$val['count']?></td>
+        <td>@<?=$val['status']?></td>
+        <td><a href="/viewticket/?id=<?=$val['id']?>" type="button" class="btn btn-success"><i class="icon-comment-discussion mr-2"></i>ПЕРЕЙТИ</a></td>
+    </tr>
+
+
+
+<?php endforeach;?>
+
+
 
 
 
