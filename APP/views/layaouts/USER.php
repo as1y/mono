@@ -58,17 +58,13 @@
    Операторов онлайн:  <span class="badge bg-success"><b>1</b></span>
         </span>
 
-        <div class="mb-3 mb-xl-0 ml-xl-auto">
-            <button type="button" class="btn btn-light"><i class="icon-cog3 mr-2"></i> Settings</button>
-        </div>
-
 
         <ul class="navbar-nav ml-xl-auto">
 
 
             <li>
                 <div class="mb-3 mb-xl-0 ml-xl-auto">
-                    <button type="button" class="btn btn-light"><i class="icon-cog3 mr-2"></i> Settings</button>
+                    <button type="button" class="btn btn-success"><i class="icon-cog3 mr-2"></i> Регистрация</button>
                 </div>
             </li>
 
