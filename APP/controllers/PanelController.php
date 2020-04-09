@@ -269,6 +269,22 @@ class PanelController extends AppController {
 
     public function faqAction(){
         $Panel =  new Panel();
+
+
+        $META = [
+            'title' => 'FAQ',
+            'description' => 'FAQ',
+            'keywords' => 'FAQ',
+        ];
+
+        $BREADCRUMBS['HOME'] = ['Label' => $this->BreadcrumbsControllerLabel, 'Url' => $this->BreadcrumbsControllerUrl];
+        $BREADCRUMBS['DATA'][] = ['Label' => "FAQ"];
+
+        \APP\core\base\View::setMeta($META);
+        \APP\core\base\View::setBreadcrumbs($BREADCRUMBS);
+
+
+
     }
 
 
