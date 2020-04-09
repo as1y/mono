@@ -19,17 +19,7 @@
                     <i class="icon-lock2 text-muted"></i>
                 </div>
             </div>
-
-            <div class="form-group d-flex align-items-center">
-                <div class="form-check mb-0">
-                    <label class="form-check-label">
-                        <input type="checkbox" name="remember" class="form-input-styled" checked data-fouc>
-                        Запомнить
-                    </label>
-                </div>
-
-                <a href="login_password_recover.html" class="ml-auto">Забыли пароль?</a>
-            </div>
+            
 
             <div class="form-group">
                 <button type="submit" class="btn btn-primary btn-block">Войти <i class="icon-circle-right2 ml-2"></i></button>
