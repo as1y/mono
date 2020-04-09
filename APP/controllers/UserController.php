@@ -66,14 +66,11 @@ class UserController extends AppController
 	public function indexAction()
 	{
 
-
-
-
+	    
 	    //Если юзер залогинен, то редиректим его на панель
 		if( isset($_SESSION['ulogin']['id']) ) redir('/panel/');
 
-
-		if(!empty($_POST)){
+		if($_POST){
 
 		    exit("dfgfdg");
 
