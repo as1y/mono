@@ -56,9 +56,10 @@
     <script src="/global_assets/js/demo_pages/form_actions.js"></script>
 
 
+<!--    Таблица-->
     <script src="/assets/js/datatables_basic.js"></script>
-
-
+    <script src="/global_assets/js/plugins/tables/datatables/datatables.min.js"></script>
+    <!--    Таблица-->
 
 
     <script src="/assets/js/uploader_bootstrap.js"></script>
