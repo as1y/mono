@@ -13,7 +13,7 @@
                     <div class="card card-body">
                         <div class="media">
                             <div class="mr-3 align-self-center">
-                                <i class="icon-pointer icon-3x text-success-400"></i>
+                                <i class="icon-wallet icon-3x text-success-400"></i>
                             </div>
 
                             <div class="media-body text-right">
