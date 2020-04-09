@@ -1,11 +1,5 @@
 <div class="row">
-
-
-    <?php
-
-    show($messages);
-
-    ?>
+    
     <!-- Messages -->
     <div class="card">
         <div class="card-header header-elements-inline">
@@ -114,6 +108,6 @@
     </div>
     <!-- /messages -->
 
-    
+
 
 </div>
