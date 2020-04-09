@@ -5,7 +5,7 @@ use APP\models\User;
 class UserController extends AppController
 {
 	public $layaout = 'USER'; //Перераспределяем массив layaout
-    public $BreadcrumbsControllerLabel = "Cashcall.ru";
+    public $BreadcrumbsControllerLabel = "CASHCALL.RU";
     public $BreadcrumbsControllerUrl = "/";
 
 	public function registerAction()
