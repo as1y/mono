@@ -91,7 +91,7 @@
                     <div class="form-group row mb-0">
                         <div class="col-lg-10 ml-lg-auto text-left">
                             <button type="submit" class="btn bg-success ml-3">ОТКРЫТЬ ТИКЕТ <i class="icon-paperplane ml-2"></i></button>
-                            <button type="submit" class="btn btn-light">ОЧИСТИТЬ</button>
+                            <button type="reset" class="btn btn-light">ОЧИСТИТЬ</button>
                         </div>
                     </div>
                 </form>
