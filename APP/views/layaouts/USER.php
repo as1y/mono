@@ -112,7 +112,7 @@
     <div class="content-wrapper">
 
 
-        <div class="row align-content-center">
+        <div class="row text-center">
 
             <?php if(isset($_SESSION['errors'])): ?>
                 <div style="width: 50%" class="alert alert-danger alert-dismissible text-center">
@@ -128,7 +128,7 @@
                 </div>
             <?php endif;?>
 
-            
+
         </div>
 
 
