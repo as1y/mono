@@ -26,33 +26,20 @@
 
 
         <tbody>
+
         <tr>
             <td>Вася</td>
             <td>Traffic Court Referee</td>
             <td>22 Jun 1972</td>
         </tr>
-        <tr>
-            <td>Jackelyn</td>
-            <td>Weible</td>
-            <td><a href="#">Airline Transport Pilot</a></td>
-            <td>3 Oct 1981</td>
-            <td><span class="badge badge-secondary">Inactive</span></td>
-            <td class="text-center">
-                <div class="list-icons">
-                    <div class="dropdown">
-                        <a href="#" class="list-icons-item" data-toggle="dropdown">
-                            <i class="icon-menu9"></i>
-                        </a>
 
-                        <div class="dropdown-menu dropdown-menu-right">
-                            <a href="#" class="dropdown-item"><i class="icon-file-pdf"></i> Export to .pdf</a>
-                            <a href="#" class="dropdown-item"><i class="icon-file-excel"></i> Export to .csv</a>
-                            <a href="#" class="dropdown-item"><i class="icon-file-word"></i> Export to .doc</a>
-                        </div>
-                    </div>
-                </div>
-            </td>
+        <tr>
+            <td>Вася</td>
+            <td>Traffic Court Referee</td>
+            <td>22 Jun 1972</td>
         </tr>
+
+        
 
 
 
