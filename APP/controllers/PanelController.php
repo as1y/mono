@@ -144,8 +144,6 @@ class PanelController extends AppController {
         if ($balancelog == NULL) $balancelog = [];
 
 
-        var_dump($balancelog);
-        exit();
 
         $META = [
             'title' => 'Баланс',
