@@ -35,12 +35,14 @@
             <a href="/panel/viewticket/?id=<?=$val['id']?>" class="badge bg-dark badge-pill">
 
                 <?=count(json_decode($val['messages'], true))?>
-
-                <?php if ($val['new'] ==1) :?>
-                    <span class="badge badge-danger">new</span>
-                <?endif;?>
-
             </a>
+
+            <?php if ($val['new'] ==1) :?>
+                <span class="badge badge-danger">new</span>
+            <?endif;?>
+
+
+            
         </td>
         <td>
 
