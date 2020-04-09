@@ -11,7 +11,7 @@
 
 
                 <div class="header-elements">
-                    <a  class="btn bg-warning btn-labeled btn-labeled ml-auto"><i class="icon-magic-wand mr-2"></i> ЗАКРЫТЬ ТИКЕТ</a>
+                    <a  class="btn bg-danger btn-labeled btn-labeled ml-auto"><i class="icon-magic-wand mr-2"></i> ЗАКРЫТЬ ТИКЕТ</a>
 
                 </div>
 
