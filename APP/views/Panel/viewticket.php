@@ -45,13 +45,13 @@
                         if ($val['author'] == "admin"){
                             ?>
 
-                            <li class="media media-chat-item-reverse">
+                            <li class="media">
+                                <div class="mr-3">
+                                    <img src="/global_assets/images/placeholders/placeholder.jpg" class="rounded-circle" width="40" height="40" alt="">
+                                </div>
                                 <div class="media-body">
                                     <div class="media-chat-item"><?=$val['message']?></div>
-                                    <div class="font-size-sm text-muted mt-2"><?=$val['date']?></div>
-                                </div>
-                                <div class="ml-3">
-                                    <img src="<?=$_SESSION['ulogin']['avatar']?>" class="rounded-circle" width="40" height="40" alt="">
+                                    <div class="font-size-sm text-muted mt-2"><?=$val['date']?></a></div>
                                 </div>
                             </li>
 
