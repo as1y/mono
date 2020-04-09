@@ -33,7 +33,7 @@
             </div>
 
             <div class="card-body">
-                <form action="#">
+                <form  action="/panel/ticket/" method="post" data-fouc>
 
                     <div class="form-group">
                         <label>Заголовок тикета: <span class="text-danger">*</span></label>

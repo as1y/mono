@@ -122,6 +122,18 @@ class PanelController extends AppController {
     public function ticketAction(){
         $Panel =  new Panel();
 
+        if ($_POST){
+
+
+            show($_POST);
+
+
+
+            exit("ok");
+
+        }
+
+
         $META = [
             'title' => 'Системные тикеты',
             'description' => 'Системные тикеты',
