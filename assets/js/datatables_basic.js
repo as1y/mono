@@ -40,13 +40,30 @@ var DatatableBasic = function() {
         // Basic datatable
         $('.datatable-basic').DataTable({
 
-
-
-
             pagingType: "simple",
             language: {
-                paginate: {'next': $('html').attr('dir') == 'rtl' ? 'Next &larr;' : 'Вперед &rarr;', 'previous': $('html').attr('dir') == 'rtl' ? '&rarr; Prev' : '&larr; Назад'}
-            }
+
+                info: "СТРАНИЦА _PAGE_ ИЗ _PAGES_",
+                lengthMenu:     "ПОКАЗАТЬ _MENU_ ЗАПИСЕЙ",
+                zeroRecords:    "ЗАПИСЕЙ НЕ НАЙДЕНО",
+                infoEmpty:      "Показано 0 до 0 из 0 записей",
+                infoFiltered:   "(фильтрация из _MAX_ записей)",
+                paginate: {
+                    "first":      "Первая",
+                    "last":       "Последняя",
+                    "next":       "Следующая",
+                    "previous":   "Предыдущая"
+                },
+                search:    "ПОИСК:"
+            },
+
+            order: [[ 0, "desc" ]],
+
+
+            
+
+
+
         });
 
 
