@@ -134,7 +134,7 @@ class PanelController extends AppController {
                 $_SESSION['errors'] = $result;
             }
 
-            
+
         }
 
 

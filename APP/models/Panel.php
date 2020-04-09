@@ -15,9 +15,15 @@ class Panel extends \APP\core\base\Model {
         $text = pole_valid ($DATA['text'], 500, 's');
         if (!empty($text['error'])) return $text['error'];
 
+
+        $tickets = R::findOne('tickets','WHERE  user_id = ? AND status = 1' , [$_SESSION['ulogin']['id']]);
+        if (count($tickets) >= 5) return "Можно создать не более 5 открытых тикетов";
+
+
         $addpole = [
             'userId' => $_SESSION['ulogin']['id'],
             'parrent' => 1 ,
+            'status' => 1 ,
             'count' => 1,
             'look' => NULL
         ];
