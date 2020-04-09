@@ -61,8 +61,8 @@ function obrezanie ($text, $symbols){
 
 
 function ticketstatus ($status){
-    if ($status=="1") return 'ОТКРЫТ';
-    if ($status=="2") return 'ЗАКРЫТ';
+    if ($status=="1") return '<span class="badge badge-success">ОТКРЫТ</span>';
+    if ($status=="2") return '<span class="badge badge-secondary">ЗАКРЫТ</span>';
 
 }
 
