@@ -42,6 +42,21 @@
                 <td>Написать</td>
 
 
+                <td class="text-center">
+                    <div class="list-icons">
+                        <div class="dropdown">
+                            <a href="#" class="list-icons-item" data-toggle="dropdown">
+                                <i class="icon-menu9"></i>
+                            </a>
+
+                            <div class="dropdown-menu dropdown-menu-right">
+                                <a href="#" class="dropdown-item"><i class="icon-file-pdf"></i> Export to .pdf</a>
+                                <a href="#" class="dropdown-item"><i class="icon-file-excel"></i> Export to .csv</a>
+                                <a href="#" class="dropdown-item"><i class="icon-file-word"></i> Export to .doc</a>
+                            </div>
+                        </div>
+                    </div>
+                </td>
             </tr>
             <tr>
                 <td>Jackelyn</td>
