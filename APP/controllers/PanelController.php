@@ -119,6 +119,49 @@ class PanelController extends AppController {
     }
 
 
+
+    public function ticketview($DATA){
+        $Panel =  new Panel();
+
+        if ($_POST){
+
+            show($_POST);
+
+            exit("ok");
+
+        }
+
+
+       // $tickets = $Panel->gettickets();
+
+        $messages = [
+            0 => ["author" => "me" , "message" => "pervoe soobwenie"]
+        ];
+
+
+
+        $META = [
+            'title' => 'Системные тикеты',
+            'description' => 'Системные тикеты',
+            'keywords' => 'Системные тикеты',
+        ];
+
+        $BREADCRUMBS['HOME'] = ['Label' => $this->BreadcrumbsControllerLabel, 'Url' => $this->BreadcrumbsControllerUrl];
+        $BREADCRUMBS['DATA'][] = ['Label' => "Системные тикеты"];
+
+        \APP\core\base\View::setMeta($META);
+        \APP\core\base\View::setBreadcrumbs($BREADCRUMBS);
+
+
+
+        $this->set(compact('messages'));
+
+
+
+
+    }
+
+
     public function ticketAction(){
         $Panel =  new Panel();
 
@@ -159,6 +202,7 @@ class PanelController extends AppController {
 
 
     }
+
 
     public function profileAction(){
         $Panel =  new Panel();
@@ -217,6 +261,8 @@ class PanelController extends AppController {
 
 
     }
+
+
     public function messagesAction(){
         $Panel =  new Panel();
     }

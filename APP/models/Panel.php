@@ -12,6 +12,14 @@ class Panel extends \APP\core\base\Model {
 
 
 
+    public function getticket(){
+        $tickets = R::findAll("tickets", "WHERE user_id = ? ORDER by id desc LIMIT 20" , [$_SESSION['ulogin']['id']]);
+        return $tickets;
+    }
+
+
+
+
     public function addticket($DATA){
 
         $zagolovok = pole_valid ($DATA['zagolovok'], 50, 's');
