@@ -45,7 +45,7 @@ var DatatableBasic = function() {
         $('.datatable-basic').DataTable({
             pagingType: "simple",
             language: {
-                paginate: {'next': $('html').attr('dir') == 'rtl' ? 'Далее &larr;' : 'Next &rarr;', 'previous': $('html').attr('dir') == 'rtl' ? '&rarr; Prev' : '&larr; Prev'}
+                paginate: {'next': $('html').attr('dir') == 'rtl' ? 'Next &larr;' : 'Далее &rarr;', 'previous': $('html').attr('dir') == 'rtl' ? '&rarr; Prev' : '&larr; Prev'}
             }
         });
 
