@@ -86,11 +86,14 @@
                 <textarea name="enter-message" class="form-control mb-3" rows="3" cols="1" placeholder="Ваше ответ..."></textarea>
                 <div class="align-items-left">
                     <button type="submit" class="btn bg-teal-400 btn-labeled btn-labeled-right ml-auto"><b><i class="icon-paperplane"></i></b> Отправить сообщение</button>
+
+
+                    <a  class="btn btn-danger"><i class="icon-pencil3 mr-2"></i> Закрыть тикет</a>
+
+
                 </div>
 
-                <div class="align-items-right">
-                    <a type="button" class="btn btn-danger"><i class="icon-pencil3 mr-2"></i> Закрыть тикет</a>
-                </div>
+
 
 
 
