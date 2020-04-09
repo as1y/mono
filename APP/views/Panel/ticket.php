@@ -29,8 +29,8 @@
                             <td>Eugene</td>
                             <td>Kopyov</td>
                             <td>@Kopyov</td>
-                            <td><a href="#" type="button" class="btn btn-success">ПЕРЕЙТИ</a></td>
-                            
+                            <td><a href="#" type="button" class="btn btn-success"><i class="icon-comment-discussion mr-2"></i>ПЕРЕЙТИ</a></td>
+
                         </tr>
 
 
