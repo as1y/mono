@@ -27,6 +27,12 @@
 
 
             </div>
+
+
+            <div class="col-md-3">
+                ПОПОЛНЕНИЕ БАЛАНСА
+            </div>
+
         </div>
 
         <table  class="table datatable-basic text-center">
