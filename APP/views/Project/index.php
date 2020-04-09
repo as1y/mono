@@ -196,7 +196,7 @@
                         <h5 class="card-title">Контактов <?=$contact['free']?> шт</h5>
                         <p class="mb-3">Небходимо минимум <b>10</b> контактов</p>
 
-                        <a href="/project/?id=<?=$_GET['id']?>&action=play" class="btn bg-success"><i class="icon-plus3 ml-2"></i> ДОБАВИТЬ</a>
+                        <a href="/project/base/?id=<?=$_GET['id']?>" class="btn bg-success"><i class="icon-plus3 ml-2"></i> ДОБАВИТЬ</a>
 
 
 
@@ -245,7 +245,7 @@
                         <h5 class="card-title">СКРИПТ</h5>
                         <p class="mb-3">Скрипт разговора должен быть проработан</p>
 
-                        <a href="/panel/balance/" class="btn bg-success"><i class="icon-book ml-2"></i> РЕДАКТИРОВАТЬ</a>
+                        <a href="/project/script/?id=<?=$_GET['id']?>" class="btn bg-success"><i class="icon-book ml-2"></i> РЕДАКТИРОВАТЬ</a>
 
                     </div>
 
