@@ -18,7 +18,6 @@
         <table  class="table datatable-basic text-center">
             <thead>
             <tr>
-                <th>#</th>
                 <th>Имя Фамилия</th>
                 <th>Дата регистрации</th>
                 <th>Заработал</th>
@@ -35,7 +34,6 @@
             <?php foreach ($allref as $key=>$val):?>
 
                 <tr>
-                    <td><?=$val['username']?></td>
                     <td><?=$val['username']?></td>
                     <td class="text-center"><?=$val['datareg']?></td>
                     <td class="text-center"><b>0 руб.</b></td>
