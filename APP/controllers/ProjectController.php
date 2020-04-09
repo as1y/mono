@@ -28,7 +28,7 @@ class ProjectController extends AppController {
 
         $BREADCRUMBS['HOME'] = ['Label' => $this->BreadcrumbsControllerLabel, 'Url' => $this->BreadcrumbsControllerUrl];
         $BREADCRUMBS['DATA'][] = ['Label' => "".$company['company'], 'Url' => "/project/?id=".$idc];
-        $BREADCRUMBS['DATA'][] = ['Label' => " ".$company['company']];
+        $BREADCRUMBS['DATA'][] = ['Label' => "Статистика "];
 
         \APP\core\base\View::setMeta($META);
         \APP\core\base\View::setBreadcrumbs($BREADCRUMBS);
