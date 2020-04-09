@@ -53,8 +53,7 @@
                     </div>
                 </div>
             </td>
-            <td>Traffic Court Referee</td>
-            <td>22 Jun 1972</td>
+
         </tr>
 
         <tr class="text-center">
