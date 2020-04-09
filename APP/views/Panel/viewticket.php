@@ -88,6 +88,12 @@
                     <button type="submit" class="btn bg-teal-400 btn-labeled btn-labeled-right ml-auto"><b><i class="icon-paperplane"></i></b> Отправить сообщение</button>
                 </div>
 
+                <div class="align-items-right">
+                    <a type="button" class="btn btn-danger"><i class="icon-pencil3 mr-2"></i> Закрыть тикет</a>
+                </div>
+
+
+
             </form>
 
 
