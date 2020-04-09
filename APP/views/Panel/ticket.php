@@ -20,7 +20,7 @@
                             <th>ЗАГОЛОВОК</th>
                             <th>СООБЩЕНИЙ</th>
                             <th>СТАТУС</th>
-                            <th>ДЕЙСТВИЯ</th>
+
                         </tr>
                         </thead>
                         <tbody>
@@ -29,6 +29,10 @@
                             <td>Eugene</td>
                             <td>Kopyov</td>
                             <td>@Kopyov</td>
+                            <td><a href="#" type="button" class="btn btn-success">ПЕРЕЙТИ</a></td>
+
+
+
                         </tr>
                         <tr>
                             <td>2</td>
