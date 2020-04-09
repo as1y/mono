@@ -56,6 +56,22 @@
                 </div>
             </div>
 
+            <div class="card mb-2">
+                <div class="card-header">
+                    <h6 class="card-title">
+                        <a class="text-default collapsed" data-toggle="collapse" href="#question1">
+                            <i class="icon-help mr-2 text-slate"></i> Что делать если при звонке сервис выдает техническую ошибку?
+                        </a>
+                    </h6>
+                </div>
+
+                <div id="question1" class="collapse">
+                    <div class="card-body">
+                        Выберете результат звонка "ТЕЛЕФОН НЕ ДОСТУПЕН" и нажмите кнопку "СЛЕДУЮЩИЙ КОНТАКТ"
+                    </div>
+                </div>
+            </div>
+
 
 
 
