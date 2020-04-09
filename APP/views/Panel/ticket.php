@@ -30,28 +30,12 @@
                             <td>Kopyov</td>
                             <td>@Kopyov</td>
                             <td><a href="#" type="button" class="btn btn-success">ПЕРЕЙТИ</a></td>
+                            
+                        </tr>
 
 
 
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>Victoria</td>
-                            <td>Baker</td>
-                            <td>@Vicky</td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>James</td>
-                            <td>Alexander</td>
-                            <td>@Alex</td>
-                        </tr>
-                        <tr>
-                            <td>4</td>
-                            <td>Franklin</td>
-                            <td>Morrison</td>
-                            <td>@Frank</td>
-                        </tr>
+
                         </tbody>
                     </table>
                 </div>
