@@ -36,13 +36,13 @@
 
         <tbody>
 
-        <tr>
+        <tr class="align-items-center">
             <td>Вася</td>
             <td>Traffic Court Referee</td>
             <td>22 Jun 1972</td>
         </tr>
 
-        <tr>
+        <tr class="align-items-center">
             <td>Вася</td>
             <td>Traffic Court Referee</td>
             <td>22 Jun 1972</td>
