@@ -27,7 +27,8 @@ class ProjectController extends AppController {
 
 
         $BREADCRUMBS['HOME'] = ['Label' => $this->BreadcrumbsControllerLabel, 'Url' => $this->BreadcrumbsControllerUrl];
-        $BREADCRUMBS['DATA'][] = ['Label' => "Проект ".$company['company']];
+        $BREADCRUMBS['DATA'][] = ['Label' => "".$company['company'], 'Url' => "/project/?id=".$idc];
+        $BREADCRUMBS['DATA'][] = ['Label' => " ".$company['company']];
 
         \APP\core\base\View::setMeta($META);
         \APP\core\base\View::setBreadcrumbs($BREADCRUMBS);
@@ -92,7 +93,8 @@ class ProjectController extends AppController {
             'keywords' => 'Настройки проекта ',
         ];
         $BREADCRUMBS['HOME'] = ['Label' => $this->BreadcrumbsControllerLabel, 'Url' => $this->BreadcrumbsControllerUrl];
-        $BREADCRUMBS['DATA'][] = ['Label' => "Настрийки проекта ".$company['company']];
+        $BREADCRUMBS['DATA'][] = ['Label' => "".$company['company'], 'Url' => "/project/?id=".$idc];
+        $BREADCRUMBS['DATA'][] = ['Label' => "Настрийки ".$company['company']];
         \APP\core\base\View::setMeta($META);
         \APP\core\base\View::setBreadcrumbs($BREADCRUMBS);
 
@@ -160,6 +162,7 @@ class ProjectController extends AppController {
             'keywords' => 'Настройки проекта ',
         ];
         $BREADCRUMBS['HOME'] = ['Label' => $this->BreadcrumbsControllerLabel, 'Url' => $this->BreadcrumbsControllerUrl];
+        $BREADCRUMBS['DATA'][] = ['Label' => "".$company['company'], 'Url' => "/project/?id=".$idc];
         $BREADCRUMBS['DATA'][] = ['Label' => "Добавление базы контактов ".$company['company']];
         \APP\core\base\View::setMeta($META);
         \APP\core\base\View::setBreadcrumbs($BREADCRUMBS);
@@ -205,6 +208,7 @@ class ProjectController extends AppController {
 
 
         $BREADCRUMBS['HOME'] = ['Label' => $this->BreadcrumbsControllerLabel, 'Url' => $this->BreadcrumbsControllerUrl];
+        $BREADCRUMBS['DATA'][] = ['Label' => "".$company['company'], 'Url' => "/project/?id=".$idc];
         $BREADCRUMBS['DATA'][] = ['Label' => "Скрипт звонка ".$company['company']];
 
         \APP\core\base\View::setMeta($META);
@@ -272,6 +276,7 @@ class ProjectController extends AppController {
 
 
         $BREADCRUMBS['HOME'] = ['Label' => $this->BreadcrumbsControllerLabel, 'Url' => $this->BreadcrumbsControllerUrl];
+        $BREADCRUMBS['DATA'][] = ['Label' => "".$company['company'], 'Url' => "/project/?id=".$idc];
         $BREADCRUMBS['DATA'][] = ['Label' => "База контактов ".$company['company']];
 
         \APP\core\base\View::setMeta($META);
