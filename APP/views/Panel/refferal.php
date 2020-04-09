@@ -35,7 +35,7 @@
                 <tr>
                     <td><?=$val['username']?></td>
                     <td><?=$val['datareg']?></td>
-                    <td>0</td>
+                    <td>0 <b>руб.</b></td>
                     <td>
                         <a href="/panel/messages/?id=<?=$val['id']?>" type="button" class="btn btn-success"><i class="icon-comment-discussion mr-2"></i>Сообщение</a>
                     </td>
