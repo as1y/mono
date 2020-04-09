@@ -64,32 +64,12 @@
         <ul class="navbar-nav ml-xl-auto">
 
 
-<li>
-    <a href="/panel/" class="navbar-nav-link ">
-        <img src="/global_assets/images/dribbble.png" class="align-top mr-2 rounded" width="20" height="20" alt="">
-        <b>CASHCALL.RU</b>
-    </a>
-</li>
-
-            <li class="nav-item dropdown dropdown-user">
-                <a href="/panel/profile/" class="navbar-nav-link d-flex align-items-center dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                    <img src="/global_assets/images/placeholders/placeholder.jpg" class="rounded-circle mr-2" height="34" alt="">
-                    <span>Виктор</span>
-                </a>
-
-                <div class="dropdown-menu dropdown-menu-right">
-                    <a href="/panel/profile/" class="dropdown-item"><i class="icon-user-plus"></i> Мой профиль</a>
-                    <a href="/panel/refferal/" class="dropdown-item"><i class="icon-cash"></i> Партнерскся программа</a>
-
-                    <a href="/panel/faq/" class="dropdown-item"><i class="icon-question3"></i> F.A.Q</a>
-
-                    <a href="/panel/balance/" class="dropdown-item"><i class="icon-wallet"></i> Баланс</a>
-                    <div class="dropdown-divider"></div>
-                    <a href="/panel/settings/" class="dropdown-item"><i class="icon-cog5"></i> Настройки аккаунта</a>
-                    <a href="/user/logout/" class="dropdown-item"><i class="icon-switch2"></i> Выход</a>
-                </div>
+            <li>
+             <a href="/panel/" class="navbar-nav-link ">
+                    <b>CASHCALL.RU</b>
+                 <img src="/global_assets/images/dribbble.png" class="align-top mr-2 rounded" width="20" height="20" alt="">
+              </a>
             </li>
-
 
 
 
