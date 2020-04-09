@@ -92,7 +92,7 @@
 
                 <textarea name="enter-message" class="form-control mb-3" rows="3" cols="1" placeholder="Ваше ответ..."></textarea>
 
-                <div class="d-flex align-items-left">
+                <div class="align-items-left">
 
 
                     <button type="button" class="btn bg-teal-400 btn-labeled btn-labeled-right ml-auto"><b><i class="icon-paperplane"></i></b> Отправить сообщение</button>
