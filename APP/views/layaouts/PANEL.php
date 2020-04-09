@@ -56,7 +56,7 @@
     <script src="/global_assets/js/demo_pages/form_actions.js"></script>
 
 
-<!--    Таблица-->
+    <!--    Таблица-->
     <script src="/assets/js/datatables_basic.js"></script>
     <script src="/global_assets/js/plugins/tables/datatables/datatables.min.js"></script>
     <!--    Таблица-->
@@ -95,6 +95,16 @@
         </span>
 
         <ul class="navbar-nav ml-xl-auto">
+
+
+            <li class="nav-item">
+
+                        <span class="navbar-text ml-xl-3">
+   Операторов онлайн:  <span class="badge bg-success"><b><?= \APP\core\base\Model::countonline()?></b></span>
+        </span>
+
+            </li>
+
 
             <li class="nav-item dropdown">
                 <a href="#" class="navbar-nav-link dropdown-toggle caret-0" data-toggle="dropdown">
