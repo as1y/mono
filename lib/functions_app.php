@@ -51,6 +51,14 @@ function timecall ($status){
 
 
 
+function ticketstatus ($status){
+    if ($status=="1") return 'ОТКРЫТ';
+    if ($status=="2") return 'ЗАКРЫТ';
+
+}
+
+
+
 
 function rendertypeaccount($type){
     if ($type == NULL) return "Операторо";

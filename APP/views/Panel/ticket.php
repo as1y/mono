@@ -28,7 +28,9 @@
 
     <tr>
         <td><?=$val['zagolovok']?></td>
-        <td><?=$val['status']?></td>
+        <td>
+          <?=ticketstatus($val['status'])?>
+        </td>
         <td>
             <a href="/viewticket/?id=<?=$val['id']?>" class="badge bg-dark badge-pill"><?=$val['count']?></a>
         </td>
