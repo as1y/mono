@@ -12,7 +12,7 @@
 
             <div class="card-body">
 
-                <div class="table-responsive">
+                <div>
                     <table class="table">
                         <thead>
                         <tr>
