@@ -138,7 +138,7 @@ class PanelController extends AppController {
     public function balanceAction(){
         $Panel =  new Panel();
 
-
+        $balancelog = [];
         $balancelog = $Panel->balancelog();
 
 
