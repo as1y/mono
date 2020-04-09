@@ -5,7 +5,8 @@ use APP\models\User;
 class UserController extends AppController
 {
 	public $layaout = 'USER'; //Перераспределяем массив layaout
-
+    public $BreadcrumbsControllerLabel = "Cashcall.ru";
+    public $BreadcrumbsControllerUrl = "/";
 
 	public function registerAction()
 	{
@@ -49,6 +50,21 @@ class UserController extends AppController
 
 	public function indexAction()
 	{
+
+
+        $META = [
+            'title' => 'Логин',
+            'description' => 'Логин',
+            'keywords' => 'Логин',
+        ];
+
+        $BREADCRUMBS['HOME'] = ['Label' => $this->BreadcrumbsControllerLabel, 'Url' => $this->BreadcrumbsControllerUrl];
+        $BREADCRUMBS['DATA'][] = ['Label' => "Логин"];
+
+        \APP\core\base\View::setMeta($META);
+        \APP\core\base\View::setBreadcrumbs($BREADCRUMBS);
+
+
 
 	    //Если юзер залогинен, то редиректим его на панель
 		if( isset($_SESSION['ulogin']['id']) ) redir('/panel/');
