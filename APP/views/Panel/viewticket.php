@@ -46,12 +46,12 @@
                             ?>
 
                             <li class="media media-chat-item-reverse">
+                                <div class="ml-3">
+                                    <img src="<?=$_SESSION['ulogin']['avatar']?>" class="rounded-circle" width="40" height="40" alt="">
+                                </div>
                                 <div class="media-body">
                                     <div class="media-chat-item"><?=$val['message']?></div>
                                     <div class="font-size-sm text-muted mt-2"><?=$val['date']?></div>
-                                </div>
-                                <div class="ml-3">
-                                    <img src="<?=$_SESSION['ulogin']['avatar']?>" class="rounded-circle" width="40" height="40" alt="">
                                 </div>
                             </li>
 
@@ -80,7 +80,7 @@
 
 
 
-                <textarea name="enter-message" class="form-control mb-3" rows="3" cols="1" placeholder="Enter your message..."></textarea>
+                <textarea name="enter-message" class="form-control mb-3" rows="3" cols="1" placeholder="Ваше ответ..."></textarea>
 
                 <div class="d-flex align-items-left">
 
