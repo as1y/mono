@@ -199,7 +199,7 @@
 
 
                 <a href="/panel/balance/" type="button" class="breadcrumb-elements-item"><i class="icon-wallet mr-2"></i>
-                    <span class="badge badge-success"><b>0</b> Р.</span>
+                    <span class="badge badge-success"><b><?=$_SESSION['ulogin']['bal']?></b> Р.</span>
 
                 </a>
 
