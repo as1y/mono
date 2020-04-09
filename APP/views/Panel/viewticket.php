@@ -30,7 +30,7 @@
                                     <img src="<?=$_SESSION['ulogin']['avatar']?>" class="rounded-circle" width="40" height="40" alt="">
                                 </div>
                                 <div class="media-body">
-                                    <?=$_SESSION['ulogin']['username']?> <div class="font-size-sm text-muted mt-2"><?=$val['date']?><br>
+                                  <div class="font-size-sm text-muted mt-2"><?=$val['date']?>
                                     <div class="media-chat-item"><?=$val['message']?></div>
 
 
