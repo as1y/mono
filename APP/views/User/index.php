@@ -3,7 +3,7 @@
         <div class="card-body">
             <div class="text-center mb-3">
                 <i class="icon-reading icon-2x text-slate-300 border-slate-300 border-3 rounded-round p-3 mb-3 mt-1"></i>
-                <h5 class="mb-0">Вход</h5>
+                <h5 class="mb-0">ВХОД В СИСТЕМУ</h5>
                 <span class="d-block text-muted">Cashcall.ru - биржа операторов на телефоне</span>
             </div>
 
