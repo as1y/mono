@@ -64,7 +64,7 @@
 
             <li>
                 <div class="mb-3 mb-xl-0 ml-xl-auto">
-                    <button type="button" class="btn btn-success"><i class="icon-cog3 mr-2"></i> Регистрация</button>
+                    <a type="button" class="btn btn-success"><i class="icon-cog3 mr-2"></i> Регистрация</a>
                 </div>
             </li>
 
