@@ -112,6 +112,21 @@ class PanelController extends AppController {
     public function refferalAction(){
        $Panel = new Panel();
 
+        $META = [
+            'title' => 'Партнерская программа',
+            'description' => 'Партнерская программа',
+            'keywords' => 'Партнерская программа',
+        ];
+
+        $BREADCRUMBS['HOME'] = ['Label' => $this->BreadcrumbsControllerLabel, 'Url' => $this->BreadcrumbsControllerUrl];
+        $BREADCRUMBS['DATA'][] = ['Label' => "Партнерская программа"];
+
+        \APP\core\base\View::setMeta($META);
+        \APP\core\base\View::setBreadcrumbs($BREADCRUMBS);
+
+
+
+
     }
 
     public function balanceAction(){

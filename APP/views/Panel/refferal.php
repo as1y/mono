@@ -15,7 +15,7 @@
 
         <div class="row">
             <div class="col-md-6">
-                <label>Your name:</label>
+                <label>Ваша ссылка:</label>
                 <input type="text" class="form-control" placeholder="Eugene Kopyov">
             </div>
         </div>
