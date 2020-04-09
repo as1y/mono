@@ -1,4 +1,4 @@
-<form class="login-form" action="index.html">
+<form class="login-form" method="post" action="/user/">
     <div class="card mb-0">
         <div class="card-body">
             <div class="text-center mb-3">
