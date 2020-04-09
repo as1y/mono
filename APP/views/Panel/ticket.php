@@ -37,7 +37,7 @@
                 <span class="badge badge-danger">new</span>
             <?endif;?>
 
-            
+
             <a href="/panel/viewticket/?id=<?=$val['id']?>" class="badge bg-dark badge-pill">
 
                 <?=count(json_decode($val['messages'], true))?>
