@@ -7,10 +7,8 @@ class Panel extends \APP\core\base\Model {
 
     public function gettickets($idc){
 
-        show($idc);
-        exit();
 
-        $tickets = R::findOne("tickets", "WHERE user_id = ? AND id = ?" , [$_SESSION['ulogin']['id']], $idc);
+        $tickets = R::findOne("tickets", "WHERE user_id = ? AND id = ?" , [ $_SESSION['ulogin']['id'], $idc ]);
         return $tickets;
     }
 
