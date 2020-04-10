@@ -4,7 +4,7 @@
             <div class="mb-3">
                 <h6 class="font-weight-semibold mb-0 mt-1"><?= $_SESSION['ulogin']['username'] ?></h6>
 
-                <span class="d-block text-muted"><?= rendertypeaccount($_SESSION['ulogin']['type']) ?></span>
+                <span class="d-block text-muted"><?= rendertypeaccount($_SESSION['ulogin']['role']) ?></span>
 
 
             </div>
@@ -95,11 +95,11 @@
 
                             <div class="form-group">
                                 <label>Роль: <span class="text-danger">*</span> </label>
-                                <select name="type" data-placeholder="Выберете направление" class="form-control form-control-select2 required" data-fouc>
+                                <select data-placeholder="Выберете направление" name="role" class="form-control form-control-select2 required" data-fouc>
 
 
-                                    <option <?= ($_SESSION['ulogin']['type'] == NULL) ? 'selected' : ""?> >Оператор</option>
-                                    <option <?= ($_SESSION['ulogin']['type'] == 2) ? 'selected' : ""?>>Рекламодатель</option>
+                                    <option <?= ($_SESSION['ulogin']['role'] == "O") ? 'selected' : ""?> value="O" >Оператор</option>
+                                    <option <?= ($_SESSION['ulogin']['role'] == "R") ? 'selected' : ""?> value="R" >Рекламодатель</option>
 
 
 
