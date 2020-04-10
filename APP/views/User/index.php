@@ -8,7 +8,7 @@
             </div>
 
             <div class="form-group form-group-feedback form-group-feedback-left">
-                <input type="email" name="email" class="form-control" placeholder="email">
+                <input type="email" name="email" class="form-control" placeholder="E-mail">
                 <div class="form-control-feedback">
                     <i class="icon-user text-muted"></i>
                 </div>
