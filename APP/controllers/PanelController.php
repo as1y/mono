@@ -38,7 +38,7 @@ class PanelController extends AppController {
         if($company){
 
 
-            show($company);
+            var_dump($company);
             exit();
 
             $this->set(compact('company'));
