@@ -104,30 +104,31 @@
 
 </div>
 
+<div class="row justify-content-center">
+
+    <?php if(isset($_SESSION['errors'])): ?>
+        <div style="width: 30%" class="alert alert-danger alert-dismissible text-center">
+            <button type="button" class="close" data-dismiss="alert"><span>×</span></button>
+            <span class="font-weight-semibold">Ошибка!</span> <br><?=$_SESSION['errors']; unset($_SESSION['errors']);?>
+        </div>
+    <?php endif;?>
+
+    <?php if(isset($_SESSION['success'])): ?>
+        <div  style="width: 30%" class="alert alert-success alert-dismissible">
+            <button type="button" class="close" data-dismiss="alert"><span>×</span></button>
+            <span class="font-weight-semibold">Успех!</span> <?=$_SESSION['success']; unset($_SESSION['success']);?>
+        </div>
+    <?php endif;?>
+
+</div>
 
 <!-- Page content -->
 <div class="page-content">
 
 
-    <div class="row justify-content-center">
 
-        <?php if(isset($_SESSION['errors'])): ?>
-            <div style="width: 30%" class="alert alert-danger alert-dismissible text-center">
-                <button type="button" class="close" data-dismiss="alert"><span>×</span></button>
-                <span class="font-weight-semibold">Ошибка!</span> <br><?=$_SESSION['errors']; unset($_SESSION['errors']);?>
-            </div>
-        <?php endif;?>
 
-        <?php if(isset($_SESSION['success'])): ?>
-            <div  style="width: 30%" class="alert alert-success alert-dismissible">
-                <button type="button" class="close" data-dismiss="alert"><span>×</span></button>
-                <span class="font-weight-semibold">Успех!</span> <?=$_SESSION['success']; unset($_SESSION['success']);?>
-            </div>
-        <?php endif;?>
 
-    </div>
-
-    
     <!-- Main content -->
     <div class="content-wrapper">
 
