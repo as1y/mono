@@ -61,11 +61,13 @@
     <script src="/global_assets/js/plugins/tables/datatables/datatables.min.js"></script>
     <!--    Таблица-->
 
-
     <script src="/assets/js/uploader_bootstrap.js"></script>
-
-
     <!-- /theme JS files -->
+
+    <?php \APP\core\base\View::getAssets("js");?>
+
+
+
 
 </head>
 

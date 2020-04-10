@@ -76,13 +76,21 @@ class View {
     }
 
 
-    public static function setassets($DATA = []){
+    public static function setAssets($DATA = []){
         self::$assets = $DATA;
     }
 
-    public static function getassets($type = ""){
+    public static function getAssets($type){
 
 	    // выводим тут асссеты.
+        foreach (self::$assets as $key=>$val){
+            if ($key = "js") echo '<script src="'.$val.'"></script>';
+            if ($key = "css") echo '<link href="'.$val.'" rel="stylesheet" type="text/css">';
+        }
+
+
+
+
 
 
     }

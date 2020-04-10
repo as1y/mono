@@ -96,22 +96,22 @@ class UserController extends AppController
             'description' => 'Логин',
             'keywords' => 'Логин',
         ];
-
-
-		$ASSETS[] = ["js" => "/assets/js/login.js"];
-        $ASSETS[] = ["js" => "/global_assets/js/plugins/forms/styling/uniform.min.js"];
-
-
+        \APP\core\base\View::setMeta($META);
 
 
 
         $BREADCRUMBS['HOME'] = ['Label' => $this->BreadcrumbsControllerLabel, 'Url' => $this->BreadcrumbsControllerUrl];
         $BREADCRUMBS['DATA'][] = ['Label' => "Логин"];
-
-        \APP\core\base\View::setMeta($META);
-        \APP\core\base\View::setassets($ASSETS);
         \APP\core\base\View::setBreadcrumbs($BREADCRUMBS);
 
+
+        $ASSETS[] = ["js" => "/assets/js/login.js"];
+        $ASSETS[] = ["js" => "/global_assets/js/plugins/forms/styling/uniform.min.js"];
+        \APP\core\base\View::setassets($ASSETS);
+
+
+
+        
 
 
 	}

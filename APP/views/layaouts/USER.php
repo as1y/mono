@@ -25,10 +25,11 @@
     <!-- /core JS files -->
 
     <!-- Theme JS files -->
-    <script src="/global_assets/js/plugins/forms/styling/uniform.min.js"></script>
+
+    <?php \APP\core\base\View::getAssets("js");?>
 
     <script src="/assets/js/app.js"></script>
-    <script src="/assets/js/login.js"></script>
+
     <!-- /theme JS files -->
 
 </head>
