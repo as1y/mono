@@ -24,13 +24,6 @@
                     </div>
 
 
-                    <div class="form-group form-group-feedback form-group-feedback-right">
-                        <input type="text" class="form-control" placeholder="Choose username">
-                        <div class="form-control-feedback">
-                            <i class="icon-user-plus text-muted"></i>
-                        </div>
-                    </div>
-
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group form-group-feedback form-group-feedback-right">
@@ -41,14 +34,6 @@
                             </div>
                         </div>
 
-                        <div class="col-md-6">
-                            <div class="form-group form-group-feedback form-group-feedback-right">
-                                <input type="text" class="form-control" placeholder="Second name">
-                                <div class="form-control-feedback">
-                                    <i class="icon-user-check text-muted"></i>
-                                </div>
-                            </div>
-                        </div>
                     </div>
 
                     <div class="row">
@@ -61,35 +46,8 @@
                             </div>
                         </div>
 
-                        <div class="col-md-6">
-                            <div class="form-group form-group-feedback form-group-feedback-right">
-                                <input type="password" class="form-control" placeholder="Repeat password">
-                                <div class="form-control-feedback">
-                                    <i class="icon-user-lock text-muted"></i>
-                                </div>
-                            </div>
-                        </div>
                     </div>
 
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group form-group-feedback form-group-feedback-right">
-                                <input type="email" class="form-control" placeholder="Your email">
-                                <div class="form-control-feedback">
-                                    <i class="icon-mention text-muted"></i>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-6">
-                            <div class="form-group form-group-feedback form-group-feedback-right">
-                                <input type="email" class="form-control" placeholder="Repeat email">
-                                <div class="form-control-feedback">
-                                    <i class="icon-mention text-muted"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
 
 
                     <button type="submit" class="btn bg-teal-400 btn-labeled btn-labeled-right"><b><i class="icon-plus3"></i></b> Create account</button>
