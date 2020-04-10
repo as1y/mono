@@ -182,7 +182,7 @@ class UserController extends AppController
 				// ПИШЕМ В БАЗУ ДАННЫХ
 				if($user->saveuser(CONFIG['USERTABLE']))
 				{
-                    Mail::sendMail("register",'Успешная регистрация '.CONFIG['NAME'],null,['to' => [['email' =>$_SESSION['confirm']['signup-email']]]]);
+                    Mail::sendMail("register",'Успешная регистрация '.CONFIG['NAME'],null,['to' => [['email' =>$_SESSION['confirm']['email']]]]);
 
 //                    $_SESSION = array();
 
