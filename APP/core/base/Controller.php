@@ -9,6 +9,14 @@ abstract class Controller {
 		$this->route = $route;
 		$this->view = $route['action'];
 
+
+        //Если с сессией зашел в логин или на главную
+        if (empty($_SESSION['ulogin']) && $route['controller'] != "Main"  && $route['controller'] != "User"  ){
+            redir('/');
+        }
+        //Если с сессией зашел в логин или на главную
+
+        
 //
 //		// РАСПРЕДЕЛЕНЕ ПРАВ (ПОКА ПРОСТОЕ)
 //		if (empty($_SESSION['ulogin']) && $route['controller'] != "Main"  && $route['controller'] != "User" && $route['controller'] != "Spec"  ){
