@@ -56,49 +56,32 @@ class UserController extends AppController
             }
 
 
+            $passorig = $user->ATR['password'];
+            $user->ATR['password'] = password_hash($user->ATR['password'], PASSWORD_DEFAULT); // Хеш пароля
 
-            show($_POST);
-            exit();
+            $_SESSION['confirm'] = $user->ATR; //Базовые параметры
+            //Доп. Параметры в сессию
+            $_SESSION['confirm']['code'] = $code = random_str(5); //Код подтверждения
+
+            if(isset($_COOKIE['ref'])) $_SESSION['confirm']['ref'] = $_COOKIE['ref']; //ID реферала
+            //Доп. Параметры в сессию
+
+            // Отправка на почту кода подтверждения
+            Mail::sendMail("code",'Успешная регистрация '.CONFIG['NAME'],null,['to' => [['email' =>$user->ATR['email']]]]);
+
+            //  mes ('ВНИМАНИЕ! Не закрывайте страницу браузера. Код подтверждения отправлен на почту. ');
+
+            redir('/user/confirmRegister/');
+
+
 
 
         }
 
 
 
-		if(!empty($_POST))
-
-		{
-			if(!$user->validate($_POST) || !$user->checkUniq(CONFIG['USERTABLE']) )
-        {
-            $_SESSION['form_data'] = $user->ATR; //Сохраняем в сессию, чтобы у поьзователю было удобнее
-            $user->getErrorsVali(); //Записываем ошибки в сессию
-            redir();
-        }
-			else
-			{
 
 
-
-
-
-                //Прошли Валидацию
-
-			    $passorig = $user->ATR['signup-password'];
-				$user->ATR['signup-password'] = password_hash($user->ATR['signup-password'], PASSWORD_DEFAULT); // Хеш пароля
-				$_SESSION['confirm'] = $user->ATR; //Базовые параметры
-				//Доп. Параметры в сессию
-				$_SESSION['confirm']['code'] = $code = random_str(5); //Код подтверждения
-				if(isset($_COOKIE['ref'])) $_SESSION['confirm']['ref'] = $_COOKIE['ref']; //ID реферала
-				//Доп. Параметры в сессию
-
-                // Отправка на почту кода подтверждения
-                Mail::sendMail("code",'Успешная регистрация '.CONFIG['NAME'],null,['to' => [['email' =>$user->ATR['signup-email']]]]);
-
-                //  mes ('ВНИМАНИЕ! Не закрывайте страницу браузера. Код подтверждения отправлен на почту. ');
-
-				redir('/user/confirmRegister/');
-			}// ИДЕМ НА КОНФИРМ
-		}
 	}
 
 
