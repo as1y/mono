@@ -125,11 +125,13 @@ class User extends \APP\core\base\Model
 
 		//ФОРМИРУЕМ МАССИВ ДАННЫХ ДЛЯ РЕГИСТРАЦИИ
 		$MASSREG = [
-		'username' => $_SESSION['confirm']['username'],
-		'email' => $_SESSION['confirm']['email'],
-		'pass' => $_SESSION['confirm']['password'],
-		'ref' => $_SESSION['confirm']['ref'],
-		'datareg' => date("Y-m-d H:i:s"),
+	    	'username' => $_SESSION['confirm']['username'],
+	    	'email' => $_SESSION['confirm']['email'],
+	    	'pass' => $_SESSION['confirm']['password'],
+	    	'ref' => $_SESSION['confirm']['ref'],
+	    	'datareg' => date("Y-m-d H:i:s"),
+            'role' => $role,
+
 		];
 		//ФОРМИРУЕМ МАССИВ ДАННЫХ ДЛЯ РЕГИСТРАЦИИ
 		foreach($MASSREG as $name=>$value)
