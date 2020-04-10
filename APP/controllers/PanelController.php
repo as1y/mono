@@ -76,13 +76,15 @@ class PanelController extends AppController {
         \APP\core\base\View::setBreadcrumbs($BREADCRUMBS);
 
 
-        
+
         $ASSETS[] = ["js" => "/global_assets/js/plugins/forms/wizards/steps.min.js"];
         $ASSETS[] = ["js" => "/global_assets/js/plugins/forms/selects/select2.min.js"];
         $ASSETS[] = ["js" => "/global_assets/js/plugins/forms/styling/uniform.min.js"];
         $ASSETS[] = ["js" => "/global_assets/js/plugins/forms/inputs/inputmask.js"];
         $ASSETS[] = ["js" => "/global_assets/js/plugins/forms/validation/validate.min.js"];
         $ASSETS[] = ["js" => "/global_assets/js/plugins/extensions/cookie.js"];
+        $ASSETS[] = ["js" => "/assets/js/form_wizard.js"];
+        
 
         \APP\core\base\View::setAssets($ASSETS);
 
