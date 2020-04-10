@@ -202,7 +202,6 @@ abstract class Model
     }
 
     public static function countonline(){
-	    
 	    return  R::count('online');
     }
 
