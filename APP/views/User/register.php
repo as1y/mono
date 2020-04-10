@@ -18,7 +18,7 @@
                     <label class="custom-control-label" for="custom_radio_inline_checked">Я рекламодатель</label>
                 </div>
             </div>
-            
+
             <div class="form-group form-group-feedback form-group-feedback-left">
                 <input type="text" class="form-control" placeholder="Username">
                 <div class="form-control-feedback">
@@ -32,10 +32,7 @@
                     <i class="icon-user-lock text-muted"></i>
                 </div>
             </div>
-
-            <div class="form-group text-center text-muted content-divider">
-                <span class="px-2">Your contacts</span>
-            </div>
+            
 
             <div class="form-group form-group-feedback form-group-feedback-left">
                 <input type="password" class="form-control" placeholder="Your email">
