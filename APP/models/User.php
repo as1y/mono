@@ -122,6 +122,9 @@ class User extends \APP\core\base\Model
 		// Проверяем РОЛЬ
        $role = ($_SESSION['confirm']['role'] == "on") ? "O" : "R";
 
+       $avatar = ""; //Выставляем базовый аватар в зависимости от роли
+
+
 
 		//ФОРМИРУЕМ МАССИВ ДАННЫХ ДЛЯ РЕГИСТРАЦИИ
 		$MASSREG = [
@@ -130,7 +133,7 @@ class User extends \APP\core\base\Model
 	    	'pass' => $_SESSION['confirm']['password'],
 	    	'ref' => $_SESSION['confirm']['ref'],
 	    	'datareg' => date("Y-m-d H:i:s"),
-            'avatar' => "", // Расположение базового аватара
+            'avatar' => $avatar, // Расположение базового аватара
             'nnews' => 1, // Уведомления почтовые
             'nmessages' => 1, // Уведомления почтовые
             'role' => $role, //Роль
