@@ -52,7 +52,7 @@ class UserController extends AppController
             {
                 $_SESSION['form_data'] = $user->ATR; //Сохраняем в сессию, чтобы у поьзователю было удобнее
                 $user->getErrorsVali(); //Записываем ошибки в сессию
-                redir("/users/");
+                redir("/user/");
             }
 
 
