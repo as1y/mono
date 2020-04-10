@@ -166,10 +166,11 @@ class UserController extends AppController
         $BREADCRUMBS['HOME'] = ['Label' => $this->BreadcrumbsControllerLabel, 'Url' => $this->BreadcrumbsControllerUrl];
         $BREADCRUMBS['DATA'][] = ['Label' => "Регистрация пользователя"];
 
-        
+
 		if( !isset($_SESSION['confirm']['code']) )
 		{
 			mes ('Код подтверждения устарел. Необходимо зарегистрироваться повторно.');
+
 			redir('/user/register/');
 		}
 
@@ -245,7 +246,8 @@ class UserController extends AppController
 	{
 		if( !isset($_SESSION['confirm']['recode']) )
 		{
-			mes ('Код подтверждения устарел. Необходимо выполнить процедуру повторно.');
+            $_SESSION['errors'] = "Код подтверждения устарел. Необходимо выполнить процедуру повторно.";
+            
 			redir('/user/recovery/');
 		}
 		if(!empty($_POST['confirm-code']))
