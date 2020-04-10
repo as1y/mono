@@ -117,7 +117,12 @@
     <div class="content-wrapper">
 
 
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">111</div>
+            <div class="col-md-4"></div>
 
+        </div>
 
 
             <?php if(isset($_SESSION['errors'])): ?>
@@ -135,7 +140,7 @@
             <?php endif;?>
 
 
-        
+
         <!-- Content area -->
         <div class="content d-flex justify-content-center ">
 
