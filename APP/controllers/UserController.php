@@ -184,8 +184,15 @@ class UserController extends AppController
 				{
                     Mail::sendMail("register",'Успешная регистрация '.CONFIG['NAME'],null,['to' => [['email' =>$_SESSION['confirm']['signup-email']]]]);
 
-                    $_SESSION = array();
-					mes ('Успешная регистрация! Данные для входа отправленны на почту!');
+//                    $_SESSION = array();
+
+                    show($_SESSION);
+                    exit();
+
+
+                    $user->login(CONFIG['USERTABLE']);
+
+
 					redir('/user/');
 
 
@@ -293,6 +300,10 @@ class UserController extends AppController
 			exit ('Неправильная реф.ссылка');
 		}
 	}
+
+
+
+
 	public function formAction()
 	{
 		if(!empty($_POST)){
