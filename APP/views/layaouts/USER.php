@@ -85,7 +85,7 @@
     <div class="content-wrapper">
 
         <!-- Content area -->
-        <div class="d-flex justify-content-center align-items-center">
+        <div class="content d-flex justify-content-center align-items-center">
 
 
             <?php if(isset($_SESSION['errors'])): ?>
