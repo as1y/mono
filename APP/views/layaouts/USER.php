@@ -142,7 +142,7 @@
 
 
         <!-- Content area -->
-        <div class="content d-flex  align-items-center">
+        <div class="content justify-content-center align-items-center">
 
 
             
