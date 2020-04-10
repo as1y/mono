@@ -37,151 +37,198 @@
 <body>
 
 <!-- Main navbar -->
-<div class="navbar navbar-dark navbar-expand-xl rounded-top">
+<div class="navbar navbar-expand-md navbar-dark">
+    <div class="navbar-brand">
+        <a href="index.html" class="d-inline-block">
+            <img src="../../../../global_assets/images/logo_light.png" alt="">
+        </a>
+    </div>
 
-    <a href="/panel/" class="navbar-nav-link " >
-        <img src="/global_assets/images/dribbble.png" class="align-top mr-2 rounded" width="20" height="20" alt="">
-        <b>CASHCALL.RU</b>
-    </a>
-
-
-    <div class="d-xl-none">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-demo1-mobile">
-            <i class="icon-grid3"></i>
+    <div class="d-md-none">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-mobile">
+            <i class="icon-tree5"></i>
         </button>
     </div>
 
-    <div class="navbar-collapse collapse" id="navbar-demo1-mobile">
-
-
-
-        <span class="navbar-text ml-xl-3">
-   Операторов онлайн:  <span class="badge bg-success"><b>1</b></span>
-        </span>
-
-
-        <ul class="navbar-nav ml-xl-auto">
-
-
-            <li>
-                <div class="mb-3 mb-xl-0 ml-xl-auto">
-
-
-                    <?php if($this->route['action'] == "index"): ?>
-                    <a href="/user/register/" type="button" class="btn btn-success"><i class="icon-user-plus mr-2"></i> Регистрация</a>
-                    <?php endif;?>
-
-                    <?php if($this->route['action'] == "register"): ?>
-                        <a href="/user/" type="button" class="btn btn-success"><i class="icon-circle-right2 mr-2"></i> Войти</a>
-                    <?php endif;?>
-
-                    <?php if($this->route['action'] == "recovery"): ?>
-                        <a href="/user/" type="button" class="btn btn-success"><i class="icon-circle-right2 mr-2"></i> Войти</a>
-                    <?php endif;?>
-
-
-
-
-
-                </div>
+    <div class="collapse navbar-collapse" id="navbar-mobile">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item dropdown">
+                <a href="#" class="navbar-nav-link">
+                    <i class="icon-display4"></i>
+                    <span class="d-md-none ml-2">Go to website</span>
+                </a>
             </li>
 
+            <li class="nav-item dropdown">
+                <a href="#" class="navbar-nav-link">
+                    <i class="icon-user-tie"></i>
+                    <span class="d-md-none ml-2">Contact admin</span>
+                </a>
+            </li>
 
-
+            <li class="nav-item dropdown">
+                <a href="#" class="navbar-nav-link">
+                    <i class="icon-cog3"></i>
+                    <span class="d-md-none ml-2">Options</span>
+                </a>
+            </li>
         </ul>
     </div>
 </div>
 <!-- /main navbar -->
 
-<div class="page-header">
-    <div class="breadcrumb-line breadcrumb-line-light header-elements-md-inline">
-        <div class="d-flex">
-            <div class="breadcrumb">
-
-                <?php \APP\core\base\View::getBreadcrumbs();?>
-
-            </div>
-
-            <a href="#" class="header-elements-toggle text-default d-md-none"><i class="icon-more"></i></a>
-        </div>
-        
-    </div>
-
-
-</div>
-
-
 
 <!-- Page content -->
 <div class="page-content">
 
-
-
-
-
     <!-- Main content -->
     <div class="content-wrapper">
 
-
-
-
-        <?php if(isset($_SESSION['errors'])): ?>
-            <div  class="alert alert-danger alert-dismissible">
-                <button type="button" class="close" data-dismiss="alert"><span>×</span></button>
-                <span class="font-weight-semibold">Ошибка!</span> <br><?=$_SESSION['errors']; unset($_SESSION['errors']);?>
-            </div>
-        <?php endif;?>
-
-        <?php if(isset($_SESSION['success'])): ?>
-            <div  style="width: 30%" class="alert alert-success alert-dismissible">
-                <button type="button" class="close" data-dismiss="alert"><span>×</span></button>
-                <span class="font-weight-semibold">Успех!</span> <?=$_SESSION['success']; unset($_SESSION['success']);?>
-            </div>
-        <?php endif;?>
-
-
         <!-- Content area -->
-        <div class="d-flex justify-content-center align-items-center">
+        <div class="content d-flex justify-content-center align-items-center">
 
+            <!-- Registration form -->
+            <form action="index.html" class="flex-fill">
+                <div class="row">
+                    <div class="col-lg-6 offset-lg-3">
+                        <div class="card mb-0">
+                            <div class="card-body">
+                                <div class="text-center mb-3">
+                                    <i class="icon-plus3 icon-2x text-success border-success border-3 rounded-round p-3 mb-3 mt-1"></i>
+                                    <h5 class="mb-0">Create account</h5>
+                                    <span class="d-block text-muted">All fields are required</span>
+                                </div>
 
-            
-            <?=$content?>
+                                <div class="form-group form-group-feedback form-group-feedback-right">
+                                    <input type="text" class="form-control" placeholder="Choose username">
+                                    <div class="form-control-feedback">
+                                        <i class="icon-user-plus text-muted"></i>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group form-group-feedback form-group-feedback-right">
+                                            <input type="text" class="form-control" placeholder="First name">
+                                            <div class="form-control-feedback">
+                                                <i class="icon-user-check text-muted"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="form-group form-group-feedback form-group-feedback-right">
+                                            <input type="text" class="form-control" placeholder="Second name">
+                                            <div class="form-control-feedback">
+                                                <i class="icon-user-check text-muted"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group form-group-feedback form-group-feedback-right">
+                                            <input type="password" class="form-control" placeholder="Create password">
+                                            <div class="form-control-feedback">
+                                                <i class="icon-user-lock text-muted"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="form-group form-group-feedback form-group-feedback-right">
+                                            <input type="password" class="form-control" placeholder="Repeat password">
+                                            <div class="form-control-feedback">
+                                                <i class="icon-user-lock text-muted"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group form-group-feedback form-group-feedback-right">
+                                            <input type="email" class="form-control" placeholder="Your email">
+                                            <div class="form-control-feedback">
+                                                <i class="icon-mention text-muted"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="form-group form-group-feedback form-group-feedback-right">
+                                            <input type="email" class="form-control" placeholder="Repeat email">
+                                            <div class="form-control-feedback">
+                                                <i class="icon-mention text-muted"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="form-check">
+                                        <label class="form-check-label">
+                                            <input type="checkbox" class="form-input-styled" checked data-fouc>
+                                            Send me <a href="#">test account settings</a>
+                                        </label>
+                                    </div>
+
+                                    <div class="form-check">
+                                        <label class="form-check-label">
+                                            <input type="checkbox" class="form-input-styled" checked data-fouc>
+                                            Subscribe to monthly newsletter
+                                        </label>
+                                    </div>
+
+                                    <div class="form-check">
+                                        <label class="form-check-label">
+                                            <input type="checkbox" class="form-input-styled" data-fouc>
+                                            Accept <a href="#">terms of service</a>
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <button type="submit" class="btn bg-teal-400 btn-labeled btn-labeled-right"><b><i class="icon-plus3"></i></b> Create account</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <!-- /registration form -->
 
         </div>
         <!-- /content area -->
 
+
+        <!-- Footer -->
+        <div class="navbar navbar-expand-lg navbar-light">
+            <div class="text-center d-lg-none w-100">
+                <button type="button" class="navbar-toggler dropdown-toggle" data-toggle="collapse" data-target="#navbar-footer">
+                    <i class="icon-unfold mr-2"></i>
+                    Footer
+                </button>
+            </div>
+
+            <div class="navbar-collapse collapse" id="navbar-footer">
+					<span class="navbar-text">
+						&copy; 2015 - 2018. <a href="#">Limitless Web App Kit</a> by <a href="http://themeforest.net/user/Kopyov" target="_blank">Eugene Kopyov</a>
+					</span>
+
+                <ul class="navbar-nav ml-lg-auto">
+                    <li class="nav-item"><a href="https://kopyov.ticksy.com/" class="navbar-nav-link" target="_blank"><i class="icon-lifebuoy mr-2"></i> Support</a></li>
+                    <li class="nav-item"><a href="http://demo.interface.club/limitless/docs/" class="navbar-nav-link" target="_blank"><i class="icon-file-text2 mr-2"></i> Docs</a></li>
+                    <li class="nav-item"><a href="https://themeforest.net/item/limitless-responsive-web-application-kit/13080328?ref=kopyov" class="navbar-nav-link font-weight-semibold"><span class="text-pink-400"><i class="icon-cart2 mr-2"></i> Purchase</span></a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- /footer -->
 
     </div>
     <!-- /main content -->
 
 </div>
 <!-- /page content -->
-
-
-
-<!-- Footer -->
-<div class="navbar navbar-expand-lg navbar-dark">
-    <div class="text-center d-lg-none w-100">
-        <button type="button" class="navbar-toggler dropdown-toggle" data-toggle="collapse" data-target="#navbar-footer">
-            <i class="icon-unfold mr-2"></i>
-            Подвал сайта
-        </button>
-    </div>
-
-    <div class="navbar-collapse collapse" id="navbar-footer">
-			<span class="navbar-text">
-				&copy; 2020 <b><a href="/panel/">CASHCALL.RU</a></b> - Биржа удаленных операторов на телефоне.
-			</span>
-
-        <ul class="navbar-nav ml-lg-auto">
-            <li class="nav-item"><a href="mailto: <?=CONFIG['BASEMAIL']['email']?>" class="navbar-nav-link" target="_blank"><i class="icon-mail-read mr-2"></i> <?=CONFIG['BASEMAIL']['email']?></a></li>
-
-
-        </ul>
-    </div>
-</div>
-<!-- /footer -->
-
 
 </body>
 </html>
