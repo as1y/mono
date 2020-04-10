@@ -48,7 +48,7 @@
             </div>
 
             <div class="form-group text-center text-muted content-divider">
-                <span class="px-2">Additions</span>
+                <span class="px-2">Дополнительно</span>
             </div>
 
             <div class="form-group">
