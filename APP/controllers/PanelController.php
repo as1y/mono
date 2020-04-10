@@ -334,12 +334,24 @@ class PanelController extends AppController {
             'description' => 'Профиль',
             'keywords' => 'Профиль',
         ];
+        \APP\core\base\View::setMeta($META);
+
 
         $BREADCRUMBS['HOME'] = ['Label' => $this->BreadcrumbsControllerLabel, 'Url' => $this->BreadcrumbsControllerUrl];
         $BREADCRUMBS['DATA'][] = ['Label' => "Мой профиль"];
-
-        \APP\core\base\View::setMeta($META);
         \APP\core\base\View::setBreadcrumbs($BREADCRUMBS);
+
+
+        $ASSETS[] = ["js" => "/global_assets/js/plugins/uploaders/fileinput/plugins/purify.min.js"];
+        $ASSETS[] = ["js" => "/global_assets/js/plugins/uploaders/fileinput/plugins/sortable.min.js"];
+        $ASSETS[] = ["js" => "/global_assets/js/plugins/uploaders/fileinput/fileinput.min.js"];
+        $ASSETS[] = ["js" => "/global_assets/js/demo_pages/uploader_bootstrap.js"];
+        
+        \APP\core\base\View::setAssets($ASSETS);
+
+
+
+
 
 
 
