@@ -166,12 +166,20 @@ class PanelController extends AppController {
             'description' => 'Баланс',
             'keywords' => 'Баланс',
         ];
+        \APP\core\base\View::setMeta($META);
+
 
         $BREADCRUMBS['HOME'] = ['Label' => $this->BreadcrumbsControllerLabel, 'Url' => $this->BreadcrumbsControllerUrl];
         $BREADCRUMBS['DATA'][] = ['Label' => "Баланс"];
-
-        \APP\core\base\View::setMeta($META);
         \APP\core\base\View::setBreadcrumbs($BREADCRUMBS);
+
+
+
+        $ASSETS[] = ["js" => "/global_assets/js/plugins/tables/datatables/datatables.min.js"];
+        $ASSETS[] = ["js" => "/assets/js/datatables_basic.js"];
+        \APP\core\base\View::setAssets($ASSETS);
+
+
 
 
 
@@ -346,7 +354,6 @@ class PanelController extends AppController {
         $ASSETS[] = ["js" => "/global_assets/js/plugins/uploaders/fileinput/plugins/sortable.min.js"];
         $ASSETS[] = ["js" => "/global_assets/js/plugins/uploaders/fileinput/fileinput.min.js"];
         $ASSETS[] = ["js" => "/assets/js/uploader_bootstrap.js"];
-
         \APP\core\base\View::setAssets($ASSETS);
 
 
