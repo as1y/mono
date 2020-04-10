@@ -7,6 +7,18 @@
                 <span class="d-block text-muted">Cashcall.ru - биржа операторов на телефоне</span>
             </div>
 
+            <div class="form-group text-center  mb-3 mb-md-2">
+                <div class="custom-control custom-radio custom-control-inline">
+                    <input type="radio" class="custom-control-input" name="custom-inline-radio" id="custom_radio_inline_unchecked" checked="">
+                    <label class="custom-control-label" for="custom_radio_inline_unchecked">Я оператор</label>
+                </div>
+
+                <div class="custom-control custom-radio custom-control-inline">
+                    <input type="radio" class="custom-control-input" name="custom-inline-radio" id="custom_radio_inline_checked">
+                    <label class="custom-control-label" for="custom_radio_inline_checked">Я рекламодатель</label>
+                </div>
+            </div>
+            
             <div class="form-group form-group-feedback form-group-feedback-left">
                 <input type="text" class="form-control" placeholder="Username">
                 <div class="form-control-feedback">
@@ -68,17 +80,7 @@
 <!--                    <span class="d-block text-muted">CASHCALL - биржа операторов на телефоне</span>-->
 <!--                </div>-->
 <!---->
-<!--                <div class="form-group text-center  mb-3 mb-md-2">-->
-<!--                    <div class="custom-control custom-radio custom-control-inline">-->
-<!--                        <input type="radio" class="custom-control-input" name="custom-inline-radio" id="custom_radio_inline_unchecked" checked="">-->
-<!--                        <label class="custom-control-label" for="custom_radio_inline_unchecked">Я оператор</label>-->
-<!--                    </div>-->
-<!---->
-<!--                    <div class="custom-control custom-radio custom-control-inline">-->
-<!--                        <input type="radio" class="custom-control-input" name="custom-inline-radio" id="custom_radio_inline_checked">-->
-<!--                        <label class="custom-control-label" for="custom_radio_inline_checked">Я рекламодатель</label>-->
-<!--                    </div>-->
-<!--                </div>-->
+
 <!---->
 <!---->
 <!--                <div class="row">-->
