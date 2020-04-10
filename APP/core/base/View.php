@@ -75,7 +75,29 @@ class View {
     }
 
 
+    public static function addassets($DATA){
 
+        foreach ($DATA as $key=>$val){
+
+            if ($key == "js"){
+                ?>
+                <script src="<?=$val?>"></script>
+                <?php
+            }
+
+
+
+
+
+
+
+        }
+
+
+
+
+
+    }
 
 
 
