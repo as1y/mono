@@ -12,7 +12,6 @@
                 <div class="form-control-feedback">
                     <i class="icon-user-check text-muted"></i>
                 </div>
-                <span class="form-text text-danger"><i class="icon-cancel-circle2 mr-2"></i> This username is already taken</span>
             </div>
 
             <div class="form-group form-group-feedback form-group-feedback-left">
