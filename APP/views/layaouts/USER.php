@@ -163,7 +163,7 @@
     <div class="text-center d-lg-none w-100">
         <button type="button" class="navbar-toggler dropdown-toggle" data-toggle="collapse" data-target="#navbar-footer">
             <i class="icon-unfold mr-2"></i>
-            Footer
+            Подвал сайта
         </button>
     </div>
 
