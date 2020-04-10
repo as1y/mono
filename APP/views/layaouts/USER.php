@@ -92,6 +92,23 @@
 </div>
 <!-- /main navbar -->
 
+<div class="page-header">
+    <div class="breadcrumb-line breadcrumb-line-light header-elements-md-inline">
+        <div class="d-flex">
+            <div class="breadcrumb">
+
+                <?php \APP\core\base\View::getBreadcrumbs();?>
+
+            </div>
+
+            <a href="#" class="header-elements-toggle text-default d-md-none"><i class="icon-more"></i></a>
+        </div>
+        
+    </div>
+
+
+</div>
+
 
 
 <!-- Page content -->
@@ -124,12 +141,8 @@
 
 
 
-
-
-
-
         <!-- Content area -->
-        <div class="content d-flex justify-content-center align-items-center">
+        <div class="content d-flex  align-items-center">
 
 
             
