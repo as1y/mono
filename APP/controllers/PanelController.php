@@ -138,8 +138,19 @@ class PanelController extends AppController {
         $BREADCRUMBS['HOME'] = ['Label' => $this->BreadcrumbsControllerLabel, 'Url' => $this->BreadcrumbsControllerUrl];
         $BREADCRUMBS['DATA'][] = ['Label' => "Партнерская программа"];
 
+
+        $ASSETS[] = ["js" => "/global_assets/js/plugins/tables/datatables/datatables.min.js"];
+        $ASSETS[] = ["js" => "/assets/js/datatables_basic.js"];
+
+
+
         \APP\core\base\View::setMeta($META);
         \APP\core\base\View::setBreadcrumbs($BREADCRUMBS);
+        \APP\core\base\View::setAssets($ASSETS);
+
+
+
+
 
 
        $allref =   $Panel->getrefferals();
