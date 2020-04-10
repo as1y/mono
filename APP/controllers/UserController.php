@@ -42,9 +42,19 @@ class UserController extends AppController
 
 
 
-    \APP\core\base\View::setAssets($ASSETS);
-    \APP\core\base\View::setMeta($META);
+         \APP\core\base\View::setAssets($ASSETS);
+        \APP\core\base\View::setMeta($META);
         \APP\core\base\View::setBreadcrumbs($BREADCRUMBS);
+
+
+        if ($_POST){
+
+
+            show($_POST);
+            exit();
+
+            
+        }
 
 
 
@@ -63,10 +73,8 @@ class UserController extends AppController
 			{
 
 
-                show($_POST);
-                exit();
 
-                
+
 
                 //Прошли Валидацию
 
