@@ -77,7 +77,52 @@
 </div>
 <!-- /main navbar -->
 
+<div class="page-header">
+    <div class="breadcrumb-line breadcrumb-line-light header-elements-md-inline">
+        <div class="d-flex">
+            <div class="breadcrumb">
 
+                <?php \APP\core\base\View::getBreadcrumbs();?>
+
+            </div>
+
+            <a href="#" class="header-elements-toggle text-default d-md-none"><i class="icon-more"></i></a>
+        </div>
+
+        <div class="header-elements d-none">
+            <div class="breadcrumb justify-content-center">
+
+
+                <a href="/panel/ticket/" class="breadcrumb-elements-item">
+                    <i class="icon-comment-discussion mr-2"></i>
+                    Написать тикет
+                    <span class="badge badge-pill bg-warning-400 ml-auto ml-md-0">0</span>
+
+                </a>
+
+
+                <a href="/panel/balance/" type="button" class="breadcrumb-elements-item"><i class="icon-wallet mr-2"></i>
+                    <span class="badge badge-success"><b><?=$_SESSION['ulogin']['bal']?></b> Р.</span>
+
+                </a>
+
+
+
+
+
+
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+
+
+</div>
 <!-- Page content -->
 <div class="page-content">
 
