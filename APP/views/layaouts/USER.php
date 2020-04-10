@@ -39,13 +39,7 @@
 <!-- Main navbar -->
 <div class="navbar navbar-expand-md navbar-dark">
 
-
-
-    <div class="navbar-brand">
-        <a href="index.html" class="d-inline-block">
-            <img src="../../../../global_assets/images/logo_light.png" alt="">
-        </a>
-    </div>
+    
 
 
 
@@ -54,7 +48,7 @@
         <b>CASHCALL.RU</b>
     </a>
 
-    
+
     <div class="d-md-none">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-mobile">
             <i class="icon-tree5"></i>
