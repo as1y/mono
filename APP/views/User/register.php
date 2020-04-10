@@ -11,6 +11,7 @@
                 <div class="custom-control custom-radio custom-control-inline">
                     <input type="radio" class="custom-control-input" name="role" id="custom_radio_inline_unchecked" checked="">
                     <label class="custom-control-label" for="custom_radio_inline_unchecked">Я оператор</label>
+                    <i class="icon-headphones text-muted"></i>
                 </div>
 
                 <div class="custom-control custom-radio custom-control-inline">
