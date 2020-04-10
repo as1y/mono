@@ -162,15 +162,15 @@ class UserController extends AppController
             'description' => 'Регистрация пользователя',
             'keywords' => 'Регистрация пользователя',
         ];
+        \APP\core\base\View::setMeta($META);
 
-        $BREADCRUMBS['HOME'] = ['Label' => $this->BreadcrumbsControllerLabel, 'Url' => $this->BreadcrumbsControllerUrl];
-        $BREADCRUMBS['DATA'][] = ['Label' => "Регистрация пользователя"];
+        
 
 
 		if( !isset($_SESSION['confirm']['code']) )
 		{
-			mes ('Код подтверждения устарел. Необходимо зарегистрироваться повторно.');
 
+            $_SESSION['errors'] = "Код подтверждения устарел. Необходимо выполнить процедуру повторно.";
 			redir('/user/register/');
 		}
 
@@ -247,7 +247,6 @@ class UserController extends AppController
 		if( !isset($_SESSION['confirm']['recode']) )
 		{
             $_SESSION['errors'] = "Код подтверждения устарел. Необходимо выполнить процедуру повторно.";
-            
 			redir('/user/recovery/');
 		}
 		if(!empty($_POST['confirm-code']))
