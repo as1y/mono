@@ -9,9 +9,9 @@
 
             <div class="form-group text-center  mb-3 mb-md-2">
                 <div class="custom-control custom-radio custom-control-inline">
+                    <i class="icon-headphones"></i>
                     <input type="radio" class="custom-control-input" name="role" id="custom_radio_inline_unchecked" checked="">
                     <label class="custom-control-label" for="custom_radio_inline_unchecked">Я оператор</label>
-                    <i class="icon-headphones text-muted"></i>
                 </div>
 
                 <div class="custom-control custom-radio custom-control-inline">
