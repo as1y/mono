@@ -28,6 +28,9 @@
 
     <?php \APP\core\base\View::getAssets("js");?>
 
+    <!--    Частые-->
+
+
     <script src="/assets/js/app.js"></script>
 
 

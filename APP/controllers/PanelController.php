@@ -68,12 +68,24 @@ class PanelController extends AppController {
             'description' => 'Добавление проекта',
             'keywords' => 'Добавление проекта',
         ];
+        \APP\core\base\View::setMeta($META);
+
 
         $BREADCRUMBS['HOME'] = ['Label' => $this->BreadcrumbsControllerLabel, 'Url' => $this->BreadcrumbsControllerUrl];
         $BREADCRUMBS['DATA'][] = ['Label' => "Добавление проекта"];
-
-        \APP\core\base\View::setMeta($META);
         \APP\core\base\View::setBreadcrumbs($BREADCRUMBS);
+
+
+        
+        $ASSETS[] = ["js" => "/global_assets/js/plugins/forms/wizards/steps.min.js"];
+        $ASSETS[] = ["js" => "/global_assets/js/plugins/forms/selects/select2.min.js"];
+        $ASSETS[] = ["js" => "/global_assets/js/plugins/forms/styling/uniform.min.js"];
+        $ASSETS[] = ["js" => "/global_assets/js/plugins/forms/inputs/inputmask.js"];
+        $ASSETS[] = ["js" => "/global_assets/js/plugins/forms/validation/validate.min.js"];
+        $ASSETS[] = ["js" => "/global_assets/js/plugins/extensions/cookie.js"];
+
+        \APP\core\base\View::setAssets($ASSETS);
+
 
         $add = new Addp(); //Вызываем Моудль
 
