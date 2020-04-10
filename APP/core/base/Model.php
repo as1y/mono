@@ -204,7 +204,7 @@ abstract class Model
     public static function countonline(){
 
 
-	    eixt("fu");
+	    exit("fu");
 
 	    return  R::count('online');
     }
