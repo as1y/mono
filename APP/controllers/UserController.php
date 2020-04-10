@@ -48,6 +48,13 @@ class UserController extends AppController
             $user = new User; //Вызываем Моудль
             $user->load($_POST); // Берем из POST только те параметры которые нам нужны
 
+            if(!$user->validate($_POST) || !$user->checkUniq(CONFIG['USERTABLE']) )
+            {
+                $_SESSION['form_data'] = $user->ATR; //Сохраняем в сессию, чтобы у поьзователю было удобнее
+                $user->getErrorsVali(); //Записываем ошибки в сессию
+                redir();
+            }
+
 
 
             show($_POST);
@@ -62,11 +69,11 @@ class UserController extends AppController
 
 		{
 			if(!$user->validate($_POST) || !$user->checkUniq(CONFIG['USERTABLE']) )
-			{
-				$_SESSION['form_data'] = $user->ATR; //Сохраняем в сессию, чтобы у поьзователю было удобнее
-				$user->getErrorsVali(); //Записываем ошибки в сессию
-				redir();
-			}
+        {
+            $_SESSION['form_data'] = $user->ATR; //Сохраняем в сессию, чтобы у поьзователю было удобнее
+            $user->getErrorsVali(); //Записываем ошибки в сессию
+            redir();
+        }
 			else
 			{
 

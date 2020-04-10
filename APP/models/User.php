@@ -20,23 +20,24 @@ class User extends \APP\core\base\Model
 	['email'],
 	['password'],
 	['password2'],
-
         ['terms'],
 	],
 	'email' =>[
 	['email'],
 	],
+
 	'lengthMin' =>[
 	['password',5],
-	['password-confirm',5],
+	['password2',5],
 	],
+
 	'lengthMax' =>[
 	['password',30],
-	['password-confirm',30],
+	['password2',30],
 	['username',30],
 	],
 	'equals' =>[
-	['signup-password', 'signup-password-confirm' ],
+	['password', 'password2' ],
 	],
 	];
 	// Валидация на код
@@ -51,9 +52,9 @@ class User extends \APP\core\base\Model
 	// ПРОВЕРКА НА УНИКАЛЬНЫЙ ЕМЕЙЛ
 	public function checkUniq($table)
 	{
-		$uni = R::findOne($table, 'email = ? LIMIT 1',[$this->ATR['signup-email']]);
+		$uni = R::findOne($table, 'email = ? LIMIT 1',[$this->ATR['email']]);
 		if($uni){
-			if($uni->email == $this->ATR['signup-email']){
+			if($uni->email == $this->ATR['email']){
 				$this->errors['uniq'][] = "Пользователь с таким E-mail уже зарегистрирован";
 			}
 			return false;
