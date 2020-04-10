@@ -31,14 +31,6 @@
 
     <script src="/assets/js/app.js"></script>
 
-    <!-- Theme JS files -->
-    <script src="../../../../global_assets/js/plugins/forms/styling/uniform.min.js"></script>
-    <script src="../../../../global_assets/js/plugins/forms/styling/switchery.min.js"></script>
-    <script src="../../../../global_assets/js/plugins/forms/styling/switch.min.js"></script>
-
-    <script src="assets/js/app.js"></script>
-    <script src="../../../../global_assets/js/demo_pages/form_checkboxes_radios.js"></script>
-    <!-- /theme JS files -->
 
     <!-- /theme JS files -->
 
