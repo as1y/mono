@@ -1,7 +1,5 @@
 <!-- Registration form -->
-
-
-<form action="index.html" class="login-form">
+<form action="/user/register" method="post" class="login-form">
     <div class="card mb-0">
         <div class="card-body">
             <div class="text-center mb-3">
@@ -52,20 +50,6 @@
             </div>
 
             <div class="form-group">
-                <div class="form-check">
-                    <label class="form-check-label">
-                        <input type="checkbox" name="remember" class="form-input-styled" checked data-fouc>
-                        Send me <a href="#">test account settings</a>
-                    </label>
-                </div>
-
-                <div class="form-check">
-                    <label class="form-check-label">
-                        <input type="checkbox" name="remember" class="form-input-styled" checked data-fouc>
-                        Subscribe to monthly newsletter
-                    </label>
-                </div>
-
                 <div class="form-check">
                     <label class="form-check-label">
                         <input type="checkbox" name="remember" class="form-input-styled" data-fouc>
