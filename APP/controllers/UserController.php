@@ -83,6 +83,8 @@ class UserController extends AppController
 			else
 			{
 				$_SESSION['errors'] = "Логин/Пароль введены не верно";
+                redir('/user/');
+
 			}
 		}
 
