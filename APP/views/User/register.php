@@ -27,14 +27,6 @@
             </div>
 
             <div class="form-group form-group-feedback form-group-feedback-left">
-                <input type="password" class="form-control" placeholder="Password">
-                <div class="form-control-feedback">
-                    <i class="icon-user-lock text-muted"></i>
-                </div>
-            </div>
-            
-
-            <div class="form-group form-group-feedback form-group-feedback-left">
                 <input type="password" class="form-control" placeholder="Your email">
                 <div class="form-control-feedback">
                     <i class="icon-mention text-muted"></i>
@@ -42,9 +34,16 @@
             </div>
 
             <div class="form-group form-group-feedback form-group-feedback-left">
-                <input type="password" class="form-control" placeholder="Repeat email">
+                <input type="password" class="form-control" placeholder="Password">
                 <div class="form-control-feedback">
-                    <i class="icon-mention text-muted"></i>
+                    <i class="icon-user-lock text-muted"></i>
+                </div>
+            </div>
+
+            <div class="form-group form-group-feedback form-group-feedback-left">
+                <input type="password" class="form-control" placeholder="Password">
+                <div class="form-control-feedback">
+                    <i class="icon-user-lock text-muted"></i>
                 </div>
             </div>
 
