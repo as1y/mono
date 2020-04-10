@@ -77,8 +77,7 @@ class UserController extends AppController
 
 			$user = new User;
 
-			if($user->login(CONFIG['USERTABLE']
-            )){
+			if($user->login(CONFIG['USERTABLE'])){
 				//АВТОРИЗАЦИЯ
 				redir('/panel/');
 				//АВТОРИЗАЦИЯ
@@ -110,7 +109,7 @@ class UserController extends AppController
         $BREADCRUMBS['DATA'][] = ['Label' => "Логин"];
 
         \APP\core\base\View::setMeta($META);
-        \APP\core\base\View::addassets($ASSETS);
+        \APP\core\base\View::setassets($ASSETS);
         \APP\core\base\View::setBreadcrumbs($BREADCRUMBS);
 
 

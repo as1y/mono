@@ -4,6 +4,7 @@ class View {
 	public $route = [];
 	public $view;
 	public $layaout;
+    static $assets = [];
 	static $meta = ["title"=> CONFIG['NAME'], "desc"=> "", "keywords"=> ""];
     static $Breadcrumbs = ["HOME" => [], "DATA" => []];
 
@@ -75,30 +76,16 @@ class View {
     }
 
 
-    public static function addassets($DATA){
+    public static function setassets($DATA = []){
+        self::$assets = $DATA;
+    }
 
-        foreach ($DATA as $key=>$val){
+    public static function getassets($type = ""){
 
-            if ($key == "js"){
-                ?>
-                <script src="<?=$val?>"></script>
-                <?php
-            }
-
-
-
-
-
-
-
-        }
-
-
-
+	    // выводим тут асссеты.
 
 
     }
-
 
 
     public static function getBreadcrumbs(){
