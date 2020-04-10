@@ -26,7 +26,7 @@
                 </div>
             </div>
 
-            <div class="form-group form-group-feedback form-group-feedback-left">
+            <div class="form-group form-group-feedback form-group-feedback-left">1
                 <input type="email" name="email" class="form-control" placeholder="Email">
                 <div class="form-control-feedback">
                     <i class="icon-mention text-muted"></i>
