@@ -50,10 +50,6 @@ class UserController extends AppController
 
 		if(!empty($_POST))
 
-            show($_POST);
-		    exit();
-
-
 		{
 			$user = new User; //Вызываем Моудль
 			$user->load($_POST); // Берем из POST только те параметры которые нам нужны
@@ -66,7 +62,13 @@ class UserController extends AppController
 			else
 			{
 
-			    //Прошли Валидацию
+
+                show($_POST);
+                exit();
+
+                
+
+                //Прошли Валидацию
 
 			    $passorig = $user->ATR['signup-password'];
 				$user->ATR['signup-password'] = password_hash($user->ATR['signup-password'], PASSWORD_DEFAULT); // Хеш пароля
