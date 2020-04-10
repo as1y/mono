@@ -12,12 +12,17 @@
                         <span class="d-block text-muted">CASHCALL - биржа операторов на телефоне</span>
                     </div>
 
+                    <div class="form-group mb-3 mb-md-2">
+                        <label class="d-block font-weight-semibold">Left inline radios</label>
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" class="custom-control-input" name="custom-inline-radio" id="custom_radio_inline_unchecked" checked="">
+                            <label class="custom-control-label" for="custom_radio_inline_unchecked">Custom selected</label>
+                        </div>
 
-                    <div class="form-check form-check-switch form-check-switch-left">
-                        <label class="form-check-label d-flex align-items-center">
-                            <div class="bootstrap-switch-on bootstrap-switch bootstrap-switch-wrapper bootstrap-switch-animate" style="width: 94px;"><div class="bootstrap-switch-container" style="width: 138px; margin-left: 0px;"><span class="bootstrap-switch-handle-on bootstrap-switch-primary" style="width: 46px;">Yes</span><span class="bootstrap-switch-label" style="width: 46px;">&nbsp;</span><span class="bootstrap-switch-handle-off bootstrap-switch-danger" style="width: 46px;">No</span><input type="checkbox" data-off-color="danger" data-on-text="Yes" data-off-text="No" class="form-check-input-switch" checked=""></div></div>
-                            Default text
-                        </label>
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" class="custom-control-input" name="custom-inline-radio" id="custom_radio_inline_checked">
+                            <label class="custom-control-label" for="custom_radio_inline_checked">Custom unselected</label>
+                        </div>
                     </div>
 
 
@@ -87,7 +92,7 @@
                             </div>
                         </div>
                     </div>
-                    
+
 
                     <button type="submit" class="btn bg-teal-400 btn-labeled btn-labeled-right"><b><i class="icon-plus3"></i></b> Create account</button>
                 </div>
