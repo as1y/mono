@@ -45,10 +45,10 @@ class UserController extends AppController
         \APP\core\base\View::setMeta($META);
         \APP\core\base\View::setBreadcrumbs($BREADCRUMBS);
 
-
+        $user = new User; //Вызываем Моудль
+        
         if ($_POST){
 
-            $user = new User; //Вызываем Моудль
             $user->load($_POST); // Берем из POST только те параметры которые нам нужны
 
             if(!$user->validate($_POST) || !$user->checkUniq(CONFIG['USERTABLE']) )
