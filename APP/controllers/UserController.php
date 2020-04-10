@@ -3,6 +3,7 @@ namespace APP\controllers;
 use APP\core\Mail;
 use APP\models\User;
 use APP\core\base\Model;
+use APP\models\Panel;
 
 class UserController extends AppController
 {
