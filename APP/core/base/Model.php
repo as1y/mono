@@ -157,7 +157,7 @@ abstract class Model
     }
 
 
-    public  function online (){
+    public static function online (){
 
         if ($_SESSION['ulogin']) $user = $_SESSION['ulogin']['username'];
         else $user = "guest";
@@ -201,7 +201,8 @@ abstract class Model
 
     }
 
-    public static function countonline(){
+    public function countonline(){
+
 
 
 	    exit("fu");
