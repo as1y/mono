@@ -119,25 +119,25 @@
 
         <div class="row">
             <div class="col-md-4"></div>
-            <div class="col-md-4">111</div>
+            <div class="col-md-4">            <?php if(isset($_SESSION['errors'])): ?>
+                    <div style="width: 30%" class="alert alert-danger alert-dismissible justify-content-center">
+                        <button type="button" class="close" data-dismiss="alert"><span>×</span></button>
+                        <span class="font-weight-semibold">Ошибка!</span> <br><?=$_SESSION['errors']; unset($_SESSION['errors']);?>
+                    </div>
+                <?php endif;?>
+
+                <?php if(isset($_SESSION['success'])): ?>
+                    <div  style="width: 30%" class="alert alert-success alert-dismissible">
+                        <button type="button" class="close" data-dismiss="alert"><span>×</span></button>
+                        <span class="font-weight-semibold">Успех!</span> <?=$_SESSION['success']; unset($_SESSION['success']);?>
+                    </div>
+                <?php endif;?></div>
             <div class="col-md-4"></div>
 
         </div>
 
 
-            <?php if(isset($_SESSION['errors'])): ?>
-                <div style="width: 30%" class="alert alert-danger alert-dismissible justify-content-center">
-                    <button type="button" class="close" data-dismiss="alert"><span>×</span></button>
-                    <span class="font-weight-semibold">Ошибка!</span> <br><?=$_SESSION['errors']; unset($_SESSION['errors']);?>
-                </div>
-            <?php endif;?>
 
-            <?php if(isset($_SESSION['success'])): ?>
-                <div  style="width: 30%" class="alert alert-success alert-dismissible">
-                    <button type="button" class="close" data-dismiss="alert"><span>×</span></button>
-                    <span class="font-weight-semibold">Успех!</span> <?=$_SESSION['success']; unset($_SESSION['success']);?>
-                </div>
-            <?php endif;?>
 
 
 
