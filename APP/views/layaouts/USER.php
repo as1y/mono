@@ -28,7 +28,7 @@
     <script src="/global_assets/js/plugins/forms/styling/uniform.min.js"></script>
 
     <script src="/assets/js/app.js"></script>
-    <script src="/assets/js/demo_pages/login.js"></script>
+    <script src="/assets/js/login.js"></script>
     <!-- /theme JS files -->
 
 </head>
