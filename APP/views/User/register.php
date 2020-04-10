@@ -41,7 +41,7 @@
             </div>
 
             <div class="form-group form-group-feedback form-group-feedback-left">
-                <input type="password" class="form-control" placeholder="Повторите пароль">
+                <input type="password2" class="form-control" placeholder="Повторите пароль">
                 <div class="form-control-feedback">
                     <i class="icon-user-lock text-muted"></i>
                 </div>
@@ -54,7 +54,7 @@
             <div class="form-group">
                 <div class="form-check">
                     <label class="form-check-label">
-                        <input type="checkbox" name="remember"  checked class="form-input-styled" data-fouc>
+                        <input type="checkbox" name="terms"  checked class="form-input-styled" data-fouc>
                         Принимаю <a href="#">условия использования</a>
                     </label>
                 </div>
