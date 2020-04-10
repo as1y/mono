@@ -117,7 +117,7 @@
         <!-- Content area -->
         <div class="content d-flex justify-content-center align-items-center">
 
-            
+
             <?=$content?>
 
 
