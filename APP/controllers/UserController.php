@@ -164,7 +164,7 @@ class UserController extends AppController
         ];
         \APP\core\base\View::setMeta($META);
 
-        
+
 
 
 		if( !isset($_SESSION['confirm']['code']) )
@@ -174,11 +174,10 @@ class UserController extends AppController
 			redir('/user/register/');
 		}
 
-
 		//Проверка на сессию кода
-		if(!empty($_POST['confirm-code']))
+		if(!empty($_POST['code']))
 		{
-			if($_POST['confirm-code'] == $_SESSION['confirm']['code'])
+			if($_POST['code'] == $_SESSION['confirm']['code'])
 			{
 				// ПИШЕМ В БАЗУ ДАННЫХ
 				if($user->saveuser(CONFIG['USERTABLE']))
@@ -188,16 +187,21 @@ class UserController extends AppController
                     $_SESSION = array();
 					mes ('Успешная регистрация! Данные для входа отправленны на почту!');
 					redir('/user/');
+
+
 				}
 				else
 				{
 					$_SESSION['errors'] = "Ошибка базы данных. Попробуйте позже.";
+                    redir('/user/confirmRegister/');
 				}
 				// ПИШЕМ В БАЗУ ДАННЫХ
 			}
 			else
 			{
 				$_SESSION['errors'] = "Код не совпдает с кодом в E-mail";
+                redir('/user/confirmRegister/');
+
 			}
 		}
 	}
