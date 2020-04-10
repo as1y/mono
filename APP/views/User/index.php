@@ -22,7 +22,7 @@
             </div>
 
             <div class="form-group">
-                <button type="submit" class="btn btn-primary btn-block">Войти <i class="icon-circle-right2 ml-2"></i></button>
+                <button type="submit" class="btn bg-teal-400 btn-block">Войти <i class="icon-circle-right2 ml-2"></i></button>
             </div>
 
             <div class="text-center">
