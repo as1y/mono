@@ -38,6 +38,8 @@ class PanelController extends AppController {
         if($company){
 
 
+            show($company);
+            exit();
 
             $this->set(compact('company'));
 
@@ -48,9 +50,6 @@ class PanelController extends AppController {
 
 
 
-
-
-//        $this->set(compact('testpar'));
 
 
     }
@@ -359,7 +358,7 @@ class PanelController extends AppController {
         $BREADCRUMBS['DATA'][] = ['Label' => "Мой профиль"];
         \APP\core\base\View::setBreadcrumbs($BREADCRUMBS);
 
-        
+
 
         $ASSETS[] = ["js" => "/global_assets/js/demo_pages/form_actions.js"];
         $ASSETS[] = ["js" => "/assets/js/form_inputs.js"];
