@@ -182,18 +182,18 @@ class UserController extends AppController
 				// ПИШЕМ В БАЗУ ДАННЫХ
 				if($user->saveuser(CONFIG['USERTABLE']))
 				{
+
                     Mail::sendMail("register",'Успешная регистрация '.CONFIG['NAME'],null,['to' => [['email' =>$_SESSION['confirm']['email']]]]);
 
 //                    $_SESSION = array();
 
-                    show($_SESSION);
-                    exit();
+                    $_POST['email'] = $_SESSION['confirm']['email'];
+                    $_POST['password'] = $_SESSION['confirm']['password2'];
 
 
                     $user->login(CONFIG['USERTABLE']);
 
-
-					redir('/user/');
+					redir('/panel/');
 
 
 				}
