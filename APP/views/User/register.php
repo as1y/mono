@@ -3,12 +3,8 @@
     <div class="card mb-0">
         <div class="card-body">
             <div class="text-center mb-3">
-                <h5 class="mb-0">Create account</h5>
-                <span class="d-block text-muted">All fields are required</span>
-            </div>
-
-            <div class="form-group text-center text-muted content-divider">
-                <span class="px-2">Your credentials</span>
+                <h5 class="mb-0">Регистрация</h5>
+                <span class="d-block text-muted">Cashcall.ru - биржа операторов на телефоне</span>
             </div>
 
             <div class="form-group form-group-feedback form-group-feedback-left">
