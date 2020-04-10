@@ -104,7 +104,7 @@
 
 </div>
 
-<div class="row justify-content-center">
+<div class="justify-content-center">
 
     <?php if(isset($_SESSION['errors'])): ?>
         <div style="width: 30%" class="alert alert-danger alert-dismissible text-center">
