@@ -134,12 +134,6 @@
         <?php endif;?>
 
 
-        <div class="container-fluid">
-            <div class="col-md-4"></div>
-            <div class="col-md-4">111</div>
-            <div class="col-md-4"></div>
-
-        </div>
 
 
 
