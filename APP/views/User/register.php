@@ -54,21 +54,21 @@
             <div class="form-group">
                 <div class="form-check">
                     <label class="form-check-label">
-                        <div class="uniform-checker"><span class="checked"><input type="checkbox" name="remember" class="form-input-styled" checked="" data-fouc=""></span></div>
+                        <input type="checkbox" name="remember" class="form-input-styled" checked data-fouc>
                         Send me <a href="#">test account settings</a>
                     </label>
                 </div>
 
                 <div class="form-check">
                     <label class="form-check-label">
-                        <div class="uniform-checker"><span class="checked"><input type="checkbox" name="remember" class="form-input-styled" checked="" data-fouc=""></span></div>
+                        <input type="checkbox" name="remember" class="form-input-styled" checked data-fouc>
                         Subscribe to monthly newsletter
                     </label>
                 </div>
 
                 <div class="form-check">
                     <label class="form-check-label">
-                        <div class="uniform-checker"><span><input type="checkbox" name="remember" class="form-input-styled" data-fouc=""></span></div>
+                        <input type="checkbox" name="remember" class="form-input-styled" data-fouc>
                         Accept <a href="#">terms of service</a>
                     </label>
                 </div>
