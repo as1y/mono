@@ -1,4 +1,13 @@
 <!-- Registration form -->
+
+<div class="form-check form-check-switch form-check-switch-left">
+    <label class="form-check-label d-flex align-items-center">
+        <div class="bootstrap-switch-on bootstrap-switch bootstrap-switch-wrapper bootstrap-switch-animate" style="width: 94px;"><div class="bootstrap-switch-container" style="width: 138px; margin-left: 0px;"><span class="bootstrap-switch-handle-on bootstrap-switch-primary" style="width: 46px;">Yes</span><span class="bootstrap-switch-label" style="width: 46px;">&nbsp;</span><span class="bootstrap-switch-handle-off bootstrap-switch-danger" style="width: 46px;">No</span><input type="checkbox" data-off-color="danger" data-on-text="Yes" data-off-text="No" class="form-check-input-switch" checked=""></div></div>
+        Default text
+    </label>
+</div>
+
+
 <form action="index.html" class="flex-fill">
     <div class="row">
         <div class="col-lg-6 offset-lg-3">
