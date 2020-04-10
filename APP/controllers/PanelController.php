@@ -23,12 +23,14 @@ class PanelController extends AppController {
             'description' => 'Кабинет рекламодателя',
             'keywords' => 'Кабинет рекламодателя ',
         ];
+        \APP\core\base\View::setMeta($META);
+
 
         $BREADCRUMBS['HOME'] = ['Label' => $this->BreadcrumbsControllerLabel, 'Url' => $this->BreadcrumbsControllerUrl];
         $BREADCRUMBS['DATA'][] = ['Label' => "Мои проекты"];
-
-        \APP\core\base\View::setMeta($META);
         \APP\core\base\View::setBreadcrumbs($BREADCRUMBS);
+
+
 
 
         $panel = new Panel(); //Вызываем Моудль
