@@ -157,7 +157,7 @@ abstract class Model
     }
 
 
-    public static function online (){
+    public function online (){
 
         if ($_SESSION['ulogin']) $user = $_SESSION['ulogin']['username'];
         else $user = "guest";
