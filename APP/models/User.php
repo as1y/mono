@@ -119,6 +119,9 @@ class User extends \APP\core\base\Model
         //Проверяем рефку
 		if(empty($_SESSION['confirm']['ref'])) $_SESSION['confirm']['ref'] = NULL;
 
+		// Проверяем РОЛЬ
+       $role = ($_SESSION['role'] == "on") ? "O" : "R";
+
 
 		//ФОРМИРУЕМ МАССИВ ДАННЫХ ДЛЯ РЕГИСТРАЦИИ
 		$MASSREG = [
