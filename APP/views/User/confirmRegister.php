@@ -14,7 +14,7 @@
                 </div>
             </div>
 
-            <button type="submit" class="btn bg-blue btn-block"><i class="icon-spinner11 mr-2"></i> Завершить регистрацию</button>
+            <button type="submit" class="btn bg-teal-400 btn-block"><i class="icon-spinner11 mr-2"></i> Завершить регистрацию</button>
         </div>
     </div>
 
