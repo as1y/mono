@@ -83,7 +83,9 @@
             <div class="breadcrumb">
 
                 <?php \APP\core\base\View::getBreadcrumbs();?>
+
             </div>
+            <a href="#" class="header-elements-toggle text-default d-md-none"><i class="icon-more"></i></a>
         </div>
 
     </div>
