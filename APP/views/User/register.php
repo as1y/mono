@@ -12,7 +12,7 @@
                         <span class="d-block text-muted">CASHCALL - биржа операторов на телефоне</span>
                     </div>
 
-                    <div class="form-group mb-3 mb-md-2">
+                    <div class="form-group text-center  mb-3 mb-md-2">
                         <div class="custom-control custom-radio custom-control-inline">
                             <input type="radio" class="custom-control-input" name="custom-inline-radio" id="custom_radio_inline_unchecked" checked="">
                             <label class="custom-control-label" for="custom_radio_inline_unchecked">Я оператор</label>
