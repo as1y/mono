@@ -1,27 +1,21 @@
-<?show($_SESSION)?>
+<?php show($_SESSION); ?>
+<form class="login-form" action="index.html">
+    <div class="card mb-0">
+        <div class="card-body">
+            <div class="text-center mb-3">
+                <i class="icon-spinner11 icon-2x text-warning border-warning border-3 rounded-round p-3 mb-3 mt-1"></i>
+                <h5 class="mb-0">Password recovery</h5>
+                <span class="d-block text-muted">We'll send you instructions in email</span>
+            </div>
 
-<h1>ВНИМАНИЕ!</h1>
+            <div class="form-group form-group-feedback form-group-feedback-right">
+                <input type="email" class="form-control" placeholder="Your email">
+                <div class="form-control-feedback">
+                    <i class="icon-mail5 text-muted"></i>
+                </div>
+            </div>
 
-Необходимо подтвердить регистрацию.<br> Код подтерждения отправлен на E-mail.
-
-
-
-<div class="alert alert-info" role="alert">
-    <strong>Внимание!</strong><br> Необходимо подтвердить регистрацию. Код подтерждения отправлен на E-mail.
-</div>
-<h4 align=center class="page-header">Код для подтверждения регистрации</h4><br>
-<form action="/user/confirmRegister/" method="post" class="form-signin">
-    <p><input class="form-control" type="text" placeholder="Код из E-mail" name="confirm-code"></p><br>
-<!--
-    <p><input class="btn btn-lg btn-primary btn-block" type="submit" onclick="yaCounter46849950.reachGoal('REG'); return true;"
--->
-    <p><input class="btn btn-lg btn-primary btn-block" type="submit"   value="Завершить регистрацию" ></p>
+            <button type="submit" class="btn bg-blue btn-block"><i class="icon-spinner11 mr-2"></i> Reset password</button>
+        </div>
+    </div>
 </form>
-
-
-<hr>
-<h3>КОД НЕ ПРИШЕЛ НА E-MAIL?</h3>
-1. Откройте ВСЮ почту. Проверьте все папки, а не только не "ВХОДЯЩИЕ"<br>
-2. Проверить папку "ПРОМОАКЦИИ"<br>
-
-
