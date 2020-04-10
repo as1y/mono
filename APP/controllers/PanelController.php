@@ -425,7 +425,8 @@ class PanelController extends AppController {
 
 
         $ASSETS[] = ["js" => "/global_assets/js/demo_pages/form_actions.js"];
-        $ASSETS[] = ["js" => "/assets/js/datatables_basic.js"];
+        $ASSETS[] = ["js" => "/global_assets/js/plugins/forms/styling/uniform.min.js"];
+        
         \APP\core\base\View::setAssets($ASSETS);
 
 
