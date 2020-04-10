@@ -54,8 +54,8 @@
             <div class="form-group">
                 <div class="form-check">
                     <label class="form-check-label">
-                        <input type="checkbox" name="remember" class="form-input-styled" data-fouc>
-                        Accept <a href="#">terms of service</a>
+                        <input type="checkbox" name="remember"  checked class="form-input-styled" data-fouc>
+                        Принимаю <a href="#">условия использования</a>
                     </label>
                 </div>
             </div>
