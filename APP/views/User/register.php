@@ -9,39 +9,39 @@
 
             <div class="form-group text-center  mb-3 mb-md-2">
                 <div class="custom-control custom-radio custom-control-inline">
-                    <input type="radio" class="custom-control-input" name="custom-inline-radio" id="custom_radio_inline_unchecked" checked="">
+                    <input type="radio" class="custom-control-input" name="role" id="custom_radio_inline_unchecked" checked="">
                     <label class="custom-control-label" for="custom_radio_inline_unchecked">Я оператор</label>
                 </div>
 
                 <div class="custom-control custom-radio custom-control-inline">
-                    <input type="radio" class="custom-control-input" name="custom-inline-radio" id="custom_radio_inline_checked">
+                    <input type="radio" class="custom-control-input" name="role" id="custom_radio_inline_checked">
                     <label class="custom-control-label" for="custom_radio_inline_checked">Я рекламодатель</label>
                 </div>
             </div>
 
             <div class="form-group form-group-feedback form-group-feedback-left">
-                <input type="text" class="form-control" placeholder="Имя Фамилия">
+                <input type="text" name="username" class="form-control" placeholder="Имя Фамилия">
                 <div class="form-control-feedback">
                     <i class="icon-user-check text-muted"></i>
                 </div>
             </div>
 
             <div class="form-group form-group-feedback form-group-feedback-left">
-                <input type="email" class="form-control" placeholder="Email">
+                <input type="email" name="email" class="form-control" placeholder="Email">
                 <div class="form-control-feedback">
                     <i class="icon-mention text-muted"></i>
                 </div>
             </div>
 
             <div class="form-group form-group-feedback form-group-feedback-left">
-                <input type="password" class="form-control" placeholder="Пароль">
+                <input type="password" name="password" class="form-control" placeholder="Пароль">
                 <div class="form-control-feedback">
                     <i class="icon-user-lock text-muted"></i>
                 </div>
             </div>
 
             <div class="form-group form-group-feedback form-group-feedback-left">
-                <input type="password2" class="form-control" placeholder="Повторите пароль">
+                <input type="password" name="password2" class="form-control" placeholder="Повторите пароль">
                 <div class="form-control-feedback">
                     <i class="icon-user-lock text-muted"></i>
                 </div>

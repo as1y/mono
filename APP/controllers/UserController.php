@@ -53,7 +53,7 @@ class UserController extends AppController
             show($_POST);
             exit();
 
-            
+
         }
 
 
