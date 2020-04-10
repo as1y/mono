@@ -18,7 +18,7 @@
                         </label>
                     </div>
 
-                    
+
                     <div class="form-group form-group-feedback form-group-feedback-right">
                         <input type="text" class="form-control" placeholder="Choose username">
                         <div class="form-control-feedback">

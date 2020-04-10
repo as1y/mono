@@ -24,6 +24,10 @@ class UserController extends AppController
         $BREADCRUMBS['DATA'][] = ['Label' => "Регистрация пользователя"];
 
 
+  
+
+    $ASSETS[] = ["js" => "/global_assets/js/plugins/forms/styling/uniform.min.js"];
+
         $ASSETS[] = ["js" => "/global_assets/js/plugins/forms/styling/switchery.min.js"];
         $ASSETS[] = ["js" => "/global_assets/js/plugins/forms/styling/switch.min.js"];
 
