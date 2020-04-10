@@ -107,11 +107,11 @@ class UserController extends AppController
 
         $ASSETS[] = ["js" => "/assets/js/login.js"];
         $ASSETS[] = ["js" => "/global_assets/js/plugins/forms/styling/uniform.min.js"];
-        \APP\core\base\View::setassets($ASSETS);
+        \APP\core\base\View::setAssets($ASSETS);
 
 
 
-        
+
 
 
 	}
