@@ -24,9 +24,18 @@ class UserController extends AppController
         $BREADCRUMBS['DATA'][] = ['Label' => "Регистрация пользователя"];
 
 
+        $ASSETS[] = ["js" => "/global_assets/js/plugins/forms/styling/switchery.min.js"];
+        $ASSETS[] = ["js" => "/global_assets/js/plugins/forms/styling/switch.min.js"];
+        
+        $ASSETS[] = ["js" => "/global_assets/js/plugins/forms/validation/validate.min.js"];
+        $ASSETS[] = ["js" => "/global_assets/js/plugins/forms/styling/uniform.min.js"];
+        $ASSETS[] = ["js" => "/assets/js/login_validation.js"];
 
 
-        \APP\core\base\View::setMeta($META);
+
+
+    \APP\core\base\View::setAssets($ASSETS);
+    \APP\core\base\View::setMeta($META);
         \APP\core\base\View::setBreadcrumbs($BREADCRUMBS);
 
 
@@ -109,7 +118,6 @@ class UserController extends AppController
         $ASSETS[] = ["js" => "/global_assets/js/plugins/forms/validation/validate.min.js"];
         $ASSETS[] = ["js" => "/global_assets/js/plugins/forms/styling/uniform.min.js"];
         $ASSETS[] = ["js" => "/assets/js/login_validation.js"];
-
 
         \APP\core\base\View::setAssets($ASSETS);
 
