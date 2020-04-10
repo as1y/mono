@@ -20,28 +20,28 @@
             </div>
 
             <div class="form-group form-group-feedback form-group-feedback-left">
-                <input type="text" class="form-control" placeholder="Username">
+                <input type="text" class="form-control" placeholder="Имя Фамилия">
                 <div class="form-control-feedback">
                     <i class="icon-user-check text-muted"></i>
                 </div>
             </div>
 
             <div class="form-group form-group-feedback form-group-feedback-left">
-                <input type="email" class="form-control" placeholder="Your email">
+                <input type="email" class="form-control" placeholder="Email">
                 <div class="form-control-feedback">
                     <i class="icon-mention text-muted"></i>
                 </div>
             </div>
 
             <div class="form-group form-group-feedback form-group-feedback-left">
-                <input type="password" class="form-control" placeholder="Password">
+                <input type="password" class="form-control" placeholder="Пароль">
                 <div class="form-control-feedback">
                     <i class="icon-user-lock text-muted"></i>
                 </div>
             </div>
 
             <div class="form-group form-group-feedback form-group-feedback-left">
-                <input type="password" class="form-control" placeholder="Password">
+                <input type="password" class="form-control" placeholder="Повторите пароль">
                 <div class="form-control-feedback">
                     <i class="icon-user-lock text-muted"></i>
                 </div>
