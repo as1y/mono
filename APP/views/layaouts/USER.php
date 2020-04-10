@@ -39,8 +39,9 @@
 <!-- Main navbar -->
 <div class="navbar navbar-expand-md navbar-dark">
     <div class="navbar-brand">
-        <a href="index.html" class="d-inline-block">
-            <img src="../../../../global_assets/images/logo_light.png" alt="">
+        <a href="/" class="navbar-nav-link " >
+            <img src="/global_assets/images/dribbble.png" class="align-top mr-2 rounded" width="20" height="20" alt="">
+            <b>CASHCALL.RU</b>
         </a>
     </div>
 
@@ -49,6 +50,9 @@
             <i class="icon-tree5"></i>
         </button>
     </div>
+
+
+
 
     <div class="collapse navbar-collapse" id="navbar-mobile">
         <ul class="navbar-nav ml-auto">
@@ -74,8 +78,15 @@
             </li>
         </ul>
     </div>
+
+
+
 </div>
 <!-- /main navbar -->
+
+
+
+
 
 <!-- Page content -->
 <div class="page-content">
