@@ -1,4 +1,3 @@
-<?php show($_SESSION['confirm']['code']); ?>
 <form class="login-form" action="index.html">
     <div class="card mb-0">
         <div class="card-body">
@@ -18,4 +17,8 @@
             <button type="submit" class="btn bg-blue btn-block"><i class="icon-spinner11 mr-2"></i> Reset password</button>
         </div>
     </div>
+
+    <?php show($_SESSION['confirm']['code']); ?>
+
+    
 </form>
