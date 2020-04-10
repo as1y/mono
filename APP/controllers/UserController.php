@@ -13,10 +13,6 @@ class UserController extends AppController
 
 		if( isset($_SESSION['ulogin']['id']) ) redir('/panel/');
 
-
-
-
-
         $META = [
             'title' => 'Регистрация пользователя',
             'description' => 'Регистрация пользователя',
@@ -49,6 +45,10 @@ class UserController extends AppController
 
         if ($_POST){
 
+            $user = new User; //Вызываем Моудль
+            $user->load($_POST); // Берем из POST только те параметры которые нам нужны
+
+
 
             show($_POST);
             exit();
@@ -61,8 +61,6 @@ class UserController extends AppController
 		if(!empty($_POST))
 
 		{
-			$user = new User; //Вызываем Моудль
-			$user->load($_POST); // Берем из POST только те параметры которые нам нужны
 			if(!$user->validate($_POST) || !$user->checkUniq(CONFIG['USERTABLE']) )
 			{
 				$_SESSION['form_data'] = $user->ATR; //Сохраняем в сессию, чтобы у поьзователю было удобнее

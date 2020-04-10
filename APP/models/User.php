@@ -9,7 +9,9 @@ class User extends \APP\core\base\Model
 	'username' => '',
 	'email' => '',
 	'password' => '',
-	'password-confirm' => '',
+	'password2' => '',
+    'terms' => '',
+    'role' => ''
 	];
 	// Правила валидации
 	public $rules = [
@@ -17,7 +19,9 @@ class User extends \APP\core\base\Model
 	['username'],
 	['email'],
 	['password'],
-	['password-confirm'],
+	['password2'],
+
+        ['terms'],
 	],
 	'email' =>[
 	['email'],
