@@ -83,13 +83,14 @@ class View {
     public static function getAssets($type){
 
 
-	    show(self::$assets);
-	    exit();
-
 	    // выводим тут асссеты.
         foreach (self::$assets as $key=>$val){
+
+            echo $key;
+
             if ($key = "js") echo '<script src="'.$val.'"></script>';
             if ($key = "css") echo '<link href="'.$val.'" rel="stylesheet" type="text/css">';
+
         }
 
 
