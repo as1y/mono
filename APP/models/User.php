@@ -131,6 +131,7 @@ class User extends \APP\core\base\Model
 	    	'ref' => $_SESSION['confirm']['ref'],
 	    	'datareg' => date("Y-m-d H:i:s"),
             'role' => $role,
+            'bal' => 0,
 
 		];
 		//ФОРМИРУЕМ МАССИВ ДАННЫХ ДЛЯ РЕГИСТРАЦИИ
