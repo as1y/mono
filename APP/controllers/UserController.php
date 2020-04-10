@@ -156,6 +156,17 @@ class UserController extends AppController
 
 		$user = new User;
 
+
+        $META = [
+            'title' => 'Регистрация пользователя',
+            'description' => 'Регистрация пользователя',
+            'keywords' => 'Регистрация пользователя',
+        ];
+
+        $BREADCRUMBS['HOME'] = ['Label' => $this->BreadcrumbsControllerLabel, 'Url' => $this->BreadcrumbsControllerUrl];
+        $BREADCRUMBS['DATA'][] = ['Label' => "Регистрация пользователя"];
+
+        
 		if( !isset($_SESSION['confirm']['code']) )
 		{
 			mes ('Код подтверждения устарел. Необходимо зарегистрироваться повторно.');
