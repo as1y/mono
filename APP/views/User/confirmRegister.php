@@ -10,7 +10,7 @@
             <div class="form-group form-group-feedback form-group-feedback-right">
                 <input type="text" name="code" class="form-control" placeholder="Код из E-mail">
                 <div class="form-control-feedback">
-                    <i class="icon-mail5 text-muted"></i>
+                    <i class="icon-eye text-muted"></i>
                 </div>
             </div>
 
