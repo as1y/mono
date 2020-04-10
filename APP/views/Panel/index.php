@@ -1,6 +1,14 @@
 <?php
+if (empty($company)) {
+    $company = [];
+    ?>
+dfgfdg
 
-//show($company);
+<?php
+}
+
+
+
 
 ?>
 

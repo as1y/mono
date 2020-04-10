@@ -36,7 +36,6 @@ class PanelController extends AppController {
         $company = $panel->allcompany($_SESSION['ulogin']['id']);
 
 
-        if (empty($company)) $company = [];
 
         $this->set(compact('company'));
 
