@@ -130,8 +130,11 @@ class User extends \APP\core\base\Model
 	    	'pass' => $_SESSION['confirm']['password'],
 	    	'ref' => $_SESSION['confirm']['ref'],
 	    	'datareg' => date("Y-m-d H:i:s"),
-            'role' => $role,
-            'bal' => 0,
+            'avatar' => "", // Расположение базового аватара
+            'nnews' => 1, // Уведомления почтовые
+            'nmessages' => 1, // Уведомления почтовые
+            'role' => $role, //Роль
+            'bal' => 0, //Баланс
 
 		];
 		//ФОРМИРУЕМ МАССИВ ДАННЫХ ДЛЯ РЕГИСТРАЦИИ
