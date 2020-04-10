@@ -12,11 +12,11 @@ abstract class Controller {
 
         //Если с сессией зашел в логин или на главную
         if (empty($_SESSION['ulogin']) && $route['controller'] != "Main"  && $route['controller'] != "User"  ){
-            redir('/');
+            redir('/user/');
         }
         //Если с сессией зашел в логин или на главную
 
-        
+
 //
 //		// РАСПРЕДЕЛЕНЕ ПРАВ (ПОКА ПРОСТОЕ)
 //		if (empty($_SESSION['ulogin']) && $route['controller'] != "Main"  && $route['controller'] != "User" && $route['controller'] != "Spec"  ){
