@@ -27,9 +27,7 @@
     <!-- /core JS files -->
 
     <?php \APP\core\base\View::getAssets("js");?>
-
-    <!--    Частые-->
-
+    
 
     <script src="/assets/js/app.js"></script>
 
@@ -44,7 +42,7 @@
 <!--    <script src="/global_assets/js/plugins/forms/styling/uniform.min.js"></script>-->
 <!---->
 <!---->
-    
+
 <!--    <script src="/global_assets/js/demo_pages/editor_summernote.js"></script>-->
 <!--    <script src="/assets/js/form_inputs.js"></script>-->
 <!---->
