@@ -293,6 +293,14 @@ class ProjectController extends AppController {
         \APP\core\base\View::setMeta($META);
         \APP\core\base\View::setBreadcrumbs($BREADCRUMBS);
 
+
+        $ASSETS[] = ["js" => "/global_assets/js/plugins/forms/styling/uniform.min.js"];
+        $ASSETS[] = ["js" => "/assets/js/form_inputs.js"];
+
+        \APP\core\base\View::setAssets($ASSETS);
+
+
+
         $contact =  $project->contact($idc);
         $result = $project->getres($idc);
 
