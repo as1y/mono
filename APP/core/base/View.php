@@ -85,11 +85,9 @@ class View {
 
 	    // выводим тут асссеты.
         foreach (self::$assets as $key=>$val){
-
-            show($val);
-
-            if ($key = "js") echo '<script src="'.$val.'"></script>';
-            if ($key = "css") echo '<link href="'.$val.'" rel="stylesheet" type="text/css">';
+            
+            if (key($val) == "js") echo '<script src="'.array_shift($val).'"></script>';
+            if (key($val) == "css") echo '<link href="'.array_shift($val).'" rel="stylesheet" type="text/css">';
 
         }
 
