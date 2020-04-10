@@ -1,4 +1,4 @@
-<?php show($_SESSION['code']); ?>
+<?php show($_SESSION['confirm']['code']); ?>
 <form class="login-form" action="index.html">
     <div class="card mb-0">
         <div class="card-body">
