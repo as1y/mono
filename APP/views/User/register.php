@@ -9,12 +9,16 @@
                         <h5 class="mb-0">Регистрация</h5>
                         <span class="d-block text-muted">CASHCALL - биржа операторов на телефоне</span>
                     </div>
+
+
                     <div class="form-check form-check-switch form-check-switch-left">
                         <label class="form-check-label d-flex align-items-center">
-                            <div class="bootstrap-switch bootstrap-switch-wrapper bootstrap-switch-animate bootstrap-switch-on" style="width: 142px;"><div class="bootstrap-switch-container" style="width: 210px; margin-left: 0px;"><span class="bootstrap-switch-handle-on bootstrap-switch-danger" style="width: 70px;">Enable</span><span class="bootstrap-switch-label" style="width: 70px;">&nbsp;</span><span class="bootstrap-switch-handle-off bootstrap-switch-primary" style="width: 70px;">Disable</span><input type="checkbox" data-on-color="danger" data-off-color="primary" data-on-text="Enable" data-off-text="Disable" class="form-check-input-switch" checked=""></div></div>
-                            Enable/Disable
+                            <div class="bootstrap-switch-on bootstrap-switch bootstrap-switch-wrapper bootstrap-switch-animate" style="width: 94px;"><div class="bootstrap-switch-container" style="width: 138px; margin-left: 0px;"><span class="bootstrap-switch-handle-on bootstrap-switch-primary" style="width: 46px;">Yes</span><span class="bootstrap-switch-label" style="width: 46px;">&nbsp;</span><span class="bootstrap-switch-handle-off bootstrap-switch-danger" style="width: 46px;">No</span><input type="checkbox" data-off-color="danger" data-on-text="Yes" data-off-text="No" class="form-check-input-switch" checked=""></div></div>
+                            Default text
                         </label>
                     </div>
+
+                    
                     <div class="form-group form-group-feedback form-group-feedback-right">
                         <input type="text" class="form-control" placeholder="Choose username">
                         <div class="form-control-feedback">
