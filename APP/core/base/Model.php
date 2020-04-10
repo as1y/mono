@@ -157,7 +157,7 @@ abstract class Model
     }
 
 
-    public static function online (){
+    public  function online (){
 
         if ($_SESSION['ulogin']) $user = $_SESSION['ulogin']['username'];
         else $user = "guest";
@@ -165,7 +165,7 @@ abstract class Model
 
         if ($user != "guset"){
 
-            $online = \R::findOne("online", "WHERE user = ?", [$user]);
+            $online = R::findOne("online", "WHERE user = ?", [$user]);
             if ($online){
                 $online->timestamp = time();
                 R::store($online);
@@ -175,7 +175,7 @@ abstract class Model
         }
 
         if ($user == "guest"){
-            $online = \R::findOne("online", "WHERE ip = ?", [$_SERVER['REMOTE_ADDR']]);
+            $online = R::findOne("online", "WHERE ip = ?", [$_SERVER['REMOTE_ADDR']]);
             if ($online) {
                 $online->timestamp = time();
                 R::store($online);
@@ -202,7 +202,7 @@ abstract class Model
     }
 
     public static function countonline(){
-	    return  \R::count('online');
+	    return  R::count('online');
     }
 
 
