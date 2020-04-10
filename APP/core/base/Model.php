@@ -94,7 +94,7 @@ abstract class Model
     }
 
 
-    public function addnewBD($table, $DATA) {
+    public static function addnewBD($table, $DATA) {
 
         $tbl = R::dispense($table);
         //ФОРМИРУЕМ МАССИВ ДАННЫХ ДЛЯ РЕГИСТРАЦИИ
@@ -188,6 +188,7 @@ abstract class Model
             'ipu' => $_SERVER['REMOTE_ADDR'],
             'timestamp' => time(),
         ];
+
 
         self::addnewBD("online", $MASSREG);
 

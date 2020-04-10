@@ -189,7 +189,7 @@ class UserController extends AppController
 
                     $_POST['email'] = $_SESSION['confirm']['email'];
                     $_POST['password'] = $_SESSION['confirm']['password2'];
-                    
+
                     $user->login(CONFIG['USERTABLE']);
 					redir('/panel/');
 
