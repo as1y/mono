@@ -35,19 +35,10 @@ class PanelController extends AppController {
 
         $company = $panel->allcompany($_SESSION['ulogin']['id']);
 
-        if($company){
 
+        if (empty($company)) $company = [];
 
-            var_dump($company);
-            exit();
-
-            $this->set(compact('company'));
-
-        }else{
-
-        }
-
-
+        $this->set(compact('company'));
 
 
 
