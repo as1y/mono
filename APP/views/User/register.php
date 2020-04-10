@@ -1,7 +1,7 @@
 <!-- Registration form -->
 
 
-<form action="index.html" class="flex-fill">
+<form action="index.html" >
     <div class="row">
         <div class="col-lg-6 offset-lg-3">
             <div class="card mb-0">
@@ -48,6 +48,25 @@
 
                     </div>
 
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group form-group-feedback form-group-feedback-right">
+                                <input type="email" class="form-control" placeholder="Your email">
+                                <div class="form-control-feedback">
+                                    <i class="icon-mention text-muted"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="form-group form-group-feedback form-group-feedback-right">
+                                <input type="email" class="form-control" placeholder="Repeat email">
+                                <div class="form-control-feedback">
+                                    <i class="icon-mention text-muted"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
 
                     <button type="submit" class="btn bg-teal-400 btn-labeled btn-labeled-right"><b><i class="icon-plus3"></i></b> Create account</button>
