@@ -27,16 +27,14 @@
     <!-- /core JS files -->
 
     <?php \APP\core\base\View::getAssets("js");?>
-    
+
 
     <script src="/assets/js/app.js"></script>
 
 
 <!---->
 <!---->
-<!--    <script src="/global_assets/js/plugins/uploaders/fileinput/plugins/purify.min.js"></script>-->
-<!--    <script src="/global_assets/js/plugins/uploaders/fileinput/plugins/sortable.min.js"></script>-->
-<!--    <script src="/global_assets/js/plugins/uploaders/fileinput/fileinput.min.js"></script>-->
+
 <!---->
 <!--    <script src="/global_assets/js/plugins/editors/summernote/summernote.min.js"></script>-->
 <!--    <script src="/global_assets/js/plugins/forms/styling/uniform.min.js"></script>-->
@@ -49,12 +47,6 @@
 <!--    <script src="/global_assets/js/demo_pages/form_actions.js"></script>-->
 <!---->
 <!---->
-
-<!--    <script src="/assets/js/datatables_basic.js"></script>-->
-<!--    <script src="/global_assets/js/plugins/tables/datatables/datatables.min.js"></script>-->
-
-<!---->
-<!--    <script src="/assets/js/uploader_bootstrap.js"></script>-->
 
 
 

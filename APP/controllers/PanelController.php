@@ -141,12 +141,12 @@ class PanelController extends AppController {
 
         $ASSETS[] = ["js" => "/global_assets/js/plugins/tables/datatables/datatables.min.js"];
         $ASSETS[] = ["js" => "/assets/js/datatables_basic.js"];
-
+        \APP\core\base\View::setAssets($ASSETS);
 
 
         \APP\core\base\View::setMeta($META);
         \APP\core\base\View::setBreadcrumbs($BREADCRUMBS);
-        \APP\core\base\View::setAssets($ASSETS);
+
 
 
 
@@ -420,6 +420,11 @@ class PanelController extends AppController {
 
         \APP\core\base\View::setMeta($META);
         \APP\core\base\View::setBreadcrumbs($BREADCRUMBS);
+
+
+        $ASSETS[] = ["js" => "/global_assets/js/demo_pages/form_actions.js"];
+        $ASSETS[] = ["js" => "/assets/js/datatables_basic.js"];
+        \APP\core\base\View::setAssets($ASSETS);
 
 
 
