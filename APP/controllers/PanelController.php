@@ -31,8 +31,6 @@ class PanelController extends AppController {
         \APP\core\base\View::setBreadcrumbs($BREADCRUMBS);
 
 
-
-
         $panel = new Panel(); //Вызываем Моудль
 
         $company = $panel->allcompany($_SESSION['ulogin']['id']);

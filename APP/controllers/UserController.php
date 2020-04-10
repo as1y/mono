@@ -2,6 +2,8 @@
 namespace APP\controllers;
 use APP\core\Mail;
 use APP\models\User;
+use APP\core\base\Model;
+
 class UserController extends AppController
 {
 	public $layaout = 'USER'; //Перераспределяем массив layaout
