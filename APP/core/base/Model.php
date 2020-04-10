@@ -157,7 +157,7 @@ abstract class Model
     }
 
 
-    public  function online (){
+    public static function online (){
 
         if ($_SESSION['ulogin']) $user = $_SESSION['ulogin']['username'];
         else $user = "guest";
@@ -200,7 +200,7 @@ abstract class Model
 
     }
 
-    public function countonline(){
+    public static function countonline(){
 	    return  R::count('online');
     }
 
