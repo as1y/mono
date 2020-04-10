@@ -14,6 +14,9 @@ class UserController extends AppController
 		if( isset($_SESSION['ulogin']['id']) ) redir('/panel/');
 
 
+
+
+
         $META = [
             'title' => 'Регистрация пользователя',
             'description' => 'Регистрация пользователя',
@@ -26,7 +29,7 @@ class UserController extends AppController
 
 
 
-    $ASSETS[] = ["js" => "/global_assets/js/plugins/forms/styling/uniform.min.js"];
+       $ASSETS[] = ["js" => "/global_assets/js/plugins/forms/styling/uniform.min.js"];
 
         $ASSETS[] = ["js" => "/global_assets/js/plugins/forms/styling/switchery.min.js"];
         $ASSETS[] = ["js" => "/global_assets/js/plugins/forms/styling/switch.min.js"];
@@ -46,6 +49,11 @@ class UserController extends AppController
 
 
 		if(!empty($_POST))
+
+            show($_POST);
+		    exit();
+
+
 		{
 			$user = new User; //Вызываем Моудль
 			$user->load($_POST); // Берем из POST только те параметры которые нам нужны
