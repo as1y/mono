@@ -57,13 +57,7 @@
         <b>CASHCALL.RU</b>
     </a>
 
-
-    <div class="d-md-none">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-mobile">
-            <i class="icon-tree5"></i>
-        </button>
-    </div>
-
+    
 
 
 
