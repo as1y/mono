@@ -345,8 +345,8 @@ class PanelController extends AppController {
         $ASSETS[] = ["js" => "/global_assets/js/plugins/uploaders/fileinput/plugins/purify.min.js"];
         $ASSETS[] = ["js" => "/global_assets/js/plugins/uploaders/fileinput/plugins/sortable.min.js"];
         $ASSETS[] = ["js" => "/global_assets/js/plugins/uploaders/fileinput/fileinput.min.js"];
-        $ASSETS[] = ["js" => "/global_assets/js/demo_pages/uploader_bootstrap.js"];
-        
+        $ASSETS[] = ["js" => "/assets/js/uploader_bootstrap.js"];
+
         \APP\core\base\View::setAssets($ASSETS);
 
 
