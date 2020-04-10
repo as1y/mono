@@ -3,57 +3,7 @@
 
 <form action="index.html" class="flex-fill">
     <div class="row">
-        <div class="col-lg-6 offset-lg-3">
-            <div class="card mb-0">
-                <div class="card-body">
-                    <div class="text-center mb-3">
-                        <h5 class="mb-0">Регистрация</h5>
-                        <span class="d-block text-muted">CASHCALL - биржа операторов на телефоне</span>
-                    </div>
-
-                    <div class="form-group text-center  mb-3 mb-md-2">
-                        <div class="custom-control custom-radio custom-control-inline">
-                            <input type="radio" class="custom-control-input" name="custom-inline-radio" id="custom_radio_inline_unchecked" checked="">
-                            <label class="custom-control-label" for="custom_radio_inline_unchecked">Я оператор</label>
-                        </div>
-
-                        <div class="custom-control custom-radio custom-control-inline">
-                            <input type="radio" class="custom-control-input" name="custom-inline-radio" id="custom_radio_inline_checked">
-                            <label class="custom-control-label" for="custom_radio_inline_checked">Я рекламодатель</label>
-                        </div>
-                    </div>
-
-
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group form-group-feedback form-group-feedback-right">
-                                <input type="text" class="form-control" placeholder="First name">
-                                <div class="form-control-feedback">
-                                    <i class="icon-user-check text-muted"></i>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group form-group-feedback form-group-feedback-right">
-                                <input type="password" class="form-control" placeholder="Create password">
-                                <div class="form-control-feedback">
-                                    <i class="icon-user-lock text-muted"></i>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-
-
-
-                    <button type="submit" class="btn bg-teal-400 btn-labeled btn-labeled-right"><b><i class="icon-plus3"></i></b> Create account</button>
-                </div>
-            </div>
-        </div>
+      
     </div>
 </form>
 <!-- /registration form -->
