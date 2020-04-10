@@ -216,6 +216,15 @@ class ProjectController extends AppController {
         \APP\core\base\View::setMeta($META);
         \APP\core\base\View::setBreadcrumbs($BREADCRUMBS);
 
+
+
+        $ASSETS[] = ["js" => "/global_assets/js/plugins/editors/summernote/summernote.min.js"];
+        $ASSETS[] = ["js" => "/global_assets/js/demo_pages/editor_summernote.js"];
+
+        \APP\core\base\View::setAssets($ASSETS);
+
+
+
         if($this->isAjax()){
 
 
