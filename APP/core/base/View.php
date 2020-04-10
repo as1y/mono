@@ -82,6 +82,10 @@ class View {
 
     public static function getAssets($type){
 
+
+	    show(self::$assets);
+	    exit();
+
 	    // выводим тут асссеты.
         foreach (self::$assets as $key=>$val){
             if ($key = "js") echo '<script src="'.$val.'"></script>';
