@@ -424,10 +424,13 @@ class PanelController extends AppController {
         \APP\core\base\View::setBreadcrumbs($BREADCRUMBS);
 
 
-        $ASSETS[] = ["js" => "/global_assets/js/demo_pages/form_actions.js"];
-        $ASSETS[] = ["js" => "/global_assets/js/plugins/forms/styling/uniform.min.js"];
 
+
+        $ASSETS[] = ["js" => "/global_assets/js/plugins/forms/styling/uniform.min.js"];
         $ASSETS[] = ["js" => "/assets/js/form_inputs.js"];
+        $ASSETS[] = ["js" => "/global_assets/js/demo_pages/form_actions.js"];
+        $ASSETS[] = ["js" => "/global_assets/js/plugins/forms/selects/select2.min.js"];
+
 
 
 
