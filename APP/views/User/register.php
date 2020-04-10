@@ -27,7 +27,7 @@
             </div>
 
             <div class="form-group form-group-feedback form-group-feedback-left">
-                <input type="password" class="form-control" placeholder="Your email">
+                <input type="email" class="form-control" placeholder="Your email">
                 <div class="form-control-feedback">
                     <i class="icon-mention text-muted"></i>
                 </div>
