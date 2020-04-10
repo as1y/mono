@@ -1,4 +1,4 @@
-<form class="login-form" action="index.html">
+<form class="login-form" action="/user/confirmRegister/" method="post">
     <div class="card mb-0">
         <div class="card-body">
             <div class="text-center mb-3">
@@ -8,13 +8,13 @@
             </div>
 
             <div class="form-group form-group-feedback form-group-feedback-right">
-                <input type="email" class="form-control" placeholder="Your email">
+                <input type="text" name="code" class="form-control" placeholder="Код из E-mail">
                 <div class="form-control-feedback">
                     <i class="icon-mail5 text-muted"></i>
                 </div>
             </div>
 
-            <button type="submit" class="btn bg-teal-400 btn-block"><i class="icon-spinner11 mr-2"></i> Завершить регистрацию</button>
+            <button type="submit" class="btn bg-teal-400 btn-block"><i class="icon-play4 mr-2"></i> Завершить регистрацию</button>
         </div>
     </div>
 
