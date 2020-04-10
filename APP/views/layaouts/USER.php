@@ -39,7 +39,7 @@
 <!-- Main navbar -->
 <div class="navbar navbar-expand-md navbar-dark">
 
-    
+
 
 
 
@@ -99,27 +99,25 @@
     <!-- Main content -->
     <div class="content-wrapper">
 
+        <?php if(isset($_SESSION['errors'])): ?>
+            <div class="alert alert-danger alert-dismissible">
+                <button type="button" class="close" data-dismiss="alert"><span>×</span></button>
+                <span class="font-weight-semibold">Ошибка!</span> <br><?=$_SESSION['errors']; unset($_SESSION['errors']);?>
+            </div>
+        <?php endif;?>
+
+        <?php if(isset($_SESSION['success'])): ?>
+            <div class="alert alert-success alert-dismissible">
+                <button type="button" class="close" data-dismiss="alert"><span>×</span></button>
+                <span class="font-weight-semibold">Успех!</span> <?=$_SESSION['success']; unset($_SESSION['success']);?>
+            </div>
+
+        <?php endif;?>
+
         <!-- Content area -->
         <div class="content d-flex justify-content-center align-items-center">
 
-
-            <?php if(isset($_SESSION['errors'])): ?>
-                <div class="alert alert-danger alert-dismissible">
-                    <button type="button" class="close" data-dismiss="alert"><span>×</span></button>
-                    <span class="font-weight-semibold">Ошибка!</span> <br><?=$_SESSION['errors']; unset($_SESSION['errors']);?>
-                </div>
-            <?php endif;?>
-
-            <?php if(isset($_SESSION['success'])): ?>
-                <div class="alert alert-success alert-dismissible">
-                    <button type="button" class="close" data-dismiss="alert"><span>×</span></button>
-                    <span class="font-weight-semibold">Успех!</span> <?=$_SESSION['success']; unset($_SESSION['success']);?>
-                </div>
-
-            <?php endif;?>
-
-
-
+            
             <?=$content?>
 
 
