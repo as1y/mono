@@ -54,28 +54,29 @@
 
 
     <div class="collapse navbar-collapse" id="navbar-mobile">
+
+
         <ul class="navbar-nav ml-auto">
-            <li class="nav-item dropdown">
-                <a href="#" class="navbar-nav-link">
-                    <i class="icon-display4"></i>
-                    <span class="d-md-none ml-2">Go to website</span>
-                </a>
-            </li>
+        <li>
 
-            <li class="nav-item dropdown">
-                <a href="#" class="navbar-nav-link">
-                    <i class="icon-user-tie"></i>
-                    <span class="d-md-none ml-2">Contact admin</span>
-                </a>
-            </li>
 
-            <li class="nav-item dropdown">
-                <a href="#" class="navbar-nav-link">
-                    <i class="icon-cog3"></i>
-                    <span class="d-md-none ml-2">Options</span>
-                </a>
-            </li>
+            <?php if($this->route['action'] == "index"): ?>
+                <a href="/user/register/" type="button" class="btn btn-success"><i class="icon-user-plus mr-2"></i> Регистрация</a>
+            <?php endif;?>
+
+            <?php if($this->route['action'] == "register"): ?>
+                <a href="/user/" type="button" class="btn btn-success"><i class="icon-circle-right2 mr-2"></i> Войти</a>
+            <?php endif;?>
+
+            <?php if($this->route['action'] == "recovery"): ?>
+                <a href="/user/" type="button" class="btn btn-success"><i class="icon-circle-right2 mr-2"></i> Войти</a>
+            <?php endif;?>
+
+        </li>
         </ul>
+
+
+
     </div>
 
 
