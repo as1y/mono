@@ -429,9 +429,7 @@ class PanelController extends AppController {
         $ASSETS[] = ["js" => "/global_assets/js/plugins/forms/inputs/inputmask.js"];
         $ASSETS[] = ["js" => "/global_assets/js/plugins/forms/validation/validate.min.js"];
         $ASSETS[] = ["js" => "/global_assets/js/plugins/extensions/cookie.js"];
-        $ASSETS[] = ["js" => "/assets/js/form_wizard.js"];
-        
-
+    
 
 
 
