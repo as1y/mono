@@ -8,14 +8,14 @@
             </div>
 
             <div class="form-group form-group-feedback form-group-feedback-left">
-                <input type="email" name="email" class="form-control" placeholder="E-mail">
+                <input type="email" name="email" class="form-control" required placeholder="E-mail">
                 <div class="form-control-feedback">
                     <i class="icon-user text-muted"></i>
                 </div>
             </div>
 
             <div class="form-group form-group-feedback form-group-feedback-left">
-                <input type="password" name="password"  class="form-control" placeholder="Password">
+                <input type="password" name="password"  class="form-control" required placeholder="Password">
                 <div class="form-control-feedback">
                     <i class="icon-lock2 text-muted"></i>
                 </div>
