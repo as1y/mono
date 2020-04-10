@@ -87,29 +87,7 @@
                             </div>
                         </div>
                     </div>
-
-                    <div class="form-group">
-                        <div class="form-check">
-                            <label class="form-check-label">
-                                <input type="checkbox" class="form-input-styled" checked data-fouc>
-                                Send me <a href="#">test account settings</a>
-                            </label>
-                        </div>
-
-                        <div class="form-check">
-                            <label class="form-check-label">
-                                <input type="checkbox" class="form-input-styled" checked data-fouc>
-                                Subscribe to monthly newsletter
-                            </label>
-                        </div>
-
-                        <div class="form-check">
-                            <label class="form-check-label">
-                                <input type="checkbox" class="form-input-styled" data-fouc>
-                                Accept <a href="#">terms of service</a>
-                            </label>
-                        </div>
-                    </div>
+                    
 
                     <button type="submit" class="btn bg-teal-400 btn-labeled btn-labeled-right"><b><i class="icon-plus3"></i></b> Create account</button>
                 </div>
