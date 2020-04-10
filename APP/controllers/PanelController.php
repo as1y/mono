@@ -102,6 +102,7 @@ class PanelController extends AppController {
                     redir("/panel/");
                 }else{
                     $_SESSION['errors'] = "Ошибка базы данных. Попробуйте позже.";
+                    redir("/panel/add");
                 }
             }
 
@@ -109,7 +110,7 @@ class PanelController extends AppController {
 
             if (!$validation){
                 $_SESSION['errors'] = "Что-то пошло не так.";
-
+                redir("/panel/add");
 
             }
 
@@ -393,6 +394,7 @@ class PanelController extends AppController {
                 redir("/panel/settings/");
             }else{
                 $_SESSION['errors'] = $result;
+                redir("/panel/settings/");
             }
 
         }
