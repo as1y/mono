@@ -70,7 +70,7 @@ function ticketstatus ($status){
 
 
 function rendertypeaccount($type){
-    if ($type == "O") return "Операторо";
+    if ($type == "O") return "Оператор";
     if ($type == "R") return "Рекламодатель";
 }
 
