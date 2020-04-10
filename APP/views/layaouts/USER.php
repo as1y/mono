@@ -39,9 +39,8 @@
 <!-- Main navbar -->
 <div class="navbar navbar-expand-md navbar-dark">
     <div class="navbar-brand">
-        <a href="/" class="navbar-nav-link " >
-            <img src="/global_assets/images/dribbble.png" class="align-top mr-2 rounded" width="20" height="20" alt="">
-            <b>CASHCALL.RU</b>
+        <a href="index.html" class="d-inline-block">
+            <img src="../../../../global_assets/images/logo_light.png" alt="">
         </a>
     </div>
 
