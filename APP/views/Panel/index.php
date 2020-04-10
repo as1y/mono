@@ -2,7 +2,9 @@
 if (empty($company)) {
     $company = [];
     ?>
-dfgfdg
+
+    Контент когда нет добавленного проекта
+
 
 <?php
 }
