@@ -26,12 +26,13 @@ class UserController extends AppController
 
         $ASSETS[] = ["js" => "/global_assets/js/plugins/forms/styling/switchery.min.js"];
         $ASSETS[] = ["js" => "/global_assets/js/plugins/forms/styling/switch.min.js"];
-        
+
         $ASSETS[] = ["js" => "/global_assets/js/plugins/forms/validation/validate.min.js"];
         $ASSETS[] = ["js" => "/global_assets/js/plugins/forms/styling/uniform.min.js"];
         $ASSETS[] = ["js" => "/assets/js/login_validation.js"];
 
-
+        $ASSETS[] = ["js" => "/global_assets/js/demo_pages/form_checkboxes_radios.js"];
+        
 
 
     \APP\core\base\View::setAssets($ASSETS);
