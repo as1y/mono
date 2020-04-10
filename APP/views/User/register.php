@@ -60,7 +60,7 @@
                 </div>
             </div>
 
-            <button type="submit" class="btn bg-teal-400 btn-block">Register <i class="icon-circle-right2 ml-2"></i></button>
+            <button type="submit" class="btn bg-teal-400 btn-block">Регистрация <i class="icon-circle-right2 ml-2"></i></button>
         </div>
     </div>
 </form>
