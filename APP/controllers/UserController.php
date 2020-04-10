@@ -104,9 +104,13 @@ class UserController extends AppController
         $BREADCRUMBS['DATA'][] = ['Label' => "Логин"];
         \APP\core\base\View::setBreadcrumbs($BREADCRUMBS);
 
-        
-        $ASSETS[] = ["js" => "/assets/js/login.js"];
+
+
+        $ASSETS[] = ["js" => "/global_assets/js/plugins/forms/validation/validate.min.js"];
         $ASSETS[] = ["js" => "/global_assets/js/plugins/forms/styling/uniform.min.js"];
+        $ASSETS[] = ["js" => "/assets/js/login_validation.js"];
+
+
         \APP\core\base\View::setAssets($ASSETS);
 
 
