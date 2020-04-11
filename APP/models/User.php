@@ -153,7 +153,7 @@ class User extends \APP\core\base\Model
 	// ПРОВЕРКА ЕСТЬ ЛИ ТАКОЙ ЕМЕЙЛ
 	public function checkemail($table, $email)
 	{
-		$uni = $this->findOne($table, 'email = ? LIMIT 1', [$email]);
+		$uni = R::findOne($table, 'email = ? LIMIT 1', [$email]);
 		if($uni){
 			if($uni->email == $email){
 				$_SESSION['confirm']['id'] = $uni->id;
