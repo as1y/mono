@@ -136,7 +136,7 @@ class Panel extends \APP\core\base\Model {
 
         if (!password_verify($DATA['now'], $user->pass)) return "Текущий пароль не верен";
 
-        if ($DATA['now'] = $DATA['newpass']) return "Новый и старый пароль не должны быть одинаковые";
+        if ($DATA['now'] == $DATA['newpass']) return "Новый и старый пароль не должны быть одинаковые";
 
         $newpass = pole_valid ($DATA['newpass'], 50, 's');
         if (!empty($newpass['error'])) return $newpass['error'];
