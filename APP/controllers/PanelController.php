@@ -336,7 +336,7 @@ class PanelController extends AppController {
 
         if ($_POST){
 
-
+            show($_POST);
 
             exit("smena profile");
 
