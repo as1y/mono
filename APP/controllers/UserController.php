@@ -46,7 +46,7 @@ class UserController extends AppController
         \APP\core\base\View::setBreadcrumbs($BREADCRUMBS);
 
         $user = new User; //Вызываем Моудль
-        
+
         if ($_POST){
 
             $user->load($_POST); // Берем из POST только те параметры которые нам нужны
@@ -230,28 +230,34 @@ class UserController extends AppController
         \APP\core\base\View::setMeta($META);
         \APP\core\base\View::setBreadcrumbs($BREADCRUMBS);
 
-
-
 		if(!empty($_POST)){
 			$user = new User;
-			if(filter_var($_POST['reminder-email'], FILTER_VALIDATE_EMAIL)){
-				if($user->checkemail('client', $_POST['reminder-email'])){
+			if(filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)){
+				if($user->checkemail('client', $_POST['email'])){
 					$_SESSION['confirm']['recode'] = random_str(5);
-					$_SESSION['confirm']['remail'] = $_POST['reminder-email'];
+					$_SESSION['confirm']['remail'] = $_POST['email'];
                     Mail::sendMail("resetpassword",' Сборс пароля в '.CONFIG['NAME'],null,['to' => [['email' =>$_POST['reminder-email']]]]);
-					mes ('ВНИМАНИЕ! Не закрывайте страницу браузера. Код для сброса пароля отправлен на почту. ');
-					go2('user/confirmRecovery/');
+
+                    $_SESSION['success'] = "Код для сброса пароля отправлен на почту. ";
+
+					redir('/user/confirmRecovery/');
 				}
 				else
 				{
 					$_SESSION['errors'] = "Пользователя с таким E-mail не существует";
+                    redir('/user/recovery/');
 				}
 			}
 			else
 			{
 				$_SESSION['errors'] = "E-mail указан не корректно";
+                redir('/user/recovery/');
+                
 			}
 		}
+
+
+
 	}
 	// Страница ввода кода при сбросе пароля
 	public function confirmRecoveryAction()
