@@ -301,10 +301,6 @@ class PanelController extends AppController {
 
         if ($_POST && $_FILES['file']['size'] > 0){
 
-            show($_FILES);
-            show($_POST);
-            exit("gdfg");
-
             $validation = $Panel->filevalidation($_FILES['file'], ['ext' => ["jpg","png"], 'type' => 'image/jpeg']);
 
 
@@ -336,10 +332,22 @@ class PanelController extends AppController {
 
 
         if ($_POST){
+
+
             
             show($_POST);
+            exit();
 
-            exit("smena profile");
+            $result = $Panel->changeprofileinfo($_POST);
+            if ($result == 1){
+                $_SESSION['success'] = "Изменения сохранены";
+                redir("/panel/settings/");
+            }else{
+                $_SESSION['errors'] = $result;
+                redir("/panel/settings/");
+            }
+
+
 
         }
 
