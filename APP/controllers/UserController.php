@@ -282,12 +282,14 @@ class UserController extends AppController
             $_SESSION['errors'] = "Код подтверждения устарел. Необходимо выполнить процедуру повторно.";
 			redir('/user/recovery/');
 		}
-		if(!empty($_POST['confirm-code']))
+
+
+		if(!empty($_POST['code']))
 		{
-			if($_POST['confirm-code'] == $_SESSION['confirm']['recode'])
+			if($_POST['code'] == $_SESSION['confirm']['recode'])
 			{
 				$user    = new User;
-				$newpass = $user->newpass('client');
+				$newpass = $user->newpass('user');
 				if(!empty($newpass))
 				{
 					$_SESSION['confirm']['newpass'] = $newpass;

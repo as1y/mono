@@ -63,10 +63,10 @@ class User extends \APP\core\base\Model
 	}
 	// ПРОВЕРКА НА УНИКАЛЬНЫЙ ЕМЕЙЛ
 	//СБРОС ПАРОЛЯ
-	public function newpass($table)
+	public function newpass()
 	{
 		$newpass = random_str(10);
-		$tbl = R::load($table, $_SESSION['confirm']['id']);
+		$tbl = R::load(CONFIG['USERTABLE'], $_SESSION['confirm']['id']);
 		$tbl->pass = password_hash($newpass , PASSWORD_DEFAULT);
 		R::store($tbl);
 		return $newpass;
