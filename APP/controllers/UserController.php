@@ -312,6 +312,10 @@ class UserController extends AppController
 
 			}
 		}
+
+
+
+
 	}
 	// Страница ввода кода при сбросе пароля
 	public function refAction()
