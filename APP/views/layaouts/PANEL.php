@@ -194,11 +194,11 @@
 
         <?php
         // Вставка панели на главной странице
-        if ($this->route['controller'] == "Panel") require_once( 'includes/panelrecl.php' );
+        if ($this->route['controller'] == "Panel") require_once( 'includes/recl.php' );
 
-        if ($this->route['controller'] == "Project") require_once( 'includes/panelproject.php' );
+        if ($this->route['controller'] == "Project") require_once( 'includes/project.php' );
 
-        if ($this->route['controller'] == "Operator") require_once( 'includes/panelproject.php' );
+        if ($this->route['controller'] == "Operator") require_once( 'includes/operator.php' );
 
         ?>
 
