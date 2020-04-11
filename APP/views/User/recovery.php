@@ -3,14 +3,14 @@
         <div class="card-body">
             <div class="text-center mb-3">
                 <i class="icon-spinner11 icon-2x text-warning border-warning border-3 rounded-round p-3 mb-3 mt-1"></i>
-                <h5 class="mb-0">Восстановление пароля</h5>
-                <span class="d-block text-muted">Код подтерждения отправлен на E-mail.</span>
+                <h5 class="mb-0">Сброс пароля</h5>
+                <span class="d-block text-muted">Введите E-mail</span>
             </div>
 
             <div class="form-group form-group-feedback form-group-feedback-right">
-                <input type="text" name="code" class="form-control" placeholder="Код из E-mail">
+                <input type="text" name="email" class="form-control" placeholder="E-mail">
                 <div class="form-control-feedback">
-                    <i class="icon-eye text-muted"></i>
+                    <i class="icon-mail2text-muted"></i>
                 </div>
             </div>
 
