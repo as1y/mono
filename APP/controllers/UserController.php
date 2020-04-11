@@ -244,7 +244,7 @@ class UserController extends AppController
 				}
 				else
 				{
-					$_SESSION['errors'] = "Пользователя с таким E-mail не существует";
+					$_SESSION['errors'] = "Пользователь с таким E-mail не существует";
                     redir('/user/recovery/');
 				}
 			}
