@@ -163,15 +163,18 @@ class Panel extends \APP\core\base\Model {
         $username = pole_valid ($DATA['username'], 50, 's');
         if (!empty($username['error'])) return $username['error'];
 
-        show($DATA);
-        exit("35345");
 
         $user = R::load("users", $_SESSION['ulogin']['id']);
 
-        $user->username = $username;
+
         $user->role = $DATA['role'];
         $user->aboutme = $DATA['aboutme'];
+        $user->username = $username;
 
+        
+        $_SESSION['ulogin']['role'] = $DATA['role'];
+        $_SESSION['ulogin']['aboutme'] =$DATA['aboutme'];
+        $_SESSION['ulogin']['username'] = $username;
 
         R::store($user);
 
