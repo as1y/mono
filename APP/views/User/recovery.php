@@ -1,4 +1,4 @@
-<form class="login-form" action="/user/confirmRecovery/" method="post">
+<form class="login-form" action="/user/recovery/" method="post">
     <div class="card mb-0">
         <div class="card-body">
             <div class="text-center mb-3">
