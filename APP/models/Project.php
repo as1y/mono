@@ -283,9 +283,9 @@ class Project extends \APP\core\base\Model {
 	}
 	public function checkscript($idc) {
 		$script = R::findOne('script','WHERE  idc = ?' , [$idc]);
-		if (strlen($script['text']) <= 100) return false;
+		if (strlen($script['script']) <= 100) return false;
 		return true;
-	} 
+	}
 	public function tryplay($GET, $status, $idc) {
 		$timenow = date("H:i");
 		$utro = "09:00";
