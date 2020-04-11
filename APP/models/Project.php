@@ -257,17 +257,27 @@ class Project extends \APP\core\base\Model {
 		return $company;
 	}
 	public function checkbalanceinproject($table,$idc) {
+
+
 		$balnow['bal'] = '0';
-		if( isset($_SESSION['ulogin']['woof']) || $_SESSION['ulogin']['woof'] == "1") {
-			$cid = R::load("company", $idc);
-			$balnow = R::load($table, $cid['client_id']);
-		} else {
-			$balnow = R::load($table, $_SESSION['ulogin']['id']);
-		}
-		return $balnow['bal'];
+        $balnow = R::load($table, $_SESSION['ulogin']['id']);
+        return $balnow['bal'];
+
+//
+//		if( isset($_SESSION['ulogin']['woof']) || $_SESSION['ulogin']['woof'] == "1") {
+//			$cid = R::load("company", $idc);
+//			$balnow = R::load($table, $cid['client_id']);
+//		} else {
+//
+//		}
+
+
+
+
 	}
 	public function validbalance($balnow, $company) {
-		$balneed = $company['cfc']*($company['daylimit']/2);
+//		$balneed = $company['cfc']*($company['daylimit']/2);
+        $balneed = 5000;
 		if($balnow >= $balneed) return true;
 		return false;
 	}

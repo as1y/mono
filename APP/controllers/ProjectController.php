@@ -38,13 +38,17 @@ class ProjectController extends AppController {
 		//Переменные
 		$contact =  $project->contact($_GET['id']);
 		$result = $project->getres($_GET['id']);
+
 		//Конверсия и тип компании
 		if($contact['ready'] != 0)  $convert = round( (($result['all']/$contact['ready'])*100), 2  )  ;
 		if ($result['all']=="0") $convert = 0;
 		$type = $company['type'];
 		//Конверсия и тип компании
-		$balnow = $project->checkbalanceinproject("client",$_GET['id']);
+
+		$balnow = $project->checkbalanceinproject(CONFIG['USERTABLE'],$_GET['id']);
+
 		$status['balance'] = $project->validbalance($balnow,$company);
+
 		if ($contact['free'] >= '10') {
 			$status['contact'] = true;
 		} else{
