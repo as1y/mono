@@ -1,12 +1,11 @@
 <?php
 namespace APP\controllers;
-use APP\core\Cache;
-use APP\models\Addp;
 use APP\models\Operator;
 use APP\core\base\Model;
 
 
 class OperatorController extends AppController {
+
 	public $layaout = 'PANEL';
     public $BreadcrumbsControllerLabel = "Кабинет обератора";
     public $BreadcrumbsControllerUrl = "/operator";
@@ -31,13 +30,10 @@ class OperatorController extends AppController {
         \APP\core\base\View::setBreadcrumbs($BREADCRUMBS);
 
 
-        $panel = new Panel(); //Вызываем Моудль
-
-        $company = $panel->allcompany($_SESSION['ulogin']['id']);
+        $operator = new Operator(); //Вызываем Моудль
 
 
 
-        $this->set(compact('company'));
 
 
 
