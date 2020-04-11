@@ -73,7 +73,8 @@ class ProjectController extends AppController {
             }else{
 
                 $_SESSION['errors'] = $result;
-
+                redir("/project/?id=".$idc);
+                
             }
 
 
