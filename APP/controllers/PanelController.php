@@ -335,7 +335,9 @@ class PanelController extends AppController {
 
 
             show($_POST);
+            exit();
 
+            
             $result = $Panel->changeprofileinfo($_POST);
             if ($result == 1){
                 $_SESSION['success'] = "Изменения сохранены";
