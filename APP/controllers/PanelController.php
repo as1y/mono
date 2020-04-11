@@ -301,6 +301,7 @@ class PanelController extends AppController {
 
         if ($_POST && $_FILES){
 
+            show($_FILES);
             show($_POST);
             exit("gdfg");
 
@@ -336,6 +337,7 @@ class PanelController extends AppController {
 
         if ($_POST){
 
+            show($_FILES);
             show($_POST);
 
             exit("smena profile");
