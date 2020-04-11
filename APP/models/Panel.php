@@ -152,7 +152,7 @@ class Panel extends \APP\core\base\Model {
 
     public  function changeprofileinfo($DATA){
 
-        $user = R::load("users", $_SESSION['ulogin']['id']);
+
 
 
         if ($DATA['role'] != "R" && $DATA['role'] != "O") return "Ошибка в передаче данных";
@@ -164,6 +164,9 @@ class Panel extends \APP\core\base\Model {
 
         $username = pole_valid ($DATA['username'], 50, 's');
         if (!empty($username['error'])) return $username['error'];
+
+
+        $user = R::load("users", $_SESSION['ulogin']['id']);
 
         $user->username = $username;
         $user->role = $DATA['role'];
