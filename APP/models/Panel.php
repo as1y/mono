@@ -165,7 +165,7 @@ class Panel extends \APP\core\base\Model {
         $newpass = pole_valid ($DATA['username'], 50, 's');
         if (!empty($newpass['error'])) return $newpass['error'];
 
-        
+
 
         R::store($user);
 

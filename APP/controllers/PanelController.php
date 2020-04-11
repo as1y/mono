@@ -338,10 +338,10 @@ class PanelController extends AppController {
             $result = $Panel->changeprofileinfo($_POST);
             if ($result == 1){
                 $_SESSION['success'] = "Изменения сохранены";
-                redir("/panel/settings/");
+                redir("/panel/profile/");
             }else{
                 $_SESSION['errors'] = $result;
-                redir("/panel/settings/");
+                redir("/panel/profile/");
             }
 
 
