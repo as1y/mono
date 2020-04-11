@@ -233,7 +233,7 @@ class UserController extends AppController
 		if(!empty($_POST)){
 			$user = new User;
 			if(filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)){
-				if($user->checkemail('client', $_POST['email'])){
+				if($user->checkemail('users', $_POST['email'])){
 					$_SESSION['confirm']['recode'] = random_str(5);
 					$_SESSION['confirm']['remail'] = $_POST['email'];
                     Mail::sendMail("resetpassword",' Сборс пароля в '.CONFIG['NAME'],null,['to' => [['email' =>$_POST['reminder-email']]]]);
