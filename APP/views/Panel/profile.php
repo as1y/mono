@@ -131,7 +131,7 @@
                         <div class="col-md-12">
                             <div class="form-group">
                                 <label>Моя презентация: </label>
-                                <textarea rows="5" cols="5" name="aboutme" value="<?=$_SESSION['ulogin']['aboutme']?>" class="form-control required" placeholder="Обо мне"></textarea>
+                                <textarea rows="5" cols="5" name="aboutme"  class="form-control required" placeholder="Обо мне"><?=$_SESSION['ulogin']['aboutme']?></textarea>
                                 <span class="form-text text-muted">Это описание будут видеть рекламодаели.</span>
                             </div>
                         </div>

@@ -171,7 +171,7 @@ class Panel extends \APP\core\base\Model {
         $user->aboutme = $DATA['aboutme'];
         $user->username = $username;
 
-        
+
         $_SESSION['ulogin']['role'] = $DATA['role'];
         $_SESSION['ulogin']['aboutme'] =$DATA['aboutme'];
         $_SESSION['ulogin']['username'] = $username;
