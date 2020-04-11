@@ -299,7 +299,7 @@ class PanelController extends AppController {
         $Panel =  new Panel();
 
 
-        if ($_POST && $_FILES){
+        if ($_POST && $_FILES['file']['size'] > 0){
 
             show($_FILES);
             show($_POST);
@@ -336,8 +336,7 @@ class PanelController extends AppController {
 
 
         if ($_POST){
-
-            show($_FILES);
+            
             show($_POST);
 
             exit("smena profile");
