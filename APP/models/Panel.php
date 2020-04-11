@@ -164,7 +164,7 @@ class Panel extends \APP\core\base\Model {
         if (!empty($username['error'])) return $username['error'];
 
         show($DATA);
-        exit();
+        exit("35345");
 
         $user = R::load("users", $_SESSION['ulogin']['id']);
 
