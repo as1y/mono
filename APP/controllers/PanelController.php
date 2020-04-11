@@ -334,6 +334,7 @@ class PanelController extends AppController {
         if ($_POST){
 
 
+            show($_POST);
 
             $result = $Panel->changeprofileinfo($_POST);
             if ($result == 1){
