@@ -124,12 +124,12 @@ if (empty($company)) {
                     <div class="col-md-2 text-center align-self-center">
 
 
-                    <?php if ($company['status'] == 2): ?>
+                    <?php if ($row['status'] == 2): ?>
                         <i class="icon-cross2 icon-2x text-danger border-danger border-3 rounded-round p-3 mb-3"></i>
                         <h5 class="card-title">НЕ РАБОТАЕТ</h5>
                     <?endif;?>
 
-                        <?php if ($company['status'] == 1): ?>
+                        <?php if ($row['status'] == 1): ?>
                             <i class="icon-play3 icon-2x text-success border-success border-3 rounded-round p-3 mb-3"></i>
                             <h5 class="card-title">АКТИВЕН</h5>
                         <?endif;?>
