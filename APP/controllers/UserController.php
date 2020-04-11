@@ -262,6 +262,21 @@ class UserController extends AppController
 	// Страница ввода кода при сбросе пароля
 	public function confirmRecoveryAction()
 	{
+
+        $META = [
+            'title' => 'Восстановление пароля',
+            'description' => 'Восстановление пароля',
+            'keywords' => 'Восстановление пароля',
+        ];
+
+        $BREADCRUMBS['HOME'] = ['Label' => $this->BreadcrumbsControllerLabel, 'Url' => $this->BreadcrumbsControllerUrl];
+        $BREADCRUMBS['DATA'][] = ['Label' => "Восстановление пароля"];
+
+        \APP\core\base\View::setMeta($META);
+        \APP\core\base\View::setBreadcrumbs($BREADCRUMBS);
+
+
+
 		if( !isset($_SESSION['confirm']['recode']) )
 		{
             $_SESSION['errors'] = "Код подтверждения устарел. Необходимо выполнить процедуру повторно.";
@@ -291,7 +306,7 @@ class UserController extends AppController
 			{
 				$_SESSION['errors'] = "Код не совпдает с кодом в E-mail";
                 redir('/user/confirmRecovery');
-                
+
 			}
 		}
 	}
