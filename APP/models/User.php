@@ -154,6 +154,11 @@ class User extends \APP\core\base\Model
 	public function checkemail($table, $email)
 	{
 		$uni = R::findOne($table, 'email = ? LIMIT 1', [$email]);
+
+		show($uni);
+		exit("gdfgdfg");
+
+
 		if($uni){
 			if($uni->email == $email){
 				$_SESSION['confirm']['id'] = $uni->id;
