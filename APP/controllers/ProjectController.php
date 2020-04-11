@@ -60,8 +60,30 @@ class ProjectController extends AppController {
 			$status['company'] = false;
 		}
 		$status['script'] = $project->checkscript($_GET['id']);
-		if(isset($_GET['action']) && $_GET['action'] == "play" && isset($_GET['id'])) $project->tryplay($_GET, $status, $_GET['id']);
+
+
+		if(isset($_GET['action']) && $_GET['action'] == "play" && isset($_GET['id'])) {
+
+		  $result =  $project->tryplay($_GET, $status, $_GET['id']);
+
+            if ($result == 1){
+
+                redir("/project/?id=".$idc);
+
+            }else{
+
+                $_SESSION['errors'] = $result;
+
+            }
+
+
+
+        }
+
+
 		if(isset($_GET['action']) && $_GET['action'] == "stop" && isset($_GET['id']) )  $project->pstop($_GET, $_GET['id']);
+
+
 		$this->set(compact('idc','razdel','company','contact','result','type','convert', 'balnow', 'status'));
 
 

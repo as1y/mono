@@ -287,18 +287,28 @@ class Project extends \APP\core\base\Model {
 		return true;
 	}
 	public function tryplay($GET, $status, $idc) {
-		$timenow = date("H:i");
-		$utro = "09:00";
-		$vecher = "19:00";
-		if ( strtotime($timenow) > strtotime($vecher)  ) mes("Не время");
-		if($status['balance'] == false) mes('Проект НЕ активирован: Пополните баланс.');
-		if($status['contact'] == false) mes('Проект НЕ активирован: Добавьте контактов.');
-		if($status['script'] == false) mes('Проект НЕ активирован: Отредактируйте скрипт разговора.');
+
+
+	//	$timenow = date("H:i");
+//		$utro = "09:00";
+//		$vecher = "19:00";
+//		if ( strtotime($timenow) > strtotime($vecher)  ) return "Не время";
+
+
+		if($status['balance'] == false)  return ('Проект НЕ активирован: Пополните баланс.');
+		if($status['contact'] == false) return ('Проект НЕ активирован: Добавьте контактов.');
+		if($status['script'] == false) return ('Проект НЕ активирован: Отредактируйте скрипт разговора.');
+
 		if($status['balance'] == true &&  $status['contact'] == true && $status['script'] == true) {
 			R::exec(" UPDATE `company` SET `status` = '1' WHERE `id` = '".$idc."' ");
 		}
-		go2('project/?id='.$GET['id'].'');
+
+		return true;
+
 	}
+
+
+
 	public function pstop($GET, $idc) {
 		R::exec(" UPDATE `company` SET `status` = '2' WHERE `id` = '".$idc."' ");
 		go2('project/?id='.$GET['id'].'');
