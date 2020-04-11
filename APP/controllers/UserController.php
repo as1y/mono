@@ -284,11 +284,14 @@ class UserController extends AppController
 				else
 				{
 					$_SESSION['errors'] = "Ошибка базы данных. Попробуйте позже.";
+                    redir('/user/confirmRecovery');
 				}
 			}
 			else
 			{
 				$_SESSION['errors'] = "Код не совпдает с кодом в E-mail";
+                redir('/user/confirmRecovery');
+                
 			}
 		}
 	}
