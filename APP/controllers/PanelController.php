@@ -302,6 +302,8 @@ class PanelController extends AppController {
         if ($_POST){
 
 
+
+            exit("ok");
             show($_FILES);
 
             $validation = $Panel->filevalidation($_FILES['file'], ['ext' => ["jpg","png"], 'type' => 'image/jpeg']);
