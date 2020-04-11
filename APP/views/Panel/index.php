@@ -130,7 +130,7 @@ if (empty($company)) {
                     <?endif;?>
 
                         <?php if ($row['status'] == 1): ?>
-                            <i class="icon-play3 icon-2x text-success border-success border-3 rounded-round p-3 mb-3"></i>
+                            <i class="icon-play4 icon-2x text-success border-success border-3 rounded-round p-3 mb-3"></i>
                             <h5 class="card-title">АКТИВЕН</h5>
                         <?endif;?>
 
