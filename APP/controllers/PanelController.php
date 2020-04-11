@@ -299,12 +299,7 @@ class PanelController extends AppController {
         $Panel =  new Panel();
 
 
-        if ($_POST){
-
-
-
-            exit("ok");
-            show($_FILES);
+        if ($_POST && $_FILES){
 
             $validation = $Panel->filevalidation($_FILES['file'], ['ext' => ["jpg","png"], 'type' => 'image/jpeg']);
 
@@ -325,7 +320,6 @@ class PanelController extends AppController {
 
                 $Panel->changeavatar("/".$urlnew);
                 $_SESSION['ulogin']['avatar'] = "/".$urlnew;
-
                 $_SESSION['success'] = "Аватар изменен";
 
                 redir("/panel/profile");
@@ -336,6 +330,14 @@ class PanelController extends AppController {
         }
 
 
+
+        if ($_POST){
+
+
+
+            exit("smena profile");
+
+        }
 
 
         $META = [
