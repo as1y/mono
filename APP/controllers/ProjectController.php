@@ -74,7 +74,7 @@ class ProjectController extends AppController {
 
                 $_SESSION['errors'] = $result;
                 redir("/project/?id=".$idc);
-                
+
             }
 
 
