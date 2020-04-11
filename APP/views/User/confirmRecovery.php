@@ -17,8 +17,8 @@
             <button type="submit" class="btn bg-teal-400 btn-block"><i class="icon-play4 mr-2"></i> Сбросить пароль</button>
         </div>
     </div>
-
+    <?php show($_SESSION['confirm']['code']); ?>
+    
 </form>
 
 
-<?php show($_SESSION['confirm']['code']); ?>
