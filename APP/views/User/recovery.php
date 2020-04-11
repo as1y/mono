@@ -14,7 +14,7 @@
                 </div>
             </div>
 
-            <button type="submit" class="btn bg-teal-400 btn-block"><i class="icon-play4 mr-2"></i> Завершить регистрацию</button>
+            <button type="submit" class="btn bg-teal-400 btn-block"><i class="icon-play4 mr-2"></i> Сбросить пароль</button>
         </div>
     </div>
 
