@@ -282,7 +282,7 @@ class Project extends \APP\core\base\Model {
 		return false;
 	}
 	public function checkscript($idc) {
-		$script = R::findOne('script','WHERE  company_id = ?' , [$idc]);
+		$script = R::findOne('script','WHERE  idc = ?' , [$idc]);
 		if (strlen($script['text']) <= 100) return false;
 		return true;
 	}
