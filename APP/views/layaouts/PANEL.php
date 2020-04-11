@@ -198,7 +198,7 @@
 
         if ($this->route['controller'] == "Project") require_once( 'includes/panelproject.php' );
 
-
+        if ($this->route['controller'] == "Operator") require_once( 'includes/panelproject.php' );
 
         ?>
 
