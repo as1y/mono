@@ -155,7 +155,8 @@ class User extends \APP\core\base\Model
 	{
 		$uni = R::findOne($table, 'email = ? LIMIT 1', [$email]);
 
-		show($uni);
+		var_dump($uni);
+
 		exit("gdfgdfg");
 
 
