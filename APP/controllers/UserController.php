@@ -252,7 +252,7 @@ class UserController extends AppController
 			{
 				$_SESSION['errors'] = "E-mail указан не корректно";
                 redir('/user/recovery/');
-                
+
 			}
 		}
 

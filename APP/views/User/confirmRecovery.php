@@ -9,4 +9,4 @@
 </form>
 
 
-
+<?php show($_SESSION['confirm']['code']); ?>

@@ -18,6 +18,4 @@
         </div>
     </div>
 
-    <?php show($_SESSION['confirm']['code']); ?>
-
 </form>
