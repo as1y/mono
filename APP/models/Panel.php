@@ -162,9 +162,12 @@ class Panel extends \APP\core\base\Model {
         $DATA['aboutme'] = htmlspecialchars($DATA['aboutme']);
         if (strlen($DATA['aboutme']) > 1000) return "Презентация должна быть не больше 1000 символов";
 
-        $newpass = pole_valid ($DATA['username'], 50, 's');
-        if (!empty($newpass['error'])) return $newpass['error'];
+        $username = pole_valid ($DATA['username'], 50, 's');
+        if (!empty($username['error'])) return $username['error'];
 
+        $user->username = $username;
+        $user->role = $DATA['role'];
+        $user->aboutme = $DATA['aboutme'];
 
 
         R::store($user);
