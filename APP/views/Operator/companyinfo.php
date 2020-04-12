@@ -39,10 +39,8 @@
                     </td>
                 </tr>
 
-
-
                 <tr>
-                    <td class="wmin-md-100"><b>Цель:</b></td>
+                    <td class="wmin-md-100"><b>Выплата за цель:</b></td>
                     <td class="wmin-md-350">
                         <?=companytype($company['type'])?> - <b><?=$company['priceresult']?> рублей</b>
 
