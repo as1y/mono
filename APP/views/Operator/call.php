@@ -11,7 +11,7 @@
                     <tr>
                         <td class="wmin-md-100"> <button type="button" class="btn bg-teal-400 btn-labeled btn-labeled-left"><b><i class="icon-phone-wave"></i></b> ПОЗВОНИТЬ</button></td>
 
-                        <td class="wmin-md-100"> <button type="button" class="btn bg-slate-600 btn-labeled btn-labeled-right"><b><i class="icon-arrow-right7"></i></b> СЛЕДУЮЩИЙ КОНТАКТ</button></td>
+                        <td class="wmin-md-100"> <button type="button" class="btn bg-slate-600 btn-labeled btn-labeled-right">СЛЕДУЮЩИЙ КОНТАКТ</button></td>
 
                     </tr>
                 </table>
