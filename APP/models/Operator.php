@@ -25,7 +25,7 @@ class Operator extends \APP\core\base\Model {
             R::store($company);
 
             // Дублируем Юзеру
-            $user = R::load(CONFIG['USERTANLE'], $_SESSION['ulogin']['id']);
+            $user = R::load(CONFIG['USERTABLE'], $_SESSION['ulogin']['id']);
             $massivcompaniy = json_decode($company['companies'], true);
             if (!$massivcompaniy) $massivcompaniy = [];
             $massivcompaniy[$idc] = 1;
