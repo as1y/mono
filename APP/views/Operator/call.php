@@ -88,7 +88,34 @@
             </div>
             <div class="card-body">
 
-11
+
+
+                <div class="form-group mb-3 mb-md-2">
+
+                    
+                    <label class="d-block font-weight-semibold">Left inline styled</label>
+
+
+                    <div class="form-check form-check-inline">
+                        <label class="form-check-label">
+                            <div class="uniform-choice"><span class="checked"><input type="radio" class="form-check-input-styled" name="radio-inline-left" checked="" data-fouc=""></span></div>
+                            Selected styled
+                        </label>
+                    </div>
+
+                    <div class="form-check form-check-inline">
+                        <label class="form-check-label">
+                            <div class="uniform-choice"><span class=""><input type="radio" class="form-check-input-styled" name="radio-inline-left" data-fouc=""></span></div>
+                            Unselected styled
+                        </label>
+                    </div>
+
+
+                </div>
+
+
+
+
 
 
             </div>
