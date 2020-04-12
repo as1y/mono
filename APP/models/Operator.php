@@ -5,6 +5,23 @@ use RedBeanPHP\R;
 class Operator extends \APP\core\base\Model {
 
 
+
+    public function SetOtkaz($_POST){
+
+        $contact = $this->getcontact($_POST['contactid']);
+        $contact->status = 3;
+        $contact->datacall = date("Y-m-d");
+        $contact->comment = $_POST['operatorcomment'];
+        R::store($contact);
+
+        $this->pluscall();
+
+
+    }
+
+
+
+
     public function joincompany($idc){
 
 

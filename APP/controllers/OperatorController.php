@@ -31,18 +31,14 @@ class OperatorController extends AppController {
 
         if ($_POST['zvonok'] == 1) message("Вы не совершили звонок");
 
-        $contact = $operator->getcontact($_POST['contactid']);
 
 
-        if ($_POST['optionresult'] == "otkaz"){
-
-            $contact->status = 3;
-            $contact->datacall = date("Y-m-d");
-            $contact->comment = $_POST['operatorcomment'];
+        if ($_POST['optionresult'] == "otkaz") $operator->SetOtkaz($_POST);
 
 
 
-        }
+
+            exit("yeah");
 
 
 
@@ -52,7 +48,9 @@ class OperatorController extends AppController {
 
 
 
-        exit("yeah");
+
+
+
 
 
         return false;
