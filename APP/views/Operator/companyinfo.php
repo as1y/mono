@@ -67,7 +67,7 @@
                 <tr>
                     <td class="wmin-md-100" ><b>Цена продукта:</b></td>
                     <td class="wmin-md-350">
-                        <b>     <?=$company['minimumprice']?> рублей</b>
+                          <?=$company['minimumprice']?> рублей
 
                     </td>
                 </tr>
