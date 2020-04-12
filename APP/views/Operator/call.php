@@ -93,12 +93,12 @@
 
                     <div class="custom-control custom-radio custom-control-inline">
                         <input type="radio" class="custom-control-input" name="optionsRadios"  value="perezvon" >
-                        <label class="custom-control-label" for="optionsRadios">ПЕРЕЗВОН</label>
+                        <label class="custom-control-label" for="custom_radio_inline_unchecked">ПЕРЕЗВОН</label>
                     </div>
 
                     <div class="custom-control custom-radio custom-control-inline">
                         <input type="radio" class="custom-control-input"  name="optionsRadios" value="otkaz" >
-                        <label class="custom-control-label" for="optionsRadios">ОТКАЗ</label>
+                        <label class="custom-control-label" for="custom_radio_inline_checked">ОТКАЗ</label>
                     </div>
                 </div>
 
