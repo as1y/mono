@@ -127,11 +127,14 @@ class Operator extends \APP\core\base\Model {
         $company = R::findOne('company', 'WHERE id = ? LIMIT 1', [$idc]);
 
         $massivoperatorov = json_decode($company['operators'], true);
+        if (!$massivoperatorov) $massivoperatorov = [];
+
+
         $operatorInProject = array_key_exists($_SESSION['ulogin']['id'],$massivoperatorov);
 
         if ($operatorInProject == true) return $company;
 
-        if ($operatorInProject == false) return [];
+        if ($operatorInProject == false) return false;
 
 
 
