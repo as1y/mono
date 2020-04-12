@@ -15,7 +15,7 @@
                 <th>Продукт</th>
                 <th>Цель</th>
                 <th>Оплата (РУБ)</th>
-                <th>Статистика</th>
+                <th>Бонусы</th>
                 <th>Действие</th>
 
             </tr>
@@ -43,7 +43,11 @@
                         <b> <?=$val['priceresult']?></b>
 
                     </td>
-                    <td class="text-center"><b>0 руб.</b></td>
+                    <td class="text-center">
+                       За  <b> <?=$val['mincall']?></b> звонков<br>
+                       Бонус  <b> <?=$val['bonuscall']?></b>
+
+                    </td>
                     <td class="text-center">
 
                         <a href="/operator/joincompany/?id=<?=$val['id']?>" type="button" class="btn btn-success"><i class="icon-comment-discussion mr-2"></i>Подробнее</a>
