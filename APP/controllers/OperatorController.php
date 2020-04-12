@@ -12,6 +12,40 @@ class OperatorController extends AppController {
 
 
 
+    public function callAction(){
+
+
+        $operator = new Operator();
+        $idc = $_GET['id'];
+        $company = $operator->getcom($_GET['id']);
+
+
+        //Информация о компаниях клиента
+
+        $META = [
+            'title' => 'Рабочая область ',
+            'description' => 'Рабочая область ',
+            'keywords' => 'Рабочая область ',
+        ];
+        \APP\core\base\View::setMeta($META);
+
+
+        $BREADCRUMBS['HOME'] = ['Label' => $this->BreadcrumbsControllerLabel, 'Url' => $this->BreadcrumbsControllerUrl];
+        $BREADCRUMBS['DATA'][] = ['Label' => $company['company']];
+        \APP\core\base\View::setBreadcrumbs($BREADCRUMBS);
+
+
+        $operator = new Operator(); //Вызываем Моудль
+
+
+        $this->set(compact('company'));
+
+
+
+
+    }
+
+
     public function indexAction()
     {
 
