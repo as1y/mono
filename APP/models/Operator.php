@@ -24,13 +24,13 @@ class Operator extends \APP\core\base\Model {
             $company->operators = json_encode($massivoperatorov, true);
             R::store($company);
 
-            // Дублируем Юзеру
-            $user = R::load(CONFIG['USERTABLE'], $_SESSION['ulogin']['id']);
-            $massivcompaniy = json_decode($company['companies'], true);
-            if (!$massivcompaniy) $massivcompaniy = [];
-            $massivcompaniy[$idc] = 1;
-            $user->companies = json_encode($massivcompaniy, true);
-            R::store($user);
+//            // Дублируем Юзеру
+//            $user = R::load(CONFIG['USERTABLE'], $_SESSION['ulogin']['id']);
+//            $massivcompaniy = json_decode($company['companies'], true);
+//            if (!$massivcompaniy) $massivcompaniy = [];
+//            $massivcompaniy[$idc] = 1;
+//            $user->companies = json_encode($massivcompaniy, true);
+//            R::store($user);
 
             return true;
         }
