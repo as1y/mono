@@ -85,7 +85,15 @@ function rendertypeaccount($type){
 
 function renderresultform($DATA){
 
-    echo "форма";
+
+    $FORM = json_decode($DATA, true);
+
+
+   show($FORM);
+
+   exit("ddg");
+
+
 
 }
 

@@ -155,11 +155,10 @@
                 <!-- результат -->
                 <div id="result" style="display: none;">
 
-                    <?php
-                    $FORM = [];
-                    ?>
 
-                    <?php renderresultform($FORM)?>
+                    <?php renderresultform($company['formresult'])?>
+
+
                     <div class="form-group">
 
                         <label>На другой номер (если необходимо)<span class="text-danger">*</span></label>
