@@ -26,7 +26,7 @@ class OperatorController extends AppController {
         $company = $operator->getmycom($_GET['id']);
 
         if ($company === false){
-            $_SESSION['errors'] = "paramerror";
+            $_SESSION['errors'] = "dopusk";
             $this->set(compact('error'));
             return false;
         }
@@ -75,7 +75,7 @@ class OperatorController extends AppController {
         // Брони на контакт нет. Берем новый контакт
         $contactinfo = $operator->newcontact($idc);
         if (empty($contactinfo)) {
-            $_SESSION['errors'] = "contact";
+            $_SESSION['errors'] = "no contact";
             return false;
         }
 
