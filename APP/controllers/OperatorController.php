@@ -70,6 +70,9 @@ class OperatorController extends AppController {
         //Ставим бронь
 
 
+        $this->set(compact('company', 'contactinfo', 'script'));
+        return true;
+
 
 
 
