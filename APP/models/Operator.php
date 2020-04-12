@@ -17,7 +17,7 @@ class Operator extends \APP\core\base\Model {
         $operatorInProject = array_key_exists($_SESSION['ulogin']['id'],$massivoperatorov);
 
 
-        show($operatorInProject);
+        var_dump($operatorInProject);
 
         exit("gdgdfg");
 
