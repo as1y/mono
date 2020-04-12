@@ -159,7 +159,7 @@
                     $FORM = [];
                     ?>
 
-                    <?=renderform($FORM)?>
+                    <?=renderresultform($FORM)?>
                     <div class="form-group">
 
                         <label>На другой номер (если необходимо)<span class="text-danger">*</span></label>
