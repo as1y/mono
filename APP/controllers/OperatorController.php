@@ -31,11 +31,12 @@ class OperatorController extends AppController {
 
 
 
-        if (isset($_GET['perezvon'])) $idcontact = $_GET['perezvon'];
+     //if (isset($_GET['perezvon'])) $idcontact = $_GET['perezvon'];
+
 
         // Проверяем компанию на статус
         $company = $operator->checkcompany($idc);
-        if (empty($company)) $error = "status";
+        if (empty($company)) return $this->set($error = "fdggdfg");
 
 
         // Берем контакт на звонок
@@ -46,7 +47,7 @@ class OperatorController extends AppController {
 
 
         $Bron = $operator->Getbron($idc);
-        
+
         if ($Bron){
             exit("bron est");
         }
