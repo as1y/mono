@@ -155,7 +155,11 @@
                 <!-- результат -->
                 <div id="result" style="display: none;">
 
+                    <?php
+                    $DATA = [];
+                    ?>
 
+                    <?=renderform($DATA)?>
                     <div class="form-group">
 
                         <label>На другой номер (если необходимо)<span class="text-danger">*</span></label>
