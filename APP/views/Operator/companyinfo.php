@@ -26,9 +26,9 @@
 
 
                 <tr>
-                    <td class="wmin-md-100"><b>Вознаграждение за цель:</b></td>
+                    <td class="wmin-md-100"><b>Цель:</b></td>
                     <td class="wmin-md-350">
-                        gdfgdfg
+                        <?=companytype($company['type'])?> - <?=$company['priceresult']?>
 
                     </td>
                 </tr>
