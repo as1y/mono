@@ -2,7 +2,7 @@
 namespace APP\controllers;
 use APP\models\Operator;
 use APP\core\base\Model;
-
+use APP\models\Project;
 
 class OperatorController extends AppController {
 
@@ -86,17 +86,46 @@ class OperatorController extends AppController {
 
 
         $operator = new Operator(); //Вызываем Моудль
-
-
         $allcompanies = $operator->allcompanies();
-
-
         $this->set(compact('allcompanies'));
 
+    }
+
+
+    public function allAction(){
+
+        $project = new Project;
+        $idc = $_GET['id'];
+        $company = $project->getcom($_GET['id']);
+
+        $META = [
+            'title' => 'Проект '.$company['company'],
+            'description' => 'Проект '.$company['company'],
+            'keywords' => 'Проект '.$company['company'],
+        ];
+        \APP\core\base\View::setMeta($META);
+
+
+        $BREADCRUMBS['HOME'] = ['Label' => $this->BreadcrumbsControllerLabel, 'Url' => $this->BreadcrumbsControllerUrl];
+        $BREADCRUMBS['DATA'][] = ['Label' => "Все проекты", 'Url' => "/operator/all/"];
+        $BREADCRUMBS['DATA'][] = ['Label' => "Проект ".$company['company']];
+        \APP\core\base\View::setBreadcrumbs($BREADCRUMBS);
+
+
+
+
+
+
+
+        $this->set(compact('company'));
 
 
 
     }
+
+
+
+
 
 
 }
