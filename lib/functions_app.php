@@ -136,10 +136,7 @@ function renderresultform($DATA){
     }
 
 
-
-
-   exit("ddg");
-
+    
 
 
 }
