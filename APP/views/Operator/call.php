@@ -9,7 +9,7 @@
 
             <div class="card-body">
 
-                <table class="table  table-bordered">
+                <table class="table  table-bordered text-center">
                     <tr>
                         <td class="wmin-md-100"> <button type="button" class="btn bg-teal-400 btn-labeled btn-labeled-left"><b><i class="icon-reading"></i></b> ПОЗВОНИТЬ</button></td>
 
