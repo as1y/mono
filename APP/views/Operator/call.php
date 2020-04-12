@@ -189,7 +189,7 @@
 
 <script>
 
-    $('[name = "optionsRadios"]').click(function() { // Клики на результат вызова
+    $('[name = "optionresult"]').click(function() { // Клики на результат вызова
 
        let change = $(this).val();
         $("#perez").hide();
