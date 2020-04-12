@@ -18,7 +18,7 @@ class OperatorController extends AppController {
         $operator = new Operator();
 
 
-        if(!$this->isAjax()) exit("Запрос не Ajax");
+        if($this->isAjax()) exit("Запрос не Ajax");
 
         if (empty($_GET['id'])) exit("Ошибка получения данных");
         $idc = $_GET['id'];
