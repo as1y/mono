@@ -44,6 +44,7 @@ class OperatorController extends AppController {
     public function myAction()
     {
 
+        $operator = new Operator();
         //Информация о компаниях клиента
 
         $META = [
