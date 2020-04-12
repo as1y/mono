@@ -106,8 +106,15 @@ class OperatorController extends AppController {
 
             $result =  $operator->joincompany($idc);
 
-            exit("gfdg");
-            show($_POST);
+            if ($result == 1){
+                $_SESSION['success'] = "Тикет добавлен";
+                redir("/operator/my/");
+            }else{
+                $_SESSION['errors'] = $result;
+                redir("/operator/companyinfo/?id=".$idc);
+            }
+
+
 
 
         }

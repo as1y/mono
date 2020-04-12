@@ -22,7 +22,7 @@ class Operator extends \APP\core\base\Model {
             $DATA = json_encode($DATA, true);
             $company->operators =$DATA;
             R::store($company);
-            
+            return true;
         }
 
 
