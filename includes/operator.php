@@ -56,14 +56,14 @@
 
                     <li class="nav-item">
                         <a href="/panel/" class="nav-link <?=isset($active['index']) ? $active['index'] : ''; ?>">
-                            <i class="icon-home4"></i>
+                            <i class="icon-stats-bars"></i>
                             <span>	Статистика </span>
                         </a>
                     </li>
 
                     <li class="nav-item">
                         <a href="/panel/" class="nav-link <?=isset($active['my']) ? $active['my'] : ''; ?>">
-                            <i class="icon-home4"></i>
+                            <i class="icon-briefcase3"></i>
                             <span>	Мои проекты </span>
                         </a>
                     </li>
@@ -71,7 +71,7 @@
 
                     <li class="nav-item">
                         <a href="/panel/" class="nav-link <?=isset($active['all']) ? $active['all'] : ''; ?>">
-                            <i class="icon-home4"></i>
+                            <i class="icon-star-full2"></i>
                             <span>	Все проекты </span>
                         </a>
                     </li>
