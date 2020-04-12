@@ -31,7 +31,7 @@
                     <td><?=$val['company']?></td>
                     <td class="text-center">
 
-                        <?=obrezanie($val['aboutcompany'], 100)?>
+                        <?=obrezanie($val['aboutcompany'], 50)?>
 
                     </td>
                     <td class="text-center">
