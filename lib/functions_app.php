@@ -87,6 +87,8 @@ function renderresultform($DATA){
     $FORM = json_decode($DATA, true);
 
 
+    show($FORM);
+
     foreach ($FORM as $key=>$val){
 
         if ($val['type'] == 1){
