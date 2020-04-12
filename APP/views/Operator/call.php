@@ -178,7 +178,18 @@
        let change = $(this).val();
 
 
+
         if (change == "perezvon") $("#perez").show();
+
+        if (change == "otkaz"){
+            $("#perez").hide();
+
+        }
+
+        if (change == "bezdostupa"){
+            $("#perez").hide();
+
+        }
 
 
         // $("#perez").hide();
