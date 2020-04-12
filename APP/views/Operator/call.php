@@ -224,7 +224,8 @@
             // beforeSend: funcBefore,
             cache: false,
             success: function(result) {
-                console.log($result);
+
+                console.log(result);
 
             }
         });
