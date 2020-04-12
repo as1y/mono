@@ -92,7 +92,7 @@
 
                 <div class="form-group mb-3 mb-md-2">
 
-                    
+
                     <label class="d-block font-weight-semibold">Left inline styled</label>
 
 
