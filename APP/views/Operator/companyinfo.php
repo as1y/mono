@@ -17,6 +17,15 @@
                 <tbody>
 
                 <tr>
+                    <td class="wmin-md-100" ><b>Компаний:</b></td>
+                    <td class="wmin-md-350">
+                       <b> <?=$company['company']?></b> <br>
+                       <a href="//<?=$company['url']?>" target="_blank"><?=$company['url']?></a>
+                    </td>
+                </tr>
+
+
+                <tr>
                     <td class="wmin-md-100"><b>О компании:</b></td>
                     <td class="wmin-md-350">
                         <?=$company['aboutcompany']?>
