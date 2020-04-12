@@ -116,12 +116,11 @@
 
                     <div class="form-check form-check-inline">
                         <label class="form-check-label">
-                            <input type="radio" class="form-check-input-styled" value="bezdostupa" name="radio-inline-left" value="otkaz" data-fouc>
-                            ТЕЛЕФОН НЕ ДОСТУПЕН
+                            <input type="radio" class="form-check-input-styled-success" value="result" name="radio-inline-left"  data-fouc>
+                            <b><?=companytype($company["type"]);?></b> - <?=$company['resultcall'];?> РУБЛЕЙ
+
                         </label>
                     </div>
-
-
 
 
 
