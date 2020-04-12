@@ -118,7 +118,7 @@
                         <label class="form-check-label">
                             <input type="radio" class="form-check-input-styled-success" value="result" name="radio-inline-left"  data-fouc>
 
-                            <span class="badge badge-success">
+                            <span class="badge badge-primary">
 
 
                                  <b><?=companytype($company["type"]);?></b> - <?=$company['priceresult'];?> РУБЛЕЙ
