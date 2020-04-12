@@ -46,7 +46,7 @@
                     <td class="text-center"><b>0 руб.</b></td>
                     <td class="text-center">
 
-                        <a href="/operator/joincompany/?id=<?=$val['id']?>" type="button" class="btn btn-success"><i class="icon-comment-discussion mr-2"></i>Подать заявку</a>
+                        <a href="/operator/joincompany/?id=<?=$val['id']?>" type="button" class="btn btn-success"><i class="icon-comment-discussion mr-2"></i>Подробнее</a>
 
                     </td>
                 </tr>
