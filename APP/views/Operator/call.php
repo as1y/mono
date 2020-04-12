@@ -152,17 +152,22 @@
                 </div>
                 <!-- перезвон  -->
 
+                <!-- перезвон -->
+                <div id="result" style="display: none;">
+
+
+
+
+                </div>
+                <!-- перезвон  -->
+
+
+
                 <div class="form-group mb-0">
                     <label>Комментарий:</label>
                     <textarea rows="3" cols="3" class="form-control"  placeholder="Комментарий оператора"></textarea>
                 </div>
-
-                <div class="form-group mb-0">
-                    <br>
-                    <button type="button" class="btn bg-slate-600 btn-labeled ">СЛЕДУЮЩИЙ КОНТАКТ</button>
-                </div>
-
-
+                
 
 
 
