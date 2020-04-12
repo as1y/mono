@@ -7,7 +7,7 @@ use APP\models\Project;
 class OperatorController extends AppController {
 
 	public $layaout = 'PANEL';
-    public $BreadcrumbsControllerLabel = "Кабинет обератора";
+    public $BreadcrumbsControllerLabel = "Кабинет оператора";
     public $BreadcrumbsControllerUrl = "/operator";
 
 

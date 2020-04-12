@@ -108,7 +108,7 @@
     <input type="hidden" name="idc"  value="<?=$company['id']?>">
 
 
-    <button type="submit" class=" btn btn-warning"><i class="icon-pencil mr-2"></i> ПОДАТЬ ЗАЯВКУ</button>
+    <button type="submit" class=" btn btn-success"><i class="icon-pencil mr-2"></i> ПОДАТЬ ЗАЯВКУ</button>
 
 
 </form>
