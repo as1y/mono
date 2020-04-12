@@ -103,9 +103,16 @@ class Operator extends \APP\core\base\Model {
         $contact->status = 1;
         $contact->userId = $_SESSION['ulogin']['id'];
         R::store($contact);
-        
+
 
     }
+
+
+    public function Getbron($idc) {
+        return R::findOne('contact', 'company_id = ? AND users_id =? AND status = 1', [$idc, $_SESSION['ulogin']['id']]);
+    }
+
+
 
 
 
