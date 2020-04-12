@@ -91,7 +91,7 @@
 
                     <li class="nav-item">
                         <a href="#" class="nav-link">
-                            <i class="icon-users4"></i>
+                            <i class="icon-eye"></i>
                             <span>	На модерации </span>
                             <span class="badge badge-pill bg-secondary ml-auto">39</span>
                         </a>
@@ -107,7 +107,7 @@
 
                     <li class="nav-item">
                         <a href="#" class="nav-link">
-                            <i class="icon-stats-growth"></i>
+                            <i class="icon-checkmark"></i>
                             <span>	Успешно </span>
                             <span class="badge badge-pill bg-secondary ml-auto">1</span>
                         </a>
