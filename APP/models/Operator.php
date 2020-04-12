@@ -17,10 +17,8 @@ class Operator extends \APP\core\base\Model {
 
         if ($operatorInProject == false){
 
-            $addpole = [ $_SESSION['ulogin']['id'] => 1 ];
-            $DATA = array_merge($addpole, $massivoperatorov);
-            $DATA = json_encode($DATA, true);
-            $company->operators =$DATA;
+            $massivoperatorov[$_SESSION['ulogin']['id']] = 1;
+            $company->operators = json_encode($massivoperatorov, true);
             R::store($company);
             return true;
         }
