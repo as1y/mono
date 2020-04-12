@@ -40,6 +40,8 @@ class OperatorController extends AppController {
             $contact->datacall = date("Y-m-d");
             $contact->comment = $_POST['operatorcomment'];
 
+
+
         }
 
 

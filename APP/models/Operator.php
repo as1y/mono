@@ -113,6 +113,10 @@ class Operator extends \APP\core\base\Model {
     }
 
 
+    public  function pluscall(){
+            return R::exec (' UPDATE users SET totalcall = totalcall +1 WHERE id = '.$_SESSION['ulogin']['id'].'  ');
+        }
+
 
 
     public function getcontact($idcontact){
