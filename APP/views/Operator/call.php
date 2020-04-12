@@ -55,7 +55,7 @@
                                 <div id="namecont"><?=$contactinfo['name']?></div>
                             </td>
                             <td style='vertical-align: middle'>
-                                <div id="company"><?=$contactinfo['company']?></div>
+                                <div id="company"><?=$contactinfo['namecompany']?></div>
                             </td>
                             <td style='vertical-align: middle'>
                                 <div id="siteurl"> <a href="<?=$contactinfo['url']?> " target="_blank"><?=$contactinfo['url']?></a> </div>
