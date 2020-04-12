@@ -157,10 +157,11 @@
                     <textarea rows="3" cols="3" class="form-control"  placeholder="Комментарий оператора"></textarea>
                 </div>
 
-                <button type="button" class="btn bg-slate-600 btn-labeled ">СЛЕДУЮЩИЙ КОНТАКТ</button>
-
             </div>
 
+            <button type="button" class="btn bg-slate-600 btn-labeled ">СЛЕДУЮЩИЙ КОНТАКТ</button>
+
+            
         </div>
     </div>
 </div>
