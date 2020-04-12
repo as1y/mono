@@ -88,7 +88,20 @@
             </div>
             <div class="card-body">
 
-                ОКОНЧАНИЕ НА ГРУДЬ
+                <div class="form-group mb-3 mb-md-2">
+                    <label class="d-block font-weight-semibold">Left inline radios</label>
+                    <div class="custom-control custom-radio custom-control-inline">
+                        <input type="radio" class="custom-control-input" name="custom-inline-radio" id="custom_radio_inline_unchecked" checked="">
+                        <label class="custom-control-label" for="custom_radio_inline_unchecked">Custom selected</label>
+                    </div>
+
+                    <div class="custom-control custom-radio custom-control-inline">
+                        <input type="radio" class="custom-control-input" name="custom-inline-radio" id="custom_radio_inline_checked">
+                        <label class="custom-control-label" for="custom_radio_inline_checked">Custom unselected</label>
+                    </div>
+                </div>
+
+
 
 
 
