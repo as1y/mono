@@ -36,7 +36,12 @@ class OperatorController extends AppController {
 
         // Проверяем компанию на статус
         $company = $operator->checkcompany($idc);
-        if (empty($company)) return $this->set($error = "fdggdfg");
+        if (empty($company)) {
+            $error = "dfgdfgdfg";
+            $this->set(compact('error'));
+            return false;
+
+        }
 
 
         // Берем контакт на звонок
