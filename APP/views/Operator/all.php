@@ -40,12 +40,11 @@
                     <td class="text-center">
 
 
-                        <b> <?=$val['priceresult']?></b>
+                        <b> <?=$val['priceresult']?> руб.</b>
 
                     </td>
                     <td class="text-center">
-                        <b> <?=$val['mincall']?></b> звонков = 
-                       Бонус  <b> <?=$val['bonuscall']?></b>
+                        <b> <?=$val['mincall']?></b> звонков  <b> <?=$val['bonuscall']?> руб.</b>
 
                     </td>
                     <td class="text-center">
