@@ -1,4 +1,4 @@
-<form action="/project/set/?id=<?=$company['id']?>" method="post" data-fouc>
+<form action="/operator/companyinfo/?id=<?=$company['id']?>" method="post" data-fouc>
 
 
     <div class="card">
@@ -82,7 +82,7 @@
                     </td>
                 </tr>
 
-                
+
 
 
                 </tbody>

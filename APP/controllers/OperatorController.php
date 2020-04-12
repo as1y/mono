@@ -98,6 +98,20 @@ class OperatorController extends AppController {
         $idc = $_GET['id'];
         $company = $project->getcom($_GET['id']);
 
+
+
+        if ($_POST){
+
+
+            exit("gfdg");
+            show($_POST);
+
+
+        }
+
+
+
+
         $META = [
             'title' => 'Проект '.$company['company'],
             'description' => 'Проект '.$company['company'],
@@ -110,6 +124,9 @@ class OperatorController extends AppController {
         $BREADCRUMBS['DATA'][] = ['Label' => "Все проекты", 'Url' => "/operator/all/"];
         $BREADCRUMBS['DATA'][] = ['Label' => "Проект ".$company['company']];
         \APP\core\base\View::setBreadcrumbs($BREADCRUMBS);
+
+
+
 
 
 
