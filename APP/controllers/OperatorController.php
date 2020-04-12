@@ -15,6 +15,13 @@ class OperatorController extends AppController {
     public function callAction(){
 
         $operator = new Operator();
+        
+        if (!$_GET['id']){
+            $_SESSION['errors'] = "noparam";
+            $this->set(compact('error'));
+            return false;
+        }
+
         $idc = $_GET['id'];
         $company = $operator->getmycom($_GET['id']);
 
