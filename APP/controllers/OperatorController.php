@@ -18,6 +18,13 @@ class OperatorController extends AppController {
         $idc = $_GET['id'];
         $company = $operator->getcom($_GET['id']);
 
+        if (!$company){
+            $_SESSION['errors'] = "paramerror";
+            $this->set(compact('error'));
+            return false;
+        }
+
+
         //Информация о компаниях клиента
         $META = [
             'title' => 'Рабочая область ',
