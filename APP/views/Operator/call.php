@@ -89,15 +89,16 @@
             <div class="card-body">
 
                 <div class="form-group mb-3 mb-md-2">
-                    <label class="d-block font-weight-semibold">Left inline radios</label>
+
+
                     <div class="custom-control custom-radio custom-control-inline">
-                        <input type="radio" class="custom-control-input" name="custom-inline-radio" id="custom_radio_inline_unchecked" >
-                        <label class="custom-control-label" for="custom_radio_inline_unchecked">Custom selected</label>
+                        <input type="radio" class="custom-control-input" name="optionsRadios"  value="perezvon" >
+                        <label class="custom-control-label" for="optionsRadios">ПЕРЕЗВОН</label>
                     </div>
 
                     <div class="custom-control custom-radio custom-control-inline">
-                        <input type="radio" class="custom-control-input" name="custom-inline-radio" id="custom_radio_inline_checked">
-                        <label class="custom-control-label" for="custom_radio_inline_checked">Custom unselected</label>
+                        <input type="radio" class="custom-control-input"  name="optionsRadios" value="otkaz" >
+                        <label class="custom-control-label" for="optionsRadios">ОТКАЗ</label>
                     </div>
                 </div>
 
