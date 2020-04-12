@@ -36,7 +36,7 @@
                 <tr>
                     <td class="wmin-md-100" ><b>Бонус за звонки:</b></td>
                     <td class="wmin-md-350">
-                        За <?=$val['mincall']?> звонков <b> <?=$val['bonuscall']?> руб.</b>
+                        За <?=$company['mincall']?> звонков <b> <?=$company['bonuscall']?> руб.</b>
                     </td>
                 </tr>
 
