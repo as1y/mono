@@ -55,6 +55,9 @@ class OperatorController extends AppController {
         $ASSETS[] = ["js" => "/global_assets/js/demo_pages/form_checkboxes_radios.js"];
 
 
+        $ASSETS[] = ["js" => "/global_assets/js/plugins/pickers/pickadate/picker.js"];
+        $ASSETS[] = ["js" => "/global_assets/js/plugins/pickers/pickadate/picker.date.js"];
+
         $ASSETS[] = ["js" => "/global_assets/js/demo_pages/picker_date.js"];
 
 
