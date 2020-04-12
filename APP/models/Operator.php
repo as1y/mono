@@ -15,31 +15,33 @@ class Operator extends \APP\core\base\Model {
 
         $operatorInProject = array_key_exists($_SESSION['ulogin']['id'],$massivoperatorov);
 
+        // СТАТУС 1 = НА МОДЕРАЦИИ
+        // СТАТУС 2 = ОПЕРАТОР РАБОТАЕТ НА ПРОЕКТЕ
+        // СТАТУС 3 = ОПЕРАТОРо ЗАБАНЕН НАПРОЕКТЕ
+
         if ($operatorInProject == false){
             $massivoperatorov[$_SESSION['ulogin']['id']] = 1;
             $company->operators = json_encode($massivoperatorov, true);
             R::store($company);
+
+            // Дублируем Юзеру
+            $user = R::load(CONFIG['USERTANLE'], $_SESSION['ulogin']['id']);
+            $massivcompaniy = json_decode($company['companies'], true);
+            if (!$massivcompaniy) $massivcompaniy = [];
+            $massivcompaniy[$idc] = 1;
+            $user->companies = json_encode($massivcompaniy, true);
+            R::store($company);
+
             return true;
         }
-
 
         if ($operatorInProject == true){
             if ($massivoperatorov[$_SESSION['ulogin']['id']] == 1) return "Вы уже подали заявку в этот проект";
             if ($massivoperatorov[$_SESSION['ulogin']['id']] == 2) return "Вы уже работаете на этом проекте";
             if ($massivoperatorov[$_SESSION['ulogin']['id']] == 3) return "Вы не можете подать заявку в данный проект";
-
         }
 
 
-        // Операторы, которые подали заявки
-        // Оператороы, забаненные
-        // Оператороы, одобренные
-        // Берем 1 массив. Где ключи, это ID оператора, а значение его статус
-
-
-
-
-        return $result;
     }
 
     public function allcompanies() {
