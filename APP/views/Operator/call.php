@@ -3,7 +3,7 @@
     <div class="col-md-6">
         <div class="card border-dark">
             <div class="card-header bg-dark text-white header-elements-inline">
-                <h6 class="card-title">Dark header</h6>
+                <h6 class="card-title">КОНТАКТ</h6>
                 <div class="header-elements">
                     <div class="list-icons">
                         <a class="list-icons-item" data-action="collapse"></a>
@@ -27,7 +27,7 @@
     <div class="col-md-6">
         <div class="card border-dark">
             <div class="card-header bg-dark text-white header-elements-inline">
-                <h6 class="card-title">Dark header</h6>
+                <h6 class="card-title">РЕЗУЛЬТАТ</h6>
                 <div class="header-elements">
                     <div class="list-icons">
                         <a class="list-icons-item" data-action="collapse"></a>
