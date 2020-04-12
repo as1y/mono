@@ -109,7 +109,7 @@ class Operator extends \APP\core\base\Model {
 
 
     public function Getbron($idc) {
-        return R::findOne('contact', 'company_id = ? AND users_id =? AND status = 1', [$idc, $_SESSION['ulogin']['id']]);
+        return R::findOne('contact', 'company_id = ? AND user_id =? AND status = 1', [$idc, $_SESSION['ulogin']['id']]);
     }
 
 
