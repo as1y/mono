@@ -106,7 +106,7 @@ function renderresultform($DATA){
             <div class="form-group">
                 <label><?=$val['NAME']?><span class="text-danger">*</span></label>
                 <div class="input-group">
-                    <input type="date"  class="form-control" >
+                    <input type="date"  name="customresult<?=$key?>" class="form-control" >
                 </div>
             </div>
 
@@ -119,7 +119,7 @@ function renderresultform($DATA){
             <div class="form-group">
                 <label><?=$val['NAME']?><span class="text-danger">*</span></label>
                 <div class="input-group">
-                    <textarea rows="3" cols="3" class="form-control" placeholder="Описание"></textarea>
+                    <textarea rows="3" cols="3" name="customresult<?=$key?>" class="form-control" placeholder="Описание"></textarea>
                 </div>
             </div>
         <?php
