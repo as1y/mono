@@ -10,7 +10,7 @@
 
             <div class="card-body">
 
-                <div >
+                <div class="row">
                     <button type="button" class="btn bg-teal-400 btn-labeled btn-labeled-left"><b><i class="icon-reading"></i></b> ПОЗВОНИТЬ</button>
                     <button type="button" class="btn bg-slate-600 btn-labeled btn-labeled-left"><b><i class="icon-reading"></i></b> СЛЕДУЮЩИЙ КОНТАКТ</button>
 
