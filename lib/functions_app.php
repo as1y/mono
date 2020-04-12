@@ -91,16 +91,16 @@ function renderresultform($DATA){
 
     foreach ($FORM as $key=>$val){
 
-        if ($val['type'] == 1){
+        if ($val['TYPE'] == 1){
             echo "Поле ввода";
         }
 
-        if ($val['type'] == 2){
+        if ($val['TYPE'] == 2){
             echo "Дата";
         }
 
 
-        if ($val['type'] == 3){
+        if ($val['TYPE'] == 3){
             echo "Текстовое поле";
         }
 
