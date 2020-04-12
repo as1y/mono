@@ -17,12 +17,16 @@ class OperatorController extends AppController {
 
         $operator = new Operator();
 
+
+        if(!$this->isAjax()) exit("Запрос не Ajax");
+
         if (empty($_GET['id'])) exit("Ошибка получения данных");
         $idc = $_GET['id'];
         $company = $operator->getmycom($_GET['id']);
         if ($company === false) exit("Ошибка допуска к проекту");
 
 
+        if (empty($optionresult))
 
 
         exit("yeah");
