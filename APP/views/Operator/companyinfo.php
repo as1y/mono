@@ -40,7 +40,7 @@
                 </tr>
 
                 <tr>
-                    <td class="wmin-md-100"><b>Выплата за цель:</b></td>
+                    <td class="wmin-md-100"><b>Выплата за результат:</b></td>
                     <td class="wmin-md-350">
                         <?=companytype($company['type'])?> - <b><?=$company['priceresult']?> рублей</b>
 
@@ -48,7 +48,7 @@
                 </tr>
 
                 <tr>
-                    <td class="wmin-md-100" ><b>Бонус за звонки:</b></td>
+                    <td class="wmin-md-100" ><b>Выплата за звонки:</b></td>
                     <td class="wmin-md-350">
                         За <?=$company['mincall']?> звонков <b> <?=$company['bonuscall']?> рублей</b>
                     </td>
