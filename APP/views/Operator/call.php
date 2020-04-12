@@ -92,7 +92,6 @@
             <div class="card-body">
                 <div class="form-group mb-3 mb-md-2">
 
-
                     <div class="form-check form-check-inline">
                         <label class="form-check-label">
                             <input type="radio" class="form-check-input-styled-warning" name="optionsRadios" value="perezvon" data-fouc>
@@ -171,7 +170,7 @@
 
                 <div class="form-group mb-0">
                     <label>Комментарий:</label>
-                    <textarea rows="3" cols="3" class="form-control"  placeholder="Комментарий оператора"></textarea>
+                    <textarea rows="3" cols="3" name="comment" class="form-control"  placeholder="Комментарий оператора"></textarea>
                 </div>
 
 
@@ -212,7 +211,7 @@
 
         let res = $("input:radio:checked").val(); // Собираем результат вызова
 
-       
+
         let data = $("#resultdata").serialize();
 
         console.log(data);
