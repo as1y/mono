@@ -30,7 +30,7 @@ class Operator extends \APP\core\base\Model {
             if (!$massivcompaniy) $massivcompaniy = [];
             $massivcompaniy[$idc] = 1;
             $user->companies = json_encode($massivcompaniy, true);
-            R::store($company);
+            R::store($user);
 
             return true;
         }
