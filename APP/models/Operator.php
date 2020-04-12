@@ -75,6 +75,41 @@ class Operator extends \APP\core\base\Model {
 
 
 
+    public function getscript($idc) {
+        return R::findOne('script', 'WHERE idc = ?', [$idc]);
+    }
+
+
+    public function checkcompany($idc) {
+        if (empty($_SESSION['ulogin']['perezvon'])) {
+            $checkcompany = R::findOne('company', 'WHERE id = ? AND status = 1', [$idc]);
+        }
+        else {
+            $checkcompany = R::findOne('company', 'WHERE id = ?', [$idc]);
+        }
+        if ($checkcompany) return $checkcompany;
+        return false;
+    }
+
+
+    public function newcontact($idc) {
+        return R::findOne('contact', 'WHERE company_id = ? AND status = 0', [$idc]);
+    }
+
+
+    public function setbron($idcont) {
+
+        $contact = R::load('contact',$idcont);
+        $contact->status = 1;
+        $contact->userId = $_SESSION['ulogin']['id'];
+        R::store($contact);
+        
+
+    }
+
+
+
+
     public function getcom($idc){
         $company = R::findOne('company', 'WHERE id = ? LIMIT 1', [$idc]);
         return $company;

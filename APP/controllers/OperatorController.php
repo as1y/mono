@@ -14,30 +14,42 @@ class OperatorController extends AppController {
 
     public function callAction(){
 
-
         $operator = new Operator();
         $idc = $_GET['id'];
         $company = $operator->getcom($_GET['id']);
 
-
         //Информация о компаниях клиента
-
         $META = [
             'title' => 'Рабочая область ',
             'description' => 'Рабочая область ',
             'keywords' => 'Рабочая область ',
         ];
         \APP\core\base\View::setMeta($META);
-
-
         $BREADCRUMBS['HOME'] = ['Label' => $this->BreadcrumbsControllerLabel, 'Url' => $this->BreadcrumbsControllerUrl];
         $BREADCRUMBS['DATA'][] = ['Label' => $company['company']];
         \APP\core\base\View::setBreadcrumbs($BREADCRUMBS);
 
 
-        $operator = new Operator(); //Вызываем Моудль
+
+        if (isset($_GET['perezvon'])) $idcontact = $_GET['perezvon'];
+
+        // Проверяем компанию на статус
+        $company = $operator->checkcompany($idc);
+        if (empty($company)) $error = "status";
 
 
+        // Берем контакт на звонок
+        $contactinfo = $operator->newcontact($idc);
+        if (empty($contactinfo)) $error = "no contact";
+
+        //Добавляем этот контакт в бронь. Что мы его звоним и больше его никто не будет брать
+
+
+        $operator->setbron($contactinfo['id']);
+
+
+
+        $script = $operator->getscript($idc);
         $this->set(compact('company'));
 
 
