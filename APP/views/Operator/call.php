@@ -1,8 +1,3 @@
-<?php
-show($contactinfo);
-?>
-
-
 
 <div class="row">
     <div class="col-md-6">
@@ -19,7 +14,12 @@ show($contactinfo);
             </div>
 
             <div class="card-body">
-                Card with dark header color - add <code>.bg-dark</code> class to card header container
+
+
+          ТЕЛО
+
+
+
             </div>
         </div>
     </div>
@@ -38,12 +38,16 @@ show($contactinfo);
             </div>
 
             <div class="card-body">
-                Card with dark header color - add <code>.bg-dark</code> class to card header container
+
+
+                ТЕЛО
+
+
             </div>
         </div>
     </div>
 
-    
+
 
 
 
