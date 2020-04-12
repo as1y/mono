@@ -76,6 +76,17 @@
 
 
 
+                <tr>
+                    <td class="wmin-md-100" ><b>Время звонков:</b></td>
+                    <td class="wmin-md-350">
+                        <b>     <?=timecall($company['timecall'])?> рублей</b>
+
+                    </td>
+                </tr>
+
+
+
+
 
 
 
