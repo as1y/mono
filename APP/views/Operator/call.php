@@ -91,16 +91,26 @@
                 <div class="form-group mb-3 mb-md-2">
 
 
-                    <div class="custom-control custom-radio custom-control-inline">
-                        <input type="radio" class="custom-control-input" name="optionsRadios"  value="perezvon" >
-                        <label class="custom-control-label" for="custom_radio_inline_unchecked">ПЕРЕЗВОН</label>
+                    <div class="form-group mb-3 mb-md-2">
+
+                        <div class="form-check form-check-inline">
+                            <label class="form-check-label">
+                                <div class="uniform-choice"><span class="checked"><input type="radio" class="form-check-input-styled" name="radio-inline-left"  data-fouc=""></span></div>
+                               ПЕРЕЗВОН
+                            </label>
+                        </div>
+
+                        <div class="form-check form-check-inline">
+                            <label class="form-check-label">
+                                <div class="uniform-choice"><span class=""><input type="radio" class="form-check-input-styled" name="radio-inline-left" data-fouc=""></span></div>
+                                ОТКАЗ
+                            </label>
+                        </div>
+
+
                     </div>
 
-                    <div class="custom-control custom-radio custom-control-inline">
-                        <input type="radio" class="custom-control-input"  name="optionsRadios" value="otkaz" >
-                        <label class="custom-control-label" for="custom_radio_inline_checked">ОТКАЗ</label>
-                    </div>
-                </div>
+
 
 
 
