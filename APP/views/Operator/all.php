@@ -44,7 +44,7 @@
 
                     </td>
                     <td class="text-center">
-                       За  <b> <?=$val['mincall']?></b> звонков<br>
+                        <b> <?=$val['mincall']?></b> звонков = 
                        Бонус  <b> <?=$val['bonuscall']?></b>
 
                     </td>
