@@ -153,7 +153,7 @@
                 <!-- перезвон  -->
 
                 <div class="form-group mb-0">
-                    <label>Комментарий:<span class="text-danger">*</span></label>
+                    <label>Комментарий:</label>
                     <textarea rows="3" cols="3" class="form-control"  placeholder="Комментарий оператора"></textarea>
                 </div>
 
