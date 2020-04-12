@@ -129,8 +129,6 @@
 
                 </div>
 
-
-
                 <!-- перезвон -->
                 <div id="perez" style="display: none;">
 
@@ -151,13 +149,13 @@
                         </div>
 
                     </div>
-
-
-
-
-
                 </div>
                 <!-- перезвон  -->
+
+                <div class="form-group mb-0">
+                    <label>Комментарий:<span class="text-danger">*</span></label>
+                    <textarea rows="3" cols="3" class="form-control"  placeholder="Комментарий оператора"></textarea>
+                </div>
 
 
 
