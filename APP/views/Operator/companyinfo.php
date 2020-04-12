@@ -101,14 +101,18 @@
 
                 </tbody>
             </table>
+
+            <input type="hidden" name="idc"  value="<?=$company['id']?>">
+
+
+            <button type="submit" class=" btn btn-success"><i class="icon-phone-plus mr-2"></i> ПОДАТЬ ЗАЯВКУ</button>
+
+            
         </div>
     </div>
 
 
-    <input type="hidden" name="idc"  value="<?=$company['id']?>">
 
-
-    <button type="submit" class=" btn btn-success"><i class="icon-phone-plus mr-2"></i> ПОДАТЬ ЗАЯВКУ</button>
 
 
 </form>
