@@ -15,7 +15,7 @@
                 <th>Продукт</th>
                 <th>Цель</th>
                 <th>Оплата (Руб.)</th>
-                <th>За звонки (Руб.)</th>
+                <th>Бонус</th>
                 <th>Действие</th>
 
             </tr>
@@ -44,7 +44,7 @@
 
                     </td>
                     <td class="text-center">
-                        <b> <?=$val['bonuscall']?></b>
+                        За <?=$val['mincall']?> звонков <b> <?=$val['bonuscall']?> руб.</b>
                     </td>
                     <td class="text-center">
 
