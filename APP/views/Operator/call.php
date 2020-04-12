@@ -94,14 +94,14 @@
 
                     <div class="form-check form-check-inline">
                         <label class="form-check-label">
-                            <input type="radio" class="form-check-input-styled" name="radio-inline-left" value="late" data-fouc>
+                            <input type="radio" class="form-check-input-styled-warning" name="radio-inline-left" value="late" data-fouc>
                             ПЕРЕЗВОН
                         </label>
                     </div>
 
                     <div class="form-check form-check-inline">
                         <label class="form-check-label">
-                            <input type="radio" class="form-check-input-styled" name="radio-inline-left" value="otkaz" data-fouc>
+                            <input type="radio" class="form-check-input-styled-danger" name="radio-inline-left" value="otkaz" data-fouc>
                             ОТКАЗ
                         </label>
                     </div>
@@ -117,7 +117,7 @@
                     <div class="form-check form-check-inline">
                         <label class="form-check-label">
                             <input type="radio" class="form-check-input-styled-success" value="result" name="radio-inline-left"  data-fouc>
-                            <b><?=companytype($company["type"]);?></b> - <?=$company['resultcall'];?> РУБЛЕЙ
+                            <b><?=companytype($company["type"]);?></b> - <?=$company['priceresult'];?> РУБЛЕЙ
 
                         </label>
                     </div>
