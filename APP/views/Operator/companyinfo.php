@@ -19,8 +19,15 @@
                 <tr>
                     <td class="wmin-md-100" ><b>Компания:</b></td>
                     <td class="wmin-md-350">
-                       <b> <?=$company['company']?></b> <br>
+                       <b> <?=$company['company']?></b> (<?=$company['transkr']?>) <br>
                        <a href="//<?=$company['url']?>" target="_blank"><?=$company['url']?></a>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="wmin-md-100" ><b>Сфера деятельности:</b></td>
+                    <td class="wmin-md-350">
+                         <?=tematika($company['tematika'])?> <br>
                     </td>
                 </tr>
 

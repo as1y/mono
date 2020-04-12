@@ -32,6 +32,14 @@ function leadteable ($status){
 
 
 
+function tematika ($status){
+    if ($status=="1") return 'Digital';
+    if ($status=="2") return 'Медицина';
+    if ($status=="3") return 'Банковский сектр';
+    if ($status=="4") return 'Страховка';
+}
+
+
 
 function companytype ($status){
 	if ($status=="1") return 'ЛИД';
