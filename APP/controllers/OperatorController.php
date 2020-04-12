@@ -37,16 +37,18 @@ class OperatorController extends AppController {
         // Проверяем компанию на статус
         $company = $operator->checkcompany($idc);
         if (empty($company)) {
-            $error = "dfgdfgdfg";
+            $_SESSION['errors'] = "status";
             $this->set(compact('error'));
             return false;
-
         }
 
 
         // Берем контакт на звонок
         $contactinfo = $operator->newcontact($idc);
-        if (empty($contactinfo)) $error = "no contact";
+        if (empty($contactinfo)) {
+            $_SESSION['errors'] = "contact";
+            return false;
+        }
 
         //Добавляем этот контакт в бронь. Что мы его звоним и больше его никто не будет брать
 
