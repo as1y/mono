@@ -12,6 +12,8 @@ class Operator extends \APP\core\base\Model {
 
         $massivoperatorov = json_decode($company['operators'], true);
 
+        if (!$massivoperatorov) $massivoperatorov = [];
+
         $operatorInProject = array_key_exists($_SESSION['ulogin']['id'],$massivoperatorov);
 
 
