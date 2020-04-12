@@ -14,7 +14,7 @@
                 <th>Проект</th>
                 <th>Описание</th>
                 <th>Цель</th>
-                <th>Ваше вознаграждение</th>
+                <th>Оплата (РУБ)</th>
                 <th>Статистика</th>
                 <th>Действие</th>
 
@@ -34,7 +34,11 @@
                         <?=$val['aboutcompany']?>
 
                     </td>
-                    <td class="text-center"><b>0 руб.</b></td>
+                    <td class="text-center">
+
+                        <?=$val['priceresult']?>
+
+                    </td>
                     <td class="text-center"><b>0 руб.</b></td>
                     <td class="text-center"><b>0 руб.</b></td>
                     <td class="text-center">
