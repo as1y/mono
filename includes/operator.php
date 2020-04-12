@@ -21,11 +21,25 @@
 
 
             <!-- User menu -->
-            <div  class="sidebar-user align-self-center">
-                <div class="card">
-                    <a href="/panel/"  class="btn btn-light"><i class="icon-square-left mr-2"></i> НАЗАД</a>
-                </div>
+            <div class="sidebar-user">
+                <div class="card-body">
+                    <div class="media">
+                        <div class="mr-3">
+                            <a href="/panel/profile/"><img src="<?=$_SESSION['ulogin']['avatar']?>" width="38" height="38" class="rounded-circle" alt=""></a>
+                        </div>
 
+                        <div class="media-body">
+                            <div class="media-title font-weight-semibold"><?=$_SESSION['ulogin']['username']?></div>
+                            <div class="font-size-xs opacity-50">
+                                <i class="fa fa-user font-size-sm"></i> <?=rendertypeaccount($_SESSION['ulogin']['role'])?>
+                            </div>
+                        </div>
+
+                        <div class="ml-3 align-self-center">
+                            <a href="/panel/profile/" class="text-white"><i class="icon-cog3"></i></a>
+                        </div>
+                    </div>
+                </div>
             </div>
             <!-- /user menu -->
 
@@ -41,68 +55,39 @@
 
                     <!-- Main -->
                     <li class="nav-item-header">
-                        <div class="text-uppercase font-size-sm line-height-sm">РАБОЧАЯ ПАНЕЛЬ</div>
+                        <div class="text-uppercase font-size-sm line-height-sm">МОИ ПРОЕКТЫ</div>
                     </li>
 
 
                     <li class="nav-item">
-                        <a href="/project/?id=<?=$_GET['id']?>" class="nav-link <?=isset($active['index']) ? $active['index'] : ''; ?>">
+                        <a href="/panel/" class="nav-link <?=isset($active['index']) ? $active['index'] : ''; ?>">
                             <i class="icon-home4"></i>
-                            <span>	Статистика </span>
+                            <span>	Проекты </span>
                         </a>
                     </li>
-
-
-
-                    <li class="nav-item">
-                        <a href="/project/result/?id=<?=$_GET['id']?>" class="nav-link <?=isset($active['result']) ? $active['result'] : ''; ?>">
-                            <i class="icon-target2"></i>
-                            <span>	Результаты </span>
-                        </a>
-                    </li>
-
-
-
-                    <li class="nav-item">
-                        <a href="/project/operator/?id=<?=$_GET['id']?>" class="nav-link <?=isset($active['operator']) ? $active['operator'] : ''; ?>">
-                            <i class="icon-users4"></i>
-                            <span>	Операторы </span>
-                        </a>
-                    </li>
-
+                    <li class="nav-item"><a href="/panel/add" class="nav-link <?=isset($active['add']) ? $active['add'] : ''; ?>"><i class="icon-phone-plus"></i> <span>Добавить проект</span></a></li>
+                    <!-- /main -->
 
                     <li class="nav-item-header">
-                        <div class="text-uppercase font-size-sm line-height-sm">УПРАВЛЕНИЕ ПРОЕКТОМ</div>
+                        <div class="text-uppercase font-size-sm line-height-sm">ОБЗОР БИРЖИ</div>
                     </li>
 
                     <li class="nav-item">
-                        <a href="/project/set/?id=<?=$_GET['id']?>" class="nav-link <?=isset($active['set']) ? $active['set'] : ''; ?>">
-                            <i class="icon-cog3"></i>
-                            <span>	Общие настройки </span>
+                        <a href="#" class="nav-link">
+                            <i class="icon-users4"></i>
+                            <span>	Операторы </span>
+                            <span class="badge badge-pill bg-secondary ml-auto">39</span>
+
                         </a>
                     </li>
 
                     <li class="nav-item">
-                        <a href="/project/base/?id=<?=$_GET['id']?>" class="nav-link <?=isset($active['base']) ? $active['base'] : ''; ?>">
-                            <i class="icon-database"></i>
-                            <span>	База контактов </span>
+                        <a href="#" class="nav-link">
+                            <i class="icon-stats-growth"></i>
+                            <span>	Проекты </span>
+                            <span class="badge badge-pill bg-secondary ml-auto">1</span>
                         </a>
                     </li>
-
-                    <li class="nav-item">
-                        <a href="/project/script/?id=<?=$_GET['id']?>" class="nav-link <?=isset($active['script']) ? $active['script'] : ''; ?>">
-                            <i class="icon-file-text2"></i>
-                            <span>	Скрипт разговора </span>
-                        </a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a href="/project/resultform/?id=<?=$_GET['id']?>" class="nav-link <?=isset($active['resultform']) ? $active['resultform'] : ''; ?>">
-                            <i class="icon-file-eye2"></i>
-                            <span>	Форма результата </span>
-                        </a>
-                    </li>
-
 
 
 
