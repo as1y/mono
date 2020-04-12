@@ -104,8 +104,6 @@ class OperatorController extends AppController {
 
         if ($_POST){
 
-
-
             $result =  $operator->joincompany($idc);
 
             if ($result == 1){

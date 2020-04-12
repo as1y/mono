@@ -16,13 +16,19 @@ class Operator extends \APP\core\base\Model {
         $operatorInProject = array_key_exists($_SESSION['ulogin']['id'],$massivoperatorov);
 
         if ($operatorInProject == false){
-
             $massivoperatorov[$_SESSION['ulogin']['id']] = 1;
             $company->operators = json_encode($massivoperatorov, true);
             R::store($company);
             return true;
         }
 
+
+        if ($operatorInProject == true){
+            if ($massivoperatorov[$_SESSION['ulogin']['id']] == 1) return "Вы уже подали заявку в этот проект";
+            if ($massivoperatorov[$_SESSION['ulogin']['id']] == 2) return "Вы уже работаете на этом проекте";
+            if ($massivoperatorov[$_SESSION['ulogin']['id']] == 3) return "Вы не можете подать заявку в данный проект";
+
+        }
 
 
         // Операторы, которые подали заявки
