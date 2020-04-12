@@ -92,16 +92,39 @@ function renderresultform($DATA){
     foreach ($FORM as $key=>$val){
 
         if ($val['TYPE'] == 1){
-            echo "Поле ввода";
+            ?>
+            <div class="form-group">
+                <label><?=$val['NAME']?><span class="text-danger">*</span></label>
+                <div class="input-group">
+                    <input type="text"  class="form-control" placeholder="<?=$val['NAME']?>">
+                </div>
+            </div>
+            <?php
         }
 
         if ($val['TYPE'] == 2){
-            echo "Дата";
+            ?>
+            <div class="form-group">
+                <label><?=$val['NAME']?><span class="text-danger">*</span></label>
+                <div class="input-group">
+                    <input type="date"  class="form-control" >
+                </div>
+            </div>
+
+        <?php
+
         }
 
-
         if ($val['TYPE'] == 3){
-            echo "Текстовое поле";
+            ?>
+            <div class="form-group">
+                <label><?=$val['NAME']?><span class="text-danger">*</span></label>
+                <div class="input-group">
+                    <textarea rows="3" cols="3" class="form-control" placeholder="Описание"></textarea>
+                </div>
+            </div>
+        <?php
+
         }
 
 
