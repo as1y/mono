@@ -42,31 +42,33 @@ class OperatorController extends AppController {
             return false;
         }
 
-
         // Берем контакт на звонок
+
+        // Забираем скрипт
+        $script = $operator->getscript($idc);
+        // Забираем скрипт
+
+
+        // Проверяем есть ли бронь на контакт. Если есть, то загружаем данные контакта из брони
+        $contactinfo = $operator->Getbron($idc);
+        if ($contactinfo){
+            $this->set(compact('company', 'contactinfo', 'script'));
+            return true;
+        }
+        // Проверяем есть ли бронь на контакт. Если есть, то загружаем данные контакта из брони
+
+
+        // Брони на контакт нет. Берем новый контакт
         $contactinfo = $operator->newcontact($idc);
         if (empty($contactinfo)) {
             $_SESSION['errors'] = "contact";
             return false;
         }
 
-        //Добавляем этот контакт в бронь. Что мы его звоним и больше его никто не будет брать
-
-
-        $Bron = $operator->Getbron($idc);
-
-//        if ($Bron){
-//            exit("bron est");
-//        }
-
-
-
+        //Ставим бронь
         $operator->setbron($contactinfo['id']);
+        //Ставим бронь
 
-
-
-        $script = $operator->getscript($idc);
-        $this->set(compact('company'));
 
 
 
