@@ -1,33 +1,6 @@
 
 <div class="row">
-    <div class="col-md-4">
-        <div class="card border-dark">
-            <div class="card-header bg-dark text-white header-elements-inline">
-                <h6 class="card-title">ВЫЗОВ</h6>
 
-            </div>
-            <div class="card-body">
-                <table class="table  table-bordered text-center">
-                    <tr>
-                        <td class="wmin-md-100"> <button type="button" class="btn bg-teal-400 btn-labeled btn-labeled-left"><b><i class="icon-phone-wave"></i></b> ПОЗВОНИТЬ</button></td>
-
-                        <td class="wmin-md-100"> <button type="button" class="btn bg-slate-600 btn-labeled ">СЛЕДУЮЩИЙ КОНТАКТ</button></td>
-
-                    </tr>
-                </table>
-
-                <div class="badge badge-success d-block"  id="info">
-                    ПОЗВОНИТЕ ПО КОНТАКТУ
-                </div>
-                <b>ВНИМАНИЕ!:</b>
-                Придерживайтесь скрипту и учитываете критерии. Иначе звонок может не пройти модерацию.
-
-
-
-            </div>
-        </div>
-    </div>
-    
     <div class="col-md-4">
         <div class="card border-dark">
             <div class="card-header bg-dark text-white header-elements-inline">
@@ -76,6 +49,56 @@
         </div>
     </div>
 
+
+    <div class="col-md-4">
+        <div class="card border-dark">
+            <div class="card-header bg-dark text-white header-elements-inline">
+                <h6 class="card-title">ВЫЗОВ</h6>
+
+            </div>
+            <div class="card-body">
+                <table class="table  table-bordered text-center">
+                    <tr>
+                        <td class="wmin-md-100"> <button type="button" class="btn bg-teal-400 btn-labeled btn-labeled-left"><b><i class="icon-phone-wave"></i></b> ПОЗВОНИТЬ</button></td>
+
+                        <td class="wmin-md-100"> <button type="button" class="btn bg-slate-600 btn-labeled ">СЛЕДУЮЩИЙ КОНТАКТ</button></td>
+
+                    </tr>
+                </table>
+
+                <div class="badge badge-success d-block"  id="info">
+                    ПОЗВОНИТЕ ПО КОНТАКТУ
+                </div>
+                <b>ВНИМАНИЕ!:</b>
+                Придерживайтесь скрипту и учитываете критерии. Иначе звонок может не пройти модерацию.
+
+
+
+            </div>
+        </div>
+    </div>
+
+
+    <div class="col-md-4">
+
+        <div class="card border-dark">
+            <div class="card-header bg-dark text-white header-elements-inline">
+                <h6 class="card-title">ОКОНЧАНИЕ РАЗГОВОРА</h6>
+
+            </div>
+            <div class="card-body">
+
+                ОКОНЧАНИЕ НА ГРУДЬ
+
+
+
+
+
+            </div>
+        </div>
+
+
+    </div>
 
 
 
