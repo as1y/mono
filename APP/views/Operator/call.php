@@ -117,7 +117,16 @@
                     <div class="form-check form-check-inline">
                         <label class="form-check-label">
                             <input type="radio" class="form-check-input-styled-success" value="result" name="radio-inline-left"  data-fouc>
-                            <b><?=companytype($company["type"]);?></b> - <?=$company['priceresult'];?> РУБЛЕЙ
+
+                            <span class="badge badge-light badge-striped badge-striped-right border-right-success">
+
+
+                                 <b><?=companytype($company["type"]);?></b> - <?=$company['priceresult'];?> РУБЛЕЙ
+
+                                
+                            </span>
+
+
 
                         </label>
                     </div>
