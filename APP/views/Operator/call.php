@@ -9,11 +9,11 @@
 
             <div class="card-body">
 
-                <table>
+                <table class="table  table-bordered">
                     <tr>
-                        <td> <div class="col-md-4"><button type="button" class="btn bg-teal-400 btn-labeled btn-labeled-left"><b><i class="icon-reading"></i></b> ПОЗВОНИТЬ</button></div></td>
+                        <td> <button type="button" class="btn bg-teal-400 btn-labeled btn-labeled-left"><b><i class="icon-reading"></i></b> ПОЗВОНИТЬ</button></td>
 
-                        <td> <div class="col-md-6"><button type="button" class="btn bg-slate-600 btn-labeled btn-labeled-left"><b><i class="icon-reading"></i></b> СЛЕДУЮЩИЙ КОНТАКТ</button></div></td>
+                        <td> <button type="button" class="btn bg-slate-600 btn-labeled btn-labeled-left"><b><i class="icon-reading"></i></b> СЛЕДУЮЩИЙ КОНТАКТ</button></td>
 
                     </tr>
                 </table>
