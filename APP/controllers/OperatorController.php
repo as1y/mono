@@ -80,7 +80,11 @@ class OperatorController extends AppController {
         $BREADCRUMBS['DATA'][] = ['Label' => "Все проекты"];
         \APP\core\base\View::setBreadcrumbs($BREADCRUMBS);
 
+        $ASSETS[] = ["js" => "/global_assets/js/plugins/tables/datatables/datatables.min.js"];
+        $ASSETS[] = ["js" => "/assets/js/datatables_basic.js"];
+        \APP\core\base\View::setAssets($ASSETS);
 
+        
         $operator = new Operator(); //Вызываем Моудль
 
 
