@@ -170,7 +170,7 @@
 
                 <div class="form-group mb-0">
                     <label>Комментарий:</label>
-                    <textarea rows="3" cols="3" name="comment" class="form-control"  placeholder="Комментарий оператора"></textarea>
+                    <textarea rows="3" cols="3" name="operatorcomment" class="form-control"  placeholder="Комментарий оператора"></textarea>
                 </div>
 
 
