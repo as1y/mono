@@ -29,7 +29,11 @@
 
                 <tr>
                     <td><?=$val['company']?></td>
-                    <td class="text-center"><?=$val['datareg']?></td>
+                    <td class="text-center">
+
+                        <?=$val['aboutcompany']?>
+
+                    </td>
                     <td class="text-center"><b>0 руб.</b></td>
                     <td class="text-center"><b>0 руб.</b></td>
                     <td class="text-center"><b>0 руб.</b></td>
