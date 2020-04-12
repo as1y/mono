@@ -90,20 +90,44 @@
 
 
                 <div class="form-group mb-3 mb-md-2">
-                    <label class="d-block font-weight-semibold">Left inline styled</label>
+
+
                     <div class="form-check form-check-inline">
                         <label class="form-check-label">
-                            <input type="radio" class="form-check-input-styled" name="radio-inline-left" checked data-fouc>
-                            Selected styled
+                            <input type="radio" class="form-check-input-styled" name="radio-inline-left" value="late" data-fouc>
+                            ПЕРЕЗВОН
                         </label>
                     </div>
 
                     <div class="form-check form-check-inline">
                         <label class="form-check-label">
-                            <input type="radio" class="form-check-input-styled" name="radio-inline-left" data-fouc>
+                            <input type="radio" class="form-check-input-styled" name="radio-inline-left" value="otkaz" data-fouc>
                             Unselected styled
                         </label>
                     </div>
+
+                    <div class="form-check form-check-inline">
+                        <label class="form-check-label">
+                            <input type="radio" class="form-check-input-styled" name="radio-inline-left" value="otkaz" data-fouc>
+                            Unselected styled
+                        </label>
+                    </div>
+
+
+                    <div class="form-check form-check-inline">
+                        <label class="form-check-label">
+                            <input type="radio" class="form-check-input-styled" value="bezdostupa" name="radio-inline-left" value="otkaz" data-fouc>
+                            ТЕЛЕФОН НЕ ДОСТУПЕН
+                        </label>
+                    </div>
+
+
+
+
+
+
+
+
                 </div>
 
 
