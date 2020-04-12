@@ -15,8 +15,8 @@ class OperatorController extends AppController {
     public function callAction(){
 
         $operator = new Operator();
-        
-        if (!$_GET['id']){
+
+        if (empty($_GET['id'])){
             $_SESSION['errors'] = "noparam";
             $this->set(compact('error'));
             return false;
