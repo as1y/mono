@@ -4,19 +4,16 @@
         <div class="card border-dark">
             <div class="card-header bg-dark text-white header-elements-inline">
                 <h6 class="card-title">КОНТАКТ</h6>
-                <div class="header-elements">
-                    <div class="list-icons">
-                        <a class="list-icons-item" data-action="collapse"></a>
-                        <a class="list-icons-item" data-action="reload"></a>
-                        <a class="list-icons-item" data-action="remove"></a>
-                    </div>
-                </div>
+
+
             </div>
 
             <div class="card-body">
 
 
-          ТЕЛО
+                <a href="#" class="btn bg-teal-400 btn-labeled btn-labeled-left"><b><i class="icon-reading"></i></b> ПОЗВОНИТЬ</a>
+
+
 
 
 
