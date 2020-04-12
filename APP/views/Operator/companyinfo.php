@@ -57,6 +57,20 @@
                 </tr>
 
 
+                <tr>
+                    <td class="wmin-md-100" ><b>Продукт:</b></td>
+                    <td class="wmin-md-350">
+                     <?=$company['nameprodukt']?><b>
+                            <br><?=$company['aboutproduct']?>
+
+                    </td>
+                </tr>
+
+
+
+
+                \
+
 
 
                 </tbody>
