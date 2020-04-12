@@ -204,6 +204,12 @@
     });
 
 
+    function funcBefore() {
+        $("#table").hide();
+        $("#loader").show();
+    }
+
+
 
     $('[id = "nextcontact"]').click(function() {
 
@@ -211,18 +217,14 @@
 
         console.log(data);
 
-
         $.ajax({
-            url: '/',
+            url: '/operator/callresult/?id='+<?=$company['id']?>,
             type: 'POST',
             data: data,
-            beforeSend: funcBefore,
+            // beforeSend: funcBefore,
             cache: false,
             success: function(result) {
-
                 console.log($result);
-
-
 
             }
         });

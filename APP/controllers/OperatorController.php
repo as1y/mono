@@ -12,6 +12,23 @@ class OperatorController extends AppController {
 
 
 
+    public function callresultAction (){
+        $this->layaout = false;
+
+
+
+
+        exit("fu");
+
+
+
+
+        return false;
+    }
+
+
+
+
     public function callAction(){
 
         $operator = new Operator();
@@ -42,9 +59,6 @@ class OperatorController extends AppController {
         $BREADCRUMBS['HOME'] = ['Label' => $this->BreadcrumbsControllerLabel, 'Url' => $this->BreadcrumbsControllerUrl];
         $BREADCRUMBS['DATA'][] = ['Label' => $company['company']];
         \APP\core\base\View::setBreadcrumbs($BREADCRUMBS);
-
-
-
 
 
         $ASSETS[] = ["js" => "/global_assets/js/plugins/notifications/sweet_alert.min.js"];
