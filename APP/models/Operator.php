@@ -51,7 +51,10 @@ class Operator extends \APP\core\base\Model {
         return $companyDB;
     }
 
-
+    public function getcom($idc){
+        $company = R::findOne('company', 'WHERE id = ? LIMIT 1', [$idc]);
+        return $company;
+    }
 
 
 

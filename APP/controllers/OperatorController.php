@@ -94,15 +94,16 @@ class OperatorController extends AppController {
 
     public function companyinfoAction(){
 
-        $project = new Project;
+        $operator = new Operator();
         $idc = $_GET['id'];
-        $company = $project->getcom($_GET['id']);
+        $company = $operator->getcom($_GET['id']);
+
 
 
 
         if ($_POST){
 
-            $operator = new Operator();
+
 
             $result =  $operator->joincompany($idc);
 
