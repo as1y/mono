@@ -11,8 +11,8 @@
         <table  class="table datatable-basic text-center">
             <thead>
             <tr>
-                <th>Проект</th>
-                <th>Описание</th>
+                <th>Компания</th>
+                <th>Продукт</th>
                 <th>Цель</th>
                 <th>Оплата (РУБ)</th>
                 <th>Статистика</th>
@@ -30,9 +30,7 @@
                 <tr>
                     <td><?=$val['company']?></td>
                     <td class="text-center">
-
-                        <?=obrezanie($val['aboutcompany'], 70)?>
-
+                        <?=obrezanie($val['nameproduct'], 70)?>
                     </td>
                     <td class="text-center">
 
