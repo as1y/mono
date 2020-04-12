@@ -76,32 +76,42 @@
                         </a>
                     </li>
 
-
-
-
                     <!-- /main -->
-
                     <li class="nav-item-header">
-                        <div class="text-uppercase font-size-sm line-height-sm">ОБЗОР БИРЖИ</div>
+                        <div class="text-uppercase font-size-sm line-height-sm">РЕЗУЛЬТАТЫ</div>
                     </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="icon-users4"></i>
+                            <span>	Перезвон </span>
+                            <span class="badge badge-pill bg-secondary ml-auto">39</span>
+                        </a>
+                    </li>
+
 
                     <li class="nav-item">
                         <a href="#" class="nav-link">
                             <i class="icon-users4"></i>
-                            <span>	Операторы </span>
+                            <span>	На модерации </span>
                             <span class="badge badge-pill bg-secondary ml-auto">39</span>
-
                         </a>
                     </li>
 
                     <li class="nav-item">
                         <a href="#" class="nav-link">
                             <i class="icon-stats-growth"></i>
-                            <span>	Проекты </span>
+                            <span>	Доработка </span>
                             <span class="badge badge-pill bg-secondary ml-auto">1</span>
                         </a>
                     </li>
 
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="icon-stats-growth"></i>
+                            <span>	Успешно </span>
+                            <span class="badge badge-pill bg-secondary ml-auto">1</span>
+                        </a>
+                    </li>
 
 
 
