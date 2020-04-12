@@ -40,22 +40,6 @@
                 </tr>
 
                 <tr>
-                    <td class="wmin-md-100"><b>Выплата за результат:</b></td>
-                    <td class="wmin-md-350">
-                        <?=companytype($company['type'])?> - <b><?=$company['priceresult']?> рублей</b>
-
-                    </td>
-                </tr>
-
-                <tr>
-                    <td class="wmin-md-100" ><b>Выплата за звонки:</b></td>
-                    <td class="wmin-md-350">
-                        За <?=$company['mincall']?> звонков <b> <?=$company['bonuscall']?> рублей</b>
-                    </td>
-                </tr>
-
-
-                <tr>
                     <td class="wmin-md-100" ><b>Продукт:</b></td>
                     <td class="wmin-md-350">
                         <b>  <?=$company['nameproduct']?> </b>
@@ -83,9 +67,22 @@
                 </tr>
 
 
+                <tr>
+                    <td class="wmin-md-100"><b>Выплата за результат:</b></td>
+                    <td class="wmin-md-350">
+                        <?=companytype($company['type'])?> - <b><?=$company['priceresult']?> рублей</b>
 
+                    </td>
+                </tr>
 
+                <tr>
+                    <td class="wmin-md-100" ><b>Выплата за звонки:</b></td>
+                    <td class="wmin-md-350">
+                        За <?=$company['mincall']?> звонков <b> <?=$company['bonuscall']?> рублей</b>
+                    </td>
+                </tr>
 
+                
 
 
                 </tbody>
