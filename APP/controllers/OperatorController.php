@@ -59,12 +59,6 @@ class OperatorController extends AppController {
         \APP\core\base\View::setBreadcrumbs($BREADCRUMBS);
 
 
-        $operator = new Operator(); //Вызываем Моудль
-
-
-
-
-
 
 
     }
@@ -90,7 +84,10 @@ class OperatorController extends AppController {
         $operator = new Operator(); //Вызываем Моудль
 
 
+        $allcompanies = $operator->allcompanies();
 
+
+        $this->set(compact('allcompanies'));
 
 
 
