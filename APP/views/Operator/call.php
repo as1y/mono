@@ -87,14 +87,12 @@
 
             </div>
             <div class="card-body">
-
-
                 <div class="form-group mb-3 mb-md-2">
 
 
                     <div class="form-check form-check-inline">
                         <label class="form-check-label">
-                            <input type="radio" class="form-check-input-styled-warning" name="optionsRadios" value="late" data-fouc>
+                            <input type="radio" class="form-check-input-styled-warning" name="optionsRadios" value="perezvon" data-fouc>
                             ПЕРЕЗВОН
                         </label>
                     </div>
@@ -130,6 +128,33 @@
                     </div>
 
                 </div>
+
+
+
+                <!-- дополнительные поля -->
+
+                <div id="perez" style="display: none;">
+                    Дата перезвона
+                    <div id="datep"  class="input-group input-medium date date-picker" data-date-format="dd-mm-yyyy" data-date-start-date="+0d">
+                                 <span class="input-group-btn">
+                                 <button class="btn default" type="button">
+                                 <i class="fa fa-calendar"></i>
+                                 </button>
+                                 </span>
+                        <input id="datepinput" type="text" class="form-control  input-small">
+                    </div>
+                    На другой номер (если необходимо)
+                    <div  class="input-group input-medium ">
+                                 <span class="input-group-addon">
+                                 <i class="fa fa-phone"></i>
+                                 </span>
+                        <input type="text" maxlength=15   class="form-control input-small" id="ptel" value="<?=$contactinfo['tel']?>">
+                    </div>
+                </div>
+                
+                <!-- доп. поля -->
+
+
 
             </div>
 
