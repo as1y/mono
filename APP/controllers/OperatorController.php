@@ -45,7 +45,7 @@ class OperatorController extends AppController {
         //Добавляем этот контакт в бронь. Что мы его звоним и больше его никто не будет брать
 
 
-        $Bron = $operator->Getbron($_SESSION['ulogin']['id']);
+        $Bron = $operator->Getbron($idc);
 
         if ($Bron){
             exit("bron est");
