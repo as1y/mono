@@ -151,7 +151,7 @@
                         <input type="text" maxlength=15   class="form-control input-small" id="ptel" value="<?=$contactinfo['tel']?>">
                     </div>
                 </div>
-                
+
                 <!-- доп. поля -->
 
 
@@ -174,7 +174,9 @@
 
        let change = $(this).val();
 
-        alert(change);
+
+        if (change == "perezvon") $("#perez").show();
+
 
         // $("#perez").hide();
         // $("#formresult").hide();
