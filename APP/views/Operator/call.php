@@ -116,7 +116,7 @@
                         <label class="form-check-label">
                             <input type="radio" class="form-check-input-styled-success" value="result" name="optionsRadios"  data-fouc>
 
-                            <span class="badge badge-secondary>
+                            <span class="badge badge-secondary">
 
 
                                  <b><?=companytype($company["type"]);?></b> - <?=$company['priceresult'];?> РУБЛЕЙ
