@@ -133,22 +133,29 @@
 
                 <!-- перезвон -->
                 <div id="perez" style="display: none;">
-                    Дата перезвона
-                    <div id="datep"  class="input-group input-medium date date-picker" data-date-format="dd-mm-yyyy" data-date-start-date="+0d">
-                                 <span class="input-group-btn">
-                                 <button class="btn default" type="button">
-                                 <i class="fa fa-calendar"></i>
-                                 </button>
-                                 </span>
-                        <input id="datepinput" type="text" class="form-control  input-small">
+
+                    <div class="form-group">
+
+                        <label>Дата перезвона<span class="text-danger">*</span></label>
+                        <div class="input-group">
+                            <input type="date"  class="form-control" placeholder="Дата перезвона">
+                        </div>
+
                     </div>
-                    На другой номер (если необходимо)
-                    <div  class="input-group input-medium ">
-                                 <span class="input-group-addon">
-                                 <i class="fa fa-phone"></i>
-                                 </span>
-                        <input type="text" maxlength=15   class="form-control input-small" id="ptel" value="<?=$contactinfo['tel']?>">
+
+                    <div class="form-group">
+
+                        <label>На другой номер (если необходимо)<span class="text-danger">*</span></label>
+                        <div class="input-group">
+                            <input type="text" value="<?=$contactinfo['tel']?>" class="form-control" placeholder="Имя">
+                        </div>
+
                     </div>
+
+
+
+
+
                 </div>
                 <!-- перезвон  -->
 
