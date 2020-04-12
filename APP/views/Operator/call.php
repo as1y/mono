@@ -88,37 +88,27 @@
             </div>
             <div class="card-body">
 
+
                 <div class="form-group mb-3 mb-md-2">
 
+                    <div class="form-check form-check-inline">
+                        <label class="form-check-label">
+                            <div class="uniform-choice"><span class="checked"><input type="radio" class="form-check-input-styled" name="radio-inline-left"  data-fouc=""></span></div>
+                            ПЕРЕЗВОН
+                        </label>
+                    </div>
 
-                    <div class="form-group mb-3 mb-md-2">
-
-                        <div class="form-check form-check-inline">
-                            <label class="form-check-label">
-                                <div class="uniform-choice"><span class="checked"><input type="radio" class="form-check-input-styled" name="radio-inline-left"  data-fouc=""></span></div>
-                               ПЕРЕЗВОН
-                            </label>
-                        </div>
-
-                        <div class="form-check form-check-inline">
-                            <label class="form-check-label">
-                                <div class="uniform-choice"><span class=""><input type="radio" class="form-check-input-styled" name="radio-inline-left" data-fouc=""></span></div>
-                                ОТКАЗ
-                            </label>
-                        </div>
-
-
+                    <div class="form-check form-check-inline">
+                        <label class="form-check-label">
+                            <div class="uniform-choice"><span class=""><input type="radio" class="form-check-input-styled" name="radio-inline-left" data-fouc=""></span></div>
+                            ОТКАЗ
+                        </label>
                     </div>
 
 
+                </div>
 
 
-
-
-
-
-
-            </div>
         </div>
 
 
