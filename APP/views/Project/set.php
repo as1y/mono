@@ -59,7 +59,7 @@
             </tr>
 
             <tr>
-                <td class="wmin-md-100" ><b>Вознаграждение за смену:</b></td>
+                <td class="wmin-md-100" ><b>Бонусы за звонки:</b></td>
                 <td class="wmin-md-350">
 
                     <div class="form-group row">
