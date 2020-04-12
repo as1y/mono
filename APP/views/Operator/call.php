@@ -94,29 +94,28 @@
 
                     <div class="form-check form-check-inline">
                         <label class="form-check-label">
-                            <input type="radio" class="form-check-input-styled-warning" name="optionsRadios" value="perezvon" data-fouc>
+                            <input type="radio" class="form-check-input-styled-warning" name="optionresult" value="perezvon" data-fouc>
                             ПЕРЕЗВОН
                         </label>
                     </div>
 
                     <div class="form-check form-check-inline">
                         <label class="form-check-label">
-                            <input type="radio" class="form-check-input-styled-danger" name="optionsRadios" value="otkaz" data-fouc>
+                            <input type="radio" class="form-check-input-styled-danger" name="optionresult" value="otkaz" data-fouc>
                             ОТКАЗ
                         </label>
                     </div>
 
                     <div class="form-check form-check-inline">
                         <label class="form-check-label">
-                            <input type="radio" class="form-check-input-styled" name="optionsRadios" value="bezdostupa" data-fouc>
+                            <input type="radio" class="form-check-input-styled" name="optionresult" value="bezdostupa" data-fouc>
                             ТЕЛЕФОН НЕ ДОСТУПЕН
                         </label>
                     </div>
 
-
                     <div class="form-check form-check-inline">
                         <label class="form-check-label">
-                            <input type="radio" class="form-check-input-styled-success" value="result" name="optionsRadios"  data-fouc>
+                            <input type="radio" class="form-check-input-styled-success" value="result" name="optionresult"  data-fouc>
 
                             <span class="badge badge-secondary">
 
@@ -137,7 +136,7 @@
 
                         <label>Дата перезвона<span class="text-danger">*</span></label>
                         <div class="input-group">
-                            <input type="date" class="form-control" placeholder="Дата перезвона">
+                            <input type="date" name="dataperezvona" class="form-control" placeholder="Дата перезвона">
                         </div>
 
                     </div>
@@ -146,7 +145,7 @@
 
                         <label>На другой номер (если необходимо)<span class="text-danger">*</span></label>
                         <div class="input-group">
-                            <input type="text" value="<?=$contactinfo['tel']?>" class="form-control" placeholder="Имя">
+                            <input type="text" name="nomerperezvona" value="<?=$contactinfo['tel']?>" class="form-control" placeholder="Имя">
                         </div>
 
                     </div>
@@ -159,7 +158,7 @@
 
                         <label>На другой номер (если необходимо)<span class="text-danger">*</span></label>
                         <div class="input-group">
-                            <input type="text" value="<?=$contactinfo['tel']?>" class="form-control" placeholder="Имя">
+                            <input type="text" name="nomerresult" value="<?=$contactinfo['tel']?>" class="form-control" placeholder="Имя">
                         </div>
 
                     </div>
