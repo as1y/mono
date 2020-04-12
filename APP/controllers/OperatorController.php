@@ -31,7 +31,7 @@ class OperatorController extends AppController {
         if (empty($_POST['optionresult'])) exit("Обязательно выберете результат звонка");
 
 
-        if ($_POST['zvonok'] == 0) exit("Вы не совершили звонок");
+        if ($_POST['zvonok'] == 1) exit("Вы не совершили звонок");
 
 
         exit("yeah");
