@@ -18,13 +18,13 @@
                     </tr>
                 </table>
 
-                <div class="bg-green-jungle bg-font-green-jungle"  id="info">
+                <div class="badge badge-success d-block"  id="info">
                     ПОЗВОНИТЕ ПО КОНТАКТУ
                 </div>
                 <b>ВНИМАНИЕ!:</b>
                 Придерживайтесь скрипту и учитываете критерии. Иначе звонок может не пройти модерацию.
 
-                
+
 
             </div>
         </div>
