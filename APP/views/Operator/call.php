@@ -86,6 +86,9 @@
                 <h6 class="card-title">РЕЗУЛЬТАТ РАЗГОВОРА</h6>
 
             </div>
+
+
+            <form id="resultdata" >
             <div class="card-body">
                 <div class="form-group mb-3 mb-md-2">
 
@@ -128,7 +131,6 @@
                     </div>
 
                 </div>
-
                 <!-- перезвон -->
                 <div id="perez" style="display: none;">
 
@@ -151,14 +153,9 @@
                     </div>
                 </div>
                 <!-- перезвон  -->
-
                 <!-- результат -->
                 <div id="result" style="display: none;">
-
-
                     <?php renderresultform($company['formresult'])?>
-
-
                     <div class="form-group">
 
                         <label>На другой номер (если необходимо)<span class="text-danger">*</span></label>
@@ -167,8 +164,6 @@
                         </div>
 
                     </div>
-
-
                 </div>
                 <!-- результат  -->
 
@@ -183,7 +178,7 @@
 
 
             </div>
-
+            </form>
 
         </div>
     </div>
@@ -217,13 +212,17 @@
 
         let res = $("input:radio:checked").val(); // Собираем результат вызова
 
-        // alert(res);
-        
-        swalInit.fire({
-            title: 'Oops...',
-            text: 'Something went wrong!',
-            type: 'error'
-        });
+       
+        let data = $("#resultdata").serialize();
+
+        console.log(data);
+
+
+        // swalInit.fire({
+        //     title: 'Oops...',
+        //     text: 'Something went wrong!',
+        //     type: 'error'
+        // });
 
 
 
