@@ -116,7 +116,7 @@
                         <label class="form-check-label">
                             <input type="radio" class="form-check-input-styled-success" value="result" name="optionsRadios"  data-fouc>
 
-                            <span class="badge badge-primary">
+                            <span class="badge badge-secondary>
 
 
                                  <b><?=companytype($company["type"]);?></b> - <?=$company['priceresult'];?> РУБЛЕЙ
@@ -131,8 +131,7 @@
 
 
 
-                <!-- дополнительные поля -->
-
+                <!-- перезвон -->
                 <div id="perez" style="display: none;">
                     Дата перезвона
                     <div id="datep"  class="input-group input-medium date date-picker" data-date-format="dd-mm-yyyy" data-date-start-date="+0d">
@@ -151,8 +150,7 @@
                         <input type="text" maxlength=15   class="form-control input-small" id="ptel" value="<?=$contactinfo['tel']?>">
                     </div>
                 </div>
-
-                <!-- доп. поля -->
+                <!-- перезвон  -->
 
 
 
