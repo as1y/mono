@@ -203,9 +203,9 @@
         if (change == "perezvon") $("#perez").show();
 
 
-        if (change == "perezvon"){
+        if (change == "result"){
             $("#perez").hide();
-            $("#perez").show();
+            $("#result").show();
         }
 
 
