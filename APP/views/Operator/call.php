@@ -1,6 +1,6 @@
 
 <div class="row">
-    <div class="col-md-6">
+    <div class="col-md-3">
         <div class="card border-dark">
             <div class="card-header bg-dark text-white header-elements-inline">
                 <h6 class="card-title">КОНТАКТ</h6>
@@ -23,6 +23,8 @@
             </div>
         </div>
     </div>
+
+
 
     <div class="col-md-6">
         <div class="card border-dark">
