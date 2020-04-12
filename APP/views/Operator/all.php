@@ -48,7 +48,7 @@
                     </td>
                     <td class="text-center">
 
-                        <a href="/operator/joincompany/?id=<?=$val['id']?>" type="button" class="btn btn-success"><i class="icon-comment-discussion mr-2"></i>Подробнее</a>
+                        <a href="/operator/companyinfo/?id=<?=$val['id']?>" type="button" class="btn btn-success"><i class="icon-comment-discussion mr-2"></i>Подробнее</a>
 
                     </td>
                 </tr>
