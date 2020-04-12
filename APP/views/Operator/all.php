@@ -40,7 +40,7 @@
                     <td class="text-center">
 
 
-                        <b> <?=$val['priceresult']?></b>
+                        <b> <?=$val['priceresult']?> руб.</b>
 
                     </td>
                     <td class="text-center">
