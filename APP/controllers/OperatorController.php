@@ -92,7 +92,7 @@ class OperatorController extends AppController {
     }
 
 
-    public function allAction(){
+    public function companyinfoAction(){
 
         $project = new Project;
         $idc = $_GET['id'];
