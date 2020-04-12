@@ -41,6 +41,62 @@ class OperatorController extends AppController {
     }
 
 
+    public function myAction()
+    {
+
+        //Информация о компаниях клиента
+
+        $META = [
+            'title' => 'Мои проекты',
+            'description' => 'Мои проекты',
+            'keywords' => 'Мои проекты',
+        ];
+        \APP\core\base\View::setMeta($META);
+
+
+        $BREADCRUMBS['HOME'] = ['Label' => $this->BreadcrumbsControllerLabel, 'Url' => $this->BreadcrumbsControllerUrl];
+        $BREADCRUMBS['DATA'][] = ['Label' => "Мои проекты"];
+        \APP\core\base\View::setBreadcrumbs($BREADCRUMBS);
+
+
+        $operator = new Operator(); //Вызываем Моудль
+
+
+
+
+
+
+
+    }
+
+    public function allAction()
+    {
+
+        //Информация о компаниях клиента
+
+        $META = [
+            'title' => 'Все проекты',
+            'description' => 'Все проекты',
+            'keywords' => 'Все проекты',
+        ];
+        \APP\core\base\View::setMeta($META);
+
+
+        $BREADCRUMBS['HOME'] = ['Label' => $this->BreadcrumbsControllerLabel, 'Url' => $this->BreadcrumbsControllerUrl];
+        $BREADCRUMBS['DATA'][] = ['Label' => "Все проекты"];
+        \APP\core\base\View::setBreadcrumbs($BREADCRUMBS);
+
+
+        $operator = new Operator(); //Вызываем Моудль
+
+
+
+
+
+
+
+    }
+
 
 }
 ?>
