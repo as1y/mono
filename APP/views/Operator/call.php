@@ -13,7 +13,7 @@
 
                 <a href="#" class="btn bg-teal-400 btn-labeled btn-labeled-left"><b><i class="icon-reading"></i></b> ПОЗВОНИТЬ</a>
 
-
+                <a href="#" class="btn bg-slate-600 btn-labeled btn-labeled-left"><b><i class="icon-reading"></i></b> СЛЕДУЮЩИЙ КОНТАКТ</a>
 
 
 
