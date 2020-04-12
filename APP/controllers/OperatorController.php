@@ -63,7 +63,7 @@ class OperatorController extends AppController {
         $ASSETS[] = ["js" => "/assets/js/datatables_basic.js"];
         \APP\core\base\View::setAssets($ASSETS);
 
-        
+
         $mycompanies = $operator->mycompanies();
 
 

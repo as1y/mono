@@ -1,6 +1,6 @@
 <div class="card">
     <div class="card-header header-elements-inline">
-        <h5 class="card-title">Мои компании</h5>
+        <h5 class="card-title">Мои проекты</h5>
 
     </div>
 
