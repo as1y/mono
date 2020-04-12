@@ -59,6 +59,22 @@ class Operator extends \APP\core\base\Model {
         return $companyDB;
     }
 
+
+    public function mycompanies() {
+        $company = R::findAll('company');
+
+        foreach ($company as $key=>$val){
+            $massivoperatorov = json_decode($val['operators'], true);
+            $operatorInProject = array_key_exists($_SESSION['ulogin']['id'],$massivoperatorov);
+            if ($operatorInProject == false) unset($company[$key]);
+        }
+
+
+        return $company;
+    }
+
+
+
     public function getcom($idc){
         $company = R::findOne('company', 'WHERE id = ? LIMIT 1', [$idc]);
         return $company;

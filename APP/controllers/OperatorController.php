@@ -60,6 +60,10 @@ class OperatorController extends AppController {
         \APP\core\base\View::setBreadcrumbs($BREADCRUMBS);
 
 
+        $mycompanies = $operator->mycompanies();
+
+
+        $this->set(compact('mycompanies'));
 
 
     }
