@@ -153,9 +153,8 @@
                 <!-- перезвон  -->
 
                 <!-- результат -->
-<!--                <div id="result" style="display: none;">-->
+                <div id="result" style="display: none;">
 
-                <div id="result">
 
                     <?php renderresultform($company['formresult'])?>
 

@@ -86,8 +86,7 @@ function rendertypeaccount($type){
 function renderresultform($DATA){
     $FORM = json_decode($DATA, true);
 
-
-    show($FORM);
+    
 
     foreach ($FORM as $key=>$val){
 
@@ -136,7 +135,7 @@ function renderresultform($DATA){
     }
 
 
-    
+
 
 
 }
