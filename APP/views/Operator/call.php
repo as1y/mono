@@ -61,7 +61,7 @@
                     <tr>
                         <td class="wmin-md-100"> <button type="button" class="btn bg-teal-400 btn-labeled btn-labeled-left"><b><i class="icon-phone-wave"></i></b> ПОЗВОНИТЬ</button></td>
 
-                        <td class="wmin-md-100"> <button type="button" class="btn bg-slate-600 btn-labeled ">СЛЕДУЮЩИЙ КОНТАКТ</button></td>
+                        <td class="wmin-md-100"> <button type="button" id="nextcontact" class="btn bg-slate-600 btn-labeled ">СЛЕДУЮЩИЙ КОНТАКТ</button></td>
 
                     </tr>
                 </table>
@@ -198,34 +198,31 @@
 
     $('[name = "optionsRadios"]').click(function() { // Клики на результат вызова
 
-
        let change = $(this).val();
-
         $("#perez").hide();
         $("#result").hide();
 
         if (change == "perezvon") $("#perez").show();
-
-
         if (change == "result"){
             $("#perez").hide();
             $("#result").show();
         }
 
+    });
 
-        // $("#perez").hide();
-        // $("#formresult").hide();
-        //
-        // if (ch == "late") {
-        //     $("#perez").show();
-        // }
-        // ch = $(this).val();
-        // if (ch == "result") $("#formresult").show();
+
+
+    $('[id = "nextstep"]').click(function() {
+
+
+        alert("begin");
+
+
+
 
 
 
     });
-
 
 
 </script>
