@@ -55,10 +55,10 @@
                                 <div id="namecont"><?=$contactinfo['name']?></div>
                             </td>
                             <td style='vertical-align: middle'>
-                                <div id="company"><?=$contactinfo['company']?></div>
+                                <div id="company"><?=$company['company']?></div>
                             </td>
                             <td style='vertical-align: middle'>
-                                <div id="siteurl"> <a href="<?=$contactinfo['site']?> " target="_blank"><?=$contactinfo['site']?></a> </div>
+                                <div id="siteurl"> <a href="<?=$company['url']?> " target="_blank"><?=$company['url']?></a> </div>
                             </td>
                             <td style='vertical-align: middle'>
                                 <div id="comment"><?=$contactinfo['comment']?></div>
