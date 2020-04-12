@@ -16,7 +16,7 @@ class OperatorController extends AppController {
 
         $operator = new Operator();
         $idc = $_GET['id'];
-        $company = $operator->getcom($_GET['id']);
+        $company = $operator->getmycom($_GET['id']);
 
         if (!$company){
             $_SESSION['errors'] = "paramerror";

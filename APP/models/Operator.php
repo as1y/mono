@@ -123,6 +123,23 @@ class Operator extends \APP\core\base\Model {
     }
 
 
+    public function getmycom($idc){
+        $company = R::findOne('company', 'WHERE id = ? LIMIT 1', [$idc]);
+
+        $massivoperatorov = json_decode($company['operators'], true);
+        $operatorInProject = array_key_exists($_SESSION['ulogin']['id'],$massivoperatorov);
+
+        if ($operatorInProject == true) return $company;
+
+        if ($operatorInProject == false) return [];
+
+
+
+    }
+
+
+
+
 
 }
 ?>
