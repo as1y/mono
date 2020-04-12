@@ -217,10 +217,13 @@
 
         let res = $("input:radio:checked").val(); // Собираем результат вызова
 
-        alert(res);
-
-
-
+        // alert(res);
+        
+        swalInit.fire({
+            title: 'Oops...',
+            text: 'Something went wrong!',
+            type: 'error'
+        });
 
 
 
