@@ -126,32 +126,41 @@
 
                             </span>
 
-
-
                         </label>
                     </div>
 
-
-
-
-
-
                 </div>
-
-
-
-
 
             </div>
 
-
-
         </div>
-
-
     </div>
-
-
-
-
 </div>
+
+
+
+
+
+
+<script>
+
+    $('[name = "optionsRadios"]').click(function() { // Клики на результат вызова
+
+
+
+        // $("#perez").hide();
+        // $("#formresult").hide();
+        // ch = $(this).val();
+        // if (ch == "late") {
+        //     $("#perez").show();
+        // }
+        // ch = $(this).val();
+        // if (ch == "result") $("#formresult").show();
+
+
+
+    });
+
+
+
+</script>
