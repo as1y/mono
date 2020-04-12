@@ -146,11 +146,14 @@
 
     $('[name = "optionsRadios"]').click(function() { // Клики на результат вызова
 
-        alert("fufu");
+
+       let change = $(this).val();
+
+        alert(change);
 
         // $("#perez").hide();
         // $("#formresult").hide();
-        // ch = $(this).val();
+        //
         // if (ch == "late") {
         //     $("#perez").show();
         // }
