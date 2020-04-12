@@ -136,10 +136,7 @@
 
                         <label>Дата перезвона<span class="text-danger">*</span></label>
                         <div class="input-group">
-										<span class="input-group-prepend">
-											<span class="input-group-text"><i class="icon-calendar5"></i></span>
-										</span>
-                            <input type="text" class="form-control pickadate" placeholder="Дата перезвона">
+                            <input type="date" class="form-control" placeholder="Дата перезвона">
                         </div>
 
                     </div>
