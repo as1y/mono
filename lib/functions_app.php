@@ -95,7 +95,7 @@ function renderresultform($DATA){
             <div class="form-group">
                 <label><?=$val['NAME']?><span class="text-danger">*</span></label>
                 <div class="input-group">
-                    <input type="text" name="customresult" class="form-control" placeholder="<?=$val['NAME']?>">
+                    <input type="text" name="customresult<?=$key?>" class="form-control" placeholder="<?=$val['NAME']?>">
                 </div>
             </div>
             <?php
