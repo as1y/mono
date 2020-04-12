@@ -215,7 +215,9 @@
     $('[id = "nextcontact"]').click(function() {
 
 
-        alert("begin");
+        let res = $("input:radio:checked").val(); // Собираем результат вызова
+
+        alert(res);
 
 
 
