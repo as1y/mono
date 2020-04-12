@@ -23,7 +23,7 @@
 
 
             <tbody>
-            
+
             <?php foreach ($mycompanies as $key=>$val):?>
 
                 <tr>
