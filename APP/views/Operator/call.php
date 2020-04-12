@@ -102,14 +102,14 @@
                     <div class="form-check form-check-inline">
                         <label class="form-check-label">
                             <input type="radio" class="form-check-input-styled" name="radio-inline-left" value="otkaz" data-fouc>
-                            Unselected styled
+                            ОТКАЗ
                         </label>
                     </div>
 
                     <div class="form-check form-check-inline">
                         <label class="form-check-label">
-                            <input type="radio" class="form-check-input-styled" name="radio-inline-left" value="otkaz" data-fouc>
-                            Unselected styled
+                            <input type="radio" class="form-check-input-styled" name="radio-inline-left" value="bezdostupa" data-fouc>
+                            ТЕЛЕФОН НЕ ДОСТУПЕН
                         </label>
                     </div>
 
