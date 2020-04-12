@@ -11,8 +11,12 @@
             <div class="card-body">
 
                 <div class="row">
-                    <button type="button" class="btn bg-teal-400 btn-labeled btn-labeled-left"><b><i class="icon-reading"></i></b> ПОЗВОНИТЬ</button>
-                    <button type="button" class="btn bg-slate-600 btn-labeled btn-labeled-left"><b><i class="icon-reading"></i></b> СЛЕДУЮЩИЙ КОНТАКТ</button>
+                    <div class="col-md-4"><button type="button" class="btn bg-teal-400 btn-labeled btn-labeled-left"><b><i class="icon-reading"></i></b> ПОЗВОНИТЬ</button></div>
+                    <div class="col-md-4"></div>
+                    <div class="col-md-4"><button type="button" class="btn bg-slate-600 btn-labeled btn-labeled-left"><b><i class="icon-reading"></i></b> СЛЕДУЮЩИЙ КОНТАКТ</button></div>
+
+
+                    
 
 
                 </div>
