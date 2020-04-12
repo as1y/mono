@@ -207,13 +207,25 @@
 
     $('[id = "nextcontact"]').click(function() {
 
-
-        let res = $("input:radio:checked").val(); // Собираем результат вызова
-
-
         let data = $("#resultdata").serialize();
 
         console.log(data);
+
+
+        $.ajax({
+            url: '/',
+            type: 'POST',
+            data: data,
+            beforeSend: funcBefore,
+            cache: false,
+            success: function(result) {
+
+                console.log($result);
+
+
+
+            }
+        });
 
 
         // swalInit.fire({
