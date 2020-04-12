@@ -94,21 +94,21 @@
 
                     <div class="form-check form-check-inline">
                         <label class="form-check-label">
-                            <input type="radio" class="form-check-input-styled-warning" name="radio-inline-left" value="late" data-fouc>
+                            <input type="radio" class="form-check-input-styled-warning" name="optionsRadios" value="late" data-fouc>
                             ПЕРЕЗВОН
                         </label>
                     </div>
 
                     <div class="form-check form-check-inline">
                         <label class="form-check-label">
-                            <input type="radio" class="form-check-input-styled-danger" name="radio-inline-left" value="otkaz" data-fouc>
+                            <input type="radio" class="form-check-input-styled-danger" name="optionsRadios" value="otkaz" data-fouc>
                             ОТКАЗ
                         </label>
                     </div>
 
                     <div class="form-check form-check-inline">
                         <label class="form-check-label">
-                            <input type="radio" class="form-check-input-styled" name="radio-inline-left" value="bezdostupa" data-fouc>
+                            <input type="radio" class="form-check-input-styled" name="optionsRadios" value="bezdostupa" data-fouc>
                             ТЕЛЕФОН НЕ ДОСТУПЕН
                         </label>
                     </div>
@@ -116,7 +116,7 @@
 
                     <div class="form-check form-check-inline">
                         <label class="form-check-label">
-                            <input type="radio" class="form-check-input-styled-success" value="result" name="radio-inline-left"  data-fouc>
+                            <input type="radio" class="form-check-input-styled-success" value="result" name="optionsRadios"  data-fouc>
 
                             <span class="badge badge-primary">
 
