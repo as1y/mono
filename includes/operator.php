@@ -55,7 +55,7 @@
 
 
                     <li class="nav-item">
-                        <a href="/panel/" class="nav-link <?=isset($active['index']) ? $active['index'] : ''; ?>">
+                        <a href="/operator/" class="nav-link <?=isset($active['index']) ? $active['index'] : ''; ?>">
                             <i class="icon-stats-bars"></i>
                             <span>	Статистика </span>
                         </a>
