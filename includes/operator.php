@@ -62,7 +62,7 @@
                     </li>
 
                     <li class="nav-item">
-                        <a href="/panel/" class="nav-link <?=isset($active['my']) ? $active['my'] : ''; ?>">
+                        <a href="/operator/my/" class="nav-link <?=isset($active['my']) ? $active['my'] : ''; ?>">
                             <i class="icon-briefcase3"></i>
                             <span>	Мои проекты </span>
                         </a>
@@ -70,7 +70,7 @@
 
 
                     <li class="nav-item">
-                        <a href="/panel/" class="nav-link <?=isset($active['all']) ? $active['all'] : ''; ?>">
+                        <a href="/operator/all/" class="nav-link <?=isset($active['all']) ? $active['all'] : ''; ?>">
                             <i class="icon-star-full2"></i>
                             <span>	Все проекты </span>
                         </a>
