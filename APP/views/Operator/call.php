@@ -165,7 +165,10 @@
                 </div>
                 <!-- результат  -->
 
-
+                <p><input type="hidden" value="0" id="zvonok"></p>
+                <p><input type="hidden" value="<?=$contactinfo['id'];?>" id="idcont"></p>
+                <p><input type="hidden" value="<?=$contactinfo['tel'];?>" id="tel"></p>
+                
 
                 <div class="form-group mb-0">
                     <label>Комментарий:</label>
