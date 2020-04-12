@@ -11,15 +11,21 @@ class Operator extends \APP\core\base\Model {
         $company = R::load('company', $idc);
 
         $massivoperatorov = json_decode($company['operators'], true);
-
         if (!$massivoperatorov) $massivoperatorov = [];
 
         $operatorInProject = array_key_exists($_SESSION['ulogin']['id'],$massivoperatorov);
 
+        if ($operatorInProject == false){
 
-        var_dump($operatorInProject);
+            $addpole = [ $_SESSION['ulogin']['id'] => 1 ];
+            $DATA = array_merge($addpole, $massivoperatorov);
+            $DATA = json_encode($DATA, true);
+            $company->operators =$DATA;
+            R::store($company);
+            
+        }
 
-        exit("gdgdfg");
+
 
         // Операторы, которые подали заявки
         // Оператороы, забаненные
