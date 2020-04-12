@@ -115,6 +115,12 @@ class Operator extends \APP\core\base\Model {
 
 
 
+    public function getcontact($idcontact){
+        $contact = R::findOne('contact', 'WHERE id = ? AND user_id = ? LIMIT 1', [$idcontact, $_SESSION['ulogin']['id']]);
+        return $contact;
+    }
+
+
 
 
     public function getcom($idc){

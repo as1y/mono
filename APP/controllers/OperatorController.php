@@ -19,19 +19,35 @@ class OperatorController extends AppController {
 
         // Обработка ошибок
 
-        if(!$this->isAjax()) exit("Запрос не Ajax");
+        if(!$this->isAjax()) message("Запрос не Ajax");
 
-        if (empty($_GET['id'])) exit("Ошибка получения данных");
+        if (empty($_GET['id'])) message("Ошибка получения данных");
         $idc = $_GET['id'];
         $company = $operator->getmycom($_GET['id']);
-        if ($company === false) exit("Ошибка допуска к проекту");
+        if ($company === false) message("Ошибка допуска к проекту");
         // Обработка ошибок
 
+        if (empty($_POST['optionresult'])) message("Обязательно выберете результат звонка");
 
-        if (empty($_POST['optionresult'])) exit("Обязательно выберете результат звонка");
+        if ($_POST['zvonok'] == 1) message("Вы не совершили звонок");
+
+        $contact = $operator->getcontact($_POST['contactid']);
 
 
-        if ($_POST['zvonok'] == 1) exit("Вы не совершили звонок");
+        if ($_POST['optionresult'] == "otkaz"){
+
+            $contact->status = 3;
+            $contact->datacall = date("Y-m-d");
+            $contact->comment = $_POST['operatorcomment'];
+
+        }
+
+
+
+
+
+
+
 
 
         exit("yeah");
