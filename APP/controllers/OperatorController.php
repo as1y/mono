@@ -47,6 +47,9 @@ class OperatorController extends AppController {
 
         $Bron = $operator->Getbron($idc);
 
+        show($Bron);
+        exit();
+
         if ($Bron){
             exit("bron est");
         }
