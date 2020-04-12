@@ -84,12 +84,34 @@ function rendertypeaccount($type){
 
 
 function renderresultform($DATA){
-
-
     $FORM = json_decode($DATA, true);
 
 
-   show($FORM);
+    foreach ($FORM as $key=>$val){
+
+        if ($val['type'] == 1){
+            echo "Поле ввода";
+        }
+
+        if ($val['type'] == 2){
+            echo "Дата";
+        }
+
+
+        if ($val['type'] == 3){
+            echo "Текстовое поле";
+        }
+
+
+
+
+
+
+
+    }
+
+
+
 
    exit("ddg");
 
@@ -244,6 +266,8 @@ function showmass ($par, $ch){
             </div>
 		';
 			} // EMAIL
+
+
 		}
 	}
 }
