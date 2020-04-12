@@ -29,19 +29,44 @@
         <div class="card border-dark">
             <div class="card-header bg-dark text-white header-elements-inline">
                 <h6 class="card-title">КОНТАКТ</h6>
-                <div class="header-elements">
-                    <div class="list-icons">
-                        <a class="list-icons-item" data-action="collapse"></a>
-                        <a class="list-icons-item" data-action="reload"></a>
-                        <a class="list-icons-item" data-action="remove"></a>
-                    </div>
-                </div>
+
             </div>
 
             <div class="card-body">
 
 
-                ТЕЛО
+                <div class="col-md-12">
+                    <table class="table table-striped table-bordered table-advance ">
+                        <thead>
+                        <tr>
+                            <th><b>ID</b></th>
+                            <th><b>Имя</b></th>
+                            <th><b>Компания</b></th>
+                            <th><b>Сайт</b></th>
+                            <th><b>Комментарий</b></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td style='vertical-align: middle' >
+                                <div id="idcontact">#<?=$contactinfo['id']?></div>
+                            </td>
+                            <td style='vertical-align: middle'>
+                                <div id="namecont"><?=$contactinfo['name']?></div>
+                            </td>
+                            <td style='vertical-align: middle'>
+                                <div id="company"><?=$contactinfo['company']?></div>
+                            </td>
+                            <td style='vertical-align: middle'>
+                                <div id="siteurl"> <a href="<?=$contactinfo['site']?> " target="_blank"><?=$contactinfo['site']?></a> </div>
+                            </td>
+                            <td style='vertical-align: middle'>
+                                <div id="comment"><?=$contactinfo['comment']?></div>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
 
 
             </div>
