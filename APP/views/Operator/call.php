@@ -146,7 +146,7 @@
 
     $('[name = "optionsRadios"]').click(function() { // Клики на результат вызова
 
-
+        alert("fufu");
 
         // $("#perez").hide();
         // $("#formresult").hide();
