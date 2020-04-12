@@ -83,7 +83,7 @@
 
         <div class="card border-dark">
             <div class="card-header bg-dark text-white header-elements-inline">
-                <h6 class="card-title">ОКОНЧАНИЕ РАЗГОВОРА</h6>
+                <h6 class="card-title">РЕЗУЛЬТАТ РАЗГОВОРА</h6>
 
             </div>
             <div class="card-body">
@@ -152,14 +152,21 @@
                 </div>
                 <!-- перезвон  -->
 
-                <!-- перезвон -->
+                <!-- результат -->
                 <div id="result" style="display: none;">
 
+                    <div class="form-group">
 
+                        <label>На другой номер (если необходимо)<span class="text-danger">*</span></label>
+                        <div class="input-group">
+                            <input type="text" value="<?=$contactinfo['tel']?>" class="form-control" placeholder="Имя">
+                        </div>
+
+                    </div>
 
 
                 </div>
-                <!-- перезвон  -->
+                <!-- результат  -->
 
 
 
@@ -167,7 +174,7 @@
                     <label>Комментарий:</label>
                     <textarea rows="3" cols="3" class="form-control"  placeholder="Комментарий оператора"></textarea>
                 </div>
-                
+
 
 
 
@@ -190,18 +197,15 @@
 
        let change = $(this).val();
 
-
+        $("#perez").hide();
+        $("#result").hide();
 
         if (change == "perezvon") $("#perez").show();
 
-        if (change == "otkaz"){
+
+        if (change == "perezvon"){
             $("#perez").hide();
-
-        }
-
-        if (change == "bezdostupa"){
-            $("#perez").hide();
-
+            $("#perez").show();
         }
 
 
