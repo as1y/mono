@@ -89,19 +89,26 @@
             <div class="card-body">
 
 
-                <div class="form-group mb-3 mb-md-2">
-                    <label class="d-block font-weight-semibold">Left inline styled</label>
-                    <div class="form-check form-check-inline">
+                <div class="form-group pt-2">
+                    <label class="font-weight-semibold">Left stacked styled</label>
+                    <div class="form-check">
                         <label class="form-check-label">
-                            <input type="radio" class="form-check-input-styled" name="radio-inline-left" checked data-fouc>
+                            <input type="radio" class="form-check-input-styled" name="stacked-radio-left" checked data-fouc>
                             Selected styled
                         </label>
                     </div>
 
-                    <div class="form-check form-check-inline">
+                    <div class="form-check">
                         <label class="form-check-label">
-                            <input type="radio" class="form-check-input-styled" name="radio-inline-left" data-fouc>
+                            <input type="radio" class="form-check-input-styled" name="stacked-radio-left" data-fouc>
                             Unselected styled
+                        </label>
+                    </div>
+
+                    <div class="form-check disabled">
+                        <label class="form-check-label">
+                            <input type="radio" class="form-check-input-styled" disabled data-fouc>
+                            Disabled styled
                         </label>
                     </div>
                 </div>
