@@ -84,7 +84,7 @@
                         <a href="#" class="nav-link">
                             <i class="icon-calendar"></i>
                             <span>	Перезвон </span>
-                            <span class="badge badge-pill bg-secondary ml-auto">39</span>
+                            <span class="badge badge-pill bg-secondary ml-auto">0</span>
                         </a>
                     </li>
 
@@ -93,7 +93,7 @@
                         <a href="#" class="nav-link">
                             <i class="icon-eye"></i>
                             <span>	На модерации </span>
-                            <span class="badge badge-pill bg-secondary ml-auto">39</span>
+                            <span class="badge badge-pill bg-secondary ml-auto">0</span>
                         </a>
                     </li>
 
@@ -101,7 +101,7 @@
                         <a href="#" class="nav-link">
                             <i class="icon-wrench"></i>
                             <span>	Доработка </span>
-                            <span class="badge badge-pill bg-secondary ml-auto">1</span>
+                            <span class="badge badge-pill bg-secondary ml-auto">0</span>
                         </a>
                     </li>
 
@@ -109,7 +109,7 @@
                         <a href="#" class="nav-link">
                             <i class="icon-checkmark"></i>
                             <span>	Успешно </span>
-                            <span class="badge badge-pill bg-secondary ml-auto">1</span>
+                            <span class="badge badge-pill bg-secondary ml-auto">0</span>
                         </a>
                     </li>
 
