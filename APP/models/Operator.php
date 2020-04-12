@@ -5,9 +5,29 @@ use RedBeanPHP\R;
 class Operator extends \APP\core\base\Model {
 
 
-    public function gettickets($idc){
-        $tickets = R::findOne("tickets", "WHERE user_id = ? AND id = ?" , [ $_SESSION['ulogin']['id'], $idc ]);
-        return $tickets;
+    public function joincompany($idc){
+
+
+        $company = R::load('company', $idc);
+
+        $massivoperatorov = json_decode($company['operators'], true);
+
+        $operatorInProject = array_key_exists($_SESSION['ulogin']['id'],$massivoperatorov);
+
+
+        show($operatorInProject);
+
+        exit("gdgdfg");
+
+        // Операторы, которые подали заявки
+        // Оператороы, забаненные
+        // Оператороы, одобренные
+        // Берем 1 массив. Где ключи, это ID оператора, а значение его статус
+
+
+
+
+        return $result;
     }
 
     public function allcompanies() {

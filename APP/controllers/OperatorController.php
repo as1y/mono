@@ -102,6 +102,9 @@ class OperatorController extends AppController {
 
         if ($_POST){
 
+            $operator = new Operator();
+
+            $result =  $operator->joincompany($idc);
 
             exit("gfdg");
             show($_POST);
