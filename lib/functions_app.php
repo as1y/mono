@@ -83,7 +83,11 @@ function rendertypeaccount($type){
 }
 
 
+function renderresultform($DATA){
 
+    echo "форма";
+
+}
 
 
 function renderform ($FORMRESULT, $idc){
