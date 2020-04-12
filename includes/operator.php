@@ -53,19 +53,32 @@
             <div class="card-body p-0">
                 <ul class="nav nav-sidebar" data-nav-type="accordion">
 
-                    <!-- Main -->
-                    <li class="nav-item-header">
-                        <div class="text-uppercase font-size-sm line-height-sm">МОИ ПРОЕКТЫ</div>
-                    </li>
-
 
                     <li class="nav-item">
                         <a href="/panel/" class="nav-link <?=isset($active['index']) ? $active['index'] : ''; ?>">
                             <i class="icon-home4"></i>
-                            <span>	Проекты </span>
+                            <span>	Статистика </span>
                         </a>
                     </li>
-                    <li class="nav-item"><a href="/panel/add" class="nav-link <?=isset($active['add']) ? $active['add'] : ''; ?>"><i class="icon-phone-plus"></i> <span>Добавить проект</span></a></li>
+
+                    <li class="nav-item">
+                        <a href="/panel/" class="nav-link <?=isset($active['my']) ? $active['my'] : ''; ?>">
+                            <i class="icon-home4"></i>
+                            <span>	Мои проекты </span>
+                        </a>
+                    </li>
+
+
+                    <li class="nav-item">
+                        <a href="/panel/" class="nav-link <?=isset($active['all']) ? $active['all'] : ''; ?>">
+                            <i class="icon-home4"></i>
+                            <span>	Все проекты </span>
+                        </a>
+                    </li>
+
+
+
+
                     <!-- /main -->
 
                     <li class="nav-item-header">
