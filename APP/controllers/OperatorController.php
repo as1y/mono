@@ -15,10 +15,13 @@ class OperatorController extends AppController {
     public function callresultAction (){
         $this->layaout = false;
 
+        $operator = new Operator();
+
+        if (empty($_GET['id'])) exit("Ошибка получения данных");
 
 
 
-        exit("fu");
+
 
 
 
