@@ -36,10 +36,15 @@
                     </td>
                     <td class="text-center">
 
-                        <?=$val['priceresult']?>
+                        <?=companytype($val['type'])?>
 
                     </td>
-                    <td class="text-center"><b>0 руб.</b></td>
+                    <td class="text-center">
+
+
+                        <b> <?=$val['priceresult']?></b>
+
+                    </td>
                     <td class="text-center"><b>0 руб.</b></td>
                     <td class="text-center">
 
