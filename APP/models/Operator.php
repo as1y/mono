@@ -5,9 +5,9 @@ use RedBeanPHP\R;
 class Operator extends \APP\core\base\Model {
 
 
-    public function SetOtkaz($DATA){
+    public function SetOtkaz($DATA, $company){
 
-        $contact = $this->getcontact();
+        $contact = $this->getcontact($company);
         $contact->status = 3;
         $contact->datacall = date("Y-m-d");
         $contact->operatorcomment = $DATA['operatorcomment'];
@@ -18,8 +18,8 @@ class Operator extends \APP\core\base\Model {
 
     }
 
-    public function Setbezdostupa($DATA){
-        $contact = $this->getcontact();
+    public function Setbezdostupa($DATA, $company){
+        $contact = $this->getcontact($company);
         $contact->status =4;
         $contact->datacall = date("Y-m-d");
         $contact->operatorcomment = $DATA['operatorcomment'];
@@ -50,7 +50,7 @@ class Operator extends \APP\core\base\Model {
 
 
         // Обновляем статус контакта
-        $contact = $this->getcontact();
+        $contact = $this->getcontact($company);
         $contact->status =5;
         $contact->datacall = date("Y-m-d");
         $contact->operatorcomment = $DATA['operatorcomment'];
@@ -78,7 +78,7 @@ class Operator extends \APP\core\base\Model {
     }
 
 
-    public function SetPerezvon($DATA){
+    public function SetPerezvon($DATA, $company){
 
 
         $nomerperezvona = pole_valid ($_POST['nomerperezvona'], 15, 's');
@@ -88,7 +88,7 @@ class Operator extends \APP\core\base\Model {
         if (!empty($dataperezvona['error'])) message($dataperezvona['error']);
 
 
-        $contact = $this->getcontact();
+        $contact = $this->getcontact($company);
         $contact->status = 2;
         $contact->dataperezvona = $dataperezvona;
         $contact->tel = $nomerperezvona;
@@ -208,8 +208,8 @@ class Operator extends \APP\core\base\Model {
             return R::exec (' UPDATE users SET totalcall = totalcall +1 WHERE id = '.$_SESSION['ulogin']['id'].'  ');
         }
 
-    public function getcontact(){
-        $contact = R::findOne('contact', 'WHERE user_id = ? AND status = 1 LIMIT 1', [$_SESSION['ulogin']['id']]);
+    public function getcontact($company){
+        $contact = R::findOne('contact', 'WHERE user_id = ? AND status = 1 AND company_id=? LIMIT 1', [$_SESSION['ulogin']['id'], $company['id']]);
         return $contact;
     }
 
