@@ -138,7 +138,7 @@ function rendercontactinfo ($DATA){
 
 
     <?php
-    
+
 
 
   return true;
