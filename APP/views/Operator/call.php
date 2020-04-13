@@ -95,7 +95,7 @@
 
                     <div class="form-check form-check-inline">
                         <label class="form-check-label">
-                            <input type="radio" class="form-check-input"  name="optionresult" checked id="nochoice" value="" data-fouc>
+                            <input type="radio" class="form-check-input"  name="optionresult"  id="nochoice" value="" >
                             НЕ ВЫБРАН
                         </label>
                     </div>
