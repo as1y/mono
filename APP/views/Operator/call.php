@@ -81,7 +81,7 @@
         clearInterval(timerId);
         $("#hangup").hide();
         $("#call").show();
-        $("#info").prop("class", "bg-yellow bg-font-yellow");
+        $("#info").prop("class", "badge badge-warning d-block");
         $("#info").text('ЗАПОЛНИТЕ РЕЗУЛЬТАТ ЗВОНКА');
         $("#zvonok").val('1'); // Индикатор совершение звонка
         logMessage("Сборс");
@@ -167,7 +167,7 @@
                     <tr>
 
                         <td class="wmin-md-100">
-                            <button type="button" id="call" class="btn bg-teal-400 btn-labeled btn-labeled-left"> <i class="icon-phone-wave"></i> ПОЗВОНИТЬ  </button>
+                            <button type="button" id="call" disabled class="btn bg-teal-400 btn-labeled btn-labeled-left"> <i class="icon-phone-wave"></i> ПОЗВОНИТЬ  </button>
 
                             <button type="button"  id="hangup" style="display: none;" class="btn bg-danger btn-labeled btn-labeled-left"> <i class="icon-phone-slash" ></i> ЗАВЕРШИТЬ  </button>
 
@@ -311,7 +311,7 @@
     $("#call").click(function() {
         $("#call").hide();
         $("#hangup").show();
-        $("#info").prop("class", "bg-red bg-font-red");
+        $("#info").prop("class", "badge badge-danger d-block");
         $("#info").text('ИДЕТ РАЗГОВОР');
         GoCall();
     });
