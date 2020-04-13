@@ -50,6 +50,10 @@ class Project extends \APP\core\base\Model {
 
 
         $result = R::findOne('result', 'WHERE id = ? AND users_id =? AND status = 0 LIMIT 1', [$idres, $_SESSION['ulogin']['id']]);
+
+        var_dump($result);
+        exit();
+
         $result->status = 1;
         R::store($result);
 
