@@ -1,4 +1,22 @@
 <?php
+
+
+function getrecord2($idcont) {
+    global $account_id;
+    global $api_key;
+    $link = "https://api.voximplant.com/platform_api/GetCallHistory/?account_id=".$account_id."&api_key=".$api_key."&with_records=true&call_session_history_custom_data=".$idcont."";
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_POST, 0);
+    curl_setopt($ch, CURLOPT_URL, $link);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+    $response = curl_exec($ch);
+    curl_close($ch);
+    $response = json_encode($response);
+    return ($response);
+}
+
+
+
 function raskladkazapisi($zapis){
 	if ($zapis != "nope"){
 		$records = '';

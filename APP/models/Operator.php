@@ -57,6 +57,10 @@ class Operator extends \APP\core\base\Model {
         R::store($contact);
         // Обновляем статус контакта
 
+        $DATAZAPIS = getrecord2($contact['id']);
+        //ПРОВЕРКА ЕСТЬ ЛИ ТАКОЙ КОНТАКТ
+
+
 
         $this->pluscall();
 
@@ -68,7 +72,8 @@ class Operator extends \APP\core\base\Model {
             'CONTACTINFO' => json_encode($contact, true),
             'status' => 0,
             'date' => date("Y-m-d"),
-            'type' => $company['type']
+            'type' => $company['type'],
+            'datazapis' => $DATAZAPIS
         ];
 
 

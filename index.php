@@ -1,5 +1,11 @@
 <?php
 
+// ДОСТУПЫ VOXIMPLANT
+$account_id = '1895581';
+$api_key = 'a7c15131-6186-482d-a619-84c2be598655';
+// ДОСТУПЫ VOXIMPLANT
+
+
 define('ERRORS', '1' ); // 0 - нет 1 - ОТОБРАЖАЮТСЯ
 define('WWW', __DIR__);
 define('ROOT',dirname(__DIR__) );
