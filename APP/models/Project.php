@@ -70,7 +70,7 @@ class Project extends \APP\core\base\Model {
 
         $operators = json_decode( $company['operators'], true);
 
-        if ($operators[$idoper] == 1) $operators[$idoper] = 3;
+        if ($operators[$idoper] ) $operators[$idoper] = 3;
 
         $operators = json_encode($operators, true);
 
