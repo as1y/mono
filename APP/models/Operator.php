@@ -39,7 +39,7 @@ class Operator extends \APP\core\base\Model {
         $countresult = count($RESULTMASS);
         //Считаем кол-во полей
 
-        // Составляем массив
+        // Составляем массив результатов
         foreach ($RESULTMASS as $key=>$val){
             $valuepole = "";
             $valuepole = $DATA['customresult'.$key];
@@ -48,22 +48,23 @@ class Operator extends \APP\core\base\Model {
             $RESULTMASS[$key]['VAL'] = $valuepole;
         }
 
-        $RESULTMASS = json_encode($RESULTMASS,true);
 
-
+        // Обновляем статус контакта
         $contact = $this->getcontact($DATA['contactid']);
         $contact->status =5;
         $contact->datacall = date("Y-m-d");
         $contact->operatorcomment = $DATA['operatorcomment'];
         R::store($contact);
+        // Обновляем статус контакта
 
+        
         $this->pluscall();
 
         $result = [
             'users_id' => $_SESSION['ulogin']['id'],
             'company_id' => $company['id'],
             'contact_id' => $contact['id'],
-            'DATA' => $RESULTMASS,
+            'DATA' => json_encode($RESULTMASS,true),
             'CONTACTINFO' => json_encode($contact, true),
             'status' => 0,
             'date' => date("Y-m-d"),
