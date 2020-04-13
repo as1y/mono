@@ -233,7 +233,9 @@
                     alert(obj.message);
                 }
 
-                
+                alert(obj.tel);
+
+
 
             }
         });
