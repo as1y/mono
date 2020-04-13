@@ -317,7 +317,16 @@
     });
     //КНОПКА ВЫЗОВА
 
+    //РАЗРЫВ СОЕДИНЕНИЯ
+    $("#hangup").click(function() {
+        $("#hangup").hide();
+        $("#call").show();
+        $("#info").prop("class", "bg-yellow bg-font-yellow");
+        $("#info").text('ЗАПОЛНИТЕ РЕЗУЛЬТАТ ЗВОНКА');
+        han();
+    });
 
+    
     $('[name = "optionresult"]').click(function() { // Клики на результат вызова
 
        let change = $(this).val();
