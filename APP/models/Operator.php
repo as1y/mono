@@ -20,15 +20,11 @@ class Operator extends \APP\core\base\Model {
 
 
     public function Setbezdostupa($DATA){
-
         $contact = $this->getcontact($DATA['contactid']);
         $contact->status =4;
         $contact->datacall = date("Y-m-d");
         $contact->operatorcomment = $DATA['operatorcomment'];
         R::store($contact);
-        
-
-
     }
 
 
@@ -101,12 +97,9 @@ class Operator extends \APP\core\base\Model {
         return $company;
     }
 
-
-
     public function getscript($idc) {
         return R::findOne('script', 'WHERE idc = ?', [$idc]);
     }
-
 
     public function checkcompany($idc) {
         if (empty($_SESSION['ulogin']['perezvon'])) {
@@ -119,11 +112,9 @@ class Operator extends \APP\core\base\Model {
         return false;
     }
 
-
     public function newcontact($idc) {
         return R::findOne('contact', 'WHERE company_id = ? AND status = 0', [$idc]);
     }
-
 
     public function setbron($idcont) {
 
@@ -135,31 +126,23 @@ class Operator extends \APP\core\base\Model {
 
     }
 
-
     public function Getbron($idc) {
         return R::findOne('contact', 'company_id = ? AND user_id =? AND status = 1', [$idc, $_SESSION['ulogin']['id']]);
     }
 
-
     public  function pluscall(){
             return R::exec (' UPDATE users SET totalcall = totalcall +1 WHERE id = '.$_SESSION['ulogin']['id'].'  ');
         }
-
-
 
     public function getcontact($idcontact){
         $contact = R::findOne('contact', 'WHERE id = ? AND user_id = ? LIMIT 1', [$idcontact, $_SESSION['ulogin']['id']]);
         return $contact;
     }
 
-
-
-
     public function getcom($idc){
         $company = R::findOne('company', 'WHERE id = ? LIMIT 1', [$idc]);
         return $company;
     }
-
 
     public function getmycom($idc){
         $company = R::findOne('company', 'WHERE id = ? LIMIT 1', [$idc]);
@@ -179,8 +162,6 @@ class Operator extends \APP\core\base\Model {
     }
 
 
-
-
-
+    
 }
 ?>
