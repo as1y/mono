@@ -103,28 +103,28 @@
 
                     <div class="form-check form-check-inline">
                         <label class="form-check-label">
-                            <input type="radio" class="form-check-input" name="optionresult" value="perezvon" data-fouc>
+                            <input type="radio" class="form-check-input" name="optionresult" value="perezvon" >
                             ПЕРЕЗВОН
                         </label>
                     </div>
 
                     <div class="form-check form-check-inline">
                         <label class="form-check-label">
-                            <input type="radio" class="form-check-input" name="optionresult" value="otkaz" data-fouc>
+                            <input type="radio" class="form-check-input" name="optionresult" value="otkaz">
                             ОТКАЗ
                         </label>
                     </div>
 
                     <div class="form-check form-check-inline">
                         <label class="form-check-label">
-                            <input type="radio" class="form-check-input-styled" name="optionresult" value="bezdostupa" data-fouc>
+                            <input type="radio" class="form-check-input-styled" name="optionresult" value="bezdostupa" >
                             ТЕЛЕФОН НЕ ДОСТУПЕН
                         </label>
                     </div>
 
                     <div class="form-check form-check-inline">
                         <label class="form-check-label">
-                            <input type="radio" class="form-check-input-styled-success" value="result" name="optionresult"  data-fouc>
+                            <input type="radio" class="form-check-input-styled-success" value="result" name="optionresult" >
 
                             <span class="badge badge-secondary">
 
