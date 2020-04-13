@@ -54,9 +54,9 @@ function companytype ($status){
 
 
 function passoperator ($status){
-	if ($status=="1") return '<span class="badge badge-warning">На проверке</span>';
-	if ($status=="2") return '<span class="badge badge-success">Допущен в проект</span>';
-	if ($status=="3") return '<span class="badge badge-danger">Не допущен в проект</span>';
+	if ($status=="1") return '<span class="badge badge-warning">НА ПРОВЕРКЕ</span>';
+	if ($status=="2") return '<span class="badge badge-success">ДОПУЩЕН</span>';
+	if ($status=="3") return '<span class="badge badge-danger">ОТКЛОНЕН</span>';
 }
 
 function timecall ($status){
