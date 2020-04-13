@@ -53,9 +53,9 @@
                     </li>
 
                     <li class="nav-item nav-item-submenu">
-                        <a href="#" class="nav-link"><i class="icon-color-sampler"></i> <span>Themes</span></a>
+                        <a href="#" class="nav-link "><i class="icon-color-sampler"></i> <span>Результаты</span></a>
 
-                        <ul class="nav nav-group-sub" data-submenu-title="Themes">
+                        <ul class="nav nav-group-sub" data-submenu-title="Результаты">
                             <li class="nav-item"><a href="index.html" class="nav-link active">Default</a></li>
                             <li class="nav-item"><a href="../../../LTR/material/full/index.html" class="nav-link">Material</a></li>
                             <li class="nav-item"><a href="../../../LTR/dark/full/index.html" class="nav-link">Dark</a></li>
@@ -63,7 +63,7 @@
                         </ul>
                     </li>
 
-                    
+
 
 
 
