@@ -30,11 +30,11 @@ class OperatorController extends AppController {
 
         if ($_POST['zvonok'] == 1) message("Вы не совершили звонок");
 
-        if(strlen($_POST['comment']) > 3000) message('Комментарий слишком большой');
-        $_POST['comment'] = trim($_POST['comment']);
-        $_POST['comment'] = strip_tags($_POST['comment']);
-        $_POST['comment'] = htmlspecialchars($_POST['comment']);
-        iconv_strlen($_POST['comment'], 'UTF-8');
+        if(strlen($_POST['operatorcomment']) > 3000) message('Комментарий слишком большой');
+        $_POST['operatorcomment'] = trim($_POST['operatorcomment']);
+        $_POST['operatorcomment'] = strip_tags($_POST['operatorcomment']);
+        $_POST['operatorcomment'] = htmlspecialchars($_POST['operatorcomment']);
+        iconv_strlen($_POST['operatorcomment'], 'UTF-8');
 
 
         $optionresult = pole_valid ($_POST['optionresult'], 10, 's');
