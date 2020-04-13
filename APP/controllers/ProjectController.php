@@ -95,17 +95,51 @@ class ProjectController extends AppController {
 
 
 	public function resultAction() {
-		$project = new Project;
-		$razdel = "РЕЗУЛЬТАТЫ";
-		$idc = $_GET['id'];
-		$comp = $project->getcom($idc);
+        $project = new Project;
+        $idc = $_GET['id'];
+        $company = $project->getcom($_GET['id']);
+
+        $META = [
+            'title' => 'Операторы на проекте ',
+            'description' => 'Операторы на проекте ',
+            'keywords' => 'Операторы на проекте ',
+        ];
+        $BREADCRUMBS['HOME'] = ['Label' => $this->BreadcrumbsControllerLabel, 'Url' => $this->BreadcrumbsControllerUrl];
+        $BREADCRUMBS['DATA'][] = ['Label' => "".$company['company'], 'Url' => "/project/?id=".$idc];
+        $BREADCRUMBS['DATA'][] = ['Label' => "Операторы на ".$company['company']];
+        \APP\core\base\View::setMeta($META);
+        \APP\core\base\View::setBreadcrumbs($BREADCRUMBS);
+
+
+        $ASSETS[] = ["js" => "/global_assets/js/plugins/tables/datatables/datatables.min.js"];
+        $ASSETS[] = ["js" => "/assets/js/datatables_basic.js"];
+        \APP\core\base\View::setAssets($ASSETS);
+
+
+
 		$company = $project->companyresult($idc); //СВЯЗЬ С КОМПАНИЕЙ
+
+        show($company);
+
+
+        exit();
+
+
 		$zapisi = $project->records($idc); // ПОЛУЧЕНИЕ ЗАПИСЕЙ
+
+
+
+
 		if (isset($_GET['data'])) {
 			$dataresult = $_GET['data'];
 			$company = $project->filterresult($company,$dataresult);
 		}
 		$this->set(compact('idc','razdel','company','zapisi', 'dataresult' ));
+
+
+
+
+
 	}
 
 
