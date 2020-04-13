@@ -98,7 +98,7 @@
                     <div class="form-check form-check-inline">
                         <label class="form-check-label">
                             <input type="radio" class="form-check-input" name="optionresult" value="perezvon" >
-                            ПЕРЕЗВОН
+                            <span class="badge badge-warning"> ПЕРЕЗВОН</span>
                         </label>
                     </div>
 
