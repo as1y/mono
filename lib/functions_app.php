@@ -9,26 +9,13 @@ function getrecord2($idcont) {
     $PARAMS['GET'] = [
         'account_id' => $account_id,
         'api_key' => $api_key,
-        'count' => 1,
         'from_date' =>    '2020-01-01 00:00:00',
         'to_date' => date("Y-m-d h:m:s"),
         'with_records' => true,
           'call_session_history_custom_data' => $idcont,
     ];
 
-
-
   $result =  fCURL($url, $PARAMS);
-
-    show($result);
-
-//    echo date("Y-m-d h:m:s");
-
-
-  exit("gdfgdfg");
-
-
-
 
     return $result;
 }
