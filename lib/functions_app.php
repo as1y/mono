@@ -17,7 +17,7 @@ function getrecord2($idcont) {
 
   $result =  fCURL($url, $PARAMS);
 
-    return $result;
+    return $result['result'];
 }
 
 
