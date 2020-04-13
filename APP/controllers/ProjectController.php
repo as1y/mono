@@ -119,22 +119,15 @@ class ProjectController extends AppController {
 
 		$company = $project->companyresult($idc); //СВЯЗЬ С КОМПАНИЕЙ
 
-        show($company);
+
+		//$zapisi = $project->records($idc); // ПОЛУЧЕНИЕ ЗАПИСЕЙ
+//		if (isset($_GET['data'])) {
+//			$dataresult = $_GET['data'];
+//			$company = $project->filterresult($company,$dataresult);
+//		}
 
 
-        exit();
-
-
-		$zapisi = $project->records($idc); // ПОЛУЧЕНИЕ ЗАПИСЕЙ
-
-
-
-
-		if (isset($_GET['data'])) {
-			$dataresult = $_GET['data'];
-			$company = $project->filterresult($company,$dataresult);
-		}
-		$this->set(compact('idc','razdel','company','zapisi', 'dataresult' ));
+		$this->set(compact('company','zapisi' ));
 
 
 
