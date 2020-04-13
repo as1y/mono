@@ -25,10 +25,11 @@
                     <tbody>
 
                     <?php
-                    foreach ($operators['OperatoriNaModeracii'] as $key=>$val):?>
+
+                    foreach ( $company->ownResultList as $key=>$val) :?>
                         <tr>
                             <td>
-                                ID
+                                #<?=$val['id']?>
                             </td>
                             <td class="text-center">Дата</td>
                             <td class="text-center">Оператор</td>
@@ -37,8 +38,8 @@
                             <td class="text-center">ЗАПИСЬ</td>
                             <td class="text-center">
 
-                                <a href="/project/operator/?id=<?=$company['id']?>&idoper=<?=$val['id']?>&action=accept" type="button" class="btn btn-success">ПОДТВЕРДИТЬ</a>
-                                <a href="/project/operator/?id=<?=$company['id']?>&idoper=<?=$val['id']?>&action=reject" type="button" class="btn btn-danger">ОТКЛОНИТЬ</a>
+                                <a href="/project/operator/?id=<?=$company['id']?>&idresult=<?=$val['id']?>&action=accept" type="button" class="btn btn-success">ПОДТВЕРДИТЬ</a>
+                                <a href="/project/operator/?id=<?=$company['id']?>&idresult=<?=$val['id']?>&action=reject" type="button" class="btn btn-danger">ОТКЛОНИТЬ</a>
 
                             </td>
 
