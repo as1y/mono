@@ -58,7 +58,7 @@
                                 ?>
 
                             </td>
-                            <td>ЗАПИСЬ</td>
+                            <td><?= raskladkazapisi($val['datazapis'])?></td>
                             <td >
 
                                 <a href="/project/result/?id=<?=$company['id']?>&idresult=<?=$val['id']?>&action=accept" type="button" class="btn btn-success">ПОДТВЕРДИТЬ</a><br><br>
