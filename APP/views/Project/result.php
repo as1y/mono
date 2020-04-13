@@ -126,7 +126,7 @@
 
                         ?>
                         <tr>
-                            <td class="text-center">
+                            <td>
 
                                 <img src="<?=$userinfo['avatar']?>" width="38" height="38" class="rounded-circle" alt=""><br>
                                 <?=$userinfo['username']?>
