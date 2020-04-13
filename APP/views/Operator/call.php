@@ -140,7 +140,7 @@
 
                         <label>Дата перезвона<span class="text-danger">*</span></label>
                         <div class="input-group">
-                            <input type="date" name="dataperezvona" class="form-control" value="<?=date("d-m-y")?>" placeholder="Дата перезвона">
+                            <input type="date" name="dataperezvona" class="form-control" value="2018-07-22" placeholder="Дата перезвона">
                         </div>
 
                     </div>
@@ -263,7 +263,7 @@
                 // После прелоадера
 
                 $("#dataperezvona").val(<?=date("d-m-y")?>);
-                
+
 
 
 
