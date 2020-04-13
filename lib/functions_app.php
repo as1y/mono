@@ -10,7 +10,7 @@ function getrecord2($idcont) {
 //    $params->timezone = 'Etc/GMT';
 
     $url = "https://api.voximplant.com/platform_api/GetCallHistory/";
-    
+
     $PARAMS['GET'] = [
         'account_id' => $account_id,
         'api_key' => $api_key,
@@ -20,7 +20,7 @@ function getrecord2($idcont) {
 
 
 
-  $result =  fCURL();
+  $result =  fCURL($url, $PARAMS);
 
 
   exit("gdfgdfg");
