@@ -142,10 +142,9 @@
                     </div>
 
                     <div class="form-group">
-
                         <label>На другой номер (если необходимо)<span class="text-danger">*</span></label>
                         <div class="input-group">
-                            <input type="text" name="nomerperezvona" value="<?=$contactinfo['tel']?>" class="form-control" placeholder="Имя">
+                            <input type="text" name="nomerperezvona" value="<?=$contactinfo['tel']?>" class="form-control" >
                         </div>
 
                     </div>
@@ -259,8 +258,8 @@
                 // Загрузка таблицы контакт
 
                 //Обновление телефона
-                $("#nomerperezvona").val(obj.tel);
-                $("#nomerresult").val(obj.tel);
+                $("#nomerperezvona").text(obj.tel);
+                $("#nomerresult").text(obj.tel);
                 $("#tel").val(obj.tel);
                 //Обновление телефона
 
