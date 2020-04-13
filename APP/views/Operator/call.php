@@ -95,6 +95,14 @@
 
                     <div class="form-check form-check-inline">
                         <label class="form-check-label">
+                            <input type="radio" class="form-check-input-styled"  checked="" id="nochoice" data-fouc>
+                            НЕ ВЫБРАН
+                        </label>
+                    </div>
+
+
+                    <div class="form-check form-check-inline">
+                        <label class="form-check-label">
                             <input type="radio" class="form-check-input-styled-warning" name="optionresult" value="perezvon" data-fouc>
                             ПЕРЕЗВОН
                         </label>
@@ -109,7 +117,7 @@
 
                     <div class="form-check form-check-inline">
                         <label class="form-check-label">
-                            <input type="radio" class="form-check-input-styled" name="optionresult" value="bezdostupa" data-fouc>
+                            <input type="radio" class="form-check-input-styled-secondary" name="optionresult" value="bezdostupa" data-fouc>
                             ТЕЛЕФОН НЕ ДОСТУПЕН
                         </label>
                     </div>
