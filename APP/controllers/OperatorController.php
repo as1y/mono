@@ -44,6 +44,7 @@ class OperatorController extends AppController {
         // МОМЕНТ С ПРОВЕРКОЙ И ДОБАВЛЕНИЕМ ЗАПИСИ!
 
 
+
         // МОМЕНТ С ПРОВЕРКОЙ И ДОБАВЛЕНИЕМ ЗАПИСИ!
         $contactinfo = $operator->newcontact($idc);
 
@@ -51,16 +52,11 @@ class OperatorController extends AppController {
             $_SESSION['errors'] = "У компании".$company['company']." закончилась база для обзвона. Попробуйте позднее";
             redir("/operator/my/");
         }
-
         //Ставим бронь
         $operator->setbron($contactinfo['id']);
         //Ставим бронь
 
         var_dump(json_encode($contactinfo, true));
-
-        exit();
-
-
 
 
         return false;
