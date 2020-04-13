@@ -56,7 +56,7 @@ class OperatorController extends AppController {
         $operator->setbron($contactinfo['id']);
         //Ставим бронь
 
-        var_dump(json_encode($contactinfo, true));
+        echo json_encode($contactinfo, true);
 
 
         return false;
