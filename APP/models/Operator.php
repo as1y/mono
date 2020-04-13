@@ -31,7 +31,7 @@ class Operator extends \APP\core\base\Model {
     public function SetPerezvon($DATA){
 
 
-        $nomerperezvona = pole_valid ($_POST['nomerperezvona'], 10, 's');
+        $nomerperezvona = pole_valid ($_POST['nomerperezvona'], 15, 's');
         if (!empty($nomerperezvona['error'])) message($nomerperezvona['error']);
 
 
