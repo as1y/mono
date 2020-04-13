@@ -1,18 +1,34 @@
 <?php
 
-
 function getrecord2($idcont) {
     global $account_id;
     global $api_key;
-    $link = "https://api.voximplant.com/platform_api/GetCallHistory/?account_id=".$account_id."&api_key=".$api_key."&with_records=true&call_session_history_custom_data=".$idcont."";
-    $ch = curl_init();
-    curl_setopt($ch, CURLOPT_POST, 0);
-    curl_setopt($ch, CURLOPT_URL, $link);
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-    $response = curl_exec($ch);
-    curl_close($ch);
-    $response = json_encode($response);
-    return ($response);
+
+//    $params->from_date = '2012-01-01 00:00:00';
+//    $params->to_date = '2014-01-01 00:00:00';
+//    $params->count = 1;
+//    $params->timezone = 'Etc/GMT';
+
+    $url = "https://api.voximplant.com/platform_api/GetCallHistory/";
+    
+    $PARAMS['GET'] = [
+        'account_id' => $account_id,
+        'api_key' => $api_key,
+        'with_records' => true,
+        'call_session_history_custom_data' => $idcont,
+    ];
+
+
+
+  $result =  fCURL();
+
+
+  exit("gdfgdfg");
+
+
+
+
+    return $result;
 }
 
 

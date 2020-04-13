@@ -139,4 +139,74 @@ function teleph($tel){
 	if ($tel['0'] != '7') $tel = "7".$tel."";
 	return $tel;
 }
+
+
+
+
+
+function fCURL($url, $PARAMS = []){
+
+    $ch = curl_init();
+
+    if (!empty($PARAMS['GET'])){
+        $url = $url."?".http_build_query($PARAMS['GET']);
+    }
+
+    curl_setopt($ch, CURLOPT_URL, $url);
+    curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
+    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
+
+
+
+    //  curl_setopt($ch, CURLOPT_COOKIE, session_name() . '=' . session_id());
+    curl_setopt($ch, CURLOPT_COOKIEFILE, $_SERVER['DOCUMENT_ROOT'].'/cookie.txt');
+    curl_setopt($ch, CURLOPT_COOKIEJAR, $_SERVER['DOCUMENT_ROOT'].'/cookie.txt');
+
+
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+    curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json-patch+json'));
+    curl_setopt($ch, CURLOPT_USERAGENT, $_SERVER["HTTP_USER_AGENT"]);
+
+
+    if (!empty($PARAMS['POST'])){
+        $PARAMS['POST'] = json_encode($PARAMS['POST']);
+        curl_setopt($ch, CURLOPT_POST, 1);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $PARAMS['POST']);
+    }
+
+    if (!empty($PARAMS['PATCH'])){
+        $PARAMS['PATCH'] = json_encode($PARAMS['PATCH']);
+        curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "PATCH");
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $PARAMS['PATCH']);
+    }
+
+
+
+    if (!empty($PARAMS['DELETE'])){
+        curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "DELETE");
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $PARAMS['DELETE']);
+    }
+
+
+
+
+
+    $result = curl_exec($ch);
+
+    curl_close($ch);
+
+    //  $resultJson = $result;
+    $resultJson = json_decode($result, TRUE);
+
+
+    return $resultJson;
+
+
+
+}
+
+
+
+
+
 ?>
