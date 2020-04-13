@@ -326,7 +326,7 @@
         han();
     });
 
-    
+
     $('[name = "optionresult"]').click(function() { // Клики на результат вызова
 
        let change = $(this).val();

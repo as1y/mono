@@ -37,7 +37,7 @@ class OperatorController extends AppController {
 
         if (empty($_POST['optionresult']) || $_POST['optionresult'] == "") message("Обязательно выберете результат разговора");
 
-        if ($_POST['zvonok'] == 1) message("Вы не совершили звонок");
+        if ($_POST['zvonok'] == 0) message("Вы не совершили звонок");
 
         if(strlen($_POST['operatorcomment']) > 3000) message('Комментарий слишком большой');
         $_POST['operatorcomment'] = trim($_POST['operatorcomment']);
