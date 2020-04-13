@@ -117,14 +117,14 @@
 
                     <div class="form-check form-check-inline">
                         <label class="form-check-label">
-                            <input type="radio" class="form-check-input-styled" name="optionresult" value="bezdostupa" >
+                            <input type="radio" class="form-check-input" name="optionresult" value="bezdostupa" >
                             ТЕЛЕФОН НЕ ДОСТУПЕН
                         </label>
                     </div>
 
                     <div class="form-check form-check-inline">
                         <label class="form-check-label">
-                            <input type="radio" class="form-check-input-styled-success" value="result" name="optionresult" >
+                            <input type="radio" class="form-check-input" value="result" name="optionresult" >
 
                             <span class="badge badge-secondary">
 
