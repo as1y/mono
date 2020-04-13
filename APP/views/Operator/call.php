@@ -167,7 +167,7 @@
 
                 <p><input type="hidden" name="zvonok" value="0" id="zvonok"></p>
                 <p><input type="hidden" name="contactid" value="<?=$contactinfo['id'];?>" ></p>
-
+                <p><input type="hidden" value="<?=$contactinfo['tel'];?>" id="tel"></p>
 
 
                 <div class="form-group mb-0">
@@ -239,6 +239,38 @@
                 $("#info").prop("class", "badge badge-success d-block");
                 $("#info").text('ПОЗВОНИТЕ ПО НОВОМУ КОНТАКТУ');
                 //Очищаем всею форму
+
+
+                // После прелоадера
+                $("#table").show();
+                $("#loader").hide();
+                // После прелоадера
+
+
+                // Загрузка таблицы контакт
+                $("#idcontact").text('#' + obj.idcont);
+                $("#namecont").text(obj.namecont);
+                $("#company").text(obj.namecompany);
+                $("#comment").text(obj.comment);
+                $("#siteurl").html('<a href="//' + obj.siteurl + '" target="_blank">' + obj.siteurl + '</a>');
+                // Загрузка таблицы контакт
+
+                //Обновление телефона
+                $("#nomerperezvona").val(obj.tel);
+                $("#nomerresult").val(obj.tel);
+                $("#tel").val(obj.tel);
+                //Обновление телефона
+
+                // Загрузка нового контакта
+
+
+
+
+
+
+
+                // Загрузка нового контакта
+
 
 
                 // ОЧИСТКА ДАННЫХ ПОСЛЕ ОБРАБОТКИ КОНТАКТА
