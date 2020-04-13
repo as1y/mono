@@ -40,8 +40,10 @@
                     foreach ($operators['OperatoriNaModeracii'] as $key=>$val):?>
                         <tr>
                             <td>
+                                <?=$val['username']?>
                                 <img src="<?=$val['avatar']?>" width="38" height="38" class="rounded-circle" alt="">
-                                <?=$val['username']?></td>
+                                
+                               </td>
                             <td class="text-center"><?=$val['aboutme']?></td>
                             <td class="text-center"><?= (empty($val['totalcall'])) ? 0 : $val['totalcall']  ?></td>
                             <td class="text-center">""</td>
