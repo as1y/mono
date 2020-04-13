@@ -148,7 +148,15 @@ function rendercontactinfo ($DATA){
 
 function renderresult ($DATA){
     $DATA = json_decode($DATA, true);
-    show($DATA);
+
+    foreach ($DATA as $key=>$val){
+        echo "<b>".$DATA['NAME'].": </b>".$DATA['VAL'];
+    }
+
+
+
+
+
     return true;
 
 }
