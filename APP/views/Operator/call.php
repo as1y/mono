@@ -1,3 +1,106 @@
+<script type="text/javascript">
+    var initialized = false,
+        loggedIn = false,
+        connected = false,
+        voxImplant = VoxImplant.getInstance();
+    var call = null;
+    var timerId = null;
+    voxImplant.addEventListener(VoxImplant.Events.SDKReady, handleSDKReady);
+    voxImplant.addEventListener(VoxImplant.Events.ConnectionEstablished, handleConnectionEstablished);
+    voxImplant.addEventListener(VoxImplant.Events.AuthResult, handleAuthResult);
+
+    function handleSDKReady() {
+        voxImplant.connect();
+    }
+    voxImplant.init({
+        micRequired: true
+    });
+
+    function handleConnectionEstablished() {
+        connected = true;
+        $('#call').removeAttr('disabled');
+    }
+
+    function handleAuthResult(e) {
+        if (e.result) {
+            loggedIn = true;
+            cont = $("#idcont").val();
+            tel = $("#tel").val();
+            call = voxImplant.call(tel, false, cont);
+            call.on(VoxImplant.CallEvents.Connected, handleCallConnected);
+            call.on(VoxImplant.CallEvents.Failed, handleCallFailed);
+            call.on(VoxImplant.CallEvents.Disconnected, handleCallDisconnected);
+            logMessage("Идет дозвон...");
+        } else {
+            if (e.code == 302) {
+                $.post('/wform/calckey/', {
+                    "key": e.key
+                }, function(token) {
+                    VoxImplant.getInstance().loginWithOneTimeKey("vitya@zarabotat.victorpseo.voximplant.com", token);
+                }, 'text');
+            } else {
+                logMessage("Authorization failed. Please specify correct username and password");
+            }
+        }
+    }
+
+    function logMessage(msg) {
+        $("#log").text(msg);
+    }
+
+    function handleCallConnected() {
+        timerId = setInterval(function() {
+            tm = call.getCallDuration();
+            tm = tm / 1000;
+            tm = Math.round(tm);
+            logMessage("Разговор идет: " + tm + " сек.");
+        }, 1000);
+        $("#zvonok").val('1'); // Индикатор совершение звонка
+    }
+
+    function handleCallFailed(e) {
+        if (e.code == "486") {
+            logMessage("Абонент бросил трубку. Попробуйте перезвонить позже.");
+        }
+        if (e.code == "402") {
+            logMessage("Что-то пошло не так. Попробуйте через пару минут");
+        }
+        if (e.code == "408") {
+            logMessage("Телефон абонента не доступен (ОТКЛЮЧЕН)");
+        }
+        if (e.code == "484") {
+            logMessage("Телефон абонента не доступен (ОТКЛЮЧЕН)");
+        }
+        if (e.code != "486" && e.code != "402" && e.code != "408" && e.code != "484") {
+            logMessage("Техническая ошибка. Код: " + e.code + " Описание: " + e.reason);
+        }
+        $("#zvonok").val('1'); // Индикатор совершение звонка
+    }
+
+    function handleCallDisconnected() {
+        clearInterval(timerId);
+        $("#hangup").hide();
+        $("#call").show();
+        $("#info").prop("class", "bg-yellow bg-font-yellow");
+        $("#info").text('ЗАПОЛНИТЕ РЕЗУЛЬТАТ ЗВОНКА');
+        $("#zvonok").val('1'); // Индикатор совершение звонка
+        logMessage("Сборс");
+    }
+
+    function GoCall() {
+        voxImplant.requestOneTimeLoginKey("vitya@zarabotat.victorpseo.voximplant.com");
+    }
+    function han() {
+        call.hangup();
+    }
+    function mute() {
+        call.muteMicrophone(); // don't send audio from microphone to the call
+    }
+    function unmute() {
+        call.unmuteMicrophone(); // start sending audio from microphone to the cal
+    }
+</script>
+<img width="200" height="200" id="loader" style="display: none;" src="/load.gif">
 
 <div class="row" id="rw">
 
