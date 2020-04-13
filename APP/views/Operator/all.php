@@ -40,7 +40,7 @@
                     <td>
 
 
-                        <span class="badge badge-success"><h5><?=$val['priceresult']?> руб.</h5></span>
+                        <span class="badge badge-success"><b><?=$val['priceresult']?>руб.</b></span>
 
                     </td>
                     <td>
