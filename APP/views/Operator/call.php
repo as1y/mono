@@ -117,7 +117,7 @@
 
                     <div class="form-check form-check-inline">
                         <label class="form-check-label">
-                            <input type="radio" class="form-check-input-styled-secondary" name="optionresult" value="bezdostupa" data-fouc>
+                            <input type="radio" class="form-check-input-styled" name="optionresult" value="bezdostupa" data-fouc>
                             ТЕЛЕФОН НЕ ДОСТУПЕН
                         </label>
                     </div>
