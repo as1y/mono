@@ -163,8 +163,8 @@ class OperatorController extends AppController {
         // Брони на контакт нет. Берем новый контакт
         $contactinfo = $operator->newcontact($idc);
         if (empty($contactinfo)) {
-            $_SESSION['errors'] = "no contact";
-            return false;
+            $_SESSION['errors'] = "На проекте ".$company['company']." закончилась база контактов";
+            redir ("/operator/my/");
         }
 
         //Ставим бронь
