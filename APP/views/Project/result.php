@@ -35,7 +35,7 @@
                         ?>
                         <tr>
                             <td>
-                                <b>Дата:</b>  <?=$val['date']?>
+                                <?=$val['date']?>
                                 <hr>
                                 <img src="<?=$userinfo['avatar']?>" width="38" height="38" class="rounded-circle" alt=""><br>
                                 <?=$userinfo['username']?>
