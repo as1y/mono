@@ -18,29 +18,11 @@ class PanelController extends AppController {
 
         //Информация о компаниях клиента
 
-        $META = [
-            'title' => 'Кабинет рекламодателя',
-            'description' => 'Кабинет рекламодателя',
-            'keywords' => 'Кабинет рекламодателя ',
-        ];
-        \APP\core\base\View::setMeta($META);
+            $this->layaout = false;
+             $this->view = false;
 
-
-        if ($_SESSION['ulogin']['role'] == "R") $this->BreadcrumbsControllerLabel = "Кабинет рекламодателя";
-        $BREADCRUMBS['HOME'] = ['Label' => $this->BreadcrumbsControllerLabel, 'Url' => $this->BreadcrumbsControllerUrl];
-        $BREADCRUMBS['DATA'][] = ['Label' => "Мои проекты"];
-        \APP\core\base\View::setBreadcrumbs($BREADCRUMBS);
-
-        $panel = new Panel(); //Вызываем Моудль
-        $company = $panel->allcompany($_SESSION['ulogin']['id']);
-
-
-        
-        $this->set(compact('company'));
-
-
-
-
+            if ($_SESSION['ulogin']['role'] == "R") redir("/master");
+           if ($_SESSION['ulogin']['role'] == "O") redir("/operator");
 
 
 
@@ -456,7 +438,7 @@ class PanelController extends AppController {
             'description' => 'FAQ',
             'keywords' => 'FAQ',
         ];
-        
+
         if ($_SESSION['ulogin']['role'] == "R") $this->BreadcrumbsControllerLabel = "Кабинет рекламодателя";
         $BREADCRUMBS['HOME'] = ['Label' => $this->BreadcrumbsControllerLabel, 'Url' => $this->BreadcrumbsControllerUrl];
         $BREADCRUMBS['DATA'][] = ['Label' => "FAQ"];
