@@ -9,7 +9,7 @@ use APP\core\base\Model;
 class MasterController extends AppController {
 	public $layaout = 'PANEL';
     public $BreadcrumbsControllerLabel = "Кабинет рекламодателя";
-    public $BreadcrumbsControllerUrl = "/panel";
+    public $BreadcrumbsControllerUrl = "/master";
 
 
 
