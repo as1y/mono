@@ -38,7 +38,7 @@
                                 <img src="<?=$userinfo['avatar']?>" width="38" height="38" class="rounded-circle" alt=""><br>
                                 <?=$userinfo['username']?>
                                 <hr>
-                                <?=$val['date']?>
+                              <b>Дата:</b>  <?=$val['date']?>
                             </td>
 
 
