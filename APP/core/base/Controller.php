@@ -17,6 +17,15 @@ abstract class Controller {
         //Если с сессией зашел в логин или на главную
 
 
+        //Защита от ебанутых
+
+        if ($_SESSION['ulogin']['role'] == "O"){
+
+            if ($route['controller'] == "Panel")  redir("/operator");
+            if ($route['controller'] == "Panel")  redir("/operator");
+
+
+        }
 //
 //		// РАСПРЕДЕЛЕНЕ ПРАВ (ПОКА ПРОСТОЕ)
 //		if (empty($_SESSION['ulogin']) && $route['controller'] != "Main"  && $route['controller'] != "User" && $route['controller'] != "Spec"  ){

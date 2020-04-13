@@ -102,7 +102,11 @@ class UserController extends AppController
 
 			if($user->login(CONFIG['USERTABLE'])){
 				//АВТОРИЗАЦИЯ
-				redir('/panel/');
+
+                if ($_SESSION['ulogin']['role'] == "R") redir('/panel/');
+                if ($_SESSION['ulogin']['role'] == "O") redir('/operator/');
+
+
 				//АВТОРИЗАЦИЯ
 			}
 			else
