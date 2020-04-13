@@ -36,19 +36,28 @@ class OperatorController extends AppController {
         if ($_POST['optionresult'] == "otkaz") $operator->SetOtkaz($_POST);
 
 
+        if ($company['status'] != 1) {
+            $_SESSION['errors'] = "Проект ".$company['company']." в данный момент не активен";
+            redir("/operator/my/");
+        }
+
+        // МОМЕНТ С ПРОВЕРКОЙ И ДОБАВЛЕНИЕМ ЗАПИСИ!
 
 
-            exit("yeah");
+        // МОМЕНТ С ПРОВЕРКОЙ И ДОБАВЛЕНИЕМ ЗАПИСИ!
+        $contactinfo = $operator->newcontact($idc);
+
+        if (empty($contactinfo)) {
+            $_SESSION['errors'] = "У компании".$company['company']." закончилась база для обзвона. Попробуйте позднее";
+            redir("/operator/my/");
+        }
+
+        //Ставим бронь
+        $operator->setbron($contactinfo['id']);
+        //Ставим бронь
 
 
-
-
-
-
-
-
-
-
+        exit(json_encode($contactinfo, true));
 
 
 
