@@ -52,25 +52,18 @@
                         </a>
                     </li>
 
-
                     <li class="nav-item nav-item-submenu">
-                        <a href="#" class="nav-link"><i class="icon-target2"></i> <span>Результаты</span></a>
+                        <a href="#" class="nav-link"><i class="icon-color-sampler"></i> <span>Themes</span></a>
 
-                        <ul class="nav nav-group-sub" data-submenu-title="Результаты" style="display: none;">
-                            <li class="nav-item">
-                                <a href="/project/result/?id=<?=$_GET['id']?>" class="nav-link <?=isset($active['result']) ? $active['result'] : ''; ?>">
-
-                            </li>
-
-                            <li class="nav-item">
-
-                                <a href="/project/result/?id=<?=$_GET['id']?>" class="nav-link <?=isset($active['result']) ? $active['result'] : ''; ?>">
-                            </li>
-
-
+                        <ul class="nav nav-group-sub" data-submenu-title="Themes">
+                            <li class="nav-item"><a href="index.html" class="nav-link active">Default</a></li>
+                            <li class="nav-item"><a href="../../../LTR/material/full/index.html" class="nav-link">Material</a></li>
+                            <li class="nav-item"><a href="../../../LTR/dark/full/index.html" class="nav-link">Dark</a></li>
+                            <li class="nav-item"><a href="../../../LTR/clean/full/index.html" class="nav-link disabled">Clean <span class="badge bg-transparent align-self-center ml-auto">Coming soon</span></a></li>
                         </ul>
                     </li>
 
+                    
 
 
 
