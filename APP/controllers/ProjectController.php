@@ -133,7 +133,7 @@ class ProjectController extends AppController {
 
 
         if (!empty($_GET['action']) && $_GET['action'] == "reject"){
-            $result =  $project->rejectresult($_GET['idresult']);
+            $result =  $project->rejectresult($company, $_GET['idresult']);
             if ($result == 1){
                 redir("/project/result/?id=".$idc);
             }else{

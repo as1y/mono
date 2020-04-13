@@ -60,11 +60,10 @@ class Project extends \APP\core\base\Model {
     }
 
 
-    public function rejectresult($idres){
-        $result = R::findOne('result', 'WHERE id = ? AND users_id =? AND status = 0 LIMIT 1', [$idres, $_SESSION['users']['id']]);
+    public function rejectresult($company, $idres){
+        $result = R::findOne('result', 'WHERE id = ? AND company_id =? AND status = 0 LIMIT 1', [$idres, $company['id']]);
         $result->status = 2;
         R::store($result);
-
 
         return true;
     }
