@@ -16,26 +16,28 @@ function getrecord2($idcont) {
 }
 
 
-
-function raskladkazapisi($zapis){
-	if ($zapis != "nope"){
-		$records = '';
-		$date = $zapis['date'];
-		$zapis = json_decode($zapis['data'], true);
-		foreach ($zapis['result'] as $val ){
-			if (isset($val['records']['0'])){
-				$url = $val['records']['0']['record_url'];
-				$a =  "<a href='".$val['records']['0']['record_url']."' target=_blank><b>РАЗГОВОР</b></a><br>
-						<i class='fa fa-clock-o'></i> ".$val['records']['0']['duration']."сек.<br>
-						<i class='fa fa-calendar'></i>".$date." <br> <hr>" ;
-			}
-			if (!isset($url)) $a = "Без записи<hr>";
-			$records = $records.$a;
-		}
-	}
-	if (!isset($records)) $records = "Запись отсутсвует<br>";
-	return $records;
+function raskladkazapisi($zapis) {
+    if ($zapis != "nope") {
+        $records = '';
+        $date = $zapis['date'];
+        $zapis = json_decode($zapis['data'], true);
+        foreach($zapis['result'] as $val) {
+            if (isset($val['records']['0'])) {
+                $url = $val['records']['0']['record_url'];
+                $a = "<div class='well'><p><audio src='".$val['records']['0']['record_url']."' controls></audio></p><i class='fa fa-calendar'></i> ".$date."</div>";
+            }
+            if (!isset($url)) $a = "<p>Без записи</p>";
+            $records = $records.$a;
+        }
+    }
+    if (!isset($records)) $records = "Запись отсутсвует<br />";
+    return $records;
 }
+
+
+
+
+
 // ОБРАБОТКИ СТАТУСОВ НА ВИЗУАЛЬНЫЕ ЭФФЕКТЫ
 function leadstatus ($status){
 	if ($status=="0") return '<div class="label label-warning">НА МОДЕРАЦИИ</div>';
