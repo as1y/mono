@@ -21,7 +21,12 @@ function getrecord2($idcont) {
 }
 
 
-function raskladkazapisi($zapis) {
+function raskladkazapisi($DATA) {
+
+    show($DATA);
+
+    exit();
+
     if ($zapis != "nope") {
         $records = '';
         $date = $zapis['date'];
