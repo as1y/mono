@@ -48,6 +48,8 @@ class OperatorController extends AppController {
 
         if ($_POST['optionresult'] == "perezvon") $operator->SetPerezvon($_POST);
 
+        if ($_POST['optionresult'] == "result") $operator->SetResult($_POST, $company);
+
 
 
 

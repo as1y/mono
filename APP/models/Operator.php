@@ -27,6 +27,40 @@ class Operator extends \APP\core\base\Model {
     }
 
 
+    public function SetResult($DATA, $company){
+
+
+        $nomerresult = pole_valid ($_POST['nomerresult'], 15, 's');
+        if (!empty($nomerresult['error'])) message($nomerresult['error']);
+
+        // Считаем кол-во полей.
+
+        $RESULTMASS = json_decode($company['formresult'],true);
+        $countresult = count($RESULTMASS);
+        //Считаем кол-во полей
+
+//        foreach ($RESULTMASS as $key=>$val){
+//            $RESULTMASS[$key]['VAL'] = $DATA['customresult'.$key];
+//        }
+
+        dumpf($RESULTMASS);
+
+        exit();
+
+        $RESULTMASS = json_encode($RESULTMASS,true);
+
+        $contact = $this->getcontact($DATA['contactid']);
+        $contact->status =5;
+        $contact->tel = $tel;
+        $contact->datacall = date("Y-m-d");
+        $contact->operatorcomment = $DATA['operatorcomment'];
+        R::store($contact);
+
+
+
+
+    }
+
 
     public function SetPerezvon($DATA){
 
@@ -35,7 +69,7 @@ class Operator extends \APP\core\base\Model {
         if (!empty($nomerperezvona['error'])) message($nomerperezvona['error']);
 
 
-        $dataperezvona = pole_valid ($_POST['dataperezvona'], 10, 's');
+        $dataperezvona = pole_valid ($_POST['dataperezvona'], 15, 's');
         if (!empty($dataperezvona['error'])) message($dataperezvona['error']);
 
 
