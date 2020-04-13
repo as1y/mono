@@ -8,7 +8,7 @@ use APP\core\base\Model;
 
 class PanelController extends AppController {
 	public $layaout = 'PANEL';
-    public $BreadcrumbsControllerLabel = "Кабинет рекламодателя";
+    public $BreadcrumbsControllerLabel = "Кабинет оператора";
     public $BreadcrumbsControllerUrl = "/panel";
 
 
@@ -26,6 +26,7 @@ class PanelController extends AppController {
         \APP\core\base\View::setMeta($META);
 
 
+        if ($_SESSION['ulogin']['role'] == "R") $this->BreadcrumbsControllerLabel = "Кабинет рекламодателя";
         $BREADCRUMBS['HOME'] = ['Label' => $this->BreadcrumbsControllerLabel, 'Url' => $this->BreadcrumbsControllerUrl];
         $BREADCRUMBS['DATA'][] = ['Label' => "Мои проекты"];
         \APP\core\base\View::setBreadcrumbs($BREADCRUMBS);
@@ -59,6 +60,7 @@ class PanelController extends AppController {
         \APP\core\base\View::setMeta($META);
 
 
+        if ($_SESSION['ulogin']['role'] == "R") $this->BreadcrumbsControllerLabel = "Кабинет рекламодателя";
         $BREADCRUMBS['HOME'] = ['Label' => $this->BreadcrumbsControllerLabel, 'Url' => $this->BreadcrumbsControllerUrl];
         $BREADCRUMBS['DATA'][] = ['Label' => "Добавление проекта"];
         \APP\core\base\View::setBreadcrumbs($BREADCRUMBS);
@@ -124,6 +126,7 @@ class PanelController extends AppController {
             'keywords' => 'Партнерская программа',
         ];
 
+        if ($_SESSION['ulogin']['role'] == "R") $this->BreadcrumbsControllerLabel = "Кабинет рекламодателя";
         $BREADCRUMBS['HOME'] = ['Label' => $this->BreadcrumbsControllerLabel, 'Url' => $this->BreadcrumbsControllerUrl];
         $BREADCRUMBS['DATA'][] = ['Label' => "Партнерская программа"];
 
@@ -168,7 +171,7 @@ class PanelController extends AppController {
         ];
         \APP\core\base\View::setMeta($META);
 
-
+        if ($_SESSION['ulogin']['role'] == "R") $this->BreadcrumbsControllerLabel = "Кабинет рекламодателя";
         $BREADCRUMBS['HOME'] = ['Label' => $this->BreadcrumbsControllerLabel, 'Url' => $this->BreadcrumbsControllerUrl];
         $BREADCRUMBS['DATA'][] = ['Label' => "Баланс"];
         \APP\core\base\View::setBreadcrumbs($BREADCRUMBS);
@@ -233,6 +236,7 @@ class PanelController extends AppController {
             'keywords' => 'Системные тикеты',
         ];
 
+        if ($_SESSION['ulogin']['role'] == "R") $this->BreadcrumbsControllerLabel = "Кабинет рекламодателя";
         $BREADCRUMBS['HOME'] = ['Label' => $this->BreadcrumbsControllerLabel, 'Url' => $this->BreadcrumbsControllerUrl];
         $BREADCRUMBS['DATA'][] = ['Label' => "Тикеты", 'Url' => "/panel/ticket/"];
         $BREADCRUMBS['DATA'][] = ['Label' => "Тикет ".$tickets['zagolovok']];
@@ -279,6 +283,7 @@ class PanelController extends AppController {
             'keywords' => 'Системные тикеты',
         ];
 
+        if ($_SESSION['ulogin']['role'] == "R") $this->BreadcrumbsControllerLabel = "Кабинет рекламодателя";
         $BREADCRUMBS['HOME'] = ['Label' => $this->BreadcrumbsControllerLabel, 'Url' => $this->BreadcrumbsControllerUrl];
         $BREADCRUMBS['DATA'][] = ['Label' => "Тикеты"];
 
@@ -357,7 +362,7 @@ class PanelController extends AppController {
         ];
         \APP\core\base\View::setMeta($META);
 
-
+        if ($_SESSION['ulogin']['role'] == "R") $this->BreadcrumbsControllerLabel = "Кабинет рекламодателя";
         $BREADCRUMBS['HOME'] = ['Label' => $this->BreadcrumbsControllerLabel, 'Url' => $this->BreadcrumbsControllerUrl];
         $BREADCRUMBS['DATA'][] = ['Label' => "Мой профиль"];
         \APP\core\base\View::setBreadcrumbs($BREADCRUMBS);
@@ -423,6 +428,7 @@ class PanelController extends AppController {
             'keywords' => 'Настройки аккаунта',
         ];
 
+        if ($_SESSION['ulogin']['role'] == "R") $this->BreadcrumbsControllerLabel = "Кабинет рекламодателя";
         $BREADCRUMBS['HOME'] = ['Label' => $this->BreadcrumbsControllerLabel, 'Url' => $this->BreadcrumbsControllerUrl];
         $BREADCRUMBS['DATA'][] = ['Label' => "Настройки аккаунта"];
 
@@ -450,7 +456,8 @@ class PanelController extends AppController {
             'description' => 'FAQ',
             'keywords' => 'FAQ',
         ];
-
+        
+        if ($_SESSION['ulogin']['role'] == "R") $this->BreadcrumbsControllerLabel = "Кабинет рекламодателя";
         $BREADCRUMBS['HOME'] = ['Label' => $this->BreadcrumbsControllerLabel, 'Url' => $this->BreadcrumbsControllerUrl];
         $BREADCRUMBS['DATA'][] = ['Label' => "FAQ"];
 
