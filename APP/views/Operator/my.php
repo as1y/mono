@@ -61,7 +61,7 @@
 
                         <?php if ($mystatus == 2):?>
 
-                        <a href="/operator/call/?id=<?=$val['id']?>" type="button" class="btn btn-success"><i class="icon-comment-discussion mr-2"></i>звонить</a>
+                        <a href="/operator/call/?id=<?=$val['id']?>" type="button" class="btn btn-danger"><i class="icon-phone-wave mr-2"></i>ЗВОНИТЬ</a>
                          <?php endif;?>
 
 
