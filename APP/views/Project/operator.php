@@ -27,6 +27,7 @@
                         <th>Звонков</th>
                         <th>Информация</th>
                         <th>Приветствие</th>
+                        <th>Действие</th>
 
                     </tr>
                     </thead>
@@ -47,6 +48,10 @@
                             <td class="text-center"><?=$val['totalcall']?></td>
                             <td class="text-center"><?=$val['aboutme']?></td>
                             <td class="text-center">""</td>
+
+                            <td class="text-center">Пропустить/Отклонить</td>
+
+
                         </tr>
 
                     <?php endforeach;?>
