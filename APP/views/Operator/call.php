@@ -103,14 +103,14 @@
 
                     <div class="form-check form-check-inline">
                         <label class="form-check-label">
-                            <input type="radio" class="form-check-input" name="optionresult" value="perezvon" >
+                            <input type="radio" class="form-check-input-styled-warning" name="optionresult" value="perezvon" >
                             ПЕРЕЗВОН
                         </label>
                     </div>
 
                     <div class="form-check form-check-inline">
                         <label class="form-check-label">
-                            <input type="radio" class="form-check-input" name="optionresult" value="otkaz">
+                            <input type="radio" class="form-check-input-styled" name="optionresult" value="otkaz">
                             ОТКАЗ
                         </label>
                     </div>
