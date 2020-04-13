@@ -94,8 +94,7 @@ class OperatorController extends AppController {
 
         if (empty($_GET['id'])){
             $_SESSION['errors'] = "noparam";
-            $this->set(compact('error'));
-            return false;
+            redir ("/operator/my/");
         }
 
         $idc = $_GET['id'];
