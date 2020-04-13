@@ -104,8 +104,8 @@ class OperatorController extends AppController {
 
        $rz =  getrecord2("196");
 
+        show($rz);
 
- 
 
 
 
