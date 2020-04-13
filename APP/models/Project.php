@@ -46,10 +46,10 @@ class Project extends \APP\core\base\Model {
 
 
 
-    public function acceptresult($idres){
+    public function acceptresult($company, $idres){
 
 
-        $result = R::findOne('result', 'WHERE id = ? AND users_id =? AND status = 0 LIMIT 1', [$idres, $_SESSION['ulogin']['id']]);
+        $result = R::findOne('result', 'WHERE id = ? AND company_id =? AND status = 0 LIMIT 1', [$idres, $company['id']]);
 
         var_dump($result);
         exit();

@@ -121,7 +121,7 @@ class ProjectController extends AppController {
 
 
         if (!empty($_GET['action']) && $_GET['action'] == "accept"){
-            $result =  $project->acceptresult($_GET['idresult']);
+            $result =  $project->acceptresult($company, $_GET['idresult']);
             if ($result == 1){
                 $_SESSION['success'] = "Результат успешно одобрен";
                 redir("/project/result/?id=".$idc);
