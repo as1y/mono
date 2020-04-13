@@ -229,9 +229,11 @@ class Operator extends \APP\core\base\Model {
         $operatorInProject = array_key_exists($_SESSION['ulogin']['id'],$massivoperatorov);
 
         // Проверка на допуск оператора к проекту
-//        if ($operatorInProject == true && $massivoperatorov[$_SESSION['ulogin']['id']] == 1) return $company;
-        if ($operatorInProject == false) return false;
-        if ($operatorInProject == true ) return $company;
+        if ($operatorInProject == true && $massivoperatorov[$_SESSION['ulogin']['id']] == 1) return $company;
+
+//        if ($operatorInProject == true ) return $company;
+
+        return false;
 
 
     }
