@@ -150,7 +150,7 @@ function renderresult ($DATA){
     $DATA = json_decode($DATA, true);
 
     foreach ($DATA as $key=>$val){
-        echo "<b>".$val['NAME'].": </b>".$val['VAL'];
+        echo "<b>".$val['NAME'].": </b>".$val['VAL']."<br>";
     }
 
 
