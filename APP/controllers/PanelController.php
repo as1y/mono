@@ -29,79 +29,6 @@ class PanelController extends AppController {
     }
 
 
-    public function addAction()
-    {
-
-        //Информация о компаниях клиента
-
-        $META = [
-            'title' => 'Добавление проекта',
-            'description' => 'Добавление проекта',
-            'keywords' => 'Добавление проекта',
-        ];
-        \APP\core\base\View::setMeta($META);
-
-
-        if ($_SESSION['ulogin']['role'] == "R") {
-            $this->BreadcrumbsControllerLabel = "Кабинет рекламодателя";
-            $this->BreadcrumbsControllerUrl = "/master";
-        }
-
-
-        $BREADCRUMBS['HOME'] = ['Label' => $this->BreadcrumbsControllerLabel, 'Url' => $this->BreadcrumbsControllerUrl];
-        $BREADCRUMBS['DATA'][] = ['Label' => "Добавление проекта"];
-        \APP\core\base\View::setBreadcrumbs($BREADCRUMBS);
-
-
-
-        $ASSETS[] = ["js" => "/global_assets/js/plugins/forms/wizards/steps.min.js"];
-        $ASSETS[] = ["js" => "/global_assets/js/plugins/forms/selects/select2.min.js"];
-        $ASSETS[] = ["js" => "/global_assets/js/plugins/forms/styling/uniform.min.js"];
-        $ASSETS[] = ["js" => "/global_assets/js/plugins/forms/inputs/inputmask.js"];
-        $ASSETS[] = ["js" => "/global_assets/js/plugins/forms/validation/validate.min.js"];
-        $ASSETS[] = ["js" => "/global_assets/js/plugins/extensions/cookie.js"];
-        $ASSETS[] = ["js" => "/assets/js/form_wizard.js"];
-
-
-        \APP\core\base\View::setAssets($ASSETS);
-
-
-        $add = new Addp(); //Вызываем Моудль
-
-        if ($_POST){
-
-            $add->load($_POST); // Берем из POST только те параметры которые нам нужны
-
-           $validation = $add->validate($_POST);
-
-            if ($validation){
-                if ($add->addproject($_POST)){
-                    redir("/panel/");
-                }else{
-                    $_SESSION['errors'] = "Ошибка базы данных. Попробуйте позже.";
-                    redir("/panel/add");
-                }
-            }
-
-
-
-            if (!$validation){
-                $_SESSION['errors'] = "Что-то пошло не так.";
-                redir("/panel/add");
-
-            }
-
-            echo "ok";
-            exit();
-        }
-
-
-
-
-//        $this->set(compact('testpar'));
-
-
-    }
 
     public function refferalAction(){
        $Panel = new Panel();
@@ -113,8 +40,8 @@ class PanelController extends AppController {
             'keywords' => 'Партнерская программа',
         ];
 
-        if ($_SESSION['ulogin']['role'] == "R") $this->BreadcrumbsControllerLabel = "Кабинет рекламодателя";
-        $BREADCRUMBS['HOME'] = ['Label' => $this->BreadcrumbsControllerLabel, 'Url' => $this->BreadcrumbsControllerUrl];
+        if ($_SESSION['ulogin']['role'] == "R") $BREADCRUMBS['HOME'] = ['Label' => "Кабинет рекламодателя", 'Url' => "/master"];
+        if ($_SESSION['ulogin']['role'] == "O") $BREADCRUMBS['HOME'] = ['Label' => "Кабинет  оператора", 'Url' => "/operator"];
         $BREADCRUMBS['DATA'][] = ['Label' => "Партнерская программа"];
 
 
@@ -158,8 +85,8 @@ class PanelController extends AppController {
         ];
         \APP\core\base\View::setMeta($META);
 
-        if ($_SESSION['ulogin']['role'] == "R") $this->BreadcrumbsControllerLabel = "Кабинет рекламодателя";
-        $BREADCRUMBS['HOME'] = ['Label' => $this->BreadcrumbsControllerLabel, 'Url' => $this->BreadcrumbsControllerUrl];
+        if ($_SESSION['ulogin']['role'] == "R") $BREADCRUMBS['HOME'] = ['Label' => "Кабинет рекламодателя", 'Url' => "/master"];
+        if ($_SESSION['ulogin']['role'] == "O") $BREADCRUMBS['HOME'] = ['Label' => "Кабинет  оператора", 'Url' => "/operator"];
         $BREADCRUMBS['DATA'][] = ['Label' => "Баланс"];
         \APP\core\base\View::setBreadcrumbs($BREADCRUMBS);
 
@@ -223,8 +150,8 @@ class PanelController extends AppController {
             'keywords' => 'Системные тикеты',
         ];
 
-        if ($_SESSION['ulogin']['role'] == "R") $this->BreadcrumbsControllerLabel = "Кабинет рекламодателя";
-        $BREADCRUMBS['HOME'] = ['Label' => $this->BreadcrumbsControllerLabel, 'Url' => $this->BreadcrumbsControllerUrl];
+        if ($_SESSION['ulogin']['role'] == "R") $BREADCRUMBS['HOME'] = ['Label' => "Кабинет рекламодателя", 'Url' => "/master"];
+        if ($_SESSION['ulogin']['role'] == "O") $BREADCRUMBS['HOME'] = ['Label' => "Кабинет  оператора", 'Url' => "/operator"];
         $BREADCRUMBS['DATA'][] = ['Label' => "Тикеты", 'Url' => "/panel/ticket/"];
         $BREADCRUMBS['DATA'][] = ['Label' => "Тикет ".$tickets['zagolovok']];
 
@@ -270,8 +197,8 @@ class PanelController extends AppController {
             'keywords' => 'Системные тикеты',
         ];
 
-        if ($_SESSION['ulogin']['role'] == "R") $this->BreadcrumbsControllerLabel = "Кабинет рекламодателя";
-        $BREADCRUMBS['HOME'] = ['Label' => $this->BreadcrumbsControllerLabel, 'Url' => $this->BreadcrumbsControllerUrl];
+        if ($_SESSION['ulogin']['role'] == "R") $BREADCRUMBS['HOME'] = ['Label' => "Кабинет рекламодателя", 'Url' => "/master"];
+        if ($_SESSION['ulogin']['role'] == "O") $BREADCRUMBS['HOME'] = ['Label' => "Кабинет  оператора", 'Url' => "/operator"];
         $BREADCRUMBS['DATA'][] = ['Label' => "Тикеты"];
 
         \APP\core\base\View::setMeta($META);
@@ -349,8 +276,8 @@ class PanelController extends AppController {
         ];
         \APP\core\base\View::setMeta($META);
 
-        if ($_SESSION['ulogin']['role'] == "R") $this->BreadcrumbsControllerLabel = "Кабинет рекламодателя";
-        $BREADCRUMBS['HOME'] = ['Label' => $this->BreadcrumbsControllerLabel, 'Url' => $this->BreadcrumbsControllerUrl];
+        if ($_SESSION['ulogin']['role'] == "R") $BREADCRUMBS['HOME'] = ['Label' => "Кабинет рекламодателя", 'Url' => "/master"];
+        if ($_SESSION['ulogin']['role'] == "O") $BREADCRUMBS['HOME'] = ['Label' => "Кабинет  оператора", 'Url' => "/operator"];
         $BREADCRUMBS['DATA'][] = ['Label' => "Мой профиль"];
         \APP\core\base\View::setBreadcrumbs($BREADCRUMBS);
 
@@ -415,8 +342,8 @@ class PanelController extends AppController {
             'keywords' => 'Настройки аккаунта',
         ];
 
-        if ($_SESSION['ulogin']['role'] == "R") $this->BreadcrumbsControllerLabel = "Кабинет рекламодателя";
-        $BREADCRUMBS['HOME'] = ['Label' => $this->BreadcrumbsControllerLabel, 'Url' => $this->BreadcrumbsControllerUrl];
+        if ($_SESSION['ulogin']['role'] == "R") $BREADCRUMBS['HOME'] = ['Label' => "Кабинет рекламодателя", 'Url' => "/master"];
+        if ($_SESSION['ulogin']['role'] == "O") $BREADCRUMBS['HOME'] = ['Label' => "Кабинет  оператора", 'Url' => "/operator"];
         $BREADCRUMBS['DATA'][] = ['Label' => "Настройки аккаунта"];
 
         \APP\core\base\View::setMeta($META);
@@ -444,8 +371,8 @@ class PanelController extends AppController {
             'keywords' => 'FAQ',
         ];
 
-        if ($_SESSION['ulogin']['role'] == "R") $this->BreadcrumbsControllerLabel = "Кабинет рекламодателя";
-        $BREADCRUMBS['HOME'] = ['Label' => $this->BreadcrumbsControllerLabel, 'Url' => $this->BreadcrumbsControllerUrl];
+        if ($_SESSION['ulogin']['role'] == "R") $BREADCRUMBS['HOME'] = ['Label' => "Кабинет рекламодателя", 'Url' => "/master"];
+        if ($_SESSION['ulogin']['role'] == "O") $BREADCRUMBS['HOME'] = ['Label' => "Кабинет  оператора", 'Url' => "/operator"];
         $BREADCRUMBS['DATA'][] = ['Label' => "FAQ"];
 
         \APP\core\base\View::setMeta($META);
