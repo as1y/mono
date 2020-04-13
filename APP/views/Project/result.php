@@ -29,13 +29,21 @@
                     foreach ( $company->ownResultList as $key=>$val):
                         if ($val['id'] == 0) continue;
 
+
+                        $userinfo = $val->users;
+                        $idcontact = $val->contact_id;
+
+
                         ?>
                         <tr>
                             <td>
                                 #<?=$val['id']?>
                             </td>
                             <td class="text-center"><?=$val['date']?></td>
-                            <td class="text-center">Оператор</td>
+                            <td class="text-center">
+                                <img src="<?=$userinfo['avatar']?>" width="38" height="38" class="rounded-circle" alt="">
+                                <?=$userinfo['username']?>
+                            </td>
                             <td class="text-center">ИСХОДНЫЕ ДАННЫЕ</td>
                             <td class="text-center">РЕЗУЛЬТАТ</td>
                             <td class="text-center">ЗАПИСЬ</td>
