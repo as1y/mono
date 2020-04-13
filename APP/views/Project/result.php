@@ -27,12 +27,12 @@
                     <?php
 
                     foreach ( $company->ownResultList as $key=>$val):
-                        if ($val['id'] == 0) continue;
 
+                        if ($val['id'] == 0) continue;
+                        if ($val['status'] != 0 ) continue;
 
                         $userinfo = $val->users;
                         $idcontact = $val->contact_id;
-
 
                         ?>
                         <tr>
@@ -44,14 +44,21 @@
                                 <img src="<?=$userinfo['avatar']?>" width="38" height="38" class="rounded-circle" alt="">
                                 <?=$userinfo['username']?>
                             </td>
-                            <td class="text-center">ИСХОДНЫЕ ДАННЫЕ</td>
+                            <td class="text-center">
+
+                                <?php
+
+                                rendercontactinfo($val['contactinfo']);
+
+                                ?>
+
+
+                            </td>
                             <td class="text-center">РЕЗУЛЬТАТ</td>
                             <td class="text-center">ЗАПИСЬ</td>
                             <td class="text-center">
-
                                 <a href="/project/operator/?id=<?=$company['id']?>&idresult=<?=$val['id']?>&action=accept" type="button" class="btn btn-success">ПОДТВЕРДИТЬ</a>
                                 <a href="/project/operator/?id=<?=$company['id']?>&idresult=<?=$val['id']?>&action=reject" type="button" class="btn btn-danger">ОТКЛОНИТЬ</a>
-
                             </td>
 
 

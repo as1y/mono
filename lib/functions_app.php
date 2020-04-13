@@ -95,6 +95,17 @@ function obrezanie ($text, $symbols){
 function ticketstatus ($status){
     if ($status=="1") return '<span class="badge badge-success">ОТКРЫТ</span>';
     if ($status=="2") return '<span class="badge badge-secondary">ЗАКРЫТ</span>';
+}
+
+
+
+function rendercontactinfo ($DATA){
+
+    $DATA = json_decode($DATA, true);
+
+        show($DATA);
+
+  return true;
 
 }
 
