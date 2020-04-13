@@ -32,7 +32,6 @@ class OperatorController extends AppController {
         if ($_POST['zvonok'] == 1) message("Вы не совершили звонок");
 
 
-
         if ($_POST['optionresult'] == "otkaz") $operator->SetOtkaz($_POST);
 
 
@@ -42,8 +41,6 @@ class OperatorController extends AppController {
         }
 
         // МОМЕНТ С ПРОВЕРКОЙ И ДОБАВЛЕНИЕМ ЗАПИСИ!
-
-
 
         // МОМЕНТ С ПРОВЕРКОЙ И ДОБАВЛЕНИЕМ ЗАПИСИ!
         $contactinfo = $operator->newcontact($idc);
@@ -55,6 +52,9 @@ class OperatorController extends AppController {
         //Ставим бронь
         $operator->setbron($contactinfo['id']);
         //Ставим бронь
+
+
+
 
         echo json_encode($contactinfo, true);
 

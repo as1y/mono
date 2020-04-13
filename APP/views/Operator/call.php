@@ -228,6 +228,8 @@
             cache: false,
             success: function(result) {
 
+                console.log(result);
+
                 obj = jQuery.parseJSON(result);
                 if (obj.message) {
                     alert(obj.message);
