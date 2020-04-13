@@ -52,14 +52,14 @@
                         </a>
                     </li>
 
-                    <li class="nav-item nav-item-submenu nav-item-expanded nav-item-open">
+                    <li class="nav-item nav-item-submenu  nav-item-open">
                         <a href="#" class="nav-link">Level with child</a>
                         <ul class="nav nav-group-sub" style="">
                             <li class="nav-item"><a href="#" class="nav-link">Third level</a></li>
                             <li class="nav-item"><a href="#" class="nav-link">Third level</a></li>
                         </ul>
                     </li>
-                    
+
 
 
 
