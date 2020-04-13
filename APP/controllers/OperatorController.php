@@ -93,7 +93,7 @@ class OperatorController extends AppController {
         $operator = new Operator();
 
         if (empty($_GET['id'])){
-            $_SESSION['errors'] = "noparam";
+            //$_SESSION['errors'] = "noparam";
             redir ("/operator/my/");
         }
 
