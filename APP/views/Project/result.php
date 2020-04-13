@@ -41,7 +41,7 @@
                             </td>
                             <td class="text-center"><?=$val['date']?></td>
                             <td class="text-center">
-                                <img src="<?=$userinfo['avatar']?>" width="38" height="38" class="rounded-circle" alt="">
+                                <img src="<?=$userinfo['avatar']?>" width="38" height="38" class="rounded-circle" alt=""><br>
                                 <?=$userinfo['username']?>
                             </td>
                             <td class="text-center">
