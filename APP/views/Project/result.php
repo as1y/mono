@@ -43,7 +43,7 @@
                             </td>
 
 
-                            <td class="text-center">
+                            <td>
 
                                 <?php
                                 rendercontactinfo($val['contactinfo']);
@@ -51,7 +51,7 @@
 
 
                             </td>
-                            <td class="text-center">
+                            <td>
                                 <?php
                                 renderresult($val['data']);
                                 ?>
