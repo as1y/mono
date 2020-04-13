@@ -13,8 +13,10 @@ function getrecord2($idcont) {
 
     $PARAMS['GET'] = [
 
+        'count' => 1,
+        'timezone' => 'Etc/GMT',
         'from_date' =>    '2020-01-01 00:00:00',
-        'to_date' =>date("Y-m-d h:m:s"),
+        'to_date' => '2020-04-14 00:00:00',
         'account_id' => $account_id,
         'api_key' => $api_key,
         'with_records' => true,
