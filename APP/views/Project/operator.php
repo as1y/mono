@@ -29,14 +29,9 @@
 
                     </tr>
                     </thead>
-
-
                     <tbody>
 
-
                     <?php
-
-
                     foreach ($operators['OperatoriNaModeracii'] as $key=>$val):?>
                         <tr>
                             <td>
@@ -55,7 +50,6 @@
 
 
                         </tr>
-
                     <?php endforeach;?>
 
 

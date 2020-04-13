@@ -65,6 +65,28 @@ class Project extends \APP\core\base\Model {
 
 
 
+    public function rejectoperator($company, $idoper){
+
+
+        $operators = json_decode( $company['operators'], true);
+
+        if ($operators[$idoper] == 1) $operators[$idoper] = 3;
+
+        $operators = json_encode($operators, true);
+
+        $company->operators = $operators;
+
+        R::store($company);
+
+        return true;
+
+
+    }
+
+
+
+
+
 
     public function operatorsinproject($company){
 
