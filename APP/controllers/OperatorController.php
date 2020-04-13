@@ -106,7 +106,7 @@ class OperatorController extends AppController {
 
         show($rz);
 
-
+        exit();
 
 
         if (empty($_GET['id'])){
