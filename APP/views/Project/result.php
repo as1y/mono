@@ -34,7 +34,7 @@
 
                         ?>
                         <tr>
-                            <td>
+                            <td class="text-center">
 
                                 <img src="<?=$userinfo['avatar']?>" width="38" height="38" class="rounded-circle" alt=""><br>
                                 <?=$userinfo['username']?>
@@ -58,7 +58,7 @@
 
                             </td>
                             <td>ЗАПИСЬ</td>
-                            <td>
+                            <td >
 
                                 <a href="/project/operator/?id=<?=$company['id']?>&idresult=<?=$val['id']?>&action=accept" type="button" class="btn btn-success">ПОДТВЕРДИТЬ</a><br><br>
                                 <a href="/project/operator/?id=<?=$company['id']?>&idresult=<?=$val['id']?>&action=reject" type="button" class="btn btn-danger">ОТКЛОНИТЬ</a><br><br>
