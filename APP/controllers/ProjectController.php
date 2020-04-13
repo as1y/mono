@@ -119,6 +119,10 @@ class ProjectController extends AppController {
 
 		$company = $project->companyresult($idc); //СВЯЗЬ С КОМПАНИЕЙ
 
+        show($company);
+
+        exit();
+
 
 		//$zapisi = $project->records($idc); // ПОЛУЧЕНИЕ ЗАПИСЕЙ
 //		if (isset($_GET['data'])) {
