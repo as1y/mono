@@ -8,7 +8,7 @@
 
 
 
-        <table  class="table datatable-basic text-center">
+        <table  class="table datatable-basic">
             <thead>
             <tr>
                 <th>Компания</th>
@@ -39,8 +39,8 @@
                     </td>
                     <td>
 
+                        <h5><span class="badge badge-success"><?=$val['priceresult']?>руб. </span></h5>
 
-                        <span class="badge badge-success"><b><?=$val['priceresult']?>руб.</b></span>
 
                     </td>
                     <td>
