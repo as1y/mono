@@ -143,9 +143,6 @@ class ProjectController extends AppController {
 
 
 
-
-
-
 		$this->set(compact('company','zapisi' ));
 
 
