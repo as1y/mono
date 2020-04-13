@@ -12,6 +12,9 @@ function getrecord2($idcont) {
     $url = "https://api.voximplant.com/platform_api/GetCallHistory/";
 
     $PARAMS['GET'] = [
+
+        'from_date' =>    '2020-01-01 00:00:00',
+        'to_date' =>date("Y-m-d h:m:s"),
         'account_id' => $account_id,
         'api_key' => $api_key,
         'with_records' => true,
