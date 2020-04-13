@@ -29,24 +29,24 @@
 
                 <tr>
                     <td><?=$val['company']?></td>
-                    <td class="text-center">
+                    <td>
                         <?=obrezanie($val['nameproduct'], 70)?>
                     </td>
-                    <td class="text-center">
+                    <td>
 
                         <?=companytype($val['type'])?>
 
                     </td>
-                    <td class="text-center">
+                    <td>
 
 
-                        <b> <?=$val['priceresult']?> руб.</b>
+                        <span class="badge badge-success"><?=$val['priceresult']?> руб.</b></span><b>
 
                     </td>
-                    <td class="text-center">
+                    <td>
                         За <?=$val['mincall']?> звонков <b> <?=$val['bonuscall']?> руб.</b>
                     </td>
-                    <td class="text-center">
+                    <td>
 
                         <a href="/operator/companyinfo/?id=<?=$val['id']?>" type="button" class="btn btn-success"><i class="icon-cursor2 mr-2"></i>ИНФОРМАЦИЯ</a>
 
