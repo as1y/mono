@@ -97,6 +97,13 @@ if (empty($company)) {
 									</span>
 
 
+                                <?php
+
+                                    $countnew = countnewoperators($row);
+
+                                ?>
+
+
                                 <?php if($countnew > 0):?>
                                     <span class="badge bg-warning ml-auto">0</span>
                                 <?php endif;?>

@@ -123,19 +123,6 @@ class Panel extends \APP\core\base\Model {
     }
 
 
-    public  function countnewoperators($company){
-
-        $count = 0;
-        $countnew = json_decode($company['operators'], true);
-        foreach ($countnew as $key=>$val){
-            if ($val == 1) $count ++;
-        }
-
-        return $count;
-    }
-
-
-
 
 
     public function changepassword($DATA){

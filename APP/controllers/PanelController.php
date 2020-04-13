@@ -33,11 +33,11 @@ class PanelController extends AppController {
         $panel = new Panel(); //Вызываем Моудль
         $company = $panel->allcompany($_SESSION['ulogin']['id']);
 
-        $countnew = $panel->countnewoperators($company);
 
 
 
-        $this->set(compact('company', 'countnew'));
+
+        $this->set(compact('company'));
 
 
 
