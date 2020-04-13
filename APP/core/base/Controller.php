@@ -17,15 +17,19 @@ abstract class Controller {
         //Если с сессией зашел в логин или на главную
 
 
-        //Защита от ебанутых
+        //Защита от ебанутых по контроллерам
 
-        if ($_SESSION['ulogin']['role'] == "O"){
-
-            if ($route['controller'] == "Panel")  redir("/operator");
-            if ($route['controller'] == "Panel")  redir("/operator");
-
-
+        if ($_SESSION['ulogin']['role'] == "R"){
+            if ($route['controller'] == "Operator")  redir("/master");
         }
+        
+        if ($_SESSION['ulogin']['role'] == "O"){
+            if ($route['controller'] == "Master")  redir("/operator");
+            if ($route['controller'] == "Project")  redir("/operator");
+        }
+
+
+
 //
 //		// РАСПРЕДЕЛЕНЕ ПРАВ (ПОКА ПРОСТОЕ)
 //		if (empty($_SESSION['ulogin']) && $route['controller'] != "Main"  && $route['controller'] != "User" && $route['controller'] != "Spec"  ){
