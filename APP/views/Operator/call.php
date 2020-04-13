@@ -100,8 +100,10 @@
         call.unmuteMicrophone(); // start sending audio from microphone to the cal
     }
 </script>
-<img width="200" height="200" id="loader" style="display: none;" src="/load.gif">
 
+
+
+<img width="200" height="200" id="loader" style="display: none;" src="/load.gif">
 <div class="row" id="rw">
 
     <div class="col-md-4">
@@ -162,8 +164,16 @@
             </div>
             <div class="card-body">
                 <table class="table  table-bordered text-center">
-                    <tr>
-                        <td class="wmin-md-100"> <button type="button" class="btn bg-teal-400 btn-labeled btn-labeled-left"><b><i class="icon-phone-wave"></i></b> ПОЗВОНИТЬ</button></td>
+                    <tr><td class="wmin-md-100">
+
+
+                            <button id="call" disabled="" class="btn bg-teal-400 btn-labeled btn-labeled-left"> <i class="icon-phone-wave"></i> ПОЗВОНИТЬ  </button>
+                            <button id="hangup" style="display: none;" class="btn bg-danger btn-labeled btn-labeled-left"> <i class="icon-phone-slash" ></i> ЗАВЕРШИТЬ  </button>
+
+
+
+
+                        </td>
 
                         <td class="wmin-md-100"> <button type="button" id="nextcontact" class="btn bg-slate-600 btn-labeled ">СЛЕДУЮЩИЙ КОНТАКТ</button></td>
 
