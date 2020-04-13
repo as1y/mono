@@ -47,7 +47,17 @@
                     </td>
                     <td class="text-center">
 
+                        <?php
+                        $mystatus = json_decode($val['operators'],true)[$_SESSION['ulogin']['id']];
+                        ?>
+
+
+                        Статус: <?=$mystatus?><br>
+
+
                         <a href="/operator/call/?id=<?=$val['id']?>" type="button" class="btn btn-success"><i class="icon-comment-discussion mr-2"></i>звонить</a>
+
+
 
                     </td>
                 </tr>
