@@ -47,14 +47,17 @@
                             <td class="text-center">
 
                                 <?php
-
                                 rendercontactinfo($val['contactinfo']);
-
                                 ?>
 
 
                             </td>
-                            <td class="text-center">РЕЗУЛЬТАТ</td>
+                            <td class="text-center">
+                                <?php
+                                renderresult($val['contactinfo']);
+                                ?>
+
+                            </td>
                             <td class="text-center">ЗАПИСЬ</td>
                             <td class="text-center">
                                 <a href="/project/operator/?id=<?=$company['id']?>&idresult=<?=$val['id']?>&action=accept" type="button" class="btn btn-success">ПОДТВЕРДИТЬ</a>

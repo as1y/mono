@@ -100,14 +100,20 @@ function ticketstatus ($status){
 
 
 function rendercontactinfo ($DATA){
-
     $DATA = json_decode($DATA, true);
-
-        show($DATA);
-
+    show($DATA);
   return true;
 
 }
+
+
+function renderresult ($DATA){
+    $DATA = json_decode($DATA, true);
+    show($DATA);
+    return true;
+
+}
+
 
 
 
