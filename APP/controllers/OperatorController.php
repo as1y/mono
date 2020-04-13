@@ -101,9 +101,9 @@ class OperatorController extends AppController {
         $company = $operator->getmycom($_GET['id']);
 
         if ($company === false){
-            $_SESSION['errors'] = "dopusk";
-            $this->set(compact('error'));
-            return false;
+            $_SESSION['errors'] = "У Вас нет допуска к проекту";
+            redir ("/operator/my/");
+
         }
 
 
