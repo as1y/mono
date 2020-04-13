@@ -19,7 +19,7 @@ class OperatorController extends AppController {
         }
     }
 
-    
+
 
     public function callresultAction (){
         $this->layaout = false;
@@ -128,10 +128,8 @@ class OperatorController extends AppController {
 
 
         $ASSETS[] = ["js" => "/global_assets/js/plugins/notifications/sweet_alert.min.js"];
-
-
         $ASSETS[] = ["js" => "/global_assets/js/plugins/forms/styling/uniform.min.js"];
-
+        $ASSETS[] = ["js" => "//cdn.voximplant.com/edge/voximplant.min.js"];
 
 
 
