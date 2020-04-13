@@ -11,7 +11,7 @@ class Operator extends \APP\core\base\Model {
         $contact = $this->getcontact($DATA['contactid']);
         $contact->status = 3;
         $contact->datacall = date("Y-m-d");
-        $contact->comment = $DATA['operatorcomment'];
+        $contact->operatorcomment = $DATA['operatorcomment'];
         R::store($contact);
 
         $this->pluscall();
@@ -161,9 +161,6 @@ class Operator extends \APP\core\base\Model {
 
         // Проверка на допуск оператора к проекту
         if ($operatorInProject == true) return $company;
-
-
-
         if ($operatorInProject == false) return false;
 
 
