@@ -146,7 +146,7 @@
                             <td>
 
                                 <?php
-                                raskladkazapisi($val['data']);
+                                raskladkazapisi($val['datazapis']);
                                 ?>
 
 
