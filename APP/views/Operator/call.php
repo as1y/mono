@@ -95,7 +95,7 @@
 
                     <div class="form-check form-check-inline">
                         <label class="form-check-label">
-                            <input type="radio" class="form-check-input-styled"  name="optionresult" checked id="nochoice" value="" data-fouc>
+                            <input type="radio" class="form-check-input"  name="optionresult" checked id="nochoice" value="" data-fouc>
                             НЕ ВЫБРАН
                         </label>
                     </div>
@@ -103,14 +103,14 @@
 
                     <div class="form-check form-check-inline">
                         <label class="form-check-label">
-                            <input type="radio" class="form-check-input-styled-warning" name="optionresult" value="perezvon" data-fouc>
+                            <input type="radio" class="form-check-input" name="optionresult" value="perezvon" data-fouc>
                             ПЕРЕЗВОН
                         </label>
                     </div>
 
                     <div class="form-check form-check-inline">
                         <label class="form-check-label">
-                            <input type="radio" class="form-check-input-styled-danger" name="optionresult" value="otkaz" data-fouc>
+                            <input type="radio" class="form-check-input" name="optionresult" value="otkaz" data-fouc>
                             ОТКАЗ
                         </label>
                     </div>
@@ -247,13 +247,13 @@
                 // ОЧИСТКА ДАННЫХ ПОСЛЕ ОБРАБОТКИ КОНТАКТА
                 document.getElementById('resultdata').reset();
 
-                $("#nochoice").prop('checked');
+                // $("#nochoice").prop('checked');
+                //
+                // $('[name = "optionresult"]').prop('checked', false);
+                //
+                // $("input:radio").prop('checked', false);
 
-                $('[name = "optionresult"]').prop('checked', false);
 
-                $("input:radio").prop('checked', false);
-
-                
                 $("#zvonok").val('0'); // Индикатор нажатия кнопки
                 $("#info").prop("class", "badge badge-success d-block");
                 $("#info").text('ПОЗВОНИТЕ ПО НОВОМУ КОНТАКТУ');
