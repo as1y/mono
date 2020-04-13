@@ -105,7 +105,8 @@
                     <div class="form-check form-check-inline">
                         <label class="form-check-label">
                             <input type="radio" class="form-check-input" name="optionresult" value="otkaz">
-                            ОТКАЗ
+                            <span class="badge badge-danger">ОТКАЗ </span>
+
                         </label>
                     </div>
 
