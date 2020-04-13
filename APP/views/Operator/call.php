@@ -1,5 +1,5 @@
 
-<div class="row">
+<div class="row" id="rw">
 
     <div class="col-md-4">
         <div class="card border-dark">
@@ -211,7 +211,7 @@
 
 
     function funcBefore() {
-        $("#table").hide();
+        $("#rw").hide();
         $("#loader").show();
     }
 
@@ -237,7 +237,7 @@
                 obj = jQuery.parseJSON(result);
 
                 if (obj.go) go(obj.go);
-                
+
                 if (obj.message) {
                     alert(obj.message);
                 }
@@ -258,7 +258,7 @@
 
 
                 // После прелоадера
-                $("#table").show();
+                $("#rw").show();
                 $("#loader").hide();
                 // После прелоадера
 
