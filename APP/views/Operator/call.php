@@ -93,12 +93,6 @@
             <div class="card-body">
                 <div class="form-group mb-3 mb-md-2">
 
-                    <div class="form-check form-check-inline">
-                        <label class="form-check-label">
-                            <input type="radio" class="form-check-input"  name="optionresult"  id="nochoice" value="" >
-                            НЕ ВЫБРАН
-                        </label>
-                    </div>
 
 
                     <div class="form-check form-check-inline">
@@ -110,7 +104,7 @@
 
                     <div class="form-check form-check-inline">
                         <label class="form-check-label">
-                            <input type="radio" class="form-check-input" name="optionresult" value="otkaz">
+                            <input type="radio" class="form-check-input-styled-danger" name="optionresult" value="otkaz">
                             ОТКАЗ
                         </label>
                     </div>
@@ -247,11 +241,11 @@
                 // ОЧИСТКА ДАННЫХ ПОСЛЕ ОБРАБОТКИ КОНТАКТА
                 document.getElementById('resultdata').reset();
 
-                // $("#nochoice").prop('checked');
-                //
-                // $('[name = "optionresult"]').prop('checked', false);
-                //
-                // $("input:radio").prop('checked', false);
+                $("#nochoice").prop('checked');
+
+                $('[name = "optionresult"]').prop('checked', false);
+
+                $("input:radio").prop('checked', false);
 
 
                 $("#zvonok").val('0'); // Индикатор нажатия кнопки
