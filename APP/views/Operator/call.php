@@ -24,7 +24,7 @@
     function handleAuthResult(e) {
         if (e.result) {
             loggedIn = true;
-            cont = $("#idcont").val();
+            cont = $("#contactid").val();
             tel = $("#tel").val();
             call = voxImplant.call(tel, false, cont);
             call.on(VoxImplant.CallEvents.Connected, handleCallConnected);
@@ -393,8 +393,9 @@
 
                     $("#dataperezvona").val(<?=date("Y-m-d")?>);
 
-                    // $("#contactid").val(obj.id);
+
                     // Загрузка таблицы контакт
+                    $("#contactid").val(obj.id);
                     $("#idcontact").text('#' + obj.id);
                     $("#namecont").text(obj.namecont);
                     $("#company").text(obj.namecompany);
