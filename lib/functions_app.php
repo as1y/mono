@@ -15,11 +15,11 @@ function getrecord2($idcont) {
         'account_id' => $account_id,
         'api_key' => $api_key,
         'count' => 1,
-        'timezone' => 'Etc/GMT',
+//        'timezone' => 'Etc/GMT',
         'from_date' =>    '2020-01-01 00:00:00',
         'to_date' => '2020-04-14 00:00:00',
         'with_records' => true,
-        'call_session_history_custom_data' => $idcont,
+//        'call_session_history_custom_data' => $idcont,
     ];
 
 
