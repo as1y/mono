@@ -37,7 +37,7 @@ class OperatorController extends AppController {
 
         if ($company['status'] != 1) {
             $_SESSION['errors'] = "Проект ".$company['company']." в данный момент не активен";
-            redir("/operator/my/");
+            go("/operator/my/");
         }
 
         // МОМЕНТ С ПРОВЕРКОЙ И ДОБАВЛЕНИЕМ ЗАПИСИ!
@@ -47,7 +47,7 @@ class OperatorController extends AppController {
 
         if (empty($contactinfo)) {
             $_SESSION['errors'] = "У компании".$company['company']." закончилась база для обзвона. Попробуйте позднее";
-            redir("/operator/my/");
+            go("/operator/my/");
         }
         //Ставим бронь
         $operator->setbron($contactinfo['id']);

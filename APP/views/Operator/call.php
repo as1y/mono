@@ -233,6 +233,7 @@
 
                 console.log(result);
 
+                if (obj.go) go(obj.go);
                 obj = jQuery.parseJSON(result);
 
                 if (obj.message) {
