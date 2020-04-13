@@ -235,8 +235,13 @@
 
                 alert(obj.tel);
 
+                //Очищаем всею форму
                 $("#resultdata").reset();
-                
+
+
+                //Очищаем всею форму
+
+                document.getElementById('resultdata').reset();
 
                 // ОЧИСТКА ДАННЫХ ПОСЛЕ ОБРАБОТКИ КОНТАКТА
                 $("#zvonok").val('0'); // Индикатор нажатия кнопки
