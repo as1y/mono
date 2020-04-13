@@ -19,8 +19,9 @@ function getrecord2($idcont) {
         'from_date' =>    '2020-01-01 00:00:00',
         'to_date' => '2020-04-14 00:00:00',
         'with_records' => true,
-        'with_calls' => true
-  
+        'with_calls' => true,
+          'call_session_history_custom_data' => '223',
+
 
 //        'call_session_history_custom_data' => $idcont,
     ];
