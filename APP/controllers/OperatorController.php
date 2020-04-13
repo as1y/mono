@@ -139,9 +139,9 @@ class OperatorController extends AppController {
         // Проверяем компанию на статус
         $company = $operator->checkcompany($idc);
         if (empty($company)) {
-            $_SESSION['errors'] = "status";
-            $this->set(compact('error'));
-            return false;
+
+            $_SESSION['errors'] = "Проект остановлен рекламодателем";
+            redir ("/operator/my/");
         }
 
         // Берем контакт на звонок
