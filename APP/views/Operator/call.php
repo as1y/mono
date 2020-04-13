@@ -281,7 +281,7 @@
                 <!-- результат  -->
 
                 <p><input type="hidden" name="zvonok" value="0" id="zvonok"></p>
-                <p><input type="hidden" name="contactid" value="<?=$contactinfo['id'];?>" ></p>
+                <p><input type="hidden" name="contactid" value="<?=$contactinfo['id'];?>" id="contactid" ></p>
                 <p><input type="hidden" value="<?=$contactinfo['tel'];?>" id="tel"></p>
 
 
