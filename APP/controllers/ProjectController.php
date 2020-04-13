@@ -110,6 +110,40 @@ class ProjectController extends AppController {
 
 
 
+    public function operatorAction() {
+
+        $project = new Project;
+        $idc = $_GET['id'];
+        $company = $project->getcom($_GET['id']);
+
+        $META = [
+            'title' => 'Операторы на проекте ',
+            'description' => 'Операторы на проекте ',
+            'keywords' => 'Операторы на проекте ',
+        ];
+        $BREADCRUMBS['HOME'] = ['Label' => $this->BreadcrumbsControllerLabel, 'Url' => $this->BreadcrumbsControllerUrl];
+        $BREADCRUMBS['DATA'][] = ['Label' => "".$company['company'], 'Url' => "/project/?id=".$idc];
+        $BREADCRUMBS['DATA'][] = ['Label' => "Операторы на ".$company['company']];
+        \APP\core\base\View::setMeta($META);
+        \APP\core\base\View::setBreadcrumbs($BREADCRUMBS);
+
+
+        $ASSETS[] = ["js" => "/global_assets/js/plugins/tables/datatables/datatables.min.js"];
+        $ASSETS[] = ["js" => "/assets/js/datatables_basic.js"];
+        \APP\core\base\View::setAssets($ASSETS);
+
+
+
+
+
+        
+
+        $this->set(compact('company'));
+    }
+
+
+
+
 	public function setAction() {
 
 		$project = new Project;

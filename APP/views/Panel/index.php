@@ -98,9 +98,7 @@ if (empty($company)) {
 
 
                                 <?php
-
                                     $countnew = countnewoperators($row);
-
                                 ?>
 
 
