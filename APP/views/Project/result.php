@@ -145,9 +145,7 @@
                             </td>
                             <td>
 
-                                <?php
-                                raskladkazapisi($val['datazapis']);
-                                ?>
+                                <?= raskladkazapisi($val['datazapis'])?>
 
 
 
