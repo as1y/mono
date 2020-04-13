@@ -57,7 +57,7 @@ class Operator extends \APP\core\base\Model {
         R::store($contact);
         // Обновляем статус контакта
 
-        
+
         $this->pluscall();
 
         $result = [

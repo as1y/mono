@@ -40,14 +40,16 @@ class OperatorController extends AppController {
         $optionresult = pole_valid ($_POST['optionresult'], 10, 's');
         if (!empty($optionresult['error'])) message($optionresult['error']);
 
+        if ( $_POST['optionresult'] !="otkaz" &&
+            $_POST['optionresult'] !="bezdostupa" &&
+            $_POST['optionresult'] !="perezvon" &&
+            $_POST['optionresult'] !="result"
+        ) message("Ошибка в передаче параметров");
 
 
         if ($_POST['optionresult'] == "otkaz") $operator->SetOtkaz($_POST);
-
         if ($_POST['optionresult'] == "bezdostupa") $operator->Setbezdostupa($_POST);
-
         if ($_POST['optionresult'] == "perezvon") $operator->SetPerezvon($_POST);
-
         if ($_POST['optionresult'] == "result") $operator->SetResult($_POST, $company);
 
 
