@@ -240,75 +240,47 @@
 
                 if (obj.message) {
                     alert(obj.message);
+                }else{
+
+
+                    document.getElementById('resultdata').reset();
+                    $("#zvonok").val('0'); // Индикатор нажатия кнопки
+                    $("#info").prop("class", "badge badge-success d-block");
+                    $("#info").text('ПОЗВОНИТЕ ПО НОВОМУ КОНТАКТУ');
+                    //Очищаем всею форму
+
+                    // После прелоадера
+                    $("#rw").show();
+                    $("#loader").hide();
+
+                    // Скрываем форму результата
+                    $("#perez").hide();
+                    $("#result").hide();
+                    // Скрываем форму результата
+
+                    // После прелоадера
+
+                    $("#dataperezvona").val(<?=date("Y-m-d")?>);
+
+
+                    // Загрузка таблицы контакт
+                    $("#idcontact").text('#' + obj.id);
+                    $("#namecont").text(obj.namecont);
+                    $("#company").text(obj.namecompany);
+                    $("#comment").text(obj.comment);
+                    $("#siteurl").html('<a href="//' + obj.siteurl + '" target="_blank">' + obj.siteurl + '</a>');
+                    // Загрузка таблицы контакт
+
+                    //Обновление телефона
+                    $("#nomerperezvona").val(obj.tel);
+                    $("#nomerresult").val(obj.tel);
+                    $("#tel").val(obj.tel);
+                    //Обновление телефона
+
+
+                    
                 }
 
-                // ОЧИСТКА ДАННЫХ ПОСЛЕ ОБРАБОТКИ КОНТАКТА
-                document.getElementById('resultdata').reset();
-
-
-                // $('[name = "optionresult"]').prop('checked', false);
-                //
-                // $("input:radio").prop('checked', false);
-
-
-                $("#zvonok").val('0'); // Индикатор нажатия кнопки
-                $("#info").prop("class", "badge badge-success d-block");
-                $("#info").text('ПОЗВОНИТЕ ПО НОВОМУ КОНТАКТУ');
-                //Очищаем всею форму
-
-
-                // После прелоадера
-                $("#rw").show();
-                $("#loader").hide();
-
-                // Скрываем форму результата
-                $("#perez").hide();
-                $("#result").hide();
-                // Скрываем форму результата
-
-                // После прелоадера
-
-                $("#dataperezvona").val(<?=date("Y-m-d")?>);
-
-
-
-
-                // Загрузка таблицы контакт
-                $("#idcontact").text('#' + obj.id);
-                $("#namecont").text(obj.namecont);
-                $("#company").text(obj.namecompany);
-                $("#comment").text(obj.comment);
-                $("#siteurl").html('<a href="//' + obj.siteurl + '" target="_blank">' + obj.siteurl + '</a>');
-                // Загрузка таблицы контакт
-
-                //Обновление телефона
-                $("#nomerperezvona").val(obj.tel);
-                $("#nomerresult").val(obj.tel);
-                $("#tel").val(obj.tel);
-                //Обновление телефона
-
-                // Загрузка нового контакта
-
-
-
-
-
-
-
-                // Загрузка нового контакта
-
-
-
-                // ОЧИСТКА ДАННЫХ ПОСЛЕ ОБРАБОТКИ КОНТАКТА
-
-
-
-
-
-
-
-
-                // ОЧИСТКА ДАННЫХ ПОСЛЕ ОБРАБОТКИ КОНТАКТА
 
 
 
