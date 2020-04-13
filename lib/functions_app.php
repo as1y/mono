@@ -102,10 +102,14 @@ function ticketstatus ($status){
 function rendercontactinfo ($DATA){
     $DATA = json_decode($DATA, true);
 
-  echo   (!empty($DATA['name'])) ?  "<b>ИМЯ:</b>".$DATA['name']."<br>" : "не заполнено";
+  echo  "<b>ИМЯ:</b>".((!empty($DATA['name'])) ?  $DATA['name'] : "не заполнено"). "<br>";
 
 
 
+    (!empty($DATA['tel'])) ?  echo  "<b>ТЕЛЕФОН:</b>".$DATA['tel']."<br>";
+     (!empty($DATA['company']))  ? echo  "<b>КОМПАНИЯ:</b>".$DATA['company']."<br>";
+     (!empty($DATA['site'])) ?  echo  "<b>САЙТ:</b>".$DATA['site']."<br>";
+     (!empty($DATA['tel']))  ? echo  "<b>КОММЕНТАРИЙ:</b>".$DATA['tel']."<br>";
 
 
   return true;
