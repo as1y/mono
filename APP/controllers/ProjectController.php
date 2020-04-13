@@ -132,13 +132,11 @@ class ProjectController extends AppController {
         $ASSETS[] = ["js" => "/assets/js/datatables_basic.js"];
         \APP\core\base\View::setAssets($ASSETS);
 
+        $operators = $project->operatorsinproject($company);
 
 
 
-
-        
-
-        $this->set(compact('company'));
+        $this->set(compact('company', 'operators'));
     }
 
 

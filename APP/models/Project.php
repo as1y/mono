@@ -46,6 +46,29 @@ class Project extends \APP\core\base\Model {
 
 
 
+    public function operatorsinproject($company){
+
+        $OperatoriNaModeracii = [];
+        $OperatoriNaProekte = [];
+
+        $newpass = json_decode($company['operators'], true);
+
+
+        foreach ($newpass as $key=>$val){
+            if ($val == 2) $OperatoriNaProekte[]  = R::load('users', $key);
+            if ($val == 1) $OperatoriNaModeracii[]  = R::load('users', $key);
+        }
+
+
+        $result['OperatoriNaProekte'] = $OperatoriNaProekte;
+        $result['OperatoriNaModeracii'] = $OperatoriNaModeracii;
+
+        return $result;
+
+    }
+
+
+
 
 	public function getcom($idc) {
 
