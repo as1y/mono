@@ -52,18 +52,14 @@
                         </a>
                     </li>
 
-                    <li class="nav-item nav-item-submenu">
-                        <a href="#" class="nav-link "><i class="icon-color-sampler"></i> <span>Результаты</span></a>
-
-                        <ul class="nav nav-group-sub" data-submenu-title="Результаты">
-                            <li class="nav-item"><a href="index.html" class="nav-link active">Default</a></li>
-                            <li class="nav-item"><a href="../../../LTR/material/full/index.html" class="nav-link">Material</a></li>
-                            <li class="nav-item"><a href="../../../LTR/dark/full/index.html" class="nav-link">Dark</a></li>
-                            <li class="nav-item"><a href="../../../LTR/clean/full/index.html" class="nav-link disabled">Clean <span class="badge bg-transparent align-self-center ml-auto">Coming soon</span></a></li>
+                    <li class="nav-item nav-item-submenu nav-item-expanded nav-item-open">
+                        <a href="#" class="nav-link">Level with child</a>
+                        <ul class="nav nav-group-sub" style="">
+                            <li class="nav-item"><a href="#" class="nav-link">Third level</a></li>
+                            <li class="nav-item"><a href="#" class="nav-link">Third level</a></li>
                         </ul>
                     </li>
-
-
+                    
 
 
 
