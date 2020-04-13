@@ -27,6 +27,7 @@ function getrecord2($idcont) {
 
     show($result);
 
+    echo date("Y-m-d h:m:s");
   exit("gdfgdfg");
 
 
