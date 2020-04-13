@@ -226,6 +226,9 @@ class Operator extends \APP\core\base\Model {
         if (!$massivoperatorov) $massivoperatorov = [];
 
 
+        show($massivoperatorov);
+        exit();
+
         $operatorInProject = array_key_exists($_SESSION['ulogin']['id'],$massivoperatorov);
 
         // Проверка на допуск оператора к проекту
