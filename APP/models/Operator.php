@@ -163,6 +163,7 @@ class Operator extends \APP\core\base\Model {
 
         foreach ($company as $key=>$val){
             $massivoperatorov = json_decode($val['operators'], true);
+            if (!$massivoperatorov) $massivoperatorov = [];
             $operatorInProject = array_key_exists($_SESSION['ulogin']['id'],$massivoperatorov);
             if ($operatorInProject == false) unset($company[$key]);
         }

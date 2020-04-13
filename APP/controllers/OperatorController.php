@@ -239,6 +239,9 @@ class OperatorController extends AppController {
 
     }
 
+
+
+
     public function allAction()
     {
 
@@ -266,7 +269,6 @@ class OperatorController extends AppController {
         $this->set(compact('allcompanies'));
 
     }
-
 
     public function companyinfoAction(){
 
