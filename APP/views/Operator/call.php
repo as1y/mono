@@ -12,7 +12,7 @@
 
 
                 <div class="col-md-12">
-                    <table class="table table-striped table-bordered  table-responsive ">
+                    <table class="table table-striped table-bordered  ">
                         <thead>
                         <tr>
                             <th><b>ID</b></th>
