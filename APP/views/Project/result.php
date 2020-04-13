@@ -26,7 +26,10 @@
 
                     <?php
 
-                    foreach ( $company->ownResultList as $key=>$val) :?>
+                    foreach ( $company->ownResultList as $key=>$val):
+                        if ($val['id'] == 0) continue;
+
+                        ?>
                         <tr>
                             <td>
                                 #<?=$val['id']?>
