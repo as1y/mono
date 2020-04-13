@@ -23,6 +23,7 @@ function getrecord2($idcont) {
 
 function raskladkazapisi($DATA) {
 
+    $DATA = json_decode($DATA, true);
     show($DATA);
 
     exit();
