@@ -27,7 +27,7 @@ class OperatorController extends AppController {
         if ($company === false) message("Ошибка допуска к проекту");
         // Обработка ошибок
 
-        if (empty($_POST['optionresult'])) message("Обязательно выберете результат звонка");
+        if (empty($_POST['optionresult']) || $_POST['optionresult'] == "") message("Обязательно выберете результат звонка");
 
         if ($_POST['zvonok'] == 1) message("Вы не совершили звонок");
 
