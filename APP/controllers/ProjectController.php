@@ -100,13 +100,13 @@ class ProjectController extends AppController {
         $company = $project->getcom($_GET['id']);
 
         $META = [
-            'title' => 'Операторы на проекте ',
-            'description' => 'Операторы на проекте ',
-            'keywords' => 'Операторы на проекте ',
+            'title' => 'Результаты',
+            'description' => 'Результаты ',
+            'keywords' => 'Результаты ',
         ];
         $BREADCRUMBS['HOME'] = ['Label' => $this->BreadcrumbsControllerLabel, 'Url' => $this->BreadcrumbsControllerUrl];
         $BREADCRUMBS['DATA'][] = ['Label' => "".$company['company'], 'Url' => "/project/?id=".$idc];
-        $BREADCRUMBS['DATA'][] = ['Label' => "Операторы на ".$company['company']];
+        $BREADCRUMBS['DATA'][] = ['Label' => "Результаты ".$company['company']];
         \APP\core\base\View::setMeta($META);
         \APP\core\base\View::setBreadcrumbs($BREADCRUMBS);
 
