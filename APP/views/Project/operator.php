@@ -3,9 +3,6 @@
 <?php
 
 
-show($operators);
-
-exit();
 
 ?>
 
@@ -41,13 +38,15 @@ exit();
                     <?php
 
 
-                    foreach ($balancelog as $key=>$val):?>
+                    foreach ($operators['OperatoriNaModeracii'] as $key=>$val):?>
                         <tr>
-                            <td><?=$val['date']?></td>
-                            <td class="text-center"><b><?=$val['summa']?></b></td>
-                            <td class="text-center"><?=$val['type']?></td>
-                            <td class="text-center"><?=$val['comment']?></td>
-
+                            <td><?=$val['username']?></td>
+                            <td class="text-center">
+                                <img src="<?=$val['avatar']?>" width="38" height="38" class="rounded-circle" alt="">
+                            </td>
+                            <td class="text-center"><?=$val['totalcall']?></td>
+                            <td class="text-center"><?=$val['aboutme']?></td>
+                            <td class="text-center">""</td>
                         </tr>
 
                     <?php endforeach;?>
