@@ -42,7 +42,12 @@ class PanelController extends AppController {
         \APP\core\base\View::setMeta($META);
 
 
-        if ($_SESSION['ulogin']['role'] == "R") $this->BreadcrumbsControllerLabel = "Кабинет рекламодателя";
+        if ($_SESSION['ulogin']['role'] == "R") {
+            $this->BreadcrumbsControllerLabel = "Кабинет рекламодателя";
+            $this->BreadcrumbsControllerUrl = "/master";
+        }
+
+
         $BREADCRUMBS['HOME'] = ['Label' => $this->BreadcrumbsControllerLabel, 'Url' => $this->BreadcrumbsControllerUrl];
         $BREADCRUMBS['DATA'][] = ['Label' => "Добавление проекта"];
         \APP\core\base\View::setBreadcrumbs($BREADCRUMBS);
