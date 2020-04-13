@@ -60,10 +60,14 @@ class Operator extends \APP\core\base\Model {
         $this->pluscall();
 
         $result = [
-            
-
-
-
+            'users_id' => $_SESSION['ulogin']['id'],
+            'company_id' => $company['id'],
+            'contact_id' => $contact['id'],
+            'DATA' => $RESULTMASS,
+            'CONTACTINFO' => json_encode($contact, true),
+            'status' => 0,
+            'date' => date("Y-m-d"),
+            'type' => $company['type']
         ];
 
 
