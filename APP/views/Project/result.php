@@ -143,7 +143,16 @@
                                 ?>
 
                             </td>
-                            <td>ЗАПИСЬ</td>
+                            <td>
+
+                                <?php
+                                raskladkazapisi($val['data']);
+                                ?>
+
+
+
+
+                            </td>
 
 
 
