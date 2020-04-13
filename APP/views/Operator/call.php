@@ -166,7 +166,7 @@
                 <table class="table  table-bordered text-center">
                     <tr>
 
-                        <td class="wmin-md-400">
+                        <td class="wmin-md-100">
                             <button type="button" id="call" class="btn bg-teal-400 btn-labeled btn-labeled-left"> <i class="icon-phone-wave"></i> ПОЗВОНИТЬ  </button>
 
                             <button type="button"  id="hangup" style="display: none;" class="btn bg-danger btn-labeled btn-labeled-left"> <i class="icon-phone-slash" ></i> ЗАВЕРШИТЬ  </button>
