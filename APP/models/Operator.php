@@ -39,37 +39,35 @@ class Operator extends \APP\core\base\Model {
         $countresult = count($RESULTMASS);
         //Считаем кол-во полей
 
+        // Составляем массив
         foreach ($RESULTMASS as $key=>$val){
-
-
             $valuepole = "";
             $valuepole = $DATA['customresult'.$key];
-
             $valuepole = pole_valid ($valuepole, 300, 's');
             if (!empty($valuepole['error'])) message($valuepole['error']);
             $RESULTMASS[$key]['VAL'] = $valuepole;
-
-
         }
-
-
-
-
-        dumpf($RESULTMASS);
-
-        exit();
-
 
         $RESULTMASS = json_encode($RESULTMASS,true);
 
+
         $contact = $this->getcontact($DATA['contactid']);
         $contact->status =5;
-        $contact->tel = $tel;
         $contact->datacall = date("Y-m-d");
         $contact->operatorcomment = $DATA['operatorcomment'];
         R::store($contact);
 
+        $this->pluscall();
 
+        $result = [
+            
+
+
+
+        ];
+
+
+        $this->addnewBD("result", $result);
 
 
     }
