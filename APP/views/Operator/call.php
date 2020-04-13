@@ -247,9 +247,9 @@
                 // ОЧИСТКА ДАННЫХ ПОСЛЕ ОБРАБОТКИ КОНТАКТА
                 document.getElementById('resultdata').reset();
 
-                // $("#nochoice").prop('checked');
+                $("#nochoice").prop('checked');
 
-                // $('[name = "optionresult"]').prop('checked', false);
+                $('[name = "optionresult"]').prop('checked', false);
 
 
                 $("#zvonok").val('0'); // Индикатор нажатия кнопки
