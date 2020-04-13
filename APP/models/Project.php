@@ -51,7 +51,7 @@ class Project extends \APP\core\base\Model {
 
 
         if ($operators[$idoper] == 1) $operators[$idoper] = 2;
-        
+
         $operators = json_encode($operators, true);
 
         $company->operators = $operators;
