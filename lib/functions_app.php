@@ -100,11 +100,14 @@ function ticketstatus ($status){
 
 
 function rendercontactinfo ($DATA){
+    
     $DATA = json_decode($DATA, true);
 
-  echo  "<b>ИМЯ:</b>".((!empty($DATA['name'])) ?  $DATA['name'] : "не заполнено"). "<br>";
-
-
+  echo  "<b>ИМЯ:</b> ".((!empty($DATA['name'])) ?  $DATA['name'] : "не заполнено"). "<br>";
+    echo  "<b>ТЕЛЕФОН:</b> ".((!empty($DATA['tel'])) ?  $DATA['tel'] : "не заполнено"). "<br>";
+    echo  "<b>КОМПАНИЯ:</b> ".((!empty($DATA['company'])) ?  $DATA['company'] : "не заполнено"). "<br>";
+    echo  "<b>САЙТ:</b> ".((!empty($DATA['site'])) ?  $DATA['site'] : "не заполнено"). "<br>";
+    echo  "<b>КОММЕНТАРИЙ:</b> ".((!empty($DATA['comment'])) ?  $DATA['comment'] : "не заполнено"). "<br>";
 
 
 
