@@ -118,6 +118,7 @@ class ProjectController extends AppController {
 
 
 		$company = $project->companyresult($idc); //СВЯЗЬ С КОМПАНИЕЙ
+        unset($company->ownResultList[0]); // Удалить неведомую хуйню
 
         show($company);
 
