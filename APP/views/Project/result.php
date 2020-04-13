@@ -9,7 +9,7 @@
 
             <div class="card-body">
 
-                <table  class="table datatable-basic text-center">
+                <table  class="table datatable-basic">
                     <thead>
                     <tr>
                         <th><b>ОПЕРАТОР</b></th>
