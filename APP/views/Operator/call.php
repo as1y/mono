@@ -113,7 +113,7 @@
                     <div class="form-check form-check-inline">
                         <label class="form-check-label">
                             <input type="radio" class="form-check-input" name="optionresult" value="bezdostupa" >
-                            ТЕЛЕФОН НЕ ДОСТУПЕН
+                            <span class="badge badge-secondary"> ТЕЛЕФОН НЕ ДОСТУПЕН </span>
                         </label>
                     </div>
 
@@ -121,7 +121,7 @@
                         <label class="form-check-label">
                             <input type="radio" class="form-check-input" value="result" name="optionresult" >
 
-                            <span class="badge badge-secondary">
+                            <span class="badge badge-success">
 
 
                                  <b><?=companytype($company["type"]);?></b> - <?=$company['priceresult'];?> РУБЛЕЙ
