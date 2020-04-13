@@ -308,6 +308,17 @@
 
 <script>
 
+    //КНОПКА ВЫЗОВА
+    $("#call").click(function() {
+        $("#call").hide();
+        $("#hangup").show();
+        $("#info").prop("class", "bg-red bg-font-red");
+        $("#info").text('ИДЕТ РАЗГОВОР');
+        GoCall();
+    });
+    //КНОПКА ВЫЗОВА
+
+
     $('[name = "optionresult"]').click(function() { // Клики на результат вызова
 
        let change = $(this).val();
@@ -322,13 +333,10 @@
 
     });
 
-
     function funcBefore() {
         $("#rw").hide();
         $("#loader").show();
     }
-
-
 
     $('[id = "nextcontact"]').click(function() {
 
