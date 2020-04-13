@@ -13,7 +13,6 @@
                     <thead>
                     <tr>
                         <th><b>ОПЕРАТОР</b></th>
-                        <th><b>Дата</b></th>
                         <th><b>ИСХОДНЫЕ ДАННЫЕ</b></th>
                         <th><b>РЕЗУЛЬТАТ</b></th>
                         <th><b>ЗАПИСЬ</b></th>
@@ -38,8 +37,10 @@
                             <td>
                                 <img src="<?=$userinfo['avatar']?>" width="38" height="38" class="rounded-circle" alt=""><br>
                                 <?=$userinfo['username']?>
+                                <hr>
+                                <?=$val['date']?>
                             </td>
-                            <td class="text-center"><?=$val['date']?></td>
+
 
                             <td class="text-center">
 
