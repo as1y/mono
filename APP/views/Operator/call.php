@@ -239,6 +239,8 @@
                 if (obj.go) go(obj.go);
 
                 if (obj.message) {
+                    $("#rw").show();
+                    $("#loader").hide();
                     alert(obj.message);
                 }else{
 
@@ -278,7 +280,7 @@
                     //Обновление телефона
 
 
-                    
+
                 }
 
 
