@@ -34,6 +34,8 @@ class OperatorController extends AppController {
 
         if ($_POST['optionresult'] == "otkaz") $operator->SetOtkaz($_POST);
 
+        if ($_POST['optionresult'] == "bezdostupa") $operator->Setbezdostupa($_POST);
+
 
         if ($company['status'] != 1) {
             $_SESSION['errors'] = "Проект ".$company['company']." в данный момент не активен";

@@ -5,7 +5,6 @@ use RedBeanPHP\R;
 class Operator extends \APP\core\base\Model {
 
 
-
     public function SetOtkaz($DATA){
 
         $contact = $this->getcontact($DATA['contactid']);
@@ -19,6 +18,18 @@ class Operator extends \APP\core\base\Model {
 
     }
 
+
+    public function Setbezdostupa($DATA){
+
+        $contact = $this->getcontact($DATA['contactid']);
+        $contact->status =4;
+        $contact->datacall = date("Y-m-d");
+        $contact->operatorcomment = $DATA['operatorcomment'];
+        R::store($contact);
+        
+
+
+    }
 
 
 
