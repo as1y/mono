@@ -194,11 +194,27 @@
 
         <?php
         // Вставка панели на главной странице
-        if ($this->route['controller'] == "Panel") require_once( 'includes/recl.php' );
 
-        if ($this->route['controller'] == "Project") require_once( 'includes/project.php' );
 
-        if ($this->route['controller'] == "Operator" && $this->route['action'] != "call") require_once( 'includes/operator.php' );
+        if ($_SESSION['ulogin']['role'] == "O"){
+            if ($this->route['controller'] == "Panel") require_once( 'includes/operator.php' );
+            if ($this->route['controller'] == "Operator" && $this->route['action'] != "call") require_once( 'includes/operator.php' );
+        }
+
+
+        if ($_SESSION['ulogin']['role'] == "R"){
+            if ($this->route['controller'] == "Panel") require_once( 'includes/recl.php' );
+            if ($this->route['controller'] == "Master") require_once( 'includes/recl.php' );
+            if ($this->route['controller'] == "Project") require_once( 'includes/project.php' );
+        }
+
+
+
+
+
+
+
+
 
         ?>
 
