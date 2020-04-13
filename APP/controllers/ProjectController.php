@@ -136,6 +136,22 @@ class ProjectController extends AppController {
 
 
 
+        if (!empty($_GET['action']) && $_GET['action'] == "accept"){
+
+
+            show($_GET);
+
+
+
+            exit();
+
+
+        }
+
+
+
+
+
         $this->set(compact('company', 'operators'));
     }
 
