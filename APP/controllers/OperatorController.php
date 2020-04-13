@@ -10,7 +10,16 @@ class OperatorController extends AppController {
     public $BreadcrumbsControllerLabel = "Кабинет оператора";
     public $BreadcrumbsControllerUrl = "/operator";
 
+    public function calckeyAction(){
+        $this->layaout = false;
+        if($this->isAjax()){
+            $myuser = "vitya";
+            $mypass = "testPassword";
+            echo md5($_REQUEST['key'].'|'.md5($myuser.':voximplant.com:'.$mypass));
+        }
+    }
 
+    
 
     public function callresultAction (){
         $this->layaout = false;

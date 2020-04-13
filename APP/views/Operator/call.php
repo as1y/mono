@@ -33,7 +33,7 @@
             logMessage("Идет дозвон...");
         } else {
             if (e.code == 302) {
-                $.post('/wform/calckey/', {
+                $.post('/operator/calckey/', {
                     "key": e.key
                 }, function(token) {
                     VoxImplant.getInstance().loginWithOneTimeKey("vitya@zarabotat.victorpseo.voximplant.com", token);
