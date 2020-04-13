@@ -6,7 +6,7 @@ use APP\models\Master;
 use APP\core\base\Model;
 
 
-class MasterControllerController extends AppController {
+class MasterController extends AppController {
 	public $layaout = 'PANEL';
     public $BreadcrumbsControllerLabel = "Кабинет рекламодателя";
     public $BreadcrumbsControllerUrl = "/panel";
