@@ -4,24 +4,16 @@ function getrecord2($idcont) {
     global $account_id;
     global $api_key;
 
-//    $params->from_date = '2012-01-01 00:00:00';
-//    $params->to_date = '2014-01-01 00:00:00';
-//    $params->count = 1;
-//    $params->timezone = 'Etc/GMT';
-
     $url = "https://api.voximplant.com/platform_api/GetCallHistory/";
 
     $PARAMS['GET'] = [
         'account_id' => $account_id,
         'api_key' => $api_key,
         'count' => 1,
-//        'timezone' => 'Etc/GMT',
         'from_date' =>    '2020-01-01 00:00:00',
-        'to_date' => '2020-04-14 23:00:00',
-//        'with_records' => true,
-//        'with_calls' => true,
-          'call_session_history_custom_data' => '195',
-
+        'to_date' => date("Y-m-d h:m:s"),
+        'with_records' => true,
+          'call_session_history_custom_data' => $idcont,
     ];
 
 
@@ -30,7 +22,9 @@ function getrecord2($idcont) {
 
     show($result);
 
-    echo date("Y-m-d h:m:s");
+//    echo date("Y-m-d h:m:s");
+
+
   exit("gdfgdfg");
 
 
