@@ -106,7 +106,6 @@
                     <thead>
                     <tr>
                         <th><b>ОПЕРАТОР</b></th>
-                        <th><b>ИСХОДНЫЕ ДАННЫЕ</b></th>
                         <th><b>РЕЗУЛЬТАТ</b></th>
                         <th><b>ЗАПИСИ</b></th>
 
@@ -134,15 +133,7 @@
 
                             </td>
 
-
-                            <td>
-
-                                <?php
-                                rendercontactinfo($val['contactinfo']);
-                                ?>
-
-
-                            </td>
+                            
                             <td>
                                 <b>ДАТА: </b><?=$val['date']?><br>
                                 <?php
