@@ -19,7 +19,6 @@
                             <th><b>Имя</b></th>
                             <th><b>Компания</b></th>
                             <th><b>Сайт</b></th>
-                            <th><b>Комментарий</b></th>
                         </tr>
                         </thead>
                         <tbody>
@@ -36,12 +35,14 @@
                             <td style='vertical-align: middle'>
                                 <div id="siteurl"> <a href="<?=$contactinfo['url']?> " target="_blank"><?=$contactinfo['url']?></a> </div>
                             </td>
-                            <td style='vertical-align: middle'>
-                                <div id="comment"><?=$contactinfo['comment']?></div>
-                            </td>
                         </tr>
                         </tbody>
                     </table>
+
+                   <b> Комментарий:</b>
+                    <div id="comment"><?=$contactinfo['comment']?></div>
+
+
                 </div>
 
 
