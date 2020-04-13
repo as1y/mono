@@ -233,20 +233,21 @@
                     alert(obj.message);
                 }
 
-                alert(obj.tel);
-
-                //Очищаем всею форму
-
-
-
-                //Очищаем всею форму
-
-                document.getElementById('resultdata').reset();
-
                 // ОЧИСТКА ДАННЫХ ПОСЛЕ ОБРАБОТКИ КОНТАКТА
+                document.getElementById('resultdata').reset();
                 $("#zvonok").val('0'); // Индикатор нажатия кнопки
                 $("#info").prop("class", "badge badge-success d-block");
                 $("#info").text('ПОЗВОНИТЕ ПО НОВОМУ КОНТАКТУ');
+                //Очищаем всею форму
+
+
+                // ОЧИСТКА ДАННЫХ ПОСЛЕ ОБРАБОТКИ КОНТАКТА
+
+
+
+
+
+
 
 
                 // ОЧИСТКА ДАННЫХ ПОСЛЕ ОБРАБОТКИ КОНТАКТА
