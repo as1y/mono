@@ -73,7 +73,7 @@ class Operator extends \APP\core\base\Model {
             'status' => 0,
             'date' => date("Y-m-d"),
             'type' => $company['type'],
-            'datazapis' => $DATAZAPIS
+            'datazapis' => json_encode($DATAZAPIS, true),
         ];
 
 

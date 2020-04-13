@@ -100,15 +100,6 @@ class OperatorController extends AppController {
 
         $operator = new Operator();
 
-
-
-       $rz =  getrecord2("196");
-
-        show($rz);
-
-        exit();
-
-
         if (empty($_GET['id'])){
             //$_SESSION['errors'] = "noparam";
             redir ("/operator/my/");
