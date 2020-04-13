@@ -249,7 +249,7 @@
 
                 // $("#nochoice").prop('checked');
 
-                $('[name = "optionresult"]').prop('checked', false);
+                // $('[name = "optionresult"]').prop('checked', false);
 
 
                 $("#zvonok").val('0'); // Индикатор нажатия кнопки
