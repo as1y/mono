@@ -53,13 +53,26 @@
                     </li>
 
 
+                    <li class="nav-item nav-item-submenu">
+                        <a href="#" class="nav-link"><i class="icon-target2"></i> <span>Результаты</span></a>
 
-                    <li class="nav-item">
-                        <a href="/project/result/?id=<?=$_GET['id']?>" class="nav-link <?=isset($active['result']) ? $active['result'] : ''; ?>">
-                            <i class="icon-target2"></i>
-                            <span>	Результаты </span>
-                        </a>
+                        <ul class="nav nav-group-sub" data-submenu-title="Результаты" style="display: none;">
+                            <li class="nav-item">
+                                <a href="/project/result/?id=<?=$_GET['id']?>" class="nav-link <?=isset($active['result']) ? $active['result'] : ''; ?>">
+
+                            </li>
+
+                            <li class="nav-item">
+
+                                <a href="/project/result/?id=<?=$_GET['id']?>" class="nav-link <?=isset($active['result']) ? $active['result'] : ''; ?>">
+                            </li>
+
+
+                        </ul>
                     </li>
+
+
+
 
 
 
