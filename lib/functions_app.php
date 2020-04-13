@@ -102,7 +102,8 @@ function ticketstatus ($status){
 function rendercontactinfo ($DATA){
     $DATA = json_decode($DATA, true);
 
-    echo (!empty($DATA['name'])) ?  "<b>ИМЯ:</b>".$DATA['name']."<br>" : "";
+  echo   (!empty($DATA['name'])) ?  "<b>ИМЯ:</b>".$DATA['name']."<br>" : "-";
+
 
 
 
