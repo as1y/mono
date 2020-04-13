@@ -106,6 +106,7 @@
                     <thead>
                     <tr>
                         <th><b>ОПЕРАТОР</b></th>
+                        <th><b>ДАТА</b></th>
                         <th><b>РЕЗУЛЬТАТ</b></th>
                         <th><b>ЗАПИСИ</b></th>
 
@@ -133,9 +134,10 @@
 
                             </td>
 
+                            <td>     <b>ДАТА: </b><?=$val['date']?><br></td>
 
                             <td>
-                                <b>ДАТА: </b><?=$val['date']?><br>
+
                                 <?php
                                 renderresult($val['data']);
                                 ?>
