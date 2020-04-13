@@ -251,7 +251,9 @@
 
                 $('[name = "optionresult"]').prop('checked', false);
 
+                $("input:radio").prop('checked', false);
 
+                
                 $("#zvonok").val('0'); // Индикатор нажатия кнопки
                 $("#info").prop("class", "badge badge-success d-block");
                 $("#info").text('ПОЗВОНИТЕ ПО НОВОМУ КОНТАКТУ');
