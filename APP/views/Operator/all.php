@@ -1,6 +1,6 @@
 <div class="card">
     <div class="card-header header-elements-inline">
-        <h5 class="card-title">Активные проекты</h5>
+        <h5 class="card-title">ВСЕ ПРОЕКТЫ</h5>
 
     </div>
 
@@ -66,104 +66,6 @@
             </tbody>
         </table>
     </div>
-
-    <!--    <table class="table datatable-basic">-->
-    <!--        <thead>-->
-    <!--        <tr class="text-center">-->
-    <!--            <th>Имя Фамилия</th>-->
-    <!--            <th>Дата регистрации</th>-->
-    <!--            <th>Ваш заработок</th>-->
-    <!--        </tr>-->
-    <!--        </thead>-->
-    <!---->
-    <!---->
-    <!--        <tbody>-->
-    <!---->
-    <!--        <tr class="text-center">-->
-    <!--            <td>-->
-    <!--                Вася-->
-    <!--            </td>-->
-    <!--            <td>Traffic Court Referee</td>-->
-    <!--            <td>22 Jun 1972</td>-->
-    <!--        </tr>-->
-    <!---->
-    <!--        <tr class="text-center">-->
-    <!--            <td>Вася</td>-->
-    <!--            <td>Traffic Court Referee</td>-->
-    <!--            <td>22 Jun 1972</td>-->
-    <!--        </tr>-->
-    <!---->
-    <!---->
-    <!--        <tr class="text-center">-->
-    <!--            <td>Вася</td>-->
-    <!--            <td>Traffic Court Referee</td>-->
-    <!--            <td>22 Jun 1972</td>-->
-    <!--        </tr>        <tr class="text-center">-->
-    <!--            <td>Вася</td>-->
-    <!--            <td>Traffic Court Referee</td>-->
-    <!--            <td>22 Jun 1972</td>-->
-    <!--        </tr>        <tr class="text-center">-->
-    <!--            <td>Вася</td>-->
-    <!--            <td>Traffic Court Referee</td>-->
-    <!--            <td>22 Jun 1972</td>-->
-    <!--        </tr>        <tr class="text-center">-->
-    <!--            <td>Вася</td>-->
-    <!--            <td>Traffic Court Referee</td>-->
-    <!--            <td>22 Jun 1972</td>-->
-    <!--        </tr>        <tr class="text-center">-->
-    <!--            <td>Вася</td>-->
-    <!--            <td>Traffic Court Referee</td>-->
-    <!--            <td>22 Jun 1972</td>-->
-    <!--        </tr>        <tr class="text-center">-->
-    <!--            <td>Вася</td>-->
-    <!--            <td>Traffic Court Referee</td>-->
-    <!--            <td>22 Jun 1972</td>-->
-    <!--        </tr>        <tr class="text-center">-->
-    <!--            <td>Вася</td>-->
-    <!--            <td>Traffic Court Referee</td>-->
-    <!--            <td>22 Jun 1972</td>-->
-    <!--        </tr>        <tr class="text-center">-->
-    <!--            <td>Вася</td>-->
-    <!--            <td>Traffic Court Referee</td>-->
-    <!--            <td>22 Jun 1972</td>-->
-    <!--        </tr>        <tr class="text-center">-->
-    <!--            <td>Вася</td>-->
-    <!--            <td>Traffic Court Referee</td>-->
-    <!--            <td>22 Jun 1972</td>-->
-    <!--        </tr>        <tr class="text-center">-->
-    <!--            <td>Вася</td>-->
-    <!--            <td>Traffic Court Referee</td>-->
-    <!--            <td>22 Jun 1972</td>-->
-    <!--        </tr>        <tr class="text-center">-->
-    <!--            <td>Вася</td>-->
-    <!--            <td>Traffic Court Referee</td>-->
-    <!--            <td>22 Jun 1972</td>-->
-    <!--        </tr>        <tr class="text-center">-->
-    <!--            <td>Вася</td>-->
-    <!--            <td>Traffic Court Referee</td>-->
-    <!--            <td>22 Jun 1972</td>-->
-    <!--        </tr>        <tr class="text-center">-->
-    <!--            <td>Вася</td>-->
-    <!--            <td>Traffic Court Referee</td>-->
-    <!--            <td>22 Jun 1972</td>-->
-    <!--        </tr>        <tr class="text-center">-->
-    <!--            <td>Вася</td>-->
-    <!--            <td>Traffic Court Referee</td>-->
-    <!--            <td>22 Jun 1972</td>-->
-    <!--        </tr>        <tr class="text-center">-->
-    <!--            <td>Вася</td>-->
-    <!--            <td>Traffic Court Referee</td>-->
-    <!--            <td>22 Jun 1972</td>-->
-    <!--        </tr>        <tr class="text-center">-->
-    <!--            <td>Вася</td>-->
-    <!--            <td>Traffic Court Referee</td>-->
-    <!--            <td>22 Jun 1972</td>-->
-    <!--        </tr>-->
-    <!---->
-    <!---->
-    <!---->
-    <!--        </tbody>-->
-    <!--    </table>-->
 
 
 </div>
