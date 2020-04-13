@@ -53,8 +53,7 @@ class OperatorController extends AppController {
         if ($_POST['optionresult'] == "result") $operator->SetResult($_POST, $company);
 
 
-
-
+        // НАЗНАЧЕНИЕ НОВОГО КОНТАКТА
 
         if ($company['status'] != 1) {
             $_SESSION['errors'] = "Проект ".$company['company']." в данный момент не активен";

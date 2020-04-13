@@ -84,14 +84,12 @@ class Operator extends \APP\core\base\Model {
         $nomerperezvona = pole_valid ($_POST['nomerperezvona'], 15, 's');
         if (!empty($nomerperezvona['error'])) message($nomerperezvona['error']);
 
-
         $dataperezvona = pole_valid ($_POST['dataperezvona'], 15, 's');
         if (!empty($dataperezvona['error'])) message($dataperezvona['error']);
 
 
-
         $contact = $this->getcontact($DATA['contactid']);
-        $contact->status =2;
+        $contact->status = 2;
         $contact->dataperezvona = $dataperezvona;
         $contact->tel = $nomerperezvona;
         $contact->datacall = date("Y-m-d");
