@@ -48,8 +48,8 @@
 
                             <td class="text-center">
 
-                                <a href="/operator/companyinfo/?id=6" type="button" class="btn btn-success">Пропустить</a>
-                                <a href="/operator/companyinfo/?id=6" type="button" class="btn btn-danger">Отклонить</a>
+                                <a href="/project/operator/?id=<?=$company['id']?>&idoper=<?=$val['id']?>&action=accept" type="button" class="btn btn-success">Пропустить</a><br>
+                                <a href="/project/operator/?id=<?=$company['id']?>&idoper=<?=$val['id']?>&action=reject" type="button" class="btn btn-danger">Отклонить</a>
 
                             </td>
 
