@@ -51,15 +51,10 @@ class Project extends \APP\core\base\Model {
 
 
         if ($operators[$idoper] == 1) $operators[$idoper] = 2;
-
-
-        show($operators);
-        exit("gdfgdfg");
-
         
         $operators = json_encode($operators, true);
 
-        $company->opertaors = $operators;
+        $company->operators = $operators;
 
         R::store($company);
 
