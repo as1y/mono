@@ -140,7 +140,7 @@
 
                         <label>Дата перезвона<span class="text-danger">*</span></label>
                         <div class="input-group">
-                            <input type="date" name="dataperezvona" class="form-control" placeholder="Дата перезвона">
+                            <input type="date" name="dataperezvona" class="form-control" value="<?=date("d-m-y")?>" placeholder="Дата перезвона">
                         </div>
 
                     </div>
@@ -261,6 +261,10 @@
                 $("#rw").show();
                 $("#loader").hide();
                 // После прелоадера
+
+                $("#dataperezvona").val(<?=date("d-m-y")?>);
+                
+
 
 
                 // Загрузка таблицы контакт

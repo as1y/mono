@@ -18,13 +18,39 @@ class Operator extends \APP\core\base\Model {
 
     }
 
-
     public function Setbezdostupa($DATA){
         $contact = $this->getcontact($DATA['contactid']);
         $contact->status =4;
         $contact->datacall = date("Y-m-d");
         $contact->operatorcomment = $DATA['operatorcomment'];
         R::store($contact);
+    }
+
+
+
+    public function SetPerezvon($DATA){
+
+
+        $nomerperezvona = pole_valid ($_POST['nomerperezvona'], 10, 's');
+        if (!empty($nomerperezvona['error'])) message($nomerperezvona['error']);
+
+
+        $dataperezvona = pole_valid ($_POST['dataperezvona'], 10, 's');
+        if (!empty($dataperezvona['error'])) message($dataperezvona['error']);
+
+
+
+        $contact = $this->getcontact($DATA['contactid']);
+        $contact->status =2;
+        $contact->dataperezvona = $dataperezvona;
+        $contact->tel = $nomerperezvona;
+        $contact->datacall = date("Y-m-d");
+        $contact->operatorcomment = $DATA['operatorcomment'];
+        R::store($contact);
+
+
+
+
     }
 
 
@@ -162,6 +188,6 @@ class Operator extends \APP\core\base\Model {
     }
 
 
-    
+
 }
 ?>
