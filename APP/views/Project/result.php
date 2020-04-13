@@ -52,6 +52,7 @@
 
                             </td>
                             <td>
+                                <b>ДАТА</b><?=$val['date']?><hr>
                                 <?php
                                 renderresult($val['data']);
                                 ?>
