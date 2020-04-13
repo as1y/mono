@@ -227,7 +227,7 @@
             url: '/operator/callresult/?id='+<?=$company['id']?>,
             type: 'POST',
             data: data,
-            // beforeSend: funcBefore,
+            beforeSend: funcBefore,
             cache: false,
             success: function(result) {
 
