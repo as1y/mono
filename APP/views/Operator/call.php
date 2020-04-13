@@ -241,8 +241,7 @@
                 // ОЧИСТКА ДАННЫХ ПОСЛЕ ОБРАБОТКИ КОНТАКТА
                 document.getElementById('resultdata').reset();
 
-                $("#nochoice").prop('checked');
-
+       
                 $('[name = "optionresult"]').prop('checked', false);
 
                 $("input:radio").prop('checked', false);
