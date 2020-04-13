@@ -41,12 +41,13 @@ class Operator extends \APP\core\base\Model {
 
         foreach ($RESULTMASS as $key=>$val){
 
-            
+
             $valuepole = "";
             $valuepole = $DATA['customresult'.$key];
+
             $valuepole = pole_valid ($valuepole, 300, 's');
             if (!empty($valuepole['error'])) message($valuepole['error']);
-            $RESULTMASS[$key]['VAL'] = $DATA[$valuepole];
+            $RESULTMASS[$key]['VAL'] = $valuepole;
 
 
         }
