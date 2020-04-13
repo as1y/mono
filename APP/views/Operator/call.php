@@ -264,7 +264,7 @@
 
                     $("#dataperezvona").val(<?=date("Y-m-d")?>);
 
-
+                    // $("#contactid").val(obj.id);
                     // Загрузка таблицы контакт
                     $("#idcontact").text('#' + obj.id);
                     $("#namecont").text(obj.namecont);

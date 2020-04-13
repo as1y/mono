@@ -138,8 +138,7 @@ class OperatorController extends AppController {
         // Проверяем компанию на статус
         $company = $operator->checkcompany($idc);
         if (empty($company)) {
-
-            $_SESSION['errors'] = "Проект остановлен рекламодателем";
+            $_SESSION['errors'] = "Проект в данный момент не активен";
             redir ("/operator/my/");
         }
 
