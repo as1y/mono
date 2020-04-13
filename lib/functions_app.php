@@ -22,8 +22,6 @@ function getrecord2($idcont) {
 //        'with_calls' => true,
           'call_session_history_custom_data' => '223',
 
-
-//        'call_session_history_custom_data' => $idcont,
     ];
 
 
