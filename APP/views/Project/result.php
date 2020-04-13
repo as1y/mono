@@ -12,9 +12,8 @@
                 <table  class="table datatable-basic text-center">
                     <thead>
                     <tr>
-                        <th><b>ID</b></th>
+                        <th><b>ОПЕРАТОР</b></th>
                         <th><b>Дата</b></th>
-                        <th><b>Оператор</b></th>
                         <th><b>ИСХОДНЫЕ ДАННЫЕ</b></th>
                         <th><b>РЕЗУЛЬТАТ</b></th>
                         <th><b>ЗАПИСЬ</b></th>
@@ -37,13 +36,11 @@
                         ?>
                         <tr>
                             <td>
-                                #<?=$val['id']?>
-                            </td>
-                            <td class="text-center"><?=$val['date']?></td>
-                            <td class="text-center">
                                 <img src="<?=$userinfo['avatar']?>" width="38" height="38" class="rounded-circle" alt=""><br>
                                 <?=$userinfo['username']?>
                             </td>
+                            <td class="text-center"><?=$val['date']?></td>
+
                             <td class="text-center">
 
                                 <?php
