@@ -50,10 +50,6 @@ class Project extends \APP\core\base\Model {
 
 
         $result = R::findOne('result', 'WHERE id = ? AND company_id =? AND status = 0 LIMIT 1', [$idres, $company['id']]);
-
-        var_dump($result);
-        exit();
-
         $result->status = 1;
         R::store($result);
 
