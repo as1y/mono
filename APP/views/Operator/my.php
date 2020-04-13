@@ -16,6 +16,7 @@
                 <th>Цель</th>
                 <th>Оплата</th>
                 <th>Бонус</th>
+                <th>Статус</th>
                 <th>Действие</th>
 
             </tr>
@@ -45,18 +46,23 @@
                     <td class="text-center">
                         За <?=$val['mincall']?> звонков <b> <?=$val['bonuscall']?> руб.</b>
                     </td>
+
                     <td class="text-center">
 
                         <?php
                         $mystatus = json_decode($val['operators'],true)[$_SESSION['ulogin']['id']];
                         ?>
+                        <h4><?=passoperator($mystatus)?></h4>
+
+                    </td>
 
 
-                        Статус: <?=passoperator($mystatus)?><br>
+                    <td class="text-center">
 
+                        <?php if ($mystatus == 2):?>
 
                         <a href="/operator/call/?id=<?=$val['id']?>" type="button" class="btn btn-success"><i class="icon-comment-discussion mr-2"></i>звонить</a>
-
+                         <?php endif;?>
 
 
                     </td>
