@@ -95,7 +95,7 @@
 
                     <div class="form-check form-check-inline">
                         <label class="form-check-label">
-                            <input type="radio" class="form-check-input-styled"  name="optionresult" checked="" id="nochoice" value="" data-fouc>
+                            <input type="radio" class="form-check-input-styled"  name="optionresult" checked id="nochoice" value="" data-fouc>
                             НЕ ВЫБРАН
                         </label>
                     </div>
@@ -247,9 +247,9 @@
                 // ОЧИСТКА ДАННЫХ ПОСЛЕ ОБРАБОТКИ КОНТАКТА
                 document.getElementById('resultdata').reset();
 
-                $("#nochoice").attr('checked');
+                // $("#nochoice").removeAttr('checked');
 
-                $("input:radio").attr('checked', false);
+                $("input:radio").removeAttr('checked');
 
 
                 $("#zvonok").val('0'); // Индикатор нажатия кнопки
