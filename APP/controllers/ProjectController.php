@@ -168,9 +168,6 @@ class ProjectController extends AppController {
         $this->set(compact('company', 'operators'));
     }
 
-
-
-
 	public function setAction() {
 
 		$project = new Project;
@@ -223,9 +220,6 @@ class ProjectController extends AppController {
 
 		$this->set(compact('company'));
 	}
-
-
-
 
 	public function loadbasetelAction() {
 
@@ -287,8 +281,6 @@ class ProjectController extends AppController {
 		$this->set(compact('idc','company', 'idc','path' ,'clientid', 'filename' ));
 	}
 
-
-
 	//Готово
 	public function scriptAction() {
 
@@ -340,7 +332,6 @@ class ProjectController extends AppController {
 		$this->set(compact('idc','company','script' ));
 	}
     //Готово
-
 
     public function baseAction() {
 
@@ -438,8 +429,6 @@ class ProjectController extends AppController {
 
         $this->set(compact('idc','company', 'contact', 'result' ));
     }
-
-
 
 
 	public function resultformAction() {
