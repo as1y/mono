@@ -52,14 +52,17 @@
                         </a>
                     </li>
 
-                    <li class="nav-item nav-item-submenu nav-item-expanded nav-item-open">
-                        <a href="#" class="nav-link">Level with child</a>
-                        <ul class="nav nav-group-sub" style="">
-                            <li class="nav-item active"><a href="#" class="nav-link">Third level</a></li>
-                            <li class="nav-item"><a href="#" class="nav-link">Third level</a></li>
-                        </ul>
+                    <li class="nav-item">
+                        <a href="/project/result/?id=<?=$_GET['id']?>" class="nav-link <?=isset($active['result']) ? $active['result'] : ''; ?>">
+                            <i class="icon-target2"></i>
+                            <span>	Результаты </span>
+                        </a>
                     </li>
-                    
+
+
+
+
+
 
 
 
