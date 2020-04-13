@@ -137,13 +137,18 @@ class ProjectController extends AppController {
 
 
         if (!empty($_GET['action']) && $_GET['action'] == "accept"){
+
+
             $result =  $project->acceptoperator($company, $_GET['idoper']);
+
             if ($result == 1){
                 $_SESSION['success'] = "Оператор пропущен на проект";
                 redir("/project/operator/?id=".$idc);
             }else{
                 $_SESSION['errors'] = $result;
             }
+
+
         }
 
 
