@@ -30,14 +30,17 @@ class PanelController extends AppController {
         $BREADCRUMBS['DATA'][] = ['Label' => "Мои проекты"];
         \APP\core\base\View::setBreadcrumbs($BREADCRUMBS);
 
-
         $panel = new Panel(); //Вызываем Моудль
-
         $company = $panel->allcompany($_SESSION['ulogin']['id']);
 
+        $countnew = $panel->countnewoperators($company);
 
 
-        $this->set(compact('company'));
+
+        $this->set(compact('company', 'countnew'));
+
+
+
 
 
 

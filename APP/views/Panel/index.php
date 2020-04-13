@@ -95,7 +95,22 @@ if (empty($company)) {
 										<i class="icon-grid mr-2"></i>
 										Новых операторов на одобрение
 									</span>
-                                <span class="badge bg-success ml-auto">0</span>
+
+
+                                <?php if($countnew > 0):?>
+                                    <span class="badge bg-warning ml-auto">0</span>
+                                <?php endif;?>
+
+                                <?php if($countnew == 0):?>
+                                    <span class="badge bg-success ml-auto">0</span>
+                                <?php endif;?>
+
+
+
+
+
+
+
                             </a>
 
 
