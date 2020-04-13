@@ -53,8 +53,10 @@ class OperatorController extends AppController {
         $operator->setbron($contactinfo['id']);
         //Ставим бронь
 
-
-
+        if (empty($contactinfo['siteurl'])) $contactinfo['siteurl'] = "";
+        if (empty($contactinfo['comment'])) $contactinfo['comment'] = "";
+        if (empty($contactinfo['namecont'])) $contactinfo['namecont'] = "";
+        if (empty($contactinfo['namecompany'])) $contactinfo['namecompany'] = "";
 
         echo json_encode($contactinfo, true);
 

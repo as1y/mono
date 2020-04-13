@@ -231,6 +231,7 @@
                 console.log(result);
 
                 obj = jQuery.parseJSON(result);
+
                 if (obj.message) {
                     alert(obj.message);
                 }
@@ -250,7 +251,7 @@
 
 
                 // Загрузка таблицы контакт
-                $("#idcontact").text('#' + obj.idcont);
+                $("#idcontact").text('#' + obj.id);
                 $("#namecont").text(obj.namecont);
                 $("#company").text(obj.namecompany);
                 $("#comment").text(obj.comment);
