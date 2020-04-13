@@ -34,7 +34,7 @@
                             <td>
                                 #<?=$val['id']?>
                             </td>
-                            <td class="text-center">Дата</td>
+                            <td class="text-center"><?=$val['date']?></td>
                             <td class="text-center">Оператор</td>
                             <td class="text-center">ИСХОДНЫЕ ДАННЫЕ</td>
                             <td class="text-center">РЕЗУЛЬТАТ</td>
