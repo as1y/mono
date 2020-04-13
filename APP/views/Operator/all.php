@@ -44,7 +44,7 @@
 
                     </td>
                     <td>
-                        За <?=$val['mincall']?> звонков <b> <?=$val['bonuscall']?> руб.</b>
+                        За <?=$val['mincall']?> звонков <span class="badge badge-success"><b> <?=$val['bonuscall']?> руб.</b></span>
                     </td>
                     <td>
 
