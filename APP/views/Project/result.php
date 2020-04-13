@@ -96,7 +96,7 @@
 
         <div class="card">
             <div class="card-header header-elements-inline">
-                <h5 class="card-title">РЕЗУЛЬТАТ НА ПРОВЕРКЕ</h5>
+                <h5 class="card-title">РЕЗУЛЬТАТЫ</h5>
 
             </div>
 
@@ -119,7 +119,7 @@
                     foreach ( $company->ownResultList as $key=>$val):
 
                         if ($val['id'] == 0) continue;
-                        if ($val['status'] != 2 ) continue;
+                        if ($val['status'] != 1 ) continue;
 
                         $userinfo = $val->users;
                         $idcontact = $val->contact_id;
