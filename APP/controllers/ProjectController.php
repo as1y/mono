@@ -120,11 +120,37 @@ class ProjectController extends AppController {
 		$company = $project->companyresult($idc); //СВЯЗЬ С КОМПАНИЕЙ
 
 
-		//$zapisi = $project->records($idc); // ПОЛУЧЕНИЕ ЗАПИСЕЙ
-//		if (isset($_GET['data'])) {
-//			$dataresult = $_GET['data'];
-//			$company = $project->filterresult($company,$dataresult);
-//		}
+        if (!empty($_GET['action']) && $_GET['action'] == "accept"){
+
+
+            exit("fu");
+
+//            $result =  $project->acceptoperator($company, $_GET['idoper']);
+//            if ($result == 1){
+//                $_SESSION['success'] = "Оператор пропущен на проект";
+//                redir("/project/operator/?id=".$idc);
+//            }else{
+//                $_SESSION['errors'] = $result;
+//            }
+
+
+        }
+
+
+        if (!empty($_GET['action']) && $_GET['action'] == "reject"){
+
+
+//            $result =  $project->rejectoperator($company, $_GET['idoper']);
+//            if ($result == 1){
+//                redir("/project/operator/?id=".$idc);
+//            }else{
+//                $_SESSION['errors'] = $result;
+//            }
+
+
+        }
+
+
 
 
 		$this->set(compact('company','zapisi' ));
