@@ -74,12 +74,9 @@ function countnewoperators($company){
     $countnew = json_decode($company['operators'], true);
 
     foreach ($countnew as $key=>$val){
-        echo $val;
+        if ($val == 1) $count++;
     }
 
-
-
-    exit();
 
     return $count;
 }

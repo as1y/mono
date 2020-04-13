@@ -105,7 +105,7 @@ if (empty($company)) {
 
 
                                 <?php if($countnew > 0):?>
-                                    <span class="badge bg-warning ml-auto">0</span>
+                                    <span class="badge bg-warning ml-auto"><?=$countnew?></span>
                                 <?php endif;?>
 
                                 <?php if($countnew == 0):?>
