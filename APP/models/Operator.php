@@ -39,9 +39,13 @@ class Operator extends \APP\core\base\Model {
         $countresult = count($RESULTMASS);
         //Считаем кол-во полей
 
-//        foreach ($RESULTMASS as $key=>$val){
-//            $RESULTMASS[$key]['VAL'] = $DATA['customresult'.$key];
-//        }
+        foreach ($RESULTMASS as $key=>$val){
+            $valuepole = $DATA['customresult'.$key];
+
+            
+            $RESULTMASS[$key]['VAL'] = $DATA[$valuepole];
+
+
 
         dumpf($RESULTMASS);
 
