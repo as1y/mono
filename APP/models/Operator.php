@@ -40,11 +40,14 @@ class Operator extends \APP\core\base\Model {
         //Считаем кол-во полей
 
         foreach ($RESULTMASS as $key=>$val){
+
+            
             $valuepole = "";
             $valuepole = $DATA['customresult'.$key];
             $valuepole = pole_valid ($valuepole, 300, 's');
             if (!empty($valuepole['error'])) message($valuepole['error']);
             $RESULTMASS[$key]['VAL'] = $DATA[$valuepole];
+
 
         }
 
