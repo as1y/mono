@@ -22,6 +22,7 @@ function getrecord2($idcont) {
 
   $result =  fCURL($url, $PARAMS);
 
+    show($result);
 
   exit("gdfgdfg");
 
