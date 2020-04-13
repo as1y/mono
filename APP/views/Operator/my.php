@@ -52,7 +52,7 @@
                         ?>
 
 
-                        Статус: <?=$mystatus?><br>
+                        Статус: <?=passoperator($mystatus)?><br>
 
 
                         <a href="/operator/call/?id=<?=$val['id']?>" type="button" class="btn btn-success"><i class="icon-comment-discussion mr-2"></i>звонить</a>

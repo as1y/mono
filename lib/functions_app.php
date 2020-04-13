@@ -40,14 +40,23 @@ function tematika ($status){
 }
 
 
-
 function companytype ($status){
-	if ($status=="1") return 'ЛИД';
-	if ($status=="2") return 'ВСТРЕЧА';
-	if ($status=="3") return 'УЧАСТИЕ В АКЦИИ';
-	if ($status=="4") return 'ПРИГЛАШЕНИЕ';
-	if ($status=="5") return 'АНКЕТИРОВАНИЕ';
-	if ($status=="6") return 'ИНФОРМИРОВАНИЕ';
+    if ($status=="1") return 'ЛИД';
+    if ($status=="2") return 'ВСТРЕЧА';
+    if ($status=="3") return 'УЧАСТИЕ В АКЦИИ';
+    if ($status=="4") return 'ПРИГЛАШЕНИЕ';
+    if ($status=="5") return 'АНКЕТИРОВАНИЕ';
+    if ($status=="6") return 'ИНФОРМИРОВАНИЕ';
+}
+
+
+
+
+
+function passoperator ($status){
+	if ($status=="1") return '<span class="badge badge-warning">На проверке</span>';
+	if ($status=="2") return '<span class="badge badge-success">Допущен в проект</span>';
+	if ($status=="3") return '<span class="badge badge-danger">Не допущен в проект</span>';
 }
 
 function timecall ($status){
