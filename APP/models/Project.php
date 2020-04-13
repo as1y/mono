@@ -50,11 +50,13 @@ class Project extends \APP\core\base\Model {
         $operators = json_decode( $company['operators'], true);
 
 
+        if ($operators[$idoper] == 1) $operators[$idoper] = 2;
+
+
         show($operators);
         exit("gdfgdfg");
 
-        if ($operators[$idoper] == 1) $operators[$idoper] = 2;
-
+        
         $operators = json_encode($operators, true);
 
         $company->opertaors = $operators;
