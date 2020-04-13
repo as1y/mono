@@ -107,19 +107,38 @@ function rendercontactinfo ($DATA){
 
     <table>
         <tr>
-            <td>ИМЯ</td>
+            <td><b>ИМЯ</b></td>
             <td><?=(!empty($DATA['name'])) ?  $DATA['name'] : "не заполнено"?></td>
         </tr>
+
+        <tr>
+            <td><b>ТЕЛЕФОН</b></td>
+            <td><?=(!empty($DATA['tel'])) ?  $DATA['tel'] : "не заполнено"?></td>
+        </tr>
+
+        <tr>
+            <td><b>КОМПАНИЯ</b></td>
+            <td><?=(!empty($DATA['company'])) ?  $DATA['company'] : "не заполнено"?></td>
+        </tr>
+
+        <tr>
+            <td><b>САЙТ</b></td>
+            <td><?=(!empty($DATA['site'])) ?  $DATA['site'] : "не заполнено"?></td>
+        </tr>
+
+        <tr>
+            <td><b>КОММЕНТАРИЙ</b></td>
+            <td><?=(!empty($DATA['comment'])) ?  $DATA['comment'] : "не заполнено"?></td>
+        </tr>
+
+
+
+
     </table>
 
 
     <?php
     
-    echo  "<b>ТЕЛЕФОН:</b> ".((!empty($DATA['tel'])) ?  $DATA['tel'] : "не заполнено"). "<br>";
-    echo  "<b>КОМПАНИЯ:</b> ".((!empty($DATA['company'])) ?  $DATA['company'] : "не заполнено"). "<br>";
-    echo  "<b>САЙТ:</b> ".((!empty($DATA['site'])) ?  $DATA['site'] : "не заполнено"). "<br>";
-    echo  "<b>КОММЕНТАРИЙ:</b> ".((!empty($DATA['comment'])) ?  $DATA['comment'] : "не заполнено"). "<br>";
-
 
 
   return true;
