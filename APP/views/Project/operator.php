@@ -46,7 +46,12 @@
                             <td class="text-center"><?= (empty($val['totalcall'])) ? 0 : $val['totalcall']  ?></td>
                             <td class="text-center">""</td>
 
-                            <td class="text-center">Пропустить/Отклонить</td>
+                            <td class="text-center">
+
+                                <a href="/operator/companyinfo/?id=6" type="button" class="btn btn-success">Пропустить</a>
+                                <a href="/operator/companyinfo/?id=6" type="button" class="btn btn-danger">Отклонить</a>
+
+                            </td>
 
 
                         </tr>
