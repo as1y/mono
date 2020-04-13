@@ -44,6 +44,33 @@ class Project extends \APP\core\base\Model {
     }
 
 
+
+
+    public function acceptresult($idres){
+        $result = R::findOne('result', 'WHERE id = ? AND users_id =? AND status = 0 LIMIT 1', [$idres, $_SESSION['users']['id']]);
+        $result->status = 1;
+        R::store($result);
+
+        // Пополнения балансов и всякой статистики (звонки/итп)
+
+        // Пополнения балансов и всякой статистики (звонки/итп)
+        return true;
+    }
+
+
+    public function rejectresult($idres){
+        $result = R::findOne('result', 'WHERE id = ? AND users_id =? AND status = 0 LIMIT 1', [$idres, $_SESSION['users']['id']]);
+        $result->status = 2;
+        R::store($result);
+
+
+        return true;
+    }
+
+
+
+
+
     public function acceptoperator($company, $idoper){
 
 
@@ -62,7 +89,6 @@ class Project extends \APP\core\base\Model {
 
 
     }
-
 
 
     public function rejectoperator($company, $idoper){
