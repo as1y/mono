@@ -106,10 +106,6 @@ function rendercontactinfo ($DATA){
 
 
 
-    (!empty($DATA['tel'])) ?  echo  "<b>ТЕЛЕФОН:</b>".$DATA['tel']."<br>";
-     (!empty($DATA['company']))  ? echo  "<b>КОМПАНИЯ:</b>".$DATA['company']."<br>";
-     (!empty($DATA['site'])) ?  echo  "<b>САЙТ:</b>".$DATA['site']."<br>";
-     (!empty($DATA['tel']))  ? echo  "<b>КОММЕНТАРИЙ:</b>".$DATA['tel']."<br>";
 
 
   return true;
