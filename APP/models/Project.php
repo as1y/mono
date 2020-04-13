@@ -44,11 +44,17 @@ class Project extends \APP\core\base\Model {
     }
 
 
-    public function acceptoperator($company){
+    public function acceptoperator($company, $idoper){
+
+
         $operators = json_decode( $company['operators'], true);
-        if ($operators[$_GET['idoper']] == 1) $operators[$_GET['idoper']] = 2;
+
+        if ($operators[$idoper] == 1) $operators[$idoper] = 2;
+
         $operators = json_encode($operators, true);
+
         $company->opertaors = $operators;
+
         R::store($company);
 
         return true;
