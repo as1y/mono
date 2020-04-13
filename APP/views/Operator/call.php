@@ -238,6 +238,7 @@
 
                 // ОЧИСТКА ДАННЫХ ПОСЛЕ ОБРАБОТКИ КОНТАКТА
                 document.getElementById('resultdata').reset();
+                $("input:radio").attr('checked', false);
                 $("#zvonok").val('0'); // Индикатор нажатия кнопки
                 $("#info").prop("class", "badge badge-success d-block");
                 $("#info").text('ПОЗВОНИТЕ ПО НОВОМУ КОНТАКТУ');
