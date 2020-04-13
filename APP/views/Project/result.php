@@ -61,12 +61,11 @@
                             <td class="text-center">
                                 <a href="/project/operator/?id=<?=$company['id']?>&idresult=<?=$val['id']?>&action=accept" type="button" class="btn btn-success">ПОДТВЕРДИТЬ</a>
                                 <a href="/project/operator/?id=<?=$company['id']?>&idresult=<?=$val['id']?>&action=reject" type="button" class="btn btn-danger">ОТКЛОНИТЬ</a>
-
-
+                                
                                 <a href="/project/operator/?id=<?=$company['id']?>&idresult=<?=$val['id']?>&action=reject" type="button" class="btn btn-warning">ДОРАБОТКА</a>
                                 <div class="form-group mb-0">
                                     <label>Комментарий:<span class="text-danger">*</span></label>
-                                    <textarea rows="3" cols="3" class="form-control" disabled="" placeholder="Комментарий оператора"></textarea>
+                                    <textarea rows="3" cols="3" class="form-control" id="<?=$val['id']?>" placeholder="Комментарий оператора"></textarea>
                                 </div>
 
 
