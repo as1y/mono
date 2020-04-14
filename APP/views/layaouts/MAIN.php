@@ -250,41 +250,70 @@
 
 
 
-    <section id="for">
-        <div class="wrapper white-wrapper">
-            <div class="container inner">
-                <div class="row  row align-items-center justify-content-center">
-                    <h3 class="display-3">Для кого</h3>
-                    <div class="space30"></div>
-                    <div class="col-md-4">
-                        <figure class="mb-30"><img src="#" srcset="assets_landing/images/concept/concept14.png 1x, assets_landing/images/concept/concept14@2x.png 2x" alt=""></figure>
-                        <h4>УДАЛЕННЫМ ОПЕРАТОРАМ</h4>
-<!--                        <p class="mb-15">Maecenas faucibus mollis interdum. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus.</p>-->
-
-
-                    </div>
-                    <!--/column -->
-                    <div class="col-md-2">
-
-                    </div>
-                    <div class="space20 d-md-none"></div>
-                    <div class="col-md-4">
-                        <figure class="mb-30"><img src="#" srcset="assets_landing/images/concept/concept19.png 1x, assets_landing/images/concept/concept19@2x.png 2x" alt=""></figure>
-                        <h4>РЕКЛАМОДАТЕЛЯМ</h4>
-<!--                        <p class="mb-15">Maecenas faucibus mollis interdum. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus.</p>-->
-
-
-
-                    </div>
-
+    <div class="wrapper light-wrapper">
+        <div class="container inner">
+            <h2 class="section-title mb-40 text-center">Icon Lists</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <ul class="icon-list bullet-blue">
+                        <li><i class="jam jam-check"></i>Aenean eu leo quam. Pellentesque ornare.</li>
+                        <li><i class="jam jam-check"></i>Nullam quis risus eget urna mollis ornare.</li>
+                        <li><i class="jam jam-check"></i>Donec id elit non mi porta gravida at eget.</li>
+                        <li><i class="jam jam-check"></i>Fusce dapibus, tellus ac cursus commodo.</li>
+                    </ul>
                 </div>
-
+                <!-- /column -->
+                <div class="col-md-4">
+                    <ul class="icon-list bullet-green">
+                        <li><i class="jam jam-chevron-right"></i>Aenean eu leo quam. Pellentesque ornare.</li>
+                        <li><i class="jam jam-chevron-right"></i>Nullam quis risus eget urna mollis ornare.</li>
+                        <li><i class="jam jam-chevron-right"></i>Donec id elit non mi porta gravida at eget.</li>
+                        <li><i class="jam jam-chevron-right"></i>Fusce dapibus, tellus ac cursus commodo.</li>
+                    </ul>
+                </div>
+                <!-- /column -->
+                <div class="col-md-4">
+                    <ul class="icon-list bullet-pink">
+                        <li><i class="jam jam-plus-circle"></i>Aenean eu leo quam. Pellentesque ornare.</li>
+                        <li><i class="jam jam-plus-circle"></i>Nullam quis risus eget urna mollis ornare.</li>
+                        <li><i class="jam jam-plus-circle"></i>Donec id elit non mi porta gravida at eget.</li>
+                        <li><i class="jam jam-plus-circle"></i>Fusce dapibus, tellus ac cursus commodo.</li>
+                    </ul>
+                </div>
+                <!-- /column -->
+                <div class="space20 d-none d-md-block"></div>
+                <div class="col-md-4">
+                    <ul class="icon-list bullet-red">
+                        <li><i class="jam jam-star"></i>Aenean eu leo quam. Pellentesque ornare.</li>
+                        <li><i class="jam jam-star"></i>Nullam quis risus eget urna mollis ornare.</li>
+                        <li><i class="jam jam-star"></i>Donec id elit non mi porta gravida at eget.</li>
+                        <li><i class="jam jam-star"></i>Fusce dapibus, tellus ac cursus commodo.</li>
+                    </ul>
+                </div>
+                <!-- /column -->
+                <div class="col-md-4">
+                    <ul class="icon-list bullet-brown">
+                        <li><i class="jam jam-arrow-right"></i>Aenean eu leo quam. Pellentesque ornare.</li>
+                        <li><i class="jam jam-arrow-right"></i>Nullam quis risus eget urna mollis ornare.</li>
+                        <li><i class="jam jam-arrow-right"></i>Donec id elit non mi porta gravida at eget.</li>
+                        <li><i class="jam jam-arrow-right"></i>Fusce dapibus, tellus ac cursus commodo.</li>
+                    </ul>
+                </div>
+                <!-- /column -->
+                <div class="col-md-4">
+                    <ul class="icon-list bullet-orange">
+                        <li><i class="jam jam-minus-circle"></i>Aenean eu leo quam. Pellentesque ornare.</li>
+                        <li><i class="jam jam-minus-circle"></i>Nullam quis risus eget urna mollis ornare.</li>
+                        <li><i class="jam jam-minus-circle"></i>Donec id elit non mi porta gravida at eget.</li>
+                        <li><i class="jam jam-minus-circle"></i>Fusce dapibus, tellus ac cursus commodo.</li>
+                    </ul>
+                </div>
+                <!-- /column -->
             </div>
-            <!-- /.container -->
+            <!-- /.row -->
         </div>
-
-    </section>
-
+        <!-- /.container -->
+    </div>
 
     <section id="howitworks">
         <div class="wrapper gray-wrapper">
@@ -375,6 +404,8 @@
         </div>
         <!-- /.wrapper -->
     </section>
+
+
 
 
     <div class="wrapper white-wrapper-wrapper">
