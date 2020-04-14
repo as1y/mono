@@ -258,74 +258,80 @@
                     <!--/column -->
                     <div class="space20 d-md-none"></div>
                     <div class="space50 d-none d-md-block d-lg-none"></div>
-<!--                    <div class="col-lg-6 pr-60 pr-md-15">-->
-<!--                        <h3 class="display-3">Как это работает?</h3>-->
-<!--                        <div class="space30"></div>-->
-<!--                        <div class="d-flex flex-row justify-content-center">-->
-<!---->
-<!---->
-<!--                            <div class="col-md-3 text-center">-->
-<!--                                <div class="icon icon-svg mb-20"><img src="assets_landing/images/icons/ui-user.png" alt=""></div>-->
-<!--                            </div>-->
-<!---->
-<!---->
-<!--                            <div>-->
-<!--                                <h5>1. Регистрация на сайте</h5>-->
-<!--                                <p class="mb-0">Простая <a href="/user/register/" target="_blank">регистрация на сайте</a> . Укажите Ваше Имя и e-mail</p>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!---->
-<!---->
-<!---->
-<!--                        <div class="space30"></div>-->
-<!--                        <div class="d-flex flex-row justify-content-center">-->
-<!---->
-<!---->
-<!--                            <div class="col-md-3 text-center">-->
-<!--                                <div class="icon icon-svg mb-20"><img src="assets_landing/images/icons/hs-browser.png" alt=""></div>-->
-<!--                            </div>-->
-<!---->
-<!---->
-<!--                            <div>-->
-<!--                                <h5>2. Пройдите маркетинговый опрос</h5>-->
-<!--                                <p class="mb-0">Расскажите о ваших интересах и предпочтениях в интернете</p>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!---->
-<!---->
-<!--                        <div class="space30"></div>-->
-<!--                        <div class="d-flex flex-row justify-content-center">-->
-<!---->
-<!---->
-<!--                            <div class="col-md-3 text-center">-->
-<!--                                <div class="icon icon-svg mb-20"><img src="assets_landing/images/icons/ui-credit-card.png" alt=""></div>-->
-<!--                            </div>-->
-<!---->
-<!---->
-<!--                            <div>-->
-<!--                                <h5>3. Получите 500 рублей</h5>-->
-<!--                                <p class="mb-0">Получите 500 рублей и сразу закажите вывод на банковскую карту</p>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!---->
-<!--                        <div class="space30"></div>-->
-<!--                        <div class="d-flex flex-row justify-content-center">-->
-<!---->
-<!---->
-<!--                            <div class="col-md-3 text-center">-->
-<!--                                <div class="icon icon-svg mb-20"><img src="assets_landing/images/icons/ui-chat.png" alt=""></div>-->
-<!--                            </div>-->
-<!---->
-<!---->
-<!--                            <div>-->
-<!--                                <h5>Пригласите друзей и родственников</h5>-->
-<!--                                <p class="mb-0">За каждого прошедшего опрос человека вы получите 100 рублей. </p>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!---->
-<!---->
-<!---->
-<!--                    </div>-->
+
+
+
+
+
+               
+
+                                        <div class="col-lg-6 pr-60 pr-md-15">
+                        <h3 class="display-3">Как это работает?</h3>
+                        <div class="space30"></div>
+                        <div class="d-flex flex-row justify-content-center">
+
+
+                            <div class="col-md-3 text-center">
+                                <div class="icon icon-svg mb-20"><img src="assets_landing/images/icons/ui-user.png" alt=""></div>
+                            </div>
+
+
+                            <div>
+                                <h5>Операторы совершают звонки</h5>
+                                <p class="mb-0">Простая <a href="/user/register/" target="_blank">регистрация на сайте</a> . Укажите Ваше Имя и e-mail</p>
+                            </div>
+                        </div>
+
+
+
+                        <div class="space30"></div>
+                        <div class="d-flex flex-row justify-content-center">
+
+
+                            <div class="col-md-3 text-center">
+                                <div class="icon icon-svg mb-20"><img src="assets_landing/images/icons/hs-browser.png" alt=""></div>
+                            </div>
+
+
+                            <div>
+                                <h5>Выполняют задания</h5>
+                                <p class="mb-0">Например находят заинтересованного клиента.</p>
+                            </div>
+                        </div>
+
+
+                        <div class="space30"></div>
+                        <div class="d-flex flex-row justify-content-center">
+
+
+                            <div class="col-md-3 text-center">
+                                <div class="icon icon-svg mb-20"><img src="assets_landing/images/icons/ui-credit-card.png" alt=""></div>
+                            </div>
+
+                            <div>
+                                <h5>Рекламодатель присваивает статус</h5>
+                                <p class="mb-0">Отклонен, подтвержден, доработка. В случае если статус подтвержден оператору поступает оплата за успешную заявку</p>
+                            </div>
+                        </div>
+
+                        <div class="space30"></div>
+                        <div class="d-flex flex-row justify-content-center">
+
+
+                            <div class="col-md-3 text-center">
+                                <div class="icon icon-svg mb-20"><img src="assets_landing/images/icons/ui-chat.png" alt=""></div>
+                            </div>
+
+
+                            <div>
+                                <h5>Пригласите друзей и родственников</h5>
+                                <p class="mb-0">За каждого прошедшего опрос человека вы получите 100 рублей. </p>
+                            </div>
+                        </div>
+
+
+
+                    </div>
                     <!--/column -->
                 </div>
                 <!--/.row -->
