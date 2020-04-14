@@ -247,6 +247,39 @@
     </div>
     <!-- /.wrapper -->
 
+    <section id="for">
+        <div class="wrapper dark-wrapper inverse-text">
+            <div class="container inner">
+                <h3 class="display-3 text-center">Для кого это</h3>
+                <div class="space30"></div>
+                <div class="row  text-center align-items-end">
+                    <div class="col-md-5">
+                        <figure class="mb-30"><img src="#" srcset="assets_landing/images/concept/concept14.png 1x, assets_landing/images/concept/concept14@2x.png 2x" alt=""></figure>
+                        <h4>Social Media</h4>
+                        <p class="mb-15">Maecenas faucibus mollis interdum. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus.</p>
+                        <div class="text-center"><a href="#" class="more">Learn more</a></div>
+                    </div>
+                    <!--/column -->
+                    <div class="col-md-2">
+
+                    </div>
+                    <div class="space20 d-md-none"></div>
+                    <div class="col-md-5">
+                        <figure class="mb-30"><img src="#" srcset="assets_landing/images/concept/concept19.png 1x, assets_landing/images/concept/concept19@2x.png 2x" alt=""></figure>
+                        <h4>Digital Marketing</h4>
+                        <p class="mb-15">Maecenas faucibus mollis interdum. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus.</p>
+                        <div class="text-center"><a href="#" class="more">Learn more</a></div>
+                    </div>
+
+                </div>
+
+            </div>
+            <!-- /.container -->
+        </div>
+
+    </section>
+
+    
     <section id="howitworks">
         <div class="wrapper white-wrapper">
             <div class="container">
@@ -337,37 +370,7 @@
         <!-- /.wrapper -->
     </section>
 
-    <section id="for">
-        <div class="wrapper dark-wrapper inverse-text">
-            <div class="container inner">
-                <h3 class="display-3 text-center">Для кого это</h3>
-                <div class="space30"></div>
-                <div class="row  text-center align-items-end">
-                    <div class="col-md-5">
-                        <figure class="mb-30"><img src="#" srcset="assets_landing/images/concept/concept14.png 1x, assets_landing/images/concept/concept14@2x.png 2x" alt=""></figure>
-                        <h4>Social Media</h4>
-                        <p class="mb-15">Maecenas faucibus mollis interdum. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus.</p>
-                        <div class="text-center"><a href="#" class="more">Learn more</a></div>
-                    </div>
-                    <!--/column -->
-                    <div class="col-md-2">
 
-                    </div>
-                    <div class="space20 d-md-none"></div>
-                    <div class="col-md-5">
-                        <figure class="mb-30"><img src="#" srcset="assets_landing/images/concept/concept19.png 1x, assets_landing/images/concept/concept19@2x.png 2x" alt=""></figure>
-                        <h4>Digital Marketing</h4>
-                        <p class="mb-15">Maecenas faucibus mollis interdum. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus.</p>
-                        <div class="text-center"><a href="#" class="more">Learn more</a></div>
-                    </div>
-
-                </div>
-
-            </div>
-            <!-- /.container -->
-        </div>
-
-    </section>
 
 
 
