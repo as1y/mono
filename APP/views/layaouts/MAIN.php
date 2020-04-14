@@ -208,7 +208,7 @@
                              data-responsive="on"
                              data-responsive_offset="on" style="z-index: 9;">
 
-                            Биржа удаленных операторов на телефоне - CASHCALL.RU
+                            Биржа удаленных операторов на телефоне
 
 
                         </div>
