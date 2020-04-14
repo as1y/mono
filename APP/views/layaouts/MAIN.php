@@ -1,5 +1,5 @@
 <?php
-if(mail("email@example.com", "TEST SUBJECT", "TEST BODY"))
+if(mail("raskrutkaweb@yandex.ru", "TEST SUBJECT", "TEST BODY"))
     echo "Почтовая система работает!";
 else
     echo "Неудача, почтовая система не работает, попробуйте еще!";
