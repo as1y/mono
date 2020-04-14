@@ -33,7 +33,7 @@ function raskladkazapisi($DATA) {
             $date = $val['start_date'];
             $url = $val['records']['0']['record_url'];
 
-       
+
             $a = "<i class='icon-calendar3'></i>".$date."<p><audio src='".$val['records']['0']['record_url']."' controls></audio></p>";
 
 
@@ -142,37 +142,13 @@ function rendercontactinfo ($DATA){
 
 ?>
 
-    <table>
-        <tr>
-            <td><b>ИМЯ</b></td>
-            <td><?=(!empty($DATA['name'])) ?  $DATA['name'] : "не заполнено"?></td>
-        </tr>
+    <b>ИМЯ</b> <?=(!empty($DATA['name'])) ?  $DATA['name'] : "не заполнено"?><br>
+    <b>ТЕЛЕФОН</b> <?=(!empty($DATA['tel'])) ?  $DATA['tel'] : "не заполнено"?><br>
+    <b>КОМПАНИЯ</b> <?=(!empty($DATA['company'])) ?  $DATA['company'] : "не заполнено"?><br>
+    <b>САЙТ</b> <?=(!empty($DATA['site'])) ?  $DATA['site'] : "не заполнено"?><br>
+    <b>КОММЕНТАРИЙ</b> <?=(!empty($DATA['comment'])) ?  $DATA['comment'] : "не заполнено"?><br>
 
-        <tr>
-            <td><b>ТЕЛЕФОН</b></td>
-            <td><?=(!empty($DATA['tel'])) ?  $DATA['tel'] : "не заполнено"?></td>
-        </tr>
-
-        <tr>
-            <td><b>КОМПАНИЯ</b></td>
-            <td><?=(!empty($DATA['company'])) ?  $DATA['company'] : "не заполнено"?></td>
-        </tr>
-
-        <tr>
-            <td><b>САЙТ</b></td>
-            <td><?=(!empty($DATA['site'])) ?  $DATA['site'] : "не заполнено"?></td>
-        </tr>
-
-        <tr>
-            <td><b>КОММЕНТАРИЙ</b></td>
-            <td><?=(!empty($DATA['comment'])) ?  $DATA['comment'] : "не заполнено"?></td>
-        </tr>
-
-
-
-
-    </table>
-
+    
 
     <?php
 
