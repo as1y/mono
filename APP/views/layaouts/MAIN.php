@@ -146,7 +146,7 @@
                              data-x="['center','center','center','center']"
                              data-y="['middle','middle','middle','middle']"
                              data-hoffset="['260','260','260','260']"
-                             data-voffset="['200','200','200','200']"
+                             data-voffset="['20','20','20','20']"
                              data-frames='[{"delay":600,"speed":1200,"frame":"0","from":"y:bottom;rX:90deg;","to":"o:1;","ease":"Power4.easeOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
                              data-visibility="['on','on','on','off']"
                              data-width="none"
