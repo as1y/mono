@@ -266,11 +266,6 @@
 
 
                                         <div class="col-lg-6 pr-60 pr-md-15">
-
-
-
-
-
                         <h3 class="display-3">Как это работает?</h3>
                         <div class="space30"></div>
                         <div class="d-flex flex-row justify-content-center">
@@ -283,24 +278,10 @@
 
                             <div>
                                 <h5>Операторы совершают звонки</h5>
-<!--                                <p class="mb-0">Простая <a href="/user/register/" target="_blank">регистрация на сайте</a> . Укажите Ваше Имя и e-mail</p>-->
+                                <p class="mb-0">Простая <a href="/user/register/" target="_blank">регистрация на сайте</a> . Укажите Ваше Имя и e-mail</p>
                             </div>
                         </div>
 
-                                            <div class="space30"></div>
-                                            <div class="d-flex flex-row justify-content-center">
-
-
-                                                <div class="col-md-3 text-center">
-                                                    <div class="icon icon-svg mb-20"><img src="assets_landing/images/icons/hs-browser.png" alt=""></div>
-                                                </div>
-
-
-                                                <div>
-                                                    <h5>Выполняют задания</h5>
-                                                    <p class="mb-0">Например находят заинтересованного клиента.</p>
-                                                </div>
-                                            </div>
 
 
                         <div class="space30"></div>
