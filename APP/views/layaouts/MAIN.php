@@ -79,7 +79,184 @@
         <!-- /.container -->
     </nav>
     <!-- /.navbar -->
- 
+
+
+    <div class="offcanvas-info inverse-text">
+        <button class="plain offcanvas-close offcanvas-info-close"><i class="jam jam-close"></i></button>
+        <a href="index.html"><img src="#" srcset="assets_landing/images/logo-light.png 1x, assets_landing/images/logo-light@2x.png 2x" alt="" /></a>
+        <div class="space30"></div>
+        <p>Snowlake is a multi-concept and powerful site template contains rich layouts with possibility of unlimited combinations & beautiful elements.</p>
+        <div class="space20"></div>
+        <div class="widget">
+            <h5 class="widget-title">Contact Info</h5>
+            <address> Moonshine St. 14/05 <br /> Light City, London <div class="space20"></div>
+                <a href="mailto:first.last@email.com" class="nocolor">info@email.com</a><br /> +00 (123) 456 78 90 </address>
+        </div>
+        <!-- /.widget -->
+        <div class="widget">
+            <h3 class="widget-title">Learn More</h3>
+            <ul class="list-unstyled">
+                <li><a href="#" class="nocolor">Our Story</a></li>
+                <li><a href="#" class="nocolor">Terms of Use</a></li>
+                <li><a href="#" class="nocolor">Privacy Policy</a></li>
+                <li><a href="#" class="nocolor">Contact Us</a></li>
+            </ul>
+        </div>
+        <!-- /.widget -->
+        <div class="widget">
+            <h3 class="widget-title">Follow Us</h3>
+            <ul class="social social-mute social-s ml-auto">
+                <li><a href="#"><i class="jam jam-twitter"></i></a></li>
+                <li><a href="#"><i class="jam jam-facebook"></i></a></li>
+                <li><a href="#"><i class="jam jam-instagram"></i></a></li>
+                <li><a href="#"><i class="jam jam-vimeo"></i></a></li>
+                <li><a href="#"><i class="jam jam-youtube"></i></a></li>
+            </ul>
+        </div>
+        <!-- /.widget -->
+    </div>
+
+
+
+    <!-- /.offcanvas-info -->
+    <div class="wrapper bg-opacity-default">
+        <div class="rev_slider_wrapper fullwidth-container dark-spinner">
+            <div id="slider7" class="rev_slider fullwidthbanner" data-version="5.4.7">
+                <ul>
+                    <li data-transition="fade" data-thumb=""><img src="assets_landing/images/dummy.png" style="background:transparent" alt="" />
+                        <div class="tp-caption"
+                             data-x="['center','center','center','center']"
+                             data-y="['bottom','bottom','bottom','bottom']"
+                             data-hoffset="['0','0','0','0']"
+                             data-voffset="['-2','-2','-2','-2']"
+                             data-frames='[{"delay":0,"speed":1200,"frame":"0","from":"opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
+                             data-visibility="['on','on','on','on']"
+                             data-width="none"
+                             data-height="none"
+                             data-type="image"
+                             data-responsive="on"
+                             data-responsive_offset="on"
+                             data-basealign="slide" style="z-index: 5;"><img
+                                    data-lazyload="" src="assets_landing/images/art/rocket1.png"
+                                    data-ww="['100%','100%','100%','100%']"
+                                    data-hh="auto" alt="" />
+                        </div>
+                        <!-- /.tp-caption -->
+                        <div class="tp-caption"
+                             data-x="['center','center','center','center']"
+                             data-y="['middle','middle','middle','middle']"
+                             data-hoffset="['260','260','260','260']"
+                             data-voffset="['60','60','60','60']"
+                             data-frames='[{"delay":600,"speed":1200,"frame":"0","from":"y:bottom;rX:90deg;","to":"o:1;","ease":"Power4.easeOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
+                             data-visibility="['on','on','on','off']"
+                             data-width="none"
+                             data-height="none"
+                             data-type="image"
+                             data-responsive="on"
+                             data-responsive_offset="on"
+                             data-basealign="slide" style="z-index: 5;"><img
+                                    data-lazyload="" src="assets_landing/images/art/rocket2.png"
+                                    data-ww="['220','220','220','220']"
+                                    data-hh="auto" alt="" />
+                        </div>
+                        <!-- /.tp-caption -->
+                        <div class="tp-caption"
+                             data-x="['center','center','center','center']"
+                             data-y="['middle','middle','middle','middle']"
+                             data-hoffset="['260','260','260','260']"
+                             data-voffset="['-170','-170','-170','-170']"
+                             data-frames='[{"delay":0,"speed":1200,"frame":"0","from":"opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
+                             data-visibility="['on','on','on','off']"
+                             data-width="none"
+                             data-height="none"
+                             data-type="image"
+                             data-responsive="on"
+                             data-responsive_offset="on"
+                             data-basealign="slide" style="z-index: 6;"><img
+                                    data-lazyload="" src="assets_landing/images/art/rocket3.png"
+                                    data-ww="['380','380','380','380']"
+                                    data-hh="auto" alt="" />
+                        </div>
+                        <!-- /.tp-caption -->
+                        <div class="tp-caption"
+                             data-x="['center','center','center','center']"
+                             data-y="['middle','middle','middle','middle']"
+                             data-hoffset="['300','300','300','300']"
+                             data-voffset="['70','70','70','70']"
+                             data-frames='[{"delay":0,"speed":1200,"frame":"0","from":"opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
+                             data-visibility="['on','on','on','off']"
+                             data-width="none"
+                             data-height="none"
+                             data-type="image"
+                             data-responsive="on"
+                             data-responsive_offset="on"
+                             data-basealign="slide" style="z-index: 5;"><img
+                                    data-lazyload="" src="assets_landing/images/art/rocket4.png"
+                                    data-ww="['480','480','480','480']"
+                                    data-hh="auto" alt="" />
+                        </div>
+                        <!-- /.tp-caption -->
+                        <div class="tp-caption font-weight-500 color-dark"
+                             data-x="['left','left','left','center']"
+                             data-y="middle"
+                             data-hoffset="['50','30','30','0']"
+                             data-voffset="['-125','-125','-125','-105']"
+                             data-fontsize="['40','40','34','36']"
+                             data-lineheight="['50','50','44','46']"
+                             data-width="['500','500','420','340']"
+                             data-textAlign="['left','left','left','center']"
+                             data-whitespace="['normal','normal','normal','normal']"
+                             data-frames='[{"delay":1000,"speed":1200,"frame":"0","from":"y:-50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
+                             data-responsive="on"
+                             data-responsive_offset="on" style="z-index: 9;">
+
+                            Биржа удаленных операторов на телефоне
+
+
+                        </div>
+                        <!-- /.tp-caption -->
+                        <div class="tp-caption font-weight-300 color-dark"
+                             data-x="['left','left','left','center']"
+                             data-y="middle"
+                             data-hoffset="['50','30','30','0']"
+                             data-voffset="['-20','-20','-20','30']"
+                             data-fontsize="['26','26','22','24']"
+                             data-lineheight="['36','36','32','34']"
+                             data-width="['500','500','420','340']"
+                             data-textAlign="['left','left','left','center']"
+                             data-whitespace="['normal','normal','normal','normal']"
+                             data-frames='[{"delay":1500,"speed":1200,"frame":"0","from":"x:-50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
+                             data-responsive="on"
+                             data-responsive_offset="on" style="z-index: 9;">
+
+                          <b>CASHCALL.RU</b> -  Сервис подбора и контроля операторов на телефоне.
+
+
+                        </div>
+                        <!-- /.tp-caption -->
+                        <a class="tp-caption btn btn-l btn-default"
+                           data-x="['left','left','left','center']"
+                           data-y="middle"
+                           data-hoffset="['50','30','30','0']"
+                           data-voffset="['75','75','75','135']"
+                           data-width="['auto','auto','auto','auto']"
+                           data-textAlign="['left','left','left','center']"
+                           data-frames='[{"delay":2000,"speed":1200,"frame":"0","from":"y:50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
+                           data-responsive="on"
+                           data-responsive_offset="on" style="z-index: 9;" href="/user/register/">Регистрация
+                        </a>
+
+                        <!-- /.tp-caption -->
+                    </li>
+                </ul>
+                <div class="tp-bannertimer tp-bottom"></div>
+            </div>
+            <!-- /.rev_slider -->
+        </div>
+        <!-- /.rev_slider_wrapper -->
+    </div>
+    <!-- /.wrapper -->
+
 
 
 </div>
