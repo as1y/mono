@@ -248,7 +248,7 @@
     <!-- /.wrapper -->
 
     <section id="for">
-        <div class="wrapper dark-wrapper inverse-text">
+        <div class="wrapper white-wrapper">
             <div class="container inner">
                 <h3 class="display-3 text-center">Для кого это</h3>
                 <div class="space30"></div>
@@ -281,9 +281,9 @@
 
 
     <section id="howitworks">
-        <div class="wrapper white-wrapper">
+        <div class="wrapper dark-wrapper inverse-text">
             <div class="container">
-
+                <div class="space30"></div>
                 <div class="row align-items-center">
                     <div class="col-lg-6 order-lg-2">
                         <figure><img src="#" srcset="assets_landing/images/concept/concept14.png 1x, assets_landing/images/concept/concept14@2x.png 2x" alt=""></figure>
