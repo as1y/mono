@@ -252,7 +252,7 @@
             <div class="row counter">
                 <div class="col-md-6 col-lg-3 text-center">
                     <div class="box bg-white shadow">
-                        <div class="icon icon-svg mb-20"><img src="style/images/icons/hs-check.png" alt=""></div>
+                        <div class="icon icon-svg mb-20"><img src="/assets_landing/images/icons/hs-check.png" alt=""></div>
                         <h3 class="value">7518</h3>
                         <p>Completed Projects</p>
                     </div>
@@ -261,7 +261,7 @@
                 <!--/column -->
                 <div class="col-md-6 col-lg-3 text-center">
                     <div class="box bg-white shadow">
-                        <div class="icon icon-svg mb-20"><img src="style/images/icons/st-handshake.png" alt=""></div>
+                        <div class="icon icon-svg mb-20"><img src="/assets_landing/images/icons/st-handshake.png" alt=""></div>
                         <h3 class="value">3472</h3>
                         <p>Satisfied Customers</p>
                     </div>
@@ -271,7 +271,7 @@
                 <div class="space30 d-none d-md-block d-lg-none"></div>
                 <div class="col-md-6 col-lg-3 text-center">
                     <div class="box bg-white shadow">
-                        <div class="icon icon-svg mb-20"><img src="style/images/icons/sm-develop.png" alt=""></div>
+                        <div class="icon icon-svg mb-20"><img src="/assets_landing/images/icons/sm-develop.png" alt=""></div>
                         <h3 class="value">2184</h3>
                         <p>Expert Employees</p>
                     </div>
@@ -280,7 +280,7 @@
                 <!--/column -->
                 <div class="col-md-6 col-lg-3 text-center">
                     <div class="box bg-white shadow">
-                        <div class="icon icon-svg mb-20"><img src="style/images/icons/ms-medal.png" alt=""></div>
+                        <div class="icon icon-svg mb-20"><img src="/assets_landing/images/icons/ms-medal.png" alt=""></div>
                         <h3 class="value">4523</h3>
                         <p>Awards Won</p>
                     </div>
