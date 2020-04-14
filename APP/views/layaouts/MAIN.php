@@ -3,11 +3,12 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="/favicon.ico">
-    <title>Snowlake</title>
+
 
 
     <?php \APP\core\base\View::getMeta()?>
+
+    <link rel="shortcut icon" href="/favicon.ico">
 
     
     <link rel="stylesheet" type="text/css" href="/assets_landing/css/bootstrap.min.css">
