@@ -340,9 +340,8 @@
     <section id="for">
         <div class="wrapper white-wrapper">
             <div class="container inner">
-                <div class="text-center">
-                    <h2 class="title-bg bg-default color-default">What We Do?</h2>
-                </div>
+
+                
                 <div class="space10"></div>
                 <h3 class="display-3 text-center">The full service we are offering is specifically <br class="d-none d-lg-block">designed to meet your business needs.</h3>
                 <div class="space30"></div>
