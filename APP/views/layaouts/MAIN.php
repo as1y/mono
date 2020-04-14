@@ -47,28 +47,25 @@
             <div class="navbar-collapse offcanvas-nav">
 
                 <div class="offcanvas-header d-lg-none d-xl-none">
-                    <a href="/">500РУБЛЕЙ</a>
+                    <a href="/">CASHCALL</a>
                     <button class="plain offcanvas-close offcanvas-nav-close"><i class="jam jam-close"></i></button>
                 </div>
 
 
 
                 <ul class="navbar-nav mx-auto" data-smartmenus-id="1586828885427087">
-                    <li class="nav-item"><a class="nav-link" href="#howitworks">Для кого это?</a>
+                    <li class="nav-item"><a class="nav-link" href="#">Для кого это?</a>
                     </li>
 
-                    <li class="nav-item"><a class="nav-link" href="#gde">Как это работает?</a>
+                    <li class="nav-item"><a class="nav-link" href="#">Как это работает?</a>
                     </li>
 
-                    <li class="nav-item"><a class="nav-link" href="#faq">Оператороам</a>
+                    <li class="nav-item"><a class="nav-link" href="#">Оператороам</a>
                     </li>
 
-                    <li class="nav-item"><a class="nav-link" href="#faq">Рекламодателям</a>
+                    <li class="nav-item"><a class="nav-link" href="#">Рекламодателям</a>
                     </li>
-
-
-<!--                    <li class="nav-item"><a style="color: var(--color-default)" class="nav-link" href="/user/register/" target="_blank" "=""> <b>Регистрация</b> </a>-->
-<!--                    </li>-->
+                    
 
 
                 </ul>
