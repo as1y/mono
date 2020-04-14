@@ -244,13 +244,8 @@
             <!-- /.rev_slider -->
         </div>
         <!-- /.rev_slider_wrapper -->
-    </div>
-    <!-- /.wrapper -->
 
 
-
-
-    <div class="wrapper light-wrapper">
         <div class="container inner">
             <h2 class="section-title mb-40 text-center">Icon Lists</h2>
             <div class="row">
@@ -312,8 +307,15 @@
             </div>
             <!-- /.row -->
         </div>
-        <!-- /.container -->
+
+        
     </div>
+    <!-- /.wrapper -->
+
+
+
+
+
 
     <section id="howitworks">
         <div class="wrapper gray-wrapper">
