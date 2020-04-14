@@ -158,7 +158,7 @@
 
                                     data-lazyload="" src="assets_base/rocket2.png"
 
-                                    data-ww="['380','380','380','380']"
+                                    data-ww="['400','380','380','380']"
                                     data-hh="auto" alt="" />
                         </div>
                         <!-- /.tp-caption -->
@@ -180,7 +180,7 @@
                                     data-hh="auto" alt="" />
                         </div>
 
-                        
+
                         <div class="tp-caption font-weight-500 color-dark"
                              data-x="['left','left','left','center']"
                              data-y="middle"
