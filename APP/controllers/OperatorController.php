@@ -132,12 +132,8 @@ class OperatorController extends AppController {
         $ASSETS[] = ["js" => "/global_assets/js/plugins/notifications/sweet_alert.min.js"];
         $ASSETS[] = ["js" => "/global_assets/js/plugins/forms/styling/uniform.min.js"];
         $ASSETS[] = ["js" => "//cdn.voximplant.com/edge/voximplant.min.js"];
-        
 
-        $ASSETS[] = ["js" => "/global_assets/js/plugins/extensions/jquery_ui/globalize/globalize.js"];
-        $ASSETS[] = ["js" => "/global_assets/js/plugins/extensions/jquery_ui/globalize/cultures/globalize.culture.de-DE.js"];
-        $ASSETS[] = ["js" => "/global_assets/js/plugins/extensions/jquery_ui/globalize/cultures/globalize.culture.ja-JP.js"];
-        $ASSETS[] = ["js" => "/global_assets/js/demo_pages/jqueryui_forms.js"];
+
 
 
 

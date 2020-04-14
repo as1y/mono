@@ -258,7 +258,7 @@
 												<i class="icon-calendar"></i>
 											</span>
 										</span>
-                            <input type="text" name="dataperezvona" class="form-control datepicker" value="<?=date("Y-m-d")?>" placeholder="Дата перезвона">
+                            <input type="date" name="dataperezvona" class="form-control datepicker" value="<?=date("Y-m-d")?>" placeholder="Дата перезвона">
                         </div>
 
 
