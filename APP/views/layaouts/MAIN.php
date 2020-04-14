@@ -260,7 +260,7 @@
                         <h4>УДАЛЕННЫМ ОПЕРАТОРАМ</h4>
                         <ul class="unordered-list bullet-green">
                             <li>Для работы требуется интернет браузер и доступ в интернет.</li>
-                            <li>Широкий выбор офферов в различных сферах(тематический рубрикатор).</li>
+                            <li>Широкий выбор предложений о работе в различных сферах(тематический рубрикатор).</li>
                             <li>Стабильная оплата</li>
                         </ul>
                         <figure class="mb-30"><img src="#" srcset="assets_landing/images/concept/concept14.png 1x, assets_landing/images/concept/concept14@2x.png 2x" alt=""></figure>
