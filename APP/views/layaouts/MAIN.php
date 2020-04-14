@@ -121,7 +121,7 @@
 
 
     <!-- /.offcanvas-info -->
-    <div class="wrapper bg-opacity-default">
+    <div class="wrapper white-wrapper">
         <div class="rev_slider_wrapper fullwidth-container dark-spinner">
             <div id="slider7" class="rev_slider fullwidthbanner" data-version="5.4.7">
                 <ul>
