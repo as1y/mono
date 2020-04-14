@@ -419,7 +419,7 @@
             <div class="widget">
 
                 <h3>CASHCALL.RU</h3> Автоматизированная коммуникационная CPA/CPL платформа. Биржа удаленных операторов на телефоне.
-
+                <p><a href="mailto: info@cashcall.ru">info@cashcall.ru</a></p>
 
                 <div class="space30"></div>
                 <p>© 2020 Все права защищены.</p>
