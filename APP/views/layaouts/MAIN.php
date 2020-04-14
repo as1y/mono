@@ -357,15 +357,7 @@
                         <p class="mb-15">Maecenas faucibus mollis interdum. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus.</p>
                         <div class="text-center"><a href="#" class="more">Learn more</a></div>
                     </div>
-                    <!--/column -->
-                    <div class="space20 d-md-none"></div>
-                    <div class="col-md-4">
-                        <figure class="mb-30"><img src="#" srcset="assets_landing/images/concept/concept18.png 1x, assets_landing/images/concept/concept18@2x.png 2x" alt=""></figure>
-                        <h4>SEO Optimization</h4>
-                        <p class="mb-15">Maecenas faucibus mollis interdum. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus.</p>
-                        <div class="text-center"><a href="#" class="more">Learn more</a></div>
-                    </div>
-                    <!--/column -->
+
                 </div>
 
             </div>
