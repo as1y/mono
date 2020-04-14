@@ -340,9 +340,6 @@
     <section id="for">
         <div class="wrapper dark-wrapper inverse-text">
             <div class="container inner">
-
-
-                <div class="space10"></div>
                 <h3 class="display-3 text-center">The full service we are offering is specifically <br class="d-none d-lg-block">designed to meet your business needs.</h3>
                 <div class="space30"></div>
                 <div class="row gutter-60 text-center align-items-end">
