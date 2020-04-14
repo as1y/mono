@@ -64,7 +64,7 @@
 
 
 
-                    <li class="nav-item"><a class="nav-link" href="#">Статистика</a>
+                    <li class="nav-item"><a class="nav-link" href="#stat">Статистика</a>
                     </li>
 
                     <li class="nav-item"><a style="color: var(--color-default)" class="nav-link" href="/user/register/" target="_blank" "=""> <b>Регистрация</b> </a>
@@ -362,7 +362,7 @@
       </div>
     </div>
 
-
+    <section id="stat">
     <div class="wrapper white-wrapper-wrapper">
         <div class="container inner">
             <h2 class="section-title mb-40 text-center">Начните зарабатывать на телефонных звонках!</h2>
@@ -409,7 +409,7 @@
         </div>
         <!-- /.container -->
     </div>
-
+    </section>
 
 
 
