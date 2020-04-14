@@ -247,7 +247,97 @@
     </div>
     <!-- /.wrapper -->
 
+    <section id="howitworks">
+        <div class="wrapper white-wrapper">
+            <div class="container">
 
+                <div class="row align-items-center">
+                    <div class="col-lg-6 order-lg-2">
+                        <figure><img src="#" srcset="style/images/concept/concept14.png 1x, style/images/concept/concept14@2x.png 2x" alt=""></figure>
+                    </div>
+                    <!--/column -->
+                    <div class="space20 d-md-none"></div>
+                    <div class="space50 d-none d-md-block d-lg-none"></div>
+                    <div class="col-lg-6 pr-60 pr-md-15">
+                        <h3 class="display-3">Как это работает?</h3>
+                        <div class="space30"></div>
+                        <div class="d-flex flex-row justify-content-center">
+
+
+                            <div class="col-md-3 text-center">
+                                <div class="icon icon-svg mb-20"><img src="style/images/icons/ui-user.png" alt=""></div>
+                            </div>
+
+
+                            <div>
+                                <h5>1. Регистрация на сайте</h5>
+                                <p class="mb-0">Простая <a href="/user/register/" target="_blank">регистрация на сайте</a> . Укажите Ваше Имя и e-mail</p>
+                            </div>
+                        </div>
+
+
+
+                        <div class="space30"></div>
+                        <div class="d-flex flex-row justify-content-center">
+
+
+                            <div class="col-md-3 text-center">
+                                <div class="icon icon-svg mb-20"><img src="style/images/icons/hs-browser.png" alt=""></div>
+                            </div>
+
+
+                            <div>
+                                <h5>2. Пройдите маркетинговый опрос</h5>
+                                <p class="mb-0">Расскажите о ваших интересах и предпочтениях в интернете</p>
+                            </div>
+                        </div>
+
+
+                        <div class="space30"></div>
+                        <div class="d-flex flex-row justify-content-center">
+
+
+                            <div class="col-md-3 text-center">
+                                <div class="icon icon-svg mb-20"><img src="style/images/icons/ui-credit-card.png" alt=""></div>
+                            </div>
+
+
+                            <div>
+                                <h5>3. Получите 500 рублей</h5>
+                                <p class="mb-0">Получите 500 рублей и сразу закажите вывод на банковскую карту</p>
+                            </div>
+                        </div>
+
+                        <div class="space30"></div>
+                        <div class="d-flex flex-row justify-content-center">
+
+
+                            <div class="col-md-3 text-center">
+                                <div class="icon icon-svg mb-20"><img src="style/images/icons/ui-chat.png" alt=""></div>
+                            </div>
+
+
+                            <div>
+                                <h5>Пригласите друзей и родственников</h5>
+                                <p class="mb-0">За каждого прошедшего опрос человека вы получите 100 рублей. </p>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                    <!--/column -->
+                </div>
+                <!--/.row -->
+                <div class="space160"></div>
+            </div>
+            <!-- /.container -->
+        </div>
+        <!-- /.wrapper -->
+    </section>
+
+
+    
 
 </div>
 <!-- /.content-wrapper -->
