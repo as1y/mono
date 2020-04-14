@@ -327,7 +327,7 @@
 
 
     <section id="howitworks">
-        <div class="wrapper dark-wrapper inverse-text">
+        <div class="wrapper gray-wrapper">
             <div class="container">
                 <div class="space30"></div>
                 <div class="row align-items-center">
