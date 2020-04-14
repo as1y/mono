@@ -127,12 +127,13 @@ class OperatorController extends AppController {
         \APP\core\base\View::setBreadcrumbs($BREADCRUMBS);
 
 
-        
-        $ASSETS[] = ["js" => "/global_assets/js/demo_pages/jqueryui_forms.js"];
+
+
         $ASSETS[] = ["js" => "/global_assets/js/plugins/notifications/sweet_alert.min.js"];
         $ASSETS[] = ["js" => "/global_assets/js/plugins/forms/styling/uniform.min.js"];
         $ASSETS[] = ["js" => "//cdn.voximplant.com/edge/voximplant.min.js"];
 
+        $ASSETS[] = ["js" => "/global_assets/js/demo_pages/jqueryui_forms.js"];
 
 
 
