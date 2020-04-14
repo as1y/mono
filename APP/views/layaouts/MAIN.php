@@ -440,21 +440,7 @@
     </div>
 
 
-
-    <div class="wrapper footer-dark-wrapper">
-        <div class="container">
-            <div class="overflow-bottom">
-                <div class="box shadow p-60 image-wrapper bg-full bg-image inverse-text rounded d-md-flex align-items-md-center justify-content-md-between" data-image-src="assets_landing/images/art/bg9.jpg" style="background-image: url(&quot;style/images/art/bg9.jpg&quot;);">
-                    <h3 class="display-3 mb-0">Регистрация на сайте</h3>
-                    <div class="space30 d-md-none"></div>
-                    <a href="/user/register/" target="_blank" class="btn btn-white btn-strong-hover mb-0">Регистрация</a>
-                </div>
-                <!--/.box -->
-            </div>
-            <!--/.overflow -->
-        </div>
-        <!--/.container -->
-    </div>
+    
 
     <footer class="dark-wrapper inverse-text text-center">
         <div class="container inner pt-80 pb-80">
