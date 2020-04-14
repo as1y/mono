@@ -289,7 +289,7 @@
 
 
                             <div class="col-md-3 text-center">
-                                <div class="icon icon-svg mb-20"><img src="assets_landing/images/icons/hs-browser.png" alt=""></div>
+                                <div class="icon icon-svg mb-20"><img src="assets_landing/images/icons/hs-support-5.png" alt=""></div>
                             </div>
 
 
