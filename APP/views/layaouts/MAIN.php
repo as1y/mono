@@ -298,7 +298,7 @@
                         <div class="d-flex flex-row justify-content-center">
 
                             <div class="col-md-3">
-                                <div class="icon icon-svg mb-20"><img src="assets_landing/images/icons/hs-support-5.png" alt=""></div>
+                                <img src="#" srcset="assets_landing/images/concept/concept13.png 1x, assets_landing/images/concept/concept13@2x.png 2x" alt="">
                             </div>
 
 
