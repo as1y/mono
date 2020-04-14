@@ -165,7 +165,7 @@ function renderresult ($DATA){
         echo "<b>".$val['NAME'].": </b>".$val['VAL']."<br>";
     }
 
-    
+
 
     return true;
 
