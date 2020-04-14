@@ -305,7 +305,7 @@
 
 
                             <div class="col-md-3 text-center">
-                                <div class="icon icon-svg mb-20"><img src="assets_landing/images/icons/ui-phone.png" alt=""></div>
+                                <div class="icon icon-svg mb-20"><img src="assets_landing/images/icons/hs-check.png" alt=""></div>
                             </div>
 
                             <div>
