@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="style/images/favicon.png">
     <title>Snowlake</title>
-    <link rel="stylesheet" type="text/css" href="style/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="style/css/plugins.css">
-    <link rel="stylesheet" type="text/css" href="style/revolution/css/settings.css">
-    <link rel="stylesheet" type="text/css" href="style/revolution/css/layers.css">
-    <link rel="stylesheet" type="text/css" href="style/revolution/css/navigation.css">
-    <link rel="stylesheet" type="text/css" href="style/type/type.css">
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <link rel="stylesheet" type="text/css" href="style/css/color/blue.css">
+    <link rel="stylesheet" type="text/css" href="/assets/landing/style/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/assets/landing/style/css/plugins.css">
+    <link rel="stylesheet" type="text/css" href="/assets/landing/style/revolution/css/settings.css">
+    <link rel="stylesheet" type="text/css" href="/assets/landing/style/revolution/css/layers.css">
+    <link rel="stylesheet" type="text/css" href="/assets/landing/style/revolution/css/navigation.css">
+    <link rel="stylesheet" type="text/css" href="/assets/landing/style/type/type.css">
+    <link rel="stylesheet" type="text/css" href="/assets_base/style.css">
+    <link rel="stylesheet" type="text/css" href="/assets/landing/style/css/color/blue.css">
 </head>
 <body>
 <div class="content-wrapper">
@@ -1016,21 +1016,21 @@
     </footer>
 </div>
 <!-- /.content-wrapper -->
-<script src="style/js/jquery.min.js"></script>
-<script src="style/js/popper.min.js"></script>
-<script src="style/js/bootstrap.min.js"></script>
-<script src="style/revolution/js/jquery.themepunch.tools.min.js"></script>
-<script src="style/revolution/js/jquery.themepunch.revolution.min.js"></script>
-<script src="style/revolution/js/extensions/revolution.extension.actions.min.js"></script>
-<script src="style/revolution/js/extensions/revolution.extension.carousel.min.js"></script>
-<script src="style/revolution/js/extensions/revolution.extension.kenburn.min.js"></script>
-<script src="style/revolution/js/extensions/revolution.extension.layeranimation.min.js"></script>
-<script src="style/revolution/js/extensions/revolution.extension.migration.min.js"></script>
-<script src="style/revolution/js/extensions/revolution.extension.navigation.min.js"></script>
-<script src="style/revolution/js/extensions/revolution.extension.parallax.min.js"></script>
-<script src="style/revolution/js/extensions/revolution.extension.slideanims.min.js"></script>
-<script src="style/revolution/js/extensions/revolution.extension.video.min.js"></script>
-<script src="style/js/plugins.js"></script>
-<script src="style/js/scripts.js"></script>
+<script src="/assets/landing/style/js/jquery.min.js"></script>
+<script src="/assets/landing/style/js/popper.min.js"></script>
+<script src="/assets/landing/style/js/bootstrap.min.js"></script>
+<script src="/assets/landing/style/revolution/js/jquery.themepunch.tools.min.js"></script>
+<script src="/assets/landing/style/revolution/js/jquery.themepunch.revolution.min.js"></script>
+<script src="/assets/landing/style/revolution/js/extensions/revolution.extension.actions.min.js"></script>
+<script src="/assets/landing/style/revolution/js/extensions/revolution.extension.carousel.min.js"></script>
+<script src="/assets/landing/style/revolution/js/extensions/revolution.extension.kenburn.min.js"></script>
+<script src="/assets/landing/style/revolution/js/extensions/revolution.extension.layeranimation.min.js"></script>
+<script src="/assets/landing/style/revolution/js/extensions/revolution.extension.migration.min.js"></script>
+<script src="/assets/landing/style/revolution/js/extensions/revolution.extension.navigation.min.js"></script>
+<script src="/assets/landing/style/revolution/js/extensions/revolution.extension.parallax.min.js"></script>
+<script src="/assets/landing/style/revolution/js/extensions/revolution.extension.slideanims.min.js"></script>
+<script src="/assets/landing/style/revolution/js/extensions/revolution.extension.video.min.js"></script>
+<script src="/assets/landing/style/js/plugins.js"></script>
+<script src="/assets/landing/style/js/scripts.js"></script>
 </body>
 </html>
