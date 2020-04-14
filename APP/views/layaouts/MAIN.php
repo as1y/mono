@@ -350,6 +350,9 @@
                         <div class="text-center"><a href="#" class="more">Learn more</a></div>
                     </div>
                     <!--/column -->
+                    <div class="col-md-4">
+                        
+                    </div>
                     <div class="space20 d-md-none"></div>
                     <div class="col-md-4">
                         <figure class="mb-30"><img src="#" srcset="assets_landing/images/concept/concept19.png 1x, assets_landing/images/concept/concept19@2x.png 2x" alt=""></figure>
