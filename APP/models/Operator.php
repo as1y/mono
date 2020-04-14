@@ -40,8 +40,6 @@ class Operator extends \APP\core\base\Model {
         iconv_strlen($operatorcomment, 'UTF-8');
         if (strlen($operatorcomment) > 1000) message("Комментарий от оператора не может быть больше 1000 символов");
 
-        $ADDMAS
-
         // Считаем кол-во полей.
 
         $RESULTMASS = json_decode($company['formresult'],true);
@@ -56,6 +54,9 @@ class Operator extends \APP\core\base\Model {
             if (!empty($valuepole['error'])) message($valuepole['error']);
             $RESULTMASS[$key]['VAL'] = $valuepole;
         }
+
+        $RESULTMASS[] = ['NAME' => "Телефон", 'VAL' => $nomerresult];
+        $RESULTMASS[] = ['NAME' => "Комментарий оператора", 'VAL' => $operatorcomment];
 
 
         // Обновляем статус контакта
