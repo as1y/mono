@@ -295,7 +295,7 @@
                         <div class="space30"></div>
                         <div class="d-flex flex-row justify-content-center">
 
-                            <div class="col-md-1 text-center">
+                            <div class="col-md-3 ">
                                 <div class="icon icon-svg mb-20"><img src="assets_landing/images/icons/hs-check.png" alt=""></div>
                             </div>
 
