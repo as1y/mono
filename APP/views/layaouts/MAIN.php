@@ -259,10 +259,10 @@
                     <div class="col-md-4">
                         <h4>УДАЛЕННЫМ ОПЕРАТОРАМ</h4>
                         <ul class="unordered-list bullet-green">
-                            <li>Aenean eu leo quam. Pellentesque ornare.</li>
-                            <li>Nullam quis risus eget urna mollis ornare.</li>
-                            <li>Donec id elit non mi porta gravida at eget.</li>
-                            <li>Fusce dapibus, tellus ac cursus commodo.</li>
+                            <li>Для работы требуется интернет браузер и доступ в интернет.</li>
+                            <li>Широкий выбор офферов в различных сферах(тематический рубрикатор).</li>
+                            <li>Возможность применить навыки в спец. нишах и заработать больше чем просто оператором на телефоне.</li>
+                            <li>Стабильная оплата</li>
                         </ul>
                         <figure class="mb-30"><img src="#" srcset="assets_landing/images/concept/concept14.png 1x, assets_landing/images/concept/concept14@2x.png 2x" alt=""></figure>
 
@@ -276,10 +276,10 @@
                     <div class="col-md-4">
                         <h4>РЕКЛАМОДАТЕЛЯМ</h4>
                         <ul class="unordered-list bullet-green">
-                            <li>Aenean eu leo quam. Pellentesque ornare.</li>
-                            <li>Nullam quis risus eget urna mollis ornare.</li>
-                            <li>Donec id elit non mi porta gravida at eget.</li>
-                            <li>Fusce dapibus, tellus ac cursus commodo.</li>
+                            <li>Возможность быстро создать проект с оплатой по факту совершенного действия.</li>
+                            <li>Широкий выбор удаленных операторов (из разных стран, с опытом работы в различных областях, владение языками).</li>
+                            <li>Быстрое масштабирование проекта.</li>
+                            <li>Самостоятельное управление проектом на всех этапах.</li>
                         </ul>
                         <figure class="mb-30"><img src="#" srcset="assets_landing/images/concept/concept19.png 1x, assets_landing/images/concept/concept19@2x.png 2x" alt=""></figure>
 
