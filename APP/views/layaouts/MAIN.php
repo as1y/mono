@@ -53,11 +53,13 @@
 
 
 
-                <ul class="navbar-nav mx-auto" data-smartmenus-id="1586828885427087">
-                    <li class="nav-item"><a class="nav-link" href="#">Для кого это?</a>
-                    </li>
+                <ul class="navbar-nav mx-auto" >
 
                     <li class="nav-item"><a class="nav-link" href="#">Как это работает?</a>
+                    </li>
+
+
+                    <li class="nav-item"><a class="nav-link" href="#">Для кого это?</a>
                     </li>
 
                     <li class="nav-item"><a class="nav-link" href="#">Операторам</a>
