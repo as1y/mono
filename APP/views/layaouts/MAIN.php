@@ -260,15 +260,12 @@
                     <div class="space50 d-none d-md-block d-lg-none"></div>
 
 
-
-
-
-
-
                                         <div class="col-lg-6 pr-60 pr-md-15">
                         <h3 class="display-3">Как это работает?</h3>
                         <div class="space30"></div>
-                        <div class="d-flex flex-row justify-content-center">
+
+
+                        <div class="flex-row justify-content-center">
 
 
                             <div class="col-md-3 text-center">
@@ -281,12 +278,8 @@
                                 <p class="mb-0">Заполняет простую анкету и отправляет на рассмотрение рекламодателю.</p>
                             </div>
                         </div>
-
-
-
                         <div class="space30"></div>
-                        <div class="d-flex flex-row justify-content-center">
-
+                        <div class="flex-row justify-content-center">
 
                             <div class="col-md-3 text-center">
                                 <div class="icon icon-svg mb-20"><img src="assets_landing/images/icons/hs-support-5.png" alt=""></div>
@@ -299,9 +292,8 @@
                             </div>
                         </div>
 
-
                         <div class="space30"></div>
-                        <div class="d-flex flex-row justify-content-center">
+                        <div class="flex-row justify-content-center">
 
 
                             <div class="col-md-3 text-center">
@@ -315,7 +307,7 @@
                         </div>
 
                         <div class="space30"></div>
-                        <div class="d-flex flex-row justify-content-center">
+                        <div class="flex-row justify-content-center">
 
 
                             <div class="col-md-3 text-center">
@@ -333,6 +325,9 @@
 
 
                     </div>
+
+
+
                     <!--/column -->
                 </div>
                 <!--/.row -->
