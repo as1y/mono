@@ -237,7 +237,7 @@
                            data-textAlign="['left','left','left','center']"
                            data-frames='[{"delay":2000,"speed":1200,"frame":"0","from":"y:50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
                            data-responsive="on"
-                           data-responsive_offset="on" style="z-index: 9;" href="#">Try It For Free
+                           data-responsive_offset="on" style="z-index: 9;" href="/user/register/">Регистрация
                         </a>
 
                         <!-- /.tp-caption -->
