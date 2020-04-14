@@ -248,7 +248,7 @@
     <!-- /.wrapper -->
 
     <section id="for">
-        <div class="wrapper dark-wrapper inverse-text">
+        <div class="wrapper white-wrapper">
             <div class="container inner">
                 <h3 class="display-3 text-center">Для кого это</h3>
                 <div class="row  text-center align-items-end">
@@ -280,7 +280,7 @@
 
 
     <section id="howitworks">
-        <div class="wrapper white-wrapper">
+        <div class="wrapper dark-wrapper inverse-text">
             <div class="container">
 
                 <div class="row align-items-center">
