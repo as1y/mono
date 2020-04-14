@@ -298,7 +298,7 @@
                         <div class="d-flex flex-row justify-content-center">
 
                             <div class="col-md-3">
-                                <img src="#" srcset="assets_landing/images/concept/concept13.png 1x, assets_landing/images/concept/concept13@2x.png 2x" alt="">
+                                <img src="#" srcset="/images/concept/concept13.png 1x, style/images/concept/concept13@2x.png 2x" alt="">
                             </div>
 
 
