@@ -445,7 +445,7 @@
         <div class="container inner pt-80 pb-80">
             <div class="widget">
 
-                <h3>500рублей.рф</h3>
+                <h3>CASHCALL.RU</h3> - Автоматизированная коммуникационная CPA/CPL платформа. Биржа удаленных операторов на телефоне.
 
 
                 <div class="space30"></div>
