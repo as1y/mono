@@ -269,7 +269,11 @@
                 <div class="space30"></div>
                 <div class="row align-items-center">
                     <div class="col-lg-6 order-lg-2">
-                        <figure><img src="#" srcset="assets_landing/images/concept/concept14.png 1x, assets_landing/images/concept/concept14@2x.png 2x" alt=""></figure>
+                        <figure>
+
+                            <img src="#" srcset="assets_landing/images/concept/concept13.png 1x, assets_landing/images/concept/concept13@2x.png 2x" alt="">
+
+                        </figure>
                     </div>
                     <!--/column -->
                     <div class="space20 d-md-none"></div>
