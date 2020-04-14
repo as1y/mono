@@ -55,7 +55,7 @@
 
                 <ul class="navbar-nav mx-auto" >
 
-                    <li class="nav-item"><a class="nav-link" href="#">Как это работает?</a>
+                    <li class="nav-item"><a class="nav-link" href="#howitworks">Как это работает?</a>
                     </li>
 
 
