@@ -5,20 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="/favicon.ico">
     <title>Snowlake</title>
-    <link rel="stylesheet" type="text/css" href="/assets_landing/style/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="/assets_landing/style/css/plugins.css">
-    <link rel="stylesheet" type="text/css" href="/assets_landing/style/revolution/css/settings.css">
-    <link rel="stylesheet" type="text/css" href="/assets_landing/style/revolution/css/layers.css">
-    <link rel="stylesheet" type="text/css" href="/assets_landing/style/revolution/css/navigation.css">
-    <link rel="stylesheet" type="text/css" href="/assets_landing/style/type/type.css">
+    <link rel="stylesheet" type="text/css" href="/assets_landing/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/assets_landing/css/plugins.css">
+    <link rel="stylesheet" type="text/css" href="/assets_landing/revolution/css/settings.css">
+    <link rel="stylesheet" type="text/css" href="/assets_landing/revolution/css/layers.css">
+    <link rel="stylesheet" type="text/css" href="/assets_landing/revolution/css/navigation.css">
+    <link rel="stylesheet" type="text/css" href="/assets_landing/type/type.css">
     <link rel="stylesheet" type="text/css" href="/assets_base/style.css">
-    <link rel="stylesheet" type="text/css" href="/assets_landing/style/css/color/blue.css">
+    <link rel="stylesheet" type="text/css" href="/assets_landing/css/color/blue.css">
 </head>
 <body>
 <div class="content-wrapper">
     <nav class="navbar absolute transparent navbar-expand-lg nav-uppercase">
         <div class="container flex-row justify-content-center">
-            <div class="navbar-brand"><a href="index.html"><img src="#" srcset="style/images/logo.png 1x, style/images/logo@2x.png 2x" alt="" /></a></div>
+            <div class="navbar-brand"><a href="index.html"><img src="#" srcset="assets_landing/images/logo.png 1x, assets_landing/images/logo@2x.png 2x" alt="" /></a></div>
             <div class="navbar-other ml-auto order-lg-3">
                 <ul class="navbar-nav flex-row align-items-center" data-sm-skip="true">
                     <li class="nav-item">
@@ -31,7 +31,7 @@
             <!-- /.navbar-other -->
             <div class="navbar-collapse offcanvas-nav">
                 <div class="offcanvas-header d-lg-none d-xl-none">
-                    <a href="index.html"><img src="#" srcset="style/images/logo-light.png 1x, style/images/logo-light@2x.png 2x" alt="" /></a>
+                    <a href="index.html"><img src="#" srcset="assets_landing/images/logo-light.png 1x, assets_landing/images/logo-light@2x.png 2x" alt="" /></a>
                     <button class="plain offcanvas-close offcanvas-nav-close"><i class="jam jam-close"></i></button>
                 </div>
                 <ul class="navbar-nav mx-auto">
@@ -345,7 +345,7 @@
     <!-- /.navbar -->
     <div class="offcanvas-info inverse-text">
         <button class="plain offcanvas-close offcanvas-info-close"><i class="jam jam-close"></i></button>
-        <a href="index.html"><img src="#" srcset="style/images/logo-light.png 1x, style/images/logo-light@2x.png 2x" alt="" /></a>
+        <a href="index.html"><img src="#" srcset="assets_landing/images/logo-light.png 1x, assets_landing/images/logo-light@2x.png 2x" alt="" /></a>
         <div class="space30"></div>
         <p>Snowlake is a multi-concept and powerful site template contains rich layouts with possibility of unlimited combinations & beautiful elements.</p>
         <div class="space20"></div>
@@ -382,7 +382,7 @@
         <div class="rev_slider_wrapper fullwidth-container dark-spinner">
             <div id="slider7" class="rev_slider fullwidthbanner" data-version="5.4.7">
                 <ul>
-                    <li data-transition="fade" data-thumb=""><img src="style/images/dummy.png" style="background:transparent" alt="" />
+                    <li data-transition="fade" data-thumb=""><img src="assets_landing/images/dummy.png" style="background:transparent" alt="" />
                         <div class="tp-caption"
                              data-x="['center','center','center','center']"
                              data-y="['bottom','bottom','bottom','bottom']"
@@ -396,7 +396,7 @@
                              data-responsive="on"
                              data-responsive_offset="on"
                              data-basealign="slide" style="z-index: 5;"><img
-                                    data-lazyload="" src="style/images/art/rocket1.png"
+                                    data-lazyload="" src="assets_landing/images/art/rocket1.png"
                                     data-ww="['100%','100%','100%','100%']"
                                     data-hh="auto" alt="" />
                         </div>
@@ -414,7 +414,7 @@
                              data-responsive="on"
                              data-responsive_offset="on"
                              data-basealign="slide" style="z-index: 5;"><img
-                                    data-lazyload="" src="style/images/art/rocket2.png"
+                                    data-lazyload="" src="assets_landing/images/art/rocket2.png"
                                     data-ww="['220','220','220','220']"
                                     data-hh="auto" alt="" />
                         </div>
@@ -432,7 +432,7 @@
                              data-responsive="on"
                              data-responsive_offset="on"
                              data-basealign="slide" style="z-index: 6;"><img
-                                    data-lazyload="" src="style/images/art/rocket3.png"
+                                    data-lazyload="" src="assets_landing/images/art/rocket3.png"
                                     data-ww="['380','380','380','380']"
                                     data-hh="auto" alt="" />
                         </div>
@@ -450,7 +450,7 @@
                              data-responsive="on"
                              data-responsive_offset="on"
                              data-basealign="slide" style="z-index: 5;"><img
-                                    data-lazyload="" src="style/images/art/rocket4.png"
+                                    data-lazyload="" src="assets_landing/images/art/rocket4.png"
                                     data-ww="['480','480','480','480']"
                                     data-hh="auto" alt="" />
                         </div>
@@ -542,7 +542,7 @@
             <div class="space140"></div>
             <div class="row align-items-center">
                 <div class="col-lg-6">
-                    <figure><img src="#" srcset="style/images/concept/concept8.png 1x, style/images/concept/concept8@2x.png 2x" alt="" /></figure>
+                    <figure><img src="#" srcset="assets_landing/images/concept/concept8.png 1x, assets_landing/images/concept/concept8@2x.png 2x" alt="" /></figure>
                 </div>
                 <!--/column -->
                 <div class="space20 d-md-none"></div>
@@ -565,7 +565,7 @@
             <div class="space140"></div>
             <div class="row align-items-center">
                 <div class="col-lg-6 order-lg-2">
-                    <figure><img src="#" srcset="style/images/concept/concept1.png 1x, style/images/concept/concept1@2x.png 2x" alt="" /></figure>
+                    <figure><img src="#" srcset="assets_landing/images/concept/concept1.png 1x, assets_landing/images/concept/concept1@2x.png 2x" alt="" /></figure>
                 </div>
                 <!--/column -->
                 <div class="space20 d-md-none"></div>
@@ -610,7 +610,7 @@
             <div class="space140"></div>
             <div class="row align-items-center">
                 <div class="col-lg-6">
-                    <figure><img src="#" srcset="style/images/concept/concept3.png 1x, style/images/concept/concept3@2x.png 2x" alt="" /></figure>
+                    <figure><img src="#" srcset="assets_landing/images/concept/concept3.png 1x, assets_landing/images/concept/concept3@2x.png 2x" alt="" /></figure>
                 </div>
                 <!--/column -->
                 <div class="space20 d-md-none"></div>
@@ -647,7 +647,7 @@
                                 <blockquote>
                                     <p>"Sed posuere consectetur est at lobortis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis mollis, est non commodo luctus, nisi erat porttitor ligula."</p>
                                     <div class="blockquote-details">
-                                        <div class="img-blob blob1"><img src="style/images/art/t1.jpg" alt="" /></div>
+                                        <div class="img-blob blob1"><img src="assets_landing/images/art/t1.jpg" alt="" /></div>
                                         <div class="info">
                                             <h6 class="mb-0">Connor Gibson</h6>
                                             <span class="meta mb-0">Financial Analyst</span>
@@ -666,7 +666,7 @@
                                 <blockquote>
                                     <p>"Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Vestibulum id ligula porta felis euismod semper. Cras justo odio, dapibus ac facilisis."</p>
                                     <div class="blockquote-details">
-                                        <div class="img-blob blob1"><img src="style/images/art/t2.jpg" alt="" /></div>
+                                        <div class="img-blob blob1"><img src="assets_landing/images/art/t2.jpg" alt="" /></div>
                                         <div class="info">
                                             <h6 class="mb-0">Coriss Ambady</h6>
                                             <span class="meta mb-0">Marketing Specialist</span>
@@ -685,7 +685,7 @@
                                 <blockquote>
                                     <p>"Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam venenatis."</p>
                                     <div class="blockquote-details">
-                                        <div class="img-blob blob1"><img src="style/images/art/t3.jpg" alt="" /></div>
+                                        <div class="img-blob blob1"><img src="assets_landing/images/art/t3.jpg" alt="" /></div>
                                         <div class="info">
                                             <h6 class="mb-0">Barclay Widerski</h6>
                                             <span class="meta mb-0">Sales Manager</span>
@@ -704,7 +704,7 @@
                                 <blockquote>
                                     <p>"Curabitur blandit tempus porttitor. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Duis mollis, est non commodo luctus."</p>
                                     <div class="blockquote-details">
-                                        <div class="img-blob blob1"><img src="style/images/art/t4.jpg" alt="" /></div>
+                                        <div class="img-blob blob1"><img src="assets_landing/images/art/t4.jpg" alt="" /></div>
                                         <div class="info">
                                             <h6 class="mb-0">Nikolas Brooten</h6>
                                             <span class="meta mb-0">Investment Planner</span>
@@ -723,7 +723,7 @@
                                 <blockquote>
                                     <p>"Aenean lacinia bibendum nulla sed consectetur. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus vestibulum."</p>
                                     <div class="blockquote-details">
-                                        <div class="img-blob blob1"><img src="style/images/art/t5.jpg" alt="" /></div>
+                                        <div class="img-blob blob1"><img src="assets_landing/images/art/t5.jpg" alt="" /></div>
                                         <div class="info">
                                             <h6 class="mb-0">Jackie Sanders</h6>
                                             <span class="meta mb-0">Sales Specialist</span>
@@ -742,7 +742,7 @@
                                 <blockquote>
                                     <p>"Donec sed odio dui. Cras mattis consectetur purus sit amet fermentum. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis."</p>
                                     <div class="blockquote-details">
-                                        <div class="img-blob blob1"><img src="style/images/art/t6.jpg" alt="" /></div>
+                                        <div class="img-blob blob1"><img src="assets_landing/images/art/t6.jpg" alt="" /></div>
                                         <div class="info">
                                             <h6 class="mb-0">Tina Geller</h6>
                                             <span class="meta mb-0">Financial Analyst</span>
@@ -860,7 +860,7 @@
             <div class="space140"></div>
             <div class="row align-items-center">
                 <div class="col-lg-6">
-                    <figure><img src="#" srcset="style/images/concept/concept12.png 1x, style/images/concept/concept12@2x.png 2x" alt="" /></figure>
+                    <figure><img src="#" srcset="assets_landing/images/concept/concept12.png 1x, assets_landing/images/concept/concept12@2x.png 2x" alt="" /></figure>
                 </div>
                 <!--/column -->
                 <div class="space50 d-none d-md-block d-lg-none"></div>
@@ -905,7 +905,7 @@
             <!--/.row -->
         </div>
         <!-- /.container -->
-        <figure style="margin-bottom:-3px;"><img src="style/images/art/rocket1.png" alt="" /></figure>
+        <figure style="margin-bottom:-3px;"><img src="assets_landing/images/art/rocket1.png" alt="" /></figure>
     </div>
     <!-- /.wrapper -->
     <footer class="white-wrapper">
@@ -916,21 +916,21 @@
                         <h3 class="widget-title">Popular Posts</h3>
                         <ul class="image-list">
                             <li>
-                                <figure class="rounded"><a href="blog-post.html"><img src="style/images/art/a1.jpg" alt="" /></a></figure>
+                                <figure class="rounded"><a href="blog-post.html"><img src="assets_landing/images/art/a1.jpg" alt="" /></a></figure>
                                 <div class="post-content">
                                     <h6 class="post-title"> <a href="blog-post.html">Magna Mollis Ultricies</a> </h6>
                                     <div class="meta"><span class="date"><i class="jam jam-clock"></i>12 Nov 2017</span><span class="comments"><i class="jam jam-message-alt"></i><a href="#">4</a></span></div>
                                 </div>
                             </li>
                             <li>
-                                <figure class="rounded"> <a href="blog-post.html"><img src="style/images/art/a2.jpg" alt="" /></a></figure>
+                                <figure class="rounded"> <a href="blog-post.html"><img src="assets_landing/images/art/a2.jpg" alt="" /></a></figure>
                                 <div class="post-content">
                                     <h6 class="post-title"> <a href="blog-post.html">Ornare Nullam Risus</a> </h6>
                                     <div class="meta"><span class="date"><i class="jam jam-clock"></i>12 Nov 2017</span><span class="comments"><i class="jam jam-message-alt"></i><a href="#">4</a></span></div>
                                 </div>
                             </li>
                             <li>
-                                <figure class="rounded"><a href="blog-post.html"><img src="style/images/art/a3.jpg" alt="" /></a></figure>
+                                <figure class="rounded"><a href="blog-post.html"><img src="assets_landing/images/art/a3.jpg" alt="" /></a></figure>
                                 <div class="post-content">
                                     <h6 class="post-title"> <a href="blog-post.html">Euismod Nullam</a> </h6>
                                     <div class="meta"><span class="date"><i class="jam jam-clock"></i>12 Nov 2017</span><span class="comments"><i class="jam jam-message-alt"></i><a href="#">4</a></span></div>
@@ -1016,21 +1016,21 @@
     </footer>
 </div>
 <!-- /.content-wrapper -->
-<script src="/assets_landing/style/js/jquery.min.js"></script>
-<script src="/assets_landing/style/js/popper.min.js"></script>
-<script src="/assets_landing/style/js/bootstrap.min.js"></script>
-<script src="/assets_landing/style/revolution/js/jquery.themepunch.tools.min.js"></script>
-<script src="/assets_landing/style/revolution/js/jquery.themepunch.revolution.min.js"></script>
-<script src="/assets_landing/style/revolution/js/extensions/revolution.extension.actions.min.js"></script>
-<script src="/assets_landing/style/revolution/js/extensions/revolution.extension.carousel.min.js"></script>
-<script src="/assets_landing/style/revolution/js/extensions/revolution.extension.kenburn.min.js"></script>
-<script src="/assets_landing/style/revolution/js/extensions/revolution.extension.layeranimation.min.js"></script>
-<script src="/assets_landing/style/revolution/js/extensions/revolution.extension.migration.min.js"></script>
-<script src="/assets_landing/style/revolution/js/extensions/revolution.extension.navigation.min.js"></script>
-<script src="/assets_landing/style/revolution/js/extensions/revolution.extension.parallax.min.js"></script>
-<script src="/assets_landing/style/revolution/js/extensions/revolution.extension.slideanims.min.js"></script>
-<script src="/assets_landing/style/revolution/js/extensions/revolution.extension.video.min.js"></script>
-<script src="/assets_landing/style/js/plugins.js"></script>
-<script src="/assets_landing/style/js/scripts.js"></script>
+<script src="/assets_landing/js/jquery.min.js"></script>
+<script src="/assets_landing/js/popper.min.js"></script>
+<script src="/assets_landing/js/bootstrap.min.js"></script>
+<script src="/assets_landing/revolution/js/jquery.themepunch.tools.min.js"></script>
+<script src="/assets_landing/revolution/js/jquery.themepunch.revolution.min.js"></script>
+<script src="/assets_landing/revolution/js/extensions/revolution.extension.actions.min.js"></script>
+<script src="/assets_landing/revolution/js/extensions/revolution.extension.carousel.min.js"></script>
+<script src="/assets_landing/revolution/js/extensions/revolution.extension.kenburn.min.js"></script>
+<script src="/assets_landing/revolution/js/extensions/revolution.extension.layeranimation.min.js"></script>
+<script src="/assets_landing/revolution/js/extensions/revolution.extension.migration.min.js"></script>
+<script src="/assets_landing/revolution/js/extensions/revolution.extension.navigation.min.js"></script>
+<script src="/assets_landing/revolution/js/extensions/revolution.extension.parallax.min.js"></script>
+<script src="/assets_landing/revolution/js/extensions/revolution.extension.slideanims.min.js"></script>
+<script src="/assets_landing/revolution/js/extensions/revolution.extension.video.min.js"></script>
+<script src="/assets_landing/js/plugins.js"></script>
+<script src="/assets_landing/js/scripts.js"></script>
 </body>
 </html>
