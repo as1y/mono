@@ -246,52 +246,10 @@
         <!-- /.rev_slider_wrapper -->
     </div>
     <!-- /.wrapper -->
-    <div class="wrapper gray-wrapper">
-        <div class="container inner">
-            <h2 class="section-title mb-40 text-center">Boxed Counter with Icons</h2>
-            <div class="row counter">
-                <div class="col-md-6 col-lg-3 text-center">
-                    <div class="box bg-white shadow">
-                        <div class="icon icon-svg mb-20"><img src="/assets_landing/images/icons/hs-check.png" alt=""></div>
-                        <h3 class="value">7518</h3>
-                        <p>Completed Projects</p>
-                    </div>
-                    <!--/.box -->
-                </div>
-                <!--/column -->
-                <div class="col-md-6 col-lg-3 text-center">
-                    <div class="box bg-white shadow">
-                        <div class="icon icon-svg mb-20"><img src="/assets_landing/images/icons/st-handshake.png" alt=""></div>
-                        <h3 class="value">3472</h3>
-                        <p>Satisfied Customers</p>
-                    </div>
-                    <!--/.box -->
-                </div>
-                <!--/column -->
-                <div class="space30 d-none d-md-block d-lg-none"></div>
-                <div class="col-md-6 col-lg-3 text-center">
-                    <div class="box bg-white shadow">
-                        <div class="icon icon-svg mb-20"><img src="/assets_landing/images/icons/sm-develop.png" alt=""></div>
-                        <h3 class="value">2184</h3>
-                        <p>Expert Employees</p>
-                    </div>
-                    <!--/.box -->
-                </div>
-                <!--/column -->
-                <div class="col-md-6 col-lg-3 text-center">
-                    <div class="box bg-white shadow">
-                        <div class="icon icon-svg mb-20"><img src="/assets_landing/images/icons/ms-medal.png" alt=""></div>
-                        <h3 class="value">4523</h3>
-                        <p>Awards Won</p>
-                    </div>
-                    <!--/.box -->
-                </div>
-                <!--/column -->
-            </div>
-            <!--/.row -->
-        </div>
-        <!-- /.container -->
-    </div>
+
+
+
+
     <section id="for">
         <div class="wrapper white-wrapper">
             <div class="container inner">
@@ -418,6 +376,52 @@
     </section>
 
 
+    <div class="wrapper gray-wrapper">
+        <div class="container inner">
+            <h2 class="section-title mb-40 text-center">Boxed Counter with Icons</h2>
+            <div class="row counter">
+                <div class="col-md-6 col-lg-3 text-center">
+                    <div class="box bg-white shadow">
+                        <div class="icon icon-svg mb-20"><img src="/assets_landing/images/icons/hs-check.png" alt=""></div>
+                        <h3 class="value">7518</h3>
+                        <p>Completed Projects</p>
+                    </div>
+                    <!--/.box -->
+                </div>
+                <!--/column -->
+                <div class="col-md-6 col-lg-3 text-center">
+                    <div class="box bg-white shadow">
+                        <div class="icon icon-svg mb-20"><img src="/assets_landing/images/icons/st-handshake.png" alt=""></div>
+                        <h3 class="value">3472</h3>
+                        <p>Satisfied Customers</p>
+                    </div>
+                    <!--/.box -->
+                </div>
+                <!--/column -->
+                <div class="space30 d-none d-md-block d-lg-none"></div>
+                <div class="col-md-6 col-lg-3 text-center">
+                    <div class="box bg-white shadow">
+                        <div class="icon icon-svg mb-20"><img src="/assets_landing/images/icons/sm-develop.png" alt=""></div>
+                        <h3 class="value">2184</h3>
+                        <p>Expert Employees</p>
+                    </div>
+                    <!--/.box -->
+                </div>
+                <!--/column -->
+                <div class="col-md-6 col-lg-3 text-center">
+                    <div class="box bg-white shadow">
+                        <div class="icon icon-svg mb-20"><img src="/assets_landing/images/icons/ms-medal.png" alt=""></div>
+                        <h3 class="value">4523</h3>
+                        <p>Awards Won</p>
+                    </div>
+                    <!--/.box -->
+                </div>
+                <!--/column -->
+            </div>
+            <!--/.row -->
+        </div>
+        <!-- /.container -->
+    </div>
 
 
 
