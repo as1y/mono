@@ -369,7 +369,7 @@
             <div class="row counter">
                 <div class="col-md-6 col-lg-3 text-center">
                     <div class="box bg-white shadow">
-                        <div class="icon icon-svg mb-20"><img src="/assets_landing/images/icons/st-handshake.png" alt=""></div>
+                        <div class="icon icon-svg mb-20"><img src="assets_landing/images/icons/hs-phone-call-2.png" alt=""></div>
                         <h3 class="value">300</h3>
                         <p>Звонков сегодня</p>
                     </div>
@@ -378,7 +378,7 @@
                 <!--/column -->
                 <div class="col-md-6 col-lg-3 text-center">
                     <div class="box bg-white shadow">
-                        <div class="icon icon-svg mb-20"><img src="assets_landing/images/icons/hs-phone-call-2.png" alt=""></div>
+                        <div class="icon icon-svg mb-20"><img src="/assets_landing/images/icons/hs-check.png" alt=""></div>
 
                         <h3 class="value">40</h3>
                         <p>Успешных</p>
