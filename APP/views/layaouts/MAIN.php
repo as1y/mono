@@ -265,7 +265,7 @@
                         <div class="space30"></div>
 
 
-                        <div class="flex-row justify-content-center">
+                        <div class="d-flex justify-content-center">
 
 
                             <div class="col-md-3 text-center">
@@ -279,7 +279,7 @@
                             </div>
                         </div>
                         <div class="space30"></div>
-                        <div class="flex-row justify-content-center">
+                        <div class="d-flex justify-content-center">
 
                             <div class="col-md-3 text-center">
                                 <div class="icon icon-svg mb-20"><img src="assets_landing/images/icons/hs-support-5.png" alt=""></div>
@@ -293,7 +293,7 @@
                         </div>
 
                         <div class="space30"></div>
-                        <div class="flex-row justify-content-center">
+                        <div class="d-flex  justify-content-center">
 
 
                             <div class="col-md-3 text-center">
@@ -307,7 +307,7 @@
                         </div>
 
                         <div class="space30"></div>
-                        <div class="flex-row justify-content-center">
+                        <div class="d-flex  justify-content-center">
 
 
                             <div class="col-md-3 text-center">
