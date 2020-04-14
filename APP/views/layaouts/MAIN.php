@@ -21,7 +21,7 @@
             <div class="navbar-brand">
 <!--                <a href="index.html"><img src="#" srcset="assets_landing/images/logo.png 1x, assets_landing/images/logo@2x.png 2x" alt="" /></a>-->
 
-                CASHCALL.RU
+                <b>CASHCALL.RU</b>
 
 
             </div>
