@@ -296,6 +296,7 @@
         <div class="wrapper white-wrapper">
             <div class="container inner">
                 <div class="row  text-center justify-content-center">
+                    <h3 class="display-3">ДЛЯ КОГО</h3>
                     <div class="col-md-4">
                         <figure class="mb-30"><img src="#" srcset="assets_landing/images/concept/concept14.png 1x, assets_landing/images/concept/concept14@2x.png 2x" alt=""></figure>
                         <h4>УДАЛЕННЫМ ОПЕРАТОРАМ</h4>
