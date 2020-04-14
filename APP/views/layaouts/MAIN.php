@@ -225,7 +225,11 @@
                              data-whitespace="['normal','normal','normal','normal']"
                              data-frames='[{"delay":1500,"speed":1200,"frame":"0","from":"x:-50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
                              data-responsive="on"
-                             data-responsive_offset="on" style="z-index: 9;">We help our clients to increase their website traffic, rankings and visibility in search results.
+                             data-responsive_offset="on" style="z-index: 9;">
+
+                            Сервис подбора и контроля за операторами на телефоне.
+
+
                         </div>
                         <!-- /.tp-caption -->
                         <a class="tp-caption btn btn-l btn-default"
