@@ -67,7 +67,7 @@
                 <a href="#" class="navbar-nav-link dropdown-toggle caret-0" data-toggle="dropdown">
                     <i class="icon-bubbles5"></i>
                     <span class="d-md-none ml-2">Мои сообщения</span>
-                    <span class="badge badge-pill bg-warning-400 ml-auto ml-xl-0">1</span>
+<!--                    <span class="badge badge-pill bg-warning-400 ml-auto ml-xl-0">1</span>-->
                 </a>
 
                 <div class="dropdown-menu dropdown-menu-right dropdown-content wmin-md-350">
