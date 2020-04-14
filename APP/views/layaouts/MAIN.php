@@ -67,8 +67,8 @@
                     </li>
 
 
-                    <li class="nav-item"><a style="color: var(--color-default)" class="nav-link" href="/user/register/" target="_blank" "=""> <b>Регистрация</b> </a>
-                    </li>
+<!--                    <li class="nav-item"><a style="color: var(--color-default)" class="nav-link" href="/user/register/" target="_blank" "=""> <b>Регистрация</b> </a>-->
+<!--                    </li>-->
 
 
                 </ul>
