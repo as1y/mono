@@ -251,9 +251,17 @@
                     <div class="form-group">
 
                         <label>Дата перезвона<span class="text-danger">*</span></label>
+
                         <div class="input-group">
-                            <input type="date" name="dataperezvona" class="form-control datepicker hasDatepicker" value="<?=date("Y-m-d")?>" placeholder="Дата перезвона">
+										<span class="input-group-prepend">
+											<span class="input-group-text">
+												<i class="icon-calendar"></i>
+											</span>
+										</span>
+                            <input type="text" name="dataperezvona" class="form-control datepicker" value="<?=date("Y-m-d")?>" placeholder="Дата перезвона">
                         </div>
+
+
 
                     </div>
 
