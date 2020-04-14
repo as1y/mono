@@ -1,10 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="/favicon.ico">
     <title>Snowlake</title>
+
+
+    <?php \APP\core\base\View::getMeta()?>
+
+    
     <link rel="stylesheet" type="text/css" href="/assets_landing/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="/assets_landing/css/plugins.css">
     <link rel="stylesheet" type="text/css" href="/assets_landing/revolution/css/settings.css">
