@@ -55,17 +55,19 @@
 
                 <ul class="navbar-nav mx-auto" >
 
+                    <li class="nav-item"><a class="nav-link" href="#for">Для кого это?</a>
+                    </li>
+
                     <li class="nav-item"><a class="nav-link" href="#howitworks">Как это работает?</a>
                     </li>
 
 
-                    <li class="nav-item"><a class="nav-link" href="#for">Для кого это?</a>
-                    </li>
+
 
                     <li class="nav-item"><a class="nav-link" href="#">Статистика</a>
                     </li>
 
-                    <li class="nav-item"><a class="nav-link" href="#">Рекламодателям</a>
+                    <li class="nav-item"><a style="color: var(--color-default)" class="nav-link" href="/user/register/" target="_blank" "=""> <b>Регистрация</b> </a>
                     </li>
 
 
