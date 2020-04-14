@@ -400,7 +400,7 @@
                     <div class="box bg-white shadow">
                         <div class="icon icon-svg mb-20"><img src="/assets_landing/images/icons/hs-check.png" alt=""></div>
                         <h3 class="value">7518</h3>
-                        <p>Успешных звонков</p>
+                        <p>Звонков сегодня</p>
                     </div>
                     <!--/.box -->
                 </div>
@@ -409,7 +409,7 @@
                     <div class="box bg-white shadow">
                         <div class="icon icon-svg mb-20"><img src="/assets_landing/images/icons/st-handshake.png" alt=""></div>
                         <h3 class="value">3472</h3>
-                        <p>Операторов</p>
+                        <p>Успешных</p>
                     </div>
                     <!--/.box -->
                 </div>
@@ -419,7 +419,7 @@
                     <div class="box bg-white shadow">
                         <div class="icon icon-svg mb-20"><img src="/assets_landing/images/icons/sm-develop.png" alt=""></div>
                         <h3 class="value">2184</h3>
-                        <p>Рекламодателей</p>
+                        <p>Операторов</p>
                     </div>
                     <!--/.box -->
                 </div>
@@ -428,7 +428,7 @@
                     <div class="box bg-white shadow">
                         <div class="icon icon-svg mb-20"><img src="/assets_landing/images/icons/ms-medal.png" alt=""></div>
                         <h3 class="value">4523</h3>
-                        <p>Awards Won</p>
+                        <p>Рекламодателей</p>
                     </div>
                     <!--/.box -->
                 </div>
