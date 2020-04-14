@@ -142,14 +142,13 @@ function rendercontactinfo ($DATA){
 
 ?>
 
-    <b>ИМЯ</b> <?=(!empty($DATA['name'])) ?  $DATA['name'] : "не заполнено"?><br>
-    <b>ТЕЛЕФОН</b> <?=(!empty($DATA['tel'])) ?  $DATA['tel'] : "не заполнено"?><br>
-    <b>КОМПАНИЯ</b> <?=(!empty($DATA['company'])) ?  $DATA['company'] : "не заполнено"?><br>
-    <b>САЙТ</b> <?=(!empty($DATA['site'])) ?  $DATA['site'] : "не заполнено"?><br>
-    <b>КОММЕНТАРИЙ</b> <?=(!empty($DATA['comment'])) ?  $DATA['comment'] : "не заполнено"?><br>
+    <b>ИМЯ: </b> <?=(!empty($DATA['name'])) ?  $DATA['name'] : "не заполнено"?><br>
+    <b>ТЕЛЕФОН: </b> <?=(!empty($DATA['tel'])) ?  $DATA['tel'] : "не заполнено"?><br>
+    <b>КОМПАНИЯ: </b> <?=(!empty($DATA['company'])) ?  $DATA['company'] : "не заполнено"?><br>
+    <b>САЙТ: </b> <?=(!empty($DATA['site'])) ?  $DATA['site'] : "не заполнено"?><br>
+    <b>КОММЕНТАРИЙ: </b> <?=(!empty($DATA['comment'])) ?  $DATA['comment'] : "не заполнено"?><br>
 
     
-
     <?php
 
 
