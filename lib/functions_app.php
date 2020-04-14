@@ -33,8 +33,8 @@ function raskladkazapisi($DATA) {
             $date = $val['start_date'];
             $url = $val['records']['0']['record_url'];
 
-
-            $a = "<p><audio src='".$val['records']['0']['record_url']."' controls></audio></p><i class='icon-calendar3'></i> ".$date."";
+       
+            $a = "<i class='icon-calendar3'></i>".$date."<p><audio src='".$val['records']['0']['record_url']."' controls></audio></p>";
 
 
 
