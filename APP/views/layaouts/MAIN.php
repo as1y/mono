@@ -394,13 +394,13 @@
 
     <div class="wrapper white-wrapper-wrapper">
         <div class="container inner">
-            <h2 class="section-title mb-40 text-center">Boxed Counter with Icons</h2>
+            <h2 class="section-title mb-40 text-center">Начните зарабатывать на телефонных звонках!</h2>
             <div class="row counter">
                 <div class="col-md-6 col-lg-3 text-center">
                     <div class="box bg-white shadow">
                         <div class="icon icon-svg mb-20"><img src="/assets_landing/images/icons/hs-check.png" alt=""></div>
                         <h3 class="value">7518</h3>
-                        <p>Completed Projects</p>
+                        <p>Успешных звонков</p>
                     </div>
                     <!--/.box -->
                 </div>
@@ -409,7 +409,7 @@
                     <div class="box bg-white shadow">
                         <div class="icon icon-svg mb-20"><img src="/assets_landing/images/icons/st-handshake.png" alt=""></div>
                         <h3 class="value">3472</h3>
-                        <p>Satisfied Customers</p>
+                        <p>Операторов</p>
                     </div>
                     <!--/.box -->
                 </div>
@@ -419,7 +419,7 @@
                     <div class="box bg-white shadow">
                         <div class="icon icon-svg mb-20"><img src="/assets_landing/images/icons/sm-develop.png" alt=""></div>
                         <h3 class="value">2184</h3>
-                        <p>Expert Employees</p>
+                        <p>Рекламодателей</p>
                     </div>
                     <!--/.box -->
                 </div>
@@ -440,7 +440,7 @@
     </div>
 
 
-    
+
 
     <footer class="dark-wrapper inverse-text text-center">
         <div class="container inner pt-80 pb-80">
