@@ -253,7 +253,7 @@
     <section id="for">
         <div class="wrapper white-wrapper">
             <div class="container inner">
-                <div class="row  text-center justify-content-center">
+                <div class="row  row align-items-center justify-content-center">
                     <h3 class="display-3">Для кого</h3>
                     <div class="space30"></div>
                     <div class="col-md-4">
