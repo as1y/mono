@@ -1,3 +1,13 @@
+<?php
+if(mail("email@example.com", "TEST SUBJECT", "TEST BODY"))
+    echo "Почтовая система работает!";
+else
+    echo "Неудача, почтовая система не работает, попробуйте еще!";
+
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="ru">
 <head>
