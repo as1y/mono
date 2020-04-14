@@ -353,7 +353,7 @@
         <!-- /.wrapper -->
     </section>
 
-    <div class="box shadow p-60 image-wrapper bg-full bg-image inverse-text rounded d-md-flex align-items-md-center justify-content-md-between" data-image-src="assets_landing/images/art/bg6.jpg" style="background-image: url(&quot;style/images/art/bg6.jpg&quot;);">
+    <div class="text-center box shadow p-60 image-wrapper bg-full bg-image inverse-text rounded d-md-flex align-items-md-center justify-content-md-between" data-image-src="assets_landing/images/art/bg6.jpg" style="background-image: url(&quot;style/images/art/bg6.jpg&quot;);">
         <h3 class="display-3 text-center mb-0">Начните работу с системой прямо сейчас</h3>
         <div class="space30 d-md-none"></div>
         <a href="/user/register" class="btn btn-white btn-strong-hover mb-0">РЕГИСТРАЦИЯ</a>
