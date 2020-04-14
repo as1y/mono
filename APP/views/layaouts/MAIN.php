@@ -253,7 +253,7 @@
 
                 <div class="row align-items-center">
                     <div class="col-lg-6 order-lg-2">
-                        <figure><img src="#" srcset="style/images/concept/concept14.png 1x, style/images/concept/concept14@2x.png 2x" alt=""></figure>
+                        <figure><img src="#" srcset="assets_landing/images/concept/concept14.png 1x, assets_landing/images/concept/concept14@2x.png 2x" alt=""></figure>
                     </div>
                     <!--/column -->
                     <div class="space20 d-md-none"></div>
@@ -265,7 +265,7 @@
 
 
                             <div class="col-md-3 text-center">
-                                <div class="icon icon-svg mb-20"><img src="style/images/icons/ui-user.png" alt=""></div>
+                                <div class="icon icon-svg mb-20"><img src="assets_landing/images/icons/ui-user.png" alt=""></div>
                             </div>
 
 
@@ -282,7 +282,7 @@
 
 
                             <div class="col-md-3 text-center">
-                                <div class="icon icon-svg mb-20"><img src="style/images/icons/hs-browser.png" alt=""></div>
+                                <div class="icon icon-svg mb-20"><img src="assets_landing/images/icons/hs-browser.png" alt=""></div>
                             </div>
 
 
@@ -298,7 +298,7 @@
 
 
                             <div class="col-md-3 text-center">
-                                <div class="icon icon-svg mb-20"><img src="style/images/icons/ui-credit-card.png" alt=""></div>
+                                <div class="icon icon-svg mb-20"><img src="assets_landing/images/icons/ui-credit-card.png" alt=""></div>
                             </div>
 
 
@@ -313,7 +313,7 @@
 
 
                             <div class="col-md-3 text-center">
-                                <div class="icon icon-svg mb-20"><img src="style/images/icons/ui-chat.png" alt=""></div>
+                                <div class="icon icon-svg mb-20"><img src="assets_landing/images/icons/ui-chat.png" alt=""></div>
                             </div>
 
 
