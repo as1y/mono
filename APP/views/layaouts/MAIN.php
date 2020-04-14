@@ -246,7 +246,7 @@
         <!-- /.rev_slider_wrapper -->
 
 
-        <div class="container inner">
+        <div class="container inner white-wrapper">
             <h2 class="section-title mb-40 text-center">Icon Lists</h2>
             <div class="row">
                 <div class="col-md-4">
@@ -308,7 +308,7 @@
             <!-- /.row -->
         </div>
 
-        
+
     </div>
     <!-- /.wrapper -->
 
