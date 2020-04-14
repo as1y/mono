@@ -160,21 +160,12 @@ function rendercontactinfo ($DATA){
 
 function renderresult ($DATA){
 
-
-
     $DATA = json_decode($DATA, true);
-
-    show($DATA);
-exit();
-
     foreach ($DATA as $key=>$val){
         echo "<b>".$val['NAME'].": </b>".$val['VAL']."<br>";
     }
 
-
-
-
-
+    
 
     return true;
 
