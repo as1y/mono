@@ -60,7 +60,7 @@
                     <li class="nav-item"><a class="nav-link" href="#">Как это работает?</a>
                     </li>
 
-                    <li class="nav-item"><a class="nav-link" href="#">Оператороам</a>
+                    <li class="nav-item"><a class="nav-link" href="#">Операторам</a>
                     </li>
 
                     <li class="nav-item"><a class="nav-link" href="#">Рекламодателям</a>
