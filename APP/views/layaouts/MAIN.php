@@ -18,7 +18,16 @@
 <div class="content-wrapper">
     <nav class="navbar absolute transparent navbar-expand-lg nav-uppercase">
         <div class="container flex-row justify-content-center">
-            <div class="navbar-brand"><a href="index.html"><img src="#" srcset="assets_landing/images/logo.png 1x, assets_landing/images/logo@2x.png 2x" alt="" /></a></div>
+            <div class="navbar-brand">
+<!--                <a href="index.html"><img src="#" srcset="assets_landing/images/logo.png 1x, assets_landing/images/logo@2x.png 2x" alt="" /></a>-->
+
+                CASHCALL.RU
+
+
+            </div>
+
+
+
             <div class="navbar-other ml-auto order-lg-3">
                 <ul class="navbar-nav flex-row align-items-center" data-sm-skip="true">
                     <li class="nav-item">
