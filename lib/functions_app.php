@@ -24,25 +24,31 @@ function getrecord2($idcont) {
 function raskladkazapisi($DATA) {
 
     $DATA = json_decode($DATA, true);
-    show($DATA);
+    if (!$DATA) return "Запись отсутсвует<br />";
 
-    exit();
+    $records = '';
 
-    if ($zapis != "nope") {
-        $records = '';
-        $date = $zapis['date'];
-        $zapis = json_decode($zapis['data'], true);
-        foreach($zapis['result'] as $val) {
-            if (isset($val['records']['0'])) {
-                $url = $val['records']['0']['record_url'];
-                $a = "<div class='well'><p><audio src='".$val['records']['0']['record_url']."' controls></audio></p><i class='fa fa-calendar'></i> ".$date."</div>";
-            }
+    foreach ($DATA as $key=>$val){
+        if (!empty($val['records']['0'])){
+            $date = $val['start_date'];
+            $url = $val['records']['0']['record_url'];
+
+
+            $a = "<p><audio src='".$val['records']['0']['record_url']."' controls></audio></p><i class='icon-calendar3'></i> ".$date."";
+
+
+
             if (!isset($url)) $a = "<p>Без записи</p>";
             $records = $records.$a;
         }
+
+
     }
-    if (!isset($records)) $records = "Запись отсутсвует<br />";
+
+
     return $records;
+
+
 }
 
 
