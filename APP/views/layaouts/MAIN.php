@@ -146,7 +146,7 @@
                              data-x="['center','center','center','center']"
                              data-y="['middle','middle','middle','middle']"
                              data-hoffset="['260','260','260','260']"
-                             data-voffset="['10','10','10','10']"
+                             data-voffset="['1','1','1','1']"
                              data-frames='[{"delay":600,"speed":1200,"frame":"0","from":"y:bottom;rX:90deg;","to":"o:1;","ease":"Power4.easeOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
                              data-visibility="['on','on','on','off']"
                              data-width="none"
@@ -158,7 +158,7 @@
 
                                     data-lazyload="" src="assets_base/rocket2.png"
 
-                                    data-ww="['400','400','400','400']"
+                                    data-ww="['410','410','410','410']"
                                     data-hh="auto" alt="" />
                         </div>
                         <!-- /.tp-caption -->
