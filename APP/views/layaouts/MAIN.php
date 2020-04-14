@@ -155,7 +155,9 @@
                              data-responsive="on"
                              data-responsive_offset="on"
                              data-basealign="slide" style="z-index: 5;"><img
-                                    data-lazyload="" src="assets_landing/images/art/rocket2.png"
+
+                                    data-lazyload="" src="assets_base/rocket2.png"
+
                                     data-ww="['220','220','220','220']"
                                     data-hh="auto" alt="" />
                         </div>
