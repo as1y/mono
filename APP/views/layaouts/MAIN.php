@@ -251,6 +251,7 @@
         <div class="wrapper white-wrapper">
             <div class="container inner">
                 <h3 class="display-3 text-center">Для кого это</h3>
+                <div class="space30"></div>
                 <div class="row  text-center align-items-end">
                     <div class="col-md-5">
                         <figure class="mb-30"><img src="#" srcset="assets_landing/images/concept/concept14.png 1x, assets_landing/images/concept/concept14@2x.png 2x" alt=""></figure>
@@ -280,7 +281,7 @@
 
 
     <section id="howitworks">
-        <div class="wrapper dark-wrapper inverse-text">
+        <div class="wrapper white-wrapper">
             <div class="container">
 
                 <div class="row align-items-center">
