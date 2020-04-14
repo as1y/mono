@@ -277,8 +277,8 @@
 
 
                             <div>
-                                <h5>Операторы совершают звонки</h5>
-                                <p class="mb-0">Простая <a href="/user/register/" target="_blank">регистрация на сайте</a> . Укажите Ваше Имя и e-mail</p>
+                                <h5>Оператор подает заявку в проект</h5>
+                                <p class="mb-0">Простая <a href="/user/register/" target="_blank">регистрация на сайте</a>.</p>
                             </div>
                         </div>
 
