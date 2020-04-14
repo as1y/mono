@@ -33,6 +33,15 @@ class Operator extends \APP\core\base\Model {
         $nomerresult = pole_valid ($_POST['nomerresult'], 15, 's');
         if (!empty($nomerresult['error'])) message($nomerresult['error']);
 
+
+        $operatorcomment = trim($_POST['operatorcomment']);
+        $operatorcomment = strip_tags($operatorcomment);
+        $operatorcomment = htmlspecialchars($operatorcomment);
+        iconv_strlen($operatorcomment, 'UTF-8');
+        if (strlen($operatorcomment) > 1000) message("Комментарий от оператора не может быть больше 1000 символов");
+
+        $ADDMAS
+
         // Считаем кол-во полей.
 
         $RESULTMASS = json_decode($company['formresult'],true);

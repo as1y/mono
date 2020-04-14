@@ -148,7 +148,7 @@ function rendercontactinfo ($DATA){
     <b>САЙТ: </b> <?=(!empty($DATA['site'])) ?  $DATA['site'] : "не заполнено"?><br>
     <b>КОММЕНТАРИЙ: </b> <?=(!empty($DATA['comment'])) ?  $DATA['comment'] : "не заполнено"?><br>
 
-    
+
     <?php
 
 
@@ -159,7 +159,13 @@ function rendercontactinfo ($DATA){
 
 
 function renderresult ($DATA){
+
+
+
     $DATA = json_decode($DATA, true);
+
+    show($DATA);
+exit();
 
     foreach ($DATA as $key=>$val){
         echo "<b>".$val['NAME'].": </b>".$val['VAL']."<br>";
