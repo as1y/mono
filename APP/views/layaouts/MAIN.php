@@ -7,10 +7,10 @@
 
 
     <?php \APP\core\base\View::getMeta()?>
-    <meta name="yandex-verification" content="9e94f6602d4730a4" />
+
     <link rel="shortcut icon" href="/favicon.ico">
 
-
+    <meta name="yandex-verification" content="9e94f6602d4730a4" />
     <link rel="stylesheet" type="text/css" href="/assets_landing/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="/assets_landing/css/plugins.css">
     <link rel="stylesheet" type="text/css" href="/assets_landing/revolution/css/settings.css">
