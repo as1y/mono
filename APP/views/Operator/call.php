@@ -310,7 +310,8 @@
             </div>
 
                 <div class="card-body">
-                    СКРИПТ
+
+                    <?=$script?>
 
                 </div>
 
