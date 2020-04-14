@@ -266,8 +266,7 @@
 
 
                                         <div class="col-lg-6 pr-60 pr-md-15">
-
-                                            <h3 class="display-3">Как это работает?</h3>
+                                            
                                             <div class="space30"></div>
                                             <div class="d-flex flex-row justify-content-center">
 
@@ -283,7 +282,7 @@
                                                 </div>
                                             </div>
 
-                                            
+
 
                         <h3 class="display-3">Как это работает?</h3>
                         <div class="space30"></div>
