@@ -301,7 +301,23 @@
 </div>
 
 
+<div class="row">
+    <div class="col-md-12">
+        <div class="card border-dark">
+            <div class="card-header bg-dark text-white header-elements-inline">
+                <h6 class="card-title">СКРИПТ РАЗГОВОРА</h6>
 
+            </div>
+
+                <div class="card-body">
+                    СКРИПТ
+
+                </div>
+
+
+        </div>
+    </div>
+</div>
 
 
 
