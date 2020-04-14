@@ -354,9 +354,9 @@
     </section>
 
     <div class="box shadow p-60 image-wrapper bg-full bg-image inverse-text rounded d-md-flex align-items-md-center justify-content-center" data-image-src="assets_landing/images/art/bg6.jpg" style="background-image: url(&quot;style/images/art/bg6.jpg&quot;);">
-      <div class="row  justify-content-center">
+      <div class="row text-center justify-content-center">
         <h3 class="display-3 text-center mb-0">Начните работу с системой прямо сейчас</h3>
-        <div class="space30 d-md-none"></div>
+        <div class="space10"></div>
         <a href="/user/register" class="btn btn-white btn-strong-hover mb-0">РЕГИСТРАЦИЯ</a>
       </div>
     </div>
