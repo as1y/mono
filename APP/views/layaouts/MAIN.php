@@ -305,12 +305,12 @@
 
 
                             <div class="col-md-3 text-center">
-                                <div class="icon icon-svg mb-20"><img src="assets_landing/images/icons/ui-credit-card.png" alt=""></div>
+                                <div class="icon icon-svg mb-20"><img src="assets_landing/images/icons/ui-phone.png" alt=""></div>
                             </div>
 
                             <div>
-                                <h5>Рекламодатель присваивает статус</h5>
-                                <p class="mb-0">Отклонен, подтвержден, доработка. В случае если статус подтвержден оператору поступает оплата за успешную заявку</p>
+                                <h5>Успешный звонок</h5>
+                                <p class="mb-0">Оператор совершил успешный звонок. Например заинтереосвал клиента в продуктах или услугах рекламодателя.</p>
                             </div>
                         </div>
 
