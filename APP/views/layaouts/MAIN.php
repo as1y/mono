@@ -246,7 +246,7 @@
         <!-- /.rev_slider_wrapper -->
 
 
-        <div class="container inner white-wrapper">
+        <div class="container inner">
             <h2 class="section-title mb-40 text-center">Icon Lists</h2>
             <div class="row">
                 <div class="col-md-4">
