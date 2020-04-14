@@ -350,8 +350,8 @@
                         <div class="text-center"><a href="#" class="more">Learn more</a></div>
                     </div>
                     <!--/column -->
-                    <div class="col-md-4">
-                        
+                    <div class="col-md-2">
+
                     </div>
                     <div class="space20 d-md-none"></div>
                     <div class="col-md-4">
