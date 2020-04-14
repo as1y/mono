@@ -311,7 +311,7 @@
 
                 <div class="card-body">
 
-                    <?=$script?>
+                    <?=json_decode($script, true)?>
 
                 </div>
 
