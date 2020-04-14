@@ -377,7 +377,7 @@
     </section>
 
 
-    <div class="wrapper gray-wrapper">
+    <div class="wrapper white-wrapper-wrapper">
         <div class="container inner">
             <h2 class="section-title mb-40 text-center">Boxed Counter with Icons</h2>
             <div class="row counter">
