@@ -10,7 +10,7 @@ class MainController extends AppController {
 
 
         $META = [
-            'title' => 'Биржа операторов на телефоне - CASHCALL.RU',
+            'title' => 'Биржа операторов на телефоне, удаленная работа оператором - CASHCALL.RU',
             'description' => 'CASHCALL.RU - Биржа операторов на телефоне',
             'keywords' => 'CASHCALL.RU - Биржа операторов на телефоне',
         ];

@@ -206,7 +206,11 @@
                              data-whitespace="['normal','normal','normal','normal']"
                              data-frames='[{"delay":1000,"speed":1200,"frame":"0","from":"y:-50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
                              data-responsive="on"
-                             data-responsive_offset="on" style="z-index: 9;">Grow Your Business with Our Marketing Solutions
+                             data-responsive_offset="on" style="z-index: 9;">
+
+                            Биржа удаленных операторов на телефоне - CASHCALL.RU
+
+
                         </div>
                         <!-- /.tp-caption -->
                         <div class="tp-caption font-weight-300 color-dark"
