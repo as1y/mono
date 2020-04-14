@@ -338,7 +338,152 @@
     </section>
 
     <section id="for">
-
+        <div class="wrapper white-wrapper">
+            <div class="container inner">
+                <div class="text-center">
+                    <h2 class="title-bg bg-default color-default">What We Do?</h2>
+                </div>
+                <div class="space10"></div>
+                <h3 class="display-3 text-center">The full service we are offering is specifically <br class="d-none d-lg-block">designed to meet your business needs.</h3>
+                <div class="space30"></div>
+                <div class="row gutter-60 text-center align-items-end">
+                    <div class="col-md-4">
+                        <figure class="mb-30"><img src="#" srcset="assets_landing/images/concept/concept14.png 1x, assets_landing/images/concept/concept14@2x.png 2x" alt=""></figure>
+                        <h4>Social Media</h4>
+                        <p class="mb-15">Maecenas faucibus mollis interdum. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus.</p>
+                        <div class="text-center"><a href="#" class="more">Learn more</a></div>
+                    </div>
+                    <!--/column -->
+                    <div class="space20 d-md-none"></div>
+                    <div class="col-md-4">
+                        <figure class="mb-30"><img src="#" srcset="assets_landing/images/concept/concept19.png 1x, assets_landing/images/concept/concept19@2x.png 2x" alt=""></figure>
+                        <h4>Digital Marketing</h4>
+                        <p class="mb-15">Maecenas faucibus mollis interdum. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus.</p>
+                        <div class="text-center"><a href="#" class="more">Learn more</a></div>
+                    </div>
+                    <!--/column -->
+                    <div class="space20 d-md-none"></div>
+                    <div class="col-md-4">
+                        <figure class="mb-30"><img src="#" srcset="assets_landing/images/concept/concept18.png 1x, assets_landing/images/concept/concept18@2x.png 2x" alt=""></figure>
+                        <h4>SEO Optimization</h4>
+                        <p class="mb-15">Maecenas faucibus mollis interdum. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus.</p>
+                        <div class="text-center"><a href="#" class="more">Learn more</a></div>
+                    </div>
+                    <!--/column -->
+                </div>
+                <!--/.row -->
+                <div class="space140"></div>
+                <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <figure><img src="#" srcset="assets_landing/images/concept/concept15.png 1x, assets_landing/images/concept/concept15@2x.png 2x" alt=""></figure>
+                    </div>
+                    <!--/column -->
+                    <div class="space20 d-md-none"></div>
+                    <div class="space50 d-none d-md-block d-lg-none"></div>
+                    <div class="col-lg-6 pl-60 pl-md-15">
+                        <h2 class="title-bg bg-default color-default">How It Works?</h2>
+                        <div class="space10"></div>
+                        <h3 class="display-3">Find out everything you need about creating a business process model.</h3>
+                        <div class="space20"></div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h5><span class="color-default">1.</span> Creative Ideas</h5>
+                                <p>Nulla vitae elit libero, a pharetra augue. Donec id elit non mi porta gravida at eget metus cras.</p>
+                            </div>
+                            <!--/column -->
+                            <div class="col-md-6">
+                                <h5><span class="color-default">2.</span> Magic Touch</h5>
+                                <p>Nulla vitae elit libero, a pharetra augue. Donec id elit non mi porta gravida at eget metus cras.</p>
+                            </div>
+                            <!--/column -->
+                            <div class="space10 d-none d-md-block"></div>
+                            <div class="col-md-6">
+                                <h5><span class="color-default">3.</span> Data Analysis</h5>
+                                <p>Nulla vitae elit libero, a pharetra augue. Donec id elit non mi porta gravida at eget metus cras.</p>
+                            </div>
+                            <!--/column -->
+                            <div class="col-md-6">
+                                <h5><span class="color-default">4.</span> Finalize Product</h5>
+                                <p>Nulla vitae elit libero, a pharetra augue. Donec id elit non mi porta gravida at eget metus cras.</p>
+                            </div>
+                            <!--/column -->
+                        </div>
+                        <!--/.row -->
+                    </div>
+                    <!--/column -->
+                </div>
+                <!--/.row -->
+                <div class="space140"></div>
+                <div class="row align-items-center">
+                    <div class="col-lg-6 order-lg-2 text-center">
+                        <figure><img src="#" srcset="assets_landing/images/concept/concept17.png 1x, assets_landing/images/concept/concept17@2x.png 2x" alt=""></figure>
+                    </div>
+                    <!--/column -->
+                    <div class="space20 d-md-none"></div>
+                    <div class="space50 d-none d-md-block d-lg-none"></div>
+                    <div class="col-lg-6 pr-60 pr-md-15">
+                        <h2 class="title-bg bg-default color-default">Why Choose Us?</h2>
+                        <div class="space10"></div>
+                        <h3 class="display-3">So here are a few reasons why our valued customers choose us.</h3>
+                        <div class="space20"></div>
+                        <div id="accordion-1" class="accordion-wrapper simple">
+                            <div class="card">
+                                <div class="card-header" id="accordion-heading-1-1">
+                                    <h5>
+                                        <button data-toggle="collapse" data-target="#accordion-collapse-1-1" aria-expanded="true" aria-controls="accordion-collapse-1-1">Money Protection</button>
+                                    </h5>
+                                </div>
+                                <!-- /.card-header -->
+                                <div id="accordion-collapse-1-1" class="collapse show" aria-labelledby="accordion-heading-1-1" data-parent="#accordion-1">
+                                    <div class="card-body">
+                                        <p>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Cras mattis consectetur purus sit amet fermentum. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Cum sociis natoque penatibus et magnis dis parturient montes.</p>
+                                    </div>
+                                    <!-- /.card-body -->
+                                </div>
+                                <!-- /.collapse -->
+                            </div>
+                            <!-- /.card -->
+                            <div class="card">
+                                <div class="card-header" id="accordion-heading-1-2">
+                                    <h5>
+                                        <button class="collapsed" data-toggle="collapse" data-target="#accordion-collapse-1-2" aria-expanded="false" aria-controls="accordion-collapse-1-2">Strategic Development</button>
+                                    </h5>
+                                </div>
+                                <!-- /.card-header -->
+                                <div id="accordion-collapse-1-2" class="collapse" aria-labelledby="accordion-heading-1-2" data-parent="#accordion-1">
+                                    <div class="card-body">
+                                        <p>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Cras mattis consectetur purus sit amet fermentum. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Cum sociis natoque penatibus et magnis dis parturient montes.</p>
+                                    </div>
+                                    <!-- /.card-body -->
+                                </div>
+                                <!-- /.collapse -->
+                            </div>
+                            <!-- /.card -->
+                            <div class="card">
+                                <div class="card-header" id="accordion-heading-1-3">
+                                    <h5>
+                                        <button class="collapsed" data-toggle="collapse" data-target="#accordion-collapse-1-3" aria-expanded="false" aria-controls="accordion-collapse-1-3">Marketing Management</button>
+                                    </h5>
+                                </div>
+                                <!-- /.card-header -->
+                                <div id="accordion-collapse-1-3" class="collapse" aria-labelledby="accordion-heading-1-3" data-parent="#accordion-1">
+                                    <div class="card-body">
+                                        <p>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Cras mattis consectetur purus sit amet fermentum. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Cum sociis natoque penatibus et magnis dis parturient montes.</p>
+                                    </div>
+                                    <!-- /.card-body -->
+                                </div>
+                                <!-- /.collapse -->
+                            </div>
+                            <!-- /.card -->
+                        </div>
+                        <!-- /.accordion-wrapper -->
+                    </div>
+                    <!--/column -->
+                </div>
+                <!--/.row -->
+            </div>
+            <!-- /.container -->
+        </div>
 
     </section>
 
