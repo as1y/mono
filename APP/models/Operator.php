@@ -188,7 +188,10 @@ class Operator extends \APP\core\base\Model {
     }
 
     public function getscript($idc) {
-        return R::findOne('script', 'WHERE idc = ?', [$idc]);
+
+        $script = R::findOne('script', 'WHERE idc = ?', [$idc]);
+
+        return $script['script'];
     }
 
     public function checkcompany($idc) {
