@@ -269,11 +269,7 @@
                 <div class="space30"></div>
                 <div class="row align-items-center">
                     <div class="col-lg-6 order-lg-2">
-                        <figure>
-
-                            <img src="#" srcset="assets_landing/images/concept/concept13.png 1x, assets_landing/images/concept/concept13@2x.png 2x" alt="">
-
-                        </figure>
+                        <figure>               <img src="#" srcset="assets_landing/images/concept/concept13.png 1x, assets_landing/images/concept/concept13@2x.png 2x" alt=""></figure>
                     </div>
                     <!--/column -->
                     <div class="space20 d-md-none"></div>
@@ -302,7 +298,7 @@
                         <div class="d-flex flex-row justify-content-center">
 
                             <div class="col-md-3">
-                                <img src="#" srcset="/images/concept/concept13.png 1x, style/images/concept/concept13@2x.png 2x" alt="">
+                                <div class="icon icon-svg mb-20"><img src="assets_landing/images/icons/hs-support-5.png" alt=""></div>
                             </div>
 
 
