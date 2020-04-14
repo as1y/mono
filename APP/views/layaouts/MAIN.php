@@ -54,16 +54,16 @@
 
 
                 <ul class="navbar-nav mx-auto" data-smartmenus-id="1586828885427087">
-                    <li class="nav-item"><a class="nav-link" href="#howitworks">Как это работает?</a>
+                    <li class="nav-item"><a class="nav-link" href="#howitworks">Для кого это?</a>
                     </li>
 
-                    <li class="nav-item"><a class="nav-link" href="#gde">Откуда деньги?</a>
+                    <li class="nav-item"><a class="nav-link" href="#gde">Как это работает?</a>
                     </li>
 
-                    <li class="nav-item"><a class="nav-link" href="#faq">За друга 100</a>
+                    <li class="nav-item"><a class="nav-link" href="#faq">Оператороам</a>
                     </li>
 
-                    <li class="nav-item"><a class="nav-link" href="#faq">Вопросы</a>
+                    <li class="nav-item"><a class="nav-link" href="#faq">Рекламодателям</a>
                     </li>
 
 
