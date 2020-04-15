@@ -1,3 +1,11 @@
+<?php
+
+show($statuscall);
+
+
+?>
+
+
 <div class="card text-center">
     <div class="card-header bg-white header-elements-inline">
         <h6 class="card-title">МОЙ СТАТУС</b></h6>
