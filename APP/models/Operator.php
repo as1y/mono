@@ -178,6 +178,8 @@ class Operator extends \APP\core\base\Model {
     public function statuscall(){
 
         $statuscall['acess'] = false;
+        $statuscall['text'] = "ВЫ МОЖЕТЕ ЗВОНИТЬ";
+
 
         $statuscall['about']  =  ($_SESSION['ulogin']['aboutme'] == null) ? false : true;
         $statuscall['avatar'] = ($_SESSION['ulogin']['avatar'] == null || $_SESSION['ulogin']['avatar'] == BASEAVATAR ) ? false : true;
@@ -189,7 +191,12 @@ class Operator extends \APP\core\base\Model {
             $statuscall['about'] == true &&
             $statuscall['avatar'] == true &&
             $statuscall['audio'] == true &&
-            $statuscall['code'] == true ) $statuscall['acess'] = true;
+            $statuscall['code'] == true )
+
+        {
+            $statuscall['text'] = "ВЫ МОЖЕТЕ ЗВОНИТЬ";
+            $statuscall['acess'] = true;
+        }
 
 
 
