@@ -187,7 +187,13 @@ class UserController extends AppController
 
 
 
+    public function confirmEmailAction(){
 
+
+
+	    return true;
+
+    }
 //	public function confirmRegisterAction()
 //	{
 //
