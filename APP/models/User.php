@@ -1,5 +1,6 @@
 <?php
 namespace APP\models;
+use Psr\Log\NullLogger;
 use RedBeanPHP\R;
 
 class User extends \APP\core\base\Model
@@ -77,12 +78,21 @@ class User extends \APP\core\base\Model
     public function confirmemail($email, $code){
 
 
-        $result = R::findOne(CONFIG['USERTABLE'], 'email = ? LIMIT 1',[$this->ATR['email']]);
+        $confirm = R::findOne(CONFIG['USERTABLE'], 'email = ? AND code = ? LIMIT 1',[$email, $code]);
+
+
+        if ($confirm){
+
+            $confirm->code = NULL;
+            R::store($confirm);
+            return true;
+        }
 
 
 
+        if (!$confirm)  return false;
 
-	    return true;
+
     }
 
 
