@@ -16,6 +16,13 @@
                         <i class="icon-cross2 icon-2x text-danger border-danger border-3 rounded-round p-3 mb-3"></i>
                         <h5 class="card-title">ЗВОНКИ НЕ ИДУТ</h5>
                         <p class="mb-3">Выполните условия и запустите проект</p>
+                        <ul class="mb-0">
+                            <li>Загрузите Аватар</li>
+                            <li>Добавьте запись голоса</li>
+                            <li>Заполните информацию о себе</li>
+                            <li>Подтвердите E-mail</li>
+                        </ul>
+
 
                     <?else:?>
 
