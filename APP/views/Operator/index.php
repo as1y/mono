@@ -16,9 +16,9 @@ show($statuscall);
     <div class="card-body">
 
         <div class="row">
-            <div class="col-sm-6 col-xl-3">
+            <div class="col-sm-6 col-xl-3 border">
 
-                <div class="card-body border-success">
+                <div class="card-body">
                     <h5 class="card-title">ВЫ НЕ МОЖЕТЕ ЗВОНИТЬ</h5>
 
 
