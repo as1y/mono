@@ -54,7 +54,7 @@
                         <i class="icon-checkmark icon-2x text-success border-success border-3 rounded-round p-3 mb-3"></i>
                     <?endif;?>
 
-                    
+
                     <h5 class="card-title">Ваша презентация </h5>
                     <p class="mb-3">Заполните информацию в профиле "Моя перезнтация"</p>
                     <a href="/panel/profile/" class="btn bg-success"><i class="icon-plus3 ml-2"></i> ЗАПОЛНИТЬ</a>
@@ -70,19 +70,16 @@
 
 
                 <div class="card-body">
-
-
+                    
                     <? if($status['balance'] === FALSE):?>
                         <i class="icon-cross2 icon-2x text-danger border-danger border-3 rounded-round p-3 mb-3"></i>
                     <?else:?>
                         <i class="icon-checkmark icon-2x text-success border-success border-3 rounded-round p-3 mb-3"></i>
                     <?endif;?>
 
-                    <h5 class="card-title">Баланс <?=$balnow?> руб.</h5>
-                    <p class="mb-3">Для корректной работы проекта необходимо минимум <b>5000</b> рублей</p>
-                    <a href="/panel/balance/" class="btn bg-success"><i class="icon-coins ml-2"></i> ПОПОЛНИТЬ</a>
-
-
+                    <h5 class="card-title">Аватар</h5>
+                    <p class="mb-3">Загрузите Аватар в профиле</p>
+                    <a href="/panel/profile/" class="btn bg-success"><i class="icon-coins ml-2"></i> ПОПОЛНИТЬ</a>
 
                 </div>
 
