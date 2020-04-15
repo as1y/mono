@@ -70,7 +70,7 @@
 
 
                 <div class="card-body">
-                    
+
                     <? if($status['balance'] === FALSE):?>
                         <i class="icon-cross2 icon-2x text-danger border-danger border-3 rounded-round p-3 mb-3"></i>
                     <?else:?>
@@ -79,7 +79,7 @@
 
                     <h5 class="card-title">Аватар</h5>
                     <p class="mb-3">Загрузите Аватар в профиле</p>
-                    <a href="/panel/profile/" class="btn bg-success"><i class="icon-coins ml-2"></i> ПОПОЛНИТЬ</a>
+                    <a href="/panel/profile/" class="btn bg-success"><i class="icon-plus3 ml-2"></i> Добавить</a>
 
                 </div>
 
