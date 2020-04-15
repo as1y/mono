@@ -213,7 +213,7 @@ class UserController extends AppController
                 if ($_SESSION['ulogin']['role'] == "R") redir('/master/');
                 if ($_SESSION['ulogin']['role'] == "O") redir('/operator/');
             }
-            
+
             redir("/user/login");
 
 
