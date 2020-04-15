@@ -43,13 +43,13 @@
                             </div>
                             <?php endif;?>
 
-                            <?php if($statuscall['avatar'] == false):?>
+                            <?php if($statuscall['audio'] == false):?>
                             <div class="list-feed-item border-warning-400">
                                Запишите аудио презентацию
                             </div>
                             <?php endif;?>
 
-                            
+
                         </div>
 
                     <?else:?>
