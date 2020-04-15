@@ -19,7 +19,7 @@ show($statuscall);
             <div class="col-sm-6 col-xl-3">
 
                 <div class="card-body">
-                    <h5 class="card-title">ВЫ НЕ МОЖЕТЕ ЗВОНИТЬ</h5>
+                    <h5 class="card-title">Звонить</h5>
 
 
                     <? if($statuscall['acess'] === false):?>
