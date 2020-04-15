@@ -1,6 +1,4 @@
 
-111
-
 <form class="login-form" action="/user/confirmRecovery/" method="post">
     <div class="card mb-0">
         <div class="card-body">
