@@ -85,7 +85,7 @@ class User extends \APP\core\base\Model
 
             $confirm->code = NULL;
             R::store($confirm);
-            return true;
+            return $confirm;
         }
 
 

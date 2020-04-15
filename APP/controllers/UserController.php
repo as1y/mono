@@ -204,11 +204,19 @@ class UserController extends AppController
         if (!empty($_GET['code']) && !empty($_GET['email']) ){
 
 
-            $user->confirmemail($_GET['email'], $_GET['code']);
+           $confirm = $user->confirmemail($_GET['email'], $_GET['code']);
+
+            if ($confirm == false) redir("/");
 
 
-            echo "kod est";
+            show($_SESSION['ulogin']);
+
             exit();
+            
+            if ($_SESSION['ulogin']){
+                $_SESSION['success'] = "E-mail успешно подтвержден";
+
+            }
 
 
 
