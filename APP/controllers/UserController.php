@@ -210,6 +210,7 @@ class UserController extends AppController
 
             $_SESSION['success'] = "E-mail успешно подтвержден";
             if ($_SESSION['ulogin']){
+                $_SESSION['ulogin']['code'] = NULL;
                 if ($_SESSION['ulogin']['role'] == "R") redir('/master/');
                 if ($_SESSION['ulogin']['role'] == "O") redir('/operator/');
             }

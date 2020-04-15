@@ -34,7 +34,7 @@ abstract class Controller {
         }
 
 
-
+        if (!empty($_SESSION['ulogin']['code']))  $_SESSION['errors'] = "Подтвердите E-mail";
 
 
 //
