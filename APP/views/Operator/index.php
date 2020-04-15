@@ -60,7 +60,7 @@ show($statuscall);
             </div>
 
 
-            <div class="col-sm-6 col-xl-3">
+            <div class="col-sm-6 col-xl-3 border">
 
 
                 <div class="card-body">
