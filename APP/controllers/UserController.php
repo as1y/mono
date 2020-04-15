@@ -316,7 +316,7 @@ class UserController extends AppController
 				if($user->checkemail(CONFIG['USERTABLE'], $_POST['email'])){
 					$_SESSION['confirm']['recode'] = random_str(20);
 					$_SESSION['confirm']['remail'] = $_POST['email'];
-                    Mail::sendMail("resetpassword",' Сборс пароля в '.CONFIG['NAME'],null,['to' => [['email' =>$_POST['reminder-email']]]]);
+                    Mail::sendMail("resetpassword",' Сборс пароля в '.CONFIG['NAME'],null,['to' => [['email' =>$_POST['email']]]]);
 
                     $_SESSION['success'] = "Код для сброса пароля отправлен на почту. ";
 
