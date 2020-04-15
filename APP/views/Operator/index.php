@@ -48,7 +48,7 @@
 
                 <div class="card-body">
 
-                    <? if($status['contact'] === FALSE):?>
+                    <? if($acesscall === FALSE):?>
                         <i class="icon-cross2 icon-2x text-danger border-danger border-3 rounded-round p-3 mb-3"></i>
                     <?else:?>
                         <i class="icon-checkmark icon-2x text-success border-success border-3 rounded-round p-3 mb-3"></i>
@@ -71,7 +71,7 @@
 
                 <div class="card-body">
 
-                    <? if($status['balance'] === FALSE):?>
+                    <? if($acesscall === FALSE):?>
                         <i class="icon-cross2 icon-2x text-danger border-danger border-3 rounded-round p-3 mb-3"></i>
                     <?else:?>
                         <i class="icon-checkmark icon-2x text-success border-success border-3 rounded-round p-3 mb-3"></i>
@@ -93,7 +93,7 @@
                 <div class="card-body">
 
 
-                    <? if($status['script'] === FALSE):?>
+                    <? if($acesscall === FALSE):?>
                         <i class="icon-cross2 icon-2x text-danger border-danger border-3 rounded-round p-3 mb-3"></i>
                     <?else:?>
                         <i class="icon-checkmark icon-2x text-success border-success border-3 rounded-round p-3 mb-3"></i>
