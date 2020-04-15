@@ -194,7 +194,7 @@ class Operator extends \APP\core\base\Model {
             $statuscall['code'] == true )
 
         {
-            $statuscall['text'] = "ВЫ МОЖЕТЕ ЗВОНИТЬ";
+            $statuscall['text'] = '<span class="badge badge-success">ВЫ МОЖЕТЕ ЗВОНИТЬ</span>';
             $statuscall['acess'] = true;
         }
 
