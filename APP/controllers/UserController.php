@@ -204,7 +204,6 @@ class UserController extends AppController
         if (!empty($_GET['code']) ){
 
             echo "kod est";
-
             exit();
 
 
@@ -213,7 +212,8 @@ class UserController extends AppController
 
         } else{
 
-            return true;
+            redir("/");
+            
 
         }
 
