@@ -31,18 +31,25 @@
                                 </div>
                             <?php endif;?>
 
+                            <?php if($statuscall['aboutme'] == false):?>
                             <div class="list-feed-item border-warning-400">
                                Заполните информацию о себе
                             </div>
+                            <?php endif;?>
 
+                            <?php if($statuscall['avatar'] == false):?>
                             <div class="list-feed-item border-warning-400">
                                Загрузите аватар
                             </div>
+                            <?php endif;?>
 
+                            <?php if($statuscall['avatar'] == false):?>
                             <div class="list-feed-item border-warning-400">
                                Запишите аудио презентацию
                             </div>
+                            <?php endif;?>
 
+                            
                         </div>
 
                     <?else:?>
