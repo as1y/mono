@@ -31,7 +31,7 @@
                                 </div>
                             <?php endif;?>
 
-                            <?php if($statuscall['aboutme'] == false):?>
+                            <?php if($statuscall['about'] == false):?>
                             <div class="list-feed-item border-warning-400">
                                Заполните информацию о себе
                             </div>
