@@ -74,10 +74,11 @@ show($statuscall);
                         <a href="/panel/profile/" class="btn bg-success"><i class="icon-plus3 ml-2"></i> ДОБАВИТЬ</a>
                     <?else:?>
                         <i class="icon-checkmark icon-2x text-success border-success border-3 rounded-round p-3 mb-3"></i>
+                        <h5 class="card-title">Информация о себе добавлена </h5>
+
                     <?endif;?>
 
 
-                    <h5 class="card-title">Информация о себе </h5>
 
 
 
@@ -98,9 +99,10 @@ show($statuscall);
                         <a href="/panel/profile/" class="btn bg-success"><i class="icon-image2 ml-2"></i> ДОБАВИТЬ</a>
                     <?else:?>
                         <i class="icon-checkmark icon-2x text-success border-success border-3 rounded-round p-3 mb-3"></i>
+                        <h5 class="card-title">Аватар загружен</h5>
                     <?endif;?>
 
-                    <h5 class="card-title">Аватар</h5>
+
 
 
                 </div>
@@ -114,17 +116,19 @@ show($statuscall);
 
                 <div class="card-body">
 
-
+                    <h5 class="card-title">Аудио презентация</h5>
+                    
                     <? if($statuscall['audio'] === false):?>
                         <i class="icon-cross2 icon-2x text-warning border-warning border-3 rounded-round p-3 mb-3"></i>
                         <p class="mb-3">Запишите аудио презентацию</p>
                         <a href="/project/profile/?>" class="btn bg-success"><i class="icon-mic2 ml-2"></i> ЗАПИСАТЬ</a>
                     <?else:?>
                         <i class="icon-checkmark icon-2x text-success border-success border-3 rounded-round p-3 mb-3"></i>
+                        <p class="mb-3">Аудио презентация загружена</p>
                     <?endif;?>
 
 
-                    <h5 class="card-title">Аудио презентация</h5>
+
 
 
                 </div>
