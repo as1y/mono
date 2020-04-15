@@ -1,6 +1,6 @@
 <?php
 
-show($statuscall);
+//show($statuscall);
 
 
 ?>
