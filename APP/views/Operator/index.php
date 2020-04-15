@@ -15,14 +15,31 @@
 
                         <i class="icon-cross2 icon-2x text-danger border-danger border-3 rounded-round p-3 mb-3"></i>
                         <h5 class="card-title">ВЫ НЕ МОЖЕТЕ ЗВОНИТЬ</h5>
-                        <p class="mb-3">Выполните условия и запустите проект</p>
-                        <ul class="mb-0">
-                            <li>Загрузите Аватар</li>
-                            <li>Добавьте запись голоса</li>
-                            <li>Заполните информацию о себе</li>
-                            <li>Подтвердите E-mail</li>
-                        </ul>
+                        <div class="list-feed">
+                            <div class="list-feed-item">
+                                <a href="#">David Linner</a> requested refund for a double bank card charge
+                            </div>
 
+                            <div class="list-feed-item">
+                                User <a href="#">Christopher Wallace</a> from Google is awaiting for staff reply
+                            </div>
+
+                            <div class="list-feed-item">
+                                Ticket <strong>#43683</strong> has been resolved by <a href="#">Victoria Wilson</a>
+                            </div>
+
+                            <div class="list-feed-item">
+                                <a href="#">Eugene Kopyov</a> merged <strong>Master</strong>, <strong>Demo</strong> and <strong>Dev</strong> branches
+                            </div>
+
+                            <div class="list-feed-item">
+                                All sellers have received payouts for December, 2016!
+                            </div>
+
+                            <div class="list-feed-item">
+                                <a href="#">Chris Arney</a> created a new ticket <strong>#43136</strong> and assigned to <a href="#">John Nod</a>
+                            </div>
+                        </div>
 
                     <?else:?>
 
