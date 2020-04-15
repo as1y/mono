@@ -201,7 +201,7 @@ class UserController extends AppController
 
         $user = new User;
 
-        if ($_GET && $_GET['code']){
+        if (!empty($_GET['code']) ){
 
             echo "kod est";
 
@@ -210,7 +210,7 @@ class UserController extends AppController
 
 
 
-            
+
         } else{
 
             return true;
