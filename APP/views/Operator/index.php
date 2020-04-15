@@ -55,7 +55,7 @@
                     <?endif;?>
 
 
-                    <h5 class="card-title">Ваша презентация </h5>
+                    <h5 class="card-title">Информация о себе </h5>
                     <p class="mb-3">Заполните информацию в профиле "Моя перезнтация"</p>
                     <a href="/panel/profile/" class="btn bg-success"><i class="icon-plus3 ml-2"></i> ДОБАВИТЬ</a>
 
@@ -79,7 +79,7 @@
 
                     <h5 class="card-title">Аватар</h5>
                     <p class="mb-3">Загрузите Аватар в профиле</p>
-                    <a href="/panel/profile/" class="btn bg-success"><i class="icon-plus3 ml-2"></i> ДОБАВИТЬ</a>
+                    <a href="/panel/profile/" class="btn bg-success"><i class="icon-image2 ml-2"></i> ДОБАВИТЬ</a>
 
                 </div>
 
@@ -100,10 +100,10 @@
                     <?endif;?>
 
 
-                    <h5 class="card-title">СКРИПТ</h5>
-                    <p class="mb-3">Скрипт разговора должен быть проработан</p>
+                    <h5 class="card-title">Аудио презентация</h5>
+                    <p class="mb-3">Запишите аудио презентацию</p>
 
-                    <a href="/project/script/?id=<?=$_GET['id']?>" class="btn bg-success"><i class="icon-book ml-2"></i> РЕДАКТИРОВАТЬ</a>
+                    <a href="/project/profile/?>" class="btn bg-success"><i class="icon-mic2 ml-2"></i> ЗАПИСАТЬ</a>
 
                 </div>
 
