@@ -19,13 +19,14 @@ show($statuscall);
             <div class="col-sm-6 col-xl-3">
 
                 <div class="card-body">
+                    <h5 class="card-title">ВЫ НЕ МОЖЕТЕ ЗВОНИТЬ</h5>
+
+
                     <? if($statuscall['acess'] === false):?>
 
                         <i class="icon-cross2 icon-2x text-danger border-danger border-3 rounded-round p-3 mb-3"></i>
-                        <h5 class="card-title">ВЫ НЕ МОЖЕТЕ ЗВОНИТЬ</h5>
+
                         <div class="list-feed">
-
-
                             <div class="list-feed-item border-warning-400">
                                 Подтвердите E-mail
                             </div>
@@ -47,11 +48,7 @@ show($statuscall);
                     <?else:?>
 
                         <i class="icon-checkmark icon-2x text-success border-success border-3 rounded-round p-3 mb-3"></i>
-
                         <h5 class="card-title">ВЫ ДОПУЩЕНЫ К ЗВОНКАМ</h5>
-                        <!--                            <p class="mb-3">Изменить статус проекта</p>-->
-
-
 
 
                     <?endif;?>
@@ -67,6 +64,8 @@ show($statuscall);
 
 
                 <div class="card-body">
+
+                    <h5 class="card-title">Информация о себе</h5>
 
                     <? if($statuscall['about'] === false):?>
                         <i class="icon-cross2 icon-2x text-warning border-warning border-3 rounded-round p-3 mb-3"></i>
@@ -74,7 +73,7 @@ show($statuscall);
                         <a href="/panel/profile/" class="btn bg-success"><i class="icon-plus3 ml-2"></i> ДОБАВИТЬ</a>
                     <?else:?>
                         <i class="icon-checkmark icon-2x text-success border-success border-3 rounded-round p-3 mb-3"></i>
-                        <h5 class="card-title">Информация о себе добавлена </h5>
+                        <p class="mb-3">Информация добавлена</p>
 
                     <?endif;?>
 
@@ -93,13 +92,14 @@ show($statuscall);
 
                 <div class="card-body">
 
+                    <h5 class="card-title">Аватар</h5>
                     <? if($statuscall['avatar'] === false):?>
                         <i class="icon-cross2 icon-2x text-warning border-warning border-3 rounded-round p-3 mb-3"></i>
                         <p class="mb-3">Загрузите Аватар в профиле</p>
                         <a href="/panel/profile/" class="btn bg-success"><i class="icon-image2 ml-2"></i> ДОБАВИТЬ</a>
                     <?else:?>
                         <i class="icon-checkmark icon-2x text-success border-success border-3 rounded-round p-3 mb-3"></i>
-                        <h5 class="card-title">Аватар загружен</h5>
+                        <p class="mb-3">Аватар загружен</p>
                     <?endif;?>
 
 
@@ -117,7 +117,7 @@ show($statuscall);
                 <div class="card-body">
 
                     <h5 class="card-title">Аудио презентация</h5>
-                    
+
                     <? if($statuscall['audio'] === false):?>
                         <i class="icon-cross2 icon-2x text-warning border-warning border-3 rounded-round p-3 mb-3"></i>
                         <p class="mb-3">Запишите аудио презентацию</p>
