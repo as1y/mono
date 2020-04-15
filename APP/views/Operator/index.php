@@ -57,7 +57,7 @@
 
                     <h5 class="card-title">Ваша презентация </h5>
                     <p class="mb-3">Заполните информацию в профиле "Моя перезнтация"</p>
-                    <a href="/panel/profile/" class="btn bg-success"><i class="icon-plus3 ml-2"></i> ЗАПОЛНИТЬ</a>
+                    <a href="/panel/profile/" class="btn bg-success"><i class="icon-plus3 ml-2"></i> ДОБАВИТЬ</a>
 
 
 
@@ -79,7 +79,7 @@
 
                     <h5 class="card-title">Аватар</h5>
                     <p class="mb-3">Загрузите Аватар в профиле</p>
-                    <a href="/panel/profile/" class="btn bg-success"><i class="icon-plus3 ml-2"></i> Добавить</a>
+                    <a href="/panel/profile/" class="btn bg-success"><i class="icon-plus3 ml-2"></i> ДОБАВИТЬ</a>
 
                 </div>
 
