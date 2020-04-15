@@ -16,22 +16,22 @@
                         <i class="icon-cross2 icon-2x text-danger border-danger border-3 rounded-round p-3 mb-3"></i>
                         <h5 class="card-title">ВЫ НЕ МОЖЕТЕ ЗВОНИТЬ</h5>
                         <div class="list-feed">
-                            <div class="list-feed-item">
+                            <div class="list-feed-item border-warning-400">
                                 Подтвердите E-mail
                             </div>
 
-                            <div class="list-feed-item">
+                            <div class="list-feed-item border-warning-400">
                                Заполните информацию о себе
                             </div>
 
-                            <div class="list-feed-item">
+                            <div class="list-feed-item border-warning-400">
                                Загрузите аватар
                             </div>
 
-                            <div class="list-feed-item">
+                            <div class="list-feed-item border-warning-400">
                                Запишите аудио презентацию
                             </div>
-                            
+
                         </div>
 
                     <?else:?>

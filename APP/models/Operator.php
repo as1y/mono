@@ -173,6 +173,16 @@ class Operator extends \APP\core\base\Model {
     }
 
 
+
+    public function statuscall(){
+
+
+
+
+    }
+
+
+
     public function mycompanies() {
         $company = R::findAll('company');
 

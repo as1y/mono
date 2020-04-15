@@ -211,6 +211,7 @@ class OperatorController extends AppController {
 
         $acesscall = false;
 
+        $statuscall = $operator->statuscall();
 
         $this->set(compact('acesscall'));
 
