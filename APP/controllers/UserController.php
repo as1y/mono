@@ -190,6 +190,15 @@ class UserController extends AppController
     public function confirmEmailAction(){
 
 
+        $META = [
+            'title' => 'Подтверждение E-mail',
+            'description' => 'Подтверждение E-mail',
+            'keywords' => 'Подтверждение E-mail',
+        ];
+
+        $BREADCRUMBS['HOME'] = ['Label' => $this->BreadcrumbsControllerLabel, 'Url' => $this->BreadcrumbsControllerUrl];
+        $BREADCRUMBS['DATA'][] = ['Label' => "Подтверждение E-mail"];
+
 
 	    return true;
 
