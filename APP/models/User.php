@@ -74,10 +74,13 @@ class User extends \APP\core\base\Model
 	//СБРОС ПАРОЛЯ
 
 
-    public function confirmemail($code){
+    public function confirmemail($email, $code){
 
 
-        echo "fdgfdg";
+        $result = R::findOne(CONFIG['USERTABLE'], 'email = ? LIMIT 1',[$this->ATR['email']]);
+
+
+
 
 	    return true;
     }

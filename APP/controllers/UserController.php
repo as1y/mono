@@ -201,7 +201,11 @@ class UserController extends AppController
 
         $user = new User;
 
-        if (!empty($_GET['code']) ){
+        if (!empty($_GET['code']) && !empty($_GET['email']) ){
+
+
+            $user->confirmemail($_GET['email'], $_GET['code']);
+
 
             echo "kod est";
             exit();
@@ -213,7 +217,7 @@ class UserController extends AppController
         } else{
 
             redir("/");
-            
+
 
         }
 
