@@ -54,9 +54,8 @@
                         <i class="icon-checkmark icon-2x text-success border-success border-3 rounded-round p-3 mb-3"></i>
                     <?endif;?>
 
-
-
-                    <h5 class="card-title">Заполните описание </h5>
+                    
+                    <h5 class="card-title">Ваша презентация </h5>
                     <p class="mb-3">Заполните информацию в профиле "Моя перезнтация"</p>
                     <a href="/panel/profile/" class="btn bg-success"><i class="icon-plus3 ml-2"></i> ЗАПОЛНИТЬ</a>
 
