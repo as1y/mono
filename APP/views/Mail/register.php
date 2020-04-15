@@ -1,5 +1,5 @@
-Здравствуйте, <?=$_SESSION['confirm']['signup-username']?>!<br>
-		Добро пожаловать в сервис RUMGO<br>
-		Страница для входа http://<?=CONFIG['DOMAIN']?>/user/<br>
-		<b>Ваш Логин:</b> <?=$_SESSION['confirm']['signup-email']?><br>
-		<b>Ваш Пароль:</b> <?=$_SESSION['confirm']['signup-password-confirm']?><br>
+Здравствуйте, <?=$_SESSION['confirm']['username']?>!<br>
+		Добро пожаловать в сервис <?=CONFIG['NAME']?>><br>
+		Страница для входа https://<?=CONFIG['DOMAIN']?>/user/<br>
+		<b>Ваш Логин:</b> <?=$_SESSION['confirm']['email']?><br>
+		<b>Ваш Пароль:</b> <?=$_SESSION['confirm']['password-confirm']?><br>
