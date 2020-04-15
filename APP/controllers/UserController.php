@@ -74,7 +74,12 @@ class UserController extends AppController
 
             //  mes ('ВНИМАНИЕ! Не закрывайте страницу браузера. Код подтверждения отправлен на почту. ');
 
-            redir('/user/confirmRegister/');
+
+
+//   redir('/user/confirmRegister/');
+
+
+
 
 
 
