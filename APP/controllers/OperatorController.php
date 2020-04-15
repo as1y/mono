@@ -209,11 +209,12 @@ class OperatorController extends AppController {
 
         $operator = new Operator(); //Вызываем Моудль
 
-        $acesscall = false;
 
         $statuscall = $operator->statuscall();
 
-        $this->set(compact('acesscall', 'statuscall'));
+
+
+        $this->set(compact( 'statuscall'));
 
 
 

@@ -19,14 +19,14 @@ show($statuscall);
             <div class="col-sm-6 col-xl-3">
 
                 <div class="card-body">
-                    <? if($acesscall === false):?>
+                    <? if($statuscall['acess'] === false):?>
 
                         <i class="icon-cross2 icon-2x text-danger border-danger border-3 rounded-round p-3 mb-3"></i>
                         <h5 class="card-title">ВЫ НЕ МОЖЕТЕ ЗВОНИТЬ</h5>
                         <div class="list-feed">
 
 
-                            <div class="list-feed-item border-success-400">
+                            <div class="list-feed-item border-warning-400">
                                 Подтвердите E-mail
                             </div>
 
@@ -68,7 +68,7 @@ show($statuscall);
 
                 <div class="card-body">
 
-                    <? if($acesscall === FALSE):?>
+                    <? if($statuscall['about'] === false):?>
                         <i class="icon-cross2 icon-2x text-warning border-warning border-3 rounded-round p-3 mb-3"></i>
                     <?else:?>
                         <i class="icon-checkmark icon-2x text-success border-success border-3 rounded-round p-3 mb-3"></i>
@@ -91,7 +91,7 @@ show($statuscall);
 
                 <div class="card-body">
 
-                    <? if($acesscall === FALSE):?>
+                    <? if($statuscall['avatar'] === false):?>
                         <i class="icon-cross2 icon-2x text-warning border-warning border-3 rounded-round p-3 mb-3"></i>
                     <?else:?>
                         <i class="icon-checkmark icon-2x text-success border-success border-3 rounded-round p-3 mb-3"></i>
@@ -113,7 +113,7 @@ show($statuscall);
                 <div class="card-body">
 
 
-                    <? if($acesscall === FALSE):?>
+                    <? if($statuscall['audio'] === false):?>
                         <i class="icon-cross2 icon-2x text-warning border-warning border-3 rounded-round p-3 mb-3"></i>
                     <?else:?>
                         <i class="icon-checkmark icon-2x text-success border-success border-3 rounded-round p-3 mb-3"></i>
