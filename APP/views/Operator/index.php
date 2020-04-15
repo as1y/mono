@@ -10,8 +10,6 @@
     <div class="card-header bg-white header-elements-inline">
         <h6 class="card-title">МОЙ СТАТУС:  <b><?= $statuscall['text']?></b></h6>
 
-
-
     </div>
     <div class="card-body">
 
@@ -19,7 +17,7 @@
             <div class="col-sm-6 col-xl-3 border">
 
                 <div class="card-body">
-                    <h5 class="card-title"><?= $statuscall['text']?></h5>
+                    <h5 class="card-title"><?=$statuscall['text']?></h5>
 
 
                     <? if($statuscall['acess'] === false):?>
@@ -27,9 +25,11 @@
                         <i class="icon-cross2 icon-2x text-danger border-danger border-3 rounded-round p-3 mb-3"></i>
 
                         <div class="list-feed">
-                            <div class="list-feed-item border-warning-400">
-                                Подтвердите E-mail
-                            </div>
+                            <?php if($statuscall['code'] == false):?>
+                                <div class="list-feed-item border-warning-400">
+                                    Подтвердите E-mail
+                                </div>
+                            <?php endif;?>
 
                             <div class="list-feed-item border-warning-400">
                                Заполните информацию о себе
