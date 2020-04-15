@@ -2,7 +2,7 @@
 
 Добро пожаловать в сервис <?=CONFIG['NAME']?><br>
 <p> Для дальнейшей работы подтвердите, пожалуйста, вашу почту по ссылке:<br>
-  <b>https://<?=CONFIG['DOMAIN']?>/user/confirmemail/?code=<?=$_SESSION['confirm']['code']?></b>
+  <b>https://<?=CONFIG['DOMAIN']?>/user/confirmEmail/?code=<?=$_SESSION['confirm']['code']?></b>
 
 </p>
 Данные для входа в систему:<br>
