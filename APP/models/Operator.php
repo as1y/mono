@@ -1,5 +1,6 @@
 <?php
 namespace APP\models;
+use Psr\Log\NullLogger;
 use RedBeanPHP\R;
 
 class Operator extends \APP\core\base\Model {
@@ -175,7 +176,13 @@ class Operator extends \APP\core\base\Model {
 
 
     public function statuscall(){
+        $statuscall = [];
 
+
+
+        if ($_SESSION['ulogin']['aboutme'] == null) $statuscall['about'] = false;
+
+        if ($_SESSION['ulogin']['avatar'] == null || $_SESSION['ulogin']['avatar'] == baseavatar ) $statuscall['about'] = false;
 
 
 

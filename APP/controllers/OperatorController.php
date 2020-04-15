@@ -213,7 +213,7 @@ class OperatorController extends AppController {
 
         $statuscall = $operator->statuscall();
 
-        $this->set(compact('acesscall'));
+        $this->set(compact('acesscall', 'statuscall'));
 
 
 
