@@ -24,7 +24,9 @@ show($statuscall);
                         <i class="icon-cross2 icon-2x text-danger border-danger border-3 rounded-round p-3 mb-3"></i>
                         <h5 class="card-title">ВЫ НЕ МОЖЕТЕ ЗВОНИТЬ</h5>
                         <div class="list-feed">
-                            <div class="list-feed-item border-warning-400">
+
+
+                            <div class="list-feed-item border-success-400">
                                 Подтвердите E-mail
                             </div>
 
