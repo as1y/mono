@@ -209,9 +209,10 @@ class OperatorController extends AppController {
 
         $operator = new Operator(); //Вызываем Моудль
 
+        $acesscall = false;
 
 
-
+        $this->set(compact('mycompanies'));
 
 
 

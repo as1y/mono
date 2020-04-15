@@ -11,7 +11,7 @@
             <div class="col-sm-6 col-xl-3">
 
                 <div class="card-body">
-                    <? if($status['company'] === false):?>
+                    <? if($acesscall === false):?>
 
                         <i class="icon-cross2 icon-2x text-danger border-danger border-3 rounded-round p-3 mb-3"></i>
                         <h5 class="card-title">ЗВОНКИ НЕ ИДУТ</h5>
