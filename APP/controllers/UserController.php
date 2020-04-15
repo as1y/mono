@@ -206,10 +206,15 @@ class UserController extends AppController
             echo "kod est";
 
             exit();
+
+
+
+
+            
         } else{
 
+            return true;
 
-            $_SESSION['errors'] = "Ошибка ввода данных";
         }
 
 
