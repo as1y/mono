@@ -180,7 +180,7 @@ class Operator extends \APP\core\base\Model {
 
         $statuscall['about']  =  ($_SESSION['ulogin']['aboutme'] == null) ? false : true;
         $statuscall['avatar'] = ($_SESSION['ulogin']['avatar'] == null || $_SESSION['ulogin']['avatar'] == BASEAVATAR ) ? false : true;
-        $statuscall['audio'] = ($_SESSION['ulogin']['audio'] == null ) ? false : true;
+        $statuscall['audio'] = (!empty($_SESSION['ulogin']['audio']) && $_SESSION['ulogin']['audio'] == null ) ? false : true;
         $statuscall['code'] = ($_SESSION['ulogin']['code'] != null ) ? false : true;
 
         return $statuscall;
