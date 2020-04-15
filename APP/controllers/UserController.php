@@ -208,15 +208,13 @@ class UserController extends AppController
 
             if ($confirm == false) redir("/");
 
-
-            show($_SESSION['ulogin']);
-
-            exit();
-            
+            $_SESSION['success'] = "E-mail успешно подтвержден";
             if ($_SESSION['ulogin']){
-                $_SESSION['success'] = "E-mail успешно подтвержден";
-
+                if ($_SESSION['ulogin']['role'] == "R") redir('/master/');
+                if ($_SESSION['ulogin']['role'] == "O") redir('/operator/');
             }
+            
+            redir("/user/login");
 
 
 
