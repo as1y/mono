@@ -5,7 +5,7 @@
 
 
     </div>
-    <div class="card-body justify-content-center">
+    <div class="card-body">
 
         <div class="row">
             <div class="col-sm-6 col-xl-3">
