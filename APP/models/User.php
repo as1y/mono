@@ -72,6 +72,19 @@ class User extends \APP\core\base\Model
 		return $newpass;
 	}
 	//СБРОС ПАРОЛЯ
+
+
+    public function confirmemail($code){
+
+
+        echo "fdgfdg";
+
+	    return true;
+    }
+
+
+
+
 	//ЛОГИН
 	public function login($table)
 	{

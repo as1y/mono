@@ -28,7 +28,7 @@ class UserController extends AppController
 
 
 
-       $ASSETS[] = ["js" => "/global_assets/js/plugins/forms/styling/uniform.min.js"];
+        $ASSETS[] = ["js" => "/global_assets/js/plugins/forms/styling/uniform.min.js"];
 
         $ASSETS[] = ["js" => "/global_assets/js/plugins/forms/styling/switchery.min.js"];
         $ASSETS[] = ["js" => "/global_assets/js/plugins/forms/styling/switch.min.js"];
@@ -64,7 +64,7 @@ class UserController extends AppController
 
             $_SESSION['confirm'] = $user->ATR; //Базовые параметры
             //Доп. Параметры в сессию
-            $_SESSION['confirm']['code'] = $code = random_str(5); //Код подтверждения
+            $_SESSION['confirm']['code'] = $code = random_str(20); //Код подтверждения
 
             if(isset($_COOKIE['ref'])) $_SESSION['confirm']['ref'] = $_COOKIE['ref']; //ID реферала
             //Доп. Параметры в сессию
@@ -199,6 +199,22 @@ class UserController extends AppController
         $BREADCRUMBS['HOME'] = ['Label' => $this->BreadcrumbsControllerLabel, 'Url' => $this->BreadcrumbsControllerUrl];
         $BREADCRUMBS['DATA'][] = ['Label' => "Подтверждение E-mail"];
 
+        $user = new User;
+
+        if ($_GET && $_GET['code']){
+
+            echo "kod est";
+
+            exit();
+        } else{
+
+
+            $_SESSION['errors'] = "Ошибка ввода данных";
+        }
+
+
+
+
 
 	    return true;
 
@@ -283,7 +299,7 @@ class UserController extends AppController
 			$user = new User;
 			if(filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)){
 				if($user->checkemail(CONFIG['USERTABLE'], $_POST['email'])){
-					$_SESSION['confirm']['recode'] = random_str(5);
+					$_SESSION['confirm']['recode'] = random_str(20);
 					$_SESSION['confirm']['remail'] = $_POST['email'];
                     Mail::sendMail("resetpassword",' Сборс пароля в '.CONFIG['NAME'],null,['to' => [['email' =>$_POST['reminder-email']]]]);
 
