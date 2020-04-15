@@ -8,7 +8,7 @@ show($statuscall);
 
 <div class="card text-center">
     <div class="card-header bg-white header-elements-inline">
-        <h6 class="card-title">МОЙ СТАТУС <b><?= $statuscall['text']?></b></h6>
+        <h6 class="card-title">МОЙ СТАТУС:  <b><?= $statuscall['text']?></b></h6>
 
 
 
