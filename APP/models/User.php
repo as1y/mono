@@ -138,6 +138,7 @@ class User extends \APP\core\base\Model
             'nmessages' => 1, // Уведомления почтовые
             'role' => $role, //Роль
             'bal' => 0, //Баланс
+            'code' => $_SESSION['confirm']['code'],
 
 		];
 		//ФОРМИРУЕМ МАССИВ ДАННЫХ ДЛЯ РЕГИСТРАЦИИ

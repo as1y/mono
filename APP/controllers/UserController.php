@@ -75,6 +75,31 @@ class UserController extends AppController
             //  mes ('ВНИМАНИЕ! Не закрывайте страницу браузера. Код подтверждения отправлен на почту. ');
 
 
+            if($user->saveuser(CONFIG['USERTABLE']))
+            {
+
+//                Mail::sendMail("register",'Успешная регистрация '.CONFIG['NAME'],null,['to' => [['email' =>$_SESSION['confirm']['email']]]]);
+
+                $_POST['email'] = $_SESSION['confirm']['email'];
+                $_POST['password'] = $_SESSION['confirm']['password2'];
+
+                $user->login(CONFIG['USERTABLE']);
+
+
+                if ($_SESSION['ulogin']['role'] == "R") redir('/master/');
+                if ($_SESSION['ulogin']['role'] == "O") redir('/operator/');
+
+
+            }
+            else
+            {
+                $_SESSION['errors'] = "Ошибка базы данных. Попробуйте позже.";
+                redir('/user/confirmRegister/');
+            }
+
+
+
+
 
 //   redir('/user/confirmRegister/');
 
@@ -163,65 +188,65 @@ class UserController extends AppController
 
 
 
-	public function confirmRegisterAction()
-	{
-
-		$user = new User;
-
-
-        $META = [
-            'title' => 'Регистрация пользователя',
-            'description' => 'Регистрация пользователя',
-            'keywords' => 'Регистрация пользователя',
-        ];
-        \APP\core\base\View::setMeta($META);
-
-
-
-
-		if( !isset($_SESSION['confirm']['code']) )
-		{
-
-            $_SESSION['errors'] = "Код подтверждения устарел. Необходимо выполнить процедуру повторно.";
-			redir('/user/register/');
-		}
-
-		//Проверка на сессию кода
-		if(!empty($_POST['code']))
-		{
-			if($_POST['code'] == $_SESSION['confirm']['code'])
-			{
-				// ПИШЕМ В БАЗУ ДАННЫХ
-				if($user->saveuser(CONFIG['USERTABLE']))
-				{
-
-                    Mail::sendMail("register",'Успешная регистрация '.CONFIG['NAME'],null,['to' => [['email' =>$_SESSION['confirm']['email']]]]);
-
-//                    $_SESSION = array();
-
-                    $_POST['email'] = $_SESSION['confirm']['email'];
-                    $_POST['password'] = $_SESSION['confirm']['password2'];
-
-                    $user->login(CONFIG['USERTABLE']);
-					redir('/panel/');
-
-
-				}
-				else
-				{
-					$_SESSION['errors'] = "Ошибка базы данных. Попробуйте позже.";
-                    redir('/user/confirmRegister/');
-				}
-				// ПИШЕМ В БАЗУ ДАННЫХ
-			}
-			else
-			{
-				$_SESSION['errors'] = "Код не совпдает с кодом в E-mail";
-                redir('/user/confirmRegister/');
-
-			}
-		}
-	}
+//	public function confirmRegisterAction()
+//	{
+//
+//		$user = new User;
+//
+//
+//        $META = [
+//            'title' => 'Регистрация пользователя',
+//            'description' => 'Регистрация пользователя',
+//            'keywords' => 'Регистрация пользователя',
+//        ];
+//        \APP\core\base\View::setMeta($META);
+//
+//
+//
+//
+//		if( !isset($_SESSION['confirm']['code']) )
+//		{
+//
+//            $_SESSION['errors'] = "Код подтверждения устарел. Необходимо выполнить процедуру повторно.";
+//			redir('/user/register/');
+//		}
+//
+//		//Проверка на сессию кода
+//		if(!empty($_POST['code']))
+//		{
+//			if($_POST['code'] == $_SESSION['confirm']['code'])
+//			{
+//				// ПИШЕМ В БАЗУ ДАННЫХ
+//				if($user->saveuser(CONFIG['USERTABLE']))
+//				{
+//
+//                    Mail::sendMail("register",'Успешная регистрация '.CONFIG['NAME'],null,['to' => [['email' =>$_SESSION['confirm']['email']]]]);
+//
+////                    $_SESSION = array();
+//
+//                    $_POST['email'] = $_SESSION['confirm']['email'];
+//                    $_POST['password'] = $_SESSION['confirm']['password2'];
+//
+//                    $user->login(CONFIG['USERTABLE']);
+//					redir('/panel/');
+//
+//
+//				}
+//				else
+//				{
+//					$_SESSION['errors'] = "Ошибка базы данных. Попробуйте позже.";
+//                    redir('/user/confirmRegister/');
+//				}
+//				// ПИШЕМ В БАЗУ ДАННЫХ
+//			}
+//			else
+//			{
+//				$_SESSION['errors'] = "Код не совпдает с кодом в E-mail";
+//                redir('/user/confirmRegister/');
+//
+//			}
+//		}
+//	}
 
 
 	public function recoveryAction()
