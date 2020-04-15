@@ -13,7 +13,7 @@
                 <div class="card-body">
                     <? if($acesscall === false):?>
 
-                        <i class="icon-cross2 icon-2x text-danger border-danger border-3 rounded-round p-3 mb-3"></i>
+                        <i class="icon-cross2 icon-2x text-warning border-warning border-3 rounded-round p-3 mb-3"></i>
                         <h5 class="card-title">ВЫ НЕ МОЖЕТЕ ЗВОНИТЬ</h5>
                         <div class="list-feed">
                             <div class="list-feed-item border-warning-400">
@@ -59,7 +59,7 @@
                 <div class="card-body">
 
                     <? if($acesscall === FALSE):?>
-                        <i class="icon-cross2 icon-2x text-danger border-danger border-3 rounded-round p-3 mb-3"></i>
+                        <i class="icon-cross2 icon-2x text-warning border-warning border-3 rounded-round p-3 mb-3"></i>
                     <?else:?>
                         <i class="icon-checkmark icon-2x text-success border-success border-3 rounded-round p-3 mb-3"></i>
                     <?endif;?>
@@ -82,7 +82,7 @@
                 <div class="card-body">
 
                     <? if($acesscall === FALSE):?>
-                        <i class="icon-cross2 icon-2x text-danger border-danger border-3 rounded-round p-3 mb-3"></i>
+                        <i class="icon-cross2 icon-2x text-warning border-warning border-3 rounded-round p-3 mb-3"></i>
                     <?else:?>
                         <i class="icon-checkmark icon-2x text-success border-success border-3 rounded-round p-3 mb-3"></i>
                     <?endif;?>
@@ -104,7 +104,7 @@
 
 
                     <? if($acesscall === FALSE):?>
-                        <i class="icon-cross2 icon-2x text-danger border-danger border-3 rounded-round p-3 mb-3"></i>
+                        <i class="icon-cross2 icon-2x text-warning border-warning border-3 rounded-round p-3 mb-3"></i>
                     <?else:?>
                         <i class="icon-checkmark icon-2x text-success border-success border-3 rounded-round p-3 mb-3"></i>
                     <?endif;?>
