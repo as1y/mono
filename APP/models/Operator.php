@@ -178,7 +178,7 @@ class Operator extends \APP\core\base\Model {
     public function statuscall(){
 
         $statuscall['acess'] = false;
-        $statuscall['text'] = "ВЫ МОЖЕТЕ ЗВОНИТЬ";
+        $statuscall['text'] = "ВЫ НЕ МОЖЕТЕ ЗВОНИТЬ";
 
 
         $statuscall['about']  =  ($_SESSION['ulogin']['aboutme'] == null) ? false : true;
