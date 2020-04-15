@@ -212,7 +212,7 @@ class OperatorController extends AppController {
         $acesscall = false;
 
 
-        $this->set(compact('mycompanies'));
+        $this->set(compact('acesscall'));
 
 
 
