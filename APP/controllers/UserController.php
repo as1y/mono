@@ -376,7 +376,7 @@ class UserController extends AppController
                     Mail::sendMail("newpass",  'Ваш новый пароль в '.CONFIG['NAME'],null,['to' => [['email' =>$_SESSION['confirm']['remail']]]]);
 					$_SESSION = array();
 
-                    $_SESSION['success'] = "Новый пароль ".$newpass." отправлен на почту!";
+                    $_SESSION['success'] = "Новый пароль <b>".$newpass."</b> отправлен на почту!";
 					redir('/user/');
 				}
 				else
