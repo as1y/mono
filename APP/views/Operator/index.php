@@ -14,7 +14,7 @@
                     <? if($acesscall === false):?>
 
                         <i class="icon-cross2 icon-2x text-danger border-danger border-3 rounded-round p-3 mb-3"></i>
-                        <h5 class="card-title">ЗВОНКИ НЕ ИДУТ</h5>
+                        <h5 class="card-title">ВЫ НЕ МОЖЕТЕ ЗВОНИТЬ</h5>
                         <p class="mb-3">Выполните условия и запустите проект</p>
                         <ul class="mb-0">
                             <li>Загрузите Аватар</li>
@@ -56,10 +56,9 @@
 
 
 
-                    <h5 class="card-title">Контактов <?=$contact['free']?> шт</h5>
-                    <p class="mb-3">Небходимо минимум <b>10</b> контактов</p>
-
-                    <a href="/project/base/?id=<?=$_GET['id']?>" class="btn bg-success"><i class="icon-plus3 ml-2"></i> ДОБАВИТЬ</a>
+                    <h5 class="card-title">Заполните описание </h5>
+                    <p class="mb-3">Заполните информацию в профиле "Моя перезнтация"</p>
+                    <a href="/panel/profile/" class="btn bg-success"><i class="icon-plus3 ml-2"></i> ЗАПОЛНИТЬ</a>
 
 
 
