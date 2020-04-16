@@ -61,8 +61,11 @@
 
     <div class="col-xl-9 col-sm-6">
 
-        <img width="200" height="200" id="loader" style="display: none;" src="/load.gif">
 
+
+        <?php if($_SESSION['ulogin']['role'] == "O" && $_SESSION['ulogin']['audio'] == NULL): ?>
+
+        <img width="200" height="200" id="loader" style="display: none;" src="/load.gif">
         <div class="card" id="audiopersend">
             <div class="card-header bg-dark text-white header-elements-inline">
                 <h6 class="card-title">АУДИО ПРЕЗЕНТАЦИЯ</h6>
@@ -119,6 +122,7 @@
             </div>
         </div>
 
+        <?php endif;?>
 
         <!-- Profile info -->
         <div class="card">

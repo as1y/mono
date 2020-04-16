@@ -232,9 +232,7 @@ class PanelController extends AppController {
             if ($validation){
 
                 $urlnew = "uploads/user_audio/".$_FILES['file']['name'];
-
                 copy($_FILES['file']['tmp_name'], $urlnew); // Копируем из общего котла в тизерку
-
 
                 if (!empty($_SESSION['ulogin']['audio'])) unlink($_SESSION['ulogin']['audio']);
 
