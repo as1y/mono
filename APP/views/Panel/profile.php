@@ -92,18 +92,18 @@
 
                     <script>
 
+                        $('#start').click(function(){
+
+                            alert("ok");
+                            const mediaRecorder = new MediaRecorder(stream);
+                        }
+
 
 
                         navigator.mediaDevices.getUserMedia({ audio: true})
                             .then(stream => {
 
-                                $('#start').click(function(){
 
-                                    alert("ok");
-                                    const mediaRecorder = new MediaRecorder(stream);
-
-
-                                }
 
 
 
