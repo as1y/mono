@@ -252,7 +252,7 @@
 
 
                     //ОТПРАВКА ФАЙЛА AJAX
-                    var file = new File([audioBlob], getFileName('mp3'), {
+                    var window.file = new File([audioBlob], getFileName('mp3'), {
                         type: 'audio/mp3'
                     });
                     // Отправление AJAX запроса
@@ -286,7 +286,7 @@
 
 
     $('#saverecord').click(function(){
-        
+
 
         var fd = new FormData;
         fd.append('file', window.file);
