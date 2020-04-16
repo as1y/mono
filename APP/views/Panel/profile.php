@@ -67,6 +67,7 @@
 
         <img width="200" height="200" id="loader" style="display: none;" src="/load.gif">
         <div class="card" id="audiopersend">
+
             <div class="card-header bg-dark text-white header-elements-inline">
                 <h6 class="card-title">АУДИО ПРЕЗЕНТАЦИЯ</h6>
                 <div class="header-elements">
@@ -77,7 +78,6 @@
                     </div>
                 </div>
             </div>
-
             <div class="card-body">
                 <div class="row">
 
@@ -120,6 +120,7 @@
                 </div>
 
             </div>
+
         </div>
 
         <?php endif;?>
@@ -128,7 +129,58 @@
 
         <?php if ($_SESSION['ulogin']['role'] == "O" && !empty($_SESSION['ulogin']['audio'])):?>
 
-            Есть запись
+            <div class="card" >
+
+                <div class="card-header bg-dark text-white header-elements-inline">
+                    <h6 class="card-title">АУДИО ПРЕЗЕНТАЦИЯ</h6>
+                </div>
+
+                <div class="card-body">
+                    <div class="row">
+
+
+
+                        <div class="col-md-6 text-center">
+
+                            <div id="audio"></div>
+
+
+                            <span id="record" style="display: none;" class="badge badge-warning">ИДЕТ ЗАПИСЬ!<br></span><br>
+                            <button type="button" id="start" class="btn btn-success"><i class="icon-mic2 mr-2"></i> НАЧАТЬ ЗАПИСЬ</button>
+                            <button type="button" id="stop" style="display: none;" class="btn btn-danger"><i class="icon-mic-off2 mr-2"></i> СТОП</button>
+
+
+                            <div id="after" style="display: none;" >
+                                <hr>
+                                <button type="button" id="saverecord" class="btn btn-success"><i class="icon-checkmark mr-2"></i> СОХРАНИТЬ ЗАПИСЬ</button>
+                                <a href="/panel/profile/"  class="btn btn-secondary"><i class="icon-reload-alt mr-2"></i> СБРОС</a>
+                            </div>
+
+                        </div>
+
+
+
+                        <div class="col-md-6">
+                            <span class="badge-secondary">ЗАПИСЬ АУДИО ПРЕЗЕНТАЦИИ</span><br>
+
+                            1. Расскажите коротко о себе. Эту презентацию будут слушать клиенты и принимать решения о допуске к работе в проектах.<br>
+                            2. Далее проговорите скороговорку:<br>
+                            <?=skorogovorka()?>
+
+
+
+                        </div>
+
+
+
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
         <?php endif;?>
 
 
