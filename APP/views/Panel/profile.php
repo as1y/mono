@@ -80,7 +80,7 @@
 
                 <div class="col-md-6">
 
-                    <audio controls autoplay></audio>
+                    <audio autoplay></audio>
 
 
 
@@ -236,7 +236,7 @@
         var blob = recorder.getBlob();
 
         console.log(audio)
-  
+
         audio.src = URL.createObjectURL(blob);
         audio.play();
         audio.muted = false;
