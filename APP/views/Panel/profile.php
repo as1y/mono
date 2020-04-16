@@ -63,7 +63,7 @@
 
         <img width="200" height="200" id="loader" style="display: none;" src="/load.gif">
 
-        <div class="card" id="audiopersend">
+        <div class="card-header bg-dark text-white header-elements-inline" id="audiopersend">
             <div class="card-header bg-primary text-white header-elements-inline">
                 <h6 class="card-title">АУДИО ПРЕЗЕНТАЦИЯ</h6>
                 <div class="header-elements">
@@ -291,7 +291,7 @@
 
                             $("#audiopersend").show();
                             $("#loader").hide();
-                            
+
                             console.log(data);
 
 
