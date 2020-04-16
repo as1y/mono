@@ -83,7 +83,7 @@
                     <div id="audio"></div>
 
 
-                    <span id="record" style="display: none;" class="badge badge-warning">ИДЕТ ЗАПИСЬ!</span>
+                    <span id="record" style="display: none;" class="badge badge-warning">ИДЕТ ЗАПИСЬ!<br></span>
                     <button type="button" id="start" class="btn btn-success"><i class="icon-mic2 mr-2"></i> НАЧАТЬ ЗАПИСЬ</button>
                     <button type="button" id="stop" style="display: none;" class="btn btn-danger"><i class="icon-mic-off2 mr-2"></i> СТОП</button>
 
