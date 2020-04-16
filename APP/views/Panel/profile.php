@@ -63,7 +63,7 @@
 
         <div class="card">
             <div class="card-header bg-primary text-white header-elements-inline">
-                <h6 class="card-title">Запись аудио презентации</h6>
+                <h6 class="card-title">АУДИО ПРЕЗЕНТАЦИЯ</h6>
                 <div class="header-elements">
                     <div class="list-icons">
                         <a class="list-icons-item" data-action="collapse"></a>
@@ -93,7 +93,7 @@
 
 
                 <div class="col-md-6">
-                    <span class="badge-secondary">АУДИО ПРЕЗЕНТАЦИЯ</span><br>
+                    <span class="badge-secondary">ЗАПИСЬ АУДИО ПРЕЗЕНТАЦИИ</span><br>
 
                     1. Расскажите коротко о себе. Эту презентацию будут слушать клиенты и принимать решения о допуске к работе в проектах.<br>
                     2. Далее проговорите скороговорку:<br>
