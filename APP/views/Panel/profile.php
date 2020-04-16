@@ -225,6 +225,7 @@
             console.error(error);
         });
     }
+
     function stopRecordingCallback() {
         var blob = recorder.getBlob();
         audio.src = URL.createObjectURL(blob);
@@ -280,6 +281,8 @@
     };
 
 
+
+
     function getFileName(fileExtension) {
         var d = new Date();
         var year = d.getFullYear();
@@ -300,6 +303,7 @@
             return (Math.random() * new Date().getTime()).toString(36).replace(/\./g, '');
         }
     }
+
 
 
 </script>
