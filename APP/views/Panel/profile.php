@@ -94,7 +94,12 @@
 
                         const mediaRecorder = new MediaRecorder(stream);
 
-                        
+                        navigator.mediaDevices.getUserMedia({ audio: true})
+                            .then(stream => {
+                                    //На выходе получаем объект медиа потока stream
+                            });
+
+
                     </script>
 
 
