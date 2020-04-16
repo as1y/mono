@@ -120,18 +120,30 @@
                                             type: 'audio/wav'
                                         });
                                         const audioUrl = URL.createObjectURL(audioBlob);
-                                        alert(audioUrl);
                                         var audio = document.createElement('audio');
                                         audio.src = audioUrl;
                                         audio.controls = true;
                                         audio.autoplay = false;
                                         document.querySelector('#audio').appendChild(audio);
                                         audioChunks = [];
+
+                                        var file = new File([audioBlob], getFileName('mp3'), {
+                                            type: 'audio/mp3'
+                                        });
+                                        
+                                        alert(file);
+
+
                                     });
 
 
                                     $('#stop').click(function(){
                                         mediaRecorder.stop();
+
+
+
+
+
                                         $('#stop').hide();
                                         $('#record').hide();
                                     });
@@ -270,3 +282,28 @@
     </div>
 </div>
 
+<script>
+
+    function getFileName(fileExtension) {
+        var d = new Date();
+        var year = d.getFullYear();
+        var month = d.getMonth();
+        var date = d.getDate();
+        return 'RecordRTC-' + year + month + date + '-' + getRandomString() + '.' + fileExtension;
+    }
+
+    function getRandomString() {
+        if (window.crypto && window.crypto.getRandomValues && navigator.userAgent.indexOf('Safari') === -1) {
+            var a = window.crypto.getRandomValues(new Uint32Array(3)),
+                token = '';
+            for (var i = 0, l = a.length; i < l; i++) {
+                token += a[i].toString(36);
+            }
+            return token;
+        } else {
+            return (Math.random() * new Date().getTime()).toString(36).replace(/\./g, '');
+        }
+    }
+
+
+</script>
