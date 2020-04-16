@@ -96,8 +96,15 @@
 
                         navigator.mediaDevices.getUserMedia({ audio: true})
                             .then(stream => {
-                                
-                                const mediaRecorder = new MediaRecorder(stream);
+
+                                $('#start').click(function(){
+
+                                    alert("ok");
+                                    const mediaRecorder = new MediaRecorder(stream);
+
+
+                                }
+
 
 
 
