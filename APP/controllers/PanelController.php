@@ -221,7 +221,7 @@ class PanelController extends AppController {
 
 //        show($_FILES);
 
-        if ($_FILES['file']['size'] > 0){
+        if ($_FILES['file']['size'] == 0){
             $Panel = new Panel();
 
             $validation = $Panel->filevalidation($_FILES['file'], ['ext' => ["mp3"], 'type' => 'audio/mp3']);
