@@ -127,10 +127,12 @@
                                         document.querySelector('#audio').appendChild(audio);
                                         audioChunks = [];
 
+
+                                        //ОТПРАВКА ФАЙЛА AJAX
+
                                         let file = new File([audioBlob], getFileName('mp3'), {
                                             type: 'audio/mp3'
                                         });
-
                                         let idc = 5;
 
                                         // Отправление AJAX запроса
@@ -154,9 +156,7 @@
                                         });
 
 
-
-                                        // Отправление AJAX запроса
-
+                                        //ОТПРАВКА ФАЙЛА AJAX
 
 
                                     });
