@@ -83,9 +83,9 @@
                     <audio controls="" autoplay=""></audio>
 
 
-                    <button type="button" class="btn btn-primary"><i class="icon-cog3 mr-2"></i> НАЧАТЬ ЗАПИСЬ</button>
+                    <button type="button" class="btn btn-info"><i class="icon-cog3 mr-2"></i> НАЧАТЬ ЗАПИСЬ</button>
 
-                    <button type="button" class="btn btn-primary"><i class="icon-stop mr-2"></i> СТОП</button>
+                    <button type="button" class="btn btn-danger"><i class="icon-stop mr-2"></i> СТОП</button>
 
                     <script>
 
