@@ -215,6 +215,17 @@ class PanelController extends AppController {
     }
 
 
+    public function loadzapisAction(){
+        $this->layaout = false;
+        $this->view = false;
+
+        exit ("fufufufu");
+
+
+
+        return true;
+    }
+
     public function profileAction(){
         $Panel =  new Panel();
 

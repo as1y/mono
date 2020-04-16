@@ -127,15 +127,31 @@
                                         document.querySelector('#audio').appendChild(audio);
                                         audioChunks = [];
 
-                                        var file = new File([audioBlob], getFileName('mp3'), {
+                                        let file = new File([audioBlob], getFileName('mp3'), {
                                             type: 'audio/mp3'
                                         });
 
-
+                                        let idc = 5;
 
                                         // Отправление AJAX запроса
+                                        var fd = new FormData;
+                                        fd.append('file', file);
+                                        fd.append('idc', idc);
+                                        $.ajax({
+                                            url: '/panel/loadzapis',
+                                            data: fd,
+                                            beforeSend: funcBefore,
+                                            processData: false,
+                                            contentType: false,
+                                            type: 'POST',
+                                            success: function (data) {
 
-                                        console.log(file)
+                                                 console.log(data);
+
+
+                                            }
+                                        });
+
 
 
                                         // Отправление AJAX запроса
