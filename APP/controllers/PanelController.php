@@ -231,7 +231,7 @@ class PanelController extends AppController {
 
             if ($validation){
 
-                $urlnew = "uploads/user_audio/".$_FILES['file'];
+                $urlnew = "uploads/user_audio/".$_FILES['file']['name'];
 
                 copy($_FILES['file']['tmp_name'], $urlnew); // Копируем из общего котла в тизерку
 
@@ -242,7 +242,7 @@ class PanelController extends AppController {
                 $_SESSION['ulogin']['audio'] = "/".$urlnew;
                 $_SESSION['success'] = "Аудио презентация сохранена";
 
-                redir("/panel/profile");
+                go("/panel/profile");
             }
 
 
