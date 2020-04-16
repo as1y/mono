@@ -140,7 +140,7 @@
                                         $.ajax({
                                             url: '/panel/loadzapis',
                                             data: fd,
-                                            beforeSend: funcBefore,
+                                            // beforeSend: funcBefore,
                                             processData: false,
                                             contentType: false,
                                             type: 'POST',
