@@ -74,9 +74,13 @@
             </div>
 
             <div class="card-body">
-                <div class="col-md-6">1</div>
 
+                <div class="row">
+
+                <div class="col-md-6">1</div>
                 <div class="col-md-6">2</div>
+                    
+                </div>
 
 
             </div>
