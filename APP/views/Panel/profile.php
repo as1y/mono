@@ -92,11 +92,11 @@
 
                     <script>
 
-                        $('#start').click(function(){
 
+
+                        $('#start').click(function(){
                             alert("ok");
-                            const mediaRecorder = new MediaRecorder(stream);
-                        }
+                        });
 
 
 
