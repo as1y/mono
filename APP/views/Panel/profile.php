@@ -60,6 +60,25 @@
 
 
     <div class="col-xl-9 col-sm-6">
+
+        <div class="card">
+            <div class="card-header bg-primary text-white header-elements-inline">
+                <h6 class="card-title">Primary header</h6>
+                <div class="header-elements">
+                    <div class="list-icons">
+                        <a class="list-icons-item" data-action="collapse"></a>
+                        <a class="list-icons-item" data-action="reload"></a>
+                        <a class="list-icons-item" data-action="remove"></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-body">
+                Card with primary header color - add <code>.bg-primary</code> class to card header container
+            </div>
+        </div>
+
+
         <!-- Profile info -->
         <div class="card">
             <div class="card-header header-elements-inline">
