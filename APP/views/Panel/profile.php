@@ -126,7 +126,7 @@
 
 
 
-        <?php if ($_SESSION['ulogin']['role'] == "O" && !$_SESSION['ulogin']['audio']):?>
+        <?php if ($_SESSION['ulogin']['role'] == "O" && !empty($_SESSION['ulogin']['audio'])):?>
 
             Есть запись
         <?php endif;?>
