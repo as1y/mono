@@ -220,8 +220,6 @@
 
     var audio = document.querySelector('audio');
 
-    var recorder; // globally accessible
-
     function captureMicrophone(callback) {
         navigator.mediaDevices.getUserMedia({audio: true}).then(callback).catch(function(error) {
             alert('Нет доступа к микрофону');
@@ -229,8 +227,15 @@
         });
     }
 
+
+    var recorder; // globally accessible
+
+
+
     function stopRecordingCallback() {
         var blob = recorder.getBlob();
+
+        alert(audio);
         audio.src = URL.createObjectURL(blob);
         audio.play();
         audio.muted = false;
