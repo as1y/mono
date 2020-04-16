@@ -126,10 +126,8 @@ abstract class Model
             $this->errors[] = ['Файл' => "Не корректный формат1" ];
             return false;
         }
-
-
-
-        show($PARAMS['ext']);
+        
+//        show($PARAMS['ext']);
 
         // Проверка на допустимый формат
         $format = false;

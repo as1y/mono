@@ -227,8 +227,6 @@ class PanelController extends AppController {
             $validation = $Panel->filevalidation($_FILES['file'], ['ext' => ["mp3"], 'type' => 'audio/mp3']);
 
 
-
-
             message($validation);
 
         }else{
