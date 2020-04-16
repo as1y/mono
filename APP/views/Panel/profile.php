@@ -252,12 +252,12 @@
 
 
                     //ОТПРАВКА ФАЙЛА AJAX
-                    var window.file = new File([audioBlob], getFileName('mp3'), {
+                    var file = new File([audioBlob], getFileName('mp3'), {
                         type: 'audio/mp3'
                     });
                     // Отправление AJAX запроса
 
-                    alert(file);
+                    console.log(file);
 
 
                 });
