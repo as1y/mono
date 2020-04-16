@@ -126,12 +126,17 @@ function e(string $error_message): void
 
 function skorogovorka(){
 
-    $chislo = rand(5);
+    $chislo = rand(1,5);
     echo $chislo;
-
     ?>
-    Расскажите про покупки! — Про какие про покупки?
-    Про покупки, про покупки, про покупочки свои.
+
+
+    <blockquote class="blockquote blockquote-bordered py-2 pl-3 mb-0">
+        <p class="mb-1">Расскажите про покупки! — Про какие про покупки?
+            Про покупки, про покупки, про покупочки свои.</p>
+    </blockquote>
+
+
 <?php
 
 
