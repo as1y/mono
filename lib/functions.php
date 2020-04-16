@@ -129,10 +129,10 @@ function skorogovorka(){
     $chislo = rand(1,5);
 
     ?>
-    <blockquote class="blockquote blockquote-bordered py-2 pl-3 mb-0">
-        <p class="mb-1">Расскажите про покупки! — Про какие про покупки?
+
+        <p class="text-muted">Расскажите про покупки! — Про какие про покупки?
             Про покупки, про покупки, про покупочки свои.</p>
-    </blockquote>
+
 <?php
 
 
