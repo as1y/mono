@@ -213,3 +213,93 @@
         <!-- /profile info -->
     </div>
 </div>
+
+
+<script>
+
+    var audio = document.querySelector('audio');
+
+    function captureMicrophone(callback) {
+        navigator.mediaDevices.getUserMedia({audio: true}).then(callback).catch(function(error) {
+            alert('Нет доступа к микрофону');
+            console.error(error);
+        });
+    }
+    function stopRecordingCallback() {
+        var blob = recorder.getBlob();
+        audio.src = URL.createObjectURL(blob);
+        audio.play();
+        audio.muted = false;
+        recorder.microphone.stop();
+    }
+
+    var recorder; // globally accessible
+
+    document.getElementById('btn-start-recording').onclick = function() {
+        this.disabled = true;
+        captureMicrophone(function(microphone) {
+            audio.muted = true;
+            setSrcObject(microphone, audio);
+            audio.play();
+
+
+            var options = {
+                type: 'audio',
+                numberOfAudioChannels: isEdge ? 1 : 2,
+                checkForInactiveTracks: true,
+                recorderType: StereoAudioRecorder,
+                desiredSampRate: 16000,
+                leftChannel: false,
+                bufferSize: 16384
+            };
+
+
+            if(recorder) {
+                recorder.destroy();
+                recorder = null;
+            }
+
+
+            recorder = RecordRTC(microphone, options);
+            recorder.startRecording();
+
+            // release microphone on stopRecording
+            recorder.microphone = microphone;
+
+            document.getElementById('btn-stop-recording').disabled = false;
+        });
+    };
+
+    document.getElementById('btn-stop-recording').onclick = function() {
+        this.disabled = true;
+
+        $("[id=zayavka]").removeAttr('disabled');
+
+        //  document.getElementById('btn-start-recording').disabled = false;
+        recorder.stopRecording(stopRecordingCallback);
+    };
+
+
+    function getFileName(fileExtension) {
+        var d = new Date();
+        var year = d.getFullYear();
+        var month = d.getMonth();
+        var date = d.getDate();
+        return 'RecordRTC-' + year + month + date + '-' + getRandomString() + '.' + fileExtension;
+    }
+
+    function getRandomString() {
+        if (window.crypto && window.crypto.getRandomValues && navigator.userAgent.indexOf('Safari') === -1) {
+            var a = window.crypto.getRandomValues(new Uint32Array(3)),
+                token = '';
+            for (var i = 0, l = a.length; i < l; i++) {
+                token += a[i].toString(36);
+            }
+            return token;
+        } else {
+            return (Math.random() * new Date().getTime()).toString(36).replace(/\./g, '');
+        }
+    }
+
+    
+</script>
