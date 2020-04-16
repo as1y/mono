@@ -90,6 +90,8 @@
                     <hr>
 
 
+                    <span id="record" style="display: none;" class="badge badge-warning">ИДЕТ ЗАПИСЬ!</span>
+
                     <script>
 
 
