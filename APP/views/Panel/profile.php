@@ -96,8 +96,11 @@
 
                         $('#start').click(function(){
 
-                            $('#start').attr('disabled');
-                            $('#stop').removeAttr('disabled');
+                            $('#start').hide();
+
+                            $('#stop').show();
+
+
 
                             alert("ok");
 
