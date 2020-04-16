@@ -282,11 +282,10 @@
                     mediaRecorder.stop();
 
 
-
-
-
                     $('#stop').hide();
                     $('#record').hide();
+                    $('#after').show();
+
                 });
 
 
