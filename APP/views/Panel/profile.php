@@ -124,6 +124,14 @@
 
         <?php endif;?>
 
+
+
+        <?php if ($_SESSION['ulogin']['role'] == "O" && !$_SESSION['ulogin']['audio']):?>
+
+            Есть запись
+        <?php endif;?>
+
+
         <!-- Profile info -->
         <div class="card">
             <div class="card-header header-elements-inline">
