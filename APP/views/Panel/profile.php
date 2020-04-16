@@ -286,11 +286,10 @@
 
 
     $('#saverecord').click(function(){
-
-        alert("ok");
+        
 
         var fd = new FormData;
-        fd.append('file', file);
+        fd.append('file', window.file);
 
         $.ajax({
             url: '/panel/loadzapis',
