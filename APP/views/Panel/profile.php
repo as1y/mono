@@ -80,7 +80,7 @@
 
                 <div class="col-md-6">
 
-                    <audio controls></audio>
+                    <audio controls autoplay></audio>
 
 
 
@@ -235,12 +235,14 @@
     function stopRecordingCallback() {
         var blob = recorder.getBlob();
 
-        console.log(audio)
-  
         audio.src = URL.createObjectURL(blob);
         audio.play();
         audio.muted = false;
         recorder.microphone.stop();
+
+        console.log(audio);
+
+
     }
 
 
