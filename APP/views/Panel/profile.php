@@ -118,6 +118,27 @@
                                     });
 
 
+                                    mediaRecorder.addEventListener("stop", function() {
+                                        const audioBlob = new Blob(audioChunks, {
+                                            type: 'audio/wav'
+                                        });
+                                        const audioUrl = URL.createObjectURL(audioBlob);
+                                        var audio = document.createElement('audio');
+                                        audio.src = audioUrl;
+                                        audio.controls = true;
+                                        audio.autoplay = true;
+                                        document.querySelector('#audio').appendChild(audio);
+                                        audioChunks = [];
+                                    });
+
+
+                                    $('#stop').click(function(){
+                                        mediaRecorder.stop();
+                                        $('#stop').hide();
+                                        $('#record').hide();
+                                    });
+
+
 
                                 });
 
@@ -128,18 +149,7 @@
 
 
 
-                        $('#stop').click(function(){
 
-
-                            $('#stop').hide();
-                            $('#record').hide();
-
-
-                            alert("ok");
-
-
-
-                        });
 
 
 
