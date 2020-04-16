@@ -265,8 +265,6 @@
 
                 $('#stop').click(function(){
                     mediaRecorder.stop();
-
-
                     $('#stop').hide();
                     $('#record').hide();
                     $('#after').show();
@@ -289,7 +287,7 @@
 
 
         var fd = new FormData;
-        fd.append('file', window.file);
+        fd.append('file', file);
 
         $.ajax({
             url: '/panel/loadzapis',
