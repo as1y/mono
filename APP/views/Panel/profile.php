@@ -97,6 +97,7 @@
                         $('#start').click(function(){
 
 
+                            $('#stop').removeAttr('disabled');
 
                             alert("ok");
 
@@ -104,9 +105,19 @@
                             navigator.mediaDevices.getUserMedia({ audio: true})
                                 .then(stream => {
 
+                                    const mediaRecorder = new MediaRecorder(stream);
+                                    mediaRecorder.start();
+
+                                    var audioChunks = [];
+                                    mediaRecorder.addEventListener("dataavailable",function(event) {
+                                        audioChunks.push(event.data);
+                                    });
+
+
+
                                 });
 
-                            
+
 
                         });
 
