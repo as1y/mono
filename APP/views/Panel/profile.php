@@ -80,7 +80,8 @@
 
                 <div class="col-md-6">
 
-                    <audio controls="" autoplay=""></audio>
+                    <audio controls autoplay></audio>
+
 
 
                     <button type="button" id="btn-start-recording" class="btn btn-success"><i class="icon-mic2 mr-2"></i> НАЧАТЬ ЗАПИСЬ</button>
