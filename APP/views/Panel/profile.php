@@ -80,18 +80,16 @@
 
                 <div class="col-md-6">
 
-                    <audio controls autoplay></audio>
+                    <div id="audio"></div>
 
 
 
-                    <button type="button" id="btn-start-recording" class="btn btn-success"><i class="icon-mic2 mr-2"></i> НАЧАТЬ ЗАПИСЬ</button>
-                    <button type="button" id="btn-stop-recording" disabled class="btn btn-danger"><i class="icon-mic-off2 mr-2"></i> СТОП</button>
+                    <button type="button" id="start" class="btn btn-success"><i class="icon-mic2 mr-2"></i> НАЧАТЬ ЗАПИСЬ</button>
+                    <button type="button" id="stop" disabled class="btn btn-danger"><i class="icon-mic-off2 mr-2"></i> СТОП</button>
 
                     <hr>
 
-                    <div id="audio"></div>
-                    <button id="start">Начать запись</button>
-                    <button id="stop">Остановить запись</button>
+                    
                     <script>
                         navigator.mediaDevices.getUserMedia({ audio: true})
                             .then(stream => {
@@ -123,7 +121,7 @@
                             });
                     </script>
 
-                    
+
 
                 </div>
 
