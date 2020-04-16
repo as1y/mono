@@ -288,9 +288,9 @@
         var file = mediaRecorder.file();
         console.log(file);
 
+        
         var fd = new FormData;
         fd.append('file', file);
-
         $.ajax({
             url: '/panel/loadzapis',
             data: fd,
@@ -304,8 +304,6 @@
 
             }
         });
-
-
 
     });
 
