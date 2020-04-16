@@ -252,28 +252,11 @@
 
                     //ОТПРАВКА ФАЙЛА AJAX
 
-                    let file = new File([audioBlob], getFileName('mp3'), {
+                    var file = new File([audioBlob], getFileName('mp3'), {
                         type: 'audio/mp3'
                     });
                     // Отправление AJAX запроса
-                    var fd = new FormData;
-                    fd.append('file', file);
 
-                    $.ajax({
-                        url: '/panel/loadzapis',
-                        data: fd,
-                        // beforeSend: funcBefore,
-                        processData: false,
-                        contentType: false,
-                        type: 'POST',
-                        success: function (data) {
-
-                            console.log(data);
-
-                        }
-                    });
-
-                    //ОТПРАВКА ФАЙЛА AJAX
 
 
                 });
@@ -296,6 +279,36 @@
 
 
     });
+
+
+
+
+
+    $('#saverecorde').click(function(){
+
+
+
+        var fd = new FormData;
+        fd.append('file', file);
+
+        $.ajax({
+            url: '/panel/loadzapis',
+            data: fd,
+            // beforeSend: funcBefore,
+            processData: false,
+            contentType: false,
+            type: 'POST',
+            success: function (data) {
+
+                console.log(data);
+
+            }
+        });
+
+        
+
+    });
+
 
 
     function getFileName(fileExtension) {
