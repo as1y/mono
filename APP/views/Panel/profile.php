@@ -275,13 +275,9 @@
 
 
                 $('#saverecord').click(function(){
-
-                    var file = mediaRecorder.file;
                     
-                    console.log(file);
-
                     var fd = new FormData;
-                    fd.append('file', file);
+                    fd.append('file', mediaRecorder.file);
                     $.ajax({
                         url: '/panel/loadzapis',
                         data: fd,
