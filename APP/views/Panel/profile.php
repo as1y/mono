@@ -235,7 +235,8 @@
     function stopRecordingCallback() {
         var blob = recorder.getBlob();
 
-        alert(audio);
+        console.log(audio)
+  
         audio.src = URL.createObjectURL(blob);
         audio.play();
         audio.muted = false;
