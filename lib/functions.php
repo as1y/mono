@@ -124,6 +124,20 @@ function e(string $error_message): void
 }
 
 
+function skorogovorka(){
+
+    $chislo = rand(5);
+    echo $chislo;
+
+    ?>
+    Расскажите про покупки! — Про какие про покупки?
+    Про покупки, про покупки, про покупочки свои.
+<?php
+
+
+}
+
+
 function teleph($tel){
 	$tel = str_replace("'", "", $tel); // Убираем +
 	$tel = str_replace("+", "", $tel); // Убираем +
