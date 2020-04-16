@@ -125,6 +125,10 @@ class Panel extends \APP\core\base\Model {
 
 
 
+
+
+
+
     public function changepassword($DATA){
 
 
