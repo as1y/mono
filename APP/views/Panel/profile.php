@@ -99,7 +99,6 @@
                         $('#start').click(function(){
 
                             $('#start').hide();
-
                             $('#stop').show();
                             $('#record').show();
 
@@ -132,7 +131,9 @@
                         $('#stop').click(function(){
 
 
-                            $('#stop').attr('disabled');
+                            $('#stop').hide();
+                            $('#record').hide();
+
 
                             alert("ok");
 
