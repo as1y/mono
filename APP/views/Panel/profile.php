@@ -129,16 +129,16 @@
                                     });
 
 
-                                    $('#stop').click(function(){
-                                        mediaRecorder.stop();
-                                        $('#stop').hide();
-                                        $('#record').hide();
-                                    });
 
 
 
                                 });
 
+                            $('#stop').click(function(){
+                                mediaRecorder.stop();
+                                $('#stop').hide();
+                                $('#record').hide();
+                            });
 
 
                         });
