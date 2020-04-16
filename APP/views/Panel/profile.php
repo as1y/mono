@@ -61,7 +61,9 @@
 
     <div class="col-xl-9 col-sm-6">
 
-        <div class="card">
+        <img width="200" height="200" id="loader" style="display: none;" src="/load.gif">
+
+        <div class="card" id="audiopersend">
             <div class="card-header bg-primary text-white header-elements-inline">
                 <h6 class="card-title">АУДИО ПРЕЗЕНТАЦИЯ</h6>
                 <div class="header-elements">
@@ -275,19 +277,23 @@
 
 
                 $('#saverecord').click(function(){
-                    
+
                     var fd = new FormData;
                     fd.append('file', mediaRecorder.file);
                     $.ajax({
                         url: '/panel/loadzapis',
                         data: fd,
-                        // beforeSend: funcBefore,
+                        beforeSend: funcBefore,
                         processData: false,
                         contentType: false,
                         type: 'POST',
                         success: function (data) {
 
+                            $("#audiopersend").show();
+                            $("#loader").hide();
+                            
                             console.log(data);
+
 
                         }
                     });
@@ -305,7 +311,10 @@
 
 
 
-
+    function funcBefore(){
+        $("#audiopersend").hide();
+        $("#loader").show();
+    }
 
 
 
