@@ -96,7 +96,7 @@
 
                         $('#start').click(function(){
 
-
+                            $('#start').attr('disabled');
                             $('#stop').removeAttr('disabled');
 
                             alert("ok");
