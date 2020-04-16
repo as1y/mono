@@ -62,7 +62,7 @@
     <div class="col-xl-9 col-sm-6">
 
         <div class="card">
-            <div class="card-header bg-info text-white header-elements-inline">
+            <div class="card-header bg-primary text-white header-elements-inline">
                 <h6 class="card-title">Запись аудио презентации</h6>
                 <div class="header-elements">
                     <div class="list-icons">
