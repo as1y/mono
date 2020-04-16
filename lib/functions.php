@@ -126,14 +126,30 @@ function e(string $error_message): void
 
 function skorogovorka(){
 
-    $chislo = rand(1,5);
+    $chislo = rand(1,3);
+
 
     ?>
 
+        <?php if ($chislo == 1):?>
         <p class="text-muted">Расскажите про покупки! — Про какие про покупки?
             Про покупки, про покупки, про покупочки свои.</p>
+        <?php endif;?>
 
-<?php
+    <?php if ($chislo == 2):?>
+        <p class="text-muted">Ядро потребителей пиастров — пираты, а пиратов — пираньи.</p>
+    <?php endif;?>
+
+    <?php if ($chislo == 3):?>
+        <p class="text-muted">На дворе — трава, на траве — дрова. Не руби дрова на траве двора!</p>
+    <?php endif;?>
+
+
+
+    <?php
+
+
+
 
 
 }
