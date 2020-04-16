@@ -142,19 +142,7 @@
 
                         <div class="col-md-6 text-center">
 
-                            <div id="audio"></div>
-
-
-                            <span id="record" style="display: none;" class="badge badge-warning">ИДЕТ ЗАПИСЬ!<br></span><br>
-                            <button type="button" id="start" class="btn btn-success"><i class="icon-mic2 mr-2"></i> НАЧАТЬ ЗАПИСЬ</button>
-                            <button type="button" id="stop" style="display: none;" class="btn btn-danger"><i class="icon-mic-off2 mr-2"></i> СТОП</button>
-
-
-                            <div id="after" style="display: none;" >
-                                <hr>
-                                <button type="button" id="saverecord" class="btn btn-success"><i class="icon-checkmark mr-2"></i> СОХРАНИТЬ ЗАПИСЬ</button>
-                                <a href="/panel/profile/"  class="btn btn-secondary"><i class="icon-reload-alt mr-2"></i> СБРОС</a>
-                            </div>
+                            <audio controls src="<?=$_SESSION['ulogin']['audio']?>"></audio>
 
                         </div>
 
