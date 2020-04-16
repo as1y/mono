@@ -87,106 +87,6 @@
                     <button type="button" id="start" class="btn btn-success"><i class="icon-mic2 mr-2"></i> НАЧАТЬ ЗАПИСЬ</button>
                     <button type="button" id="stop" style="display: none;" class="btn btn-danger"><i class="icon-mic-off2 mr-2"></i> СТОП</button>
 
-                    <hr>
-
-
-
-
-                    <script>
-
-
-
-                        $('#start').click(function(){
-
-                            $('#start').hide();
-                            $('#stop').show();
-                            $('#record').show();
-
-
-                            navigator.mediaDevices.getUserMedia({ audio: true})
-                                .then(stream => {
-
-                                    const mediaRecorder = new MediaRecorder(stream);
-                                    mediaRecorder.start();
-
-                                    var audioChunks = [];
-                                    mediaRecorder.addEventListener("dataavailable",function(event) {
-                                        audioChunks.push(event.data);
-                                    });
-
-
-                                    mediaRecorder.addEventListener("stop", function() {
-                                        const audioBlob = new Blob(audioChunks, {
-                                            type: 'audio/wav'
-                                        });
-                                        const audioUrl = URL.createObjectURL(audioBlob);
-                                        var audio = document.createElement('audio');
-                                        audio.src = audioUrl;
-                                        audio.controls = true;
-                                        audio.autoplay = false;
-                                        document.querySelector('#audio').appendChild(audio);
-                                        audioChunks = [];
-
-
-                                        //ОТПРАВКА ФАЙЛА AJAX
-
-                                        let file = new File([audioBlob], getFileName('mp3'), {
-                                            type: 'audio/mp3'
-                                        });
-                                        // Отправление AJAX запроса
-                                        var fd = new FormData;
-                                        fd.append('file', file);
-
-                                        $.ajax({
-                                            url: '/panel/loadzapis',
-                                            data: fd,
-                                            // beforeSend: funcBefore,
-                                            processData: false,
-                                            contentType: false,
-                                            type: 'POST',
-                                            success: function (data) {
-
-                                                 console.log(data);
-
-                                            }
-                                        });
-
-                                        //ОТПРАВКА ФАЙЛА AJAX
-
-
-                                    });
-
-
-                                    $('#stop').click(function(){
-                                        mediaRecorder.stop();
-
-
-
-
-
-                                        $('#stop').hide();
-                                        $('#record').hide();
-                                    });
-
-
-
-                                });
-
-
-
-                        });
-
-
-
-
-
-
-
-
-                    </script>
-
-
-
 
                 </div>
 
@@ -309,6 +209,89 @@
 
 <script>
 
+
+
+    $('#start').click(function(){
+
+        $('#start').hide();
+        $('#stop').show();
+        $('#record').show();
+
+
+        navigator.mediaDevices.getUserMedia({ audio: true})
+            .then(stream => {
+
+                const mediaRecorder = new MediaRecorder(stream);
+                mediaRecorder.start();
+
+                var audioChunks = [];
+                mediaRecorder.addEventListener("dataavailable",function(event) {
+                    audioChunks.push(event.data);
+                });
+
+
+                mediaRecorder.addEventListener("stop", function() {
+                    const audioBlob = new Blob(audioChunks, {
+                        type: 'audio/wav'
+                    });
+                    const audioUrl = URL.createObjectURL(audioBlob);
+                    var audio = document.createElement('audio');
+                    audio.src = audioUrl;
+                    audio.controls = true;
+                    audio.autoplay = false;
+                    document.querySelector('#audio').appendChild(audio);
+                    audioChunks = [];
+
+
+                    //ОТПРАВКА ФАЙЛА AJAX
+
+                    let file = new File([audioBlob], getFileName('mp3'), {
+                        type: 'audio/mp3'
+                    });
+                    // Отправление AJAX запроса
+                    var fd = new FormData;
+                    fd.append('file', file);
+
+                    $.ajax({
+                        url: '/panel/loadzapis',
+                        data: fd,
+                        // beforeSend: funcBefore,
+                        processData: false,
+                        contentType: false,
+                        type: 'POST',
+                        success: function (data) {
+
+                            console.log(data);
+
+                        }
+                    });
+
+                    //ОТПРАВКА ФАЙЛА AJAX
+
+
+                });
+
+
+                $('#stop').click(function(){
+                    mediaRecorder.stop();
+
+
+
+
+
+                    $('#stop').hide();
+                    $('#record').hide();
+                });
+
+
+
+            });
+
+
+
+    });
+
+
     function getFileName(fileExtension) {
         var d = new Date();
         var year = d.getFullYear();
@@ -316,7 +299,6 @@
         var date = d.getDate();
         return 'RecordRTC-' + year + month + date + '-' + getRandomString() + '.' + fileExtension;
     }
-
     function getRandomString() {
         if (window.crypto && window.crypto.getRandomValues && navigator.userAgent.indexOf('Safari') === -1) {
             var a = window.crypto.getRandomValues(new Uint32Array(3)),
@@ -331,4 +313,14 @@
     }
 
 
+
+
 </script>
+
+
+
+
+
+
+
+
