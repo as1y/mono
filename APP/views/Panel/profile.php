@@ -81,13 +81,13 @@
                 <div class="col-md-6">
 
                     <audio controls="" autoplay=""></audio>
-                    
+
                     <script>
 
 
-                        navigator.mediaDevices.getUserMedia({ audio: true})
-                            .then(stream => {
-                                const mediaRecorder = new MediaRecorder(stream)});
+                        // navigator.mediaDevices.getUserMedia({ audio: true})
+                        //     .then(stream => {
+                        //         const mediaRecorder = new MediaRecorder(stream)});
 
 
 
