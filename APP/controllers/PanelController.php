@@ -229,22 +229,21 @@ class PanelController extends AppController {
             if (!$validation) message("Ошибка валидации");
 
 
-//            if ($validation){
-//
-//                $name = md5(uniqid(rand(),1));
-//                $urlnew = "uploads/user_avatar/".$name.".jpg";
-//
-//                copy($_FILES['file']['tmp_name'], $urlnew); // Копируем из общего котла в тизерку
-//
-//
-//                if (!empty($_SESSION['ulogin']['avatar'])) unlink($_SESSION['ulogin']['avatar']);
-//
-//                $Panel->changeavatar("/".$urlnew);
-//                $_SESSION['ulogin']['avatar'] = "/".$urlnew;
-//                $_SESSION['success'] = "Аватар изменен";
-//
-//                redir("/panel/profile");
-//            }
+            if ($validation){
+
+                $urlnew = "uploads/user_audio/".$_FILES['file'];
+
+                copy($_FILES['file']['tmp_name'], $urlnew); // Копируем из общего котла в тизерку
+
+
+                if (!empty($_SESSION['ulogin']['audio'])) unlink($_SESSION['ulogin']['audio']);
+
+                $Panel->saverecord("/".$urlnew);
+                $_SESSION['ulogin']['audio'] = "/".$urlnew;
+                $_SESSION['success'] = "Аудио презентация сохранена";
+
+                redir("/panel/profile");
+            }
 
 
 
