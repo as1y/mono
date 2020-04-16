@@ -219,7 +219,7 @@ class PanelController extends AppController {
         $this->layaout = false;
         $this->view = false;
 
-        show($_FILES);
+//        show($_FILES);
 
         if ($_FILES['file']['size'] > 0){
 
