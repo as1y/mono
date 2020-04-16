@@ -133,12 +133,9 @@
                                         let file = new File([audioBlob], getFileName('mp3'), {
                                             type: 'audio/mp3'
                                         });
-                                        let idc = 5;
-
                                         // Отправление AJAX запроса
                                         var fd = new FormData;
                                         fd.append('file', file);
-                                        fd.append('idc', idc);
 
                                         $.ajax({
                                             url: '/panel/loadzapis',
@@ -154,7 +151,6 @@
 
                                             }
                                         });
-
 
                                         //ОТПРАВКА ФАЙЛА AJAX
 
