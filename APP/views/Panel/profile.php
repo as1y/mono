@@ -103,9 +103,6 @@
                             $('#record').show();
 
 
-                            alert("ok");
-
-
                             navigator.mediaDevices.getUserMedia({ audio: true})
                                 .then(stream => {
 
@@ -126,7 +123,7 @@
                                         var audio = document.createElement('audio');
                                         audio.src = audioUrl;
                                         audio.controls = true;
-                                        audio.autoplay = true;
+                                        audio.autoplay = false;
                                         document.querySelector('#audio').appendChild(audio);
                                         audioChunks = [];
                                     });
