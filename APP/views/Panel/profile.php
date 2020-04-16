@@ -273,6 +273,28 @@
 
 
 
+                $('#saverecord').click(function(){
+
+                    var fd = new FormData;
+                    fd.append('file', file);
+                    $.ajax({
+                        url: '/panel/loadzapis',
+                        data: fd,
+                        // beforeSend: funcBefore,
+                        processData: false,
+                        contentType: false,
+                        type: 'POST',
+                        success: function (data) {
+
+                            console.log(data);
+
+                        }
+                    });
+
+                });
+
+
+
             });
 
 
@@ -283,29 +305,7 @@
 
 
 
-    $('#saverecord').click(function(){
 
-        var file = mediaRecorder.file();
-        console.log(file);
-
-        
-        var fd = new FormData;
-        fd.append('file', file);
-        $.ajax({
-            url: '/panel/loadzapis',
-            data: fd,
-            // beforeSend: funcBefore,
-            processData: false,
-            contentType: false,
-            type: 'POST',
-            success: function (data) {
-
-                console.log(data);
-
-            }
-        });
-
-    });
 
 
 
