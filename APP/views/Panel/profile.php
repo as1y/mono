@@ -124,7 +124,16 @@
 
 
 
+                        $('#stop').click(function(){
 
+
+                            $('#stop').attr('disabled');
+
+                            alert("ok");
+
+
+
+                        });
 
 
 
