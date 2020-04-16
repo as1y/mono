@@ -128,7 +128,7 @@
                     <? if($statuscall['audio'] === false):?>
                         <i class="icon-cross2 icon-2x text-warning border-warning border-3 rounded-round p-3 mb-3"></i>
                         <p class="mb-3">Запишите аудио презентацию</p>
-                        <a href="/project/profile/" class="btn bg-success"><i class="icon-mic2 ml-2"></i> ЗАПИСАТЬ</a>
+                        <a href="/panel/profile/" class="btn bg-success"><i class="icon-mic2 ml-2"></i> ЗАПИСАТЬ</a>
                     <?else:?>
                         <i class="icon-checkmark icon-2x text-success border-success border-3 rounded-round p-3 mb-3"></i>
                         <p class="mb-3">Аудио презентация загружена</p>
