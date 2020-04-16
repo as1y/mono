@@ -83,8 +83,8 @@
                     <audio controls="" autoplay=""></audio>
 
 
-                    <button type="button" class="btn btn-success"><i class="icon-mic2 mr-2"></i> НАЧАТЬ ЗАПИСЬ</button>
-                    <button type="button" class="btn btn-danger"><i class="icon-mic-off2 mr-2"></i> СТОП</button>
+                    <button type="button" id="btn-start-recording" class="btn btn-success"><i class="icon-mic2 mr-2"></i> НАЧАТЬ ЗАПИСЬ</button>
+                    <button type="button" id="btn-stop-recording" class="btn btn-danger"><i class="icon-mic-off2 mr-2"></i> СТОП</button>
 
                     <script>
 
