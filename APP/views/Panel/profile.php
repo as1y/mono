@@ -74,14 +74,26 @@
             </div>
 
             <div class="card-body">
-
                 <div class="row">
 
-                <div class="col-md-6">1</div>
-                <div class="col-md-6">2</div>
-                    
+
+
+                <div class="col-md-6">
+                    Форма записи разговора
+
                 </div>
 
+
+
+                <div class="col-md-6">
+
+                    2
+                </div>
+
+
+
+
+                </div>
 
             </div>
         </div>
