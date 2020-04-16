@@ -291,8 +291,11 @@
 
                             $("#audiopersend").show();
                             $("#loader").hide();
-                            
-                            console.log(data);
+
+                            obj = jQuery.parseJSON( data );
+                            if ( obj.message ) { alert( obj.message ); }
+                            if ( obj.go ) go( obj.go );
+
 
 
                         }

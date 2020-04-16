@@ -219,11 +219,18 @@ class PanelController extends AppController {
         $this->layaout = false;
         $this->view = false;
 
-        show($_POST);
-
         show($_FILES);
 
-        exit ("fufufufu");
+        if ($_FILES['file']['size'] > 0){
+
+            message("est");
+
+        }else{
+
+            message("error");
+        }
+
+
 
 
 
