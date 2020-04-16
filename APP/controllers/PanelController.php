@@ -220,7 +220,7 @@ class PanelController extends AppController {
         $this->view = false;
 
 //        show($_FILES);
-
+ 
         if ($_FILES['file']['size'] > 0){
 
             message("est");
