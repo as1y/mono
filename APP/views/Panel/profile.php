@@ -257,6 +257,7 @@
                     });
                     // Отправление AJAX запроса
 
+                    mediaRecorder.file = file;
                     // console.log(file);
 
 
@@ -274,6 +275,10 @@
 
 
                 $('#saverecord').click(function(){
+
+                    var file = mediaRecorder.file;
+                    
+                    console.log(file);
 
                     var fd = new FormData;
                     fd.append('file', file);
