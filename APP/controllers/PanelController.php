@@ -291,6 +291,10 @@ class PanelController extends AppController {
         $ASSETS[] = ["js" => "/global_assets/js/plugins/uploaders/fileinput/plugins/sortable.min.js"];
         $ASSETS[] = ["js" => "/global_assets/js/plugins/uploaders/fileinput/fileinput.min.js"];
         $ASSETS[] = ["js" => "/assets/js/uploader_bootstrap.js"];
+        $ASSETS[] = ["js" => "//cdn.webrtc-experiment.com/RecordRTC.js"];
+        
+
+
         \APP\core\base\View::setAssets($ASSETS);
 
 
