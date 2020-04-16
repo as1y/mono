@@ -82,6 +82,11 @@
 
                     <audio controls="" autoplay=""></audio>
 
+
+                    <button type="button" class="btn btn-primary"><i class="icon-cog3 mr-2"></i> НАЧАТЬ ЗАПИСЬ</button>
+
+                    <button type="button" class="btn btn-primary"><i class="icon-cog3 mr-2"></i> СТОП</button>
+
                     <script>
 
 
