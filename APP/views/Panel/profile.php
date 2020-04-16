@@ -87,19 +87,43 @@
                     <button type="button" id="btn-start-recording" class="btn btn-success"><i class="icon-mic2 mr-2"></i> НАЧАТЬ ЗАПИСЬ</button>
                     <button type="button" id="btn-stop-recording" disabled class="btn btn-danger"><i class="icon-mic-off2 mr-2"></i> СТОП</button>
 
+                    <hr>
+
+                    <div id="audio"></div>
+                    <button id="start">Начать запись</button>
+                    <button id="stop">Остановить запись</button>
                     <script>
+                        navigator.mediaDevices.getUserMedia({ audio: true})
+                            .then(stream => {
+                                const mediaRecorder = new MediaRecorder(stream);
 
+                                document.querySelector('#start').addEventListener('click', function(){
+                                    mediaRecorder.start();
+                                });
+                                var audioChunks = [];
+                                mediaRecorder.addEventListener("dataavailable",function(event) {
+                                    audioChunks.push(event.data);
+                                });
 
-                        // navigator.mediaDevices.getUserMedia({ audio: true})
-                        //     .then(stream => {
-                        //         const mediaRecorder = new MediaRecorder(stream)});
-
-
-
-
-
+                                mediaRecorder.addEventListener("stop", function() {
+                                    const audioBlob = new Blob(audioChunks, {
+                                        type: 'audio/wav'
+                                    });
+                                    const audioUrl = URL.createObjectURL(audioBlob);
+                                    var audio = document.createElement('audio');
+                                    audio.src = audioUrl;
+                                    audio.controls = true;
+                                    audio.autoplay = true;
+                                    document.querySelector('#audio').appendChild(audio);
+                                    audioChunks = [];
+                                });
+                                document.querySelector('#stop').addEventListener('click', function(){
+                                    mediaRecorder.stop();
+                                });
+                            });
                     </script>
 
+                    
 
                 </div>
 
