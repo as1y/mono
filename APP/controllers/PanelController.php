@@ -219,15 +219,35 @@ class PanelController extends AppController {
         $this->layaout = false;
         $this->view = false;
 
-//        show($_FILES);
+        show($_FILES);
 
-        if ($_FILES['file']['size'] == 0){
+        if ($_FILES['file']['size'] > 0){
             $Panel = new Panel();
 
             $validation = $Panel->filevalidation($_FILES['file'], ['ext' => ["mp3"], 'type' => 'audio/mp3']);
 
+            if (!$validation) message("Ошибка валидации");
 
-            message($validation);
+
+//            if ($validation){
+//
+//                $name = md5(uniqid(rand(),1));
+//                $urlnew = "uploads/user_avatar/".$name.".jpg";
+//
+//                copy($_FILES['file']['tmp_name'], $urlnew); // Копируем из общего котла в тизерку
+//
+//
+//                if (!empty($_SESSION['ulogin']['avatar'])) unlink($_SESSION['ulogin']['avatar']);
+//
+//                $Panel->changeavatar("/".$urlnew);
+//                $_SESSION['ulogin']['avatar'] = "/".$urlnew;
+//                $_SESSION['success'] = "Аватар изменен";
+//
+//                redir("/panel/profile");
+//            }
+
+
+
 
         }else{
 
