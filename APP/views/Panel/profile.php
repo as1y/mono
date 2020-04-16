@@ -284,9 +284,9 @@
 
 
 
-    $('#saverecorde').click(function(){
+    $('#saverecord').click(function(){
 
-
+        alert("ok");
 
         var fd = new FormData;
         fd.append('file', file);
@@ -305,7 +305,7 @@
             }
         });
 
-        
+
 
     });
 
