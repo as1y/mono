@@ -95,20 +95,26 @@
 
 
                         $('#start').click(function(){
+
+
+
                             alert("ok");
+
+
+                            navigator.mediaDevices.getUserMedia({ audio: true})
+                                .then(stream => {
+
+                                });
+
+                            
+
                         });
 
 
 
-                        navigator.mediaDevices.getUserMedia({ audio: true})
-                            .then(stream => {
 
 
 
-
-
-
-                            });
 
 
                     </script>
