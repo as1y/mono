@@ -79,7 +79,19 @@
 
 
                 <div class="col-md-6">
-                    Форма записи разговора
+
+                    <script>
+
+
+                        navigator.mediaDevices.getUserMedia({ audio: true})
+                            .then(stream => {
+                                const mediaRecorder = new MediaRecorder(stream)});
+
+                        
+
+
+                    </script>
+
 
                 </div>
 
