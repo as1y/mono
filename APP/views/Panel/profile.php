@@ -88,6 +88,11 @@
                     <button type="button" id="stop" style="display: none;" class="btn btn-danger"><i class="icon-mic-off2 mr-2"></i> СТОП</button>
 
 
+                    <div id="after" style="display: none;" >
+                        <button type="button" id="saverecord" class="btn btn-success"><i class="icon-mic2 mr-2"></i> СОХРАНИТЬ ЗАПИСЬ</button>
+                        <a href="/panel/profile/"  class="btn btn-secondary"><i class="icon-mic-off2 mr-2"></i> ПЕРЕЗАПИСАТЬ</a>
+                    </div>
+
                 </div>
 
 
