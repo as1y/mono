@@ -137,6 +137,7 @@
                                         var fd = new FormData;
                                         fd.append('file', file);
                                         fd.append('idc', idc);
+
                                         $.ajax({
                                             url: '/panel/loadzapis',
                                             data: fd,

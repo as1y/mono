@@ -219,6 +219,10 @@ class PanelController extends AppController {
         $this->layaout = false;
         $this->view = false;
 
+        show($_POST);
+
+        show($_FILES);
+
         exit ("fufufufu");
 
 
