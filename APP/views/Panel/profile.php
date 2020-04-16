@@ -130,8 +130,8 @@
                                         var file = new File([audioBlob], getFileName('mp3'), {
                                             type: 'audio/mp3'
                                         });
-                                        
-                                        alert(file);
+
+                                        console.log(file)
 
 
                                     });
