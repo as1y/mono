@@ -149,9 +149,9 @@
 
 
                         <div class="col-md-6 text-right">
+                            Аудио презентация записанна. Теперь она доступна в вашем профиле.<br>
 
-
-                            <a href="/panel/loadzapis/?action=ClearRecord" type="button" class=" btn btn-warning"><i class="icon-reload-alt mr-2"></i> ПЕРЕЗАПИСАТЬ</a>
+                            <a href="/panel/loadzapis/?action=ClearRecord" type="button" class=" btn btn-warning"><i class="icon-reload-alt mr-2"></i> СТЕРЕТЬ</a>
 
 
                         </div>
