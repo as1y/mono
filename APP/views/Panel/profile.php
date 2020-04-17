@@ -148,7 +148,7 @@
 
 
 
-                        <div class="col-md-6">
+                        <div class="col-md-6 text-right">
 
 
                             <a href="/panel/loadzapis/?action=ClearRecord" type="button" class=" btn btn-warning"><i class="icon-reload-alt mr-2"></i> ПЕРЕЗАПИСАТЬ</a>
