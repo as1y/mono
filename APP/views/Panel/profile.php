@@ -152,7 +152,7 @@
                         <div class="col-md-6 text-right">
 
 
-                            <a href="/panel/loadzapis/?action=ClearRecord" type="button" class=" btn btn-danger"><i class="icon-reload-alt mr-2"></i> СТЕРЕТЬ</a>
+                            <a href="/panel/loadzapis/?action=ClearRecord" type="button" class=" btn btn-danger"><i class="icon-trash mr-2"></i> СТЕРЕТЬ</a>
 
 
                         </div>
