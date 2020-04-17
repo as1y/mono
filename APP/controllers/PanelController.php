@@ -255,7 +255,7 @@ class PanelController extends AppController {
                 $Panel->saverecord($_FILES['file']['name']);
 
                 $_SESSION['ulogin']['audio'] = $_FILES['file']['name'];
-                $_SESSION['success'] = "Аудио презентация сохранена";
+//                $_SESSION['success'] = "Аудио презентация сохранена";
 
                 go("/panel/profile/");
             }
