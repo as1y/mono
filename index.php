@@ -11,7 +11,7 @@ define('WWW', __DIR__);
 define('ROOT',dirname(__DIR__) );
 define('BASEAVATAR', '/assets/oper1.jpg');
 
-define('AudioUploadPath', '/uploads/user_audio/');
+define('AudioUploadPath', 'uploads/user_audio/');
 
 
 
