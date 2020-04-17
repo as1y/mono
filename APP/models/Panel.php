@@ -56,6 +56,7 @@ class Panel extends \APP\core\base\Model {
         $user = R::load("users", $_SESSION['ulogin']['id']);
         $user->audio = NULL;
         R::store($user);
+        
         return true;
 
     }
