@@ -219,7 +219,6 @@ class PanelController extends AppController {
         $this->layaout = false;
         $this->view = false;
 
-        show($_FILES);
 
         if ($_FILES['file']['size'] > 0){
             $Panel = new Panel();

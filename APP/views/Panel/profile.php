@@ -149,12 +149,9 @@
 
 
                         <div class="col-md-6">
-                            <span class="badge-secondary">ЗАПИСЬ АУДИО ПРЕЗЕНТАЦИИ</span><br>
 
-                            1. Расскажите коротко о себе. Эту презентацию будут слушать клиенты и принимать решения о допуске к работе в проектах.<br>
-                            2. Далее проговорите скороговорку:<br>
-                            <?=skorogovorka()?>
 
+                            <a href="/panel/loadzapis/?action=ClearRecord" type="button" class=" btn btn-warning"><i class="icon-reload-alt mr-2"></i> ПЕРЕЗАПИСАТЬ</a>
 
 
                         </div>
