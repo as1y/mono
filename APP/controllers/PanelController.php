@@ -225,7 +225,6 @@ class PanelController extends AppController {
         if (!empty($_GET) && $_GET['action'] == "ClearRecord"){
 
             $url = AudioUploadPath.$_SESSION['ulogin']['audio'];
-
             $Panel->resetrecord();
             redir("/panel/profile");
 

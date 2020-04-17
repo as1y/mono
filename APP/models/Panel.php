@@ -49,7 +49,9 @@ class Panel extends \APP\core\base\Model {
 
 
 
-    public function  resetrecord ($url){
+    public function  resetrecord (){
+
+        unlink(AudioUploadPath.$_SESSION['ulogin']['audio']);
 
         $user = R::load("users", $_SESSION['ulogin']['id']);
         $user->audio = NULL;
