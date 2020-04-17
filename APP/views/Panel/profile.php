@@ -171,7 +171,7 @@
 
         <!-- Profile info -->
         <div class="card">
-            <div class="card-header header-elements-inline">
+            <div class="card-header bg-dark text-white header-elements-inline">
                 <h5 class="card-title">РЕДАКТИРОВАТЬ ПРОФИЛЬ</h5>
                 <div class="header-elements">
                     <div class="list-icons">
