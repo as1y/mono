@@ -227,7 +227,7 @@ class PanelController extends AppController {
             $url = AudioUploadPath.$_SESSION['ulogin']['audio'];
 
             $Panel->resetrecord();
-
+            redir("/panel/profile");
 
         }
 
