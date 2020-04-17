@@ -229,7 +229,7 @@ class PanelController extends AppController {
 
 
             $Panel->resetrecord();
-            
+
 
             redir("/panel/profile");
 
