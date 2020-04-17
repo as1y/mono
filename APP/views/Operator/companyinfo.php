@@ -2,7 +2,7 @@
 
 
     <div class="card">
-        <div class="card-header header-elements-inline">
+        <div class="card-header bg-dark text-white header-elements-inline">
             <h5 class="card-title">КОМПАНИЯ <?=$company['company']?></h5>
             <div class="header-elements">
                 <div class="list-icons">

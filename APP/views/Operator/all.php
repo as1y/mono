@@ -1,5 +1,5 @@
 <div class="card">
-    <div class="card-header header-elements-inline">
+    <div class="card-header bg-dark text-white header-elements-inline">
         <h5 class="card-title">ВСЕ ПРОЕКТЫ</h5>
 
     </div>
