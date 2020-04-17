@@ -37,6 +37,29 @@ class Panel extends \APP\core\base\Model {
     }
 
 
+    public function  saverecord ($name){
+
+
+        $user = R::load("users", $_SESSION['ulogin']['id']);
+        $user->audio = $name;
+        R::store($user);
+        return true;
+
+    }
+
+
+
+    public function  resetrecord ($url){
+
+        $user = R::load("users", $_SESSION['ulogin']['id']);
+        $user->audio = NULL;
+        R::store($user);
+        return true;
+
+    }
+
+
+
 
 
     public function addmessageticket($DATA, $idc){

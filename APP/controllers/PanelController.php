@@ -219,9 +219,20 @@ class PanelController extends AppController {
         $this->layaout = false;
         $this->view = false;
 
+        $Panel = new Panel();
+
+
+        if (!empty($_GET) && $_GET['action'] == "ClearRecord"){
+
+            $url = AudioUploadPath.$_SESSION['ulogin']['audio'];
+
+            $Panel->resetrecord();
+
+
+        }
+
 
         if ($_FILES['file']['size'] > 0){
-            $Panel = new Panel();
 
             $validation = $Panel->filevalidation($_FILES['file'], ['ext' => ["mp3"], 'type' => 'audio/mp3']);
 
@@ -230,13 +241,14 @@ class PanelController extends AppController {
 
             if ($validation){
 
-                $urlnew = "uploads/user_audio/".$_FILES['file']['name'];
+                $urlnew = AudioUploadPath.$_FILES['file']['name'];
                 copy($_FILES['file']['tmp_name'], $urlnew); // Копируем из общего котла в тизерку
 
                 if (!empty($_SESSION['ulogin']['audio'])) unlink($_SESSION['ulogin']['audio']);
 
-                $Panel->saverecord("/".$urlnew);
-                $_SESSION['ulogin']['audio'] = "/".$urlnew;
+                $Panel->saverecord($_FILES['file']['name']);
+
+                $_SESSION['ulogin']['audio'] = $_FILES['file']['name'];
                 $_SESSION['success'] = "Аудио презентация сохранена";
 
                 go("/panel/profile");
@@ -246,7 +258,6 @@ class PanelController extends AppController {
 
 
         }else{
-
             message("error");
         }
 

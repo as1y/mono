@@ -82,14 +82,7 @@ abstract class Model
 
 
 
-    public function  saverecord ($url){
 
-        $user = R::load("users", $_SESSION['ulogin']['id']);
-        $user->audio = $url;
-        R::store($user);
-        return true;
-
-    }
 
 
 

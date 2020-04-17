@@ -142,7 +142,7 @@
 
                         <div class="col-md-6 text-center">
 
-                            <audio controls src="<?=$_SESSION['ulogin']['audio']?>"></audio>
+                            <audio controls src="<?=AudioUploadPath.$_SESSION['ulogin']['audio']?>"></audio>
 
                         </div>
 
