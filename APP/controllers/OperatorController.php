@@ -195,9 +195,9 @@ class OperatorController extends AppController {
         //Информация о компаниях клиента
 
         $META = [
-            'title' => 'Кабинет рекламодателя',
-            'description' => 'Кабинет рекламодателя',
-            'keywords' => 'Кабинет рекламодателя ',
+            'title' => 'Кабинет ОПЕРАТОРОА',
+            'description' => 'Кабинет ОПЕРАТОРОА',
+            'keywords' => 'Кабинет ОПЕРАТОРОА ',
         ];
         \APP\core\base\View::setMeta($META);
 
