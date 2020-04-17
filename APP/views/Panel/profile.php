@@ -142,8 +142,9 @@
 
                         <div class="col-md-6 text-center">
 
-                            <audio controls src="/<?=AudioUploadPath.$_SESSION['ulogin']['audio']?>"></audio>
-                            Аудио презентация готова.<br> Теперь она доступна в вашем профиле.<br>
+                            <audio controls src="/<?=AudioUploadPath.$_SESSION['ulogin']['audio']?>"></audio><br>
+
+                           <span class="badge-success">Презентация готова</span><br> Теперь она доступна в вашем профиле.<br>
                         </div>
 
 
