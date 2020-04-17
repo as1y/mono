@@ -222,12 +222,15 @@ class PanelController extends AppController {
         $Panel = new Panel();
 
 
-        show($_GET);
 
-        exit();
 
         if (!empty($_GET) && $_GET['action'] == "ClearRecord"){
 
+            show($_GET);
+
+            exit();
+
+            
             $url = AudioUploadPath.$_SESSION['ulogin']['audio'];
             $Panel->resetrecord();
 
