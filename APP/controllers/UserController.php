@@ -461,7 +461,7 @@ class UserController extends AppController
 
             if (!$userinfo) redir("/");
 
-            if (translit_sef($user['username']) != $mass[0]) redir("/");
+            if (translit_sef($userinfo['username']) != $mass[0]) redir("/");
 
 
 
