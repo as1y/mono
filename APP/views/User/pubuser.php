@@ -19,9 +19,8 @@
                          width="150" height="150" alt="">
                 </a>
 
-                <a href="#" type="button" class=" btn btn-info"><i class="icon-eye mr-2"></i> Посмотреть профиль</a>
+                <a href="#" type="button" class=" btn btn-success"><i class="icon-bubbles5 mr-2"></i> ОТПРАВИТЬ СООБЩЕНИЕ</a>
                 <br>
-                <a href="/panel/settings/" type="button" class=" btn btn-warning"><i class="icon-cog5 mr-2"></i> Настройки аккаунта</a>
 
 
             </div>
