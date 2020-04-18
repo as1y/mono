@@ -452,8 +452,18 @@ class UserController extends AppController
 
             $mass = explode("-", $_GET['name']);
 
-            show($mass);
+          //  $mass[0] ИМЯ
+            // ID $mass[1]
+            if (!empty($_SESSION['ulogin'])){
+                $userinfo['audio'] = $_SESSION['ulogin'];
+                $userinfo['avatar'] = $_SESSION['avatar'];
+                $userinfo['aboutme'] = $_SESSION['aboutme'];
+                $userinfo['role'] = $_SESSION['role'];
+            }
 
+
+
+        $this->set(compact($userinfo));
 
 
 
