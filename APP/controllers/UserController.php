@@ -454,29 +454,11 @@ class UserController extends AppController
         if (empty($_GET['name'])) redir("/");
 
              $user = new User;
-
-            $mass = explode("-", $_GET['name']);
-
-           $userinfo =  $user->loaduser(CONFIG['USERTABLE'], $mass[1]);
-
+             $mass = explode("-", $_GET['name']);
+               $userinfo =  $user->loaduser(CONFIG['USERTABLE'], $mass[1]);
             if (!$userinfo) redir("/");
-
             if (translit_sef($userinfo['username']) != $mass[0]) redir("/");
-
-
-
-
-
-            if (!empty($_SESSION['ulogin'])){
-                $userinfo['audio'] = $_SESSION['ulogin']['audio'];
-                $userinfo['username'] = $_SESSION['ulogin']['username'];
-                $userinfo['avatar'] = $_SESSION['ulogin']['avatar'];
-                $userinfo['aboutme'] = $_SESSION['ulogin']['aboutme'];
-                $userinfo['role'] = $_SESSION['ulogin']['role'];
-            }
-
-
-
+            
 
 
 
