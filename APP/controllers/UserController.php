@@ -74,6 +74,8 @@ class UserController extends AppController
 
             //  mes ('ВНИМАНИЕ! Не закрывайте страницу браузера. Код подтверждения отправлен на почту. ');
 
+            show($_SESSION['confirm']);
+            exit();
 
             if($user->saveuser(CONFIG['USERTABLE']))
             {
