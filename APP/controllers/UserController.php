@@ -471,7 +471,8 @@ class UserController extends AppController
 
 
 
-        $this->set(compact($userinfo));
+
+        $this->set(compact('userinfo'));
 
 
 
