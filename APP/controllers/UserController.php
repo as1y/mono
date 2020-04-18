@@ -438,18 +438,6 @@ class UserController extends AppController
 
 	public function operatorAction(){
 
-        $META = [
-            'title' => 'Публичный юзер',
-            'description' => 'Публичный юзер',
-            'keywords' => 'Публичный юзер',
-        ];
-
-        $BREADCRUMBS['HOME'] = ['Label' => $this->BreadcrumbsControllerLabel, 'Url' => $this->BreadcrumbsControllerUrl];
-        $BREADCRUMBS['DATA'][] = ['Label' => "Публичный юзер"];
-
-        \APP\core\base\View::setMeta($META);
-        \APP\core\base\View::setBreadcrumbs($BREADCRUMBS);
-
 
         if (empty($_GET['name'])) redir("/");
 
@@ -458,6 +446,19 @@ class UserController extends AppController
                $userinfo =  $user->loaduser(CONFIG['USERTABLE'], $mass[1]);
             if (!$userinfo) redir("/");
             if (translit_sef($userinfo['username']) != $mass[0]) redir("/");
+
+
+        $META = [
+            'title' => 'Оператор '.$userinfo['username'],
+            'description' => 'Оператор '.$userinfo['aboutme'],
+            'keywords' => 'Оператор '.$userinfo['username'],
+        ];
+
+        $BREADCRUMBS['HOME'] = ['Label' => $this->BreadcrumbsControllerLabel, 'Url' => $this->BreadcrumbsControllerUrl];
+        $BREADCRUMBS['DATA'][] = ['Label' => "Публичный юзер"];
+
+        \APP\core\base\View::setMeta($META);
+        \APP\core\base\View::setBreadcrumbs($BREADCRUMBS);
 
 
 
