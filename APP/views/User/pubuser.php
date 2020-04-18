@@ -1,4 +1,5 @@
-<div class="row">
+<div class="col-md-12">
+
     <div class="col-xl-3 col-sm-6">
         <div class="card card-body text-center">
             <div class="mb-3">
@@ -57,8 +58,6 @@
 
 
     </div>
-
-
 
 
 </div>
