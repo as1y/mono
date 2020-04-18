@@ -152,6 +152,7 @@ class User extends \APP\core\base\Model
 show($_SESSION['confirm']['role']);
        show($role);
 
+
        exit();
 
        $avatar = "/assets/oper1.jpg"; //Выставляем базовый аватар в зависимости от роли
