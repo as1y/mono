@@ -77,7 +77,6 @@
 
 
             <a href="/user/register/" type="button" class="btn bg-teal-400"><i class="icon-user-plus mr-2"></i> Регистрация</a>
-
             <a href="/user/" type="button" class="btn btn-success"><i class="icon-circle-right2 mr-2"></i> Войти</a>
 
 
