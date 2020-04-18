@@ -450,7 +450,9 @@ class UserController extends AppController
 
         if (empty($_GET['name'])) redir("/");
 
+            $mass = explode("_", $_GET['name']);
 
+            show($mass);
 
 
 
