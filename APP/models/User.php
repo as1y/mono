@@ -149,7 +149,7 @@ class User extends \APP\core\base\Model
        $role = ($_SESSION['confirm']['role'] == "on") ? "O" : "R";
 
 
-
+show($_SESSION['confirm']['role']);
        show($role);
        exit();
 
