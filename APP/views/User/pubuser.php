@@ -59,5 +59,52 @@
 
     </div>
 
+    <div class="col-xl-3 col-sm-6">
+
+        <div class="card">
+
+            <div class="card-header bg-dark text-white header-elements-inline">
+                <h6 class="card-title">АУДИО ПРЕЗЕНТАЦИЯ</h6>
+            </div>
+
+            <div class="card-body">
+                <div class="row">
+
+
+
+                    <div class="col-md-6 text-center">
+
+                        <audio controls="" src="/uploads/user_audio/RecordRTC-2020317-hi5xugvqj8m.mp3"></audio><br>
+
+                        <span class="badge-success">Презентация готова</span><br> Теперь она доступна в вашем профиле.<br>
+                    </div>
+
+
+
+                    <div class="col-md-6 text-right">
+
+
+                        <a href="/panel/loadzapis/?action=ClearRecord" type="button" class=" btn btn-danger"><i class="icon-trash mr-2"></i> СТЕРЕТЬ</a>
+
+
+                    </div>
+
+
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+        
+
+
+    </div>
+
+
+
+
 
 </div>
