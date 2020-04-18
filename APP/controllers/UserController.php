@@ -84,7 +84,7 @@ class UserController extends AppController
                 $_POST['password'] = $_SESSION['confirm']['password2'];
 
                 $_SESSION['confirm'] = [];
-                
+
 
                 $user->login(CONFIG['USERTABLE']);
 
@@ -453,6 +453,7 @@ class UserController extends AppController
 
         if (empty($_GET['name'])) redir("/");
 
+            $userinfo = [];
             $mass = explode("-", $_GET['name']);
 
           //  $mass[0] ИМЯ
@@ -460,11 +461,12 @@ class UserController extends AppController
 
             show($_SESSION);
 
+
             if (isset($_SESSION['ulogin'])){
-                $userinfo['audio'] = $_SESSION['ulogin'];
-                $userinfo['avatar'] = $_SESSION['avatar'];
-                $userinfo['aboutme'] = $_SESSION['aboutme'];
-                $userinfo['role'] = $_SESSION['role'];
+                $userinfo['audio'] = $_SESSION['ulogin']['audio'];
+                $userinfo['avatar'] = $_SESSION['ulogin']['avatar'];
+                $userinfo['aboutme'] = $_SESSION['ulogin']['aboutme'];
+                $userinfo['role'] = $_SESSION['ulogin']['role'];
             }
 
 
