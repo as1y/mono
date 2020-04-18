@@ -98,6 +98,8 @@ class User extends \APP\core\base\Model
 
 
 
+
+
 	//ЛОГИН
 	public function login($table)
 	{
