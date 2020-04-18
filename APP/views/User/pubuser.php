@@ -90,7 +90,7 @@
 
             <div class="card">
 
-                <div class="card-header bg-dark text-white header-elements-inline">
+                <div class="card-header bg-info text-white header-elements-inline">
                     <h6 class="card-title">АУДИО ПРЕЗЕНТАЦИЯ</h6>
                 </div>
                 <div class="card-body">
