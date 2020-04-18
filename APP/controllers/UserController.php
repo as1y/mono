@@ -448,10 +448,12 @@ class UserController extends AppController
             if (translit_sef($userinfo['username']) != $mass[0]) redir("/");
 
 
+            $roletext = ($userinfo['role'] == "O") ? "Оператор" : "Рекламодатель";
+
         $META = [
-            'title' => 'Оператор '.$userinfo['username'],
-            'description' => 'Оператор '.$userinfo['aboutme'],
-            'keywords' => 'Оператор '.$userinfo['username'],
+            'title' => $roletext.' '.$userinfo['username'],
+            'description' => $roletext.' '.$userinfo['aboutme'],
+            'keywords' => $roletext.' '.$userinfo['username'],
         ];
 
         $BREADCRUMBS['HOME'] = ['Label' => $this->BreadcrumbsControllerLabel, 'Url' => $this->BreadcrumbsControllerUrl];
