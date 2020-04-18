@@ -2,7 +2,7 @@
 
     <div class="row">
 
-        <div class="col-xl-3 col-sm-6">
+        <div class="col-xl-2 col-sm-6">
             <div class="card card-body text-center">
                 <div class="mb-3">
                     <h6 class="font-weight-semibold mb-0 mt-1"><?= $_SESSION['ulogin']['username'] ?></h6>
