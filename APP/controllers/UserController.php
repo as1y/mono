@@ -427,5 +427,26 @@ class UserController extends AppController
 		}
 		exit();
 	}
+
+
+
+
+
+
+	public function pubuserAction(){
+
+
+
+	    
+    }
+
+
+
+
+
+
+
+
+
 }
 ?>
