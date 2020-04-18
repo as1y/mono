@@ -21,7 +21,7 @@
             <a href="/panel/settings/" type="button" class=" btn btn-warning"><i class="icon-cog5 mr-2"></i> Настройки аккаунта</a>
         <br>
 
-            <?=translit_sef($_SESSION['ulogin']['username'])?>
+            <?=translit_sef($_SESSION['ulogin']['username'])."-".$_SESSION['ulogin']['id']?>
 
         </div>
 
