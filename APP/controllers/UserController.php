@@ -435,9 +435,22 @@ class UserController extends AppController
 
 	public function pubuserAction(){
 
+        $META = [
+            'title' => 'Публичный юзер',
+            'description' => 'Публичный юзер',
+            'keywords' => 'Публичный юзер',
+        ];
+
+        $BREADCRUMBS['HOME'] = ['Label' => $this->BreadcrumbsControllerLabel, 'Url' => $this->BreadcrumbsControllerUrl];
+        $BREADCRUMBS['DATA'][] = ['Label' => "Публичный юзер"];
+
+        \APP\core\base\View::setMeta($META);
+        \APP\core\base\View::setBreadcrumbs($BREADCRUMBS);
 
 
-	    
+
+
+
     }
 
 
