@@ -83,6 +83,9 @@ class UserController extends AppController
                 $_POST['email'] = $_SESSION['confirm']['email'];
                 $_POST['password'] = $_SESSION['confirm']['password2'];
 
+                $_SESSION['confirm'] = [];
+                
+
                 $user->login(CONFIG['USERTABLE']);
 
 
