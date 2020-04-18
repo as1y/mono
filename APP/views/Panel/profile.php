@@ -16,7 +16,7 @@
                      width="150" height="150" alt="">
             </a>
             <b>Адрес публичной страницы вашего профиля:</b>
-            <a href="" target="_blank"><?=CONFIG['DOMAIN']."/".translit_sef($_SESSION['ulogin']['username'])."-".$_SESSION['ulogin']['id']?></a>
+            <a href="//<?=CONFIG['DOMAIN']."/user/operator/?name=".translit_sef($_SESSION['ulogin']['username'])."-".$_SESSION['ulogin']['id']?>" target="_blank"><?=CONFIG['DOMAIN']."/user/operator/?name=".translit_sef($_SESSION['ulogin']['username'])."-".$_SESSION['ulogin']['id']?></a>
 
             <a href="#" type="button" class=" btn btn-info"><i class="icon-eye mr-2"></i> Посмотреть профиль</a>
             <br>
