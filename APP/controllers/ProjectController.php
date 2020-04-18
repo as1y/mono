@@ -20,6 +20,10 @@ class ProjectController extends AppController {
         $idc = $_GET['id'];
         $company = $project->getcom($_GET['id']);
 
+        show($this->route);
+        exit();
+
+
         $META = [
             'title' => 'Кабинет рекламодателя',
             'description' => 'Кабинет рекламодателя',
