@@ -458,7 +458,7 @@ class UserController extends AppController
                $userinfo =  $user->loaduser(CONFIG['USERTABLE'], $mass[1]);
             if (!$userinfo) redir("/");
             if (translit_sef($userinfo['username']) != $mass[0]) redir("/");
-            
+
 
 
 
