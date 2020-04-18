@@ -146,11 +146,12 @@ class User extends \APP\core\base\Model
 		if(empty($_SESSION['confirm']['ref'])) $_SESSION['confirm']['ref'] = NULL;
 
 		// Проверяем РОЛЬ
-       $role = ($_SESSION['confirm']['role'] == "on") ? "O" : "R";
+       $role = ($_SESSION['confirm']['role'] == "on") ? "R" : "O";
 
 
 show($_SESSION['confirm']['role']);
        show($role);
+
        exit();
 
        $avatar = "/assets/oper1.jpg"; //Выставляем базовый аватар в зависимости от роли
