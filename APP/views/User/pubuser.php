@@ -1,33 +1,64 @@
-<form action="/user/" method="post"  class="login-form">
-    <div class="card mb-0">
-        <div class="card-body">
-            <div class="text-center mb-3">
-                <i class="icon-reading icon-2x text-slate-300 border-slate-300 border-3 rounded-round p-3 mb-3 mt-1"></i>
-                <h5 class="mb-0">ВХОД В СИСТЕМУ</h5>
-                <span class="d-block text-muted">Cashcall.ru - биржа операторов на телефоне</span>
+<div class="row">
+    <div class="col-xl-3 col-sm-6">
+        <div class="card card-body text-center">
+            <div class="mb-3">
+                <h6 class="font-weight-semibold mb-0 mt-1"><?= $_SESSION['ulogin']['username'] ?></h6>
+
+                <span class="d-block text-muted"><?= rendertypeaccount($_SESSION['ulogin']['role']) ?></span>
+
+
             </div>
 
-            <div class="form-group form-group-feedback form-group-feedback-left">
-                <input type="email" name="email" class="form-control" required placeholder="E-mail">
-                <div class="form-control-feedback">
-                    <i class="icon-user text-muted"></i>
-                </div>
-            </div>
 
-            <div class="form-group form-group-feedback form-group-feedback-left">
-                <input type="password" name="password"  class="form-control" required placeholder="Password">
-                <div class="form-control-feedback">
-                    <i class="icon-lock2 text-muted"></i>
-                </div>
-            </div>
 
-            <div class="form-group">
-                <button type="submit" class="btn bg-teal-400 btn-block">Войти <i class="icon-circle-right2 ml-2"></i></button>
-            </div>
+            <a href="#" class="d-inline-block mb-3">
+                <img src="<?=$_SESSION['ulogin']['avatar']?>" class="rounded-round"
+                     width="150" height="150" alt="">
+            </a>
 
-            <div class="text-center">
-                <a href="/user/recovery/">Забыли пароль?</a>
-            </div>
+            <a href="#" type="button" class=" btn btn-info"><i class="icon-eye mr-2"></i> Посмотреть профиль</a>
+            <br>
+            <a href="/panel/settings/" type="button" class=" btn btn-warning"><i class="icon-cog5 mr-2"></i> Настройки аккаунта</a>
+
+
         </div>
+
+
+        <ul class="list-group  border-top">
+
+            <a href="#" class="list-group-item list-group-item-action">
+                <span class="font-weight-semibold">
+										<i class="icon-grid mr-2"></i>
+										Рейтинг
+									</span>
+                <span class="badge bg-success ml-auto">0</span>
+            </a>
+
+
+            <a href="#" class="list-group-item list-group-item-action">
+									<span class="font-weight-semibold">
+										<i class="icon-grid mr-2"></i>
+										Всего звонков
+									</span>
+                <span class="badge bg-success ml-auto">0</span>
+            </a>
+
+
+            <a href="#" class="list-group-item list-group-item-action">
+									<span class="font-weight-semibold">
+										<i class="icon-grid mr-2"></i>
+										Успешных
+									</span>
+                <span class="badge bg-success ml-auto">0</span>
+            </a>
+
+
+        </ul>
+
+
     </div>
-</form>
+
+
+
+
+</div>
