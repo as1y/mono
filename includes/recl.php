@@ -81,13 +81,7 @@
                         </a>
                     </li>
 
-                    <li class="nav-item">
-                        <a href="#" class="nav-link">
-                            <i class="icon-stats-growth"></i>
-                            <span>	Проекты </span>
-                            <span class="badge badge-pill bg-secondary ml-auto">1</span>
-                        </a>
-                    </li>
+
 
 
 
