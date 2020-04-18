@@ -454,7 +454,7 @@ class UserController extends AppController
 
           //  $mass[0] ИМЯ
             // ID $mass[1]
-            if (!empty($_SESSION['ulogin'])){
+            if (isset($_SESSION['ulogin'])){
                 $userinfo['audio'] = $_SESSION['ulogin'];
                 $userinfo['avatar'] = $_SESSION['avatar'];
                 $userinfo['aboutme'] = $_SESSION['aboutme'];
