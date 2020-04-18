@@ -5,7 +5,7 @@
         <div class="col-xl-3 col-sm-6">
             <div class="card card-body text-center">
                 <div class="mb-3">
-                    <h6 class="font-weight-semibold mb-0 mt-1"><?= $userinfo['username'] ?></h6>
+                    <h6 class="font-weight-semibold mb-0 mt-1"><?=$userinfo['username'] ?></h6>
 
                     <span class="d-block text-muted"><?= rendertypeaccount($userinfo['role']) ?></span>
 
@@ -93,7 +93,7 @@
                     <h6 class="card-title">АУДИО ПРЕЗЕНТАЦИЯ</h6>
                 </div>
                 <div class="card-body">
-                    <audio controls="" src="<?=AudioUploadPath.$userinfo['audio']?>"></audio>
+                    <audio controls="" src="/<?=AudioUploadPath.$userinfo['audio']?>"></audio>
 
                 </div>
 

@@ -464,6 +464,7 @@ class UserController extends AppController
 
             if (!empty($_SESSION['ulogin'])){
                 $userinfo['audio'] = $_SESSION['ulogin']['audio'];
+                $userinfo['username'] = $_SESSION['ulogin']['username'];
                 $userinfo['avatar'] = $_SESSION['ulogin']['avatar'];
                 $userinfo['aboutme'] = $_SESSION['ulogin']['aboutme'];
                 $userinfo['role'] = $_SESSION['ulogin']['role'];
