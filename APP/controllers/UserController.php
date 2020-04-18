@@ -433,7 +433,7 @@ class UserController extends AppController
 
 
 
-	public function pubuserAction(){
+	public function operatorAction(){
 
         $META = [
             'title' => 'Публичный юзер',
@@ -446,6 +446,10 @@ class UserController extends AppController
 
         \APP\core\base\View::setMeta($META);
         \APP\core\base\View::setBreadcrumbs($BREADCRUMBS);
+
+
+        if (empty($_GET['name'])) redir("/");
+
 
 
 
