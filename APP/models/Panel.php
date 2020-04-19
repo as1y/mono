@@ -24,6 +24,7 @@ class Panel extends \APP\core\base\Model {
                 $mass['count'] =  1;
                 $mass['unread'] =  true;
                 $mass['idd'] = $val['idd'];
+                $mass['message'] = $val['message'];
                 $mass['username'] = $sobesednik['username'];
                 $mass['avatar'] = $sobesednik['avatar'];
                 $mass['date'] = date('H:s:m');

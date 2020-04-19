@@ -35,11 +35,19 @@
 
 
                     <td class="text-center">
-                        <?=$val['date']?>
+                        <?=$val['message']?>
                     </td>
 
 
-                    <td class="text-center"><b>0 руб.</b></td>
+                    <td class="text-center">
+
+                        <a href="/panel/viewticket/?id=4" class="badge bg-dark badge-pill"><?=$val['count']?> </a>
+                        <?php if (!$val['unread']):?>
+                            <span class="badge badge-success">NEW</span>
+                        <?php endif;?>
+
+
+                    </td>
                     <td class="text-center">
                         <a href="/panel/messages/?id=<?=$val['id']?>" type="button" class="btn btn-success"><i class="icon-comment-discussion mr-2"></i>Сообщение</a>
                     </td>

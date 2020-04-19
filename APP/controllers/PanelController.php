@@ -429,6 +429,7 @@ class PanelController extends AppController {
             'idd' => NULL,
             'unread' => true,
             'count' => 1,
+            'message' => "Сообщение....",
         ];
 
         // Инвойсы (сначала)
