@@ -13,6 +13,7 @@
             <thead>
             <tr>
                 <th>Имя Фамилия</th>
+                <th>Дата</th>
                 <th>Сообщение</th>
                 <th>Кол-во</th>
                 <th>Действие</th>
@@ -31,6 +32,10 @@
                     <td>
                         <img src="<?=$val['avatar']?>" width="38" height="38" class="rounded-circle" alt="">
                         <?=$val['username']?>
+                    </td>
+
+                    <td class="text-center">
+                        <?=$val['date']?>
                     </td>
 
 
