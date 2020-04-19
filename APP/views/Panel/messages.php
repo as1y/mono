@@ -6,7 +6,7 @@
 
             <!-- Messages -->
             <div class="card">
-                <div class="card-header header-elements-inline">
+                <div class="card-header header-elements">
 
                     <img src="<?=$sobesednik['avatar']?>" class="rounded-circle" width="40" height="40" alt="">
                     <?=$sobesednik['username']?>
