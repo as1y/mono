@@ -426,7 +426,7 @@ class PanelController extends AppController {
 
 
         $invoice[24] = [
-            'idd' => NULL,
+            'idd' => 1,
             'unread' => true,
             'count' => 1,
             'message' => "Сообщение....",
