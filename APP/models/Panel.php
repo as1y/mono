@@ -162,14 +162,9 @@ class Panel extends \APP\core\base\Model {
 
         $messages[] = ["author" => $me , "message" => $DATA['enter-message'], "date" => date("H:s:m")];
 
-
-        show($messages);
-        exit();
-
-
         $messages = json_encode($messages, true);
         $dialog->messages = $messages;
-        R::store($tickets);
+        R::store($dialog);
 
 
         return true;
