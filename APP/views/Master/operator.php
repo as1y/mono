@@ -17,7 +17,7 @@
                         <th>Имя Фамилия</th>
                         <th>Информация</th>
                         <th>Звонков</th>
-                        <th>Презентация</th>
+                        <th>Рейтинг</th>
                         <th>Действие</th>
 
                     </tr>
@@ -32,7 +32,7 @@
                                 <?=$val['username']?></td>
                             <td class="text-center"><?=$val['aboutme']?></td>
                             <td class="text-center"><?= (empty($val['totalcall'])) ? 0 : $val['totalcall']  ?></td>
-                            <td class="text-center">""</td>
+                            <td class="text-center">0</td>
 
                             <td class="text-center">
 
