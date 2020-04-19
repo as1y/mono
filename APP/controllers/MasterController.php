@@ -116,14 +116,14 @@ class MasterController extends AppController {
 
 
 
-    public function faqAction(){
+    public function operatorAction(){
         $Panel =  new Panel();
 
 
         $META = [
-            'title' => 'FAQ',
-            'description' => 'FAQ',
-            'keywords' => 'FAQ',
+            'title' => 'Каталог операторов',
+            'description' => 'Каталог операторов',
+            'keywords' => 'Каталог операторов',
         ];
 
         $BREADCRUMBS['HOME'] = ['Label' => $this->BreadcrumbsControllerLabel, 'Url' => $this->BreadcrumbsControllerUrl];
@@ -131,6 +131,8 @@ class MasterController extends AppController {
 
         \APP\core\base\View::setMeta($META);
         \APP\core\base\View::setBreadcrumbs($BREADCRUMBS);
+
+
 
 
 
