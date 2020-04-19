@@ -456,11 +456,14 @@ class PanelController extends AppController {
 
             $dialog = $Panel->getdialog($_GET['idd']);
 
+            if (!$dialog) redir("/panel/dialog/");
 
 
             if ($dialog){
 
                 $dialog['messages'] = json_decode($dialog['messages'], true);
+
+
 
                 show($dialog['messages']);
                 exit();
