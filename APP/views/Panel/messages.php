@@ -1,7 +1,7 @@
 <div class="row">
     <div class="col-md-12">
 
-        <form  action="/panel/messages/?idd=<?=$idd?>" method="post" data-fouc>
+        <form  action="/panel/messages/?idd=<?=$dialog['id']?>" method="post" data-fouc>
 
 
             <!-- Messages -->
@@ -50,7 +50,7 @@
 
 
 
-                        foreach ($messages as $key=>$val){
+                        foreach ($dialog['messages'] as $key=>$val){
 
                             if ($val['author'] == "me"){
                                 ?>

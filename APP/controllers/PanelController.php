@@ -406,6 +406,9 @@ class PanelController extends AppController {
             if ($dialog){
 
                 $sobesednik = $Panel->getsobesednik($_GET['newdialog']);
+
+                $dialog['messages'] = json_decode($dialog['messages'], true);
+
                 $this->set(compact('dialog', 'sobesednik'));
 
                 return true;
