@@ -427,14 +427,21 @@ class PanelController extends AppController {
             $dialog['messages'] = [];
             $dialog['id'] = $idd;
 
-
             $this->set(compact('sobesednik', 'dialog'));
-
             return true;
 
 
         }
 
+
+        if ($_POST){
+
+
+            show($_POST);
+
+
+            exit();
+        }
 
 
 
