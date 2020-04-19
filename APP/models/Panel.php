@@ -17,6 +17,18 @@ class Panel extends \APP\core\base\Model {
     }
 
 
+    public function checkdialog($idu){
+        $sobesednik = R::findOne("dialog", "WHERE p1 = ?" , [$idu]);
+        if ($sobesednik) return $sobesednik;
+
+        $sobesednik2 = R::findOne("dialog", "WHERE p2 = ?" , [$idu]);
+        if ($sobesednik2) return $sobesednik2;
+
+        return false;
+
+    }
+
+
 
 
 
