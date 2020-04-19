@@ -409,6 +409,7 @@ class PanelController extends AppController {
 
                 $dialog['messages'] = json_decode($dialog['messages'], true);
 
+
                 $this->set(compact('dialog', 'sobesednik'));
 
                 return true;
