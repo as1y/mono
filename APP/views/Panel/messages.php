@@ -1,7 +1,7 @@
 <div class="row">
     <div class="col-md-12">
 
-        <form  action="/panel/viewticket/?id=<?=$tickets['id']?>" method="post" data-fouc>
+        <form  action="/panel/messages/?idd=<?=$idd?>" method="post" data-fouc>
 
 
             <!-- Messages -->
