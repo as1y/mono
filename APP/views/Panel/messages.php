@@ -35,13 +35,6 @@
 
                         <?php endif;?>
 
-                        <li class="media">
-                            <div class="media-body">
-                                    <div class="media-chat-item">Чтобы начать диалог напишите сообщение</div>
-                                </div>
-                            </div>
-                        </li>
-
 
                         <?php
 
