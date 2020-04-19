@@ -29,7 +29,7 @@
                 <tr>
 
                     <td>
-                        <img src="<?=$userinfo['avatar']?>" width="38" height="38" class="rounded-circle" alt=""><br>
+                        <img src="<?=$val['avatar']?>" width="38" height="38" class="rounded-circle" alt=""><br>
                         <?=$val['username']?>
                     </td>
 
