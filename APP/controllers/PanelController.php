@@ -411,11 +411,8 @@ class PanelController extends AppController {
                 'date' => date('d:m:Y'),
             ];
 
-         $add =   $Panel->addnewBD("dialog", $data);
+         $idd =   $Panel->addnewBD("dialog", $data);
 
-
-         show($add);
-         exit();
 
 
             $this->set(compact('sobesednik', 'messages', 'idd'));
