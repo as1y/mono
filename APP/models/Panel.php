@@ -151,7 +151,7 @@ class Panel extends \APP\core\base\Model {
 
     public function lookingsobesednik($dialog){
 
-        $sobesednikid = ($_SESSION['ulogin']['id'] == $dialog['p1']) ? $dialog['p1'] : $dialog['p2'];
+        $sobesednikid = ($_SESSION['ulogin']['id'] != $dialog['p1']) ? $dialog['p1'] : $dialog['p2'];
 
 
         show($sobesednikid);
