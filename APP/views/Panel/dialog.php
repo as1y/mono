@@ -55,7 +55,7 @@
 
                     </td>
                     <td class="text-center">
-                        <a href="/panel/messages/?id=<?=$val['id']?>" type="button" class="btn btn-success"><i class="icon-comment-discussion mr-2"></i>Сообщение</a>
+                        <a href="/panel/messages/?id=<?=$val['idd']?>" type="button" class="btn btn-success"><i class="icon-comment-discussion mr-2"></i>ОТВЕТИТЬ</a>
                     </td>
                 </tr>
 
