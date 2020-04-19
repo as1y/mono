@@ -46,7 +46,6 @@
             <?php
             $active[$this->route['action']] = 'active';
 
-            show($active);
             ?>
 
 
@@ -61,7 +60,7 @@
                     </li>
 
                     <li class="nav-item">
-                        <a href="/master/operator/" class="nav-link" <?=isset($active['operator']) ? $active['operator'] : ''; ?>>
+                        <a href="/master/operator/" class="nav-link <?=isset($active['operator']) ? $active['operator'] : ''; ?>" >
                             <i class="icon-users4"></i>
                             <span>	Операторы </span>
                             <span class="badge badge-pill bg-secondary ml-auto">39</span>
