@@ -24,11 +24,12 @@
             <tbody>
 
 
-            <?php foreach ($dialogs as $key=>$val):?>
+            <?php foreach ($dialogsinfo as $key=>$val):?>
 
                 <tr>
 
                     <td>
+                        <img src="<?=$userinfo['avatar']?>" width="38" height="38" class="rounded-circle" alt=""><br>
                         <?=$val['username']?>
                     </td>
 

@@ -432,10 +432,9 @@ class PanelController extends AppController {
         ];
 
         // Инвойсы (сначала)
-
         // Диалоги (после)
-
         //id диалога
+
 
         $dialogsinfo = $Panel->getdialogsinfo($invoice);
 
