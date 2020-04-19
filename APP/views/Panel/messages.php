@@ -10,7 +10,7 @@
 
                     <div class="header-elements">
                     <img src="<?=$sobesednik['avatar']?>" class="rounded-circle" width="40" height="40" alt="">
-                    <?=$sobesednik['username']?>
+                   <b> <?=$sobesednik['username']?></b>
                     </div>
 
 
@@ -36,7 +36,7 @@
                         <?php endif;?>
 
                         <li class="media">
-   
+
                             <div class="media-body">
                                 <div class="font-size-sm text-muted mt-2">
                                     <div class="media-chat-item">Чтобы начать даилог напишите первое сообщение</div>
