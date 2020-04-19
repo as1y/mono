@@ -463,16 +463,10 @@ class PanelController extends AppController {
 
                 // Определить собеседника
 
-                $dialog = $Panel->lookingsobesednik($dialog);
-
-
+                $sobesednik = $Panel->lookingsobesednik($dialog);
                 $dialog['messages'] = json_decode($dialog['messages'], true);
 
-
-
-                show($dialog['messages']);
-                exit();
-
+                
 
                 if (empty($dialog['messages'])) $dialog['messages']  = [];
                 $this->set(compact('dialog', 'sobesednik'));
