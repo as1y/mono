@@ -143,9 +143,9 @@ class Panel extends \APP\core\base\Model {
     }
 
 
-    public function addmessage($DATA){
+    public function addmessage($DATA, $idd){
 
-        $dialog = R::findOne("dialog", "WHERE id = ?" , [$DATA['idd']]);
+        $dialog = R::findOne("dialog", "WHERE id = ?" , [$idd]);
 
         if (!$dialog) return "Ошибка в ID диалога1";
 
