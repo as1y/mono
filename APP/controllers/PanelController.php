@@ -452,7 +452,7 @@ class PanelController extends AppController {
 
             $dialog = $Panel->getdialog($_GET['idd']);
 
-            exit("ddgdfg");
+        
 
             if ($dialog){
                 $dialog['messages'] = json_decode($dialog['messages'], true);
