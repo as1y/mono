@@ -16,7 +16,7 @@
                      width="150" height="150" alt="">
             </a>
 
-            <a href="//<?=CONFIG['DOMAIN']."/user/operator/?name=".translit_sef($_SESSION['ulogin']['username'])."-".$_SESSION['ulogin']['id']?>"  target="_blank" type="button" class=" btn btn-info"><i class="icon-eye mr-2"></i> Посмотреть профиль</a>
+            <a href="<?=generateprofilelink()?>"  target="_blank" type="button" class=" btn btn-info"><i class="icon-eye mr-2"></i> Посмотреть профиль</a>
             <br>
             <a href="/panel/settings/" type="button" class=" btn btn-warning"><i class="icon-cog5 mr-2"></i> Настройки аккаунта</a>
         <br>
@@ -187,7 +187,7 @@
 
             <div class="card-body">
                 <b>Адрес публичной страницы вашего профиля:</b>
-                <a href="//<?=CONFIG['DOMAIN']."/user/operator/?name=".translit_sef($_SESSION['ulogin']['username'])."-".$_SESSION['ulogin']['id']?>" target="_blank">https://<?=CONFIG['DOMAIN']."/user/operator/?name=".translit_sef($_SESSION['ulogin']['username'])."-".$_SESSION['ulogin']['id']?></a>
+                <a href="<?=generateprofilelink()?>" target="_blank">https://<?=CONFIG['DOMAIN']."/user/operator/?name=".translit_sef($_SESSION['ulogin']['username'])."-".$_SESSION['ulogin']['id']?></a>
                 
                 <form enctype="multipart/form-data" action="/panel/profile/" method="post" data-fouc>
 

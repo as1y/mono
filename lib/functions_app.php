@@ -21,6 +21,12 @@ function getrecord2($idcont) {
 }
 
 
+function generateprofilelink(){
+    
+    return "//".CONFIG['DOMAIN']."/user/operator/?name=".translit_sef($_SESSION['ulogin']['username'])."-".$_SESSION['ulogin']['id'];
+}
+
+
 function raskladkazapisi($DATA) {
 
     $DATA = json_decode($DATA, true);

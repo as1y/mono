@@ -17,7 +17,7 @@
                         <th>Имя Фамилия</th>
                         <th>Информация</th>
                         <th>Звонков</th>
-                        <th>Демо</th>
+                        <th>Презентация</th>
                         <th>Действие</th>
 
                     </tr>
@@ -36,7 +36,7 @@
 
                             <td class="text-center">
 
-                                <a href="/project/operator/?id=<?=$company['id']?>&idoper=<?=$val['id']?>&action=reject" type="button" class="btn btn-danger">ОТКЛЮЧИТЬ</a>
+                                <a href="<?=generateprofilelink()?>" target="_blank"  class="btn btn-info">ПРОФИЛЬ</a>
 
                             </td>
 

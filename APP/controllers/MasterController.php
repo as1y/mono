@@ -140,7 +140,7 @@ class MasterController extends AppController {
         $ASSETS[] = ["js" => "/assets/js/datatables_basic.js"];
         \APP\core\base\View::setAssets($ASSETS);
 
-        
+
         $operators = $Panel->getoperators();
 
         $this->set(compact('operators'));
