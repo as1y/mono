@@ -425,6 +425,14 @@ class PanelController extends AppController {
         \APP\core\base\View::setAssets($ASSETS);
 
 
+        $invoice[24] = [
+            'idd' => NULL,
+            'unread' => 1,
+        ];
+
+
+        show($invoice);
+
 
         $this->set(compact('tickets'));
 
