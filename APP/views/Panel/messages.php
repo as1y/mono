@@ -8,11 +8,11 @@
             <div class="card">
                 <div class="card-header header-elements-inline">
                     <a href="/panel/ticket" class="btn btn-light"><i class="icon-square-left mr-2"></i> НАЗАД</a>
-                    <h5 class="card-title">Тикет Диалог с (ФИО) + АВАТАР</h5>
+<!--                    <h5 class="card-title">Тикет Диалог с (ФИО) + АВАТАР</h5>-->
 
                     <div class="header-elements">
 
-                        <!--!!! -->
+                        Тикет Диалог с (ФИО) + АВАТАР
 
                     </div>
 
