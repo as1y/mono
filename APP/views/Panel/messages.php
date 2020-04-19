@@ -7,13 +7,13 @@
             <!-- Messages -->
             <div class="card">
                 <div class="card-header header-elements-inline">
-                    <a href="/panel/ticket" class="btn btn-light"><i class="icon-square-left mr-2"></i> НАЗАД</a>
-<!--                    <h5 class="card-title">Тикет Диалог с (ФИО) + АВАТАР</h5>-->
+
+                    Тикет Диалог с (ФИО) + АВАТАР
 
                     <div class="header-elements">
 
-                        Тикет Диалог с (ФИО) + АВАТАР
 
+                        <a href="/panel/ticket" class="btn btn-light"><i class="icon-square-left mr-2"></i> НАЗАД</a>
                     </div>
 
 
@@ -25,20 +25,7 @@
 
 
                         <!--                    <li class="media content-divider justify-content-center text-muted mx-0">Today</li>-->
-                        <li class="media">
-                            <div class="mr-3 align-self-center">
-                                <img src="<?=$_SESSION['ulogin']['avatar']?>" class="rounded-circle" width="40" height="40" alt="">
-                            </div>
-                            <div class="media-body">
-                                <div class="font-size-sm text-muted mt-2"><b><?=$_SESSION['ulogin']['username']?></b> - <?=$val['date']?><br>
-                                    <div class="media-chat-item"><?=$val['message']?></div>
 
-                                </div>
-                            </div>
-                        </li>
-
-
-                        
 
                         <?php
 
