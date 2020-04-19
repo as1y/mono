@@ -436,6 +436,7 @@ class PanelController extends AppController {
 
         $dialogsinfo = $Panel->getdialogsinfo($invoice);
 
+        show($dialogsinfo);
 
         $this->set(compact('dialogsinfo'));
 
