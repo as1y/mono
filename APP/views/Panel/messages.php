@@ -35,6 +35,17 @@
 
                         <?php endif;?>
 
+                        <li class="media">
+                            <div class="mr-3 align-self-center">
+                                <img src="<?=$_SESSION['ulogin']['avatar']?>" class="rounded-circle" width="40" height="40" alt="">
+                            </div>
+                            <div class="media-body">
+                                    <div class="media-chat-item">Чтобы начать диалог напишите сообщение</div>
+
+                                </div>
+                            </div>
+                        </li>
+
 
                         <?php
 
