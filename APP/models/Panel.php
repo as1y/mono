@@ -170,13 +170,13 @@ class Panel extends \APP\core\base\Model {
         if (!empty(pole_valid($DATA['enter-message'], "s", 50)['error']))  return pole_valid($DATA['enter-message'], "s", 50)['error'];
 
 
-        $me = ($dialog['p1'] == $_SESSION['ulogin']['id']) ? "p1" : "p2";
+//        $me = ($dialog['p1'] == $_SESSION['ulogin']['id']) ? "p1" : "p2";
 
 
 
         $messages = json_decode($dialog->messages,TRUE);
 
-        $messages[] = ["author" => $me , "message" => $DATA['enter-message'], "date" => date("H:s:m")];
+        $messages[] = ["author" => $_SESSION['ulogin']['id'] , "message" => $DATA['enter-message'], "date" => date("H:s:m")];
 
         $messages = json_encode($messages, true);
         $dialog->messages = $messages;
