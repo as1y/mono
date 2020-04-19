@@ -59,7 +59,7 @@
                     </li>
 
                     <li class="nav-item">
-                        <a href="#" class="nav-link">
+                        <a href="/master/operator/" class="nav-link">
                             <i class="icon-users4"></i>
                             <span>	Операторы </span>
                             <span class="badge badge-pill bg-secondary ml-auto">39</span>
@@ -68,7 +68,7 @@
                     </li>
 
 
-                    
+
                     <!-- Main -->
                     <li class="nav-item-header">
                         <div class="text-uppercase font-size-sm line-height-sm">МОИ ПРОЕКТЫ</div>
