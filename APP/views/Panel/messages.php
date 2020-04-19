@@ -25,7 +25,20 @@
 
 
                         <!--                    <li class="media content-divider justify-content-center text-muted mx-0">Today</li>-->
+                        <li class="media">
+                            <div class="mr-3 align-self-center">
+                                <img src="<?=$_SESSION['ulogin']['avatar']?>" class="rounded-circle" width="40" height="40" alt="">
+                            </div>
+                            <div class="media-body">
+                                <div class="font-size-sm text-muted mt-2"><b><?=$_SESSION['ulogin']['username']?></b> - <?=$val['date']?><br>
+                                    <div class="media-chat-item"><?=$val['message']?></div>
 
+                                </div>
+                            </div>
+                        </li>
+
+
+                        
 
                         <?php
 
@@ -89,7 +102,7 @@
 
 
 
-                        <textarea name="enter-message" class="form-control mb-3" rows="3" cols="1" placeholder="Ваше ответ..."></textarea>
+                        <textarea name="enter-message" class="form-control mb-3" rows="3" cols="1" placeholder="Написать сообщение"></textarea>
                         <div class="align-items-left">
                             <button type="submit" class="btn bg-teal-400 btn-labeled btn-labeled-right ml-auto"><b><i class="icon-paperplane"></i></b> Отправить сообщение</button>
                         </div>
