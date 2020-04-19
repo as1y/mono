@@ -1,5 +1,8 @@
 
+<?php
+    show($operators);
 
+    ?>
 
 
 

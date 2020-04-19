@@ -135,6 +135,9 @@ class MasterController extends AppController {
         \APP\core\base\View::setMeta($META);
         \APP\core\base\View::setBreadcrumbs($BREADCRUMBS);
 
+        $operators = $Panel->getoperators();
+
+        $this->set(compact('operators'));
 
 
 

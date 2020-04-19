@@ -11,6 +11,14 @@ class Panel extends \APP\core\base\Model {
     }
 
 
+    public function getoperators(){
+        $operators = R::findAll("users", "WHERE role = O AND code != NULL");
+        return $operators;
+    }
+
+
+
+
     public function balancelog(){
         $tickets = R::findOne("balancelog", "WHERE user_id = ?" , [ $_SESSION['ulogin']['id'] ]);
 
