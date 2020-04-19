@@ -1,17 +1,110 @@
-<div class="card">
-    <div class="card-header bg-white header-elements-inline">
-        <h6 class="card-title">МОИ ДИАЛОГИ</h6>
+<div class="row">
+
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header header-elements-inline">
+                <h5 class="card-title">МОИ ТИКЕТЫ</h5>
+                <div class="header-elements">
+                    <div class="list-icons">
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-body">
+
+                <div class="card card-table table-responsive shadow-0 mb-0">
+                    <table class="table table-xl">
+                        <thead>
+                        <tr>
+                            <th>Заголовок</th>
+                            <th>Статус</th>
+                            <th>Сообщения</th>
+                            <th>ДЕЙСТВИЕ</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+
+<?php foreach ($tickets as $key=>$val):?>
+
+    <tr class="text-center">
+        <td><?=obrezanie($val['zagolovok'], 30)?></td>
+        <td>
+          <?=ticketstatus($val['status'])?>
+        </td>
+        <td>
+
+            <?php if ($val['new'] ==1) :?>
+                <span class="badge badge-danger">new</span>
+            <?endif;?>
+
+
+            <a href="/panel/viewticket/?id=<?=$val['id']?>" class="badge bg-dark badge-pill">
+
+                <?=count(json_decode($val['messages'], true))?>
+            </a>
+        </td>
+        <td>
+
+            <?php if($val['status'] == 1): ?>
+            <a href="/panel/viewticket/?id=<?=$val['id']?>" type="button" class="btn btn-success"><i class="icon-comment-discussion mr-2"></i>ПЕРЕЙТИ</a>
+            <?php endif;?>
+
+        </td>
+    </tr>
+
+
+
+<?php endforeach;?>
+
+
+
+
+
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+
 
     </div>
 
 
 
-    <div class="card-body justify-content-center text-center-end">
 
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header header-elements-inline">
+                <h6 class="card-title">ОТКРЫТЬ ТИКЕТ</h6>
+            </div>
 
-            МОИ ДИАЛОГИ
+            <div class="card-body">
+                <form  action="/panel/ticket/" method="post" data-fouc>
+
+                    <div class="form-group">
+                        <label>Заголовок тикета: <span class="text-danger">*</span></label>
+                        <input type="text" name="zagolovok" class="form-control required" placeholder="Заголовок тикета">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Текст: <span class="text-danger">*</span></label>
+                            <textarea rows="4" cols="4"  name="messages" class="form-control required" placeholder="Сообщение"></textarea>
+                    </div>
+
+                    <div class="form-group row mb-0">
+                        <div class="col-lg-10 ml-lg-auto text-left">
+                            <button type="submit" class="btn bg-success ml-3">ОТКРЫТЬ ТИКЕТ <i class="icon-paperplane ml-2"></i></button>
+                            <button type="reset" class="btn btn-light">ОЧИСТИТЬ</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
 
 
 
     </div>
+
 </div>
