@@ -111,6 +111,8 @@
 
 
                         <textarea name="enter-message" class="form-control mb-3" rows="3" cols="1" placeholder="Написать сообщение"></textarea>
+
+                    <div class="header-elements-inline">
                         <div class="align-items-left">
                             <button type="submit" class="btn bg-teal-400 btn-labeled btn-labeled-right ml-auto"><b><i class="icon-paperplane"></i></b> Отправить сообщение</button>
                         </div>
@@ -119,6 +121,7 @@
                         <a href="#" class="btn bg-danger btn-labeled btn-labeled-right ml-auto"><b><i class="icon-trash"></i></b> УДАЛИТЬ ДИАЛОГ</a>
                     </div>
 
+                    </div>
 
 
         </form>
