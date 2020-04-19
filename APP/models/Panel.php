@@ -143,6 +143,38 @@ class Panel extends \APP\core\base\Model {
     }
 
 
+    public function addmessage($DATA){
+
+        $dialog = R::findOne("dialogs", "WHERE id = ?" , [$DATA['idd']]);
+
+        if (!$dialog) return "Ошибка в ID диалога";
+
+        if ($dialog['p1'] != $_SESSION['ulogin']['id'] && $dialog['p2'] =!$_SESSION['ulogin']['id']) return "Ошибка в ID диалога";
+
+        if (!empty(pole_valid($DATA['enter-message'], "s", 50)['error']))  return pole_valid($DATA['enter-message'], "s", 50)['error'];
+
+
+        $me = ($dialog['p1'] == $_SESSION['ulogin']['id']) ? "p1" : "p2";
+
+        $messages = json_decode($dialog->messages,TRUE);
+
+        $messages[] = ["author" => $me , "message" => $DATA['enter-message'], "date" => date("H:s:m")];
+
+
+        show($messages);
+        exit();
+
+
+        $messages = json_encode($messages, true);
+        $dialog->messages = $messages;
+        R::store($tickets);
+
+
+        return true;
+
+
+    }
+
 
 
 

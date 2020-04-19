@@ -437,6 +437,9 @@ class PanelController extends AppController {
         if ($_POST){
 
 
+            $result = $Panel->addmessage($_POST);
+
+
             show($_POST);
 
 
