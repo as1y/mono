@@ -53,6 +53,22 @@
             <div class="card-body p-0">
                 <ul class="nav nav-sidebar" data-nav-type="accordion">
 
+
+                    <li class="nav-item-header">
+                        <div class="text-uppercase font-size-sm line-height-sm">ОБЗОР БИРЖИ</div>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="icon-users4"></i>
+                            <span>	Операторы </span>
+                            <span class="badge badge-pill bg-secondary ml-auto">39</span>
+
+                        </a>
+                    </li>
+
+
+                    
                     <!-- Main -->
                     <li class="nav-item-header">
                         <div class="text-uppercase font-size-sm line-height-sm">МОИ ПРОЕКТЫ</div>
@@ -67,19 +83,6 @@
                     </li>
                     <li class="nav-item"><a href="/master/add" class="nav-link <?=isset($active['add']) ? $active['add'] : ''; ?>"><i class="icon-phone-plus"></i> <span>Добавить проект</span></a></li>
                     <!-- /main -->
-
-                    <li class="nav-item-header">
-                        <div class="text-uppercase font-size-sm line-height-sm">ОБЗОР БИРЖИ</div>
-                    </li>
-
-                    <li class="nav-item">
-                        <a href="#" class="nav-link">
-                            <i class="icon-users4"></i>
-                            <span>	Операторы </span>
-                            <span class="badge badge-pill bg-secondary ml-auto">39</span>
-
-                        </a>
-                    </li>
 
 
 
