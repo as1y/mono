@@ -115,6 +115,10 @@
                             <button type="submit" class="btn bg-teal-400 btn-labeled btn-labeled-right ml-auto"><b><i class="icon-paperplane"></i></b> Отправить сообщение</button>
                         </div>
 
+                    <div class="align-items-right">
+                        <a href="#" class="btn bg-danger btn-labeled btn-labeled-right ml-auto"><b><i class="icon-trash"></i></b> УДАЛИТЬ ДИАЛОГ</a>
+                    </div>
+
 
 
         </form>
