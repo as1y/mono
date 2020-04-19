@@ -407,7 +407,7 @@ class PanelController extends AppController {
                 'p1' => $sobesednik['id'],
                 'p2' => $_SESSION['ulogin']['id'],
                 'zagolovok' => "Новый диалог",
-                'messages' => $messages,
+                'messages' => NULL,
                 'date' => date('d:m:Y'),
             ];
 
