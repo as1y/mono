@@ -398,6 +398,7 @@ class PanelController extends AppController {
             $sobesednik = $Panel->getsobesednik($_GET['newdialog']);
 
             if (!$sobesednik) redir("/panel/dialog/");
+
             if ($_GET['newdialog'] == $_SESSION['ulogin']['id']) redir("/panel/dialog/");
 
             //Проверка на существование данного диалога
