@@ -440,7 +440,6 @@ class PanelController extends AppController {
             $result = $Panel->addmessage($_POST);
 
 
-            show($_POST);
 
 
             exit();
