@@ -14,8 +14,8 @@
 
                     </div>
 
-                    <div class="header-elements"> <span class="badge-info"><?=$dialog['zagolovok']?></span>
-                    </div>
+<!--                    <div class="header-elements"> <span class="badge-info">--><?//=$dialog['zagolovok']?><!--</span>-->
+<!--                    </div>-->
 
                     <div class="header-elements">
 
