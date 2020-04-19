@@ -165,7 +165,7 @@ class Panel extends \APP\core\base\Model {
 
         if (!$dialog) return "Ошибка в ID диалога1";
 
-        if ($dialog['p1'] != $_SESSION['ulogin']['id'] && $dialog['p2'] =!$_SESSION['ulogin']['id']) return "Ошибка в ID диалога2";
+        if ($dialog['p1'] != $_SESSION['ulogin']['id'] && $dialog['p2'] != $_SESSION['ulogin']['id']) return "Ошибка в ID диалога2";
 
         if (!empty(pole_valid($DATA['enter-message'], "s", 50)['error']))  return pole_valid($DATA['enter-message'], "s", 50)['error'];
 

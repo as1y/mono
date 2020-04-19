@@ -451,6 +451,9 @@ class PanelController extends AppController {
         }
 
 
+
+
+
         // Чтение диалога
         if ($_GET['idd']){
 
