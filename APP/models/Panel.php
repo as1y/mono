@@ -143,6 +143,15 @@ class Panel extends \APP\core\base\Model {
     }
 
 
+    public function getdialog($idd){
+        $dialog = R::findOne("dialog", "WHERE id = ?" , [$idd]);
+        return $dialog;
+    }
+
+
+
+
+
     public function addmessage($DATA, $idd){
 
         $dialog = R::findOne("dialog", "WHERE id = ?" , [$idd]);

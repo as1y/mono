@@ -402,7 +402,6 @@ class PanelController extends AppController {
             //Проверка на существование данного диалога
             $dialog = $Panel->checkdialog($_GET['newdialog']);
 
-
             if ($dialog){
                 $dialog['messages'] = json_decode($dialog['messages'], true);
                 if (empty($dialog['messages'])) $dialog['messages']  = [];
@@ -436,13 +435,30 @@ class PanelController extends AppController {
 
         if ($_POST && $_GET['idd']){
 
-
             $result = $Panel->addmessage($_POST, $_GET['idd']);
 
             if ($result == 1) redir("/panel/messages/?idd=".$_GET['idd']);
             else{
                 $_SESSION['errors'] = $result;
                 redir("/panel/messages/?idd=".$_GET['idd']);
+            }
+
+            return true;
+
+        }
+
+
+        if ($_GET['idd']){
+
+            $dialog = $Panel->getdialog($_GET['idd']);
+
+            
+
+            if ($dialog){
+                $dialog['messages'] = json_decode($dialog['messages'], true);
+                if (empty($dialog['messages'])) $dialog['messages']  = [];
+                $this->set(compact('dialog', 'sobesednik'));
+                return true;
             }
 
 
