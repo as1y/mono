@@ -125,7 +125,7 @@
 
                     </div>
 
-
+                    <input type="hidden" name="idd" value="<?=$dialog['id']?>" ">
         </form>
 
 
