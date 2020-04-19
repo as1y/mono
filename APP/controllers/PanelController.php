@@ -439,11 +439,16 @@ class PanelController extends AppController {
 
             $result = $Panel->addmessage($_POST);
 
-            var_dump($result);
+            if ($result == 1) redir("/panel/messages/?idd=".$_POST['idd']);
+            else{
+                $_SESSION['errors'] = $result;
+                redir("/panel/messages/?idd=".$_POST['idd']);
+            }
+
+        }
 
 
 
-            exit();
         }
 
 
