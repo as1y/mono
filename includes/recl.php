@@ -45,6 +45,8 @@
 
             <?php
             $active[$this->route['action']] = 'active';
+
+            show($active);
             ?>
 
 
