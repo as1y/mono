@@ -5,7 +5,7 @@
 
         <div class="card">
             <div class="card-header bg-dark text-white header-elements-inline">
-                <h5 class="card-title">ОПЕРАТОРЫ НА ПРОЕКТЕ</h5>
+                <h5 class="card-title">РЕЙТИНГ ОПЕРАТОРОВ - ТОП 100</h5>
 
             </div>
 
