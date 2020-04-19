@@ -396,19 +396,18 @@ class PanelController extends AppController {
 
             $sobesednik = $Panel->getsobesednik($_GET['newdialog']);
 
-
-
-
             if (!$sobesednik) redir("/panel/dialog/");
             if ($_GET['newdialog'] == $_SESSION['ulogin']['id']) redir("/panel/dialog/");
 
+            
+            $this->set(compact('sobesednik'));
 
-
+            return true;
 
         }
 
 
-        $this->set(compact('sobesednik'));
+
 
 
 
