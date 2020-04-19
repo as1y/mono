@@ -427,14 +427,18 @@ class PanelController extends AppController {
 
         $invoice[24] = [
             'idd' => NULL,
-            'unread' => 1,
+            'unread' => true,
+            'count' => 1,
         ];
 
+        // Инвойсы
+        // Диалоги
 
-        show($invoice);
+
+        $dialogsinfo = $Panel->getdialogsinfo($invoice);
 
 
-        $this->set(compact('invoice'));
+        $this->set(compact('dialogsinfo'));
 
 
 

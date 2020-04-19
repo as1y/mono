@@ -11,6 +11,36 @@ class Panel extends \APP\core\base\Model {
     }
 
 
+    public function getdialogsinfo($invoice){
+
+        $sobesednik = "";
+
+        foreach ($invoice as $key=>$val ){
+
+            $sobesednik = R::load("users", $key);
+
+            //$count = R::count('dialogs','WHERE id = ?' , [$val['idd']]);
+
+            $mass['count'] =  $val['count'];
+            $mass['unread'] =  $val['unread'];
+            $mass['idd'] = $val['idd'];
+            $mass['username'] = $sobesednik['username'];
+            $mass['avatar'] = $sobesednik['avatar'];
+
+            $dialogs[] = $mass;
+
+        }
+
+
+
+        return $dialogs;
+
+
+    }
+
+
+
+
     public function getoperators(){
         $operators = R::findAll("users", "WHERE role = ?", ["O"]);
         return $operators;

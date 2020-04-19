@@ -24,11 +24,20 @@
             <tbody>
 
 
-            <?php foreach ($allref as $key=>$val):?>
+            <?php foreach ($dialogs as $key=>$val):?>
 
                 <tr>
-                    <td><?=$val['username']?></td>
-                    <td class="text-center"><?=$val['datareg']?></td>
+
+                    <td>
+                        <?=$val['username']?>
+                    </td>
+
+
+                    <td class="text-center">
+                        <?=$val['datareg']?>
+                    </td>
+
+
                     <td class="text-center"><b>0 руб.</b></td>
                     <td class="text-center">
                         <a href="/panel/messages/?id=<?=$val['id']?>" type="button" class="btn btn-success"><i class="icon-comment-discussion mr-2"></i>Сообщение</a>
