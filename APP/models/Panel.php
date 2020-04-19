@@ -147,9 +147,9 @@ class Panel extends \APP\core\base\Model {
 
         $dialog = R::findOne("dialogs", "WHERE id = ?" , [$DATA['idd']]);
 
-        if (!$dialog) return "Ошибка в ID диалога";
+        if (!$dialog) return "Ошибка в ID диалога1";
 
-        if ($dialog['p1'] != $_SESSION['ulogin']['id'] && $dialog['p2'] =!$_SESSION['ulogin']['id']) return "Ошибка в ID диалога";
+        if ($dialog['p1'] != $_SESSION['ulogin']['id'] && $dialog['p2'] =!$_SESSION['ulogin']['id']) return "Ошибка в ID диалога2";
 
         if (!empty(pole_valid($DATA['enter-message'], "s", 50)['error']))  return pole_valid($DATA['enter-message'], "s", 50)['error'];
 
