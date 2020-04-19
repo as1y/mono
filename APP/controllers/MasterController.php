@@ -3,6 +3,7 @@ namespace APP\controllers;
 use APP\core\Cache;
 use APP\models\Addp;
 use APP\models\Master;
+use APP\models\Panel;
 use APP\core\base\Model;
 
 
@@ -117,6 +118,8 @@ class MasterController extends AppController {
 
 
     public function operatorAction(){
+
+
         $Panel =  new Panel();
 
 
