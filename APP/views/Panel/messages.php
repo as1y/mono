@@ -54,7 +54,7 @@
 
                         foreach ($dialog['messages'] as $key=>$val){
 
-                            if ($val['author'] == "me"){
+                            if ($val['author'] == $_SESSION['ulogin']['id']){
                                 ?>
 
 
@@ -77,15 +77,15 @@
 
 
 
-                            if ($val['author'] == "admin"){
+                            if ($val['author'] != $_SESSION['ulogin']['id']){
                                 ?>
 
                                 <li class="media">
                                     <div class="mr-3 align-self-center">
-                                        <img src="/global_assets/images/placeholders/placeholder.jpg" class="rounded-circle" width="40" height="40" alt="">
+                                        <img src="<?=$sobesednik['avatar']?>" class="rounded-circle" width="40" height="40" alt="">
                                     </div>
                                     <div class="media-body">
-                                        <div class="font-size-sm text-muted mt-2"><b>Тех. поддержка</b> - <?=$val['date']?><br>
+                                        <div class="font-size-sm text-muted mt-2"><b><?=$sobesednik['username']?>></b> - <?=$val['date']?><br>
                                             <div class="bg-primary  media-chat-item"><?=$val['message']?></div>
                                         </div>
                                 </li>
