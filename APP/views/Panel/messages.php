@@ -30,7 +30,7 @@
 
                         <!--                    <li class="media content-divider justify-content-center text-muted mx-0">Today</li>-->
 
-                        <?php if(count($messages) == 0): ?>
+                        <?php if(count($dialog['messages']) == 0): ?>
 
 
                         <?php endif;?>
