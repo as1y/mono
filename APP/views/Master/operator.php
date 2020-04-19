@@ -36,7 +36,7 @@
 
                             <td class="text-center">
 
-                                <a href="<?=generateprofilelink()?>" target="_blank"  class="btn btn-info">ПРОФИЛЬ</a>
+                                <a href="<?=generateprofilelink($val)?>" target="_blank"  class="btn btn-info">ПРОФИЛЬ</a>
 
                             </td>
 

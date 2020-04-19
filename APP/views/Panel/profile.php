@@ -187,7 +187,7 @@
 
             <div class="card-body">
                 <b>Адрес публичной страницы вашего профиля:</b>
-                <a href="<?=generateprofilelink()?>" target="_blank">https://<?=CONFIG['DOMAIN']."/user/operator/?name=".translit_sef($_SESSION['ulogin']['username'])."-".$_SESSION['ulogin']['id']?></a>
+                <a href="<?=generateprofilelink()?>" target="_blank">https:<?=generateprofilelink()?></a>
                 
                 <form enctype="multipart/form-data" action="/panel/profile/" method="post" data-fouc>
 
