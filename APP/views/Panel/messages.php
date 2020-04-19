@@ -11,11 +11,11 @@
                     <div class="header-elements">
                     <img src="<?=$sobesednik['avatar']?>" class="rounded-circle" width="40" height="40" alt=""> &nbsp;
                   <a class="btn btn-light " href="<?=generateprofilelink($sobesednik)?>" target="_blank"><?=$sobesednik['username']?></a>
+                        <?=$dialog['date']?>
                     </div>
 
 
                     <div class="header-elements">
-
 
                         <a href="/panel/dialogs" class="btn btn-light"><i class="icon-square-left mr-2"></i> НАЗАД</a>
                     </div>

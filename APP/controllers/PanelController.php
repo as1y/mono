@@ -425,9 +425,11 @@ class PanelController extends AppController {
 
          $idd =   $Panel->addnewBD("dialog", $data);
 
+            $dialog['messages'] = [];
+            $dialog['id'] = $idd;
 
 
-            $this->set(compact('sobesednik', 'messages', 'idd'));
+            $this->set(compact('sobesednik', 'dialog'));
 
             return true;
 
