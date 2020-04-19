@@ -403,13 +403,13 @@ class PanelController extends AppController {
 
             $dialog = $Panel->checkdialog($_GET['newdialog']);
 
-            show($dialog);
-            if ($dialog == false){
+            if ($dialog){
 
-                echo "Диалог уже есть";
-
+                echo  "Даилог уже есть";
                 exit();
+
             }
+
 
             $messages = [];
             //Создавать диалог или нет?
