@@ -9,7 +9,7 @@
                 <div class="card-header header-elements-inline">
 
                     <div class="header-elements">
-                    <img src="<?=$sobesednik['avatar']?>" class="rounded-circle" width="40" height="40" alt="">
+                    <img src="<?=$sobesednik['avatar']?>" class="rounded-circle" width="40" height="40" alt=""> 
                    <b> <?=$sobesednik['username']?></b>
                     </div>
 
