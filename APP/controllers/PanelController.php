@@ -434,7 +434,7 @@ class PanelController extends AppController {
         show($invoice);
 
 
-        $this->set(compact('tickets'));
+        $this->set(compact('invoice'));
 
 
 
