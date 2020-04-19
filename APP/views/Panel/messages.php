@@ -13,11 +13,11 @@
                     <?=$sobesednik['username']?>
                     </div>
 
-                    
+
                     <div class="header-elements">
 
 
-                        <a href="/panel/ticket" class="btn btn-light"><i class="icon-square-left mr-2"></i> НАЗАД</a>
+                        <a href="/panel/dialogs" class="btn btn-light"><i class="icon-square-left mr-2"></i> НАЗАД</a>
                     </div>
 
 
