@@ -391,13 +391,14 @@ class PanelController extends AppController {
         \APP\core\base\View::setAssets($ASSETS);
 
 
-        show($_GET);
-        exit();
 
         if (!empty($_GET['newdialog']) ){
 
             $sobesednik = $Panel->getsobesednik($_GET['newdialog']);
-            if (empty($sobesednik)) redir("/panel/dialog/");
+
+            show($sobesednik);
+            exit();
+            if (!$sobesednik) redir("/panel/dialog/");
 
 
 
