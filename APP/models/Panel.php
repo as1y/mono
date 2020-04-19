@@ -23,6 +23,7 @@ class Panel extends \APP\core\base\Model {
                 $mass['type'] =  "invoice";
                 $mass['count'] =  1;
                 $mass['unread'] =  true;
+                $mass['idd'] = $val['idd'];
                 $mass['username'] = $sobesednik['username'];
                 $mass['avatar'] = $sobesednik['avatar'];
                 $mass['date'] = date('H:s:m');
