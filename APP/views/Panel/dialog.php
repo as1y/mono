@@ -42,7 +42,8 @@
                     <td class="text-center">
 
                         <a href="/panel/viewticket/?id=4" class="badge bg-dark badge-pill"><?=$val['count']?> </a>
-                        <?php if (!$val['unread']):?>
+
+                        <?php if ($val['unread']):?>
                             <span class="badge badge-success">NEW</span>
                         <?php endif;?>
 
