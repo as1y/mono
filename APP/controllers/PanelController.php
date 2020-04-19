@@ -398,9 +398,8 @@ class PanelController extends AppController {
 
 
 
-            show(count($sobesednik));
 
-            if (count($sobesednik) == 0) redir("/panel/dialog/");
+            if (!$sobesednik) redir("/panel/dialog/");
 
 
 
