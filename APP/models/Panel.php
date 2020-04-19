@@ -12,9 +12,17 @@ class Panel extends \APP\core\base\Model {
 
 
     public function getsobesednik($idu){
+
+
         $sobesednik = R::findOne("users", "WHERE id = ?" , [$idu]);
         return $sobesednik;
+
+
     }
+
+
+
+
 
 
     public function checkdialog($idu){

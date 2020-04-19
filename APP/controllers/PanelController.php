@@ -405,8 +405,12 @@ class PanelController extends AppController {
 
             if ($dialog){
 
-                echo  "Даилог уже есть";
-                exit();
+                $sobesednik = $Panel->getsobesednik($_GET['newdialog']);
+                $this->set(compact('dialog', 'sobesednik'));
+
+                return true;
+
+
 
             }
 
