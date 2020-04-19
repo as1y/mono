@@ -35,17 +35,19 @@
                         <?php if(count($dialog['messages']) == 0): ?>
 
 
+                            <li class="media">
+
+                                <div class="media-body">
+                                    <div class="font-size-sm text-muted mt-2">
+                                        <div class="media-chat-item">Чтобы начать даилог напишите первое сообщение</div>
+
+                                    </div>
+                                </div>
+                            </li>
+                        
                         <?php endif;?>
 
-                        <li class="media">
 
-                            <div class="media-body">
-                                <div class="font-size-sm text-muted mt-2">
-                                    <div class="media-chat-item">Чтобы начать даилог напишите первое сообщение</div>
-
-                                </div>
-                            </div>
-                        </li>
                         <?php
 
 
