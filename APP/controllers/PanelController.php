@@ -392,6 +392,7 @@ class PanelController extends AppController {
 
 
 
+        // Инициация диалога
         if (!empty($_GET['newdialog']) ){
 
             $sobesednik = $Panel->getsobesednik($_GET['newdialog']);
@@ -433,6 +434,8 @@ class PanelController extends AppController {
         }
 
 
+
+        //Отправка сообщения в диалоге
         if ($_POST && $_GET['idd']){
 
             $result = $Panel->addmessage($_POST, $_GET['idd']);
@@ -448,14 +451,21 @@ class PanelController extends AppController {
         }
 
 
+        // Чтение диалога
         if ($_GET['idd']){
 
             $dialog = $Panel->getdialog($_GET['idd']);
 
-        
+
 
             if ($dialog){
+
                 $dialog['messages'] = json_decode($dialog['messages'], true);
+
+                show($dialog['messages']);
+                exit();
+
+
                 if (empty($dialog['messages'])) $dialog['messages']  = [];
                 $this->set(compact('dialog', 'sobesednik'));
                 return true;
