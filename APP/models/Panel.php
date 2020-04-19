@@ -13,23 +13,34 @@ class Panel extends \APP\core\base\Model {
 
     public function getdialogsinfo($invoice){
 
-        $sobesednik = "";
 
-        foreach ($invoice as $key=>$val ){
+        // Раскладка инвойсов
 
-            $sobesednik = R::load("users", $key);
+        if (!empty($invoice)){
 
-            //$count = R::count('dialogs','WHERE id = ?' , [$val['idd']]);
+            foreach ($invoice as $key=>$val ){
+                $sobesednik = R::load("users", $key);
+                $mass['type'] =  "invoice";
+                $mass['count'] =  1;
+                $mass['unread'] =  true;
+                $mass['username'] = $sobesednik['username'];
+                $mass['avatar'] = $sobesednik['avatar'];
+                $mass['date'] = date('H:s:m');
+                $dialogs[] = $mass;
+            }
 
-            $mass['count'] =  $val['count'];
-            $mass['unread'] =  $val['unread'];
-            $mass['idd'] = $val['idd'];
-            $mass['username'] = $sobesednik['username'];
-            $mass['avatar'] = $sobesednik['avatar'];
-
-            $dialogs[] = $mass;
 
         }
+
+
+
+
+
+
+        // Раскладываеш диалоги
+
+
+
 
 
 

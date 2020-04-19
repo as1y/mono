@@ -34,7 +34,7 @@
 
 
                     <td class="text-center">
-                        <?=$val['datareg']?>
+                        <?=$val['date']?>
                     </td>
 
 

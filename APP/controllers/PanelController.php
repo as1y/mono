@@ -431,9 +431,8 @@ class PanelController extends AppController {
             'count' => 1,
         ];
 
-        // Инвойсы
-        // Диалоги
-
+        // Инвойсы (сначала)
+        // Диалоги (после)
 
         $dialogsinfo = $Panel->getdialogsinfo($invoice);
 
