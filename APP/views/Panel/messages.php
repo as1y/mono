@@ -8,18 +8,11 @@
             <div class="card">
                 <div class="card-header header-elements-inline">
                     <a href="/panel/ticket" class="btn btn-light"><i class="icon-square-left mr-2"></i> НАЗАД</a>
-                    <h5 class="card-title">Тикет <?=obrezanie($tickets['zagolovok'], 40)?></h5>
+                    <h5 class="card-title">Тикет Диалог с (ФИО) + АВАТАР</h5>
 
                     <div class="header-elements">
 
-                        <?php if($tickets['status'] == 2):?>
-                            <span class="badge badge-secondary">ТИКЕТ ЗАКРЫТ</span>
-                        <?php endif;?>
-
-
-                        <?php if($tickets['status'] == 1):?>
-                            <a href="/panel/viewticket/?id=<?=$tickets['id']?>&action=close"  class="btn bg-warning btn-labeled btn-labeled ml-auto"><i class="icon-magic-wand mr-2"></i> ЗАКРЫТЬ ТИКЕТ</a>
-                        <?php endif;?>
+                        <!--!!! -->
 
                     </div>
 
@@ -96,14 +89,10 @@
 
 
 
-                    <?php if($tickets['status'] == 1):?>
-
                         <textarea name="enter-message" class="form-control mb-3" rows="3" cols="1" placeholder="Ваше ответ..."></textarea>
                         <div class="align-items-left">
                             <button type="submit" class="btn bg-teal-400 btn-labeled btn-labeled-right ml-auto"><b><i class="icon-paperplane"></i></b> Отправить сообщение</button>
                         </div>
-
-                    <?php endif;?>
 
 
 
