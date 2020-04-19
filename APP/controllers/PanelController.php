@@ -395,11 +395,10 @@ class PanelController extends AppController {
         if (!empty($_GET['newdialog']) ){
 
             $sobesednik = $Panel->getsobesednik($_GET['newdialog']);
-
-            show($sobesednik);
-            exit();
             if (!$sobesednik) redir("/panel/dialog/");
 
+
+            
 
 
         }
