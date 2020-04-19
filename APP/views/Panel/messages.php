@@ -114,11 +114,11 @@
 
                     <div class="header-elements-inline">
                         <div class="align-items-left">
-                            <button type="submit" class="btn bg-teal-400 btn-labeled btn-labeled-right ml-auto"><b><i class="icon-paperplane"></i></b> Отправить сообщение</button>
+                            <button type="submit" class="btn bg-teal-400 btn-labeled btn-labeled-right ml-auto"><b><i class="icon-paperplane"></i></b> СООБЩЕНИЕ</button>
                         </div>
 
                     <div class="align-items-right">
-                        <a href="#" class="btn bg-danger btn-labeled btn-labeled-right ml-auto"><b><i class="icon-trash"></i></b> УДАЛИТЬ ДИАЛОГ</a>
+                        <a href="#" class="btn bg-danger btn-labeled btn-labeled-right ml-auto"><b><i class="icon-trash"></i></b> ДИАЛОГ</a>
                     </div>
 
                     </div>
