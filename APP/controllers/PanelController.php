@@ -399,8 +399,9 @@ class PanelController extends AppController {
             if (!$sobesednik) redir("/panel/dialog/");
             if ($_GET['newdialog'] == $_SESSION['ulogin']['id']) redir("/panel/dialog/");
 
-            
-            $this->set(compact('sobesednik'));
+            $messages = [];
+
+            $this->set(compact('sobesednik', 'messages'));
 
             return true;
 
