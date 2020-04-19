@@ -391,8 +391,17 @@ class PanelController extends AppController {
         \APP\core\base\View::setAssets($ASSETS);
 
 
+        if (!empty($_GET['newdialog']) ){
 
-        $this->set(compact('tickets'));
+            $sobesednik = $Panel->getsobesednik($_GET['newdialog']);
+            if (empty($sobesednik)) redir("/panel/dialog/");
+
+
+
+        }
+
+
+        $this->set(compact('sobesednik'));
 
 
 

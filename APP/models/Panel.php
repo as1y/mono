@@ -11,6 +11,15 @@ class Panel extends \APP\core\base\Model {
     }
 
 
+    public function getsobesednik($idu){
+        $sobesednik = R::load("users", $idu);
+        return $sobesednik;
+    }
+
+
+
+
+
     public function getdialogsinfo($invoice){
 
 
