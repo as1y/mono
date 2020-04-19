@@ -180,7 +180,7 @@ class Panel extends \APP\core\base\Model {
 
         $messages = json_encode($messages, true);
         $dialog->messages = $messages;
-        $dialog->uvedomlenie = $messages;
+        $dialog->uvedomlenie = $sendnotice;
         $dialog->zagolovok = obrezanie($DATA['enter-message'], 20);
 
         R::store($dialog);
