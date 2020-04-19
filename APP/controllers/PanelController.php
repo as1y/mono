@@ -404,7 +404,6 @@ class PanelController extends AppController {
 
 
             if ($dialog){
-
                 $dialog['messages'] = json_decode($dialog['messages'], true);
                 if (empty($dialog['messages'])) $dialog['messages']  = [];
                 $this->set(compact('dialog', 'sobesednik'));
@@ -413,7 +412,7 @@ class PanelController extends AppController {
 
 
 
-            //Создавать диалог или нет?
+            // Создаем диалог
 
             $data = [
                 'p1' => $sobesednik['id'],
