@@ -401,8 +401,21 @@ class PanelController extends AppController {
 
 
             $messages = [];
-
             //Создавать диалог или нет?
+
+            $data = [
+                'p1' => $sobesednik['id'],
+                'p2' => $_SESSION['ulogin']['id'],
+                'zagolovok' => "Новый диалог",
+                'messages' => $messages,
+                'date' => date('d:m:Y'),
+            ];
+
+         $add =   $Panel->addnewBD("dialog", $data);
+
+
+         show($add);
+         exit();
 
 
             $this->set(compact('sobesednik', 'messages', 'idd'));
