@@ -439,6 +439,7 @@ class PanelController extends AppController {
 
             $result = $Panel->addmessage($_POST);
 
+            var_dump($result);
 
 
 

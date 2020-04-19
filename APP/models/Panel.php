@@ -156,6 +156,8 @@ class Panel extends \APP\core\base\Model {
 
         $me = ($dialog['p1'] == $_SESSION['ulogin']['id']) ? "p1" : "p2";
 
+
+
         $messages = json_decode($dialog->messages,TRUE);
 
         $messages[] = ["author" => $me , "message" => $DATA['enter-message'], "date" => date("H:s:m")];
