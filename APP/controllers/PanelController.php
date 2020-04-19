@@ -400,6 +400,39 @@ class PanelController extends AppController {
     }
 
 
+    public function dialogAction(){
+
+        $Panel =  new Panel();
+
+
+        $META = [
+            'title' => 'Мои диалоги',
+            'description' => 'Мои диалоги',
+            'keywords' => 'Мои диалоги',
+        ];
+
+        if ($_SESSION['ulogin']['role'] == "R") $BREADCRUMBS['HOME'] = ['Label' => "Кабинет рекламодателя", 'Url' => "/master"];
+        if ($_SESSION['ulogin']['role'] == "O") $BREADCRUMBS['HOME'] = ['Label' => "Кабинет  оператора", 'Url' => "/operator"];
+        $BREADCRUMBS['DATA'][] = ['Label' => "Даилоги"];
+
+
+        \APP\core\base\View::setMeta($META);
+        \APP\core\base\View::setBreadcrumbs($BREADCRUMBS);
+
+
+        $ASSETS[] = ["js" => "/global_assets/js/plugins/tables/datatables/datatables.min.js"];
+        $ASSETS[] = ["js" => "/assets/js/datatables_basic.js"];
+        \APP\core\base\View::setAssets($ASSETS);
+
+
+
+        $this->set(compact('tickets'));
+
+
+
+
+    }
+
 
 
 
