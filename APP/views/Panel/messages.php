@@ -87,7 +87,7 @@
                                         <img src="<?=$sobesednik['avatar']?>" class="rounded-circle" width="40" height="40" alt="">
                                     </div>
                                     <div class="media-body">
-                                        <div class="font-size-sm text-muted mt-2"><b><?=$sobesednik['username']?>></b> - <?=$val['date']?><br>
+                                        <div class="font-size-sm text-muted mt-2"><b><?=$sobesednik['username']?></b> - <?=$val['date']?><br>
                                             <div class="bg-primary  media-chat-item"><?=$val['message']?></div>
                                         </div>
                                 </li>
