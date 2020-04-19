@@ -170,7 +170,7 @@ class Panel extends \APP\core\base\Model {
         if (!empty(pole_valid($DATA['enter-message'], "s", 50)['error']))  return pole_valid($DATA['enter-message'], "s", 50)['error'];
 
 
-//        $me = ($dialog['p1'] == $_SESSION['ulogin']['id']) ? "p1" : "p2";
+        $sendnotice = ($dialog['p1'] == $_SESSION['ulogin']['id']) ? $dialog['p2']: $dialog['p1'];
 
 
 
@@ -180,7 +180,9 @@ class Panel extends \APP\core\base\Model {
 
         $messages = json_encode($messages, true);
         $dialog->messages = $messages;
+        $dialog->uvedomlenie = $messages;
         $dialog->zagolovok = obrezanie($DATA['enter-message'], 20);
+
         R::store($dialog);
 
 
