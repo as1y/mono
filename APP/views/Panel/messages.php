@@ -10,7 +10,7 @@
 
                     <div class="header-elements">
                     <img src="<?=$sobesednik['avatar']?>" class="rounded-circle" width="40" height="40" alt=""> &nbsp;
-                  <a href="<?=generateprofilelink?>" target="_blank"><?=$sobesednik['username']?></a>
+                  <a href="<?=generateprofilelink($sobesednik)?>" target="_blank"><?=$sobesednik['username']?></a>
                     </div>
 
 
