@@ -396,6 +396,9 @@ class PanelController extends AppController {
 
             $sobesednik = $Panel->getsobesednik($_GET['newdialog']);
 
+
+            show($sobesednik);
+
             if (!isset($sobesednik)) redir("/panel/dialog/");
 
 
