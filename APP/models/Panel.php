@@ -12,7 +12,7 @@ class Panel extends \APP\core\base\Model {
 
 
     public function getoperators(){
-        $operators = R::findAll("users", "WHERE role = O AND code = NULL");
+        $operators = R::findAll("users", "WHERE role = `O` AND code = `NULL`");
         return $operators;
     }
 
