@@ -118,20 +118,21 @@ function timecall ($status){
 
 
 
-function countoperators($company, $type = "new"){
+function countoperators($company, $type){
 
 
-    $count = 0;
-    $countnew = json_decode($company['operators'], true);
+    $countfinal = 0;
 
-    if (empty($countnew)) $countnew = [];
+    $count = json_decode($company['operators'], true);
 
-    foreach ($countnew as $key=>$val){
+    if (empty($count)) $count = [];
 
-        if ($val == 1 && $type = "new") $count++;
-        if ($val == 2 && $type = "all") $count++;
+    foreach ($count as $key=>$val){
+
+        if ($val == 1 && $type == "new") $countfinal++;
+        if ($val == 2 && $type == "all") $countfinal++;
     }
-    return $count;
+    return $countfinal;
 
 
 }
