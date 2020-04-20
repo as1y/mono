@@ -58,6 +58,7 @@ class Panel extends \APP\core\base\Model {
 //        if (!$dialog2) $dialog2 = [];
 //        foreach ($dialog2 as $key=>$val) $dialogs[] = $val;
 
+        $dialogs = array_merge($dialog1,$dialog2);
 
        show($dialogs);
 
