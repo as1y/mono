@@ -31,7 +31,7 @@
                         <div class="media-body">
 
 
-                            <div class="media-title font-weight-semibold">  <a href="/panel/profile/" class="nav-link "><?=$_SESSION['ulogin']['username']?>  </a></div>
+                            <div class="media-title font-weight-semibold">  <a href="/panel/profile/" class="breadcrumb-elements-item"><?=$_SESSION['ulogin']['username']?>  </a></div>
                             <div class="font-size-xs opacity-50">
                                 <i class="fa fa-user font-size-sm"></i> <?=rendertypeaccount($_SESSION['ulogin']['role'])?>
                             </div>
