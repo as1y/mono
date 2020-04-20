@@ -53,11 +53,6 @@ class Panel extends \APP\core\base\Model {
         $dialog2 = R::findAll("dialog", "WHERE p2 = ?", [$_SESSION['ulogin']['id']]);
         foreach ($dialog2 as $key=>$val) $dialogs[] = $val;
 
-       show($dialogs);
-
-
-
-       exit();
 
 //        if (!empty($invoice)){
 //

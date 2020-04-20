@@ -30,8 +30,8 @@
                 <tr>
 
                     <td>
-                        <img src="<?=$val['avatar']?>" width="38" height="38" class="rounded-circle" alt="">
-                        <?=$val['username']?>
+                        <img src="<?=$val['sobesednik']['avatar']?>" width="38" height="38" class="rounded-circle" alt="">
+                        <?=$val['sobesednik']['username']?>
                     </td>
 
                     <td class="text-center">
@@ -40,15 +40,15 @@
 
 
                     <td class="text-center">
-                        <?=$val['message']?>
+                        <?=$val['zagolovok']?>
                     </td>
 
 
                     <td class="text-center">
 
-                        <a href="/panel/viewticket/?id=4" class="badge bg-dark badge-pill"><?=$val['count']?> </a>
+                        <a href="/panel/viewticket/?id=4" class="badge bg-dark badge-pill"><?=count(json_decode($val['messages'], true))?> </a>
 
-                        <?php if ($val['unread']):?>
+                        <?php if ($val['uvedomlenie']):?>
                             <span class="badge badge-success">NEW</span>
                         <?php endif;?>
 
