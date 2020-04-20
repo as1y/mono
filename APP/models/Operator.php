@@ -255,6 +255,8 @@ class Operator extends \APP\core\base\Model {
     }
 
     public function newcontact($idc) {
+        $contactinfo = $this->Getbron($idc);
+        if ($contactinfo) return $contactinfo;
         return R::findOne('contact', 'WHERE company_id = ? AND status = 0', [$idc]);
     }
 

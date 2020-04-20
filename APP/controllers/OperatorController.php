@@ -78,6 +78,7 @@ class OperatorController extends AppController {
 
 
 
+
         // МОМЕНТ С ПРОВЕРКОЙ И ДОБАВЛЕНИЕМ ЗАПИСИ!
         $contactinfo = $operator->newcontact($idc);
 
@@ -151,7 +152,7 @@ class OperatorController extends AppController {
         if (!empty($_GET['perezvon'])){
 
             $contactinfo = $operator->loadcontact($_GET['perezvon']);
-            if (empty($contactinfo) && $contactinfo['status'] != 2) {
+            if (empty($contactinfo) || $contactinfo['status'] != 2) {
                 $_SESSION['errors'] = "Ошибка в базе контактов №148. Обратить в тех. поддержку";
                 redir ("/operator/perezvon/");
             }
@@ -178,14 +179,12 @@ class OperatorController extends AppController {
         // Берем контакт на звонок
 
 
-
-
         // Проверяем есть ли бронь на контакт. Если есть, то загружаем данные контакта из брони
-        $contactinfo = $operator->Getbron($idc);
-        if ($contactinfo){
-            $this->set(compact('company', 'contactinfo', 'script'));
-            return true;
-        }
+//        $contactinfo = $operator->Getbron($idc);
+//        if ($contactinfo){
+//            $this->set(compact('company', 'contactinfo', 'script'));
+//            return true;
+//        }
         // Проверяем есть ли бронь на контакт. Если есть, то загружаем данные контакта из брони
 
 
