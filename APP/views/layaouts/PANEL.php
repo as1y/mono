@@ -112,7 +112,7 @@
 
                 <a href="/panel/dialog/" class="breadcrumb-elements-item">
                     <i class="icon-comment-discussion mr-2"></i>
-                    МОИ СООБЩЕНИЯ
+                    МОИ ДИАЛОГИ
                     <span class="badge badge-pill bg-warning-400 ml-auto ml-md-0">0</span>
 
                 </a>
