@@ -6,7 +6,9 @@ use RedBeanPHP\R;
 class Operator extends \APP\core\base\Model {
 
 
-    public function getcontactuser($status = ""){
+    public function getcontactuser($status = NULL){
+
+
 
         if (!empty($status)){
             $mass = R::findAll("contact", "WHERE users_id = ? AND status =?", [$_SESSION['ulogin']['id'], $status]);
