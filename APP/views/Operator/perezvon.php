@@ -34,7 +34,7 @@
             if(empty($company['name'])) $company['name'] = "Вы уже не работаете в компании";
             ?>
             <tr>
-                <td style="vertical-align: middle"><?=$company['name'];?></td>
+                <td style="vertical-align: middle"><?=json_decode($row['company'], true)['company'];?></td>
                 <td style="vertical-align: middle"><?=$row['id'];?></td>
                 <td style="vertical-align: middle"><?=$row['name'];?></td>
                 <td style="vertical-align: middle"><?=$row['company'];?></td>
