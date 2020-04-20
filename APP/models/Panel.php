@@ -21,8 +21,10 @@ class Panel extends \APP\core\base\Model {
     }
 
     public function clearuvedmolenie($dialog){
-        $dialog->uvedomlenie = NULL;
-        R::store($dialog);
+        if ($dialog->uvedomlenie == $_SESSION['ulogin']['id']){
+            $dialog->uvedomlenie = NULL;
+            R::store($dialog);
+        }
         return true;
 
     }
