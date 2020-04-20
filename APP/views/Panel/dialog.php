@@ -34,7 +34,7 @@
                         <?php
                         $sobesednik =   \APP\models\Panel::lookingsobesednik($val);
 
-                        show();
+                        show($sobesednik);
                         exit();
                         ?>
 
