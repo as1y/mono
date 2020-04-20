@@ -42,17 +42,20 @@
 <div class="navbar navbar-expand-md navbar-dark">
 
 
-
-
-
-    <a href="/" class="navbar-nav-link " >
-<!--        <img src="/global_assets/images/dribbble.png" class="align-top mr-2 rounded" width="20" height="20" alt="">-->
-        <b>CASHCALL.RU</b>
+    <?php if (!empty($_SESSION['ulogin'])):?>
+    <a href="/panel/" class="navbar-nav-link " >
+        <!--        <img src="/global_assets/images/dribbble.png" class="align-top mr-2 rounded" width="20" height="20" alt="">-->
+        <b>CASHCALL.RU </b>   <?= ($_SESSION['ulogin']['role'] == "O") ? '<span class="badge-secondary">Кабинет ОПЕРАТОРА</span>' : ' <span class="badge-secondary">Кабинет РЕКЛАМОДАТЕЛЯ</span>'?>
     </a>
 
-<!--    <span class="navbar-text ml-xl-3">-->
-<!--   Операторов онлайн:  <span class="badge bg-success"><b>--><!--</b></span>-->
-<!--        </span>-->
+        <span class="navbar-text ml-xl-3">
+   Пользователей онлайн:  <span class="badge bg-success"><b><?= \APP\core\base\Model::countonline()?></b></span>
+        </span>
+    <?php endif;?>
+
+
+
+
 
     <div class="d-md-none">
         <ul class="navbar-nav ml-auto">
