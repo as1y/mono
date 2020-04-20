@@ -206,6 +206,10 @@ abstract class Model
 	    return  R::count('online');
     }
 
+    public static function countoperator(){
+        return  R::count('online', "WHERE role=?", ["O"]);
+    }
+
 
 	//ОТПРАВКА E - MAIL
 }
