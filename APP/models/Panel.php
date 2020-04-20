@@ -53,7 +53,7 @@ class Panel extends \APP\core\base\Model {
         $dialog2 = R::findAll("dialog", "WHERE p2 = ?", [$_SESSION['ulogin']['id']]);
         foreach ($dialog2 as $key=>$val) $dialogs[] = $val;
 
-        
+
 
         return $dialogs;
 
@@ -129,7 +129,7 @@ class Panel extends \APP\core\base\Model {
     }
 
 
-    public function lookingsobesednik($dialog){
+    public static function lookingsobesednik($dialog){
         $sobesednikid = ($_SESSION['ulogin']['id'] != $dialog['p1']) ? $dialog['p1'] : $dialog['p2'];
         $sobesednik = R::findOne("users", "WHERE id = ?" , [$sobesednikid]);
         return $sobesednik;
