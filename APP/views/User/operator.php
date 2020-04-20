@@ -19,9 +19,9 @@
                          width="150" height="150" alt="">
                 </a>
 
-                <a href="#" type="button" class=" btn btn-success"><i class="icon-bubbles5 mr-2"></i> ОТПРАВИТЬ СООБЩЕНИЕ</a>
+                <a href="/panel/messages/?newdialog=<?=$userinfo['id']?>"  class=" btn btn-success"><i class="icon-bubbles5 mr-2"></i> ОТПРАВИТЬ СООБЩЕНИЕ</a>
                 <br>
-                <a href="#" type="button" class=" btn btn-warning"><i class="icon-book mr-2"></i> ПРЕДЛОЖИТЬ ПРОЕКТ</a>
+<!--                <a href="#" type="button" class=" btn btn-warning"><i class="icon-book mr-2"></i> ПРЕДЛОЖИТЬ ПРОЕКТ</a>-->
 
             </div>
 
