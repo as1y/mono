@@ -5,33 +5,30 @@ if (empty($company)) {
 
 
 
-    <div class="col-lg-12">
+    <div class="row">
 
+        <div class="col-md-12">
 
-        <div class="card">
-            <div class="card-header bg-dark text-white header-elements-inline">
-                <h6 class="card-title">МОИ ПРОЕКТЫ</b></h6>
+            <div class="card">
+                <div class="card-header bg-dark text-white header-elements-inline">
+                    <h5 class="card-title">МОИ ПРОЕКТЫ</h5>
 
+                </div>
 
-            </div>
-
-
-
-            <div class="card-body justify-content-center text-center-end">
-
-                <div class="row">
-
-
-                    У ВАС ЕЩЕ НЕТ ПРОЕКТОВ
-
+                <div class="card-body">
+                    Список пуст
 
                 </div>
 
 
 
-
             </div>
+
+
+
         </div>
+
+
 
 
     </div>
