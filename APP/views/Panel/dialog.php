@@ -51,7 +51,15 @@
 
                     <td class="text-center">
 
-                        <a href="/panel/messages/?idd=<?=$val['id']?>" class="badge bg-dark badge-pill"><?=count(json_decode($val['messages'], true))?> </a>
+
+                        <?php
+                        if (empty($val['messages'])) $val['messages'] = [];
+                        $countv = count(json_decode($val['messages'], true));
+
+
+                        ?>
+
+                        <a href="/panel/messages/?idd=<?=$val['id']?>" class="badge bg-dark badge-pill"><?=$countv?> </a>
 
                         <?php if ($val['uvedomlenie'] == $_SESSION['ulogin']['id']):?>
                             <span class="badge badge-danger">NEW</span>
