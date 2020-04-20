@@ -112,17 +112,14 @@
                         <tr>
                             <td>
                                 <img src="<?=$val['avatar']?>" width="38" height="38" class="rounded-circle" alt="">
-                                <?=$val['username']?></td>
+                                <?=$val['username']?>
+                                <a href="/panel/messages/?newdialog=<?=$val['id']?>"  target="_blank"  class="btn btn-success">СООБЩЕНИЕ</a><hr>
+                            </td>
                             <td class="text-center"><?=$val['aboutme']?></td>
                             <td class="text-center"><?= (empty($val['totalcall'])) ? 0 : $val['totalcall']  ?></td>
                             <td class="text-center"><audio controls src="/<?=AudioUploadPath.$val['audio']?>"></audio></td>
 
                             <td class="text-center">
-
-                                <a href="/panel/messages/?newdialog=<?=$val['id']?>" type="button" class="btn btn-success">СООБЩЕНИЕ</a><hr>
-
-
-
                                 <a href="/project/operator/?id=<?=$company['id']?>&idoper=<?=$val['id']?>&action=reject" type="button" class="btn btn-danger">ОТКЛЮЧИТЬ</a>
 
                             </td>
