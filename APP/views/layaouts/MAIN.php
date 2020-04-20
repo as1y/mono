@@ -70,7 +70,7 @@
                     <li class="nav-item"><a style="color: var(--color-default)" class="nav-link" href="/user/register/" target="_blank" "=""> <b>Регистрация</b> </a>
                     </li>
 
-
+                    <li class="nav-item d-none d-lg-block pl-0"><a href="/user/login/" class="btn btn-default m-0">ВОЙТИ</a></li>
 
                 </ul>
 
