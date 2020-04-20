@@ -59,8 +59,7 @@ class OperatorController extends AppController {
             $_POST['optionresult'] !="result"
         ) message("Ошибка в передаче параметров");
 
-
-        show($_POST);
+        
 
         if ($_POST['optionresult'] == "otkaz") $operator->SetOtkaz($_POST, $company);
         if ($_POST['optionresult'] == "bezdostupa") $operator->Setbezdostupa($_POST, $company);
