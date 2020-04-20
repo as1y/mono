@@ -89,7 +89,7 @@ if (empty($company)) {
                     <div class="col-md-6">
 
                         <?php
-                        $todaycall = \APP\core\base\Model::contact($row['id'])['all'];
+                        $todaycall = \APP\core\base\Model::contact($row['id'])['today'];
                         $todayresult = \APP\core\base\Model::getres($row['id'])['today'];
 
                         ?>
