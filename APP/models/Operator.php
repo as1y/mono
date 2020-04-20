@@ -12,13 +12,12 @@ class Operator extends \APP\core\base\Model {
 
         if (!empty($status)){
 
-            exit("mi tut");
 
-            $mass = R::findAll("contact", "WHERE users_id = ? AND status =?", [$_SESSION['ulogin']['id'], $status]);
+            $mass = R::findAll("contact", "WHERE user_id = ? AND status =?", [$_SESSION['ulogin']['id'], $status]);
             return $mass;
         }
 
-        $mass = R::findAll("contact", "WHERE users_id = ?", [$_SESSION['ulogin']['id']]);
+        $mass = R::findAll("contact", "WHERE user_id = ?", [$_SESSION['ulogin']['id']]);
         return $mass;
 
 
