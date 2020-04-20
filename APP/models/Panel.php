@@ -162,7 +162,8 @@ class Panel extends \APP\core\base\Model {
 
         $sendnotice = ($dialog['p1'] == $_SESSION['ulogin']['id']) ? $dialog['p2']: $dialog['p1'];
 
-
+        show($sendnotice);
+        exit();
 
         $messages = json_decode($dialog->messages,TRUE);
 
