@@ -284,7 +284,7 @@ class Operator extends \APP\core\base\Model {
         }
 
     public function getcontact($company){
-        $contact = R::findOne('contact', 'WHERE user_id = ? AND status = 1 AND company_id=? LIMIT 1', [$_SESSION['ulogin']['id'], $company['id']]);
+        $contact = R::findOne('contact', 'WHERE user_id = ?  AND company_id=? LIMIT 1', [$_SESSION['ulogin']['id'], $company['id']]);
         return $contact;
     }
 

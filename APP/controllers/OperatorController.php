@@ -31,8 +31,12 @@ class OperatorController extends AppController {
 
         if (empty($_GET['id'])) message("Ошибка получения данных");
         $idc = $_GET['id'];
+
+
         $company = $operator->getmycom($_GET['id']);
         if ($company === false) message("Ошибка допуска к проекту");
+
+
         // Обработка ошибок
 
         if (empty($_POST['optionresult']) || $_POST['optionresult'] == "") message("Обязательно выберете результат разговора");
@@ -55,6 +59,8 @@ class OperatorController extends AppController {
             $_POST['optionresult'] !="result"
         ) message("Ошибка в передаче параметров");
 
+
+        show($_POST);
 
         if ($_POST['optionresult'] == "otkaz") $operator->SetOtkaz($_POST, $company);
         if ($_POST['optionresult'] == "bezdostupa") $operator->Setbezdostupa($_POST, $company);
