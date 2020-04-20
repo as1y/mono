@@ -21,7 +21,7 @@ class Master extends \APP\core\base\Model {
     }
 
 
-    public function countresultid($id)
+    public static function countresultid($id)
     {
 
         return R::count("result", "WHERE company_id = ? AND status = 0", [$id]);;
