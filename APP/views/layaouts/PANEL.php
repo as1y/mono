@@ -61,7 +61,14 @@
 
 
 
+            <li class="nav-item dropdown">
+                <a href="#" class="navbar-nav-link dropdown-toggle caret-0">
+                    <i class="icon-bubbles4"></i>
+                    <span class="d-md-none ml-2">Messages</span>
+                    <span class="badge badge-pill bg-warning-400 ml-auto ml-md-0">2</span>
+                </a>
 
+            </li>
 
 
 
