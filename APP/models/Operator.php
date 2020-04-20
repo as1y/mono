@@ -23,7 +23,7 @@ class Operator extends \APP\core\base\Model {
 
     public function SetOtkaz($DATA, $company){
 
-        $contact = $this->getcontact($company);
+        $contact = $this->loadcontact($DATA['contactid']);
         $contact->status = 3;
         $contact->datacall = date("Y-m-d");
         $contact->operatorcomment = $DATA['operatorcomment'];
@@ -35,7 +35,7 @@ class Operator extends \APP\core\base\Model {
     }
 
     public function Setbezdostupa($DATA, $company){
-        $contact = $this->getcontact($company);
+        $contact = $this->loadcontact($DATA['contactid']);
         $contact->status =4;
         $contact->datacall = date("Y-m-d");
         $contact->operatorcomment = $DATA['operatorcomment'];
@@ -76,7 +76,7 @@ class Operator extends \APP\core\base\Model {
 
 
         // Обновляем статус контакта
-        $contact = $this->getcontact($company);
+        $contact = $this->loadcontact($DATA['contactid']);
         $contact->status =5;
         $contact->datacall = date("Y-m-d");
         $contact->operatorcomment = $DATA['operatorcomment'];
@@ -119,7 +119,7 @@ class Operator extends \APP\core\base\Model {
         if (!empty($dataperezvona['error'])) message($dataperezvona['error']);
 
 
-        $contact = $this->getcontact($company);
+        $contact = $this->loadcontact($DATA['contactid']);
         $contact->status = 2;
         $contact->dataperezvona = $dataperezvona;
         $contact->tel = $nomerperezvona;
@@ -283,10 +283,6 @@ class Operator extends \APP\core\base\Model {
             return R::exec (' UPDATE users SET totalcall = totalcall +1 WHERE id = '.$_SESSION['ulogin']['id'].'  ');
         }
 
-    public function getcontact($company){
-        $contact = R::findOne('contact', 'WHERE user_id = ?  AND company_id=? LIMIT 1', [$_SESSION['ulogin']['id'], $company['id']]);
-        return $contact;
-    }
 
     public function getcom($idc){
         $company = R::findOne('company', 'WHERE id = ? LIMIT 1', [$idc]);
