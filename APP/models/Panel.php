@@ -46,12 +46,14 @@ class Panel extends \APP\core\base\Model {
         // Раскладка инвойсов
 
         $dialog1 = R::findAll("dialogs", "WHERE p1 = ?", $_SESSION['ulogin']['id']);
+        if (!$dialog1) $dialog1 = [];
 
 
         $dialog2 = R::findAll("dialogs", "WHERE p1 = ?", $_SESSION['ulogin']['id']);
+        if (!$dialog2) $dialog2 = [];
 
+      $dialogs =  array_merge($dialog1, $dialog2);
 
-       $dialogs =  array_merge($dialog1, $dialog2);
 
        show($dialogs);
 

@@ -518,7 +518,7 @@ class PanelController extends AppController {
         $dialogsinfo = $Panel->getdialogsinfo();
 
 
-        
+
 
         $this->set(compact('dialogsinfo'));
 
