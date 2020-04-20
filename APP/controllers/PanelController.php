@@ -513,16 +513,6 @@ class PanelController extends AppController {
         \APP\core\base\View::setAssets($ASSETS);
 
 
-        $invoice[24] = [
-            'idd' => 1,
-            'unread' => true,
-            'count' => 1,
-            'message' => "Сообщение....",
-        ];
-
-        // Инвойсы (сначала)
-        // Диалоги (после)
-        //id диалога
 
 
         $dialogsinfo = $Panel->getdialogsinfo($invoice);

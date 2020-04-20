@@ -40,28 +40,40 @@ class Panel extends \APP\core\base\Model {
 
 
 
-    public function getdialogsinfo($invoice){
+    public function getdialogsinfo(){
 
 
         // Раскладка инвойсов
 
-        if (!empty($invoice)){
-
-            foreach ($invoice as $key=>$val ){
-                $sobesednik = R::load("users", $key);
-                $mass['type'] =  "invoice";
-                $mass['count'] =  1;
-                $mass['unread'] =  true;
-                $mass['idd'] = $val['idd'];
-                $mass['message'] = $val['message'];
-                $mass['username'] = $sobesednik['username'];
-                $mass['avatar'] = $sobesednik['avatar'];
-                $mass['date'] = date('H:s:m');
-                $dialogs[] = $mass;
-            }
+        $dialog1 = R::findAll("dialogs", "WHERE p1 = ?", $_SESSION['ulogin']['id']);
 
 
-        }
+        $dialog2 = R::findAll("dialogs", "WHERE p1 = ?", $_SESSION['ulogin']['id']);
+
+
+       $dialogs =  array_merge($dialog1, $dialog2);
+
+       show($dialogs);
+
+       exit();
+
+//        if (!empty($invoice)){
+//
+//            foreach ($invoice as $key=>$val ){
+//                $sobesednik = R::load("users", $key);
+//                $mass['type'] =  "invoice";
+//                $mass['count'] =  1;
+//                $mass['unread'] =  true;
+//                $mass['idd'] = $val['idd'];
+//                $mass['message'] = $val['message'];
+//                $mass['username'] = $sobesednik['username'];
+//                $mass['avatar'] = $sobesednik['avatar'];
+//                $mass['date'] = date('H:s:m');
+//                $dialogs[] = $mass;
+//            }
+//
+//
+//        }
 
 
 
