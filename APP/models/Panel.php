@@ -129,7 +129,7 @@ class Panel extends \APP\core\base\Model {
 
 
     public function getdialog($idd){
-        $dialog = R::findOne("dialog", "WHERE id = ? AND messages != NULL" , [$idd]);
+        $dialog = R::findOne("dialog", "WHERE id = ? AND messages != `NULL`" , [$idd]);
         return $dialog;
     }
 
