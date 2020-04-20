@@ -19,7 +19,7 @@
 
                     <div class="header-elements">
 
-                        <a href="/panel/dialogs" class="btn btn-light"><i class="icon-square-left mr-2"></i> НАЗАД</a>
+                        <a href="/panel/dialog" class="btn btn-light"><i class="icon-square-left mr-2"></i> НАЗАД</a>
                     </div>
 
 
