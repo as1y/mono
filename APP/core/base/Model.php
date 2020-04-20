@@ -92,7 +92,7 @@ abstract class Model
         $contact['all'] = '0';
         $contact['free'] = '0';
         $contact['ready'] = '0';
-        $contact['late'] = '0';
+        $contact['perezvon'] = '0';
         $contact['otkaz'] = '0';
         $contact['bezdostupa'] = '0';
         $contact['today'] = '0';
