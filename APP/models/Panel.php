@@ -53,10 +53,15 @@ class Panel extends \APP\core\base\Model {
 
         $dialog1 = R::findAll("dialog", "WHERE p1 = ?", [$_SESSION['ulogin']['id']]);
 
-        foreach ($dialog1 as $key=>$val) $dialogs[] = $val;
+        foreach ($dialog1 as $key=>$val) {
+            if ($val['messages'] != NULL) $dialogs[] = $val;
+
+        }
 
         $dialog2 = R::findAll("dialog", "WHERE p2 = ?", [$_SESSION['ulogin']['id']]);
-        foreach ($dialog2 as $key=>$val) $dialogs[] = $val;
+        foreach ($dialog2 as $key=>$val) {
+            if ($val['messages'] != NULL) $dialogs[] = $val;
+        }
 
 
 
@@ -129,7 +134,7 @@ class Panel extends \APP\core\base\Model {
 
 
     public function getdialog($idd){
-        $dialog = R::findOne("dialog", "WHERE id = ? AND messages != `NULL`" , [$idd]);
+        $dialog = R::findOne("dialog", "WHERE id = ? " , [$idd]);
         return $dialog;
     }
 
