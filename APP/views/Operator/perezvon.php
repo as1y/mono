@@ -12,9 +12,7 @@
                 <th>ПРОЕКТ</th>
                 <th>ID</th>
                 <th>ИМЯ</th>
-                <th>КОМПАНИЯ</th>
-                <th>САЙТ</th>
-                <th>КОММЕНТАРИЙ</th>
+                <th>МОЙ КОММЕНТАРИЙ</th>
                 <th>ДАТА ПЕРЕЗВОНА</th>
                 <th>ДЕЙСТВИЕ</th>
             </tr>
@@ -38,9 +36,7 @@
                 <td><?=json_decode($row['company'], true)['company'];?></td>
                 <td><?=$row['id'];?></td>
                 <td><?=$row['name'];?></td>
-                <td><?=$row['companyname'];?></td>
-                <td><?=$row['site'];?></td>
-                <td><?=$row['comment'];?></td>
+                <td><?=$row['operatorcomment'];?></td>
                 <td><?=$data;?></td>
                 <td>
                     <a class='btn btn-danger' href='/operator/call/?id=<?=json_decode($row['company'], true)['id']?>&perezvon=<?=$row['id'];?>'> ПЕРЕЗВОНИТЬ</a>
