@@ -251,7 +251,7 @@ class OperatorController extends AppController {
 
         $contactperezvon = $operator->getcontactuser(2);
 
-
+        show$contactperezvon();
 
         $this->set(compact('contactperezvon'));
 
