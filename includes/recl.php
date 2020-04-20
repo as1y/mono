@@ -29,7 +29,7 @@
                         </div>
 
                         <div class="media-body">
-                            <a href="/panel/profile/" class="color-rose">
+                            <a href="/panel/profile/" class="nav-link ">
 
                             <div class="media-title font-weight-semibold"><?=$_SESSION['ulogin']['username']?></div>
                             <div class="font-size-xs opacity-50">
