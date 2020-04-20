@@ -12,7 +12,6 @@
         <fieldset>
 
 
-
             <div class="row">
 
 
@@ -23,7 +22,6 @@
                         <span class="form-text text-muted">Пример: IVC PROJECT</span>
                     </div>
                 </div>
-
                 <div class="col-md-6">
                     <div class="form-group">
                         <label>ТРАНСКРИПЦИЯ: <span class="text-danger">*</span></label>
@@ -31,8 +29,6 @@
                         <span class="form-text text-muted">Операторы точно произносить название компании. Пример: "ЭЙ ВИ СИ ПРОДЖЭКТ"</span>
                     </div>
                 </div>
-
-
                 <div class="col-md-6">
                     <div class="form-group">
                         <label>URL сайта: <span class="text-danger">*</span></label>
@@ -40,7 +36,6 @@
                         <span class="form-text text-muted">Пример: www.site.ru</span>
                     </div>
                 </div>
-
 
                 <div class="col-md-6">
                     <div class="form-group">
@@ -50,8 +45,6 @@
 
                     </div>
                 </div>
-
-
 
                 <div class="col-md-6">
 
@@ -72,9 +65,6 @@
 
 
                 </div>
-
-
-
 
 
                 <div class="col-md-6">

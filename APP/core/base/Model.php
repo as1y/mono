@@ -83,7 +83,63 @@ abstract class Model
 
 
 
+    public function resizepicture($url){
 
+        $w = 600;
+
+        $src = imagecreatefromjpeg($url);
+        $w_src = imagesx($src);
+        $h_src = imagesy($src);
+
+        show($url);
+        exit();
+
+
+        // создаём пустую квадратную картинку
+        // важно именно truecolor!, иначе будем иметь 8-битный результат
+        $dest = imagecreatetruecolor($w,$w);
+
+        // вырезаем квадратную серединку по x, если фото горизонтальное
+        if ($w_src > $h_src) {
+
+            imagecopyresized($dest, $src, 0, 0,
+                round((max($w_src,$h_src)-min($w_src,$h_src))/2),
+                0, $w, $w, min($w_src,$h_src), min($w_src,$h_src));
+
+        }
+
+        // вырезаем квадратную верхушку по y,
+        // если фото вертикальное (хотя можно тоже серединку)
+        if ($w_src < $h_src)
+            /*
+                   imagecopyresized($dest, $src, 0, 0, 0,
+                round((max($w_src,$h_src)-min($w_src,$h_src))/2),
+                $w, $w, min($w_src,$h_src), min($w_src,$h_src));
+*/
+            imagecopyresized($dest, $src, 0, 0, 0, 0, $w, $w,
+                min($w_src,$h_src), min($w_src,$h_src));
+
+
+        // квадратная картинка масштабируется без вырезок
+        if ($w_src==$h_src)
+            imagecopyresized($dest, $src, 0, 0, 0, 0, $w, $w, $w_src, $w_src);
+
+
+
+// Подгоняем под 300 на 300
+        $image_p = imagecreatetruecolor(300, 300); // Создаем изображение
+        imagecopyresampled($image_p, $dest, 0, 0, 0, 0, 300, 300, $w, $w);
+// Подгоняем под 300 на 300
+
+
+// Сохраняем
+        $name = md5(uniqid(rand(),1));
+        $url = "tizer_part1/".$name.".jpg";
+        imagejpeg ($image_p ,$url, 100); // Сохраняем
+// Сохраняем
+
+
+    }
 
 
 
