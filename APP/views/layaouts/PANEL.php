@@ -117,11 +117,9 @@
             <div class="breadcrumb justify-content-center">
 
 
-                <a href="/panel/dialog/" class="breadcrumb-elements-item">
+                <a href="/https://cashcall.ru/panel/messages/?newdialog=24" class="breadcrumb-elements-item">
                     <i class="icon-comment-discussion mr-2"></i>
-                    МОИ ДИАЛОГИ
-                    <span class="badge badge-pill bg-warning-400 ml-auto ml-md-0">0</span>
-
+                    Тех. поддержка
                 </a>
 
 
