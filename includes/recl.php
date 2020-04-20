@@ -56,6 +56,10 @@
             <div class="card-body p-0">
                 <ul class="nav nav-sidebar" data-nav-type="accordion">
 
+                    
+                    <li class="nav-item-header">
+                        <div class="text-uppercase font-size-sm line-height-sm">МОИ ПРОЕКТЫ</div>
+                    </li>
 
                     <li class="nav-item">
                         <a href="/master/operator/" class="nav-link <?=isset($active['operator']) ? $active['operator'] : ''; ?>" >
@@ -70,10 +74,6 @@
                         <div class="text-uppercase font-size-sm line-height-sm">ОБЗОР БИРЖИ</div>
                     </li>
 
-                    <!-- Main -->
-                    <li class="nav-item-header">
-                        <div class="text-uppercase font-size-sm line-height-sm">МОИ ПРОЕКТЫ</div>
-                    </li>
 
 
                     <li class="nav-item">
