@@ -58,7 +58,7 @@
    Пользователей онлайн:  <span class="badge bg-success"><b><?= \APP\core\base\Model::countonline()?></b></span>
         </span>
 
-    
+
     <?php endif;?>
 
 
