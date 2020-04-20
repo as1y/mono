@@ -11,6 +11,9 @@ class Operator extends \APP\core\base\Model {
 
 
         if (!empty($status)){
+
+            exit("mi tut");
+
             $mass = R::findAll("contact", "WHERE users_id = ? AND status =?", [$_SESSION['ulogin']['id'], $status]);
             return $mass;
         }
