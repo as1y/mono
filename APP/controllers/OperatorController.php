@@ -59,7 +59,7 @@ class OperatorController extends AppController {
             $_POST['optionresult'] !="result"
         ) message("Ошибка в передаче параметров");
 
-        
+
 
         if ($_POST['optionresult'] == "otkaz") $operator->SetOtkaz($_POST, $company);
         if ($_POST['optionresult'] == "bezdostupa") $operator->Setbezdostupa($_POST, $company);
@@ -75,6 +75,8 @@ class OperatorController extends AppController {
         }
 
         // МОМЕНТ С ПРОВЕРКОЙ И ДОБАВЛЕНИЕМ ЗАПИСИ!
+
+
 
         // МОМЕНТ С ПРОВЕРКОЙ И ДОБАВЛЕНИЕМ ЗАПИСИ!
         $contactinfo = $operator->newcontact($idc);
@@ -149,7 +151,7 @@ class OperatorController extends AppController {
         if (!empty($_GET['perezvon'])){
 
             $contactinfo = $operator->loadcontact($_GET['perezvon']);
-            if (empty($contactinfo)) {
+            if (empty($contactinfo) && $contactinfo['status'] != 2) {
                 $_SESSION['errors'] = "Ошибка в базе контактов №148. Обратить в тех. поддержку";
                 redir ("/operator/my/");
             }
