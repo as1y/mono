@@ -8,11 +8,7 @@ class Operator extends \APP\core\base\Model {
 
     public function getcontactuser($status = NULL){
 
-
-
         if (!empty($status)){
-
-
             $mass = R::findAll("contact", "WHERE user_id = ? AND status =?", [$_SESSION['ulogin']['id'], $status]);
             return $mass;
         }

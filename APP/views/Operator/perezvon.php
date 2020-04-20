@@ -6,80 +6,49 @@
 
     <div class="card-body">
 
-
-
-        <table  class="table datatable-basic text-center">
+        <table class="table datatable-basic text-center">
             <thead>
             <tr>
-                <th>Компания</th>
-                <th>Продукт</th>
-                <th>Цель</th>
-                <th>Оплата</th>
-                <th>Бонус</th>
-                <th>Статус</th>
-                <th>Действие</th>
-
+                <th><b>ПРОЕКТ</b></th>
+                <th><b>ID</b></th>
+                <th><b>ИМЯ</b></th>
+                <th><b>КОМПАНИЯ</b></th>
+                <th><b>САЙТ</b></th>
+                <th><b>КОММЕНТАРИЙ</b></th>
+                <th><b>ДАТА ПЕРЕЗВОНА</b></th>
+                <th><b>ДЕЙСТВИЕ</b></th>
             </tr>
             </thead>
-
-
             <tbody>
-
-            <?php foreach ($mycompanies as $key=>$val):?>
-
-                <tr>
-                    <td><?=$val['company']?></td>
-                    <td class="text-center">
-                        <?=obrezanie($val['nameproduct'], 70)?>
-                    </td>
-                    <td class="text-center">
-
-                        <?=companytype($val['type'])?>
-
-                    </td>
-                    <td class="text-center">
-
-
-                        <b> <?=$val['priceresult']?> руб.</b>
-
-                    </td>
-                    <td class="text-center">
-                        За <?=$val['mincall']?> звонков <b> <?=$val['bonuscall']?> руб.</b>
-                    </td>
-
-                    <td class="text-center">
-
-                        <?php
-                        $mystatus = json_decode($val['operators'],true)[$_SESSION['ulogin']['id']];
-                        ?>
-                        <h4><?=passoperator($mystatus)?></h4>
-
-                    </td>
-
-
-                    <td class="text-center">
-
-                        <?php if ($mystatus == 2):?>
-
-                        <a href="/operator/call/?id=<?=$val['id']?>" type="button" class="btn btn-danger"><i class="icon-phone-wave mr-2"></i>ЗВОНИТЬ</a>
-                         <?php endif;?>
-
-
-                    </td>
-                </tr>
-
-
-            <?php endforeach;?>
-
-
-
-
-
-
-
-
+            <?
+            foreach ($contactperezvon as $row):?>
+            <?
+            unset($data);
+            $today = date("d-m-Y");
+            $data = $row['data'];
+            foreach ($mycompanies as $k=>$v){
+                if ($v['id'] == $row['company_id']) $company = $mycompanies[$k];
+            }
+            if (strtotime($today) > strtotime($data)) $data = "<div class='alert alert-warning'>Вы забыли перезвонить <br><b>".$data."</b></div>";
+            if ($today == $data) $data = "$data<br><span class='label label-info'> СЕГОДНЯ !!! </span>";
+            if(empty($company['name'])) $company['name'] = "Вы уже не работаете в компании";
+            ?>
+            <tr>
+                <td style="vertical-align: middle"><?=$company['name'];?></td>
+                <td style="vertical-align: middle"><?=$row['id'];?></td>
+                <td style="vertical-align: middle"><?=$row['name'];?></td>
+                <td style="vertical-align: middle"><?=$row['company'];?></td>
+                <td style="vertical-align: middle"><?=$row['site'];?></td>
+                <td style="vertical-align: middle"><?=$row['comment'];?></td>
+                <td style="vertical-align: middle"><?=$data;?></td>
+                <td style="vertical-align: middle">
+                    <a class='btn btn-lg btn-danger' href='/panel/call/?perezvon=<?=$row['id'];?>'><i class='fa fa-phone-square'></i> ПЕРЕЗВОНИТЬ</a>
+                </td>
+            <tr>
+                <?endforeach;?>
             </tbody>
         </table>
+
     </div>
 
 
