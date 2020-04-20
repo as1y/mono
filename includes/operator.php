@@ -81,7 +81,7 @@
                         <div class="text-uppercase font-size-sm line-height-sm">РЕЗУЛЬТАТЫ</div>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link">
+                        <a href="/opertaor/perezvon/" class="nav-link <?=isset($active['perezvon']) ? $active['perezvon'] : ''; ?>">
                             <i class="icon-calendar"></i>
                             <span>	Перезвон </span>
                             <span class="badge badge-pill bg-secondary ml-auto">0</span>
