@@ -54,7 +54,7 @@
                         <a href="/panel/messages/?idd=<?=$val['id']?>" class="badge bg-dark badge-pill"><?=count(json_decode($val['messages'], true))?> </a>
 
                         <?php if ($val['uvedomlenie']):?>
-                            <span class="badge badge-success">NEW</span>
+                            <span class="badge badge-danger">NEW</span>
                         <?php endif;?>
 
 
