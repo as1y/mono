@@ -3,7 +3,40 @@ if (empty($company)) {
     $company = [];
     ?>
 
-    Контент когда нет добавленного проекта
+
+
+    <div class="col-lg-12">
+
+
+        <div class="card">
+            <div class="card-header bg-white header-elements-inline">
+                <h6 class="card-title">МОИ ПРОЕКТЫ</b></h6>
+
+
+            </div>
+
+
+
+            <div class="card-body justify-content-center text-center-end">
+
+                <div class="row">
+
+
+                    У ВАС ЕЩЕ НЕТ ПРОЕКТОВ
+
+
+                </div>
+
+
+
+
+            </div>
+        </div>
+
+
+    </div>
+
+
 
 
 <?php
