@@ -20,7 +20,12 @@ class Panel extends \APP\core\base\Model {
 
     }
 
+    public function clearuvedmolenie($dialog){
+        $dialog->uvedomlenie = NULL;
+        R::store($dialog);
+        return true;
 
+    }
 
 
 

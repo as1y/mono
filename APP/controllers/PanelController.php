@@ -357,6 +357,11 @@ class PanelController extends AppController {
 
             if ($dialog){
 
+
+                $Panel->clearuvedmolenie($dialog);
+                $dialog->uvedomlenie = NULL;
+
+
                 // Определить собеседника
 
                 $sobesednik = $Panel->lookingsobesednik($dialog);
