@@ -91,9 +91,6 @@ abstract class Model
         $w_src = imagesx($src);
         $h_src = imagesy($src);
 
-        show($url);
-        exit();
-
 
         // создаём пустую квадратную картинку
         // важно именно truecolor!, иначе будем иметь 8-битный результат
@@ -133,8 +130,6 @@ abstract class Model
 
 
 // Сохраняем
-        $name = md5(uniqid(rand(),1));
-        $url = "tizer_part1/".$name.".jpg";
         imagejpeg ($image_p ,$url, 100); // Сохраняем
 // Сохраняем
 
