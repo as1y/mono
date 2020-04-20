@@ -51,7 +51,7 @@ class Panel extends \APP\core\base\Model {
 
 
 
-        $dialog2 = R::findAll("dialog", "WHERE p1 = ?", [$_SESSION['ulogin']['id']]);
+        $dialog2 = R::findAll("dialog", "WHERE p2 = ?", [$_SESSION['ulogin']['id']]);
         show($dialog2);
 
         //
