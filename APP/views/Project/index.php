@@ -82,7 +82,7 @@
                     <div class="card card-body bg-warning-400 has-bg-image">
                         <div class="media">
                             <div class="media-body">
-                                <h3 class="mb-0"><?=getconversion($contact['ready'], $result['all'])?></h3>
+                                <h3 class="mb-0"><?=getconversion($result['all'], $contact['ready'] )?></h3>
                                 <span class="text-uppercase font-size-xs">Конверсия</span>
                             </div>
 
