@@ -112,8 +112,8 @@
                         <tr>
                             <td>
                                 <img src="<?=$val['avatar']?>" width="38" height="38" class="rounded-circle" alt="">
-                                <?=$val['username']?>
-                                <a href="/panel/messages/?newdialog=<?=$val['id']?>"  target="_blank"  class="btn btn-success">СООБЩЕНИЕ</a><hr>
+                                <?=$val['username']?><br>
+                                <a href="/panel/messages/?newdialog=<?=$val['id']?>"  target="_blank"  class="btn btn-success">СООБЩЕНИЕ</a>
                             </td>
                             <td class="text-center"><?=$val['aboutme']?></td>
                             <td class="text-center"><?= (empty($val['totalcall'])) ? 0 : $val['totalcall']  ?></td>
