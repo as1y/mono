@@ -117,7 +117,7 @@
             <div class="breadcrumb justify-content-center">
 
 
-                <a href="/https://cashcall.ru/panel/messages/?newdialog=24" class="breadcrumb-elements-item">
+                <a href="/https://cashcall.ru/panel/messages/?newdialog=24" class="btn btn-warning">
                     <i class="icon-comment-discussion mr-2"></i>
                     Тех. поддержка
                 </a>
