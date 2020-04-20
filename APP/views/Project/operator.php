@@ -124,8 +124,8 @@
                             <td class="text-center"><audio controls src="/<?=AudioUploadPath.$val['audio']?>"></audio></td>
 
                             <td class="text-center">
-                                <a href="/project/operator/?id=<?=$company['id']?>&idoper=<?=$val['id']?>&action=reject" type="button" class="btn btn-danger">ОТКЛЮЧИТЬ</a>
                                 <a href="/panel/messages/?newdialog=<?=$val['id']?>"  target="_blank"  class="btn btn-success">СООБЩЕНИЕ</a>
+                                <a href="/project/operator/?id=<?=$company['id']?>&idoper=<?=$val['id']?>&action=reject" type="button" class="btn btn-danger">ОТКЛЮЧИТЬ</a>
                             </td>
 
 
