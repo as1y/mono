@@ -111,7 +111,6 @@ class OperatorController extends AppController {
         if ($company === false){
             $_SESSION['errors'] = "У Вас нет допуска к проекту";
             redir ("/operator/my/");
-
         }
 
 
@@ -136,15 +135,25 @@ class OperatorController extends AppController {
 
 
 
+        // Забираем скрипт
+        $script = $operator->getscript($idc);
+        // Забираем скрипт
+
 
         // Проверяем перезвон. Если он есть, то загружаем его
         if (!empty($_GET['perezvon'])){
 
+            $contactinfo = $operator->loadcontact($_GET['perezvon']);
+            if (empty($contactinfo)) {
+                $_SESSION['errors'] = "Ошибка в базе контактов №148. Обратить в тех. поддержку";
+                redir ("/operator/my/");
+            }
 
-            exit("типа должны делать перезвона");
+            $this->set(compact('company', 'contactinfo', 'script'));
+            return true;
+
 
         }
-
         //Проверяем перезвон. Если он есть, то загрзужаем контакт их перезвона
 
 
@@ -161,9 +170,7 @@ class OperatorController extends AppController {
 
         // Берем контакт на звонок
 
-        // Забираем скрипт
-        $script = $operator->getscript($idc);
-        // Забираем скрипт
+
 
 
         // Проверяем есть ли бронь на контакт. Если есть, то загружаем данные контакта из брони

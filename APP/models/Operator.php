@@ -258,6 +258,13 @@ class Operator extends \APP\core\base\Model {
         return R::findOne('contact', 'WHERE company_id = ? AND status = 0', [$idc]);
     }
 
+
+    public function loadcontact($id) {
+        return R::findOne('contact', 'id = ? ', [$id]);
+    }
+
+
+
     public function setbron($idcont) {
 
         $contact = R::load('contact',$idcont);
