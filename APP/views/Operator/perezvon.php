@@ -41,7 +41,7 @@
                 <td style="vertical-align: middle"><?=$row['comment'];?></td>
                 <td style="vertical-align: middle"><?=$data;?></td>
                 <td style="vertical-align: middle">
-                    <a class='btn btn-lg btn-danger' href='/panel/call/?perezvon=<?=$row['id'];?>'><i class='fa fa-phone-square'></i> ПЕРЕЗВОНИТЬ</a>
+                    <a class='btn btn-danger' href='/panel/call/?perezvon=<?=$row['id'];?>'> ПЕРЕЗВОНИТЬ</a>
                 </td>
             <tr>
                 <?endforeach;?>
