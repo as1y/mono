@@ -88,7 +88,7 @@ class MasterController extends AppController {
 
             if ($validation){
                 if ($add->addproject($_POST)){
-                    redir("/panel/");
+                    redir("/master/");
                 }else{
                     $_SESSION['errors'] = "Ошибка базы данных. Попробуйте позже.";
                     redir("/master/add");

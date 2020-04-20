@@ -65,7 +65,7 @@ class Addp extends \APP\core\base\Model {
         //ФОРМИРУЕМ МАССИВ ДАННЫХ ДЛЯ РЕГИСТРАЦИИ
         $uniq = [
             'client_id' => $_SESSION['ulogin']['id'],
-            'status' => "1",
+            'status' => "2",
             'datastart' => date("Y-m-d H:i:s"),
             'daylimit' => "5",
             'formresult' => '[{"NAME":"Имя","TYPE":1}]',
