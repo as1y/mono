@@ -65,10 +65,6 @@
 
 
 
-            <a href="/panel/balance/" type="button" class="breadcrumb-elements-item"><i class="icon-wallet mr-2"></i>
-                <span class="badge badge-success"><b><?=$_SESSION['ulogin']['bal']?></b> Р.</span>
-
-            </a>
 
 
             <li class="nav-item dropdown dropdown-user">
@@ -78,12 +74,12 @@
                 </a>
 
                 <div class="dropdown-menu dropdown-menu-right">
+                    <a href="/panel/balance/" class="dropdown-item"><i class="icon-wallet"></i> Баланс  &nbsp;<span class="badge badge-success"><b><?=$_SESSION['ulogin']['bal']?></b> Р.</span></a>
                     <a href="/panel/profile/" class="dropdown-item"><i class="icon-user-plus"></i> Мой профиль</a>
                     <a href="/panel/refferal/" class="dropdown-item"><i class="icon-cash"></i> Партнерскся программа</a>
 
                     <a href="/panel/faq/" class="dropdown-item"><i class="icon-question3"></i> F.A.Q</a>
 
-                    <a href="/panel/balance/" class="dropdown-item"><i class="icon-wallet"></i> Баланс <span class="badge badge-success"><b><?=$_SESSION['ulogin']['bal']?></b> Р.</span></a>
                     <div class="dropdown-divider"></div>
                     <a href="/panel/settings/" class="dropdown-item"><i class="icon-cog5"></i> Настройки аккаунта</a>
                     <a href="/user/logout/" class="dropdown-item"><i class="icon-switch2"></i> Выход</a>
