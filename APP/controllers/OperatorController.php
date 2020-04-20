@@ -245,7 +245,7 @@ class OperatorController extends AppController {
         $ASSETS[] = ["js" => "/global_assets/js/plugins/tables/datatables/datatables.min.js"];
         $ASSETS[] = ["js" => "/assets/js/datatables_basic.js"];
         \APP\core\base\View::setAssets($ASSETS);
-        
+
         $contactperezvon = $operator->getcontactuser(2);
 
 

@@ -9,16 +9,18 @@
         <table class="table datatable-basic text-center">
             <thead>
             <tr>
-                <th><b>ПРОЕКТ</b></th>
-                <th><b>ID</b></th>
-                <th><b>ИМЯ</b></th>
-                <th><b>КОМПАНИЯ</b></th>
-                <th><b>САЙТ</b></th>
-                <th><b>КОММЕНТАРИЙ</b></th>
-                <th><b>ДАТА ПЕРЕЗВОНА</b></th>
-                <th><b>ДЕЙСТВИЕ</b></th>
+                <th>ПРОЕКТ</th>
+                <th>ID</th>
+                <th>ИМЯ</th>
+                <th>КОМПАНИЯ</th>
+                <th>САЙТ</th>
+                <th>КОММЕНТАРИЙ</th>
+                <th>ДАТА ПЕРЕЗВОНА</th>
+                <th>ДЕЙСТВИЕ</th>
             </tr>
             </thead>
+
+            
             <tbody>
             <?
             foreach ($contactperezvon as $row):?>
