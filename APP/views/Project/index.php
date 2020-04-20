@@ -1,7 +1,7 @@
 
 <div class="card">
     <div class="card-header bg-white header-elements-inline">
-        <h6 class="card-title">Статистика <b><?=$company['name']?></b></h6>
+        <h6 class="card-title">СТАТИСТИКА <b><?=$company['name']?></b></h6>
         <div class="header-elements">
             <div class="list-icons">
                 <a class="list-icons-item" data-action="collapse"></a>
@@ -106,7 +106,7 @@
 
     <div class="card text-center">
         <div class="card-header bg-white header-elements-inline">
-            <h6 class="card-title">Статус проекта <b><?=$company['name']?></b></h6>
+            <h6 class="card-title">СТАТУС ПРОЕКТА <b><?=$company['name']?></b></h6>
 
             <div class="header-elements">
                 <div class="list-icons">

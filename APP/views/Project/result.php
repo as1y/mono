@@ -2,7 +2,7 @@
     <div class="col-md-12">
 
         <div class="card">
-            <div class="card-header header-elements-inline">
+            <div class="card-header bg-white header-elements-inline">
                 <h5 class="card-title">РЕЗУЛЬТАТ НА ПРОВЕРКЕ</h5>
 
             </div>

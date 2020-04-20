@@ -11,7 +11,7 @@
     <div class="col-md-12">
 
         <div class="card">
-            <div class="card-header header-elements-inline">
+            <div class="card-header bg-white header-elements-inline">
                 <h5 class="card-title">ЗАЯВКИ В ПРОЕКТ</h5>
 
             </div>
@@ -80,7 +80,7 @@
     <div class="col-md-12">
 
         <div class="card">
-            <div class="card-header header-elements-inline">
+            <div class="card-header bg-white header-elements-inline">
                 <h5 class="card-title">ОПЕРАТОРЫ НА ПРОЕКТЕ</h5>
 
             </div>
