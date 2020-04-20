@@ -83,8 +83,12 @@ abstract class Model
 
 
 
-    public static function contact($idc) {
-        $mass = R::findAll("contact", "WHERE company_id = ?", [$idc]);
+    public static function contact($id, $type = "company") {
+
+	    if ($type == "company") $mass = R::findAll("contact", "WHERE company_id = ?", [$id]);
+        if ($type == "user") $mass = R::findAll("contact", "WHERE user_id = ?", [$id]);
+
+
         $contact['all'] = '0';
         $contact['free'] = '0';
         $contact['ready'] = '0';
@@ -102,6 +106,7 @@ abstract class Model
             if ($val['datacall'] == date("Y-m-d") ) $contact['today']++;
         }
         return $contact;
+
     }
     public static function getres($idc) {
         $mass = R::findAll("result", "WHERE company_id = ?", [$idc]);

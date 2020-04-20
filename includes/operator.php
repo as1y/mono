@@ -89,7 +89,7 @@
 
 
                     <li class="nav-item">
-                        <a href="#" class="nav-link">
+                        <a href="#" class="nav-link <?=isset($active['moderate']) ? $active['moderate'] : ''; ?>">
                             <i class="icon-eye"></i>
                             <span>	На модерации </span>
                             <span class="badge badge-pill bg-secondary ml-auto">0</span>
@@ -97,14 +97,14 @@
                     </li>
 
                     <li class="nav-item">
-                        <a href="#" class="nav-link">
+                        <a href="#" class="nav-link <?=isset($active['dorabotka']) ? $active['dorabotka'] : ''; ?>">
                             <i class="icon-wrench"></i>
                             <span>	Доработка </span>
                             <span class="badge badge-pill bg-secondary ml-auto">0</span>
                         </a>
                     </li>
 
-                    <li class="nav-item">
+                    <li class="nav-item <?=isset($active['success']) ? $active['success'] : ''; ?>">
                         <a href="#" class="nav-link">
                             <i class="icon-checkmark"></i>
                             <span>	Успешно </span>
