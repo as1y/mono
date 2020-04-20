@@ -2,7 +2,7 @@
 <div class="row">
     <div class="col-md-12">
 <div class="card">
-    <div class="card-header bg-white header-elements-inline">
+    <div class="card-header bg-dark text-white header-elements-inline">
         <h6 class="card-title">Добавление проекта</h6>
 
 
