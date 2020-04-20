@@ -300,6 +300,7 @@ class PanelController extends AppController {
             $dialog = $Panel->checkdialog($_GET['newdialog']);
 
             if ($dialog){
+                $Panel->clearuvedmolenie($dialog);
                 $dialog['messages'] = json_decode($dialog['messages'], true);
                 if (empty($dialog['messages'])) $dialog['messages']  = [];
                 $this->set(compact('dialog', 'sobesednik'));
