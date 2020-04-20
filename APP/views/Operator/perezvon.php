@@ -35,14 +35,14 @@
             if(empty($company['name'])) $company['name'] = "Вы уже не работаете в компании";
             ?>
             <tr>
-                <td style="vertical-align: middle"><?=json_decode($row['company'], true)['company'];?></td>
-                <td style="vertical-align: middle"><?=$row['id'];?></td>
-                <td style="vertical-align: middle"><?=$row['name'];?></td>
-                <td style="vertical-align: middle"><?=$row['companyname'];?></td>
-                <td style="vertical-align: middle"><?=$row['site'];?></td>
-                <td style="vertical-align: middle"><?=$row['comment'];?></td>
-                <td style="vertical-align: middle"><?=$data;?></td>
-                <td style="vertical-align: middle">
+                <td><?=json_decode($row['company'], true)['company'];?></td>
+                <td><?=$row['id'];?></td>
+                <td><?=$row['name'];?></td>
+                <td><?=$row['companyname'];?></td>
+                <td><?=$row['site'];?></td>
+                <td><?=$row['comment'];?></td>
+                <td><?=$data;?></td>
+                <td>
                     <a class='btn btn-danger' href='/panel/call/?perezvon=<?=$row['id'];?>'> ПЕРЕЗВОНИТЬ</a>
                 </td>
             <tr>
