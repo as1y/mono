@@ -127,9 +127,8 @@ if (empty($company)) {
 
 
                                 <?php
-                                    $countnew = countnewoperators($row);
+                                    $countnew = countoperators($row, "new");
                                 ?>
-
 
                                 <?php if($countnew > 0):?>
                                     <span class="badge bg-warning ml-auto"><?=$countnew?></span>
@@ -153,7 +152,7 @@ if (empty($company)) {
 										<i class="icon-grid mr-2"></i>
 										Операторов на проекте
 									</span>
-                                <span class="badge bg-success ml-auto">0</span>
+                                <span class="badge bg-success ml-auto"><?=countoperators($row, "all")?></span>
                             </a>
 
 
