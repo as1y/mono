@@ -190,7 +190,7 @@ class PanelController extends AppController {
 
                 copy($_FILES['file']['tmp_name'], $urlnew); // Копируем из общего котла в тизерку
 
-//                $Panel->resizepicture($urlnew);
+                $Panel->resizepicture($urlnew);
 
 
                 if (!empty($_SESSION['ulogin']['avatar'])) unlink($_SESSION['ulogin']['avatar']);
