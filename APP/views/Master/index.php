@@ -111,7 +111,7 @@ if (empty($company)) {
                         <br>
                         <ul class="list-group list-group-flush border-top">
 
-                            <a href="#" class="list-group-item list-group-item-action">
+                            <a href="/project/result/?id=<?=$row['id']?>" class="list-group-item list-group-item-action">
 									<span class="font-weight-semibold">
 										<i class="icon-grid mr-2"></i>
 										Новых звонков на одобрение
