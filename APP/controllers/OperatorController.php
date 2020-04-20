@@ -153,7 +153,7 @@ class OperatorController extends AppController {
             $contactinfo = $operator->loadcontact($_GET['perezvon']);
             if (empty($contactinfo) && $contactinfo['status'] != 2) {
                 $_SESSION['errors'] = "Ошибка в базе контактов №148. Обратить в тех. поддержку";
-                redir ("/operator/my/");
+                redir ("/operator/perezvon/");
             }
 
             $this->set(compact('company', 'contactinfo', 'script'));
