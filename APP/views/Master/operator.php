@@ -37,7 +37,7 @@
                             <td class="text-center">
 
                                 <a href="<?=generateprofilelink($val)?>" target="_blank"  class="btn btn-info">ПРОФИЛЬ</a>
-
+                                <a href="/panel/messages/?newdialog=<?=$val['id']?>" target="_blank"  class="btn btn-success">СООБЩЕНИЕ</a>
                             </td>
 
 
