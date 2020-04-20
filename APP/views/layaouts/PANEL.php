@@ -153,9 +153,9 @@
             <div class="breadcrumb justify-content-center">
 
 
-                <a href="/panel/ticket/" class="breadcrumb-elements-item">
+                <a href="/panel/dialog/" class="breadcrumb-elements-item">
                     <i class="icon-comment-discussion mr-2"></i>
-                    Написать тикет
+                    МОИ СООБЩЕНИЯ
                     <span class="badge badge-pill bg-warning-400 ml-auto ml-md-0">0</span>
 
                 </a>
