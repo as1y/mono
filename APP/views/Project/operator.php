@@ -117,7 +117,7 @@
 
                                 <br>
 
-                                <a href="/panel/messages/?newdialog=<?=$val['id']?>"  target="_blank"  class="btn btn-success">СООБЩЕНИЕ</a>
+
                             </td>
                             <td class="text-center"><?=$val['aboutme']?></td>
                             <td class="text-center"><?= (empty($val['totalcall'])) ? 0 : $val['totalcall']  ?></td>
@@ -125,7 +125,7 @@
 
                             <td class="text-center">
                                 <a href="/project/operator/?id=<?=$company['id']?>&idoper=<?=$val['id']?>&action=reject" type="button" class="btn btn-danger">ОТКЛЮЧИТЬ</a>
-
+                                <a href="/panel/messages/?newdialog=<?=$val['id']?>"  target="_blank"  class="btn btn-success">СООБЩЕНИЕ</a>
                             </td>
 
 
