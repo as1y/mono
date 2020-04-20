@@ -121,7 +121,7 @@ class Project extends \APP\core\base\Model {
         $OperatoriNaProekte = [];
 
         $newpass = json_decode($company['operators'], true);
-
+        if (empty($newpass)) $newpass = [];
 
         foreach ($newpass as $key=>$val){
             if ($val == 2) $OperatoriNaProekte[]  = R::load('users', $key);
