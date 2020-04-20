@@ -43,7 +43,7 @@
                 <td><?=$row['comment'];?></td>
                 <td><?=$data;?></td>
                 <td>
-                    <a class='btn btn-danger' href='/operator/call/?perezvon=<?=$row['id'];?>'> ПЕРЕЗВОНИТЬ</a>
+                    <a class='btn btn-danger' href='/operator/call/?id=<?=json_decode($row['company'], true)['id']?>&perezvon=<?=$row['id'];?>'> ПЕРЕЗВОНИТЬ</a>
                 </td>
             <tr>
                 <?endforeach;?>
