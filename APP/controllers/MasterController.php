@@ -35,6 +35,8 @@ class MasterController extends AppController {
         $company = $panel->allcompany($_SESSION['ulogin']['id']);
 
 
+
+
         
         $this->set(compact('company'));
 

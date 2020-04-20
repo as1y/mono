@@ -83,6 +83,43 @@ abstract class Model
 
 
 
+    public static function contact($idc) {
+        $mass = R::findAll("contact", "WHERE company_id = ?", [$idc]);
+        $contact['all'] = '0';
+        $contact['free'] = '0';
+        $contact['ready'] = '0';
+        $contact['late'] = '0';
+        $contact['otkaz'] = '0';
+        $contact['bezdostupa'] = '0';
+        $contact['today'] = '0';
+        foreach ($mass as  $val) {
+            $contact['all']++;
+            if ($val['status'] == 0 ) $contact['free']++;
+            if ($val['status'] != 0 ) $contact['ready']++;
+            if ($val['status'] == 2 ) $contact['perezvon']++;
+            if ($val['status'] == 3 ) $contact['otkaz']++;
+            if ($val['status'] == 4 ) $contact['bezdostupa']++;
+            if ($val['datacall'] == date("Y-m-d") ) $contact['today']++;
+        }
+        return $contact;
+    }
+    public static function getres($idc) {
+        $mass = R::findAll("result", "WHERE company_id = ?", [$idc]);
+        $result['all'] = '0';
+        $result['moderation'] = '0';
+        $result['today'] = '0';
+        foreach ($mass as $val) {
+            if ($val['status'] == 1 ) $result['all']++;
+            if ($val['status'] == 0 ) $result['moderation']++;
+            if ($val['date'] == date("Y-m-d") and $val['status'] == 1  ) $result['today']++;
+        }
+        return $result;
+    }
+
+
+
+
+
     public function resizepicture($url){
 
         $w = 600;

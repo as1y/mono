@@ -88,23 +88,30 @@ if (empty($company)) {
 
                     <div class="col-md-6">
 
+                        <?php
+                        $todaycall = \APP\core\base\Model::contact($row['id'])['all'];
+                        $todayresult = \APP\core\base\Model::getres($row['id'])['today'];
+
+                        ?>
+
+
                         <div class="row text-center">
                             <div class="col-4">
                                 <p><i class="icon-phone2 icon-2x d-inline-block text-indigo-400"></i></p>
-                                <h5 class="font-weight-semibold mb-0">0</h5>
+                                <h5 class="font-weight-semibold mb-0"><?=$todaycall?></h5>
                                 <span class="text-muted font-size-sm">Звонков сегодня</span>
                             </div>
 
                             <div class="col-4">
                                 <p><i class="icon-target2 icon-2x d-inline-block text-success-400"></i></p>
-                                <h5 class="font-weight-semibold mb-0">0</h5>
-                                <span class="text-muted font-size-sm">Успешных</span>
+                                <h5 class="font-weight-semibold mb-0"><?=$todayresult?></h5>
+                                <span class="text-muted font-size-sm">Успешных сегодня</span>
                             </div>
 
                             <div class="col-4">
                                 <p><i class="icon-percent icon-2x d-inline-block text-warning-400"></i></p>
-                                <h5 class="font-weight-semibold mb-0">0</h5>
-                                <span class="text-muted font-size-sm">Конверсия</span>
+                                <h5 class="font-weight-semibold mb-0"><?=getconversion($todaycall,$todayresult );?></h5>
+                                <span class="text-muted font-size-sm">Конверсия сегодня</span>
                             </div>
                         </div>
 
@@ -117,8 +124,6 @@ if (empty($company)) {
 										Новых звонков на одобрение
 									</span>
                                 <span class="badge bg-success ml-auto"><?=\APP\models\Master::countresultid($row['id']) ?></span>
-
-
 
                             </a>
 
