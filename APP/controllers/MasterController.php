@@ -9,7 +9,7 @@ use APP\core\base\Model;
 
 class MasterController extends AppController {
 	public $layaout = 'PANEL';
-    public $BreadcrumbsControllerLabel = "Кабинет рекламодателя";
+    public $BreadcrumbsControllerLabel = "Кабинет РЕКЛАМОДАТЕЛЯ";
     public $BreadcrumbsControllerUrl = "/master";
 
 
@@ -20,9 +20,9 @@ class MasterController extends AppController {
         //Информация о компаниях клиента
 
         $META = [
-            'title' => 'Кабинет рекламодателя',
-            'description' => 'Кабинет рекламодателя',
-            'keywords' => 'Кабинет рекламодателя ',
+            'title' => 'Кабинет РЕКЛАМОДАТЕЛЯ',
+            'description' => 'Кабинет РЕКЛАМОДАТЕЛЯ',
+            'keywords' => 'Кабинет РЕКЛАМОДАТЕЛЯ ',
         ];
         \APP\core\base\View::setMeta($META);
 

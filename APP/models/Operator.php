@@ -6,6 +6,21 @@ use RedBeanPHP\R;
 class Operator extends \APP\core\base\Model {
 
 
+    public function getcontactuser($status = ""){
+
+        if (!empty($status)){
+            $mass = R::findAll("contact", "WHERE users_id = ? AND status =?", [$_SESSION['ulogin']['id'], $status]);
+            return $mass;
+        }
+
+        $mass = R::findAll("contact", "WHERE users_id = ?", [$_SESSION['ulogin']['id']]);
+        return $mass;
+
+
+    }
+
+
+
     public function SetOtkaz($DATA, $company){
 
         $contact = $this->getcontact($company);
