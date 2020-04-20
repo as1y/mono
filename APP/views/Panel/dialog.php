@@ -33,13 +33,10 @@
 
                         <?php
                         $sobesednik =   \APP\models\Panel::lookingsobesednik($val);
-
-                        show($sobesednik);
-                        exit();
                         ?>
 
-                        <img src="<?=$val['sobesednik']['avatar']?>" width="38" height="38" class="rounded-circle" alt="">
-                        <?=$val['sobesednik']['username']?>
+                        <img src="<?=$sobesednik['avatar']?>" width="38" height="38" class="rounded-circle" alt="">
+                        <?=$sobesednik['username']?>
                     </td>
 
                     <td class="text-center">
