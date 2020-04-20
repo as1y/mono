@@ -36,7 +36,7 @@
             </div>
             <div class="col-sm-6 col-xl-3">
 
-                <a href="#">
+                <a href="/project/result/?id=<?=$company['id']?>">
 
                     <div class="card card-body bg-success-400 has-bg-image">
                         <div class="media">
@@ -56,7 +56,7 @@
             </div>
             <div class="col-sm-6 col-xl-3">
 
-                <a href="#">
+                <a href="/project/result/?id=<?=$company['id']?>">
 
                     <div class="card card-body bg-danger-400 has-bg-image">
                         <div class="media">
