@@ -119,7 +119,7 @@
 
                 <a href="/panel/messages/?newdialog=24" class="btn btn-warning">
                     <i class="icon-comment-discussion mr-2"></i>
-                    Тех. поддержка
+                    Поддержка
                 </a>
 
 
