@@ -36,7 +36,7 @@
                         ?>
 
                         <img src="<?=$sobesednik['avatar']?>" width="38" height="38" class="rounded-circle" alt="">
-               <a href="<?=generateprofilelink($sobesednik)?>" target="_blank"><?=$sobesednik['username']?></a>
+               <a class="breadcrumb-elements-item" href="<?=generateprofilelink($sobesednik)?>" target="_blank"><?=$sobesednik['username']?></a>
                     </td>
 
                     <td class="text-center">
