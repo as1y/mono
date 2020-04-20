@@ -70,7 +70,7 @@
                     </li>
                     <li class="nav-item"><a href="/master/add" class="nav-link <?=isset($active['add']) ? $active['add'] : ''; ?>"><i class="icon-phone-plus"></i> <span>Добавить проект</span></a></li>
 
-                    
+
                     <li class="nav-item-header">
                         <div class="text-uppercase font-size-sm line-height-sm">ОБЗОР БИРЖИ</div>
                     </li>

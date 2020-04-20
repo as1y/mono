@@ -119,7 +119,6 @@ if (empty($company)) {
                                 <span class="badge bg-success ml-auto">0</span>
                             </a>
 
-
                             <a href="/project/operator/?id=<?=$row['id']?>" class="list-group-item list-group-item-action">
 									<span class="font-weight-semibold">
 										<i class="icon-grid mr-2"></i>
@@ -149,7 +148,13 @@ if (empty($company)) {
                             </a>
 
 
-
+                            <a href="#" class="list-group-item list-group-item-action">
+									<span class="font-weight-semibold">
+										<i class="icon-grid mr-2"></i>
+										Операторов на проекте
+									</span>
+                                <span class="badge bg-success ml-auto">0</span>
+                            </a>
 
 
                         </ul>
