@@ -112,7 +112,11 @@
                         <tr>
                             <td>
                                 <img src="<?=$val['avatar']?>" width="38" height="38" class="rounded-circle" alt="">
-                                <?=$val['username']?><br>
+                                <a href="<?=generateprofilelink($val)?>" class="breadcrumb-item" target="_blank">
+                                    <?=$val['username']?></a>
+
+                                <br>
+
                                 <a href="/panel/messages/?newdialog=<?=$val['id']?>"  target="_blank"  class="btn btn-success">СООБЩЕНИЕ</a>
                             </td>
                             <td class="text-center"><?=$val['aboutme']?></td>
