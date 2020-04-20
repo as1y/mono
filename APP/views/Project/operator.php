@@ -37,7 +37,7 @@
                             <td>
                                 <img src="<?=$val['avatar']?>" width="38" height="38" class="rounded-circle" alt="">
 
-                                <a href="<?=generateprofilelink($val)?>" class="rounded-circle mr-2" target="_blank">
+                                <a href="<?=generateprofilelink($val)?>" class="breadcrumb-item" target="_blank">
                                 <?=$val['username']?>
                                 </a>
 
