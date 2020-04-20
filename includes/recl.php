@@ -29,10 +29,14 @@
                         </div>
 
                         <div class="media-body">
+                            <a href="/panel/profile/">
+
                             <div class="media-title font-weight-semibold"><?=$_SESSION['ulogin']['username']?></div>
                             <div class="font-size-xs opacity-50">
                                 <i class="fa fa-user font-size-sm"></i> <?=rendertypeaccount($_SESSION['ulogin']['role'])?>
                             </div>
+                            </a>
+
                         </div>
 
 
