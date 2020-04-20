@@ -91,7 +91,6 @@ if (empty($company)) {
                         <?php
                         $todaycall = \APP\core\base\Model::contact($row['id'])['today'];
                         $todayresult = \APP\core\base\Model::getres($row['id'])['today'];
-
                         ?>
 
 

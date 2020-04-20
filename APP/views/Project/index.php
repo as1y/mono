@@ -24,7 +24,7 @@
                             </div>
 
                             <div class="media-body text-right">
-                                <h3 class="mb-0">0</h3>
+                                <h3 class="mb-0"><?=$contact['ready']?>></h3>
                                 <span class="text-uppercase font-size-xs">Звонков</span>
                             </div>
                         </div>
