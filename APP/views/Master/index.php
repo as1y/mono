@@ -109,7 +109,7 @@ if (empty($company)) {
 
                             <div class="col-4">
                                 <p><i class="icon-percent icon-2x d-inline-block text-warning-400"></i></p>
-                                <h5 class="font-weight-semibold mb-0"><?=getconversion($todaycall,$todayresult );?></h5>
+                                <h5 class="font-weight-semibold mb-0"><?=getconversion($todayresult, $todaycall);?></h5>
                                 <span class="text-muted font-size-sm">Конверсия сегодня</span>
                             </div>
                         </div>
