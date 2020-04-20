@@ -36,10 +36,17 @@
                         <tr>
                             <td>
                                 <img src="<?=$val['avatar']?>" width="38" height="38" class="rounded-circle" alt="">
-                                <?=$val['username']?></td>
+
+                                <a href="<?=generateprofilelink($sobesednik)?>" class="rounded-circle mr-2" target="_blank">
+                                <?=$val['username']?>
+                                </a>
+
+                            </td>
                             <td class="text-center"><?=$val['aboutme']?></td>
                             <td class="text-center"><?= (empty($val['totalcall'])) ? 0 : $val['totalcall']  ?></td>
-                            <td class="text-center">""</td>
+                            <td class="text-center">
+                            <audio src="<?=$val['audio']?>"></audio>
+                            </td>
 
                             <td class="text-center">
 
