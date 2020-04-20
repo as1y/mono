@@ -206,6 +206,13 @@ abstract class Model
 	    return  R::count('online');
     }
 
+
+    public static function countnewmessages(){
+        return  R::count('dialog', "WHERE uvedomlenie =?", [$_SESSION['ulogin']['id']]);
+    }
+
+
+
     public static function countoperator(){
         return  R::count('users', "WHERE role=?", ["O"]);
     }
