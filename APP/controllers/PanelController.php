@@ -109,111 +109,6 @@ class PanelController extends AppController {
 
 
 
-    public function  viewticketAction(){
-        $Panel =  new Panel();
-
-        if ($_POST){
-           $result = $Panel->addmessageticket($_POST, $_GET['id']);
-
-
-            if ($result == 1) redir("/panel/viewticket/?id=".$_GET['id']);
-            else{
-                $_SESSION['errors'] = $result;
-                redir("/panel/viewticket/?id=".$_GET['id']);
-            }
-
-        }
-
-
-        if (!empty($_GET['action']) && $_GET['action'] == "close"){
-
-            $Panel->closeticket($_GET['id']);
-            redir("/panel/ticket/");
-
-
-        }
-
-
-        $tickets = $Panel->gettickets($_GET['id']);
-
-        if (!$tickets) return false;
-
-        $messages = json_decode($tickets['messages'], true);
-
-
-
-
-
-        $META = [
-            'title' => 'Системные тикеты',
-            'description' => 'Системные тикеты',
-            'keywords' => 'Системные тикеты',
-        ];
-
-        if ($_SESSION['ulogin']['role'] == "R") $BREADCRUMBS['HOME'] = ['Label' => "Кабинет рекламодателя", 'Url' => "/master"];
-        if ($_SESSION['ulogin']['role'] == "O") $BREADCRUMBS['HOME'] = ['Label' => "Кабинет  оператора", 'Url' => "/operator"];
-        $BREADCRUMBS['DATA'][] = ['Label' => "Тикеты", 'Url' => "/panel/ticket/"];
-        $BREADCRUMBS['DATA'][] = ['Label' => "Тикет ".$tickets['zagolovok']];
-
-
-
-        \APP\core\base\View::setMeta($META);
-        \APP\core\base\View::setBreadcrumbs($BREADCRUMBS);
-
-
-
-        $this->set(compact('tickets', 'messages'));
-
-
-
-
-    }
-
-
-    public function ticketAction(){
-        $Panel =  new Panel();
-
-        if ($_POST){
-
-
-           $result = $Panel->addticket($_POST);
-
-            if ($result == 1){
-                $_SESSION['success'] = "Тикет добавлен";
-                redir("/panel/ticket/");
-            }else{
-                $_SESSION['errors'] = $result;
-                redir("/panel/ticket/");
-
-            }
-
-
-        }
-
-
-        $META = [
-            'title' => 'Системные тикеты',
-            'description' => 'Системные тикеты',
-            'keywords' => 'Системные тикеты',
-        ];
-
-        if ($_SESSION['ulogin']['role'] == "R") $BREADCRUMBS['HOME'] = ['Label' => "Кабинет рекламодателя", 'Url' => "/master"];
-        if ($_SESSION['ulogin']['role'] == "O") $BREADCRUMBS['HOME'] = ['Label' => "Кабинет  оператора", 'Url' => "/operator"];
-        $BREADCRUMBS['DATA'][] = ['Label' => "Тикеты"];
-
-        \APP\core\base\View::setMeta($META);
-        \APP\core\base\View::setBreadcrumbs($BREADCRUMBS);
-
-        $tickets = $Panel->getticket();
-
-
-        $this->set(compact('tickets'));
-
-
-
-
-    }
-
 
     public function loadzapisAction(){
         $this->layaout = false;
@@ -435,7 +330,6 @@ class PanelController extends AppController {
         }
 
 
-
         //Отправка сообщения в диалоге
         if ($_POST && $_GET['idd']){
 
@@ -450,8 +344,6 @@ class PanelController extends AppController {
             return true;
 
         }
-
-
 
 
 
@@ -481,8 +373,7 @@ class PanelController extends AppController {
         }
 
 
-
-
+        redir("/panel/dialog/");
 
 
     }
