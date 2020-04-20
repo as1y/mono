@@ -41,6 +41,12 @@
 <!-- Main navbar -->
 <div class="navbar navbar-expand-md navbar-dark">
 
+    <?php if (empty($_SESSION['ulogin'])):?>
+        <a href="/" class="navbar-nav-link " >
+            <b>CASHCALL.RU </b>
+        </a>
+
+    <?endif; ?>
 
     <?php if (!empty($_SESSION['ulogin'])):?>
     <a href="/panel/" class="navbar-nav-link " >
