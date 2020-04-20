@@ -117,7 +117,7 @@
             <div class="breadcrumb justify-content-center">
 
 
-                <a href="/panel/messages/?newdialog=24" class="btn btn-warning">
+                <a href="/panel/messages/?newdialog=24" class="btn btn-warning btn-sm">
                     <i class="icon-comment-discussion mr-2"></i>
                     Поддержка
                 </a>
