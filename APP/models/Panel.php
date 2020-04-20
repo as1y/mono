@@ -50,13 +50,12 @@ class Panel extends \APP\core\base\Model {
 
         foreach ($dialog1 as $key=>$val) $dialogs[] = $val;
 
-
         $dialog2 = R::findAll("dialog", "WHERE p2 = ?", [$_SESSION['ulogin']['id']]);
         foreach ($dialog2 as $key=>$val) $dialogs[] = $val;
 
-        
-
        show($dialogs);
+
+
 
        exit();
 
