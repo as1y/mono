@@ -207,7 +207,7 @@ abstract class Model
     }
 
     public static function countoperator(){
-        return  R::count('online', "WHERE role=?", ["O"]);
+        return  R::count('users', "WHERE role=?", ["O"]);
     }
 
 
