@@ -116,9 +116,7 @@ if (empty($company)) {
 										<i class="icon-grid mr-2"></i>
 										Новых звонков на одобрение
 									</span>
-                                <?=\APP\models\Master::countresultid($row['id']) ?>
-
-                                <span class="badge bg-success ml-auto">0</span>
+                                <span class="badge bg-success ml-auto"><?=\APP\models\Master::countresultid($row['id']) ?></span>
 
 
 
