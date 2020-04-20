@@ -91,7 +91,7 @@ class MasterController extends AppController {
                     redir("/panel/");
                 }else{
                     $_SESSION['errors'] = "Ошибка базы данных. Попробуйте позже.";
-                    redir("/panel/add");
+                    redir("/master/add");
                 }
             }
 
@@ -99,7 +99,7 @@ class MasterController extends AppController {
 
             if (!$validation){
                 $_SESSION['errors'] = "Что-то пошло не так.";
-                redir("/panel/add");
+                redir("/master/add");
 
             }
 
