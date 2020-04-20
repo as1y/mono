@@ -132,13 +132,20 @@ class OperatorController extends AppController {
         $ASSETS[] = ["js" => "/global_assets/js/plugins/notifications/sweet_alert.min.js"];
         $ASSETS[] = ["js" => "/global_assets/js/plugins/forms/styling/uniform.min.js"];
         $ASSETS[] = ["js" => "//cdn.voximplant.com/edge/voximplant.min.js"];
-
-
-
-
-
         \APP\core\base\View::setAssets($ASSETS);
 
+
+
+
+        // Проверяем перезвон. Если он есть, то загружаем его
+        if (!empty($_GET['perezvon'])){
+
+
+            exit("типа должны делать перезвона");
+
+        }
+
+        //Проверяем перезвон. Если он есть, то загрзужаем контакт их перезвона
 
 
 
