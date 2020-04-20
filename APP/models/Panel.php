@@ -53,36 +53,7 @@ class Panel extends \APP\core\base\Model {
         $dialog2 = R::findAll("dialog", "WHERE p2 = ?", [$_SESSION['ulogin']['id']]);
         foreach ($dialog2 as $key=>$val) $dialogs[] = $val;
 
-
-//        if (!empty($invoice)){
-//
-//            foreach ($invoice as $key=>$val ){
-//                $sobesednik = R::load("users", $key);
-//                $mass['type'] =  "invoice";
-//                $mass['count'] =  1;
-//                $mass['unread'] =  true;
-//                $mass['idd'] = $val['idd'];
-//                $mass['message'] = $val['message'];
-//                $mass['username'] = $sobesednik['username'];
-//                $mass['avatar'] = $sobesednik['avatar'];
-//                $mass['date'] = date('H:s:m');
-//                $dialogs[] = $mass;
-//            }
-//
-//
-//        }
-
-
-
-
-
-
-        // Раскладываеш диалоги
-
-
-
-
-
+        
 
         return $dialogs;
 

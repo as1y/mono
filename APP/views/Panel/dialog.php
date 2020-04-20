@@ -30,6 +30,14 @@
                 <tr>
 
                     <td>
+
+                        <?php
+                        $sobesednik =   \APP\models\Panel::lookingsobesednik($val);
+
+                        show();
+                        exit();
+                        ?>
+
                         <img src="<?=$val['sobesednik']['avatar']?>" width="38" height="38" class="rounded-circle" alt="">
                         <?=$val['sobesednik']['username']?>
                     </td>
