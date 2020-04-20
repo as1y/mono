@@ -53,8 +53,14 @@
 
 
                         <?php
-                        if (empty($val['messages'])) $val['messages'] = [];
-                        $countv = count(json_decode($val['messages'], true));
+                        if (empty($val['messages'])) {
+                            $val['messages'] = [];
+                            $countv = 0;
+                        }else{
+                            $countv = count(json_decode($val['messages'], true));
+                        }
+
+
 
 
                         ?>
