@@ -45,7 +45,7 @@
                             <td class="text-center"><?=$val['aboutme']?></td>
                             <td class="text-center"><?= (empty($val['totalcall'])) ? 0 : $val['totalcall']  ?></td>
                             <td class="text-center">
-                            <audio controls src="<?=$val['audio']?>"></audio>
+                            <audio controls src="/<?=AudioUploadPath.$val['audio']?>"></audio>
                             </td>
 
                             <td class="text-center">
