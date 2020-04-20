@@ -119,6 +119,10 @@
 
                             <td class="text-center">
 
+                                <a href="/panel/messages/?newdialog=<?=$val['id']?>" type="button" class="btn btn-success">СООБЩЕНИЕ</a><hr>
+
+
+
                                 <a href="/project/operator/?id=<?=$company['id']?>&idoper=<?=$val['id']?>&action=reject" type="button" class="btn btn-danger">ОТКЛЮЧИТЬ</a>
 
                             </td>
