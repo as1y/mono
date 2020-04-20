@@ -9,7 +9,7 @@ if (empty($company)) {
 
 
         <div class="card">
-            <div class="card-header bg-white header-elements-inline">
+            <div class="card-header bg-dark text-white header-elements-inline">
                 <h6 class="card-title">МОИ ПРОЕКТЫ</b></h6>
 
 
