@@ -33,7 +33,6 @@ class Addp extends \APP\core\base\Model {
             ['tematika'],
             ['aboutcompany'],
             ['nameproduct'],
-            ['minimumprice'],
             ['type'],
             ['priceresult'],
             ['mincall'],
