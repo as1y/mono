@@ -36,7 +36,7 @@
                 <td style="vertical-align: middle"><?=json_decode($row['company'], true)['company'];?></td>
                 <td style="vertical-align: middle"><?=$row['id'];?></td>
                 <td style="vertical-align: middle"><?=$row['name'];?></td>
-                <td style="vertical-align: middle"><?=$row['company'];?></td>
+                <td style="vertical-align: middle"><?=$row['companyname'];?></td>
                 <td style="vertical-align: middle"><?=$row['site'];?></td>
                 <td style="vertical-align: middle"><?=$row['comment'];?></td>
                 <td style="vertical-align: middle"><?=$data;?></td>
