@@ -63,7 +63,7 @@
                         <a href="/master/operator/" class="nav-link <?=isset($active['operator']) ? $active['operator'] : ''; ?>" >
                             <i class="icon-users4"></i>
                             <span>	Операторы </span>
-                            <span class="badge badge-pill bg-secondary ml-auto">39</span>
+                            <span class="badge badge-pill bg-secondary ml-auto">0</span>
 
                         </a>
                     </li>
