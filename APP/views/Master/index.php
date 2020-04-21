@@ -78,7 +78,7 @@ if (empty($company)) {
                 <div class="row">
 
                     <div class="col-md-2 align-self-center text-center">
-                        <img class="card-img-top" src="<?=$row['logo']?>" width="25" height="100" alt="">
+                        <img class="card-img-top" src="<?=$row['logo']?>"  alt="">
                         <b><?=$row['company']?></b>
 
                     </div>
