@@ -118,6 +118,13 @@
     <div class="table-responsive">
         <table class="table  table-bordered">
             <tbody>
+            <tr>
+                <td class="wmin-md-100"><b>ЛОГОТИП:</b></td>
+                <td class="wmin-md-350">
+                    <img src="<?=$company['logo']?>" height="100">
+                </td>
+            </tr>
+
 
             <tr>
                 <td class="wmin-md-100"><b>НАЗВАНИЕ:</b></td>
@@ -128,12 +135,6 @@
             </tr>
 
 
-            <tr>
-                <td class="wmin-md-100"><b>ЛОГОТИП:</b></td>
-                <td class="wmin-md-350">
-                    <?=$company['logo']?>
-                </td>
-            </tr>
 
 
 
