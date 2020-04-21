@@ -248,11 +248,13 @@ class ProjectController extends AppController {
         \APP\core\base\View::setAssets($ASSETS);
 
 
-        show($_POST);
-        show($_FILES);
-        exit();
+
 
         if ($_POST && $_FILES['file']['size'] > 0){
+
+            show($_POST);
+            show($_FILES);
+            exit("mi tut");
 
             $Panel = new Panel();
             $validation = $Panel->filevalidation($_FILES['file'], ['ext' => ["jpg","png"], 'type' => 'image/jpeg']);
@@ -283,6 +285,10 @@ class ProjectController extends AppController {
 
 
         if ($_POST){
+
+            show($_POST);
+            show($_FILES);
+            exit("mi tut2");
 
 
             $settings = new Settings();
