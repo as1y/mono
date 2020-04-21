@@ -191,11 +191,12 @@ abstract class Model
         if ($w_src > $h_src*1.5){
             echo "Фото горизонатльное<br>";
             exit("fufu");
-        }
-
-        if ($w_src < $h_src*1.5){
+        }elseif ($w_src*1.5 < $h_src){
             // Фото вертикальное
             echo "Фото вертикальное<br>";
+            exit("fufu");
+        }else{
+            echo "Квадратное<br>";
             exit("fufu");
 
         }
