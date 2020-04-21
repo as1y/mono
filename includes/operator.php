@@ -101,7 +101,7 @@
                         <a href="#" class="nav-link <?=isset($active['moderate']) ? $active['moderate'] : ''; ?>">
                             <i class="icon-eye"></i>
                             <span>	На модерации </span>
-                            <span class="badge badge-pill bg-secondary ml-auto"><?=$contact['moderation']?></span>
+                            <span class="badge badge-pill bg-secondary ml-auto"><?=$result['moderation']?></span>
                         </a>
                     </li>
 
@@ -117,7 +117,7 @@
                         <a href="#" class="nav-link">
                             <i class="icon-checkmark"></i>
                             <span>	Успешно </span>
-                            <span class="badge badge-pill bg-secondary ml-auto"><?=$contact['all']?></span>
+                            <span class="badge badge-pill bg-secondary ml-auto"><?=$result['all']?></span>
                         </a>
                     </li>
 
