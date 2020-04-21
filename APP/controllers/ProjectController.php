@@ -267,7 +267,7 @@ class ProjectController extends AppController {
 
                 copy($_FILES['file']['tmp_name'], $urlnew); // Копируем из общего котла в тизерку
 
-                $Panel->resizuniversal($urlnew, $urlnew, 300, 300);
+                $Panel->resizuniversal($urlnew, $urlnew, 300, 200);
 
                 $Panel->changelogo("/".$urlnew, $idc);
 

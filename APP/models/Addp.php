@@ -66,7 +66,7 @@ class Addp extends \APP\core\base\Model {
         $uniq = [
             'client_id' => $_SESSION['ulogin']['id'],
             'status' => "2",
-            'logo' => "/uploads/user_avatar/baselogo.jpg",
+            'logo' => "/uploads/user_logo/baselogo.jpg",
             'datastart' => date("Y-m-d H:i:s"),
             'daylimit' => "5",
             'formresult' => '[{"NAME":"Имя","TYPE":1}]',
