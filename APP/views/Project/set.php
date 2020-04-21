@@ -105,7 +105,7 @@
 </div>
 
     <div class="row">
-        <div class="col-md-8">
+        <div class="col-md-6">
             <div class="card">
                 <div class="card-header header-elements-inline">
                     <h5 class="card-title">НАСТРОЙКИ ПРОЕКТА <?=$company['company']?></h5>
@@ -172,7 +172,17 @@
 
         </div>
 
-        <div class="col-md-4">2</div>
+        <div class="col-md-6">
+
+            <label>Аватар</label>
+            <input type="file" accept="image/*" name="file" class="file-input" data-fouc>
+            <span class="form-text text-muted">Для полноценной работе в сервисе необходимо загрузить аватар</span>
+
+
+
+
+
+        </div>
 
     </div>
 
