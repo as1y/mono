@@ -92,7 +92,7 @@
                         <a href="/operator/perezvon/" class="nav-link <?=isset($active['perezvon']) ? $active['perezvon'] : ''; ?>">
                             <i class="icon-calendar"></i>
                             <span>	Перезвон </span>
-                            <span class="badge badge-pill bg-secondary ml-auto"><?=$contact['perezvon']?></span>
+                            <span class="badge badge-pill bg-info ml-auto"><?=$contact['perezvon']?></span>
                         </a>
                     </li>
 
