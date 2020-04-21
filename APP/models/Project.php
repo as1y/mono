@@ -71,7 +71,7 @@ class Project extends \APP\core\base\Model {
         // Списать баланс с пользователя
         $imuser = $this->loaduser(CONFIG['USERTABLE'], $_SESSION['ulogin']['id']);
         $_SESSION['ulogin']['bal'] = $_SESSION['ulogin']['id'] - $companyinfo['resultcall'];
-        $comment = 'Успешный результат в проекте '.$companyinfo['company'];
+        $comment = 'Списание за результат в проекте '.$companyinfo['company'];
         $this->spisaniebalanceuser($imuser, $companyinfo['resultcall'], $comment);
         // Списать баланс с пользователя
 
