@@ -84,8 +84,8 @@ class Panel extends \APP\core\base\Model {
 
 
     public function balancelog(){
-        $tickets = R::findOne("balancelog", "WHERE users_id = ?" , [ $_SESSION['ulogin']['id'] ]);
-        return $tickets;
+        $balancelog = R::findAll("balancelog", "WHERE users_id = ?" , [ $_SESSION['ulogin']['id'] ]);
+        return $balancelog;
     }
 
 
