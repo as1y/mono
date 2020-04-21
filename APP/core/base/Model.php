@@ -195,8 +195,8 @@ abstract class Model
 
 
 // Подгоняем под 300 на 300
-        $image_p = imagecreatetruecolor(300, 100); // Создаем изображение
-        imagecopyresampled($image_p, $dest, 0, 0, 0, 0, 300, 300, $w, $w);
+        $image_p = imagecreatetruecolor(300, 200); // Создаем изображение
+        imagecopyresampled($image_p, $dest, 0, 0, 0, 0, 300, 200, $w, $w);
 // Подгоняем под 300 на 300
 
 
