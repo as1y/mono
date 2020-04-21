@@ -173,6 +173,44 @@ abstract class Model
 
 
 
+    public function resizelogo($url){
+
+        $w = 600;
+
+        $src = imagecreatefromjpeg($url);
+        $w_src = imagesx($src);
+        $h_src = imagesy($src);
+
+
+        // создаём пустую квадратную картинку
+        // важно именно truecolor!, иначе будем иметь 8-битный результат
+        $dest = imagecreatetruecolor($w,$w);
+
+
+
+        // квадратная картинка масштабируется без вырезок
+        if ($w_src==$h_src)
+            imagecopyresized($dest, $src, 0, 0, 0, 0, $w, $w, $w_src, $w_src);
+
+
+
+// Подгоняем под 300 на 300
+        $image_p = imagecreatetruecolor(300, 100); // Создаем изображение
+        imagecopyresampled($image_p, $dest, 0, 0, 0, 0, 300, 300, $w, $w);
+// Подгоняем под 300 на 300
+
+
+// Сохраняем
+        imagejpeg ($image_p ,$url, 100); // Сохраняем
+// Сохраняем
+
+
+    }
+
+
+
+
+
 
     public function resizepicture($url){
 
