@@ -273,7 +273,7 @@ class ProjectController extends AppController {
 
                 $_SESSION['success'] = "Логотип в проекте изменен";
 
-                redir("project/set/?id=".$idc);
+                redir("/project/set/?id=".$idc);
             }
 
 
