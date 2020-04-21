@@ -1,4 +1,4 @@
-<?
+<?php
 require 'vendor/autoload.php';
 require 'lib/functions.php'; //ОБЩИЕ ФУНКЦИИ
 require 'lib/functions_app.php'; //ФУНКЦИИ ПРИЛОЖЕНИЯ
