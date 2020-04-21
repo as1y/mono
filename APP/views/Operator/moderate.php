@@ -33,7 +33,7 @@
                 ?>
                 <tr>
                     <td class="text-center">
-                        
+
                         <?=$company['company']?>
 
 
