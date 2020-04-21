@@ -64,15 +64,15 @@ class Project extends \APP\core\base\Model {
 
         // Зачислить пользователю
         $comment = 'Заработок в проекте '.$companyinfo['company'];
-        $this->addbalanceuser($userinfo, $companyinfo['resultcall'], $comment);
+        $this->addbalanceuser($userinfo, $companyinfo['priceresult'], $comment);
         // Зачислить пользователю
 
 
         // Списать баланс с пользователя
         $imuser = $this->loaduser(CONFIG['USERTABLE'], $_SESSION['ulogin']['id']);
-        $_SESSION['ulogin']['bal'] = $_SESSION['ulogin']['id'] - $companyinfo['resultcall'];
+        $_SESSION['ulogin']['bal'] = $_SESSION['ulogin']['id'] - $companyinfo['priceresult'];
         $comment = 'Списание за результат в проекте '.$companyinfo['company'];
-        $this->spisaniebalanceuser($imuser, $companyinfo['resultcall'], $comment);
+        $this->spisaniebalanceuser($imuser, $companyinfo['priceresult'], $comment);
         // Списать баланс с пользователя
 
 
