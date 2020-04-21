@@ -111,8 +111,8 @@
                 <table  class="table datatable-basic">
                     <thead>
                     <tr>
-                        <th><b>ОПЕРАТОР</b></th>
                         <th><b>ДАТА</b></th>
+                        <th><b>ОПЕРАТОР</b></th>
                         <th><b>РЕЗУЛЬТАТ</b></th>
                         <th><b>ЗАПИСИ</b></th>
 
@@ -132,6 +132,9 @@
 
                         ?>
                         <tr>
+
+                            <td>    <?=$val['date']?></td>
+
                             <td>
 
                                 <img src="<?=$userinfo['avatar']?>" width="38" height="38" class="rounded-circle" alt=""><br>
@@ -140,7 +143,7 @@
 
                             </td>
 
-                            <td>     <b>ДАТА: </b><?=$val['date']?><br></td>
+
 
                             <td>
 
