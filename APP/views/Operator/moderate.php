@@ -59,8 +59,8 @@
                     <td> <?= raskladkazapisi($val['datazapis'])?></td>
                     <td >
 
-                        <h3><?=$company['priceresult']?></h3>
-                        <span class="badge-success">руб.</span>
+                        <h3><?=$company['priceresult']?> Р.</h3>
+
 
 
                     </td>
