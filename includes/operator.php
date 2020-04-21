@@ -113,8 +113,8 @@
                         </a>
                     </li>
 
-                    <li class="nav-item <?=isset($active['success']) ? $active['success'] : ''; ?>">
-                        <a href="/operator/dorabotka/" class="nav-link">
+                    <li class="nav-item">
+                        <a href="/operator/success/" class="nav-link <?=isset($active['success']) ? $active['success'] : ''; ?>">
                             <i class="icon-checkmark"></i>
                             <span>	Успешно </span>
                             <span class="badge badge-pill bg-secondary ml-auto"><?=$result['all']?></span>
