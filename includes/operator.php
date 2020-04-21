@@ -109,7 +109,10 @@
                         <a href="/operator/dorabotka/" class="nav-link <?=isset($active['dorabotka']) ? $active['dorabotka'] : ''; ?>">
                             <i class="icon-wrench"></i>
                             <span>	Доработка </span>
-                            <span class="badge badge-pill bg-warning ml-auto">0</span>
+
+                            <span class="badge badge-pill bg-secondary ml-auto">0</span>
+
+
                         </a>
                     </li>
 
