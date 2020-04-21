@@ -198,11 +198,8 @@ abstract class Model
             echo "Фото вертикальное<br>";
             exit("fufu");
 
-        }else{
-            // Фото квадратное
-            echo "Фото квадратное<br>";
-            exit("fufu");
         }
+
 
 
 
