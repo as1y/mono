@@ -188,8 +188,9 @@ abstract class Model
         // Если прямоугольник
         if ($w_src > $h_src*1.5){
 
-            // Фото квадратное
+            echo "Фото горизонатльное<br>";
             exit("fufu");
+
         }elseif ($w_src < $h_src*1.5){
 
             // Фото вертикальное
