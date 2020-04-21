@@ -189,12 +189,11 @@ abstract class Model
         // Определяем тип картинки
         // Если прямоугольник
         if ($w_src > $h_src*1.5){
-
             echo "Фото горизонатльное<br>";
             exit("fufu");
+        }
 
-        }elseif ($w_src < $h_src*1.5){
-
+        if ($w_src < $h_src*1.5){
             // Фото вертикальное
             echo "Фото вертикальное<br>";
             exit("fufu");
