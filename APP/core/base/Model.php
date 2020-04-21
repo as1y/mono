@@ -175,7 +175,7 @@ abstract class Model
 
 
 
-    public function myresize($url){
+    public function myresize($url, $type ="kvadrat", $weight = "300", $height = "300" ){
 
         $w = 600;
 
@@ -183,70 +183,46 @@ abstract class Model
         $w_src = imagesx($src);
         $h_src = imagesy($src);
 
-        show($w_src);
-        show($h_src);
 
         // Определяем тип картинки
-        // Если прямоугольник
         if ($w_src > $h_src*1.5){
-            echo "Фото горизонатльное<br>";
-            exit("fufu");
+            //Горизонтальная
+            $sizetype = "horizont";
         }elseif ($w_src*1.5 < $h_src){
-            // Фото вертикальное
-            echo "Фото вертикальное<br>";
-            exit("fufu");
+            // Вертикальная
+            $sizetype = "vertikal";
         }else{
-            echo "Квадратное<br>";
-            exit("fufu");
-
+            // Квадратная
+            $sizetype = "kvadrat";
         }
-
-
-
-
-        $dest = imagecreatetruecolor($w,$w);
-
 
         // создаём пустую квадратную картинку
         // важно именно truecolor!, иначе будем иметь 8-битный результат
+        $dest = imagecreatetruecolor($w,$w);
 
 
-        // вырезаем квадратную серединку по x, если фото горизонтальное
-        if ($w_src > $h_src) {
+        if ($sizetype == $type){
+            // Это обозначет, что пропорации сошлись
+            imagecopyresized($dest, $src, 0, 0, 0, 0, $w, $w, $w_src, $w_src);
+            // Значит просто масштабируем под размер
 
-            imagecopyresized($dest, $src, 0, 0,
-                round((max($w_src,$h_src)-min($w_src,$h_src))/2),
-                0, $w, $w, min($w_src,$h_src), min($w_src,$h_src));
+            // Дальше тупо сохраняем под размер
+            $image_p = imagecreatetruecolor($weight, $height); // Создаем изображение
+            imagecopyresampled($image_p, $dest, 0, 0, 0, 0, $weight, $height, $w, $w);
 
+            imagejpeg ($image_p ,$url, 100); // Сохраняем
+
+            return true;
         }
 
-        // вырезаем квадратную верхушку по y,
-        // если фото вертикальное (хотя можно тоже серединку)
-        if ($w_src < $h_src)
-            /*
-                   imagecopyresized($dest, $src, 0, 0, 0,
-                round((max($w_src,$h_src)-min($w_src,$h_src))/2),
-                $w, $w, min($w_src,$h_src), min($w_src,$h_src));
-*/
-            imagecopyresized($dest, $src, 0, 0, 0, 0, $w, $w,
-                min($w_src,$h_src), min($w_src,$h_src));
-
-
-        // квадратная картинка масштабируется без вырезок
-        if ($w_src==$h_src)
-            imagecopyresized($dest, $src, 0, 0, 0, 0, $w, $w, $w_src, $w_src);
+        
 
 
 
-// Подгоняем под 300 на 300
-        $image_p = imagecreatetruecolor(300, 300); // Создаем изображение
-        imagecopyresampled($image_p, $dest, 0, 0, 0, 0, 300, 300, $w, $w);
-// Подгоняем под 300 на 300
 
 
-// Сохраняем
-        imagejpeg ($image_p ,$url, 100); // Сохраняем
-// Сохраняем
+
+
 
 
     }
