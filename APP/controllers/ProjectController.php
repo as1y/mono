@@ -118,6 +118,9 @@ class ProjectController extends AppController {
         \APP\core\base\View::setAssets($ASSETS);
 
 
+        show($_SESSION['ulogin']);
+        exit();
+
 
 		$company = $project->companyresult($idc); //СВЯЗЬ С КОМПАНИЕЙ
 

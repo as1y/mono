@@ -70,7 +70,9 @@ class Project extends \APP\core\base\Model {
 
         // Списать баланс с пользователя
         $imuser = $this->loaduser(CONFIG['USERTABLE'], $_SESSION['ulogin']['id']);
-        $_SESSION['ulogin']['bal'] = $_SESSION['ulogin']['id'] - $companyinfo['priceresult'];
+
+        $_SESSION['ulogin']['bal'] = $_SESSION['ulogin']['bal'] - $companyinfo['priceresult'];
+
         $comment = 'Списание за результат в проекте '.$companyinfo['company'];
         $this->spisaniebalanceuser($imuser, $companyinfo['priceresult'], $comment);
         // Списать баланс с пользователя
