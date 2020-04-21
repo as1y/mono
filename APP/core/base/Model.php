@@ -7,6 +7,7 @@ abstract class Model
 	public $ATR = [];
 	public $errors = [];
 	public $rules = [];
+    public $user = [];
 
 	public function __construct()
 	{
@@ -65,6 +66,9 @@ abstract class Model
         return R::load($table, $iduser);
     }
 
+
+
+
     public function checkbalance($table) {
         $balnow = R::load($table, $_SESSION['ulogin']['id']);
         return $balnow['balance'];
@@ -81,6 +85,45 @@ abstract class Model
     }
 
 
+
+    public function addbalanceuser($user, $summa, $comment = ""){
+
+        $user->bal = $user->bal + $summa;
+        R::store($user);
+
+        //Зачислить в баланслог
+        $balancelog = [
+            'users_id' => $user['id'],
+            'date' => date("Y-m-d H:i:s"),
+            'sum' => $summa,
+            'comment' => $comment,
+            'type' => "debet",
+        ];
+        $this->addnewBD("balancelog", $balancelog);
+        //Зачислить в баланслог
+
+        return true;
+    }
+
+
+    public function spisaniebalanceuser($user, $summa, $comment = ""){
+
+        $user->bal = $user->bal - $summa;
+        R::store($user);
+
+        //Зачислить в баланслог
+        $balancelog = [
+            'users_id' => $user['id'],
+            'date' => date("Y-m-d H:i:s"),
+            'sum' => $summa,
+            'comment' => $comment,
+            'type' => "credit",
+        ];
+        $this->addnewBD("balancelog", $balancelog);
+        //Зачислить в баланслог
+
+        return true;
+    }
 
 
     public static function contact($id, $type = "company") {

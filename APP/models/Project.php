@@ -58,15 +58,31 @@ class Project extends \APP\core\base\Model {
         $companyinfo = $result->company;
 
 
-        show($userinfo);
-        echo "<hr>";
-        show($companyinfo);
-        exit();
-
-        // Пополнения балансов и всякой статистики (звонки/итп)
-        $userinfo = R::Load("users", $result['users_id']);
+        // Прибавление статистики
         $userinfo->totalresult = $userinfo->totalresult++;
-     //   $userinfo->bal = $userinfo->bal + ;
+
+
+        // Зачислить пользователю
+        $comment = 'Заработок в проекте '.$companyinfo['company'];
+        $this->addbalanceuser($userinfo, $companyinfo['resultcall'], $comment);
+        // Зачислить пользователю
+
+
+        // Списать баланс с пользователя
+        $imuser = $this->loaduser(CONFIG['USERTABLE'], $_SESSION['ulogin']['id']);
+        $_SESSION['ulogin']['bal'] = $_SESSION['ulogin']['id'] - $companyinfo['resultcall'];
+        $comment = 'Успешный результат в проекте '.$companyinfo['company'];
+        $this->spisaniebalanceuser($imuser, $companyinfo['resultcall'], $comment);
+        // Списать баланс с пользователя
+
+
+        //Зачислить реффералу
+//        $comment = 'Рефферальные отчисления пользователь '.$userinfo['username'];
+//        $this->addbalanceuser($userinfo, $companyinfo['resultcall'], $comment);
+        //Зачислить реффералу
+
+
+
         // Пополнения балансов и всякой статистики (звонки/итп)
 
 
