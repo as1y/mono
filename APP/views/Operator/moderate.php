@@ -13,7 +13,7 @@
                 <th><b>ИСХОДНЫЕ ДАННЫЕ</b></th>
                 <th><b>РЕЗУЛЬТАТ</b></th>
                 <th><b>ЗАПИСИ</b></th>
-                <th><b>ДЕЙСТВИЯ</b></th>
+                <th><b>ОПЛАТА</b></th>
 
             </tr>
             </thead>
@@ -58,10 +58,8 @@
                     <td> <?= raskladkazapisi($val['datazapis'])?></td>
                     <td >
 
-                        <a href="/project/result/?id=<?=$company['id']?>&idresult=<?=$val['id']?>&action=accept" type="button" class="btn btn-success">ПОДТВЕРДИТЬ</a><br><br>
-                        <a href="/project/result/?id=<?=$company['id']?>&idresult=<?=$val['id']?>&action=reject" type="button" class="btn btn-danger">ОТКЛОНИТЬ</a><br><br>
-
-
+                        <span class="badge-success"> <?=$company['priceresult']?></span>
+                        
 
                     </td>
 
