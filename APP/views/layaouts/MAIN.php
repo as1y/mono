@@ -200,7 +200,7 @@
                            data-responsive="on"
                            data-responsive_offset="on" style="z-index: 9;" href="/user/register/">Регистрация
                         </a>
-
+    <br>
                         <a class="tp-caption btn btn-l btn-green"
                            data-x="['left','left','left','center']"
                            data-y="middle"
