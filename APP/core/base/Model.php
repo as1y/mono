@@ -184,6 +184,11 @@ abstract class Model
         $h_src = imagesy($src);
 
 
+        show($w_src);
+
+        exit("fufu");
+
+
         // создаём пустую квадратную картинку
         // важно именно truecolor!, иначе будем иметь 8-битный результат
         $dest = imagecreatetruecolor($w,$w);
