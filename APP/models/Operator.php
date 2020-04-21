@@ -19,6 +19,19 @@ class Operator extends \APP\core\base\Model {
 
     }
 
+    public function getresultuser($status = NULL){
+
+        if (!empty($status)){
+            $mass = R::findAll("result", "WHERE users_id = ? AND status =?", [$_SESSION['ulogin']['id'], $status]);
+            return $mass;
+        }
+
+        $mass = R::findAll("result", "WHERE users_id = ?", [$_SESSION['ulogin']['id']]);
+        return $mass;
+
+
+    }
+
 
 
     public function SetOtkaz($DATA, $company){
