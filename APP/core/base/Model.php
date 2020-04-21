@@ -173,7 +173,7 @@ abstract class Model
 
 
 
-    function resizauniversal($path, $save, $width, $height) {
+    function resizuniversal($path, $save, $width, $height) {
         $info = getimagesize($path); //получаем размеры картинки и ее тип
         $size = array($info[0], $info[1]); //закидываем размеры в массив
 
@@ -286,7 +286,9 @@ abstract class Model
 
 
     public function  changelogo ($url, $idc){
+
         $company = R::load("company", $idc);
+
         $company->logo = $url;
         R::store($company);
         return true;
