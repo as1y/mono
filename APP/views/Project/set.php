@@ -4,12 +4,6 @@
 <div class="card">
     <div class="card-header bg-dark text-white header-elements-inline">
         <h5 class="card-title">ПРЕДЛОЖЕНИЕ ОПЕРАТОРАМ</h5>
-        <div class="header-elements">
-            <div class="list-icons">
-                <a class="list-icons-item" data-action="collapse"></a>
-                <a class="list-icons-item" data-action="reload"></a>
-            </div>
-        </div>
     </div>
 
     <div class="table-responsive">
