@@ -243,7 +243,7 @@ class ProjectController extends AppController {
         $ASSETS[] = ["js" => "/global_assets/js/plugins/uploaders/fileinput/fileinput.min.js"];
         $ASSETS[] = ["js" => "/assets/js/uploader_bootstrap.js"];
 
-        
+
         \APP\core\base\View::setAssets($ASSETS);
 
 

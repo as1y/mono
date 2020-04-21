@@ -2,7 +2,7 @@
 
 
 <div class="card">
-    <div class="card-header bg-white header-elements-inline">
+    <div class="card-header bg-dark text-white header-elements-inline">
         <h5 class="card-title">ПРЕДЛОЖЕНИЕ ОПЕРАТОРАМ</h5>
         <div class="header-elements">
             <div class="list-icons">
@@ -106,14 +106,14 @@
 
 
     <div class="card">
-        <div class="card-header bg-white header-elements-inline">
-            <h5 class="card-title">НАСТРОЙКИ ПРОЕКТА <?=$company['company']?></h5>
+        <div class="card-header bg-dark text-white header-elements-inline">
+            <h5 class="card-title">НАСТРОЙКИ ПРОЕКТА</h5>
         </div>
 
         <div class="row">
             <div class="col-md-6">
                 <div class="table-responsive">
-                    <table class="table  table-bordered">
+                    <table class="table ">
                         <tbody>
                         <tr>
                             <td class="wmin-md-100"><b>ЛОГОТИП:</b></td>
