@@ -166,6 +166,7 @@
             </div>
 
             <div class="col-md-6 text-center">
+                <br>
                 <b>ЗАГРУЗИТЬ ЛОГОТИП</b>
                 <span class="form-text text-muted">С логотипом на проект откликается больше операторов</span>
                 <input type="file" accept="image/*" name="file" class="file-input" data-fouc>
