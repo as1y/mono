@@ -106,7 +106,7 @@
 
 
     <div class="card">
-        <div class="card-header header-elements-inline">
+        <div class="card-header bg-white header-elements-inline">
             <h5 class="card-title">НАСТРОЙКИ ПРОЕКТА <?=$company['company']?></h5>
         </div>
 
