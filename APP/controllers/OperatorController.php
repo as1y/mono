@@ -277,7 +277,7 @@ class OperatorController extends AppController {
 
 
 
-    public function moderationAction()
+    public function moderateAction()
     {
 
         $operator = new Operator();
