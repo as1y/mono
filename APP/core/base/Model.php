@@ -175,7 +175,7 @@ abstract class Model
 
 
 
-    public function resiz2($url){
+    public function myresize($url, $type, $size){
 
         $w = 600;
 
@@ -190,18 +190,28 @@ abstract class Model
         // Если прямоугольник
         if ($w_src > $h_src*1.5){
 
-            echo "Фото горизонтальное";
-
+            // Фото квадратное
             exit("fufu");
+        }elseif ($w_src < $h_src*1.5){
 
+            // Фото вертикальное
+            echo "Фото вертикальное<br>";
+
+
+        }else{
+            // Фото квадратное
+            echo "Фото квадратное<br>";
+            exit("fufu");
         }
 
 
 
+        $dest = imagecreatetruecolor($w,$w);
 
+        
         // создаём пустую квадратную картинку
         // важно именно truecolor!, иначе будем иметь 8-битный результат
-        $dest = imagecreatetruecolor($w,$w);
+
 
         // вырезаем квадратную серединку по x, если фото горизонтальное
         if ($w_src > $h_src) {
