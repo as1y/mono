@@ -13,7 +13,7 @@
     </div>
 
     <div class="table-responsive">
-        <table class="table  table-bordered">
+        <table class="table">
             <tbody>
 
 
