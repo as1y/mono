@@ -104,13 +104,14 @@
     </div>
 </div>
 
-    <div class="row">
-        <div class="col-md-6">
-            <div class="card">
-                <div class="card-header header-elements-inline">
-                    <h5 class="card-title">НАСТРОЙКИ ПРОЕКТА <?=$company['company']?></h5>
-                </div>
 
+    <div class="card">
+        <div class="card-header header-elements-inline">
+            <h5 class="card-title">НАСТРОЙКИ ПРОЕКТА <?=$company['company']?></h5>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
                 <div class="table-responsive">
                     <table class="table  table-bordered">
                         <tbody>
@@ -170,21 +171,21 @@
                 </div>
             </div>
 
-        </div>
-
-        <div class="col-md-6">
-
-            <label>Аватар</label>
-            <input type="file" accept="image/*" name="file" class="file-input" data-fouc>
-            <span class="form-text text-muted">Для полноценной работе в сервисе необходимо загрузить аватар</span>
-
-
-
+            <div class="col-md-6">
+                АВАТАР
+            </div>
 
 
         </div>
+
+
+
+
+
 
     </div>
+
+
 
 
 
