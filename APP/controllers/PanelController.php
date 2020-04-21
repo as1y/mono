@@ -97,7 +97,7 @@ class PanelController extends AppController {
         \APP\core\base\View::setAssets($ASSETS);
 
 
-
+        $balancelog = $Panel->balancelog();
 
 
         $this->set(compact('balancelog'));
