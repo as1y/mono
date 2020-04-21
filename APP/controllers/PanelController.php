@@ -74,7 +74,7 @@ class PanelController extends AppController {
         $balancelog = [];
         $balancelog = $Panel->balancelog();
 
-        if ($balancelog == NULL) $balancelog = [];
+        if (empty($balancelog)) $balancelog = [];
 
 
 
@@ -97,8 +97,7 @@ class PanelController extends AppController {
         \APP\core\base\View::setAssets($ASSETS);
 
 
-        $balancelog = $Panel->balancelog();
-        if (empty($balancelog)) $balancelog = [];
+
 
         $this->set(compact('balancelog'));
 

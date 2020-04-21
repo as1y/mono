@@ -25,7 +25,7 @@
 
                 <a href="#" type="button" class="btn btn-success"><i class="icon-plus-circle2 mr-2"></i>ПОПОЛНИТЬ БАЛАНС</a>
 
-            </div>`
+            </div>
             <div class="col-md-3 align-self-center">
             </div>
         </div>

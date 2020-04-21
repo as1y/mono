@@ -70,7 +70,7 @@
                 </tr>
                 <tr>
                     <td class="wmin-md-100">ПЕРЕЗВОНИТЬ ПОЗЖЕ:</td>
-                    <td class="wmin-md-350"><?=$contact['late']?></td>
+                    <td class="wmin-md-350"><?=$contact['perezvon']?></td>
                 </tr>
                 <tr>
                     <td class="wmin-md-100">ОТКАЗ:</td>
