@@ -240,7 +240,7 @@ class ProjectController extends AppController {
         $ASSETS[] = ["js" => "/global_assets/js/plugins/forms/selects/select2.min.js"];
 
 
-        
+
         $ASSETS[] = ["js" => "/global_assets/js/plugins/uploaders/fileinput/plugins/purify.min.js"];
         $ASSETS[] = ["js" => "/global_assets/js/plugins/uploaders/fileinput/plugins/sortable.min.js"];
         $ASSETS[] = ["js" => "/global_assets/js/plugins/uploaders/fileinput/fileinput.min.js"];
@@ -250,6 +250,8 @@ class ProjectController extends AppController {
 
         \APP\core\base\View::setAssets($ASSETS);
 
+
+        show($_FILES);
 
             if($_POST){
 
