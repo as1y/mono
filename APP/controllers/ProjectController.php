@@ -1,6 +1,7 @@
 <?php
 namespace APP\controllers;
 use APP\models\Bazaupload;
+use APP\models\Panel;
 use APP\models\Project;
 use APP\core\Cache;
 use APP\models\Settings;
@@ -246,9 +247,6 @@ class ProjectController extends AppController {
 
         \APP\core\base\View::setAssets($ASSETS);
 
-
-
-
         if ($_POST){
 
 
@@ -272,6 +270,39 @@ class ProjectController extends AppController {
         }
 
         }
+
+
+
+        if ($_POST && $_FILES['file']['size'] > 0){
+
+            $Panel = new Panel();
+            $validation = $Panel->filevalidation($_FILES['file'], ['ext' => ["jpg","png"], 'type' => 'image/jpeg']);
+
+            if (!$validation){
+                $Panel->getErrorsVali();
+            }
+
+            if ($validation){
+
+                $name = md5(uniqid(rand(),1));
+                $urlnew = "uploads/user_logo/".$name.".jpg";
+
+                copy($_FILES['file']['tmp_name'], $urlnew); // Копируем из общего котла в тизерку
+
+                $Panel->resizepicture($urlnew);
+                
+                $Panel->changelogo("/".$urlnew, $idc);
+
+                $_SESSION['success'] = "Логотип в проекте изменен";
+
+                redir("/panel/profile");
+            }
+
+
+
+        }
+
+
 
 		$this->set(compact('company'));
 	}

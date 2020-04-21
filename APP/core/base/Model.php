@@ -230,13 +230,21 @@ abstract class Model
 
 
     public function  changeavatar ($url){
-
         $user = R::load("users", $_SESSION['ulogin']['id']);
         $user->avatar = $url;
         R::store($user);
         return true;
-
     }
+
+
+    public function  changelogo ($url, $idc){
+        $company = R::load("company", $idc);
+        $company->logo = $url;
+        R::store($company);
+        return true;
+    }
+
+
 
 
     public static function addnewBD($table, $DATA) {
