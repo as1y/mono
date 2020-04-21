@@ -69,15 +69,6 @@
                 </div>
 
 
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <label>Логотип:</label>
-
-                        <div class="uniform-uploader"><input type="file" name="logo" class="form-control-uniform-custom"><span class="filename" style="user-select: none;">Файл не выбран</span><span class="action btn bg-warning" style="user-select: none;">Загрузить</span></div>
-                        <span class="form-text text-muted">С логотипом предложение для операторов будет выглядеть привлекательно.</span>
-
-                    </div>
-                </div>
 
 
                 <div class="col-md-12">
