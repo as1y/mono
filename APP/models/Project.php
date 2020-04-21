@@ -53,9 +53,23 @@ class Project extends \APP\core\base\Model {
         $result->status = 1;
         R::store($result);
 
-        // Пополнения балансов и всякой статистики (звонки/итп)
+
+        $userinfo = $result->users;
+        $companyinfo = $result->company;
+
+
+        show($userinfo);
+        echo "<hr>";
+        show($companyinfo);
+        exit();
 
         // Пополнения балансов и всякой статистики (звонки/итп)
+        $userinfo = R::Load("users", $result['users_id']);
+        $userinfo->totalresult = $userinfo->totalresult++;
+     //   $userinfo->bal = $userinfo->bal + ;
+        // Пополнения балансов и всякой статистики (звонки/итп)
+
+
         return true;
     }
 
