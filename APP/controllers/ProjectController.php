@@ -250,20 +250,9 @@ class ProjectController extends AppController {
 
 
 
-            if($_POST){
-
-                show($_POST);
-                show($_FILES);
-                exit("mi tut2");
-
-
-            }
-
-
 
         if ($_POST && $_FILES['file']['size'] > 0){
-
-
+            
             $Panel = new Panel();
             $validation = $Panel->filevalidation($_FILES['file'], ['ext' => ["jpg","png"], 'type' => 'image/jpeg']);
 
