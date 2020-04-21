@@ -98,7 +98,7 @@ class PanelController extends AppController {
 
 
         $balancelog = $Panel->balancelog();
-
+        if (empty($balancelog)) $balancelog = [];
 
         $this->set(compact('balancelog'));
 
