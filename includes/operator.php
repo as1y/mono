@@ -109,7 +109,7 @@
                         <a href="/operator/dorabotka/" class="nav-link <?=isset($active['dorabotka']) ? $active['dorabotka'] : ''; ?>">
                             <i class="icon-wrench"></i>
                             <span>	Доработка </span>
-                            <span class="badge badge-pill bg-secondary ml-auto">0</span>
+                            <span class="badge badge-warning bg-secondary ml-auto">0</span>
                         </a>
                     </li>
 
@@ -117,7 +117,7 @@
                         <a href="/operator/success/" class="nav-link <?=isset($active['success']) ? $active['success'] : ''; ?>">
                             <i class="icon-checkmark"></i>
                             <span>	Успешно </span>
-                            <span class="badge badge-pill bg-secondary ml-auto"><?=$result['all']?></span>
+                            <span class="badge badge-success bg-secondary ml-auto"><?=$result['all']?></span>
                         </a>
                     </li>
 
