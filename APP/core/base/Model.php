@@ -175,7 +175,7 @@ abstract class Model
 
 
 
-    public function myresize($url, $type, $size){
+    public function myresize($url){
 
         $w = 600;
 
