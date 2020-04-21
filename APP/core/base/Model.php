@@ -173,7 +173,7 @@ abstract class Model
 
 
 
-    function create_thumbnail($path, $save, $width, $height) {
+    function resizauniversal($path, $save, $width, $height) {
         $info = getimagesize($path); //получаем размеры картинки и ее тип
         $size = array($info[0], $info[1]); //закидываем размеры в массив
 
