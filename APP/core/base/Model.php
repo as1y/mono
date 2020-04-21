@@ -183,6 +183,8 @@ abstract class Model
         $w_src = imagesx($src);
         $h_src = imagesy($src);
 
+        show($w_src);
+        show($h_src);
 
         // Определяем тип картинки
         // Если прямоугольник
