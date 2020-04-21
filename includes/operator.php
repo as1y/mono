@@ -98,7 +98,7 @@
 
 
                     <li class="nav-item">
-                        <a href="#" class="nav-link <?=isset($active['moderate']) ? $active['moderate'] : ''; ?>">
+                        <a href="/operator/moderate/" class="nav-link <?=isset($active['moderate']) ? $active['moderate'] : ''; ?>">
                             <i class="icon-eye"></i>
                             <span>	На модерации </span>
                             <span class="badge badge-pill bg-secondary ml-auto"><?=$result['moderation']?></span>
