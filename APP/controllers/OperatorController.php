@@ -299,11 +299,12 @@ class OperatorController extends AppController {
         $ASSETS[] = ["js" => "/assets/js/datatables_basic.js"];
         \APP\core\base\View::setAssets($ASSETS);
 
-        $contactperezvon = $operator->getcontactuser(2);
+//        $contactperezvon = $operator->getcontactuser(2);
 
-        $resultuser = $operator->getcontactuser(2);
+        $resultuser = $operator->getresultuser(0);
 
-        $this->set(compact('contactperezvon'));
+
+        $this->set(compact('resultuser'));
 
 
     }
