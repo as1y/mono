@@ -184,8 +184,6 @@ abstract class Model
         $h_src = imagesy($src);
 
 
-        show($w_src);
-
         // Определяем тип картинки
         // Если прямоугольник
         if ($w_src > $h_src*1.5){
@@ -196,7 +194,7 @@ abstract class Model
 
             // Фото вертикальное
             echo "Фото вертикальное<br>";
-
+            exit("fufu");
 
         }else{
             // Фото квадратное
@@ -208,7 +206,7 @@ abstract class Model
 
         $dest = imagecreatetruecolor($w,$w);
 
-        
+
         // создаём пустую квадратную картинку
         // важно именно truecolor!, иначе будем иметь 8-битный результат
 
