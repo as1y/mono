@@ -60,7 +60,7 @@
                     <td >
 
                         <h3><?=$company['priceresult']?> </h3>
-                        <span class="badge-success">Р. </span>
+                       
 
 
                     </td>
