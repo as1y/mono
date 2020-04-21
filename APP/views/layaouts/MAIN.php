@@ -204,7 +204,7 @@
                         <a class="tp-caption btn btn-l btn-green"
                            data-x="['left','left','left','center']"
                            data-y="middle"
-                           data-hoffset="['250','30','30','0']"
+                           data-hoffset="['350','30','30','0']"
                            data-voffset="['75','75','75','135']"
                            data-width="['auto','auto','auto','auto']"
                            data-textAlign="['left','left','left','center']"
