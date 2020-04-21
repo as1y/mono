@@ -122,7 +122,19 @@ if (empty($company)) {
 										<i class="icon-grid mr-2"></i>
 										Новых звонков на одобрение
 									</span>
-                                <span class="badge bg-success ml-auto"><?=\APP\models\Master::countresultid($row['id']) ?></span>
+
+                                <?php $countresult =  \APP\models\Master::countresultid($row['id']);?>
+
+                                <?php if($countresult > 0):?>
+                                    <span class="badge bg-warning ml-auto"><?=$countresult?></span>
+                                <?php endif;?>
+
+                                <?php if($countresult == 0):?>
+                                    <span class="badge bg-success ml-auto">0</span>
+                                <?php endif;?>
+
+
+
 
                             </a>
 
