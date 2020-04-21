@@ -250,8 +250,7 @@ class ProjectController extends AppController {
 
         \APP\core\base\View::setAssets($ASSETS);
 
-
-        show($_FILES);
+        
 
             if($_POST){
 
