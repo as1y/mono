@@ -55,7 +55,7 @@
 
                 <tr>
                     <td><?=$val['date']?></td>
-                    <td class="text-center"><b><?=$val['summa']?></b></td>
+                    <td class="text-center"><b><?=$val['sum']?></b></td>
                     <td class="text-center"><?=$val['type']?></td>
                     <td class="text-center"><?=$val['comment']?></td>
 
