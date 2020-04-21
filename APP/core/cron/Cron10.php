@@ -8,7 +8,12 @@ define('CONFIG',array_merge(require 'config/main.php',require 'config/main-local
 
 R::setup(CONFIG['db']['dsn'],CONFIG['db']['user'],CONFIG['db']['pass']);
 
-dumpf("zazaza");
+$PARAM = [
+	'text' => "zaza",
+	'date' => date("H:i:s"),
+	];
+
+dumpf($PARAM);
 // \R::exec ("UPDATE contact SET status = '0' WHERE status = '1'");
 
 
