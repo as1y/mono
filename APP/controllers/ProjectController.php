@@ -248,6 +248,10 @@ class ProjectController extends AppController {
         \APP\core\base\View::setAssets($ASSETS);
 
 
+        show($_POST);
+        show($_FILES);
+        exit();
+
         if ($_POST && $_FILES['file']['size'] > 0){
 
             $Panel = new Panel();
@@ -277,7 +281,7 @@ class ProjectController extends AppController {
 
         }
 
-        
+
         if ($_POST){
 
 
