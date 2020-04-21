@@ -310,7 +310,37 @@ class OperatorController extends AppController {
     }
 
 
+    public function successAction()
+    {
 
+        $operator = new Operator();
+        //Информация о компаниях клиента
+
+        $META = [
+            'title' => 'Звонки на модерации',
+            'description' => 'Звонки на модерации',
+            'keywords' => 'Звонки на модерации',
+        ];
+        \APP\core\base\View::setMeta($META);
+
+
+        $BREADCRUMBS['HOME'] = ['Label' => $this->BreadcrumbsControllerLabel, 'Url' => $this->BreadcrumbsControllerUrl];
+        $BREADCRUMBS['DATA'][] = ['Label' => "Звонки на модерации"];
+        \APP\core\base\View::setBreadcrumbs($BREADCRUMBS);
+
+        $ASSETS[] = ["js" => "/global_assets/js/plugins/tables/datatables/datatables.min.js"];
+        $ASSETS[] = ["js" => "/assets/js/datatables_basic.js"];
+        \APP\core\base\View::setAssets($ASSETS);
+
+//        $contactperezvon = $operator->getcontactuser(2);
+
+        $resultuser = $operator->getresultuser(0);
+
+
+        $this->set(compact('resultuser'));
+
+
+    }
     // РАБОТА С КОНТАКТАМИ
 
 
