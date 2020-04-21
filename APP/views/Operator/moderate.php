@@ -27,6 +27,7 @@
                 if ($val['status'] != 0 ) continue;
 
                 $userinfo = $val->users;
+                $company = $val->company;
                 $idcontact = $val->contact_id;
 
                 ?>
@@ -59,7 +60,7 @@
                     <td >
 
                         <span class="badge-success"> <?=$company['priceresult']?></span>
-                        
+
 
                     </td>
 
