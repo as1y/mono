@@ -252,7 +252,7 @@ class ProjectController extends AppController {
 
 
         if ($_POST && $_FILES['file']['size'] > 0){
-            
+
             $Panel = new Panel();
             $validation = $Panel->filevalidation($_FILES['file'], ['ext' => ["jpg","png"], 'type' => 'image/jpeg']);
 
@@ -273,7 +273,7 @@ class ProjectController extends AppController {
 
                 $_SESSION['success'] = "Логотип в проекте изменен";
 
-                redir("/panel/profile");
+                redir("project/set/?id=".$idc);
             }
 
 
