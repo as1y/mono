@@ -106,7 +106,7 @@
                     </li>
 
                     <li class="nav-item">
-                        <a href="#" class="nav-link <?=isset($active['dorabotka']) ? $active['dorabotka'] : ''; ?>">
+                        <a href="/operator/dorabotka/" class="nav-link <?=isset($active['dorabotka']) ? $active['dorabotka'] : ''; ?>">
                             <i class="icon-wrench"></i>
                             <span>	Доработка </span>
                             <span class="badge badge-pill bg-secondary ml-auto">0</span>
@@ -114,7 +114,7 @@
                     </li>
 
                     <li class="nav-item <?=isset($active['success']) ? $active['success'] : ''; ?>">
-                        <a href="#" class="nav-link">
+                        <a href="/operator/dorabotka/" class="nav-link">
                             <i class="icon-checkmark"></i>
                             <span>	Успешно </span>
                             <span class="badge badge-pill bg-secondary ml-auto"><?=$result['all']?></span>
