@@ -247,31 +247,6 @@ class ProjectController extends AppController {
 
         \APP\core\base\View::setAssets($ASSETS);
 
-        if ($_POST){
-
-
-            $settings = new Settings();
-            $settings->load($_POST); // Берем из POST только те параметры которые нам нужны
-
-            $validation = $settings->validate($_POST);
-
-
-        if ($validation){
-            if ($settings->editsettingsroject($_POST)){
-                $_SESSION['success'] = "Изменения внесены";
-                redir("/project/set/?id=".$_POST['idc']);
-            }else{
-                $_SESSION['errors'] = "Ошибка базы данных. Попробуйте позже.";
-            }
-        }
-
-        if (!$validation){
-            $settings->getErrorsVali();
-        }
-
-        }
-
-
 
         if ($_POST && $_FILES['file']['size'] > 0){
 
@@ -301,6 +276,32 @@ class ProjectController extends AppController {
 
 
         }
+
+        
+        if ($_POST){
+
+
+            $settings = new Settings();
+            $settings->load($_POST); // Берем из POST только те параметры которые нам нужны
+
+            $validation = $settings->validate($_POST);
+
+
+        if ($validation){
+            if ($settings->editsettingsroject($_POST)){
+                $_SESSION['success'] = "Изменения внесены";
+                redir("/project/set/?id=".$_POST['idc']);
+            }else{
+                $_SESSION['errors'] = "Ошибка базы данных. Попробуйте позже.";
+            }
+        }
+
+        if (!$validation){
+            $settings->getErrorsVali();
+        }
+
+        }
+
 
 
 
