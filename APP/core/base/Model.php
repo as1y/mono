@@ -108,8 +108,14 @@ abstract class Model
         return $contact;
 
     }
-    public static function getres($idc) {
-        $mass = R::findAll("result", "WHERE company_id = ?", [$idc]);
+    public static function getres($id, $type = "company") {
+
+
+        if ($type == "company")  $mass = R::findAll("result", "WHERE company_id = ?", [$id]);
+        if ($type == "user")  $mass = R::findAll("result", "WHERE users_id = ?", [$id]);
+
+
+
         $result['all'] = '0';
         $result['moderation'] = '0';
         $result['today'] = '0';

@@ -75,6 +75,15 @@
                         </a>
                     </li>
 
+
+
+                    <?php
+                    $contact = \APP\core\base\Model::contact($_SESSION['ulogin']['id'], "user");
+                    $result = \APP\core\base\Model::getres($_SESSION['ulogin']['id'], "user");
+
+                    ?>
+
+
                     <!-- /main -->
                     <li class="nav-item-header">
                         <div class="text-uppercase font-size-sm line-height-sm">РЕЗУЛЬТАТЫ</div>
@@ -83,7 +92,7 @@
                         <a href="/operator/perezvon/" class="nav-link <?=isset($active['perezvon']) ? $active['perezvon'] : ''; ?>">
                             <i class="icon-calendar"></i>
                             <span>	Перезвон </span>
-                            <span class="badge badge-pill bg-secondary ml-auto">0</span>
+                            <span class="badge badge-pill bg-secondary ml-auto"><?=$contact['perezvon']?></span>
                         </a>
                     </li>
 
@@ -92,7 +101,7 @@
                         <a href="#" class="nav-link <?=isset($active['moderate']) ? $active['moderate'] : ''; ?>">
                             <i class="icon-eye"></i>
                             <span>	На модерации </span>
-                            <span class="badge badge-pill bg-secondary ml-auto">0</span>
+                            <span class="badge badge-pill bg-secondary ml-auto"><?=$contact['moderation']?></span>
                         </a>
                     </li>
 
@@ -108,7 +117,7 @@
                         <a href="#" class="nav-link">
                             <i class="icon-checkmark"></i>
                             <span>	Успешно </span>
-                            <span class="badge badge-pill bg-secondary ml-auto">0</span>
+                            <span class="badge badge-pill bg-secondary ml-auto"><?=$contact['all']?></span>
                         </a>
                     </li>
 
