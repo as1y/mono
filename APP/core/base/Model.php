@@ -215,9 +215,18 @@ abstract class Model
             return true;
         }
 
-        
+        if ($sizetype = "horizont" && $type = "kvadrat"){
+            // вырезаем квадратную серединку по x, если фото горизонтальное
+            imagecopyresized($dest, $src, 0, 0,
+                round((max($w_src,$h_src)-min($w_src,$h_src))/2),
+                0, $w, $w, min($w_src,$h_src), min($w_src,$h_src));
+        }
 
-
+        if ($sizetype = "vertikal" && $type = "kvadrat"){
+            // вырезаем квадратную серединку по x, если фото горизонтальное
+            imagecopyresized($dest, $src, 0, 0, 0, 0, $w, $w,
+                min($w_src,$h_src), min($w_src,$h_src));
+        }
 
 
 
