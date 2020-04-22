@@ -3,7 +3,7 @@
 
 <div class="card">
     <div class="card-header bg-dark text-white header-elements-inline">
-        <h5 class="card-title">ПРЕДЛОЖЕНИЕ ОПЕРАТОРАМ</h5>
+        <h5 class="card-title">ПРЕДЛОЖЕНИЕ ОПЕРАТОРАМ1</h5>
     </div>
 
     <div class="table-responsive">
