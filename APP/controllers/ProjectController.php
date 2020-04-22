@@ -270,6 +270,9 @@ class ProjectController extends AppController {
 
                 $Panel->myresize($urlnew);
 
+
+
+
                 $Panel->changelogo("/".$urlnew, $idc);
 
                 $_SESSION['success'] = "Логотип в проекте изменен";

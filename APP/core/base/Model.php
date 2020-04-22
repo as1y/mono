@@ -184,6 +184,12 @@ abstract class Model
         $h_src = imagesy($src);
 
 
+        show($w_src);
+        show($h_src);
+
+        exit("hgfhgfh");
+
+
         // Определяем тип картинки
         if ($w_src > $h_src*1.5){
             //Горизонтальная
