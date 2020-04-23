@@ -7,38 +7,52 @@
     <div class="card-body">
 
         <div class="row">
-            <div class="col-md-3">
+            <div class="col-md-6">
+
+                К выводу доступно <b><?=\APP\core\base\Model::getBal()?></b> рублей <br>
+                <hr>
+
+                <div class="form-group">
+                    <label>СУММА</label>
+                    <input type="text" name="qiwi" placeholder="QIWI" class="form-control">
+                </div>
+
+                <div class="form-group">
+                    <label>СПОСОБ: <span class="text-danger">*</span> </label>
+                    <select data-placeholder="Выберете направление" name="role" class="form-control form-control-select2 required" data-fouc>
+
+                        <option <?= ($_SESSION['ulogin']['role'] == "O") ? 'selected' : ""?> value="O" >Оператор</option>
+                        <option <?= ($_SESSION['ulogin']['role'] == "R") ? 'selected' : ""?> value="R" >Рекламодатель</option>
+                    </select>
+
+                </div>
 
 
-                    <div class="card card-body">
-                        <div class="media">
-                            <div class="mr-3 align-self-center">
-                                <i class="icon-wallet icon-3x text-success-400"></i>
-                            </div>
 
-                            <div class="media-body text-right">
-                                <h3 class="font-weight-semibold mb-0"><?=\APP\core\base\Model::getBal()?></h3>
-                                <span class="text-uppercase font-size-sm text-muted">РУБЛЕЙ</span>
-                            </div>
-                        </div>
-                    </div>
-
-                <a href="/panel/cashout/" type="button" class="btn btn-warning"><i class="icon-credit-card mr-2"></i>Вывести средства</a>
+                <a href="/panel/cashout/" type="button" class="btn btn-warning"><i class="icon-credit-card mr-2"></i>ЗАКАЗАТЬ ВЫВОД</a>
 
             </div>
 
 
+
+            <form action="/panel/cashout/" method="post">
             <div class="col-md-6">
 
                 <div class="form-group">
                     <label>QIWI</label>
-                    <input type="qiwi"    placeholder="QIWI" class="form-control">
+                    <input type="text" name="qiwi" placeholder="QIWI" class="form-control">
                 </div>
 
                 <div class="form-group">
                     <label>Яндекс.Деньги</label>
-                    <input type="yandexmoney"   placeholder="Яндекс.Деньги" class="form-control">
+                    <input type="text"  name="yandexmoney"  placeholder="Яндекс.Деньги" class="form-control">
                 </div>
+
+                <div class="form-group">
+                    <label>Номер карты</label>
+                    <input type="text"  name="cardnumber"  placeholder="Номер карты" class="form-control">
+                </div>
+
 
 
                 <button  type="button" class="btn btn-warning"><i class="icon-checkmark mr-2"></i>СОХРАНИТЬ РЕКВИЗИТЫ</button>
@@ -47,7 +61,7 @@
 
 
             </div>
-
+            </form>
 
         </div>
 

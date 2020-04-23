@@ -1,9 +1,12 @@
 <?php
-require 'vendor/autoload.php';
-require 'lib/functions.php'; //ОБЩИЕ ФУНКЦИИ
-require 'lib/functions_app.php'; //ФУНКЦИИ ПРИЛОЖЕНИЯ
-require_once 'APP/core/Mail.php';
-define('CONFIG',array_merge(require 'config/main.php',require 'config/main-local.php'));
+
+$base = '/home/bitrix/ext_www/cashcall.ru/';
+
+require $base.'vendor/autoload.php';
+require $base.'lib/functions.php'; //ОБЩИЕ ФУНКЦИИ
+require $base.'lib/functions_app.php'; //ФУНКЦИИ ПРИЛОЖЕНИЯ
+require_once $base.'APP/core/Mail.php';
+define('CONFIG',array_merge(require $base.'config/main.php',require $base.'config/main-local.php'));
 
 
 $PARAM = [
