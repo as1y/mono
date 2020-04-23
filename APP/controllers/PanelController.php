@@ -106,7 +106,40 @@ class PanelController extends AppController {
 
 
 
+    public function cashoutAction(){
+        $Panel =  new Panel();
 
+        $balancelog = [];
+        $balancelog = $Panel->balancelog();
+
+        if (empty($balancelog)) $balancelog = [];
+
+
+
+        $META = [
+            'title' => 'Вывести средства',
+            'description' => 'Вывести средства',
+            'keywords' => 'Вывести средства',
+        ];
+        \APP\core\base\View::setMeta($META);
+
+        if ($_SESSION['ulogin']['role'] == "R") $BREADCRUMBS['HOME'] = ['Label' => "Кабинет рекламодателя", 'Url' => "/master"];
+        if ($_SESSION['ulogin']['role'] == "O") $BREADCRUMBS['HOME'] = ['Label' => "Кабинет  оператора", 'Url' => "/operator"];
+        $BREADCRUMBS['DATA'][] = ['Label' => "Вывести средства"];
+        \APP\core\base\View::setBreadcrumbs($BREADCRUMBS);
+
+
+
+        $ASSETS[] = ["js" => "/global_assets/js/plugins/tables/datatables/datatables.min.js"];
+        $ASSETS[] = ["js" => "/assets/js/datatables_basic.js"];
+        \APP\core\base\View::setAssets($ASSETS);
+
+
+
+
+        $this->set(compact('balancelog'));
+
+    }
 
 
     public function loadzapisAction(){

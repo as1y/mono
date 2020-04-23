@@ -1,7 +1,7 @@
 
 <div class="card">
-    <div class="card-header header-elements-inline">
-        <h5 class="card-title">Партнерская программа</h5>
+    <div class="card-header bg-dark text-white header-elements-inline">
+        <h5 class="card-title">ПАРТНЕРСКАЯ ПРОГРАММА</h5>
 
     </div>
 

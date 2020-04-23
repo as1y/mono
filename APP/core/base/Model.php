@@ -98,6 +98,7 @@ abstract class Model
             'sum' => $summa,
             'comment' => $comment,
             'type' => "debet",
+            'status' => 1,
         ];
         $this->addnewBD("balancelog", $balancelog);
         //Зачислить в баланслог
@@ -118,6 +119,7 @@ abstract class Model
             'sum' => $summa,
             'comment' => $comment,
             'type' => "credit",
+            'status' => 1
         ];
         $this->addnewBD("balancelog", $balancelog);
         //Зачислить в баланслог

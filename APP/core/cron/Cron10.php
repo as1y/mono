@@ -6,19 +6,22 @@ require_once 'APP/core/Mail.php';
 define('CONFIG',array_merge(require 'config/main.php',require 'config/main-local.php'));
 
 
-R::setup(CONFIG['db']['dsn'],CONFIG['db']['user'],CONFIG['db']['pass']);
-
 $PARAM = [
 	'text' => "zaza",
 	'date' => date("H:i:s"),
-	];
+];
 
 dumpf($PARAM);
 // \R::exec ("UPDATE contact SET status = '0' WHERE status = '1'");
 
-
-
 exit();
+
+R::setup(CONFIG['db']['dsn'],CONFIG['db']['user'],CONFIG['db']['pass']);
+
+
+
+
+
 
 
 function allring() {

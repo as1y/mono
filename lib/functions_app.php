@@ -333,7 +333,14 @@ function renderform ($FORMRESULT, $idc){
 
 
 
+function paystatus ($status){
 
+    if  ($status == 1) return "<span class='badge badge-success'>ИСПОЛНЕН</span>";
+
+    if  ($status == 2) return "<span class='badge badge-warning'>В ПРОЦЕССЕ</span>";
+
+
+}
 
 
 function camstatus ($status, $id ){

@@ -1,6 +1,6 @@
 <div class="card">
-    <div class="card-header header-elements-inline">
-        <h5 class="card-title">Баланс</h5>
+    <div class="card-header bg-dark text-white header-elements-inline">
+        <h5 class="card-title">БАЛАНС</h5>
 
     </div>
 
@@ -26,8 +26,16 @@
                 <a href="#" type="button" class="btn btn-success"><i class="icon-plus-circle2 mr-2"></i>ПОПОЛНИТЬ БАЛАНС</a>
 
             </div>
-            <div class="col-md-3 align-self-center">
+
+        <?php if ($_SESSION['ulogin']['role'] == "O"):?>
+
+            <div class="col-md-3">
+                <a href="/panel/cashout/" type="button" class="btn btn-warning"><i class="icon-credit-card mr-2"></i>Вывести средства</a>
             </div>
+            <?php endif;?>
+
+
+
         </div>
 
 
@@ -36,10 +44,11 @@
         <table  class="table datatable-basic text-center">
             <thead>
             <tr>
-                <th>Дата и время</th>
-                <th>Сумма</th>
-                <th>Тип операции</th>
-                <th>Комментарии</th>
+                <th>ДАТА</th>
+                <th>СУММА</th>
+                <th>ТИП</th>
+                <th>КОММЕНТАРИЙ</th>
+                <th>СТАТУС</th>
 
             </tr>
             </thead>
@@ -55,7 +64,7 @@
                     <td class="text-center"><b><?=$val['sum']?></b></td>
                     <td class="text-center"><?=$val['type']?></td>
                     <td class="text-center"><?=$val['comment']?></td>
-
+                    <td class="text-center"><?=paystatus($val['status'])?></td>
                 </tr>
 
 
