@@ -125,6 +125,20 @@
                     </li>
 
 
+<!--                    <li class="nav-item-header">-->
+<!--                        <div class="text-uppercase font-size-sm line-height-sm">ТОП ОПЕРАТОРЫ</div>-->
+<!--                    </li>-->
+<!---->
+<!--                    <li class="nav-item">-->
+<!--                        <a href="/panel/operator/" class="nav-link --><?//=isset($active['operator']) ? $active['operator'] : ''; ?><!--" >-->
+<!--                            <i class="icon-users4"></i>-->
+<!--                            <span>	Операторы </span>-->
+<!--                            <span class="badge badge-pill bg-secondary ml-auto">--><?//=\APP\core\base\Model::countoperator()?><!--</span>-->
+<!---->
+<!--                        </a>-->
+<!--                    </li>-->
+
+
 
 
                 </ul>

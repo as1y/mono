@@ -368,7 +368,7 @@ class OperatorController extends AppController {
 
 //        $contactperezvon = $operator->getcontactuser(2);
 
-        $resultuser = $operator->getresultuser(0);
+        $resultuser = $operator->getresultuser(1);
 
 
         $this->set(compact('resultuser'));
@@ -452,10 +452,22 @@ class OperatorController extends AppController {
 
         if ($_POST){
 
+
+            $statuscall = $operator->statuscall();
+
+            if ($statuscall['acess'] === FALSE){
+
+                $_SESSION['errors'] = "Подать заявку можно после получения разрешения на звонки. Посмотреть ваш статус можно в разделе <a href='/operator/'>статистика</a>";
+                redir("/operator/companyinfo/?id=".$idc);
+
+
+            }
+
+
             $result =  $operator->joincompany($idc);
 
             if ($result == 1){
-                $_SESSION['success'] = "Тикет добавлен";
+                $_SESSION['success'] = "Заявка отправлена";
                 redir("/operator/my/");
             }else{
                 $_SESSION['errors'] = $result;

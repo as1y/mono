@@ -189,7 +189,8 @@ class PanelController extends AppController {
 
                 copy($_FILES['file']['tmp_name'], $urlnew); // Копируем из общего котла в тизерку
 
-                $Panel->resizepicture($urlnew);
+
+                $Panel->myresize($urlnew, 200,200);
 
 
                 if (!empty($_SESSION['ulogin']['avatar'])) unlink($_SESSION['ulogin']['avatar']);
@@ -504,6 +505,44 @@ class PanelController extends AppController {
 
 
     }
+
+
+
+
+    public function operatorAction(){
+
+
+        $Panel =  new Panel();
+
+
+        $META = [
+            'title' => 'Каталог операторов',
+            'description' => 'Каталог операторов',
+            'keywords' => 'Каталог операторов',
+        ];
+
+        $BREADCRUMBS['HOME'] = ['Label' => $this->BreadcrumbsControllerLabel, 'Url' => $this->BreadcrumbsControllerUrl];
+        $BREADCRUMBS['DATA'][] = ['Label' => "FAQ"];
+
+        \APP\core\base\View::setMeta($META);
+        \APP\core\base\View::setBreadcrumbs($BREADCRUMBS);
+
+
+        $ASSETS[] = ["js" => "/global_assets/js/plugins/tables/datatables/datatables.min.js"];
+        $ASSETS[] = ["js" => "/assets/js/datatables_basic.js"];
+        \APP\core\base\View::setAssets($ASSETS);
+
+
+        $operators = $Panel->getoperators();
+
+        $this->set(compact('operators'));
+
+
+
+
+    }
+
+
 
 
 

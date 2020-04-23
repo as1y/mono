@@ -175,128 +175,71 @@ abstract class Model
 
 
 
-    public function myresize($url, $type ="kvadrat", $weight = "300", $height = "300" ){
+    public function myresize($url, $weight, $height ){
 
-        $w = 600;
+
 
         $src = imagecreatefromjpeg($url);
         $w_src = imagesx($src);
         $h_src = imagesy($src);
 
 
-        show($w_src);
-        show($h_src);
-
-        exit("hgfhgfh");
+        $needtype = getsizetypeimage($weight, $height); // Какой типа картинки нам нужен
+        $sizetype = getsizetypeimage($w_src, $h_src); // Какую по факту дали
 
 
-        // Определяем тип картинки
-        if ($w_src > $h_src*1.5){
-            //Горизонтальная
-            $sizetype = "horizont";
-        }elseif ($w_src*1.5 < $h_src){
-            // Вертикальная
-            $sizetype = "vertikal";
-        }else{
-            // Квадратная
-            $sizetype = "kvadrat";
-        }
+        $image_p = imagecreatetruecolor($weight, $height); // Создаем изображение
 
-        // создаём пустую квадратную картинку
-        // важно именно truecolor!, иначе будем иметь 8-битный результат
-        $dest = imagecreatetruecolor($w,$w);
+        if ($needtype == "kvadrat"){
+            $w = 600;
+            $dest = imagecreatetruecolor($w,$w);
 
 
-        if ($sizetype == $type){
-            // Это обозначет, что пропорации сошлись
-            imagecopyresized($dest, $src, 0, 0, 0, 0, $w, $w, $w_src, $w_src);
-            // Значит просто масштабируем под размер
 
-            // Дальше тупо сохраняем под размер
-            $image_p = imagecreatetruecolor($weight, $height); // Создаем изображение
+                if ($sizetype == "kvadrat")
+                    imagecopyresized($dest, $src, 0, 0, 0, 0, $w, $w, $w_src, $w_src);
+
+                if ($sizetype == "horizont")
+                    imagecopyresized($dest, $src, 0, 0,
+                        round((max($w_src,$h_src)-min($w_src,$h_src))/2),
+                        0, $w, $w, min($w_src,$h_src), min($w_src,$h_src));
+
+                if ($sizetype == "vertikal"){
+                    imagecopyresized($dest, $src, 0, 0, 0, 0, $w, $w,
+                        min($w_src,$h_src), min($w_src,$h_src));
+                }
+
+
             imagecopyresampled($image_p, $dest, 0, 0, 0, 0, $weight, $height, $w, $w);
 
-            imagejpeg ($image_p ,$url, 100); // Сохраняем
 
-            return true;
-        }
 
-        if ($sizetype = "horizont" && $type = "kvadrat"){
-            // вырезаем квадратную серединку по x, если фото горизонтальное
-            imagecopyresized($dest, $src, 0, 0,
-                round((max($w_src,$h_src)-min($w_src,$h_src))/2),
-                0, $w, $w, min($w_src,$h_src), min($w_src,$h_src));
-        }
-
-        if ($sizetype = "vertikal" && $type = "kvadrat"){
-            // вырезаем квадратную серединку по x, если фото горизонтальное
-            imagecopyresized($dest, $src, 0, 0, 0, 0, $w, $w,
-                min($w_src,$h_src), min($w_src,$h_src));
         }
 
 
 
-
-
-
-
-    }
-
-
-
-
-    public function resizepicture($url){
-
-        $w = 600;
-
-        $src = imagecreatefromjpeg($url);
-        $w_src = imagesx($src);
-        $h_src = imagesy($src);
-
-
-        // создаём пустую квадратную картинку
-        // важно именно truecolor!, иначе будем иметь 8-битный результат
-        $dest = imagecreatetruecolor($w,$w);
-
-        // вырезаем квадратную серединку по x, если фото горизонтальное
-        if ($w_src > $h_src) {
-
-            imagecopyresized($dest, $src, 0, 0,
-                round((max($w_src,$h_src)-min($w_src,$h_src))/2),
-                0, $w, $w, min($w_src,$h_src), min($w_src,$h_src));
-
+        if ($needtype == "horizont"){
+            imagecopyresampled($image_p, $src, 0, 0, 0, 0, $weight, $height, $w_src, $h_src);
         }
 
-        // вырезаем квадратную верхушку по y,
-        // если фото вертикальное (хотя можно тоже серединку)
-        if ($w_src < $h_src)
-            /*
-                   imagecopyresized($dest, $src, 0, 0, 0,
-                round((max($w_src,$h_src)-min($w_src,$h_src))/2),
-                $w, $w, min($w_src,$h_src), min($w_src,$h_src));
-*/
-            imagecopyresized($dest, $src, 0, 0, 0, 0, $w, $w,
-                min($w_src,$h_src), min($w_src,$h_src));
+        if ($needtype == "vertikal"){
+            imagecopyresampled($image_p, $src, 0, 0, 0, 0, $weight, $height, $w_src, $h_src);
+        }
 
 
-        // квадратная картинка масштабируется без вырезок
-        if ($w_src==$h_src)
-            imagecopyresized($dest, $src, 0, 0, 0, 0, $w, $w, $w_src, $w_src);
-
-
-
-// Подгоняем под 300 на 300
-        $image_p = imagecreatetruecolor(300, 300); // Создаем изображение
-        imagecopyresampled($image_p, $dest, 0, 0, 0, 0, 300, 300, $w, $w);
-// Подгоняем под 300 на 300
-
-
-// Сохраняем
         imagejpeg ($image_p ,$url, 100); // Сохраняем
-// Сохраняем
+
+        return true;
+
+
+
+
+
 
 
     }
+
+
 
 
 
@@ -380,6 +323,12 @@ abstract class Model
 
     }
 
+
+    public static function getBal(){
+        return  $company = R::load("users", $_SESSION['ulogin']['id'])['bal'];
+
+
+    }
 
     public static function online (){
 

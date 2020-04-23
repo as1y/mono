@@ -24,7 +24,7 @@
             foreach ($resultuser as $key=>$val):
 
                 if ($val['id'] == 0) continue;
-                if ($val['status'] != 0 ) continue;
+
 
                 $userinfo = $val->users;
                 $company = $val->company;

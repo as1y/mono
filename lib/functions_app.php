@@ -64,15 +64,7 @@ function raskladkazapisi($DATA) {
 
 }
 
-function getconversion ($value1, $value2){
 
-    if ($value2 == 0) return 0;
-
-    $result = $value1/$value2*100;
-    $result = round($result);
-
-    return $result;
-}
 
 
 

@@ -35,8 +35,7 @@
                     foreach ($operators['OperatoriNaModeracii'] as $key=>$val):?>
                         <tr>
                             <td>
-                                <img src="<?=$val['avatar']?>" width="38" height="38" class="rounded-circle" alt="">
-
+                                <img src="<?=$val['avatar']?>" width="38" height="38" class="rounded-circle" alt=""><br>
                                 <a href="<?=generateprofilelink($val)?>" class="breadcrumb-item" target="_blank">
                                 <?=$val['username']?>
                                 </a>
@@ -111,10 +110,9 @@
                     foreach ($operators['OperatoriNaProekte'] as $key=>$val):?>
                         <tr>
                             <td>
-                                <img src="<?=$val['avatar']?>" width="38" height="38" class="rounded-circle" alt="">
+                                <img src="<?=$val['avatar']?>" width="38" height="38" class="rounded-circle" alt=""><br>
                                 <a href="<?=generateprofilelink($val)?>" class="breadcrumb-item" target="_blank">
                                     <?=$val['username']?></a>
-
                                 <br>
 
 

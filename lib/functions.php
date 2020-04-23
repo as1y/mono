@@ -199,7 +199,25 @@ function teleph($tel){
 
 
 
+function getconversion ($value1, $value2){
+    if ($value2 == 0) return 0;
+    $result = $value1/$value2*100;
+    $result = round($result);
+    return $result;
+}
 
+
+
+function getsizetypeimage($w_src, $h_src){
+
+    if ($w_src > $h_src)  return  "horizont";
+  if ($w_src < $h_src)  return "vertikal";
+  if ($w_src == $h_src)  return"kvadrat";
+
+
+
+
+}
 
 function fCURL($url, $PARAMS = []){
 

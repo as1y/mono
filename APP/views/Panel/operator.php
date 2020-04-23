@@ -28,7 +28,7 @@
                     foreach ($operators as $key=>$val):?>
                         <tr>
                             <td>
-                                <img src="<?=$val['avatar']?>" width="38" height="38" class="rounded-circle" alt="">
+                                <img src="<?=$val['avatar']?>" width="38" height="38" class="rounded-circle" alt=""><br>
                                 <?=$val['username']?></td>
                             <td class="text-center"><?=$val['aboutme']?></td>
                             <td class="text-center"><?= (empty($val['totalcall'])) ? 0 : $val['totalcall']  ?></td>
