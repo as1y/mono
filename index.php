@@ -40,7 +40,12 @@ require_once 'APP/core/Mail.php';
 
 
 use APP\core\Router;
+
+
 session_start();
+
+
+
 $router = new Router;
 // ПУТИ ЗАДАЮТ НАДО УТОЧНИТЬ КАК РАБОТАЕТ
 $router->add( 'user/login', ['controller'=>'User', 'action'=>'index']);

@@ -89,6 +89,16 @@ class Panel extends \APP\core\base\Model {
     }
 
 
+    public function addrequis($DATA, $type){
+
+
+
+
+        return true;
+    }
+
+
+
 
 
     public function getrefferals(){

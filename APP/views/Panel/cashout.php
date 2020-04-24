@@ -8,7 +8,7 @@
 
         <div class="row">
             <div class="col-md-6">
-
+                <form action="/panel/cashout/" method="post">
                 К выводу доступно <b><?=\APP\core\base\Model::getBal()?></b> рублей <br>
                 <hr>
 
@@ -27,17 +27,28 @@
 
                 </div>
 
-
-
-                <a href="/panel/cashout/" type="button" class="btn btn-warning"><i class="icon-credit-card mr-2"></i>ЗАКАЗАТЬ ВЫВОД</a>
-
+                <button type="submit"  class="btn btn-success"><i class="icon-credit-card mr-2"></i>ЗАКАЗАТЬ ВЫВОД</button>
+                </form>
             </div>
 
 
 
-            <form action="/panel/cashout/" method="post">
+
             <div class="col-md-6">
 
+                <?php
+               unset($_SESSION['ulogin']['requis']);
+               if (empty($_SESSION['ulogin']['requis']))  $_SESSION['ulogin']['requis'] = '[{}]';
+
+//               show($_SESSION['ulogin']['requis']);
+
+                $requis = json_decode($_SESSION['ulogin']['requis'], true);
+
+
+                ?>
+
+
+                <form action="/panel/cashout/" method="post">
                 <div class="form-group">
                     <label>QIWI</label>
                     <input type="text" name="qiwi" placeholder="QIWI" class="form-control">
@@ -53,15 +64,13 @@
                     <input type="text"  name="cardnumber"  placeholder="Номер карты" class="form-control">
                 </div>
 
+                <button  type="submit" class="btn btn-warning"><i class="icon-checkmark mr-2"></i>СОХРАНИТЬ РЕКВИЗИТЫ</button>
 
 
-                <button  type="button" class="btn btn-warning"><i class="icon-checkmark mr-2"></i>СОХРАНИТЬ РЕКВИЗИТЫ</button>
-
-
-
+                </form>
 
             </div>
-            </form>
+
 
         </div>
 

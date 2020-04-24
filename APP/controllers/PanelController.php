@@ -139,9 +139,50 @@ class PanelController extends AppController {
         \APP\core\base\View::setAssets($ASSETS);
 
 
-        show($_POST);
 
-        exit();
+        if ($_POST){
+
+
+            $Panel::$USER['requis'] = json_decode($Panel::$USER['requis'], true);
+            if (empty($Panel::$USER['requis'])) $Panel::$USER['requis'] = [];
+
+
+
+            if (!empty($_POST['qiwi'])){
+
+                if (empty($Panel::$USER['requis']['qiwi'])){
+                    echo "Добавляем новый QIWI кошелек";
+
+                   $result = valipay(true, "qiwi");
+
+                   if ($result == 1){
+                       $Panel->addrequis($_POST['qiwi'], "qiwi");
+                       $_SESSION['success'][] = "QIWI кошелек успешно добавлен!";
+                   }else{
+                       $_SESSION['errors'][] = $result;
+                   }
+
+
+                }
+
+
+
+            }
+
+
+
+
+
+            redir("/panel/cashout/");
+
+
+
+
+
+        }
+
+
+
 
 
 

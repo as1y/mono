@@ -7,7 +7,7 @@ abstract class Model
 	public $ATR = [];
 	public $errors = [];
 	public $rules = [];
-    public $user = [];
+    static $USER = [];
 
 	public function __construct()
 	{
@@ -16,6 +16,12 @@ abstract class Model
             R::setup(CONFIG['db']['dsn'],CONFIG['db']['user'],CONFIG['db']['pass']);
             //  R::fancyDebug( TRUE );
             //  R::freeze(TRUE);
+
+            if (!empty($_SESSION['ulogin']['id'])){
+                self::$USER = $this->loaduser(CONFIG['USERTABLE'], $_SESSION['ulogin']['id']);
+            }
+
+
 
         }
 
@@ -126,6 +132,13 @@ abstract class Model
 
         return true;
     }
+
+
+    public static function getBal(){
+
+	    return self::$USER['bal'];
+    }
+
 
 
     public static function contact($id, $type = "company") {
@@ -326,11 +339,6 @@ abstract class Model
     }
 
 
-    public static function getBal(){
-        return  $company = R::load("users", $_SESSION['ulogin']['id'])['bal'];
-
-
-    }
 
     public static function online (){
 

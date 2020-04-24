@@ -3,6 +3,8 @@ namespace APP\core;
 class Router {
 	protected $routes = [];
 	protected $route = [];
+
+
 	public function __construct(){
 	}
 	public function add($regexp, $route = []){
