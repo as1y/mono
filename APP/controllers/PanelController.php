@@ -143,38 +143,74 @@ class PanelController extends AppController {
         if ($_POST){
 
 
-//            $Panel::$USER['requis'] = json_decode($Panel::$USER['requis'], true);
-//            if (empty($Panel::$USER['requis'])) $Panel::$USER['requis'] = [];
-
+            $requis = json_decode($Panel::$USER->requis, true);
+            if (empty($requis)) $requis = [];
 
 
             if (!empty($_POST['qiwi'])){
 
-                if (empty($Panel::$USER['requis']['qiwi'])){
-                    echo "Добавляем новый QIWI кошелек";
-
+                if (empty($requis['qiwi'])){
+                    //Добавляем новый QIWI кошелек
                    $result = validationpay($_POST['qiwi'], "qiwi");
                    if ($result == 1){
-                       $Panel->addrequis($_POST['qiwi']);
+                       $Panel->addrequis($_POST);
                        $_SESSION['success'] .= "QIWI кошелек успешно добавлен!";
                        redir("/panel/cashout/");
                    }else{
-                       $_SESSION['errors'] .= $result;
+                       $_SESSION['errors'] .= $result."<br>";
                    }
 
                 }
 
-                if (!empty($Panel::$USER['requis']['qiwi']) && $_POST['qiwi'] != $Panel::$USER['requis']['qiwi']  ){
+                if (!empty($requis['qiwi']) && $_POST['qiwi'] != $requis['qiwi']  ){
                     $_SESSION['errors'] .= "Вы уже заполнили QIWI кошелек. Изменить реквизиты возможно только через тех. поддержку<br>";
                 }
 
+            }
 
+            if (!empty($_POST['yamoney'])){
+
+                if (empty($requis['yamoney'])){
+                    //Добавляем новый Яндекс.Кошелек кошелек
+                    $result = validationpay($_POST['yamoney'], "yamoney");
+                    if ($result == 1){
+                        $Panel->addrequis($_POST);
+                        $_SESSION['success'] .= "Яндекс.Кошелек успешно добавлен!";
+                        redir("/panel/cashout/");
+                    }else{
+                        $_SESSION['errors'] .= $result."<br>";
+                    }
+
+                }
+
+                if (!empty($requis['yamoney']) && $_POST['yamoney'] != $requis['yamoney']  ){
+                    $_SESSION['errors'] .= "Вы уже заполнили Яндекс.Кошелек Изменить реквизиты возможно только через тех. поддержку<br>";
+                }
 
             }
 
 
 
+            if (!empty($_POST['card'])){
 
+                if (empty($requis['card'])){
+                    //Добавляем новый Яндекс.Кошелек кошелек
+                    $result = validationpay($_POST['card'], "card");
+                    if ($result == 1){
+                        $Panel->addrequis($_POST);
+                        $_SESSION['success'] .= "Номер карты успешно добавлен!";
+                        redir("/panel/cashout/");
+                    }else{
+                        $_SESSION['errors'] .= $result."<br>";
+                    }
+
+                }
+
+                if (!empty($requis['card']) && $_POST['card'] != $requis['card']  ){
+                    $_SESSION['errors'] .= "Вы уже заполнили Яндекс.Кошелек Изменить реквизиты возможно только через тех. поддержку<br>";
+                }
+
+            }
 
 
 

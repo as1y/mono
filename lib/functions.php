@@ -279,6 +279,19 @@ function validationpay($data, $type){
     }
 
 
+    if ($type == "yamoney"){
+        $data = intval($data);
+        if (strlen($data) > 30) return "Яндекс.Деньги не должен быть длиннее 30 символов";
+        if (strlen($data) < 5) return "Яндекс.Деньги  не должен быть длиннее 5 символов";
+    }
+
+    if ($type == "card"){
+        $data = intval($data);
+        if (strlen($data) > 30) return "Номер карты не должен быть длиннее 30 символов";
+        if (strlen($data) < 5) return "Номер карты  не должен быть длиннее 5 символов";
+    }
+
+
 
 
     return true;

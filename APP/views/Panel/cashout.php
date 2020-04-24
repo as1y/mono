@@ -56,12 +56,12 @@
 
                 <div class="form-group">
                     <label>Яндекс.Деньги</label>
-                    <input type="text"  name="yandexmoney"  placeholder="Яндекс.Деньги" class="form-control">
+                    <input type="text"  name="yamoney"  placeholder="Яндекс.Деньги" class="form-control">
                 </div>
 
                 <div class="form-group">
                     <label>Номер карты</label>
-                    <input type="text"  name="cardnumber"  placeholder="Номер карты" class="form-control">
+                    <input type="text"  name="card"  placeholder="Номер карты" class="form-control">
                 </div>
 
                 <button  type="submit" class="btn btn-warning"><i class="icon-checkmark mr-2"></i>СОХРАНИТЬ РЕКВИЗИТЫ</button>
