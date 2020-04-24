@@ -139,13 +139,11 @@ class PanelController extends AppController {
         \APP\core\base\View::setAssets($ASSETS);
 
 
+        $requis = json_decode($Panel::$USER->requis, true);
+        if (empty($requis)) $requis = [];
 
-        if ($_POST){
 
-
-            $requis = json_decode($Panel::$USER->requis, true);
-            if (empty($requis)) $requis = [];
-
+        if ($_POST && $_GET['action'] == "changerequis"){
 
             if (!empty($_POST['qiwi'])){
 
@@ -189,8 +187,6 @@ class PanelController extends AppController {
 
             }
 
-
-
             if (!empty($_POST['card'])){
 
                 if (empty($requis['card'])){
@@ -207,26 +203,31 @@ class PanelController extends AppController {
                 }
 
                 if (!empty($requis['card']) && $_POST['card'] != $requis['card']  ){
-                    $_SESSION['errors'] .= "Вы уже заполнили Яндекс.Кошелек Изменить реквизиты возможно только через тех. поддержку<br>";
+                    $_SESSION['errors'] .= "Вы уже заполнили Номер карты. Изменить реквизиты возможно только через тех. поддержку<br>";
                 }
 
             }
 
-
-
             redir("/panel/cashout/");
 
+        }
+
+        if ($_POST && $_GET['action'] == "viplata"){
+
+            $Panel->createviplata();
+
+            show($_POST);
+            exit();
 
 
+            redir("/panel/balance/");
         }
 
 
 
 
 
-
-
-        $this->set(compact('balancelog'));
+        $this->set(compact('requis'));
 
     }
 

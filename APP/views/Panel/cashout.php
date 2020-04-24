@@ -8,21 +8,47 @@
 
         <div class="row">
             <div class="col-md-6">
-                <form action="/panel/cashout/" method="post">
+                <form action="/panel/cashout/?action=viplata" method="post">
                 К выводу доступно <b><?=\APP\core\base\Model::getBal()?></b> рублей <br>
                 <hr>
 
                 <div class="form-group">
-                    <label>СУММА</label>
-                    <input type="text" name="qiwi" placeholder="QIWI" class="form-control">
+                    <label>СУММА <span class="text-danger">*</span></label>
+                    <input type="text" name="summa" placeholder="Сумма на вывод" class="form-control">
                 </div>
 
                 <div class="form-group">
-                    <label>СПОСОБ: <span class="text-danger">*</span> </label>
-                    <select data-placeholder="Выберете направление" name="role" class="form-control form-control-select2 required" data-fouc>
+                    <label>Способ вывода: <span class="text-danger">*</span> </label>
+                    <select data-placeholder="Выберите способ вывода" name="sposob" class="form-control form-control-select2 required" data-fouc>
 
-                        <option <?= ($_SESSION['ulogin']['role'] == "O") ? 'selected' : ""?> value="O" >Оператор</option>
-                        <option <?= ($_SESSION['ulogin']['role'] == "R") ? 'selected' : ""?> value="R" >Рекламодатель</option>
+                        <?php
+
+                        foreach ($requis as $key=>$val){
+
+                            if (empty($val)) continue;
+
+                            if ($key == "qiwi") $name = "QIWI";
+                            if ($key == "yamoney") $name = "Яндекс.Деньги";
+                            if ($key == "card") $name = "Карта банка";
+                            ?>
+
+                            <option  value="<?=$key?>" ><?=$name."-".$val?></option>
+
+                        <?php
+
+
+                        }
+
+                            ?>
+
+
+
+
+
+
+
+
+
                     </select>
 
                 </div>
@@ -35,33 +61,22 @@
 
 
             <div class="col-md-6">
+                <h2>МОИ РЕКВИЗИТЫ</h2>
 
-                <?php
-               unset($_SESSION['ulogin']['requis']);
-               if (empty($_SESSION['ulogin']['requis']))  $_SESSION['ulogin']['requis'] = '[{}]';
-
-//               show($_SESSION['ulogin']['requis']);
-
-                $requis = json_decode($_SESSION['ulogin']['requis'], true);
-
-
-                ?>
-
-
-                <form action="/panel/cashout/" method="post">
+                <form action="/panel/cashout/?action=changerequis" method="post">
                 <div class="form-group">
                     <label>QIWI</label>
-                    <input type="text" name="qiwi" placeholder="QIWI" class="form-control">
+                    <input type="text" name="qiwi" value="<?=(empty($requis['qiwi'])) ? "" : $requis['qiwi'] ?>" placeholder="Введите ваш QIWI" class="form-control">
                 </div>
 
                 <div class="form-group">
                     <label>Яндекс.Деньги</label>
-                    <input type="text"  name="yamoney"  placeholder="Яндекс.Деньги" class="form-control">
+                    <input type="text"  name="yamoney" value="<?=(empty($requis['yamoney'])) ? "" : $requis['yamoney'] ?>" placeholder="Введите ваш Яндекс.Деньги" class="form-control">
                 </div>
 
                 <div class="form-group">
                     <label>Номер карты</label>
-                    <input type="text"  name="card"  placeholder="Номер карты" class="form-control">
+                    <input type="text"  name="card" value="<?=(empty($requis['card'])) ? "" : $requis['card'] ?>"  placeholder="Введите ваш Номер карты" class="form-control">
                 </div>
 
                 <button  type="submit" class="btn btn-warning"><i class="icon-checkmark mr-2"></i>СОХРАНИТЬ РЕКВИЗИТЫ</button>

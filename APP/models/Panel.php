@@ -81,6 +81,11 @@ class Panel extends \APP\core\base\Model {
     }
 
 
+    public function createviplata(){
+
+
+    }
+
 
 
     public function balancelog(){
@@ -104,6 +109,15 @@ class Panel extends \APP\core\base\Model {
             $requis = json_encode($requis, true);
             self::$USER->requis = $requis;
         }
+
+
+        if (!empty($DATA['card'])){
+            $requis = json_decode(self::$USER->requis, true);
+            $requis['card'] = $DATA['card'];
+            $requis = json_encode($requis, true);
+            self::$USER->requis = $requis;
+        }
+
 
 
         R::store(self::$USER);
