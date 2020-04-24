@@ -89,10 +89,21 @@ class Panel extends \APP\core\base\Model {
     }
 
 
-    public function addrequis($DATA, $type){
+    public function addrequis($DATA){
+
+        if (!empty($DATA['qiwi'])){
 
 
+            show(self::$USER);
+//
+//            self::$USER->requis = json_decode(self::$USER->requis, true);
+//            self::$USER->requis['qiwi'] = $DATA['qiwi'];
+//            self::$USER->requis = json_encode(self::$USER->requis['qiwi'], true);
+        }
 
+show(self::$USER);
+
+        R::store(self::$USER);
 
         return true;
     }

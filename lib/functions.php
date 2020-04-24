@@ -36,15 +36,7 @@ function go( $url ) {
 // Функция редирект при возвращении из формы через ajax
 
 
-// Функция редирект при возвращении из формы через ajax
-function go2( $url ) {
-	exit('
-	<script>
-	window.location.href="/" + "'.$url.'";
-	</script>
-	');
-}
-// Функция редирект при возвращении из формы через ajax
+
 function redir($http = FALSE){
 	if($http){
 		$redirect = $http;
@@ -55,16 +47,8 @@ function redir($http = FALSE){
 	exit();
 }
 // Екзит из интерфейса
-function off( $mes ) {
-	echo ( '
-	<div class="note note-danger">
-    <h4 class="block">ВНИМАНИЕ!</h4>
- <p> '.$mes.' </p>
-     </div>
-		 ') ;
-	exit;
-}
-// Функция красивого ексита
+
+
 // СООБЩЕНИЕ ЧЕРЕЗ PHP
 function mes ( $mess ) {
 	echo ( '
@@ -280,6 +264,25 @@ function fCURL($url, $PARAMS = []){
 
 }
 
+
+
+function validationpay($data, $type){
+
+    $data = trim($data);
+    $data = strip_tags($data);
+    $data = htmlspecialchars($data);
+
+    if ($type == "qiwi"){
+        $data = intval($data);
+        if (strlen($data) > 12) return "Qiwi кошелек не должен быть длиннее 10 символов";
+        if (strlen($data) < 5) return "Qiwi кошелек не должен быть длиннее 5 символов";
+    }
+
+
+
+
+    return true;
+}
 
 
 

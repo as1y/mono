@@ -143,8 +143,8 @@ class PanelController extends AppController {
         if ($_POST){
 
 
-            $Panel::$USER['requis'] = json_decode($Panel::$USER['requis'], true);
-            if (empty($Panel::$USER['requis'])) $Panel::$USER['requis'] = [];
+//            $Panel::$USER['requis'] = json_decode($Panel::$USER['requis'], true);
+//            if (empty($Panel::$USER['requis'])) $Panel::$USER['requis'] = [];
 
 
 
@@ -153,16 +153,19 @@ class PanelController extends AppController {
                 if (empty($Panel::$USER['requis']['qiwi'])){
                     echo "Добавляем новый QIWI кошелек";
 
-                   $result = valipay(true, "qiwi");
-
+                   $result = validationpay($_POST['qiwi'], "qiwi");
                    if ($result == 1){
-                       $Panel->addrequis($_POST['qiwi'], "qiwi");
-                       $_SESSION['success'][] = "QIWI кошелек успешно добавлен!";
+                       $Panel->addrequis($_POST['qiwi']);
+                       $_SESSION['success'] .= "QIWI кошелек успешно добавлен!";
+                       redir("/panel/cashout/");
                    }else{
-                       $_SESSION['errors'][] = $result;
+                       $_SESSION['errors'] .= $result;
                    }
 
+                }
 
+                if (!empty($Panel::$USER['requis']['qiwi']) && $_POST['qiwi'] != $Panel::$USER['requis']['qiwi']  ){
+                    $_SESSION['errors'] .= "Вы уже заполнили QIWI кошелек. Изменить реквизиты возможно только через тех. поддержку<br>";
                 }
 
 
@@ -173,9 +176,9 @@ class PanelController extends AppController {
 
 
 
+
+
             redir("/panel/cashout/");
-
-
 
 
 
