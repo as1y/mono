@@ -59,7 +59,7 @@ function mes ( $mess ) {
 }
 // СООБЩЕНИЕ ЧЕРЕЗ PHP
 function dumpf($PARAM){
-	file_put_contents('log.log', var_export($PARAM, true), FILE_APPEND);
+	file_put_contents($_SERVER["DOCUMENT_ROOT"] .'/log.log', var_export($PARAM, true), FILE_APPEND);
 }
 
 

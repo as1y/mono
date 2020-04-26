@@ -97,6 +97,19 @@ class PanelController extends AppController {
         \APP\core\base\View::setAssets($ASSETS);
 
 
+        if (!empty($_GET['success']) && $_GET['success'] == 1){
+            $_SESSION['success'] = "Баланс упешно пополнен!<br>";
+            redir("/panel/balance/");
+        }
+
+
+        if (!empty($_GET['error']) && $_GET['error'] == 1){
+
+            $_SESSION['errors'] = "Ошибка пополнения <br>";
+            redir("/panel/balance/");
+
+        }
+
 
 
         $this->set(compact('balancelog'));

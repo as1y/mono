@@ -31,17 +31,15 @@
 
                 <form method="post" action="https://payeer.com/merchant/">
 
-                    <div class="form-group">
-                        <input type="text" name="amount" placeholder="Сумма"  class="form-control">
-                    </div>
 
                     <?php
+
                     $m_shop = '1009839670';
                     $m_orderid = '1';
-                    $m_amount = number_format(100, 2, '.', '');
-                    $m_curr = 'USD';
+                    $m_amount = number_format(10000, 2, '.', '');
+                    $m_curr = 'RUB';
                     $m_desc = base64_encode('Test');
-                    $m_key = 'Ваш секретный ключ';
+                    $m_key = 'XvmQQSVbf8aV';
 
                     $arHash = array(
                         $m_shop,
@@ -77,6 +75,11 @@
 
                     $sign = strtoupper(hash('sha256', implode(':', $arHash)));
                     ?>
+
+                    <div class="form-group">
+                        <input type="text" name="m_amount" placeholder="Сумма"  class="form-control">
+                    </div>
+
 
                     <input type="hidden" name="m_shop" value="<?=$m_shop?>">
                     <input type="hidden" name="m_orderid" value="<?=$m_orderid?>">

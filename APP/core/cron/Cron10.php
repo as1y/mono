@@ -5,24 +5,30 @@ $_SERVER["DOCUMENT_ROOT"] = '/home/bitrix/ext_www/cashcall.ru/';
 @set_time_limit(0);
 @ignore_user_abort(true);
 
-require $_SERVER["DOCUMENT_ROOT"].'vendor/autoload.php';
-require $_SERVER["DOCUMENT_ROOT"].'lib/functions.php'; //РћР‘Р©РР• Р¤РЈРќРљР¦РР
-require $_SERVER["DOCUMENT_ROOT"].'lib/functions_app.php'; //Р¤РЈРќРљР¦РР РџР РР›РћР–Р•РќРРЇ
-require $_SERVER["DOCUMENT_ROOT"].'APP/core/Mail.php';
-define('CONFIG',array_merge(require $_SERVER["DOCUMENT_ROOT"].'config/main.php',require $_SERVER["DOCUMENT_ROOT"].'config/main-local.php'));
+require $_SERVER["DOCUMENT_ROOT"].'/vendor/autoload.php';
+require $_SERVER["DOCUMENT_ROOT"].'/lib/functions.php';
+require $_SERVER["DOCUMENT_ROOT"].'/lib/functions_app.php';
+require $_SERVER["DOCUMENT_ROOT"].'/APP/core/Mail.php';
+define('CONFIG',array_merge(require $_SERVER["DOCUMENT_ROOT"].'/config/main.php',require $_SERVER["DOCUMENT_ROOT"].'/config/main-local.php'));
+
+use RedBeanPHP\R;
+
+R::setup(CONFIG['db']['dsn'],CONFIG['db']['user'],CONFIG['db']['pass']);
 
 
-$PARAM = [
-	'text' => "zaza",
-	'date' => date("H:i:s"),
-];
+R::exec ("DELETE FROM `online` WHERE `timestamp` < SUBTIME(NOW(), '0 0:10:0')");
 
-file_put_contents($_SERVER["DOCUMENT_ROOT"].'/logs/log.log', print_r($PARAM).' *** ', FILE_APPEND | LOCK_EX);
 
 
 exit();
 
-R::setup(CONFIG['db']['dsn'],CONFIG['db']['user'],CONFIG['db']['pass']);
+//$conn = R::testConnection();
+//file_put_contents($_SERVER["DOCUMENT_ROOT"].'/logs/log.log', print_r($PARAM).' *** ', FILE_APPEND | LOCK_EX);
+//$PARAM = [
+//	'text' => "zaza",
+//	'date' => date("H:i:s"),
+//	'conn' => $conn
+//];
 
 
 
