@@ -1,4 +1,3 @@
 User-agent: *
+host: https://cashcall.ru
 Disallow: /panel
-Disallow: /user
-Disallow: /

@@ -498,12 +498,6 @@ class OperatorController extends AppController {
 
 
 
-
-
-
-
-
-
         $this->set(compact('company'));
 
 

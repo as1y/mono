@@ -1,6 +1,5 @@
 <form action="/operator/companyinfo/?id=<?=$company['id']?>" method="post" data-fouc>
 
-
     <div class="card">
         <div class="card-header bg-dark text-white header-elements-inline">
             <h5 class="card-title">КОМПАНИЯ <?=$company['company']?></h5>

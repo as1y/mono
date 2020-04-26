@@ -1,5 +1,6 @@
 <?php
 namespace APP\models;
+use APP\core\Mail;
 use RedBeanPHP\R;
 
 class Panel extends \APP\core\base\Model {
@@ -33,10 +34,12 @@ class Panel extends \APP\core\base\Model {
 
 
     public function checkdialog($idu){
-        $sobesednik = R::findOne("dialog", "WHERE p1 = ?" , [$idu]);
+
+
+        $sobesednik = R::findOne("dialog", "WHERE p1 = ? AND p2 = ?" , [$idu, $_SESSION['ulogin']['id']]);
         if ($sobesednik) return $sobesednik;
 
-        $sobesednik2 = R::findOne("dialog", "WHERE p2 = ?" , [$idu]);
+        $sobesednik2 = R::findOne("dialog", "WHERE p1 = ? AND p2 =?" , [$_SESSION['ulogin']['id'], $idu]);
         if ($sobesednik2) return $sobesednik2;
 
         return false;
@@ -44,7 +47,14 @@ class Panel extends \APP\core\base\Model {
     }
 
 
+    public function deletedialog($idd){
 
+        $dialog = R::load("dialog", $idd);
+        if ($dialog)  R::trash($dialog);
+
+
+        return true;
+    }
 
 
     public function getdialogsinfo(){
@@ -76,14 +86,31 @@ class Panel extends \APP\core\base\Model {
 
 
     public function getoperators(){
-        $operators = R::findAll("users", "WHERE role = ?", ["O"]);
+        $operators = R::findALL("users", "WHERE role = ? AND aboutme != '' ", ["O"]);
         return $operators;
     }
 
 
-    public function createviplata(){
+    public function createviplata($DATA){
+
+        self::$USER->bal = self::$USER->bal - $DATA['summa'];
+        R::store(self::$USER);
+
+        $DATA = [
+            'users_id' => $_SESSION['ulogin']['id'],
+            'date' => date("Y-m-d H:i:s"),
+            'sum' => $DATA['summa'],
+            'comment' => "Вывод средств на <b>".$DATA['sposob']."<b>",
+            'type' => "credit",
+            'status' => 0,
+            'method' => $DATA['sposob'],
+            ];
+
+        $this->addnewBD("balancelog", $DATA);
 
 
+
+        return true;
     }
 
 
@@ -192,19 +219,18 @@ class Panel extends \APP\core\base\Model {
 
         $dialog = R::findOne("dialog", "WHERE id = ?" , [$idd]);
 
+        // Валидация
         if (!$dialog) return "Ошибка в ID диалога1";
-
         if ($dialog['p1'] != $_SESSION['ulogin']['id'] && $dialog['p2'] != $_SESSION['ulogin']['id']) return "Ошибка в ID диалога2";
-
         if (!empty(pole_valid($DATA['enter-message'], "s", 50)['error']))  return pole_valid($DATA['enter-message'], "s", 50)['error'];
 
 
-        $sendnotice = ($dialog['p1'] == $_SESSION['ulogin']['id']) ? $dialog['p2']: $dialog['p1'];
 
+
+        $sendnotice = ($dialog['p1'] == $_SESSION['ulogin']['id']) ? $dialog['p2']: $dialog['p1']; //ID чувака кому нужно уведомление
 
 
         $messages = json_decode($dialog->messages,TRUE);
-
         $messages[] = ["author" => $_SESSION['ulogin']['id'] , "message" => $DATA['enter-message'], "date" => date("H:s:m")];
 
         $messages = json_encode($messages, true);
@@ -213,6 +239,14 @@ class Panel extends \APP\core\base\Model {
         $dialog->zagolovok = obrezanie($DATA['enter-message'], 20);
 
         R::store($dialog);
+
+        $komyuser = R::Load("users", $sendnotice);
+        $USN = [
+            'user' => $komyuser['username'],
+        ];
+
+        if ($komyuser['nmessages'] == 1)
+        Mail::sendMail("message", "Новое сообщение на ".CONFIG['NAME'], $USN, ['to' => [['email' =>$komyuser['email']]]] );
 
 
         return true;
@@ -308,7 +342,26 @@ class Panel extends \APP\core\base\Model {
 
 
 
+    public function sendallmail(){
 
+
+        $users = R::find("users");
+
+
+        foreach ($users as $key=>$val){
+
+            echo $val['username']."<br>";
+            echo $val['email']."<br>";
+
+
+
+
+
+        }
+
+
+
+    }
 
 
 

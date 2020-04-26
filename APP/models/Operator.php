@@ -1,5 +1,6 @@
 <?php
 namespace APP\models;
+use APP\core\Mail;
 use Psr\Log\NullLogger;
 use RedBeanPHP\R;
 
@@ -115,8 +116,28 @@ class Operator extends \APP\core\base\Model {
             'datazapis' => json_encode($DATAZAPIS, true),
         ];
 
-
         $this->addnewBD("result", $result);
+
+
+
+        $komy = R::Load("users", $company['client_id']);
+
+        $USN = [
+            'operatorname' => self::$USER['username'],
+            'user' => $komy['username'],
+            'idc' => $company['id'],
+            'projectname' => $company['company']
+
+        ];
+
+
+
+        if ($komy['nmessages'] == 1)
+            Mail::sendMail("newresult", "Успешный звонок! - ".CONFIG['NAME'], $USN, ['to' => [['email' =>$komy['email']]]] );
+
+
+
+
 
 
     }
@@ -165,7 +186,6 @@ class Operator extends \APP\core\base\Model {
             $massivoperatorov[$_SESSION['ulogin']['id']] = 1;
             $company->operators = json_encode($massivoperatorov, true);
             R::store($company);
-
 
             return true;
         }

@@ -214,11 +214,20 @@ class PanelController extends AppController {
 
         if ($_POST && $_GET['action'] == "viplata"){
 
-            $Panel->createviplata();
+            if ($Panel::$USER->bal < 500){
+                $_SESSION['errors'] = "Минимальный заказ выплаты 500 рублей";
+                redir("/panel/cashout/");
+            }
 
-            show($_POST);
-            exit();
 
+
+            if ($Panel::$USER->bal < $_POST['summa']){
+                $_SESSION['errors'] = "Недостаточно средств на балансе";
+                redir("/panel/cashout/");
+            }
+
+
+            $Panel->createviplata($_POST);
 
             redir("/panel/balance/");
         }
@@ -418,14 +427,21 @@ class PanelController extends AppController {
 
             $sobesednik = $Panel->getsobesednik($_GET['newdialog']);
 
+            //Если ничего не нашел
             if (!$sobesednik) redir("/panel/dialog/");
 
+            //Если даилог сам с собой
             if ($_GET['newdialog'] == $_SESSION['ulogin']['id']) redir("/panel/dialog/");
 
             //Проверка на существование данного диалога
             $dialog = $Panel->checkdialog($_GET['newdialog']);
 
+
             if ($dialog){
+
+                show("tut");
+                exit();
+
                 $Panel->clearuvedmolenie($dialog);
                 $dialog['messages'] = json_decode($dialog['messages'], true);
                 if (empty($dialog['messages'])) $dialog['messages']  = [];
@@ -474,6 +490,13 @@ class PanelController extends AppController {
 
 
 
+        // Удаление диалога
+        if ($_GET['idd'] && !empty($_GET['action']) && $_GET['action'] == "delete"){
+           $Panel->deletedialog($_GET['idd']);
+            redir("/panel/dialog/");
+        }
+        // Удаление диалога
+
         // Чтение диалога
         if ($_GET['idd']){
 
@@ -503,6 +526,11 @@ class PanelController extends AppController {
 
 
         }
+
+
+
+
+
 
 
         redir("/panel/dialog/");
@@ -601,6 +629,9 @@ class PanelController extends AppController {
         $ASSETS[] = ["js" => "/global_assets/js/plugins/forms/styling/uniform.min.js"];
         $ASSETS[] = ["js" => "/assets/js/form_wizard.js"];
         \APP\core\base\View::setAssets($ASSETS);
+
+
+
 
 
 

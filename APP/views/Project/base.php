@@ -1,6 +1,6 @@
 
 <div class="card">
-    <div class="card-header bg-white header-elements-inline">
+    <div class="card-header bg-dark text-white header-elements-inline">
         <h5 class="card-title">ЗАГРУЗИТЬ БАЗУ</h5>
         <div class="header-elements">
             <div class="list-icons">
@@ -40,7 +40,7 @@
 
 
 <div class="card">
-    <div class="card-header bg-white header-elements-inline">
+    <div class="card-header bg-dark text-white header-elements-inline">
         <h5 class="card-title">БАЗА КОНТАКТОВ</h5>
         <div class="header-elements">
             <div class="list-icons">

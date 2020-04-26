@@ -1,12 +1,15 @@
 <?php
 
-$base = '/home/bitrix/ext_www/cashcall.ru/';
+$_SERVER["DOCUMENT_ROOT"] = '/home/bitrix/ext_www/cashcall.ru/';
 
-require $base.'vendor/autoload.php';
-require $base.'lib/functions.php'; //ОБЩИЕ ФУНКЦИИ
-require $base.'lib/functions_app.php'; //ФУНКЦИИ ПРИЛОЖЕНИЯ
-require_once $base.'APP/core/Mail.php';
-define('CONFIG',array_merge(require $base.'config/main.php',require $base.'config/main-local.php'));
+@set_time_limit(0);
+@ignore_user_abort(true);
+
+require $_SERVER["DOCUMENT_ROOT"].'vendor/autoload.php';
+require $_SERVER["DOCUMENT_ROOT"].'lib/functions.php'; //РћР‘Р©РР• Р¤РЈРќРљР¦РР
+require $_SERVER["DOCUMENT_ROOT"].'lib/functions_app.php'; //Р¤РЈРќРљР¦РР РџР РР›РћР–Р•РќРРЇ
+require $_SERVER["DOCUMENT_ROOT"].'APP/core/Mail.php';
+define('CONFIG',array_merge(require $_SERVER["DOCUMENT_ROOT"].'config/main.php',require $_SERVER["DOCUMENT_ROOT"].'config/main-local.php'));
 
 
 $PARAM = [
@@ -14,8 +17,8 @@ $PARAM = [
 	'date' => date("H:i:s"),
 ];
 
-dumpf($PARAM);
-// \R::exec ("UPDATE contact SET status = '0' WHERE status = '1'");
+file_put_contents($_SERVER["DOCUMENT_ROOT"].'/logs/log.log', print_r($PARAM).' *** ', FILE_APPEND | LOCK_EX);
+
 
 exit();
 

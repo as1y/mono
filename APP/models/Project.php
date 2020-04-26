@@ -1,5 +1,6 @@
 <?php
 namespace APP\models;
+use APP\core\Mail;
 use RedBeanPHP\R;
 
 class Project extends \APP\core\base\Model {
@@ -106,17 +107,26 @@ class Project extends \APP\core\base\Model {
 
     public function acceptoperator($company, $idoper){
 
-
         $operators = json_decode( $company['operators'], true);
 
-
         if ($operators[$idoper] == 1) $operators[$idoper] = 2;
-
         $operators = json_encode($operators, true);
-
         $company->operators = $operators;
 
         R::store($company);
+
+
+        // Уведомление на E-mail
+        $komyuser = R::Load("users", $idoper);
+        $USN = [
+            'user' => $komyuser['username'],
+            'projectname' => $company['company'],
+        ];
+
+        if ($komyuser['nmessages'] == 1)
+            Mail::sendMail("acceptoperator", "Допуск на проект - ".CONFIG['NAME'], $USN, ['to' => [['email' =>$komyuser['email']]]] );
+
+        // Уведомление на E-mail
 
         return true;
 
@@ -410,10 +420,7 @@ class Project extends \APP\core\base\Model {
 		R::exec(" UPDATE `company` SET `status` = '2' WHERE `id` = '".$idc."' ");
 		go2('project/?id='.$GET['id'].'');
 	}
-	public function balancelog($idclient) {
-		$balancelog = R::find('balancelogclient','WHERE client_id = ?',[$idclient]);
-		return $balancelog;
-	}
+
 
 
 

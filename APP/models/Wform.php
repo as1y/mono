@@ -263,26 +263,7 @@ class Wform extends \APP\core\base\Model {
 		message('done');
 	}
 	// ДОБАВЛЕНИЕ ПОЛЯ В АДМИНКЕ
-	//ПОПОЛНЕНИЕ БАЛАНСА КЛИЕНТОМ
-	public function addbalance($summ,$clientid) {
-		R::exec("
-			INSERT INTO `balancelogclient` (`id`, `client_id`, `date`, `sum`, `comment`)
-			VALUES
-			(NULL, '".$clientid."', '".date("Y-m-d H:i:s")."', '".$summ."', 'Пополнение баланса ');
-		");
-		R::exec("
-			UPDATE `client` SET `bal` = bal + '".$summ."' WHERE `id` = '".$clientid."';
-		");
-		$clientInfo = R::getRow( "SELECT fio, email, tel FROM client WHERE id = ?", [$clientid]);
-		$_SESSION['ulogin']['summ'] = $summ;
-		$_SESSION['ulogin']['clientid'] = $clientid;
-		$_SESSION['ulogin']['fio'] = $clientInfo["fio"];
-		$_SESSION['ulogin']['email'] = $clientInfo["email"];
-		$_SESSION['ulogin']['tel'] = $clientInfo["tel"];
-		$this->sendm("popolnenie", "raskrutkaweb@yandex.ru");
-		$this->sendm("popolnenie", "amorumgo@yandex.ru");
-	}
-	//ПОПОЛНЕНИЕ БАЛАНСА КЛИЕНТОМ
+
 	//УДАЛЕНИЯ ПОЛЯ К РЕЗУЛЬТАТУ
 	public function delpole($POST) {
 		$idc = $POST['idc'];

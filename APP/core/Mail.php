@@ -32,7 +32,10 @@ class Mail extends ApiClient
      */
     public static function sendMail($view,$subject, $data, $mailConfig, $layout = 'MAIL')
     {
+
+
         $vObj = new View(['controller' => 'Mail'], $layout, $view);
+
         $mailHtml = $vObj->render($data,true);
         $mailData = [
             'html' => $mailHtml,

@@ -26,6 +26,7 @@
 
                     <?php
                     foreach ($operators as $key=>$val):?>
+
                         <tr>
                             <td>
                                 <img src="<?=$val['avatar']?>" width="38" height="38" class="rounded-circle" alt=""><br>

@@ -122,7 +122,8 @@
                         </div>
 
                     <div class="align-items-right">
-                        <a href="#" class="btn bg-danger btn-labeled btn-labeled-right ml-auto"><b><i class="icon-trash"></i></b> УДАЛИТЬ</a>
+
+                        <a href="/panel/messages/?idd=<?=$dialog['id']?>&action=delete" class="btn bg-danger btn-labeled btn-labeled-right ml-auto"><b><i class="icon-trash"></i></b> УДАЛИТЬ</a>
                     </div>
 
                     </div>
