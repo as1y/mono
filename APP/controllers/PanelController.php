@@ -101,14 +101,18 @@ class PanelController extends AppController {
             $_SESSION['success'] = "Баланс упешно пополнен!<br>";
             redir("/panel/balance/");
         }
-
-
         if (!empty($_GET['error']) && $_GET['error'] == 1){
 
             $_SESSION['errors'] = "Ошибка пополнения <br>";
             redir("/panel/balance/");
 
         }
+
+
+
+
+
+
 
 
 
@@ -250,6 +254,41 @@ class PanelController extends AppController {
 
 
         $this->set(compact('requis'));
+
+    }
+
+
+    public function payredirectAction(){
+
+        $Panel =  new Panel();
+
+
+        $META = [
+            'title' => 'Пополнение баланса',
+            'description' => 'Пополнение баланса',
+            'keywords' => 'Пополнение баланса',
+        ];
+        \APP\core\base\View::setMeta($META);
+
+        if ($_SESSION['ulogin']['role'] == "R") $BREADCRUMBS['HOME'] = ['Label' => "Кабинет рекламодателя", 'Url' => "/master"];
+        if ($_SESSION['ulogin']['role'] == "O") $BREADCRUMBS['HOME'] = ['Label' => "Кабинет  оператора", 'Url' => "/operator"];
+        $BREADCRUMBS['DATA'][] = ['Label' => "Пополнение баланса"];
+        \APP\core\base\View::setBreadcrumbs($BREADCRUMBS);
+
+
+        if ($_POST && $_POST['paymethod'] == "Payeer"){
+
+           $form = $Panel->generatePayeerform($_POST);
+
+
+
+        }
+
+
+
+        $this->set(compact('form'));
+
+
 
     }
 
@@ -452,8 +491,7 @@ class PanelController extends AppController {
 
             if ($dialog){
 
-                show("tut");
-                exit();
+
 
                 $Panel->clearuvedmolenie($dialog);
                 $dialog['messages'] = json_decode($dialog['messages'], true);

@@ -29,65 +29,13 @@
 
             <div class="col-md-3">
 
-                <form method="post" action="https://payeer.com/merchant/">
-
-
-                    <?php
-
-                    $m_shop = '1009839670';
-                    $m_orderid = '1';
-                    $m_amount = number_format(10000, 2, '.', '');
-                    $m_curr = 'RUB';
-                    $m_desc = base64_encode('Test');
-                    $m_key = 'XvmQQSVbf8aV';
-
-                    $arHash = array(
-                        $m_shop,
-                        $m_orderid,
-                        $m_amount,
-                        $m_curr,
-                        $m_desc
-                    );
-
-                    /*
-                    $arParams = array(
-                        'success_url' => 'http://cashcall.ru/new_success_url',
-                        //'fail_url' => 'http://cashcall.ru/new_fail_url',
-                        //'status_url' => 'http://cashcall.ru/new_status_url',
-                        'reference' => array(
-                            'var1' => '1',
-                            //'var2' => '2',
-                            //'var3' => '3',
-                            //'var4' => '4',
-                            //'var5' => '5',
-                        ),
-                        //'submerchant' => 'mail.com',
-                    );
-
-                    $key = md5('Ключ для шифрования дополнительных параметров'.$m_orderid);
-
-                    $m_params = @urlencode(base64_encode(openssl_encrypt(json_encode($arParams), 'AES-256-CBC', $key, OPENSSL_RAW_DATA)));
-
-                    $arHash[] = $m_params;
-                    */
-
-                    $arHash[] = $m_key;
-
-                    $sign = strtoupper(hash('sha256', implode(':', $arHash)));
-                    ?>
+                <form method="post" target="_blank" action="/panel/payredirect">
 
                     <div class="form-group">
-                        <input type="text" name="m_amount" placeholder="Сумма"  class="form-control">
+                        <input type="text" name="summa" placeholder="Сумма" value="10000"  class="form-control">
                     </div>
+                    <input type="hidden" name="paymethod" value="Payeer">
 
-
-                    <input type="hidden" name="m_shop" value="<?=$m_shop?>">
-                    <input type="hidden" name="m_orderid" value="<?=$m_orderid?>">
-                    <input type="hidden" name="m_amount" value="<?=$m_amount?>">
-                    <input type="hidden" name="m_curr" value="<?=$m_curr?>">
-                    <input type="hidden" name="m_desc" value="<?=$m_desc?>">
-                    <input type="hidden" name="m_sign" value="<?=$sign?>">
-                    <input type="hidden" name="m_process" value="send" />
 
                     <button type="submit" class="btn btn-success"><i class="icon-plus-circle2 mr-2"></i>ПОПОЛНИТЬ БАЛАНС</button>
 

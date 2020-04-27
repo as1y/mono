@@ -255,77 +255,46 @@ class Panel extends \APP\core\base\Model {
     }
 
 
+    public function generatePayeerform($DATA){
+
+        $form = [];
 
 
-    public function addmessageticket($DATA, $idc){
+        $m_shop = '1009839670';
+        $m_orderid = '1';
+        $m_amount = number_format($DATA['summa'], 2, '.', '');
+        $m_curr = 'RUB';
+        $m_desc = base64_encode('Пополнение баланса в сервисе cashcall.ru');
+        $m_key = 'XvmQQSVbf8aV';
 
-        $tickets = R::findOne("tickets", "WHERE user_id = ? AND id = ?" , [ $_SESSION['ulogin']['id'], $idc ]);
+        $arHash = array(
+            $m_shop,
+            $m_orderid,
+            $m_amount,
+            $m_curr,
+            $m_desc
+        );
 
-
-        if (!empty(pole_valid($DATA['enter-message'], "s", 50)['error']))  return pole_valid($DATA['enter-message'], "s", 50)['error'];
-
-        if ($tickets->status == 2) return "Данный тикет закрыт";
-
-        if ($tickets){
-            $messages = json_decode($tickets->messages,TRUE);
-            $messages[] = ["author" => "me" , "message" => $DATA['enter-message'], "date" => date("H:s:m")];
-            $messages = json_encode($messages, true);
-            $tickets->messages = $messages;
-            R::store($tickets);
-
-        }
-
-        return true;
+        $arHash[] = $m_key;
+        $sign = strtoupper(hash('sha256', implode(':', $arHash)));
 
 
-    }
+        $form['action'] = 'https://payeer.com/merchant/';
+        $form['input'][] = ['type' => 'hidden', 'name' => 'm_shop', 'value' => $m_shop];
+        $form['input'][] = ['type' => 'hidden', 'name' => 'm_orderid', 'value' => $m_orderid];
+        $form['input'][] = ['type' => 'hidden', 'name' => 'm_amount', 'value' => $m_amount];
+        $form['input'][] = ['type' => 'hidden', 'name' => 'm_curr', 'value' => $m_curr];
+        $form['input'][] = ['type' => 'hidden', 'name' => 'm_desc', 'value' => $m_desc];
+        $form['input'][] = ['type' => 'hidden', 'name' => 'm_sign', 'value' => $sign];
 
 
-    public function getticket(){
-        $tickets = R::findAll("tickets", "WHERE user_id = ? ORDER by id desc LIMIT 20" , [$_SESSION['ulogin']['id']]);
-        return $tickets;
-    }
-
-
-
-
-    public function addticket($DATA){
-
-        $zagolovok = pole_valid ($DATA['zagolovok'], 50, 's');
-        if (!empty($zagolovok['error'])) return $zagolovok['error'];
-
-        $messages = pole_valid ($DATA['messages'], 500, 's');
-        if (!empty($messages['error'])) return $messages['error'];
-
-
-        $ticketscount = R::count('tickets','WHERE  user_id = ? AND status = 1' , [$_SESSION['ulogin']['id']]);
-        if ($ticketscount >= 5) return "Можно создать не более 5 открытых тикетов";
-
-
-
-
-        $mes[] = ["author" => "me" , "message" => $DATA['messages'], "date" => date("H:s:m")];
-        $mes = json_encode($mes, true);
-
-        unset($DATA['messages']);
-
-
-        $addpole = [
-            'userId' => $_SESSION['ulogin']['id'],
-            'parent' => 1 ,
-            'open' => date("y-m-d h:m:s") ,
-            'messages' => $mes,
-            'status' => 1 ,
-            'new' => NULL
-        ];
-
-        $DATA = array_merge($addpole, $DATA);
-
-        $this->addnewBD("tickets", $DATA);
-
-        return true;
+        return $form;
 
     }
+
+
+
+
 
     public function allcompany($idclient)
     {

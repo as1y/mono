@@ -162,7 +162,20 @@ function translit_sef($value)
     return $value;
 }
 
+function generatepayform($form){
 
+    echo '<form method="post" action="'.$form['action'].'">
+    ';
+
+    foreach ($form['input'] as $key=>$val) {
+        ?>
+        <input type="<?= $val['type'] ?>" name="<?= $val['name'] ?>" value="<?= $val['value'] ?>">
+        <?php
+    }
+
+    echo "</form>";
+
+}
 
 
 function teleph($tel){
