@@ -3,6 +3,8 @@ namespace APP\models;
 use RedBeanPHP\R;
 
 class Wform extends \APP\core\base\Model {
+
+
 	public function dubli($POST) {
 		$idc = $POST['idc'];
 		$result = R::getAll( "SELECT tel,id FROM `contact` WHERE  `status` = '0' AND `company_id` = '".$idc."' ");
@@ -67,6 +69,9 @@ class Wform extends \APP\core\base\Model {
 		R::exec("UPDATE `company` SET `criteriy` = '".$mass."' WHERE `id` = ".$idc."; ");
 		message('done');
 	}
+
+
+
 	// ИЗМИНЕНИЕ ИНФОРМАЦИИ О КОМПАНИИ В АДМИНКЕ
 	public function changeinformation($POST) {
 		//ПРОВЕРКА ID

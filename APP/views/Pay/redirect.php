@@ -13,7 +13,6 @@
 
         <script>
            $('form').submit();
-
         </script>
 
 

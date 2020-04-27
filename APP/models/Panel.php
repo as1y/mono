@@ -296,6 +296,7 @@ class Panel extends \APP\core\base\Model {
 
 
 
+
     public function allcompany($idclient)
     {
         if($idclient == "Admin")

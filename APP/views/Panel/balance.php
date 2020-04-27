@@ -29,7 +29,7 @@
 
             <div class="col-md-3">
 
-                <form method="post" target="_blank" action="/panel/payredirect">
+                <form method="post" target="_blank" action="/pay/redirect">
 
                     <div class="form-group">
                         <input type="text" name="summa" placeholder="Сумма" value="10000"  class="form-control">
