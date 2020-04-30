@@ -138,7 +138,7 @@
                                 <div id="company"><?=$contactinfo['namecompany']?></div>
                             </td>
                             <td style='vertical-align: middle'>
-                                <div id="siteurl"> <a href="<?=$contactinfo['url']?> " target="_blank"><?=$contactinfo['url']?></a> </div>
+                                <div id="siteurl"> <a href="http://<?=$contactinfo['sitename']?> " target="_blank"><?=$contactinfo['sitename']?></a> </div>
                             </td>
                         </tr>
                         </tbody>

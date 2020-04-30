@@ -14,6 +14,7 @@
                 <table  class="table datatable-basic text-center">
                     <thead>
                     <tr>
+                        <th>Дата регистрации</th>
                         <th>Имя Фамилия</th>
                         <th>Информация</th>
                         <th>Звонков</th>
@@ -28,9 +29,11 @@
                     foreach ($operators as $key=>$val):?>
 
                         <tr>
+                            <td><?=$val['datareg']?></td>
                             <td>
                                 <img src="<?=$val['avatar']?>" width="38" height="38" class="rounded-circle" alt=""><br>
                                 <?=$val['username']?></td>
+
                             <td class="text-center"><?=$val['aboutme']?></td>
                             <td class="text-center"><?= (empty($val['totalcall'])) ? 0 : $val['totalcall']  ?></td>
                             <td class="text-center">0</td>

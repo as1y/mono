@@ -85,8 +85,8 @@ class Panel extends \APP\core\base\Model {
 
 
 
-    public function getoperators(){
-        $operators = R::findALL("users", "WHERE role = ? AND aboutme != '' ", ["O"]);
+    public function getoperators($limit = 100){
+        $operators = R::findALL("users", "WHERE role = ? AND aboutme != '' ORDER BY `datareg` DESC  LIMIT ".$limit." ", ["O"]);
         return $operators;
     }
 
@@ -278,6 +278,20 @@ class Panel extends \APP\core\base\Model {
         $arHash[] = $m_key;
         $sign = strtoupper(hash('sha256', implode(':', $arHash)));
 
+        // Дополнительные параметры
+        $arParams = array(
+            'reference' => array(
+                'userid' => $_SESSION['ulogin']['id'],
+            ),
+        );
+        $key = md5('XdCQdGSHStkt'.$m_orderid);
+        $m_params = @urlencode(base64_encode(openssl_encrypt(json_encode($arParams), 'AES-256-CBC', $key, OPENSSL_RAW_DATA)));
+
+        $arHash[] = $m_params;
+        // Дополнительные параметры
+
+
+
 
         $form['action'] = 'https://payeer.com/merchant/';
         $form['input'][] = ['type' => 'hidden', 'name' => 'm_shop', 'value' => $m_shop];
@@ -286,7 +300,7 @@ class Panel extends \APP\core\base\Model {
         $form['input'][] = ['type' => 'hidden', 'name' => 'm_curr', 'value' => $m_curr];
         $form['input'][] = ['type' => 'hidden', 'name' => 'm_desc', 'value' => $m_desc];
         $form['input'][] = ['type' => 'hidden', 'name' => 'm_sign', 'value' => $sign];
-
+        $form['input'][] = ['type' => 'hidden', 'name' => 'm_params', 'value' => $m_params];
 
         return $form;
 

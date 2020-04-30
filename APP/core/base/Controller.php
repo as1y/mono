@@ -21,7 +21,7 @@ abstract class Controller {
 
         if (!empty($_SESSION['ulogin']['role']) && $_SESSION['ulogin']['role'] == "R"){
             if ($route['controller'] == "Operator")  redir("/master");
-
+            if ($route['controller'] == "Main")  redir("/master");
 
 
 
@@ -31,6 +31,7 @@ abstract class Controller {
         if (!empty($_SESSION['ulogin']['role']) && $_SESSION['ulogin']['role'] == "O"){
             if ($route['controller'] == "Master")  redir("/operator");
             if ($route['controller'] == "Project")  redir("/operator");
+            if ($route['controller'] == "Main")  redir("/operator");
         }
 
 

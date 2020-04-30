@@ -27,7 +27,7 @@
                         <div class="list-feed">
                             <?php if($statuscall['code'] == false):?>
                                 <div class="list-feed-item border-warning-400">
-                                    Подтвердите E-mail
+                                    Подтвердите E-mail <br>
                                 </div>
                             <?php endif;?>
 

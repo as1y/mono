@@ -39,7 +39,7 @@
 
                                 <div class="media-body">
                                     <div class="font-size-sm text-muted mt-2">
-                                        <div class="media-chat-item">Чтобы начать даилог напишите первое сообщение</div>
+                                        <div class="media-chat-item">Чтобы начать диалог напишите первое сообщение</div>
 
                                     </div>
                                 </div>

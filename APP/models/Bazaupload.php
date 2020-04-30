@@ -88,12 +88,15 @@ class Bazaupload extends \APP\core\base\Model {
                 if ( !$commentkey and $commentkey === FALSE ) $comment = "-";
 
 
-
                 $MASSIV = [
                     'company_id' => $DATA['idc'],
                     'client_id' => $DATA['clientid'],
                     'status' => '0',
                     'tel' => $tel,
+                    'name' => $name,
+                    'comment' => $comment,
+                    'sitename' => $site,
+
                 ];
 
                 $this->addnewBD("contact" ,$MASSIV);

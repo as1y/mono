@@ -294,6 +294,7 @@ abstract class Model
 
     public function filevalidation($FILE, $PARAMS = []){
 
+        show($FILE);
 
 
         if ($FILE['size'] > 3000000) {
@@ -301,8 +302,8 @@ abstract class Model
             return false;
         }
 
-        if ($FILE['size'] < 100) {
-            $this->errors[] = ['Файл' => "Размер не может быть меньше 100байт" ];
+        if ($FILE['size'] < 10) {
+            $this->errors[] = ['Файл' => "Файл очень маленький" ];
             return false;
         }
 
@@ -398,6 +399,12 @@ abstract class Model
     public static function countoperator(){
         return  R::count('users', "WHERE role=?", ["O"]);
     }
+
+
+    public static function countrekl(){
+        return  R::count('users', "WHERE role=?", ["R"]);
+    }
+
 
 
 	//ОТПРАВКА E - MAIL
