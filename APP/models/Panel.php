@@ -275,9 +275,6 @@ class Panel extends \APP\core\base\Model {
             $m_desc
         );
 
-        $arHash[] = $m_key;
-        $sign = strtoupper(hash('sha256', implode(':', $arHash)));
-
         // Дополнительные параметры
         $arParams = array(
             'reference' => array(
@@ -289,6 +286,9 @@ class Panel extends \APP\core\base\Model {
 
         $arHash[] = $m_params;
         // Дополнительные параметры
+
+        $arHash[] = $m_key;
+        $sign = strtoupper(hash('sha256', implode(':', $arHash)));
 
 
 
