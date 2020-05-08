@@ -76,7 +76,7 @@
                 <a href="/panel/dialog/" class="navbar-nav-link dropdown-toggle caret-0">
                     <i class="icon-bubbles4"></i>
                     <span class="d-md-none ml-2">Сообщения</span>
-                    <span class="badge badge-pill bg-warning-400 ml-auto ml-md-0"><?= \APP\core\base\Model::countnewmessages()?></span>
+                    <span class="badge badge-pill bg-danger-400 ml-auto ml-md-0"><?= \APP\core\base\Model::countnewmessages()?></span>
                 </a>
 
             </li>

@@ -5,14 +5,16 @@ $account_id = '1895581';
 $api_key = 'a7c15131-6186-482d-a619-84c2be598655';
 // ДОСТУПЫ VOXIMPLANT
 
-
+//Базовые переменные
 define('ERRORS', '1' ); // 0 - нет 1 - ОТОБРАЖАЮТСЯ
 define('WWW', __DIR__);
-define('ROOT',dirname(__DIR__) );
+// Базовые переменные
+
+// Переменные для приложения
 define('BASEAVATAR', '/assets/oper1.jpg');
-
+define('BASELOGO', '/uploads/user_logo/baselogo.jpg');
 define('AudioUploadPath', 'uploads/user_audio/');
-
+// Переменные для приложения
 
 
 

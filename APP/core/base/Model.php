@@ -281,10 +281,9 @@ abstract class Model
     }
 
 
-    public function  changelogo ($url, $idc){
+    public function  changelogo ($url, $company){
 
-        $company = R::load("company", $idc);
-
+        if ($company['logo'] != BASELOGO) unlink(WWW.$company['logo']);
         $company->logo = $url;
         R::store($company);
         return true;

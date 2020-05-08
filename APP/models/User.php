@@ -151,7 +151,7 @@ class User extends \APP\core\base\Model
        $role = ($_SESSION['confirm']['role'] == "R") ? "R" : "O";
 
 
-       $avatar = "/assets/oper1.jpg"; //Выставляем базовый аватар в зависимости от роли
+//       $avatar = "/assets/oper1.jpg"; //Выставляем базовый аватар в зависимости от роли
 
 
 
@@ -162,7 +162,7 @@ class User extends \APP\core\base\Model
 	    	'pass' => $_SESSION['confirm']['password'],
 	    	'ref' => $_SESSION['confirm']['ref'],
 	    	'datareg' => date("Y-m-d H:i:s"),
-            'avatar' => $avatar, // Расположение базового аватара
+            'avatar' => BASEAVATAR, // Расположение базового аватара
             'nnews' => 1, // Уведомления почтовые
             'nmessages' => 1, // Уведомления почтовые
             'role' => $role, //Роль

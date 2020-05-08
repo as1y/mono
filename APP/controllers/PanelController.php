@@ -428,7 +428,6 @@ class PanelController extends AppController {
     public function profileAction(){
         $Panel =  new Panel();
 
-
         if ($_POST && $_FILES['file']['size'] > 0){
 
             $validation = $Panel->filevalidation($_FILES['file'], ['ext' => ["jpg","png"], 'type' => 'image/jpeg']);
@@ -450,7 +449,7 @@ class PanelController extends AppController {
                 $Panel->myresize($urlnew, 200,200);
 
 
-                if (!empty($_SESSION['ulogin']['avatar'])) unlink($_SESSION['ulogin']['avatar']);
+                if (($_SESSION['ulogin']['avatar']) != BASEAVATAR) unlink(WWW.$_SESSION['ulogin']['avatar']);
 
 
                 $Panel->changeavatar("/".$urlnew);

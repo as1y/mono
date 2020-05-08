@@ -61,12 +61,11 @@ class Addp extends \APP\core\base\Model {
 	public function addproject($DATA) {
 
 
-
         //ФОРМИРУЕМ МАССИВ ДАННЫХ ДЛЯ РЕГИСТРАЦИИ
         $uniq = [
             'client_id' => $_SESSION['ulogin']['id'],
             'status' => "2",
-            'logo' => "/uploads/user_logo/baselogo.jpg",
+            'logo' => BASELOGO,
             'datastart' => date("Y-m-d H:i:s"),
             'daylimit' => "5",
             'formresult' => '[{"NAME":"Имя","TYPE":1}]',

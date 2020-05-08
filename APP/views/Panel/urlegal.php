@@ -1,7 +1,7 @@
-<!-- Account settings -->
+
 <div class="card">
     <div class="card-header bg-dark text-white header-elements-inline">
-        <h5 class="card-title">НАСТРОЙКИ АККАУНТА</h5>
+        <h5 class="card-title">Юридическая информация</h5>
 
     </div>
 
@@ -74,4 +74,3 @@
         </form>
     </div>
 </div>
-<!-- /account settings -->
