@@ -452,6 +452,7 @@ class PanelController extends AppController {
 
                 if (!empty($_SESSION['ulogin']['avatar'])) unlink($_SESSION['ulogin']['avatar']);
 
+
                 $Panel->changeavatar("/".$urlnew);
                 $_SESSION['ulogin']['avatar'] = "/".$urlnew;
                 $_SESSION['success'] = "Аватар изменен";
@@ -759,6 +760,67 @@ class PanelController extends AppController {
 
 
     }
+
+
+
+    public function urlegalAction(){
+        $Panel =  new Panel();
+
+
+        if (!empty($_POST['changepassword'])){
+
+            $result = $Panel->changepassword($_POST);
+            if ($result == 1){
+                $_SESSION['success'] = "Изменения сохранены";
+                redir("/panel/settings/");
+            }else{
+                $_SESSION['errors'] = $result;
+                redir("/panel/settings/");
+            }
+
+        }
+
+        if (!empty($_POST['changenotification'])){
+
+            $result = $Panel->changenotification($_POST);
+            $_SESSION['success'] = "Изменения сохранены";
+            redir("/panel/settings/");
+        }
+
+
+
+
+
+
+        $META = [
+            'title' => 'Юридическая информация',
+            'description' => 'Юридическая информация',
+            'keywords' => 'Юридическая информация',
+        ];
+
+        if ($_SESSION['ulogin']['role'] == "R") $BREADCRUMBS['HOME'] = ['Label' => "Кабинет рекламодателя", 'Url' => "/master"];
+        if ($_SESSION['ulogin']['role'] == "O") $BREADCRUMBS['HOME'] = ['Label' => "Кабинет  оператора", 'Url' => "/operator"];
+        $BREADCRUMBS['DATA'][] = ['Label' => "Юридическая информация"];
+
+        \APP\core\base\View::setMeta($META);
+        \APP\core\base\View::setBreadcrumbs($BREADCRUMBS);
+
+        $ASSETS[] = ["js" => "/global_assets/js/plugins/forms/wizards/steps.min.js"];
+        $ASSETS[] = ["js" => "/global_assets/js/plugins/forms/selects/select2.min.js"];
+        $ASSETS[] = ["js" => "/global_assets/js/plugins/forms/styling/uniform.min.js"];
+        $ASSETS[] = ["js" => "/assets/js/form_wizard.js"];
+        \APP\core\base\View::setAssets($ASSETS);
+
+
+
+
+
+
+
+
+    }
+
+
 
     public function faqAction(){
         $Panel =  new Panel();

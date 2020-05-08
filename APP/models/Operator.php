@@ -10,11 +10,11 @@ class Operator extends \APP\core\base\Model {
     public function getcontactuser($status = NULL){
 
         if (!empty($status)){
-            $mass = R::findAll("contact", "WHERE user_id = ? AND status =?", [$_SESSION['ulogin']['id'], $status]);
+            $mass = R::findAll("contact", "WHERE users_id = ? AND status =?", [$_SESSION['ulogin']['id'], $status]);
             return $mass;
         }
 
-        $mass = R::findAll("contact", "WHERE user_id = ?", [$_SESSION['ulogin']['id']]);
+        $mass = R::findAll("contact", "WHERE users_id = ?", [$_SESSION['ulogin']['id']]);
         return $mass;
 
 
@@ -45,6 +45,8 @@ class Operator extends \APP\core\base\Model {
 
         $this->pluscall();
 
+        $this->addzapis($DATA['contactid'], $company);
+
 
     }
 
@@ -55,6 +57,47 @@ class Operator extends \APP\core\base\Model {
         $contact->operatorcomment = $DATA['operatorcomment'];
         R::store($contact);
     }
+
+
+
+    public function addzapis($idcont, $company){
+
+        $zapis = R::findOne("records", "WHERE contact_id =? " , [$idcont]);
+
+        $DATAZAPIS = getrecord2($idcont);
+
+        if (empty($zapis)){
+            $massiv = [
+                'contact_id' => $idcont,
+                'users_id' => $_SESSION['ulogin']['id'],
+                'company_id' => $company['id'],
+                'DATA' => json_encode($DATAZAPIS, true),
+                'date' => date("Y-m-d H:i:s"),
+            ];
+            $this->addnewBD("records", $massiv);
+
+        }
+
+
+        if (!empty($zapis)){
+
+
+            $zapis->DATA = $DATAZAPIS;
+            R::store($zapis);
+
+        }
+
+        return $DATAZAPIS;
+
+
+
+
+
+        //
+    }
+
+
+
 
 
     public function SetResult($DATA, $company){
@@ -94,34 +137,24 @@ class Operator extends \APP\core\base\Model {
         $contact->status =5;
         $contact->datacall = date("Y-m-d");
         $contact->operatorcomment = $DATA['operatorcomment'];
+        $contact->resultmass = json_encode($RESULTMASS,true);
         R::store($contact);
         // Обновляем статус контакта
 
-        $DATAZAPIS = getrecord2($contact['id']);
+
+
+        $DATAZAPIS = $this->addzapis($DATA['contactid'], $company);
+
         //ПРОВЕРКА ЕСТЬ ЛИ ТАКОЙ КОНТАКТ
 
 
 
         $this->pluscall();
 
-        $result = [
-            'users_id' => $_SESSION['ulogin']['id'],
-            'company_id' => $company['id'],
-            'contact_id' => $contact['id'],
-            'DATA' => json_encode($RESULTMASS,true),
-            'CONTACTINFO' => json_encode($contact, true),
-            'status' => 0,
-            'date' => date("Y-m-d"),
-            'type' => $company['type'],
-            'datazapis' => json_encode($DATAZAPIS, true),
-        ];
-
-        $this->addnewBD("result", $result);
 
 
 
         $komy = R::Load("users", $company['client_id']);
-
         $USN = [
             'operatorname' => self::$USER['username'],
             'user' => $komy['username'],
@@ -129,7 +162,6 @@ class Operator extends \APP\core\base\Model {
             'projectname' => $company['company']
 
         ];
-
 
 
         if ($komy['nmessages'] == 1)
@@ -161,7 +193,7 @@ class Operator extends \APP\core\base\Model {
         $contact->operatorcomment = $DATA['operatorcomment'];
         R::store($contact);
 
-
+        $this->addzapis($DATA['contactid'], $company);
 
 
     }
@@ -297,14 +329,14 @@ class Operator extends \APP\core\base\Model {
 
         $contact = R::load('contact',$idcont);
         $contact->status = 1;
-        $contact->userId = $_SESSION['ulogin']['id'];
+        $contact->usersId = $_SESSION['ulogin']['id'];
         R::store($contact);
 
 
     }
 
     public function Getbron($idc) {
-        return R::findOne('contact', 'company_id = ? AND user_id =? AND status = 1', [$idc, $_SESSION['ulogin']['id']]);
+        return R::findOne('contact', 'company_id = ? AND users_id =? AND status = 1', [$idc, $_SESSION['ulogin']['id']]);
     }
 
     public  function pluscall(){

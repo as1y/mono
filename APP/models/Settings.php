@@ -9,6 +9,7 @@ class Settings extends \APP\core\base\Model {
 
         'idc' => '',
         'priceresult' => '',
+        'aboutcompany' => '',
         'daylimit' => '',
         'mincall' => '',
         'bonuscall' => '',
@@ -19,6 +20,7 @@ class Settings extends \APP\core\base\Model {
     public $rules = [
         'required' => [
             ['priceresult'],
+            ['aboutcompany'],
             ['daylimit'],
             ['mincall'],
             ['timecall'],

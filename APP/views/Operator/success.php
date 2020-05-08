@@ -9,10 +9,9 @@
         <table  class="table datatable-basic">
             <thead>
             <tr>
-                <th><b>ОПЕРАТОР</b></th>
+                <th><b>ПРОЕКТ</b></th>
                 <th><b>ИСХОДНЫЕ ДАННЫЕ</b></th>
                 <th><b>РЕЗУЛЬТАТ</b></th>
-                <th><b>ЗАПИСИ</b></th>
                 <th><b>ОПЛАТА</b></th>
 
             </tr>
@@ -50,11 +49,10 @@
                     <td>
                         <b>ДАТА: </b><?=$val['date']?><br>
                         <?php
-                        renderresult($val['data']);
+                        renderresult($val['dataresult']);
                         ?>
 
                     </td>
-                    <td> <?= raskladkazapisi($val['datazapis'])?></td>
                     <td >
 
                         <h3><?=$company['priceresult']?> </h3>

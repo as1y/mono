@@ -94,6 +94,7 @@
                     <a href="/panel/faq/" class="dropdown-item"><i class="icon-question3"></i> F.A.Q</a>
 
                     <div class="dropdown-divider"></div>
+                    <a href="/panel/urlegal/" class="dropdown-item"><i class="icon-pencil"></i> Юр. Информация</a>
                     <a href="/panel/settings/" class="dropdown-item"><i class="icon-cog5"></i> Настройки аккаунта</a>
                     <a href="/user/logout/" class="dropdown-item"><i class="icon-switch2"></i> Выход</a>
                 </div>

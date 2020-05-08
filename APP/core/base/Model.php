@@ -14,7 +14,7 @@ abstract class Model
         if(!R::testConnection()){
 
             R::setup(CONFIG['db']['dsn'],CONFIG['db']['user'],CONFIG['db']['pass']);
-            //  R::fancyDebug( TRUE );
+//              R::fancyDebug( TRUE );
             //  R::freeze(TRUE);
 
             if (!empty($_SESSION['ulogin']['id'])){
@@ -144,7 +144,7 @@ abstract class Model
     public static function contact($id, $type = "company") {
 
 	    if ($type == "company") $mass = R::findAll("contact", "WHERE company_id = ?", [$id]);
-        if ($type == "user") $mass = R::findAll("contact", "WHERE user_id = ?", [$id]);
+        if ($type == "user") $mass = R::findAll("contact", "WHERE users_id = ?", [$id]);
 
 
         $contact['all'] = '0';
@@ -153,22 +153,23 @@ abstract class Model
         $contact['perezvon'] = '0';
         $contact['otkaz'] = '0';
         $contact['bezdostupa'] = '0';
+        $contact['moderate'] = '0';
+        $contact['dorabotka'] = '0';
         $contact['today'] = '0';
         foreach ($mass as  $val) {
             $contact['all']++;
             if ($val['status'] == 0 ) $contact['free']++;
-            if ($val['status'] != 0 ) $contact['ready']++;
             if ($val['status'] == 2 ) $contact['perezvon']++;
             if ($val['status'] == 3 ) $contact['otkaz']++;
             if ($val['status'] == 4 ) $contact['bezdostupa']++;
+            if ($val['status'] == 5 ) $contact['moderate']++;
+            if ($val['status'] == 6 ) $contact['dorabotka']++;
             if ($val['datacall'] == date("Y-m-d") ) $contact['today']++;
         }
         return $contact;
 
     }
     public static function getres($id, $type = "company") {
-
-
         if ($type == "company")  $mass = R::findAll("result", "WHERE company_id = ?", [$id]);
         if ($type == "user")  $mass = R::findAll("result", "WHERE users_id = ?", [$id]);
 
@@ -176,18 +177,32 @@ abstract class Model
 
         $result['all'] = '0';
         $result['moderation'] = '0';
+        $result['dorabotka'] = '0';
         $result['today'] = '0';
+
         foreach ($mass as $val) {
             if ($val['status'] == 1 ) $result['all']++;
             if ($val['status'] == 0 ) $result['moderation']++;
             if ($val['date'] == date("Y-m-d") and $val['status'] == 1  ) $result['today']++;
+            if ($val['status'] == 3 ) $result['dorabotka']++;
+
         }
         return $result;
     }
 
 
 
+    public function allzapis($id, $type = "company") {
 
+        if ($type == "company")  $allrecord = R::find( 'records' , 'WHERE  company_id = ?', [$id] );
+        if ($type == "user")  $allrecord = R::find( 'records' , 'WHERE  users_id = ?', [$id] );
+
+        $MASS = [];
+        foreach ($allrecord as $key=>$val){
+            $MASS[$val['contact_id']] = $val;
+        }
+        return $MASS;
+    }
 
 
     public function myresize($url, $weight, $height ){

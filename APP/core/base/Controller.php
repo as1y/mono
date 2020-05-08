@@ -10,6 +10,11 @@ abstract class Controller {
 		$this->view = $route['action'];
 
 
+		// Роутинг ВНЕ СЕССИЙ
+		if ($route['controller'] == "Pay" ) return true;
+        // Роутинг ВНЕ СЕССИЙ
+
+
         //Если с сессией зашел в логин или на главную
         if (empty($_SESSION['ulogin']) && $route['controller'] != "Main"  && $route['controller'] != "User"  ){
             redir('/user/');

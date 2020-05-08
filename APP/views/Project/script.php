@@ -45,9 +45,7 @@
     // Save
     $('#save').on('click', function() {
 
-
         var textsc =  $('.click2edit').summernote('code');
-
         textsc = encodeURIComponent(textsc);
         str = '&script=' + textsc + '&idc=' + <?=$company['id']?>
 

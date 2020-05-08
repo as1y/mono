@@ -28,7 +28,7 @@
             $data = $row['dataperezvona'];
 
 
-            if (strtotime($today) > strtotime($data)) $data = "<div class='alert alert-warning'>Вы забыли перезвонить <br><b>".$data."</b></div>";
+            if (strtotime($today) > strtotime($data)) $data = "<div class='alert alert-warning'>Вы забыли перезвонить <br><b>".$data."</b></div>";
             if ($today == $data) $data = "$data<br><span class='label label-info'> СЕГОДНЯ !!! </span>";
             if(empty($company['name'])) $company['name'] = "Вы уже не работаете в компании";
             ?>

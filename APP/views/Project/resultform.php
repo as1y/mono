@@ -4,7 +4,7 @@
         <!-- Left aligned buttons -->
         <div class="card">
             <div class="card-header  justify-content-between align-items-center bg-teal-400 border-top-0">
-                <h6 class="card-title">Форма заполнения успешного звонка</h6>
+                <h6 class="card-title">ФОРМА ЗАПОЛНЕНИЯ</h6>
             </div>
 
             <div class="card-body">
@@ -39,8 +39,8 @@
 
         <!-- Left aligned buttons -->
         <div class="card">
-            <div class="card-header header-elements-inline">
-                <h6 class="card-title">Добавление дополнительных полей</h6>
+            <div class="card-header bg-dark text-white header-elements-inline">
+                <h6 class="card-title">ДОБАВЛЕНИЕ ПОЛЕЙ</h6>
 
             </div>
 
@@ -78,10 +78,48 @@
                 </form>
 
 
-
             </div>
+
+
+
+
         </div>
         <!-- /left aligned buttons -->
+
+
+        <!-- Left aligned buttons -->
+        <div class="card">
+            <div class="card-header bg-dark text-white header-elements-inline">
+                <h6 class="card-title">УСЛОВИЯ ПРОХОЖДЕНИЯ МОДЕРАЦИИ</h6>
+
+            </div>
+
+            <div class="card-body">
+
+                <form action="/project/resultform/?id=<?=$company['id']?>&action=mod" method="post" data-fouc>
+
+                    <div class="form-group">
+                        <label> Требования к разговору <span class="text-danger">*</span></label>
+                        <textarea rows="5" cols="5" name="trebovanie" class="form-control required"  placeholder="1. Запрещен монолог... 2. Запрещено уговаривать"><?=$company['trebovanie']?></textarea>
+                        <span class="form-text text-muted">Логика подтверждения действия</span>
+                    </div>
+                    <button type="submit" class=" btn btn-warning"><i class="icon-pencil mr-2"></i> СОХРАНИТЬ</button>
+
+                </form>
+
+
+            </div>
+
+
+
+
+        </div>
+        <!-- /left aligned buttons -->
+
+
+
+
+
 
 
     </div>

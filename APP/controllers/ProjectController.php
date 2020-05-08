@@ -119,14 +119,32 @@ class ProjectController extends AppController {
         \APP\core\base\View::setAssets($ASSETS);
 
 
+		$companyresult = $project->companyresult($idc); //СВЯЗЬ С КОМПАНИЕЙ
+
+        $contactresult = $project->contactresult($idc, 5);
+
+        $allzapis = $project->allzapis($idc);
 
 
+        // Отправка лида на доработку
+        if ($_POST){
 
-		$company = $project->companyresult($idc); //СВЯЗЬ С КОМПАНИЕЙ
+
+            $result =  $project->dorebotkaresult($contactresult[$_POST['idresult']], $_POST);
+            if ($result == 1){
+                $_SESSION['success'] = "Результат отправлен на доработку";
+                redir("/project/result/?id=".$idc);
+            }else{
+                $_SESSION['errors'] = $result;
+            }
+        }
+        // Отправка лида на доработку
+
+
 
 
         if (!empty($_GET['action']) && $_GET['action'] == "accept"){
-            $result =  $project->acceptresult($company, $_GET['idresult']);
+            $result =  $project->acceptresult($contactresult[$_GET['idresult']]);
             if ($result == 1){
                 $_SESSION['success'] = "Результат успешно одобрен";
                 redir("/project/result/?id=".$idc);
@@ -136,9 +154,8 @@ class ProjectController extends AppController {
         }
 
 
-
         if (!empty($_GET['action']) && $_GET['action'] == "reject"){
-            $result =  $project->rejectresult($company, $_GET['idresult']);
+            $result =  $project->rejectresult($contactresult[$_GET['idresult']]);
             if ($result == 1){
                 redir("/project/result/?id=".$idc);
             }else{
@@ -148,7 +165,7 @@ class ProjectController extends AppController {
 
 
 
-		$this->set(compact('company','zapisi' ));
+		$this->set(compact('companyresult', 'contactresult','zapisi' , 'allzapis' ));
 
 
 
@@ -156,7 +173,46 @@ class ProjectController extends AppController {
 
 	}
 
+    public function recordAction() {
 
+        $project = new Project;
+        $idc = $_GET['id'];
+        $company = $project->getcom($idc);
+
+
+
+        $META = [
+            'title' => 'Запись разговоров',
+            'description' => 'Запись разговоров',
+            'keywords' => 'Запись разговоров',
+        ];
+
+
+        $BREADCRUMBS['HOME'] = ['Label' => $this->BreadcrumbsControllerLabel, 'Url' => $this->BreadcrumbsControllerUrl];
+        $BREADCRUMBS['DATA'][] = ['Label' => "".$company['company'], 'Url' => "/project/?id=".$idc];
+        $BREADCRUMBS['DATA'][] = ['Label' => "Запись разговоров ".$company['company']];
+
+        \APP\core\base\View::setMeta($META);
+        \APP\core\base\View::setBreadcrumbs($BREADCRUMBS);
+
+
+
+        $ASSETS[] = ["js" => "/global_assets/js/plugins/tables/datatables/datatables.min.js"];
+        $ASSETS[] = ["js" => "/assets/js/datatables_basic.js"];
+        \APP\core\base\View::setAssets($ASSETS);
+
+
+       $allrecord = $project->allrecord($idc);
+
+       $allzapis = $project->allzapis($idc);
+
+        $this->set(compact('idc','allrecord', 'allzapis' ));
+
+
+
+
+
+    }
 
     public function operatorAction() {
 
@@ -181,6 +237,7 @@ class ProjectController extends AppController {
         \APP\core\base\View::setAssets($ASSETS);
 
         $operators = $project->operatorsinproject($company);
+
 
 
 
@@ -214,6 +271,61 @@ class ProjectController extends AppController {
 
 
         $this->set(compact('company', 'operators'));
+    }
+
+    public function offerAction() {
+
+        $project = new Project;
+        $idc = $_GET['id'];
+        $company = $project->getcom($_GET['id']);
+
+        $META = [
+            'title' => 'Настройки продукта ',
+            'description' => 'Настройки продукта ',
+            'keywords' => 'Настройки продукта ',
+        ];
+        $BREADCRUMBS['HOME'] = ['Label' => $this->BreadcrumbsControllerLabel, 'Url' => $this->BreadcrumbsControllerUrl];
+        $BREADCRUMBS['DATA'][] = ['Label' => "".$company['company'], 'Url' => "/project/?id=".$idc];
+        $BREADCRUMBS['DATA'][] = ['Label' => "Настрийки ".$company['company']];
+        \APP\core\base\View::setMeta($META);
+        \APP\core\base\View::setBreadcrumbs($BREADCRUMBS);
+
+
+
+        $ASSETS[] = ["js" => "/global_assets/js/demo_pages/form_actions.js"];
+        $ASSETS[] = ["js" => "/assets/js/form_inputs.js"];
+        $ASSETS[] = ["js" => "/global_assets/js/plugins/forms/selects/select2.min.js"];
+        $ASSETS[] = ["js" => "/global_assets/js/plugins/forms/styling/uniform.min.js"];
+        $ASSETS[] = ["js" => "/global_assets/js/plugins/uploaders/fileinput/plugins/purify.min.js"];
+        $ASSETS[] = ["js" => "/global_assets/js/plugins/uploaders/fileinput/plugins/sortable.min.js"];
+        $ASSETS[] = ["js" => "/global_assets/js/plugins/uploaders/fileinput/fileinput.min.js"];
+        $ASSETS[] = ["js" => "/assets/js/uploader_bootstrap.js"];
+
+
+
+        \APP\core\base\View::setAssets($ASSETS);
+
+
+        if ($_POST){
+
+
+            $result = $project->editoffer($_POST, $company);
+            if ($result == 1){
+                $_SESSION['success'] = "Информация сохранена";
+                redir("/project/offer/?id=".$idc);
+            }else{
+                $_SESSION['errors'] = $result;
+            }
+
+
+
+
+        }
+
+
+
+
+        $this->set(compact('company'));
     }
 
 	public function setAction() {
@@ -542,12 +654,26 @@ class ProjectController extends AppController {
             }else{
                 $_SESSION['errors'] = $result;
             }
+        }
+
+
+
+		if ($_POST && !empty($_GET['action']) && $_GET['action'] == "mod"){
+
+
+
+            $result =  $project->addtrebovanie($_POST,$company);
+            if ($result == 1){
+                $_SESSION['success'] = "Требования к разговору добавлены";
+                redir("/project/resultform/?id=".$idc);
+            }else{
+                $_SESSION['errors'] = $result;
+            }
 
 
 
 
         }
-
 
 		if ($_POST){
 

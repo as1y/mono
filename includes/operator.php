@@ -92,16 +92,15 @@
                         <a href="/operator/perezvon/" class="nav-link <?=isset($active['perezvon']) ? $active['perezvon'] : ''; ?>">
                             <i class="icon-calendar"></i>
                             <span>	Перезвон </span>
-                            <span class="badge badge-pill bg-info ml-auto"><?=$contact['perezvon']?></span>
+                            <span class="badge badge-pill bg-secondary ml-auto"><?=$contact['perezvon']?></span>
                         </a>
                     </li>
-
 
                     <li class="nav-item">
                         <a href="/operator/moderate/" class="nav-link <?=isset($active['moderate']) ? $active['moderate'] : ''; ?>">
                             <i class="icon-eye"></i>
                             <span>	На модерации </span>
-                            <span class="badge badge-pill bg-secondary ml-auto"><?=$result['moderation']?></span>
+                            <span class="badge badge-pill bg-secondary ml-auto"><?=$contact['moderate']?></span>
                         </a>
                     </li>
 
@@ -110,8 +109,7 @@
                             <i class="icon-wrench"></i>
                             <span>	Доработка </span>
 
-                            <span class="badge badge-pill bg-secondary ml-auto">0</span>
-
+                            <span class="badge badge-pill bg-warning ml-auto"><?=$contact['dorabotka']?></span>
 
                         </a>
                     </li>

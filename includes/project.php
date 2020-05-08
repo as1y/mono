@@ -51,6 +51,15 @@
                         </a>
                     </li>
 
+
+                    <li class="nav-item">
+                        <a href="/project/record/?id=<?=$_GET['id']?>" class="nav-link <?=isset($active['record']) ? $active['record'] : ''; ?>">
+                            <i class="icon-headphones"></i>
+                            <span>	Разговоры </span>
+                        </a>
+                    </li>
+
+
                     <li class="nav-item">
                         <a href="/project/result/?id=<?=$_GET['id']?>" class="nav-link <?=isset($active['result']) ? $active['result'] : ''; ?>">
                             <i class="icon-target2"></i>
@@ -82,9 +91,17 @@
                     <li class="nav-item">
                         <a href="/project/set/?id=<?=$_GET['id']?>" class="nav-link <?=isset($active['set']) ? $active['set'] : ''; ?>">
                             <i class="icon-cog3"></i>
-                            <span>	Общие настройки </span>
+                            <span>	Компания </span>
                         </a>
                     </li>
+
+                    <li class="nav-item">
+                        <a href="/project/offer/?id=<?=$_GET['id']?>" class="nav-link <?=isset($active['offer']) ? $active['offer'] : ''; ?>">
+                            <i class="icon-equalizer"></i>
+                            <span>	Продукт </span>
+                        </a>
+                    </li>
+
 
                     <li class="nav-item">
                         <a href="/project/base/?id=<?=$_GET['id']?>" class="nav-link <?=isset($active['base']) ? $active['base'] : ''; ?>">
@@ -103,7 +120,7 @@
                     <li class="nav-item">
                         <a href="/project/resultform/?id=<?=$_GET['id']?>" class="nav-link <?=isset($active['resultform']) ? $active['resultform'] : ''; ?>">
                             <i class="icon-file-eye2"></i>
-                            <span>	Форма результата </span>
+                            <span>	Целевой результат </span>
                         </a>
                     </li>
 

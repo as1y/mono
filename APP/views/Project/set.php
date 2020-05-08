@@ -3,7 +3,7 @@
 
 <div class="card">
     <div class="card-header bg-dark text-white header-elements-inline">
-        <h5 class="card-title">ПРЕДЛОЖЕНИЕ ОПЕРАТОРАМ</h5>
+        <h5 class="card-title">ОПЛАТА ОПЕРАТОРАМ</h5>
     </div>
 
     <div class="table-responsive">
@@ -173,6 +173,20 @@
             </div>
 
 
+            <div class="card-body justify-content-center">
+            <div class="col-md-12">
+                <div class="form-group">
+                   <b> <label>О КОМПАНИИ: <span class="text-danger">*</span></label></b>
+                    <textarea rows="5" cols="5" name="aboutcompany" class="form-control required"  placeholder="О компани"><?=$company['aboutcompany']?></textarea>
+                    <span class="form-text text-muted">Короткие и важные факты о компании.</span>
+                </div>
+            </div>
+
+                <input type="hidden" name="idc"  value="<?=$company['id']?>">
+                <button type="submit" class=" btn btn-warning"><i class="icon-pencil mr-2"></i> СОХРАНИТЬ</button>
+
+            </div>
+
         </div>
 
 
@@ -188,6 +202,5 @@
 
 
 
-    <input type="hidden" name="idc"  value="<?=$company['id']?>">
-<button type="submit" class=" btn btn-warning"><i class="icon-pencil mr-2"></i> СОХРАНИТЬ ИЗМЕНЕНИЯ</button>
+
 </form>

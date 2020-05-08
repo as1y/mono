@@ -10,10 +10,11 @@ function getrecord2($idcont) {
         'account_id' => $account_id,
         'api_key' => $api_key,
         'from_date' =>    '2020-01-01 00:00:00',
-        'to_date' => date("Y-m-d h:m:s"),
+        'to_date' => date("Y-m-d h:s:m", strtotime("+1 day")),
         'with_records' => true,
-          'call_session_history_custom_data' => $idcont,
+        'call_session_history_custom_data' => $idcont,
     ];
+
 
   $result =  fCURL($url, $PARAMS);
 
@@ -36,8 +37,10 @@ function generateprofilelink($user = ""){
 
 function raskladkazapisi($DATA) {
 
-    $DATA = json_decode($DATA, true);
     if (!$DATA) return "Запись отсутсвует<br />";
+
+    $DATA = json_decode($DATA, true);
+
 
     $records = '';
 
@@ -46,15 +49,16 @@ function raskladkazapisi($DATA) {
             $date = $val['start_date'];
             $url = $val['records']['0']['record_url'];
 
+//            $a = "<i class='icon-calendar3'></i>".$date."<p><audio src='".$val['records']['0']['record_url']."' controls></audio></p>";
 
-            $a = "<i class='icon-calendar3'></i>".$date."<p><audio src='".$val['records']['0']['record_url']."' controls></audio></p>";
-
+            $a = "<i class='icon-calendar3'></i>".$date."<p><a href='".$val['records']['0']['record_url']."' target='_blank' >ЗАПИСЬ</a> ";
 
 
             if (!isset($url)) $a = "<p>Без записи</p>";
             $records = $records.$a;
         }
 
+        if (empty($val['records']['0'])) return "Запись отсутсвует<br />";
 
     }
 
@@ -73,12 +77,36 @@ function leadstatus ($status){
 	if ($status=="0") return '<div class="label label-warning">НА МОДЕРАЦИИ</div>';
 	if ($status=="1") return '<div class="label label-success"><b>ОДОБРЕН</b></div>';
 	if ($status=="2") return '<div class="label label-danger">ОТКЛОНЕН</div>';
+    if ($status=="3") return '<div class="label label-info">ДОРАБОТКА</div>';
 }
 function leadteable ($status){
 	if ($status=="0") return '';
 	if ($status=="1") return "";
 	if ($status=="2") return "";
 }
+
+
+function contactstatus ($status){
+
+    if ($status == '0') return  "НЕ ОБРАБОТАН";
+    if ($status == '1') return  "ЗАБРОНИРОВАН";
+    if ($status == '2') return  "ПЕРЕЗВОН";
+    if ($status == '3') return  "ОТКАЗ";
+    if ($status == '4') return  "ТЕЛЕФОН НЕ ДОСТУПЕН";
+    if ($status == '5') return  "НА МОДЕРАЦИИ";
+    if ($status == '6') return  "ДОРАБОТКА";
+    if ($status == '7') return  "НЕ ПРОШЕЛ МОДЕРАЦИЮ";
+    if ($status == '8') return  "РЕЗУЛЬТАТ";
+
+
+
+
+
+
+
+
+}
+
 
 
 
@@ -160,13 +188,11 @@ function ticketstatus ($status){
 
 function rendercontactinfo ($DATA){
 
-    $DATA = json_decode($DATA, true);
-
 ?>
 
     <b>ИМЯ: </b> <?=(!empty($DATA['name'])) ?  $DATA['name'] : "не заполнено"?><br>
     <b>ТЕЛЕФОН: </b> <?=(!empty($DATA['tel'])) ?  $DATA['tel'] : "не заполнено"?><br>
-    <b>КОМПАНИЯ: </b> <?=(!empty($DATA['company'])) ?  $DATA['company'] : "не заполнено"?><br>
+    <b>КОМПАНИЯ: </b> <?=(!empty($DATA['companyname'])) ?  $DATA['companyname'] : "не заполнено"?><br>
     <b>САЙТ: </b> <?=(!empty($DATA['site'])) ?  $DATA['site'] : "не заполнено"?><br>
     <b>КОММЕНТАРИЙ: </b> <?=(!empty($DATA['comment'])) ?  $DATA['comment'] : "не заполнено"?><br>
 
@@ -183,6 +209,7 @@ function rendercontactinfo ($DATA){
 function renderresult ($DATA){
 
     $DATA = json_decode($DATA, true);
+
     foreach ($DATA as $key=>$val){
         echo "<b>".$val['NAME'].": </b>".$val['VAL']."<br>";
     }
@@ -425,14 +452,15 @@ function showmass ($par, $ch){
 function pole_valid ($pole,$num,$type) {
 
 
-	if (!$pole) return ['error' => 'Поле пустое и не заполненно.'];
 
 
 	if ($type == "i"){
+        if (!$pole) return ['error' => 'Поле пустое и не заполненно.'];
 		$pole = intval($pole);
 		if (strlen($pole) > $num) return ['error' => 'Текст '.strlen($pole).' символов слишком большой. Нужно не больее '.$num.' '];
 	}
 	if ($type == "s"){
+        if (!$pole) return ['error' => 'Поле пустое и не заполненно.'];
 		if (strlen($pole) > $num) return ['error' => 'Текст '.strlen($pole).' символов слишком большой. Нужно не больее '.$num.''];
 		$pole = trim($pole);
 		$pole = strip_tags($pole);
@@ -440,12 +468,29 @@ function pole_valid ($pole,$num,$type) {
 		iconv_strlen($pole, 'UTF-8');
 	}
 	if ($type == "u"){
+        if (!$pole) return ['error' => 'Поле пустое и не заполненно.'];
 		if (strlen($pole) > $num) ['error' => 'Текст '.strlen($pole).' символов слишком большой. Нужно не больее '.$num.''];
 		$pole = trim($pole);
 		$pole = strip_tags($pole);
 		$pole = htmlspecialchars($pole);
 		iconv_strlen($pole, 'UTF-8');
 	}
+
+
+    if ($type == "smax"){
+        if (strlen($pole) > $num) return ['error' => 'Текст '.strlen($pole).' символов слишком большой. Нужно не больее '.$num.''];
+        $pole = trim($pole);
+        $pole = strip_tags($pole);
+        $pole = htmlspecialchars($pole);
+        iconv_strlen($pole, 'UTF-8');
+    }
+
+    if ($type == "imax"){
+        $pole = intval($pole);
+        if (strlen($pole) > $num) return ['error' => 'Текст '.strlen($pole).' символов слишком большой. Нужно не больее '.$num.' '];
+    }
+
+
 
 
 	return $pole;

@@ -6,10 +6,25 @@ use RedBeanPHP\R;
 class Panel extends \APP\core\base\Model {
 
 
-    public function gettickets($idc){
-        $tickets = R::findOne("tickets", "WHERE user_id = ? AND id = ?" , [ $_SESSION['ulogin']['id'], $idc ]);
-        return $tickets;
+
+
+    public function invoicesuccess($id){
+        $invoice = R::load("invoice", $id);
+
+        if ($invoice['status'] == 0){
+
+            $user = R::load(CONFIG['USERTABLE'], $invoice['users_id']);
+            $this->addbalanceuser($user, $invoice['summa'], "Пополнение баланса через ".$invoice['paymethod'] );
+            $invoice->status = 1;
+            R::store($invoice);
+
+
+
+
+        }
+        return true;
     }
+
 
 
     public function getsobesednik($idu){
@@ -164,13 +179,7 @@ class Panel extends \APP\core\base\Model {
 
 
 
-    public function closeticket($idc){
-        $tickets = R::findOne("tickets", "WHERE user_id = ? AND id = ?" , [ $_SESSION['ulogin']['id'], $idc ]);
-        $tickets->status=2;
-        $tickets->new = NULL;
-        R::store($tickets);
 
-    }
 
 
     public function  saverecord ($name){
@@ -255,16 +264,24 @@ class Panel extends \APP\core\base\Model {
     }
 
 
-    public function generatePayeerform($DATA){
+    public function newbill(){
+
+
+
+
+    }
+
+
+    public function generatePayeerform($DATA, $invoiceid){
 
         $form = [];
 
 
         $m_shop = '1009839670';
-        $m_orderid = '1';
+        $m_orderid = $invoiceid;
         $m_amount = number_format($DATA['summa'], 2, '.', '');
         $m_curr = 'RUB';
-        $m_desc = base64_encode('Пополнение баланса в сервисе cashcall.ru');
+        $m_desc = base64_encode('Счет №'.$invoiceid.' - Пополнение баланса в сервисе cashcall.ru');
         $m_key = 'XvmQQSVbf8aV';
 
         $arHash = array(
@@ -275,17 +292,7 @@ class Panel extends \APP\core\base\Model {
             $m_desc
         );
 
-        // Дополнительные параметры
-        $arParams = array(
-            'reference' => array(
-                'userid' => $_SESSION['ulogin']['id'],
-            ),
-        );
-        $key = md5('XdCQdGSHStkt'.$m_orderid);
-        $m_params = @urlencode(base64_encode(openssl_encrypt(json_encode($arParams), 'AES-256-CBC', $key, OPENSSL_RAW_DATA)));
 
-        $arHash[] = $m_params;
-        // Дополнительные параметры
 
         $arHash[] = $m_key;
         $sign = strtoupper(hash('sha256', implode(':', $arHash)));
@@ -300,7 +307,10 @@ class Panel extends \APP\core\base\Model {
         $form['input'][] = ['type' => 'hidden', 'name' => 'm_curr', 'value' => $m_curr];
         $form['input'][] = ['type' => 'hidden', 'name' => 'm_desc', 'value' => $m_desc];
         $form['input'][] = ['type' => 'hidden', 'name' => 'm_sign', 'value' => $sign];
-        $form['input'][] = ['type' => 'hidden', 'name' => 'm_params', 'value' => $m_params];
+//        $form['input'][] = ['type' => 'submit', 'm_process' => 'm_sign', 'value' => 'send'];
+
+
+//        $form['input'][] = ['type' => 'hidden', 'name' => 'm_params', 'value' => $m_params];
 
         return $form;
 

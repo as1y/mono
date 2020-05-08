@@ -8,8 +8,8 @@ use APP\core\base\Model;
 
 class PayController extends AppController {
 	public $layaout = 'PANEL';
-    public $BreadcrumbsControllerLabel = "Кабинет оператора";
-    public $BreadcrumbsControllerUrl = "/panel";
+    public $mininvoice = 1000;
+
 
 
     // Прием платежей на сай
@@ -31,8 +31,26 @@ class PayController extends AppController {
         \APP\core\base\View::setBreadcrumbs($BREADCRUMBS);
 
 
+        if ($_POST['summa'] < $this->mininvoice){
+
+            $_SESSION['errors'] = "Минимальное пополнение ".$this->mininvoice." рублей<br>";
+            redir("/panel/balance/");
+
+        }
+
+
+        $invoice =[
+            'users_id' => $_SESSION['ulogin']['id'],
+            'paymethod' => $_POST['paymethod'],
+            'summa' => $_POST['summa'],
+            'status' => 0
+        ];
+
+
+
         if ($_POST && $_POST['paymethod'] == "Payeer"){
-           $form = $Panel->generatePayeerform($_POST);
+            $invoiceid = $Panel->addnewBD("invoice", $invoice);
+           $form = $Panel->generatePayeerform($_POST, $invoiceid);
         }
 
 
@@ -56,17 +74,13 @@ class PayController extends AppController {
         ];
         \APP\core\base\View::setMeta($META);
 
-        if ($_SESSION['ulogin']['role'] == "R") $BREADCRUMBS['HOME'] = ['Label' => "Кабинет рекламодателя", 'Url' => "/master"];
-        if ($_SESSION['ulogin']['role'] == "O") $BREADCRUMBS['HOME'] = ['Label' => "Кабинет  оператора", 'Url' => "/operator"];
-        $BREADCRUMBS['DATA'][] = ['Label' => "Пополнение баланса"];
-        \APP\core\base\View::setBreadcrumbs($BREADCRUMBS);
 
 
 
         if (!empty($_GET['method']) && $_GET['method'] == "Payeer"){
 
 
-            if (!in_array($_SERVER['REMOTE_ADDR'], array('185.71.65.92', '185.71.65.189', '149.202.17.210'))) return;
+            if (!in_array($_SERVER['REMOTE_ADDR'], array('185.71.65.92', '185.71.65.189', '149.202.17.210'))) exit("ip");
 
 
             if (isset($_POST['m_operation_id']) && isset($_POST['m_sign']))
@@ -98,11 +112,12 @@ class PayController extends AppController {
                 if ($_POST['m_sign'] == $sign_hash && $_POST['m_status'] == 'success')
                 {
 
-                    //Добавляем баланс пользователю через параметры или БД
 
+                    dumpf($_POST);
+                    //Добавляем баланс пользователю через параметры или БД
+                    $Panel->invoicesuccess($_POST['m_orderid']);
 
                     //Добавляем баланс пользователя через баланс или БД
-
                     ob_end_clean(); exit($_POST['m_orderid'].'|success');
                 }
 

@@ -67,6 +67,12 @@ class OperatorController extends AppController {
         if ($_POST['optionresult'] == "result") $operator->SetResult($_POST, $company);
 
 
+
+
+
+
+
+
         // НАЗНАЧЕНИЕ НОВОГО КОНТАКТА
 
         if ($company['status'] != 1) {
@@ -152,7 +158,7 @@ class OperatorController extends AppController {
         if (!empty($_GET['perezvon'])){
 
             $contactinfo = $operator->loadcontact($_GET['perezvon']);
-            if (empty($contactinfo) || $contactinfo['status'] != 2) {
+            if (empty($contactinfo) || ($contactinfo['status'] != 2 && $contactinfo['status'] != 6) ) {
                 $_SESSION['errors'] = "Ошибка в базе контактов №148. Обратить в тех. поддержку";
                 redir ("/operator/perezvon/");
             }
@@ -299,12 +305,11 @@ class OperatorController extends AppController {
         $ASSETS[] = ["js" => "/assets/js/datatables_basic.js"];
         \APP\core\base\View::setAssets($ASSETS);
 
-//        $contactperezvon = $operator->getcontactuser(2);
 
-        $resultuser = $operator->getresultuser(0);
+        $contactmoderate = $operator->getcontactuser(5);
 
 
-        $this->set(compact('resultuser'));
+        $this->set(compact('contactmoderate'));
 
 
     }
@@ -334,10 +339,12 @@ class OperatorController extends AppController {
 
 //        $contactperezvon = $operator->getcontactuser(2);
 
-//        $resultuser = $operator->getresultuser(0);
-//
-//
-//        $this->set(compact('resultuser'));
+        $allzapis = $operator->allzapis($_SESSION['ulogin']['id'], "user");
+
+        $contactdorabotka = $operator->getcontactuser(6);
+
+
+        $this->set(compact('contactdorabotka', 'allzapis'));
 
 
     }

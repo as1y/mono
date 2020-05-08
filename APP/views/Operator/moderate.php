@@ -21,10 +21,8 @@
 
             <?php
 
-            foreach ($resultuser as $key=>$val):
+            foreach ($contactmoderate as $key=>$val):
 
-                if ($val['id'] == 0) continue;
-                if ($val['status'] != 0 ) continue;
 
                 $userinfo = $val->users;
                 $company = $val->company;
@@ -43,15 +41,15 @@
                     <td>
 
                         <?php
-                        rendercontactinfo($val['contactinfo']);
+                        rendercontactinfo($val);
                         ?>
 
 
                     </td>
                     <td>
-                        <b>ДАТА: </b><?=$val['date']?><br>
+                        <b>ДАТА: </b><?=$val['datacall']?><br>
                         <?php
-                        renderresult($val['data']);
+                        renderresult($val['resultmass']);
                         ?>
 
                     </td>

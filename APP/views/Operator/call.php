@@ -310,7 +310,10 @@
 
 
 <div class="row">
-    <div class="col-md-12">
+
+    
+
+    <div class="col-md-6">
         <div class="card border-dark">
             <div class="card-header bg-dark text-white header-elements-inline">
                 <h6 class="card-title">СКРИПТ РАЗГОВОРА</h6>
@@ -326,6 +329,42 @@
 
         </div>
     </div>
+
+
+    <div class="col-md-4">
+        <div class="card border-dark">
+            <div class="card-header bg-dark text-white header-elements-inline">
+                <h6 class="card-title">ТРЕБОВАНИЯ ДЛЯ МОДЕРАЦИИ</h6>
+
+            </div>
+
+            <div class="card-body">
+                <?=$company['trebovanie']?>
+            </div>
+
+
+        </div>
+
+
+        <div class="card border-dark">
+            <div class="card-header bg-dark text-white header-elements-inline">
+                <h6 class="card-title">О ПРОДУКТЕ</h6>
+
+            </div>
+
+            <div class="card-body">
+              <b>  <?=$company['nameproduct']?> <br></b>
+                <?=$company['aboutproduct']?>
+            </div>
+
+
+        </div>
+
+
+
+    </div>
+
+
 </div>
 
 

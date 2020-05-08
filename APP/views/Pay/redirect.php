@@ -11,6 +11,12 @@
             Перенаправление на платежную систему...
         <?php generatepayform($form);?>
 
+
+
+
+
+
+
         <script>
            $('form').submit();
         </script>

@@ -47,16 +47,32 @@ class Project extends \APP\core\base\Model {
 
 
 
-    public function acceptresult($company, $idres){
+    public function acceptresult($contactresult){
 
 
-        $result = R::findOne('result', 'WHERE id = ? AND company_id =? AND status = 0 LIMIT 1', [$idres, $company['id']]);
-        $result->status = 1;
-        R::store($result);
+
+        $contactresult->status = 8;
+        R::store($contactresult);
 
 
-        $userinfo = $result->users;
-        $companyinfo = $result->company;
+        $userinfo = $contactresult->users;
+        $companyinfo = $contactresult->company;
+
+        // Добавление в таблицу результат
+        $result = [
+            'users_id' => $contactresult['users_id'],
+            'company_id' => $companyinfo['id'],
+            'contact_id' => $contactresult['id'],
+            'dataresult' => $contactresult['resultmass'],
+            'contactinfo' => json_encode($contactresult, true),
+            'status' => 1,
+            'date' => date("Y-m-d"),
+            'type' => $companyinfo['type'],
+        ];
+        $this->addnewBD("result", $result);
+        // Добавление в таблицу результат
+
+
 
 
         // Прибавление статистики
@@ -93,16 +109,57 @@ class Project extends \APP\core\base\Model {
     }
 
 
-    public function rejectresult($company, $idres){
-        $result = R::findOne('result', 'WHERE id = ? AND company_id =? AND status = 0 LIMIT 1', [$idres, $company['id']]);
-        $result->status = 2;
-        R::store($result);
-
+    public function rejectresult($contactresult){
+        $contactresult->status = 7;
+        R::store($contactresult);
         return true;
     }
 
 
 
+
+    public function editoffer($DATA, $company){
+
+
+
+        $nameproduct = pole_valid ($DATA['nameproduct'], 100, 's');
+        if (!empty($nameproduct['error'])) return $nameproduct['error'];
+
+        $aboutproduct = pole_valid ($DATA['aboutproduct'], 2000, 's');
+        if (!empty($aboutproduct['error'])) return $aboutproduct['error'];
+
+        $minimumprice = pole_valid ($DATA['minimumprice'], 20, 'smax');
+        if (!empty($minimumprice['error'])) return $minimumprice['error'];
+
+        $dopmaterial = pole_valid ($DATA['dopmaterial'], 2000, 's');
+        if (!empty($dopmaterial['error'])) return $dopmaterial['error'];
+
+
+
+
+        $company->nameproduct = $nameproduct;
+        $company->aboutproduct = $aboutproduct;
+        $company->minimumprice = $minimumprice;
+        $company->dopmaterial = $dopmaterial;
+        R::store($company);
+        return true;
+
+
+    }
+
+
+    public function addtrebovanie($DATA, $company){
+
+
+        $trebovanie = pole_valid ($DATA['trebovanie'], 1000, 'smax');
+        if (!empty($trebovanie['error'])) return $trebovanie['error'];
+
+        $company->trebovanie = $trebovanie;
+        R::store($company);
+        return true;
+
+
+    }
 
 
     public function acceptoperator($company, $idoper){
@@ -241,6 +298,9 @@ class Project extends \APP\core\base\Model {
     }
 
 
+
+
+
     public function addpoleformresult ($DATA, $idc){
 
 
@@ -277,6 +337,27 @@ class Project extends \APP\core\base\Model {
 
 
 
+    public function dorebotkaresult($contact, $DATA) {
+
+        $contact->status = 6;
+        $contact->dorabotkacomment = $DATA['comment'];
+        R::store($contact);
+
+        return true;
+
+
+
+    }
+
+
+    public function contactresult($idc, $status = 5) {
+
+        $contactresult =  R::find('contact','WHERE company_id = ? AND status = ?' , [$idc, $status]);
+
+
+        return $contactresult;
+    }
+
 
 
 	public function companyresult($idc) {
@@ -305,6 +386,11 @@ class Project extends \APP\core\base\Model {
 		$allrecord = R::find( 'contact' , 'WHERE  company_id = ? AND `status` != 1 AND `status` != 0 ORDER BY `id` DESC', [$idc] );
 		return $allrecord;
 	}
+
+
+
+
+
 	public function zayavki($idc) {
 		$zayavki = R::findAll("joincompany", "WHERE status = 1 AND company_id = ?", [$idc] );;
 		return $zayavki;
