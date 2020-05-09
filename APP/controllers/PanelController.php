@@ -766,30 +766,6 @@ class PanelController extends AppController {
         $Panel =  new Panel();
 
 
-        if (!empty($_POST['changepassword'])){
-
-            $result = $Panel->changepassword($_POST);
-            if ($result == 1){
-                $_SESSION['success'] = "Изменения сохранены";
-                redir("/panel/settings/");
-            }else{
-                $_SESSION['errors'] = $result;
-                redir("/panel/settings/");
-            }
-
-        }
-
-        if (!empty($_POST['changenotification'])){
-
-            $result = $Panel->changenotification($_POST);
-            $_SESSION['success'] = "Изменения сохранены";
-            redir("/panel/settings/");
-        }
-
-
-
-
-
 
         $META = [
             'title' => 'Юридическая информация',
@@ -810,6 +786,16 @@ class PanelController extends AppController {
         $ASSETS[] = ["js" => "/assets/js/form_wizard.js"];
         \APP\core\base\View::setAssets($ASSETS);
 
+
+
+        if ($_POST && !empty($_GET) && $_GET['action'] == "baseinfo"){
+            show($_POST);
+
+            $result = $Panel->changeurlegal($_POST);
+
+
+            exit();
+        }
 
 
 

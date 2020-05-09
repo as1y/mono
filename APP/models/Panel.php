@@ -451,5 +451,20 @@ class Panel extends \APP\core\base\Model {
 
 
 
+    public  function changeurlegal($DATA){
+
+
+
+
+
+        R::store(self::$USER);
+
+        return true;
+
+    }
+
+
+
+
 }
 ?>

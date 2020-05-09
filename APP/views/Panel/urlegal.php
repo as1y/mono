@@ -19,35 +19,37 @@
 
                                 <div class="form-group">
                                     <label>САЙТ: <span class="text-danger">*</span></label>
-                                    <input type="text" name="company" class="form-control required" placeholder="САЙТ">
+                                    <input type="text" name="site" class="form-control required" placeholder="САЙТ">
                                 </div>
 
                                 <div class="form-group">
                                     <label>Юридическое лицо: <span class="text-danger">*</span></label>
-                                    <input type="text" name="company" class="form-control required" placeholder="Юридическое лицо">
+                                    <input type="text" name="urlico" class="form-control required" placeholder="Юридическое лицо">
                                 </div>
 
                                 <div class="form-group">
                                     <label>ОГРН: <span class="text-danger">*</span></label>
-                                    <input type="text" name="company" class="form-control required" placeholder="ОГРН">
+                                    <input type="text" name="ogrn" class="form-control required" placeholder="ОГРН">
                                 </div>
 
                                 <div class="form-group">
                                     <label>Почтовый адрес: <span class="text-danger">*</span></label>
-                                    <input type="text" name="company" class="form-control required" placeholder="Почтовый адрес">
+                                    <input type="text" name="postadress" class="form-control required" placeholder="Почтовый адрес">
                                 </div>
 
                                 <div class="form-group">
                                     <label>Телефон: <span class="text-danger">*</span></label>
-                                    <input type="text" name="company" class="form-control required" placeholder="Телефон">
+                                    <input type="text" name="phone" class="form-control required" placeholder="Телефон">
                                 </div>
 
                                 <div class="form-group">
                                     <label>Юридический адрес: <span class="text-danger">*</span></label>
-                                    <input type="text" name="company" class="form-control required" placeholder="Юридический адрес">
+                                    <input type="text" name="uradres" class="form-control required" placeholder="Юридический адрес">
                                 </div>
 
-
+                                <div class="text-left">
+                                    <button type="submit" class="btn btn-warning"><i class="icon-pencil mr-2"></i>Сохранить</button>
+                                </div>
 
                             </form>
 
@@ -60,9 +62,7 @@
                 </div>
 
 
-                <div class="text-left">
-                    <button type="submit" class="btn btn-warning"><i class="icon-pencil mr-2"></i>Сохранить</button>
-                </div>
+
 
 
                 </form>

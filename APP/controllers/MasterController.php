@@ -86,7 +86,7 @@ class MasterController extends AppController {
         $add = new Addp(); //Вызываем Моудль
 
         if ($_POST){
-            
+
             $validate =  $add->validatenewproject($_POST);
 
             if (!$validate){
@@ -96,8 +96,6 @@ class MasterController extends AppController {
 
             $add->addproject($_POST);
             redir("/master/");
-
-
 
 
         }
