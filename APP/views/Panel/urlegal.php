@@ -1,76 +1,164 @@
+<div class="row">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header bg-dark text-white header-elements-inline">
+                <h5 class="card-title">ЮРИДИЧЕСКАЯ ИНФОРМАЦИЯ</h5>
 
-<div class="card">
-    <div class="card-header bg-dark text-white header-elements-inline">
-        <h5 class="card-title">Юридическая информация</h5>
+            </div>
 
-    </div>
+            <div class="card-body">
 
-    <div class="card-body">
-
-            <div class="form-group">
-                <div class="row">
-
-                    <div class="col-md-6">
-                        <form action="/panel/settings/" method="post" data-fouc>
-
-                        <label>Текущий пароль</label>
-                        <input type="password" name="now" placeholder="Текущий пароль" class="form-control">
-
-                        <label>Новый пароль</label>
-                        <input type="password" name="newpass" placeholder="Новый пароль" class="form-control">
-
-                        <label>Повторите новый пароль</label>
-                        <input type="password" name="newpassrepeat" placeholder="Повторите новый парол" class="form-control">
-                        <br>
-                            <input type="hidden" name="changepassword" value="1">
-
-                        <div class="text-left">
-                            <button type="submit" class="btn btn-warning"><i class="icon-pencil mr-2"></i>Изменить пароль</button>
-                        </div>
-                        </form>
-
-                    </div>
+                <div class="form-group">
 
 
-                    <div class="col-md-6">
+                            <form action="/panel/urlegal/?action=baseinfo" method="post" data-fouc>
+                                <div class="form-group">
+                                    <label>Название компании: <span class="text-danger">*</span></label>
+                                    <input type="text" name="company" class="form-control required" placeholder="Название компании">
+                                </div>
 
-                        <form action="/panel/settings/" method="post" data-fouc>
-                        <label>E-mail уведомления</label>
-                        <div class="form-check">
-                            <label class="form-check-label">
-                                <input type="checkbox" name="messages" class="form-input-styled" <?=($_SESSION['ulogin']['nmessages'] == 1) ? "checked" : ""?> data-fouc>
-                                Личная переписка
-                            </label>
-                        </div>
+                                <div class="form-group">
+                                    <label>САЙТ: <span class="text-danger">*</span></label>
+                                    <input type="text" name="company" class="form-control required" placeholder="САЙТ">
+                                </div>
 
-                        <div class="form-check">
-                            <label class="form-check-label">
-                                <input type="checkbox"  name="news" class="form-input-styled"  <?=($_SESSION['ulogin']['nnews'] == 1) ? "checked" : ""?> data-fouc>
-                                Системные уведомления
-                            </label>
-                        </div>
+                                <div class="form-group">
+                                    <label>Юридическое лицо: <span class="text-danger">*</span></label>
+                                    <input type="text" name="company" class="form-control required" placeholder="Юридическое лицо">
+                                </div>
 
-                            <input type="hidden" name="changenotification" value="1">
+                                <div class="form-group">
+                                    <label>ОГРН: <span class="text-danger">*</span></label>
+                                    <input type="text" name="company" class="form-control required" placeholder="ОГРН">
+                                </div>
 
-                            <div class="text-left">
-                                <button type="submit" class="btn btn-warning"><i class="icon-pencil mr-2"></i>Изменить уведомления</button>
-                            </div>
-                        </form>
+                                <div class="form-group">
+                                    <label>Почтовый адрес: <span class="text-danger">*</span></label>
+                                    <input type="text" name="company" class="form-control required" placeholder="Почтовый адрес">
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Телефон: <span class="text-danger">*</span></label>
+                                    <input type="text" name="company" class="form-control required" placeholder="Телефон">
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Юридический адрес: <span class="text-danger">*</span></label>
+                                    <input type="text" name="company" class="form-control required" placeholder="Юридический адрес">
+                                </div>
+
+
+
+                            </form>
 
 
 
 
-                    </div>
 
 
 
                 </div>
+
+
+                <div class="text-left">
+                    <button type="submit" class="btn btn-warning"><i class="icon-pencil mr-2"></i>Сохранить</button>
+                </div>
+
+
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header bg-dark text-white header-elements-inline">
+                <h5 class="card-title">БАНКОВСКИЕ РЕКВИЗИТЫ</h5>
+
             </div>
 
+            <div class="card-body">
+
+                <div class="form-group">
+
+
+                            <form action="/panel/urlegal/?action=payinfo" method="post" data-fouc>
+                                <div class="form-group">
+                                    <label>ИНН: <span class="text-danger">*</span></label>
+                                    <input type="text" name="company" class="form-control required" placeholder="ИНН">
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Тип плательщика: <span class="text-danger">*</span></label>
+                                    <input type="text" name="company" class="form-control required" placeholder="Физ лицо">
+                                </div>
+
+                                <div class="form-group">
+                                    <label>КПП: <span class="text-danger">*</span></label>
+                                    <input type="text" name="company" class="form-control required" placeholder="КПП">
+                                </div>
+
+                                <div class="form-group">
+                                    <label>БИК: <span class="text-danger">*</span></label>
+                                    <input type="text" name="company" class="form-control required" placeholder="БИК">
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Р\С: <span class="text-danger">*</span></label>
+                                    <input type="text" name="company" class="form-control required" placeholder="Р\С">
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Кор.Счет: <span class="text-danger">*</span></label>
+                                    <input type="text" name="company" class="form-control required" placeholder="Кор.Счет">
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Название банка: <span class="text-danger">*</span></label>
+                                    <input type="text" name="company" class="form-control required" placeholder="Москва, Варшавское шоссе дом 1">
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Ф.И.О. контактного лица: <span class="text-danger">*</span></label>
+                                    <input type="text" name="company" class="form-control required" placeholder="Ф.И.О. контактного лица:">
+                                </div>
+
+                                <div class="form-group">
+                                    <label>НДС: <span class="text-danger">*</span></label>
+                                    <input type="text" name="company" class="form-control required" placeholder="Москва, Варшавское шоссе дом 1">
+                                </div>
 
 
 
 
-        </form>
+                                <div class="text-left">
+                                    <button type="submit" class="btn btn-warning"><i class="icon-pencil mr-2"></i>Сохрнаить</button>
+                                </div>
+
+
+                            </form>
+
+
+
+
+
+
+
+                </div>
+
+
+
+
+
+                </form>
+            </div>
+        </div>
+
     </div>
+
+
 </div>
+
+

@@ -378,7 +378,7 @@ class ProjectController extends AppController {
                 $urlnew = "uploads/user_logo/".$name.".jpg";
 
                 copy($_FILES['file']['tmp_name'], $urlnew); // Копируем из общего котла в тизерку
-                
+
                 $Panel->myresize($urlnew, 200, 100);
 
                 $Panel->changelogo("/".$urlnew, $company);

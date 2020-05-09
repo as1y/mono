@@ -49,6 +49,9 @@ class UserController extends AppController
 
         if ($_POST){
 
+
+
+
             $user->load($_POST); // Берем из POST только те параметры которые нам нужны
 
             if(!$user->validate($_POST) || !$user->checkUniq(CONFIG['USERTABLE']) )
