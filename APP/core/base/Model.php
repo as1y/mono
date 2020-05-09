@@ -4,9 +4,7 @@ use RedBeanPHP\R;
 
 abstract class Model
 {
-	public $ATR = [];
 	public $errors = [];
-	public $rules = [];
     static $USER = [];
 
 	public function __construct()
@@ -39,6 +37,9 @@ abstract class Model
 	}
 	// ЗАГРУЗКА ДАННЫХ ИЗ ФОРМЫ
 	// ПРОВЕРКА ДАННЫХ
+
+
+
 	public function validate($data)
 	{
 		$v = new \Valitron\Validator($data);
@@ -52,6 +53,25 @@ abstract class Model
 	}
 	// ПРОВЕРКА ДАННЫХ
 	// Красивый вывод ошибок валидации
+
+
+    public function validatenew($data, $rules, $labels)
+    {
+        $v = new \Valitron\Validator($data);
+        $v->rules($rules);
+        $v->labels($labels);
+
+        if($v->validate())
+        {
+            return true;
+        }
+        $this->errors = $v->errors();
+        return false;
+    }
+
+
+
+
 
 	public function getErrorsVali()
 	{

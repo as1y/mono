@@ -6,50 +6,56 @@ use RedBeanPHP\R;
 class User extends \APP\core\base\Model
 {
 	// АТРИБУТЫ КОТОРЫЕ ЗАБИРАЕМ ПРИ РЕГИСТРАЦИИ
-	public $ATR = [
-	'username' => '',
-	'email' => '',
-	'password' => '',
-	'password2' => '',
-    'terms' => '',
-    'role' => ''
-	];
-	// Правила валидации
-	public $rules = [
-	'required' => [
-	['username'],
-	['email'],
-	['password'],
-	['password2'],
-        ['terms'],
-	],
-	'email' =>[
-	['email'],
-	],
 
-	'lengthMin' =>[
-	['password',5],
-	['password2',5],
-	],
 
-	'lengthMax' =>[
-	['password',30],
-	['password2',30],
-	['username',30],
-	],
-	'equals' =>[
-	['password', 'password2' ],
-	],
-	];
-	// Валидация на код
-	public $rulesconfirm = [
-	'required' =>[
-	['code'],
-	],
-	'lengthMax' =>[
-	['code',6],
-	],
-	];
+
+
+    public function validateregistration($DATA){
+
+        $rules = [
+            'required' => [
+                ['username'],
+                ['email'],
+                ['password'],
+                ['password2'],
+                ['terms'],
+            ],
+            'email' =>[
+                ['email'],
+            ],
+            'lengthMin' =>[
+                ['password',5],
+                ['password2',5],
+            ],
+            'lengthMax' =>[
+                ['password',30],
+                ['password2',30],
+                ['username',30],
+            ],
+            'equals' =>[
+                ['password', 'password2' ],
+            ],
+
+        ];
+
+
+        $labels = [
+            'username' => '<b>Имя Фамилия</b>',
+            'email' => '<b>email</b>',
+            'password' => '<b>Пароль</b>',
+            'password2' => '<b>Повтор пароля</b>'
+        ];
+
+
+        return  $this->validatenew($DATA, $rules, $labels);
+
+
+
+
+    }
+
+
+
 	// ПРОВЕРКА НА УНИКАЛЬНЫЙ ЕМЕЙЛ
 	public function checkUniq($table)
 	{

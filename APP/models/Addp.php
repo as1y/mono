@@ -4,60 +4,6 @@ use RedBeanPHP\R;
 
 class Addp extends \APP\core\base\Model {
 
-    // АТРИБУТЫ КОТОРЫЕ ЗАБИРАЕМ ПРИ ДОБАВЛЕНИИ
-    public $ATR = [
-
-        'company' => '',
-        'transkr' => '',
-        'name' => '',
-        'adress' => '',
-        'tematika' => '',
-        'logo' => '',
-        'aboutcompany' => '',
-        'nameproduct' => '',
-        'minimumprice' => '',
-        'type' => '',
-        'priceresult' => '',
-        'mincall' => '',
-        'bonuscall' => '',
-        'timecall' => '',
-        'email' => '',
-
-    ];
-    // Правила валидации
-    public $rules = [
-        'required' => [
-            ['company'],
-            ['transkr'],
-            ['adress'],
-            ['tematika'],
-            ['aboutcompany'],
-            ['nameproduct'],
-            ['type'],
-            ['priceresult'],
-            ['mincall'],
-            ['timecall'],
-
-        ],
-        'email' =>[
-            ['email'],
-        ],
-
-//        'lengthMin' =>[
-//            ['signup-password',5],
-//            ['signup-password-confirm',5],
-//        ],
-//        'lengthMax' =>[
-//            ['signup-password',30],
-//            ['signup-password-confirm',30],
-//            ['signup-username',30],
-//        ],
-
-    ];
-
-
-
-
 	public function addproject($DATA) {
 
 
@@ -87,6 +33,49 @@ class Addp extends \APP\core\base\Model {
 
 	}
 
+
+
+    public function validatenewproject($DATA){
+
+        $rules = [
+            'required' => [
+                ['company'],
+                ['transkr'],
+                ['adress'],
+                ['tematika'],
+                ['aboutcompany'],
+                ['nameproduct'],
+                ['type'],
+                ['priceresult'],
+                ['mincall'],
+                ['timecall'],
+
+            ],
+            'email' =>[
+                ['email'],
+            ],
+
+            ];
+
+        $labels = [
+
+            'company' => '<b>Компания</b>',
+            'transkr' => '<b>Транскрипция</b>',
+            'adress' => '<b>Адрес</b>',
+            'tematika' => '<b>Тематика</b>',
+            'aboutcompany' => '<b>О компании</b>',
+            'nameproduct' => '<b>Название продукта</b>',
+            'priceresult' => '<b>Цена за результат</b>',
+            'mincall' => '<b>Минимальная цена</b>',
+            'timecall' => '<b>Время звонков</b>'
+
+        ];
+
+        return  $this->validatenew($DATA, $rules, $labels);
+
+
+
+    }
 
 
 

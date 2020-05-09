@@ -86,30 +86,20 @@ class MasterController extends AppController {
         $add = new Addp(); //Вызываем Моудль
 
         if ($_POST){
+            
+            $validate =  $add->validatenewproject($_POST);
 
-            $add->load($_POST); // Берем из POST только те параметры которые нам нужны
-
-           $validation = $add->validate($_POST);
-
-            if ($validation){
-                if ($add->addproject($_POST)){
-                    redir("/master/");
-                }else{
-                    $_SESSION['errors'] = "Ошибка базы данных. Попробуйте позже.";
-                    redir("/master/add");
-                }
-            }
-
-
-
-            if (!$validation){
-                $_SESSION['errors'] = "Что-то пошло не так.";
+            if (!$validate){
+                $add->getErrorsVali(); //Записываем ошибки в сессию
                 redir("/master/add");
-
             }
 
-            echo "ok";
-            exit();
+            $add->addproject($_POST);
+            redir("/master/");
+
+
+
+
         }
 
 

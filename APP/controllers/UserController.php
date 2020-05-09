@@ -49,23 +49,19 @@ class UserController extends AppController
 
         if ($_POST){
 
+              $validate =  $user->validateregistration($_POST);
 
-
-
-            $user->load($_POST); // Берем из POST только те параметры которые нам нужны
-
-            if(!$user->validate($_POST) || !$user->checkUniq(CONFIG['USERTABLE']) )
+            if(!$validate || !$user->checkUniq(CONFIG['USERTABLE']) )
             {
-                $_SESSION['form_data'] = $user->ATR; //Сохраняем в сессию, чтобы у поьзователю было удобнее
                 $user->getErrorsVali(); //Записываем ошибки в сессию
                 redir("/user/register/");
             }
 
 
-            $passorig = $user->ATR['password'];
-            $user->ATR['password'] = password_hash($user->ATR['password'], PASSWORD_DEFAULT); // Хеш пароля
+            $passorig = $_POST['password'];
+            $_POST['password'] = password_hash($_POST['password'], PASSWORD_DEFAULT); // Хеш пароля
 
-            $_SESSION['confirm'] = $user->ATR; //Базовые параметры
+            $_SESSION['confirm'] = $_POST; //Базовые параметры
             //Доп. Параметры в сессию
             $_SESSION['confirm']['code'] = $code = random_str(20); //Код подтверждения
 
@@ -73,15 +69,12 @@ class UserController extends AppController
             //Доп. Параметры в сессию
 
             // Отправка на почту кода подтверждения
-            Mail::sendMail("code",'Успешная регистрация '.CONFIG['NAME'],null,['to' => [['email' =>$user->ATR['email']]]]);
+            Mail::sendMail("code",'Успешная регистрация '.CONFIG['NAME'],null,['to' => [['email' =>$_POST['email']]]]);
 
-            //  mes ('ВНИМАНИЕ! Не закрывайте страницу браузера. Код подтверждения отправлен на почту. ');
 
 
             if($user->saveuser(CONFIG['USERTABLE']))
             {
-
-//                Mail::sendMail("register",'Успешная регистрация '.CONFIG['NAME'],null,['to' => [['email' =>$_SESSION['confirm']['email']]]]);
 
                 $_POST['email'] = $_SESSION['confirm']['email'];
                 $_POST['password'] = $_SESSION['confirm']['password2'];
@@ -241,66 +234,6 @@ class UserController extends AppController
 	    return true;
 
     }
-//	public function confirmRegisterAction()
-//	{
-//
-//		$user = new User;
-//
-//
-//        $META = [
-//            'title' => 'Регистрация пользователя',
-//            'description' => 'Регистрация пользователя',
-//            'keywords' => 'Регистрация пользователя',
-//        ];
-//        \APP\core\base\View::setMeta($META);
-//
-//
-//
-//
-//		if( !isset($_SESSION['confirm']['code']) )
-//		{
-//
-//            $_SESSION['errors'] = "Код подтверждения устарел. Необходимо выполнить процедуру повторно.";
-//			redir('/user/register/');
-//		}
-//
-//		//Проверка на сессию кода
-//		if(!empty($_POST['code']))
-//		{
-//			if($_POST['code'] == $_SESSION['confirm']['code'])
-//			{
-//				// ПИШЕМ В БАЗУ ДАННЫХ
-//				if($user->saveuser(CONFIG['USERTABLE']))
-//				{
-//
-//                    Mail::sendMail("register",'Успешная регистрация '.CONFIG['NAME'],null,['to' => [['email' =>$_SESSION['confirm']['email']]]]);
-//
-////                    $_SESSION = array();
-//
-//                    $_POST['email'] = $_SESSION['confirm']['email'];
-//                    $_POST['password'] = $_SESSION['confirm']['password2'];
-//
-//                    $user->login(CONFIG['USERTABLE']);
-//					redir('/panel/');
-//
-//
-//				}
-//				else
-//				{
-//					$_SESSION['errors'] = "Ошибка базы данных. Попробуйте позже.";
-//                    redir('/user/confirmRegister/');
-//				}
-//				// ПИШЕМ В БАЗУ ДАННЫХ
-//			}
-//			else
-//			{
-//				$_SESSION['errors'] = "Код не совпдает с кодом в E-mail";
-//                redir('/user/confirmRegister/');
-//
-//			}
-//		}
-//	}
-
 
 	public function recoveryAction()
 	{
