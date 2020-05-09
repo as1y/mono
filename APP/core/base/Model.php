@@ -57,6 +57,15 @@ abstract class Model
 
     public function validatenew($data, $rules, $labels)
     {
+
+        foreach ($data as $key=>$val){
+            $data[$key] = trim($val);
+            $data[$key] = strip_tags($val);
+            $data[$key] = htmlspecialchars($val);
+        }
+
+
+
         $v = new \Valitron\Validator($data);
         $v->rules($rules);
         $v->labels($labels);

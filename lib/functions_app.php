@@ -496,4 +496,6 @@ function pole_valid ($pole,$num,$type) {
 	return $pole;
 }
 // Проверка на ограничение
+
+
 ?>

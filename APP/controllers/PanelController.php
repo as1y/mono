@@ -789,14 +789,53 @@ class PanelController extends AppController {
 
 
         if ($_POST && !empty($_GET) && $_GET['action'] == "baseinfo"){
-            show($_POST);
 
-            $result = $Panel->changeurlegal($_POST);
+            $validate = $Panel->validationur($_POST);
+
+            if (!$validate){
+                $Panel->getErrorsVali(); //Записываем ошибки в сессию
+                redir("/panel/urlegal");
+            }
+
+            $Panel->changeurlegal($_POST);
+
+            $_SESSION['success'] = "Информация сохранена!<br>";
+            redir("/panel/urlegal/");
 
 
-            exit();
         }
 
+        if ($_POST && !empty($_GET) && $_GET['action'] == "payinfo"){
+
+
+
+            $validate = $Panel->validationpayurinfo($_POST);
+
+            if (!$validate){
+                $Panel->getErrorsVali(); //Записываем ошибки в сессию
+                redir("/panel/urlegal");
+            }
+
+            show($_POST);
+            exit();
+
+
+            $Panel->cahngepayurinfo($_POST);
+
+            $_SESSION['success'] = "Информация сохранена!<br>";
+            redir("/panel/urlegal/");
+
+
+        }
+
+
+
+
+        $urlegal = json_decode($Panel::$USER['urlegal'], true);
+        $payurinfo = json_decode($Panel::$USER['payurinfo'], true);
+
+
+        $this->set(compact('urlegal'));
 
 
 

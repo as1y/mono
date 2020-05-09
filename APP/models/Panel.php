@@ -450,19 +450,113 @@ class Panel extends \APP\core\base\Model {
     }
 
 
-
     public  function changeurlegal($DATA){
 
+        $MASS = [
+            'company' => $DATA['company'],
+            'site' => $DATA['site'],
+            'urlico' => $DATA['urlico'],
+            'ogrn' => $DATA['ogrn'],
+            'postadress' => $DATA['postadress'],
+            'phone' => $DATA['phone'],
+            'uradres' => $DATA['uradres'],
+        ];
 
-
-
+        self::$USER->urlegal = json_encode($MASS, true);
 
         R::store(self::$USER);
+
+
 
         return true;
 
     }
 
+    public  function validationur($DATA){
+
+        $rules = [
+            'required' => [
+                ['company'],
+                ['site'],
+                ['urlico'],
+                ['ogrn'],
+                ['postadress'],
+                ['phone'],
+                ['uradres'],
+
+            ],
+
+        ];
+
+        $labels = [
+            'company' => '<b>Название компании</b>',
+            'site' => '<b>САЙТ</b>',
+            'urlico' => '<b>Юридическое лицо</b>',
+            'ogrn' => '<b>ОГРН</b>',
+            'postadress' => '<b>Почтовый адрес</b>',
+            'phone' => '<b>Телефон</b>',
+            'uradres' => '<b>Юридический адрес</b>',
+
+        ];
+
+       return $this->validatenew($DATA, $rules, $labels);
+
+    }
+
+    public  function validationpayurinfo($DATA){
+
+        $rules = [
+            'required' => [
+                ['inn'],
+                ['kpp'],
+                ['bic'],
+                ['rs'],
+                ['kor'],
+                ['bank'],
+                ['fio'],
+                ['nds'],
+            ],
+
+        ];
+
+        $labels = [
+            'inn' => '<b>ИНН</b>',
+            'kpp' => '<b>КПП</b>',
+            'bic' => '<b>БИК</b>',
+            'rs' => '<b>Р\С</b>',
+            'kor' => '<b>Кор. счет</b>',
+            'bank' => '<b>Банк</b>',
+            'fio' => '<b>ФИО контактного лица</b>',
+            'nds' => '<b>НДС</b>',
+
+
+        ];
+
+        return $this->validatenew($DATA, $rules, $labels);
+
+    }
+
+    public  function cahngepayurinfo($DATA){
+
+        $MASS = [
+            'company' => $DATA['company'],
+            'site' => $DATA['site'],
+            'urlico' => $DATA['urlico'],
+            'ogrn' => $DATA['ogrn'],
+            'postadress' => $DATA['postadress'],
+            'phone' => $DATA['phone'],
+            'uradres' => $DATA['uradres'],
+        ];
+
+        self::$USER->urlegal = json_encode($MASS, true);
+
+        R::store(self::$USER);
+
+
+
+        return true;
+
+    }
 
 
 

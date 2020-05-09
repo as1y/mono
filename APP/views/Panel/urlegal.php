@@ -1,3 +1,4 @@
+
 <div class="row">
     <div class="col-md-6">
         <div class="card">
@@ -14,37 +15,37 @@
                             <form action="/panel/urlegal/?action=baseinfo" method="post" data-fouc>
                                 <div class="form-group">
                                     <label>Название компании: <span class="text-danger">*</span></label>
-                                    <input type="text" name="company" class="form-control required" placeholder="Название компании">
+                                    <input type="text" name="company" value="<?=$urlegal['company']?>" class="form-control required" placeholder="Название компании">
                                 </div>
 
                                 <div class="form-group">
                                     <label>САЙТ: <span class="text-danger">*</span></label>
-                                    <input type="text" name="site" class="form-control required" placeholder="САЙТ">
+                                    <input type="text" name="site" value="<?=$urlegal['site']?>" class="form-control required" placeholder="САЙТ">
                                 </div>
 
                                 <div class="form-group">
                                     <label>Юридическое лицо: <span class="text-danger">*</span></label>
-                                    <input type="text" name="urlico" class="form-control required" placeholder="Юридическое лицо">
+                                    <input type="text" name="urlico" value="<?=$urlegal['urlico']?>" class="form-control required" placeholder="Юридическое лицо">
                                 </div>
 
                                 <div class="form-group">
                                     <label>ОГРН: <span class="text-danger">*</span></label>
-                                    <input type="text" name="ogrn" class="form-control required" placeholder="ОГРН">
+                                    <input type="text" name="ogrn" value="<?=$urlegal['ogrn']?>" class="form-control required" placeholder="ОГРН">
                                 </div>
 
                                 <div class="form-group">
                                     <label>Почтовый адрес: <span class="text-danger">*</span></label>
-                                    <input type="text" name="postadress" class="form-control required" placeholder="Почтовый адрес">
+                                    <input type="text" name="postadress"  value="<?=$urlegal['postadress']?>" class="form-control required" placeholder="Почтовый адрес">
                                 </div>
 
                                 <div class="form-group">
                                     <label>Телефон: <span class="text-danger">*</span></label>
-                                    <input type="text" name="phone" class="form-control required" placeholder="Телефон">
+                                    <input type="text" name="phone" value="<?=$urlegal['phone']?>" class="form-control required" placeholder="Телефон">
                                 </div>
 
                                 <div class="form-group">
                                     <label>Юридический адрес: <span class="text-danger">*</span></label>
-                                    <input type="text" name="uradres" class="form-control required" placeholder="Юридический адрес">
+                                    <input type="text" name="uradres" value="<?=$urlegal['uradres']?>" class="form-control required" placeholder="Юридический адрес">
                                 </div>
 
                                 <div class="text-left">
@@ -87,47 +88,47 @@
                             <form action="/panel/urlegal/?action=payinfo" method="post" data-fouc>
                                 <div class="form-group">
                                     <label>ИНН: <span class="text-danger">*</span></label>
-                                    <input type="text" name="company" class="form-control required" placeholder="ИНН">
+                                    <input type="text" name="inn" class="form-control required" placeholder="ИНН">
                                 </div>
 
-                                <div class="form-group">
-                                    <label>Тип плательщика: <span class="text-danger">*</span></label>
-                                    <input type="text" name="company" class="form-control required" placeholder="Физ лицо">
-                                </div>
 
                                 <div class="form-group">
                                     <label>КПП: <span class="text-danger">*</span></label>
-                                    <input type="text" name="company" class="form-control required" placeholder="КПП">
+                                    <input type="text" name="kpp" class="form-control required" placeholder="КПП">
                                 </div>
 
                                 <div class="form-group">
                                     <label>БИК: <span class="text-danger">*</span></label>
-                                    <input type="text" name="company" class="form-control required" placeholder="БИК">
+                                    <input type="text" name="bic" class="form-control required" placeholder="БИК">
                                 </div>
 
                                 <div class="form-group">
                                     <label>Р\С: <span class="text-danger">*</span></label>
-                                    <input type="text" name="company" class="form-control required" placeholder="Р\С">
+                                    <input type="text" name="rs" class="form-control required" placeholder="Р\С">
                                 </div>
 
                                 <div class="form-group">
                                     <label>Кор.Счет: <span class="text-danger">*</span></label>
-                                    <input type="text" name="company" class="form-control required" placeholder="Кор.Счет">
+                                    <input type="text" name="kor" class="form-control required" placeholder="Кор.Счет">
                                 </div>
 
                                 <div class="form-group">
                                     <label>Название банка: <span class="text-danger">*</span></label>
-                                    <input type="text" name="company" class="form-control required" placeholder="Москва, Варшавское шоссе дом 1">
+                                    <input type="text" name="bank" class="form-control required" placeholder="Москва, Варшавское шоссе дом 1">
                                 </div>
 
                                 <div class="form-group">
                                     <label>Ф.И.О. контактного лица: <span class="text-danger">*</span></label>
-                                    <input type="text" name="company" class="form-control required" placeholder="Ф.И.О. контактного лица:">
+                                    <input type="text" name="fio" class="form-control required" placeholder="Ф.И.О. контактного лица:">
                                 </div>
 
                                 <div class="form-group">
-                                    <label>НДС: <span class="text-danger">*</span></label>
-                                    <input type="text" name="company" class="form-control required" placeholder="Москва, Варшавское шоссе дом 1">
+                                    <label>НДС: <span class="text-danger">*</span> </label>
+                                    <select name="nds" data-placeholder="Выберете направление" class="form-control form-control-select2 required" data-fouc>
+                                        <option></option>
+                                        <option selected value="nds">С НДС 20%</option>
+                                        <option value="">БЕЗ НДС</option>
+                                    </select>
                                 </div>
 
 
