@@ -41,7 +41,7 @@
             <div class="col-md-3">
                 <form method="post" target="_blank" action="/pay/redirect">
                     <div class="form-group">
-                        <input type="text" name="summa" placeholder="Сумма" value="10000"  class="form-control">
+                        <input type="text" name="summa" placeholder="Сумма" value="20000"  class="form-control">
                     </div>
                     <input type="hidden" name="paymethod" value="Beznal">
 
