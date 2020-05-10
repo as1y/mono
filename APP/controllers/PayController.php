@@ -5,7 +5,7 @@ use APP\core\Cache;
 use APP\models\Addp;
 use APP\models\Panel;
 use APP\core\base\Model;
-
+use Dompdf\Dompdf;
 
 class PayController extends AppController {
 	public $layaout = 'PANEL';
@@ -50,8 +50,7 @@ class PayController extends AppController {
             'status' => 0
         ];
 
-        show($invoice);
-        exit();
+
 
 
 
@@ -79,7 +78,8 @@ class PayController extends AppController {
                 redir("/panel/balance/");
             }
 
-
+            show($invoice);
+            exit();
 
 
               $invoiceid = $Panel->addnewBD("invoice", $invoice);
@@ -179,35 +179,23 @@ class PayController extends AppController {
     public function beznalAction(){
         $this->layaout = false;
 
+        $prods = [
+            [
+                'name' => 'Пополнение баланаса в сервисе',
+                'count' => 1,
+                'unit' => 'шт',
+                'price' => 1242,
+                'nds' => 20
+            ],
+        ];
 
-        $prods = array(
-            array(
-                'name'  => 'Плита CERAMAGUARD FINE FISSURED (100 RH) 600*600*15',
-                'count' => 25.3,
-                'unit'  => 'м2',
-                'price' => 1210,
-                'nds'   => 18,
-            ),
-            array(
-                'name'  => 'Европодвес (0.5м)',
-                'count' => 100,
-                'unit'  => 'шт.',
-                'price' => 5.50,
-                'nds'   => 0,
-            ),
-            array(
-                'name'  => 'Профиль 20*20',
-                'count' => 10,
-                'unit'  => 'м',
-                'price' => 550,
-                'nds'   => 10,
-            ),
-        );
+
+        $myrekviziti = [];
 
 
 
-        $html = '
-<html>
+
+        $html = '<html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 	
@@ -406,6 +394,7 @@ class PayController extends AppController {
 		</thead>
 		<tbody>';
 
+
         $total = $nds = 0;
         foreach ($prods as $i => $row) {
             $total += $row['price'] * $row['count'];
@@ -443,13 +432,13 @@ class PayController extends AppController {
 	
 	<div class="total">
 		<p>Всего наименований ' . count($prods) . ', на сумму ' . format_price($total) . ' руб.</p>
-		<p><strong>' . str_price($total) . '</strong></p>
+		<p><strong>' . num2str($total) . '</strong></p>
 	</div>
 	
 	<div class="sign">
-		<img class="sign-1" src="' . __DIR__ . '/demo/sign-1.png">
-		<img class="sign-2" src="' . __DIR__ . '/demo/sign-2.png">
-		<img class="printing" src="' . __DIR__ . '/demo/printing.png">
+ <!--		<img class="sign-1" src="/demo/sign-1.png"> -->
+	 <!--	<img class="sign-2" src="/demo/sign-2.png"> -->
+	<!-- <img class="printing" src="/demo/printing.png"> -->
  
 		<table>
 			<tbody>
@@ -467,12 +456,15 @@ class PayController extends AppController {
 </body>
 </html>';
 
+        iconv_strlen($html, 'UTF-8');
 
-        show($html);
+        $dompdf = new Dompdf();
 
+        $dompdf->loadHtml($html, 'UTF-8');
+        $dompdf->setPaper('A4', 'portrait');
+        $dompdf->render();
 
-
-
+        $dompdf->stream('schet-10');
 
     }
 
