@@ -56,13 +56,24 @@ class PayController extends AppController {
 
         if ($_POST && $_POST['paymethod'] == "Beznal"){
 
+            if (!$Panel::$USER['urlegal']){
+                $_SESSION['errors'] = "Чтобы выставить счет по безналичному рассчету необходимо заполнить юридическую информацию";
+                redir("/panel/balance/");
+            }
+
+
+            if (!$Panel::$USER['payinfo']){
+                $_SESSION['errors'] = "Чтобы выставить счет по безналичному рассчету необходимо заполнить платежную информацию";
+                redir("/panel/balance/");
+            }
+
 
             exit("gu");
 //            $invoiceid = $Panel->addnewBD("invoice", $invoice);
 //            $form = $Panel->generatePayeerform($_POST, $invoiceid);
 
 
-            
+
 
 
         }
