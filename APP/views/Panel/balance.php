@@ -1,7 +1,6 @@
 <div class="card">
     <div class="card-header bg-dark text-white header-elements-inline">
         <h5 class="card-title">БАЛАНС</h5>
-
     </div>
 
     <div class="card-body">
@@ -27,22 +26,32 @@
 
             </div>
 
+            <?php if ($_SESSION['ulogin']['role'] == "R"):?>
             <div class="col-md-3">
-
                 <form method="post" target="_blank" action="/pay/redirect">
-
                     <div class="form-group">
                         <input type="text" name="summa" placeholder="Сумма" value="10000"  class="form-control">
                     </div>
                     <input type="hidden" name="paymethod" value="Payeer">
 
+                    <button type="submit" class="btn btn-success"><i class="icon-plus-circle2 mr-2"></i>ПОПОЛНИТЬ ONLINE</button>
+                </form>
+            </div>
 
-                    <button type="submit" class="btn btn-success"><i class="icon-plus-circle2 mr-2"></i>ПОПОЛНИТЬ БАЛАНС</button>
+            <div class="col-md-3">
+                <form method="post" target="_blank" action="/pay/redirect">
+                    <div class="form-group">
+                        <input type="text" name="summa" placeholder="Сумма" value="10000"  class="form-control">
+                    </div>
+                    <input type="hidden" name="paymethod" value="Beznal">
 
+                    <button type="submit" class="btn btn-success"><i class="icon-file-text mr-2"></i>ВЫСТАВИТЬ СЧЕТ</button>
                 </form>
 
-
             </div>
+
+            <?php endif;?>
+
 
         <?php if ($_SESSION['ulogin']['role'] == "O"):?>
 

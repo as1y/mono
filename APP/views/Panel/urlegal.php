@@ -88,46 +88,46 @@
                             <form action="/panel/urlegal/?action=payinfo" method="post" data-fouc>
                                 <div class="form-group">
                                     <label>ИНН: <span class="text-danger">*</span></label>
-                                    <input type="text" name="inn" class="form-control required" placeholder="ИНН">
+                                    <input type="text" name="inn" value="<?=$payurinfo['inn']?>" class="form-control required" placeholder="ИНН">
                                 </div>
 
 
                                 <div class="form-group">
                                     <label>КПП: <span class="text-danger">*</span></label>
-                                    <input type="text" name="kpp" class="form-control required" placeholder="КПП">
+                                    <input type="text" name="kpp" value="<?=$payurinfo['kpp']?>"  class="form-control required" placeholder="КПП">
                                 </div>
 
                                 <div class="form-group">
                                     <label>БИК: <span class="text-danger">*</span></label>
-                                    <input type="text" name="bic" class="form-control required" placeholder="БИК">
+                                    <input type="text" name="bic" value="<?=$payurinfo['bic']?>"  class="form-control required" placeholder="БИК">
                                 </div>
 
                                 <div class="form-group">
                                     <label>Р\С: <span class="text-danger">*</span></label>
-                                    <input type="text" name="rs" class="form-control required" placeholder="Р\С">
+                                    <input type="text" name="rs" value="<?=$payurinfo['rs']?>" class="form-control required" placeholder="Р\С">
                                 </div>
 
                                 <div class="form-group">
                                     <label>Кор.Счет: <span class="text-danger">*</span></label>
-                                    <input type="text" name="kor" class="form-control required" placeholder="Кор.Счет">
+                                    <input type="text" name="kor" value="<?=$payurinfo['kor']?>" class="form-control required" placeholder="Кор.Счет">
                                 </div>
 
                                 <div class="form-group">
                                     <label>Название банка: <span class="text-danger">*</span></label>
-                                    <input type="text" name="bank" class="form-control required" placeholder="Москва, Варшавское шоссе дом 1">
+                                    <input type="text" name="bank" value="<?=$payurinfo['bank']?>" class="form-control required" placeholder="Москва, Варшавское шоссе дом 1">
                                 </div>
 
                                 <div class="form-group">
                                     <label>Ф.И.О. контактного лица: <span class="text-danger">*</span></label>
-                                    <input type="text" name="fio" class="form-control required" placeholder="Ф.И.О. контактного лица:">
+                                    <input type="text" name="fio" value="<?=$payurinfo['fio']?>" class="form-control required" placeholder="Ф.И.О. контактного лица:">
                                 </div>
 
                                 <div class="form-group">
                                     <label>НДС: <span class="text-danger">*</span> </label>
-                                    <select name="nds" data-placeholder="Выберете направление" class="form-control form-control-select2 required" data-fouc>
+                                    <select name="nds" data-placeholder="Выберете направление"  value="<?=$payurinfo['nds']?>" class="form-control form-control-select2 required" data-fouc>
                                         <option></option>
                                         <option selected value="nds">С НДС 20%</option>
-                                        <option value="">БЕЗ НДС</option>
+                                        <option value=" ">БЕЗ НДС</option>
                                     </select>
                                 </div>
 

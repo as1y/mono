@@ -816,8 +816,6 @@ class PanelController extends AppController {
                 redir("/panel/urlegal");
             }
 
-            show($_POST);
-            exit();
 
 
             $Panel->cahngepayurinfo($_POST);
@@ -835,7 +833,7 @@ class PanelController extends AppController {
         $payurinfo = json_decode($Panel::$USER['payurinfo'], true);
 
 
-        $this->set(compact('urlegal'));
+        $this->set(compact('urlegal', 'payurinfo'));
 
 
 

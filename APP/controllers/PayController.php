@@ -54,6 +54,22 @@ class PayController extends AppController {
         }
 
 
+        if ($_POST && $_POST['paymethod'] == "Beznal"){
+
+
+            exit("gu");
+//            $invoiceid = $Panel->addnewBD("invoice", $invoice);
+//            $form = $Panel->generatePayeerform($_POST, $invoiceid);
+
+
+            
+
+
+        }
+
+
+
+
         $this->set(compact('form'));
 
 

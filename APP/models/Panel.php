@@ -539,16 +539,17 @@ class Panel extends \APP\core\base\Model {
     public  function cahngepayurinfo($DATA){
 
         $MASS = [
-            'company' => $DATA['company'],
-            'site' => $DATA['site'],
-            'urlico' => $DATA['urlico'],
-            'ogrn' => $DATA['ogrn'],
-            'postadress' => $DATA['postadress'],
-            'phone' => $DATA['phone'],
-            'uradres' => $DATA['uradres'],
+            'inn' => $DATA['inn'],
+            'kpp' => $DATA['kpp'],
+            'bic' => $DATA['bic'],
+            'rs' => $DATA['rs'],
+            'kor' => $DATA['kor'],
+            'bank' => $DATA['bank'],
+            'fio' => $DATA['fio'],
+            'nds' => $DATA['nds'],
         ];
 
-        self::$USER->urlegal = json_encode($MASS, true);
+        self::$USER->payurinfo = json_encode($MASS, true);
 
         R::store(self::$USER);
 
