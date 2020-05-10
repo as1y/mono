@@ -264,12 +264,6 @@ class Panel extends \APP\core\base\Model {
     }
 
 
-    public function newbill(){
-
-
-
-
-    }
 
 
     public function generatePayeerform($DATA, $invoiceid){

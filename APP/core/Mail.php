@@ -35,8 +35,9 @@ class Mail extends ApiClient
 
 
         $vObj = new View(['controller' => 'Mail'], $layout, $view);
-
         $mailHtml = $vObj->render($data,true);
+
+
         $mailData = [
             'html' => $mailHtml,
             'text' => 'EMPTY',
