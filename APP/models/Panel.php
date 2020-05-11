@@ -140,9 +140,14 @@ class Panel extends \APP\core\base\Model {
 
     public function balancelog(){
         $balancelog = R::findAll("balancelog", "WHERE users_id = ?" , [ $_SESSION['ulogin']['id'] ]);
-        
         return $balancelog;
     }
+
+    public function invoicelog(){
+        $invoicelog = R::findAll("invoice", "WHERE users_id = ?" , [ $_SESSION['ulogin']['id'] ]);
+        return $invoicelog;
+    }
+
 
 
     public function addrequis($DATA){

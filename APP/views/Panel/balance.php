@@ -65,8 +65,20 @@
         </div>
 
 
+        <h2>Выставленные счета:</h2>
+        <?php foreach ($invoicelog as $key=>$val):?>
+
+        <?php if ($val['paymethod'] == "Beznal"): ?>
+                Счет № <?=$val['id']?> | Сумма: <?=$val['summa']?> | Ссылка: <a href="<?=$val['path']?>" target="_blank">ПОСМОТРЕТЬ</a>  <br>
+        <?php endif;?>
 
 
+        <?php endforeach; ?>
+
+
+        <hr>
+
+        <h2>Движение средств:</h2>
         <table  class="table datatable-basic ">
             <thead>
             <tr>

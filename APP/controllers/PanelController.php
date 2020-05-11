@@ -74,6 +74,11 @@ class PanelController extends AppController {
         $balancelog = [];
         $balancelog = $Panel->balancelog();
 
+        $invoicelog = $Panel->invoicelog();
+
+
+
+
         if (empty($balancelog)) $balancelog = [];
 
 
@@ -116,7 +121,7 @@ class PanelController extends AppController {
 
 
 
-        $this->set(compact('balancelog'));
+        $this->set(compact('balancelog', 'invoicelog'));
 
     }
 
