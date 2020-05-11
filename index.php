@@ -12,9 +12,14 @@ define('WWW', __DIR__);
 
 // Переменные для приложения
 define('BASEAVATAR', '/assets/oper1.jpg');
+define('UrInvoicepath', '/uploads/user_invoice/');
 define('BASELOGO', '/uploads/user_logo/baselogo.jpg');
 define('AudioUploadPath', 'uploads/user_audio/');
 // Переменные для приложения
+
+
+
+
 
 
 

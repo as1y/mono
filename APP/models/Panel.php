@@ -18,12 +18,20 @@ class Panel extends \APP\core\base\Model {
             $invoice->status = 1;
             R::store($invoice);
 
-
-
-
         }
         return true;
     }
+
+
+
+    public  function addpathinvoice($id, $path){
+
+        $invoice = R::load("invoice", $id);
+        $invoice->path = $path;
+        R::store($invoice);
+
+    }
+
 
 
 
@@ -132,6 +140,7 @@ class Panel extends \APP\core\base\Model {
 
     public function balancelog(){
         $balancelog = R::findAll("balancelog", "WHERE users_id = ?" , [ $_SESSION['ulogin']['id'] ]);
+        
         return $balancelog;
     }
 
