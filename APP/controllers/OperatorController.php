@@ -13,9 +13,8 @@ class OperatorController extends AppController {
     public function calckeyAction(){
         $this->layaout = false;
         if($this->isAjax()){
-            $myuser = "vitya";
-            $mypass = "testPassword";
-            echo md5($_REQUEST['key'].'|'.md5($myuser.':voximplant.com:'.$mypass));
+
+            echo md5($_REQUEST['key'].'|'.md5(VOXuser.':voximplant.com:'.VOXpass));
         }
     }
 

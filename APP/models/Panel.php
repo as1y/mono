@@ -289,7 +289,7 @@ class Panel extends \APP\core\base\Model {
         $m_orderid = $invoiceid;
         $m_amount = number_format($DATA['summa'], 2, '.', '');
         $m_curr = 'RUB';
-        $m_desc = base64_encode('Счет №'.$invoiceid.' - Пополнение баланса в сервисе cashcall.ru');
+        $m_desc = base64_encode('Счет №'.$invoiceid.' - Пополнение баланса в сервисе '.APPNAME);
         $m_key = 'XvmQQSVbf8aV';
 
         $arHash = array(

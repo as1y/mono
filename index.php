@@ -1,9 +1,18 @@
 <?php
 
-// ДОСТУПЫ VOXIMPLANT
+// API VOXIMPLANT
 $account_id = '1895581';
 $api_key = 'a7c15131-6186-482d-a619-84c2be598655';
-// ДОСТУПЫ VOXIMPLANT
+// API VOXIMPLANT
+
+
+// ПОЛЬЗОВАТЕЛЬ VOXIMPLANT
+define('VOXIMPLANTUSER', 'vitya@zarabotat.victorpseo.voximplant.com');
+define('VOXuser', 'vitya');
+define('VOXpass', 'testPassword');
+// ПОЛЬЗОВАТЕЛЬ VOXIMPLANT
+define('APPNAME', 'CASHCALL');
+
 
 //Базовые переменные
 define('ERRORS', '1' ); // 0 - нет 1 - ОТОБРАЖАЮТСЯ

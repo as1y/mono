@@ -4,7 +4,7 @@
         <div class="card-body">
             <div class="text-center mb-3">
                 <h5 class="mb-0">Регистрация</h5>
-                <span class="d-block text-muted">Cashcall.ru - биржа операторов на телефоне</span>
+                <span class="d-block text-muted"><?=APPNAME?> - биржа операторов на телефоне</span>
             </div>
 
             <div class="form-group text-center  mb-3 mb-md-2">

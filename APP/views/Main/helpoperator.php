@@ -11,7 +11,7 @@
 <div class="navbar-collapse offcanvas-nav">
 
     <div class="offcanvas-header d-lg-none d-xl-none">
-        <a href="/">CASHCALL</a>
+        <a href="/"><?=APPNAME?></a>
         <button class="plain offcanvas-close offcanvas-nav-close"><i class="jam jam-close"></i></button>
     </div>
 

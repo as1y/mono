@@ -36,7 +36,7 @@
                 $.post('/operator/calckey/', {
                     "key": e.key
                 }, function(token) {
-                    VoxImplant.getInstance().loginWithOneTimeKey("vitya@zarabotat.victorpseo.voximplant.com", token);
+                    VoxImplant.getInstance().loginWithOneTimeKey("<?=VOXIMPLANTUSER?>", token);
                 }, 'text');
             } else {
                 logMessage("Authorization failed. Please specify correct username and password");
@@ -88,7 +88,7 @@
     }
 
     function GoCall() {
-        voxImplant.requestOneTimeLoginKey("vitya@zarabotat.victorpseo.voximplant.com");
+        voxImplant.requestOneTimeLoginKey("<?=VOXIMPLANTUSER?>");
     }
     function han() {
         call.hangup();

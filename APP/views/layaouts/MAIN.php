@@ -28,7 +28,7 @@
         <div class="container">
             <div class="navbar-brand"><a href="/">
 
-                  <b> CASHCALL.RU</b>
+                  <b> <?=APPNAME?> </b>
 
             </div>
 
@@ -45,7 +45,7 @@
             <div class="navbar-collapse offcanvas-nav">
 
                 <div class="offcanvas-header d-lg-none d-xl-none">
-                    <a href="/">CASHCALL</a>
+                    <a href="/"><?=APPNAME?></a>
                     <button class="plain offcanvas-close offcanvas-nav-close"><i class="jam jam-close"></i></button>
                 </div>
 
@@ -92,7 +92,7 @@
         <div class="container inner pt-80 pb-80">
             <div class="widget">
 
-                <h3>CASHCALL.RU</h3> Автоматизированная коммуникационная CPA/CPL платформа. Биржа удаленных операторов на телефоне.
+                <h3><?=APPNAME?>.RU</h3> Автоматизированная коммуникационная CPA/CPL платформа. Биржа удаленных операторов на телефоне.
 
 
                 <div class="space30"></div>

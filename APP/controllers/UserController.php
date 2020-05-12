@@ -8,7 +8,7 @@ use APP\models\Panel;
 class UserController extends AppController
 {
 	public $layaout = 'USER'; //Перераспределяем массив layaout
-    public $BreadcrumbsControllerLabel = "CASHCALL.RU";
+    public $BreadcrumbsControllerLabel = APPNAME;
     public $BreadcrumbsControllerUrl = "/";
 
 	public function registerAction()
@@ -69,7 +69,7 @@ class UserController extends AppController
             //Доп. Параметры в сессию
 
             // Отправка на почту кода подтверждения
-            Mail::sendMail("code",'Подтверждение E-MAIL в CASHCALL '.CONFIG['NAME'],null,['to' => [['email' =>$_POST['email']]]]);
+            Mail::sendMail("code",'Подтверждение E-MAIL в '.APPNAME.' '.CONFIG['NAME'],null,['to' => [['email' =>$_POST['email']]]]);
 
 
 

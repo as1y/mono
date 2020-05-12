@@ -12,9 +12,9 @@ class MainController extends AppController {
         $Panel = new Panel();
 
         $META = [
-            'title' => 'Биржа операторов на телефоне, удаленная работа оператором - CASHCALL.RU',
-            'description' => 'CASHCALL.RU - Биржа операторов на телефоне',
-            'keywords' => 'CASHCALL.RU - Биржа операторов на телефоне',
+            'title' => 'Биржа операторов на телефоне, удаленная работа оператором '.APPNAME,
+            'description' => 'Биржа операторов на телефоне'.APPNAME,
+            'keywords' => 'Биржа операторов на телефоне'.APPNAME,
         ];
 
 

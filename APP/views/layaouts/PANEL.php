@@ -45,7 +45,7 @@
 
     <a href="/panel/" class="navbar-nav-link " >
         <!--        <img src="/global_assets/images/dribbble.png" class="align-top mr-2 rounded" width="20" height="20" alt="">-->
-        <b>CASHCALL.RU </b>   <?= ($_SESSION['ulogin']['role'] == "O") ? '<span class="badge-secondary">Кабинет ОПЕРАТОРА</span>' : ' <span class="badge-secondary">Кабинет РЕКЛАМОДАТЕЛЯ</span>'?>
+        <b><?=APPNAME?> </b>   <?= ($_SESSION['ulogin']['role'] == "O") ? '<span class="badge-secondary">Кабинет ОПЕРАТОРА</span>' : ' <span class="badge-secondary">Кабинет РЕКЛАМОДАТЕЛЯ</span>'?>
     </a>
 
     <div class="d-md-none">
@@ -279,7 +279,7 @@
 
     <div class="navbar-collapse collapse" id="navbar-footer">
 			<span class="navbar-text">
-				&copy; 2020 <b><a href="/panel/">CASHCALL.RU</a></b> - Биржа удаленных операторов на телефоне.
+				&copy; 2020 <b><a href="/panel/"><?=APPNAME?></a></b> - Биржа удаленных операторов на телефоне.
 			</span>
 
         <ul class="navbar-nav ml-lg-auto">

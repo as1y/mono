@@ -1,7 +1,7 @@
 <div class="wrapper image-wrapper bg-image page-title-wrapper inverse-text" data-image-src="/assets_landing/images/art/bg3.jpg">
     <div class="container inner text-center">
         <div class="space50"></div>
-        <h1 class="page-title">CASHCALL</h1>
+        <h1 class="page-title"><?=APPNAME?></h1>
         <p class="lead">Сервис и биржа удаленных операторов на телефоне</p>
     </div>
     <!-- /.container -->
