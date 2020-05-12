@@ -221,9 +221,9 @@ class OperatorController extends AppController {
         //Информация о компаниях клиента
 
         $META = [
-            'title' => 'Кабинет ОПЕРАТОРОА',
-            'description' => 'Кабинет ОПЕРАТОРОА',
-            'keywords' => 'Кабинет ОПЕРАТОРОА ',
+            'title' => 'Кабинет ОПЕРАТОРА',
+            'description' => 'Кабинет ОПЕРАТОРА',
+            'keywords' => 'Кабинет ОПЕРАТОРА ',
         ];
         \APP\core\base\View::setMeta($META);
 
@@ -238,9 +238,11 @@ class OperatorController extends AppController {
 
         $statuscall = $operator->statuscall();
 
+        $mycompanies = $operator->mycompanies();
 
+        if (count($mycompanies) == 0 && $statuscall['acess'] === true ) redir("/operator/all");
 
-        $this->set(compact( 'statuscall'));
+        $this->set(compact( 'statuscall', 'mycompanies'));
 
 
 
@@ -388,40 +390,11 @@ class OperatorController extends AppController {
 
 
 
-    public function myAction()
-    {
-
-        $operator = new Operator();
-        //Информация о компаниях клиента
-
-        $META = [
-            'title' => 'Мои проекты',
-            'description' => 'Мои проекты',
-            'keywords' => 'Мои проекты',
-        ];
-        \APP\core\base\View::setMeta($META);
-
-
-        $BREADCRUMBS['HOME'] = ['Label' => $this->BreadcrumbsControllerLabel, 'Url' => $this->BreadcrumbsControllerUrl];
-        $BREADCRUMBS['DATA'][] = ['Label' => "Мои проекты"];
-        \APP\core\base\View::setBreadcrumbs($BREADCRUMBS);
-
-        $ASSETS[] = ["js" => "/global_assets/js/plugins/tables/datatables/datatables.min.js"];
-        $ASSETS[] = ["js" => "/assets/js/datatables_basic.js"];
-        \APP\core\base\View::setAssets($ASSETS);
-
-
-        $mycompanies = $operator->mycompanies();
-
-
-        $this->set(compact('mycompanies'));
-
-
-    }
-
 
     public function allAction()
     {
+
+        $operator = new Operator(); //Вызываем Моудль
 
         //Информация о компаниях клиента
 
@@ -439,73 +412,44 @@ class OperatorController extends AppController {
 
         $ASSETS[] = ["js" => "/global_assets/js/plugins/tables/datatables/datatables.min.js"];
         $ASSETS[] = ["js" => "/assets/js/datatables_basic.js"];
+        $ASSETS[] = ["js" => "/global_assets/js/demo_pages/components_popups.js"];
+
+
         \APP\core\base\View::setAssets($ASSETS);
 
 
-        $operator = new Operator(); //Вызываем Моудль
-        $allcompanies = $operator->allcompanies();
-        $this->set(compact('allcompanies'));
 
-    }
-
-    public function companyinfoAction(){
-
-        $operator = new Operator();
-        $idc = $_GET['id'];
-        $company = $operator->getcom($_GET['id']);
-
-
-
-
-        if ($_POST){
+        if (!empty($_GET) && $_GET['action'] == "join"  ) {
 
 
             $statuscall = $operator->statuscall();
-
             if ($statuscall['acess'] === FALSE){
-
-                $_SESSION['errors'] = "Подать заявку можно после получения разрешения на звонки. Посмотреть ваш статус можно в разделе <a href='/operator/'>статистика</a>";
-                redir("/operator/companyinfo/?id=".$idc);
-
-
+                $_SESSION['errors'] = "Подать заявку можно после получения разрешения на звонки. Посмотреть ваш статус можно в разделе <a href='/operator/'>Моя работа</a>";
+                redir("/operator/all/");
             }
 
 
-            $result =  $operator->joincompany($idc);
+            $result = $operator->joincompany($_GET['id']);
 
             if ($result == 1){
                 $_SESSION['success'] = "Заявка отправлена";
-                redir("/operator/my/");
+                redir("/operator/all/");
             }else{
                 $_SESSION['errors'] = $result;
-                redir("/operator/companyinfo/?id=".$idc);
+                redir("/operator/all/");
             }
-
-
-
 
         }
 
 
 
-
-        $META = [
-            'title' => 'Проект '.$company['company'],
-            'description' => 'Проект '.$company['company'],
-            'keywords' => 'Проект '.$company['company'],
-        ];
-        \APP\core\base\View::setMeta($META);
-
-
-        $BREADCRUMBS['HOME'] = ['Label' => $this->BreadcrumbsControllerLabel, 'Url' => $this->BreadcrumbsControllerUrl];
-        $BREADCRUMBS['DATA'][] = ['Label' => "Все проекты", 'Url' => "/operator/all/"];
-        $BREADCRUMBS['DATA'][] = ['Label' => "Проект ".$company['company']];
-        \APP\core\base\View::setBreadcrumbs($BREADCRUMBS);
+        $allcompanies = $operator->allcompanies();
 
 
 
 
-        $this->set(compact('company'));
+        $this->set(compact('allcompanies'));
+
 
 
 

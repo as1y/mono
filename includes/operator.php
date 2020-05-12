@@ -55,23 +55,15 @@
 
                     <li class="nav-item">
                         <a href="/operator/" class="nav-link <?=isset($active['index']) ? $active['index'] : ''; ?>">
-                            <i class="icon-stats-bars"></i>
-                            <span>	Статистика </span>
-                        </a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a href="/operator/my/" class="nav-link <?=isset($active['my']) ? $active['my'] : ''; ?>">
                             <i class="icon-briefcase3"></i>
-                            <span>	Мои проекты </span>
+                            <span>	Моя работа </span>
                         </a>
                     </li>
-
 
                     <li class="nav-item">
                         <a href="/operator/all/" class="nav-link <?=isset($active['all']) ? $active['all'] : ''; ?>">
                             <i class="icon-star-full2"></i>
-                            <span>	Все проекты </span>
+                            <span>	ВСЕ ПРОЕКТЫ </span>
                         </a>
                     </li>
 

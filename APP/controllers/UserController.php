@@ -69,7 +69,7 @@ class UserController extends AppController
             //Доп. Параметры в сессию
 
             // Отправка на почту кода подтверждения
-            Mail::sendMail("code",'Успешная регистрация '.CONFIG['NAME'],null,['to' => [['email' =>$_POST['email']]]]);
+            Mail::sendMail("code",'Подтверждение E-MAIL в CASHCALL '.CONFIG['NAME'],null,['to' => [['email' =>$_POST['email']]]]);
 
 
 

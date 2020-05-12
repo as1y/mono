@@ -68,18 +68,39 @@
    Пользователей онлайн:  <span class="badge bg-success"><b><?= \APP\core\base\Model::countonline()?></b></span>
         </span>
 
+        <?php if ($_SESSION['ulogin']['role'] == "O"):?>
+        <a href="https://join.skype.com/boRbvQS4VOR4" target="_blank" class="navbar-nav-link dropdown-toggle caret-0">
+            <i class="icon-skype mr-2"></i>
+            ЧАТ ОПЕРАТОРОВ
+        </a>
+        <?php endif;?>
+
+
         <ul class="navbar-nav ml-xl-auto">
+
+
+            <li class="nav-item dropdown">
+                <a href="/panel/messages/?newdialog=24" class="navbar-nav-link dropdown-toggle caret-0">
+
+                    <i class="icon-comment-discussion mr-2"></i>
+                    Поддержка
+
+                </a>
+            </li>
+
+
 
 
 
             <li class="nav-item dropdown">
                 <a href="/panel/dialog/" class="navbar-nav-link dropdown-toggle caret-0">
                     <i class="icon-bubbles4"></i>
-                    <span class="d-md-none ml-2">Сообщения</span>
+                   Сообщения
                     <span class="badge badge-pill bg-danger-400 ml-auto ml-md-0"><?= \APP\core\base\Model::countnewmessages()?></span>
                 </a>
-
             </li>
+
+
             <li class="nav-item dropdown dropdown-user">
                 <a href="/panel/profile/" class="navbar-nav-link d-flex align-items-center dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
                     <img src="<?=$_SESSION['ulogin']['avatar']?>" class="rounded-circle mr-2" height="34" alt="">
@@ -133,11 +154,10 @@
             <div class="breadcrumb justify-content-center">
 
 
-                <a href="/panel/messages/?newdialog=24" class="btn btn-warning btn-sm">
-                    <i class="icon-comment-discussion mr-2"></i>
-                    Поддержка
+                <a href="#" class="btn btn-danger btn-sm">
+                    <i class="icon-reading mr-2"></i>
+                   ОБУЧЕНИЕ
                 </a>
-
 
 
 

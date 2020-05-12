@@ -106,266 +106,235 @@
 <img width="200" height="200" id="loader" style="display: none;" src="/load.gif">
 <div class="row" id="rw">
 
-    <div class="col-md-4">
+    <div class="col-md-8">
         <div class="card border-dark">
             <div class="card-header bg-dark text-white header-elements-inline">
-                <h6 class="card-title">КОНТАКТ</h6>
+                <h6 class="card-title"><?=$company['company']?></h6>
 
-            </div>
-
-            <div class="card-body">
-
-
-                <div class="col-md-12">
-                    <table class="table table-striped table-bordered  ">
-                        <thead>
-                        <tr>
-                            <th><b>ID</b></th>
-                            <th><b>Имя</b></th>
-                            <th><b>Компания</b></th>
-                            <th><b>Сайт</b></th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <td style='vertical-align: middle' >
-                                <div id="idcontact">#<?=$contactinfo['id']?></div>
-                            </td>
-                            <td style='vertical-align: middle'>
-                                <div id="namecont"><?=$contactinfo['name']?></div>
-                            </td>
-                            <td style='vertical-align: middle'>
-                                <div id="company"><?=$contactinfo['namecompany']?></div>
-                            </td>
-                            <td style='vertical-align: middle'>
-                                <div id="siteurl"> <a href="http://<?=$contactinfo['sitename']?> " target="_blank"><?=$contactinfo['sitename']?></a> </div>
-                            </td>
-                        </tr>
-                        </tbody>
-                    </table>
-
-                   <b> Комментарий:</b>
-                    <div id="comment"><?=$contactinfo['comment']?></div>
-
-
+                <div class="header-elements">
+                    <button type="button" data-toggle="modal"  data-target="#modal_aboutcompany" class="btn bg-secondary"><i class="icon-city mr-2"></i> О компании</button>
+                    &nbsp;
+                    <button type="button" data-toggle="modal"  data-target="#modal_aboutproduct" class="btn bg-secondary"><i class="icon-question3 mr-2"></i> О продукте</button>
+                    &nbsp;
+                    <button type="button"data-toggle="modal"  data-target="#modal_trebovanie"  class="btn bg-warning"><i class="icon-warning22 mr-2"></i> Требования</button>
                 </div>
 
 
             </div>
+
+
+            <table border="1" class="table table-striped  ">
+                <thead>
+                <tr>
+                    <th width="20%"><b>ТЕКУЩИЙ КОНТАКТ</b></th>
+                    <th><b>Имя</b></th>
+                    <th><b>Компания</b></th>
+                    <th><b>Сайт</b></th>
+                    <th><b>Комментарий</b></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td style='vertical-align: middle' >
+                <span class="badge bg-success">
+                        <div id="idcontact">#<?=$contactinfo['id']?></div></span>
+                    </td>
+                    <td style='vertical-align: middle'>
+                        <div id="namecont"><?=$contactinfo['name']?></div>
+                    </td>
+
+                    <td style='vertical-align: middle'>
+                        <div id="company"><?=$contactinfo['namecompany']?></div>
+                    </td>
+                    <td style='vertical-align: middle'>
+                        <div id="siteurl"> <a href="http://<?=$contactinfo['sitename']?> " target="_blank"><?=$contactinfo['sitename']?></a> </div>
+                    </td>
+                    <td style='vertical-align: middle'>
+                        <div id="comment"><?=$contactinfo['comment']?></div>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+   
+            <div class="card-body">
+
+                <?php show($script) ?>
+
+            </div>
+
+
         </div>
     </div>
 
-
     <div class="col-md-4">
-        <div class="card border-dark">
-            <div class="card-header bg-dark text-white header-elements-inline">
-                <h6 class="card-title">ВЫЗОВ</h6>
 
-            </div>
+<!--       ПАНЕЛЬ ЗВОНКА-->
+        <div class="card border-dark">
             <div class="card-body">
+
+
+                <div class="badge badge-secondary d-block"  id="info">
+                    ПОЗВОНИТЕ ПО КОНТАКТУ
+                </div>
                 <table class="table  table-bordered text-center">
                     <tr>
 
                         <td class="wmin-md-100">
-                            <button type="button" id="call" disabled class="btn bg-teal-400 btn-labeled btn-labeled-left"> <i class="icon-phone-wave"></i> ПОЗВОНИТЬ  </button>
+                            <button type="button" id="call" disabled class="btn bg-teal-400 btn-labeled btn-labeled-left btn-lg"> <i class="icon-phone-wave"></i> ПОЗВОНИТЬ  </button>
 
-                            <button type="button"  id="hangup" style="display: none;" class="btn bg-danger btn-labeled btn-labeled-left"> <i class="icon-phone-slash" ></i> ЗАВЕРШИТЬ  </button>
+                            <button type="button"  id="hangup" style="display: none;" class="btn bg-danger btn-labeled btn-labeled-left btn-lg"> <i class="icon-phone-slash" ></i> ЗАВЕРШИТЬ  </button>
 
 
                         </td>
 
-                        <td class="wmin-md-100"> <button type="button" id="nextcontact" class="btn bg-slate-600 btn-labeled ">СЛЕДУЮЩИЙ КОНТАКТ</button></td>
 
                     </tr>
                 </table>
 
-                <div class="badge badge-success d-block"  id="info">
-                    ПОЗВОНИТЕ ПО КОНТАКТУ
-                </div>
+
                 <b>ВНИМАНИЕ!:</b>
                 Придерживайтесь скрипту и учитываете критерии. Иначе звонок может не пройти модерацию.
 
 
 
             </div>
+
         </div>
-    </div>
+        <!--       ПАНЕЛЬ ЗВОНКА-->
 
-
-    <div class="col-md-4">
-
+        <!--        РЕЗУЛЬТАТ ЗВОНКА-->
         <div class="card border-dark">
-            <div class="card-header bg-dark text-white header-elements-inline">
+
+            <div class="card-header bg-dark text-white text-center">
+
                 <h6 class="card-title">РЕЗУЛЬТАТ РАЗГОВОРА</h6>
 
             </div>
 
 
             <form id="resultdata" >
-            <div class="card-body">
-                <div class="form-group mb-3 mb-md-2">
+                <div class="card-body">
+                    <div class="form-group mb-3 mb-md-2">
 
 
 
-                    <div class="form-check form-check-inline">
-                        <label class="form-check-label">
-                            <input type="radio" class="form-check-input" name="optionresult" value="perezvon" >
-                            <span class="badge badge-warning"> ПЕРЕЗВОН</span>
-                        </label>
-                    </div>
+                        <div class="form-check form-check-inline">
+                            <label class="form-check-label">
+                                <input type="radio" class="form-check-input" name="optionresult" value="perezvon" >
+                                <span class="badge badge-warning"> ПЕРЕЗВОН</span>
+                            </label>
+                        </div>
 
-                    <div class="form-check form-check-inline">
-                        <label class="form-check-label">
-                            <input type="radio" class="form-check-input" name="optionresult" value="otkaz">
-                            <span class="badge badge-danger">ОТКАЗ </span>
+                        <div class="form-check form-check-inline">
+                            <label class="form-check-label">
+                                <input type="radio" class="form-check-input" name="optionresult" value="otkaz">
+                                <span class="badge badge-danger">ОТКАЗ </span>
 
-                        </label>
-                    </div>
+                            </label>
+                        </div>
 
-                    <div class="form-check form-check-inline">
-                        <label class="form-check-label">
-                            <input type="radio" class="form-check-input" name="optionresult" value="bezdostupa" >
-                            <span class="badge badge-secondary"> ТЕЛЕФОН НЕ ДОСТУПЕН </span>
-                        </label>
-                    </div>
+                        <div class="form-check form-check-inline">
+                            <label class="form-check-label">
+                                <input type="radio" class="form-check-input" name="optionresult" value="bezdostupa" >
+                                <span class="badge badge-secondary"> ТЕЛЕФОН НЕ ДОСТУПЕН </span>
+                            </label>
+                        </div>
 
-                    <div class="form-check form-check-inline">
-                        <label class="form-check-label">
-                            <input type="radio" class="form-check-input" value="result" name="optionresult" >
+                        <div class="form-check form-check-inline">
+                            <label class="form-check-label">
+                                <input type="radio" class="form-check-input" value="result" name="optionresult" >
 
-                            <span class="badge badge-success">
+                                <span class="badge badge-success">
 
 
-                                 <b><?=companytype($company["type"]);?></b> - <?=$company['priceresult'];?> РУБЛЕЙ
+                                 <b><?=companytype($company["type"]);?></b>+<?=$company['priceresult'];?> РУБЛЕЙ
 
 
                             </span>
 
-                        </label>
+                            </label>
+                        </div>
+
                     </div>
+                    <!-- перезвон -->
+                    <div id="perez" style="display: none;">
 
-                </div>
-                <!-- перезвон -->
-                <div id="perez" style="display: none;">
+                        <div class="form-group">
 
-                    <div class="form-group">
+                            <label>Дата перезвона<span class="text-danger">*</span></label>
 
-                        <label>Дата перезвона<span class="text-danger">*</span></label>
-
-                        <div class="input-group">
+                            <div class="input-group">
 										<span class="input-group-prepend">
 											<span class="input-group-text">
 												<i class="icon-calendar"></i>
 											</span>
 										</span>
-                            <input type="date" name="dataperezvona" class="form-control datepicker" value="<?=date("Y-m-d")?>" placeholder="Дата перезвона">
+                                <input type="date" name="dataperezvona" class="form-control datepicker" value="<?=date("Y-m-d")?>" placeholder="Дата перезвона">
+                            </div>
+
+
+
                         </div>
 
+                        <div class="form-group">
+                            <label>На другой номер (если необходимо)<span class="text-danger">*</span></label>
+                            <div class="input-group">
+                                <input type="text" name="nomerperezvona" id="nomerperezvona" value="<?=$contactinfo['tel']?>" class="form-control" >
+                            </div>
 
-
-                    </div>
-
-                    <div class="form-group">
-                        <label>На другой номер (если необходимо)<span class="text-danger">*</span></label>
-                        <div class="input-group">
-                            <input type="text" name="nomerperezvona" id="nomerperezvona" value="<?=$contactinfo['tel']?>" class="form-control" >
                         </div>
-
                     </div>
-                </div>
-                <!-- перезвон  -->
-                <!-- результат -->
-                <div id="result" style="display: none;">
-                    <?php renderresultform($company['formresult'])?>
-                    <div class="form-group">
+                    <!-- перезвон  -->
+                    <!-- результат -->
+                    <div id="result" style="display: none;">
+                        <?php renderresultform($company['formresult'])?>
+                        <div class="form-group">
 
-                        <label>На другой номер (если необходимо)<span class="text-danger">*</span></label>
-                        <div class="input-group">
-                            <input type="text" name="nomerresult" id="nomerresult" value="<?=$contactinfo['tel']?>" class="form-control" >
+                            <label>На другой номер (если необходимо)<span class="text-danger">*</span></label>
+                            <div class="input-group">
+                                <input type="text" name="nomerresult" id="nomerresult" value="<?=$contactinfo['tel']?>" class="form-control" >
+                            </div>
+
                         </div>
-
                     </div>
+                    <!-- результат  -->
+
+                    <p><input type="hidden" name="zvonok" value="0" id="zvonok"></p>
+                    <p><input type="hidden" name="contactid" value="<?=$contactinfo['id'];?>" id="contactid" ></p>
+                    <p><input type="hidden" value="<?=$contactinfo['tel'];?>" id="tel"></p>
+
+
+                    <div class="form-group mb-0">
+                        <label>Комментарий:</label>
+                        <textarea rows="3" cols="3" name="operatorcomment" class="form-control"  placeholder="Комментарий оператора"></textarea>
+                    </div>
+
+
+
+
                 </div>
-                <!-- результат  -->
-
-                <p><input type="hidden" name="zvonok" value="0" id="zvonok"></p>
-                <p><input type="hidden" name="contactid" value="<?=$contactinfo['id'];?>" id="contactid" ></p>
-                <p><input type="hidden" value="<?=$contactinfo['tel'];?>" id="tel"></p>
-
-
-                <div class="form-group mb-0">
-                    <label>Комментарий:</label>
-                    <textarea rows="3" cols="3" name="operatorcomment" class="form-control"  placeholder="Комментарий оператора"></textarea>
-                </div>
-
-
-
-
-            </div>
             </form>
 
-        </div>
-    </div>
-</div>
+            <div class="text-center">
 
-
-<div class="row">
-
-    
-
-    <div class="col-md-6">
-        <div class="card border-dark">
-            <div class="card-header bg-dark text-white header-elements-inline">
-                <h6 class="card-title">СКРИПТ РАЗГОВОРА</h6>
+                <button  type="button" id="nextcontact" class="btn bg-success  btn-lg "> <i class="icon-circle-right2 mr2" ></i>  СЛЕДУЮЩИЙ КОНТАКТ  <i class="icon-circle-right2 mr2" ></i></button>
 
             </div>
 
-                <div class="card-body">
-
-                    <?php show($script); ?>
-
-                </div>
-
+            <br>
 
         </div>
-    </div>
+        <!--        РЕЗУЛЬТАТ ЗВОНКА-->
 
-
-    <div class="col-md-4">
-        <div class="card border-dark">
-            <div class="card-header bg-dark text-white header-elements-inline">
-                <h6 class="card-title">ТРЕБОВАНИЯ ДЛЯ МОДЕРАЦИИ</h6>
-
-            </div>
-
-            <div class="card-body">
-                <?=$company['trebovanie']?>
-            </div>
-
-
-        </div>
-
-
-        <div class="card border-dark">
-            <div class="card-header bg-dark text-white header-elements-inline">
-                <h6 class="card-title">О ПРОДУКТЕ</h6>
-
-            </div>
-
-            <div class="card-body">
-              <b>  <?=$company['nameproduct']?> <br></b>
-                <?=$company['aboutproduct']?>
-            </div>
-
-
-        </div>
 
 
 
     </div>
+
 
 
 </div>
+
 
 
 
@@ -440,7 +409,7 @@
 
                     document.getElementById('resultdata').reset();
                     $("#zvonok").val('0'); // Индикатор нажатия кнопки
-                    $("#info").prop("class", "badge badge-success d-block");
+                    $("#info").prop("class", "badge badge-secondary d-block");
                     $("#info").text('ПОЗВОНИТЕ ПО НОВОМУ КОНТАКТУ');
                     //Очищаем всею форму
 
@@ -496,3 +465,64 @@
 
 
 </script>
+
+
+<div id="modal_aboutcompany" class="modal fade" tabindex="-1" style="display: none;" aria-hidden="true">
+    <div class="modal-dialog ">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">О КОМПАНИИ</h5>
+                <button type="button" class="close" data-dismiss="modal">×</button>
+            </div>
+            <div class="modal-body">
+                <h6 class="font-weight-semibold"> <?=$company['company']?></h6>
+                <?=$company['aboutcompany']?>
+            </div>
+
+
+
+
+
+        </div>
+    </div>
+</div>
+
+<div id="modal_aboutproduct" class="modal fade" tabindex="-1" style="display: none;" aria-hidden="true">
+    <div class="modal-dialog ">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">О ПРОДУКТЕ</h5>
+                <button type="button" class="close" data-dismiss="modal">×</button>
+            </div>
+            <div class="modal-body">
+                <h6 class="font-weight-semibold"> <?=$company['nameproduct']?></h6>
+                <?=$company['aboutproduct']?>
+            </div>
+
+
+
+
+
+        </div>
+    </div>
+</div>
+
+<div id="modal_trebovanie" class="modal fade" tabindex="-1" style="display: none;" aria-hidden="true">
+    <div class="modal-dialog ">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">ТРЕБОВАНИЯ К РЕЗУЛЬТАТУ</h5>
+                <button type="button" class="close" data-dismiss="modal">×</button>
+            </div>
+            <div class="modal-body">
+                <h6 class="font-weight-semibold"> Критерий приема лида клиентом</h6>
+                <?=$company['trebovanie']?>
+            </div>
+
+
+
+
+
+        </div>
+    </div>
+</div>

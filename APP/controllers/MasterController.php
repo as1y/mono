@@ -39,7 +39,6 @@ class MasterController extends AppController {
 
 
 
-
         
         $this->set(compact('company'));
 

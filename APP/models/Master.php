@@ -24,7 +24,7 @@ class Master extends \APP\core\base\Model {
     public static function countresultid($id)
     {
 
-        return R::count("result", "WHERE company_id = ? AND status = 0", [$id]);;
+        return R::count("contact", "WHERE company_id = ? AND status = 5", [$id]);;
     }
 
 

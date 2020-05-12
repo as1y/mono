@@ -1,11 +1,16 @@
 <div class="card">
     <div class="card-header bg-dark text-white header-elements-inline">
         <h5 class="card-title">ВСЕ ПРОЕКТЫ</h5>
-
     </div>
 
     <div class="card-body">
 
+<!-- <i class="icon-target2 mr-2" data-popup="tooltip" title="ЛИД"></i>-->
+<!--<i class="icon-people mr-2" data-popup="tooltip" title="ВСТРЕЧА"></i>-->
+<!--<i class="icon-price-tag mr-2" data-popup="tooltip" title="УЧАСТИЕ В АКЦИИ"></i>-->
+<!--<i class="icon-theater mr-2" data-popup="tooltip" title="ПРИГЛАШЕНИЕ"></i>-->
+<!--<i class="icon-magazine mr-2" data-popup="tooltip" title="АНКЕТА"></i>-->
+<!--<i class="icon-info3 mr-2" data-popup="tooltip" title="ИНФОРМИРОВАНИЕ"></i>-->
 
 
         <table  class="table datatable-basic text-center">
@@ -14,6 +19,7 @@
                 <th>Компания</th>
                 <th>Продукт</th>
                 <th>Цель</th>
+                <th>Требование</th>
                 <th>Оплата</th>
                 <th>Бонус</th>
                 <th>Действие</th>
@@ -28,27 +34,51 @@
             <?php foreach ($allcompanies as $key=>$val):?>
 
                 <tr>
-                    <td><?=$val['company']?></td>
                     <td>
-                        <?=obrezanie($val['nameproduct'], 70)?>
+                        <img src="<?=$val['logo']?>" width="100" >
+                        <br>
+                        <?=$val['company']?>
+                    </td>
+                    <td>
+                        <b>  <?=tematika($val['tematika'])?></b><br>
+                        <?=obrezanie($val['nameproduct'], 70)?> <br>
                     </td>
                     <td>
 
                         <?=companytype($val['type'])?>
 
                     </td>
+
                     <td>
 
-                        <h5><span class="badge badge-success"><?=$val['priceresult']?>руб. </span></h5>
+                        <?php if (empty($val['trebovanie'])) $val['trebovanie'] = "Нет";?>
+                         <?=obrezanie($val['trebovanie'], 70)?>
+
+                    </td>
+                    <td>
+
+                        <h5><span class="badge badge-success">+ <?=$val['priceresult']?> руб. </span></h5>
 
 
                     </td>
                     <td>
-                        За <?=$val['mincall']?> звонков <span class="badge badge-warning"><b> <?=$val['bonuscall']?> руб.</b></span>
+                        <h5> <span class="badge badge-warning">+ <?=$val['bonuscall']?> руб.</span></h5>
+                        За <?=$val['mincall']?> звонков
                     </td>
-                    <td>
+                    <?php
+                    $mystatus = \APP\models\Operator::mystatusincompany($val);
+                    $add = "";
+                    if ($mystatus == 1) $add = "bg-secondary";
 
-                        <a href="/operator/companyinfo/?id=<?=$val['id']?>" type="button" class="btn btn-success"><i class="icon-cursor2 mr-2"></i>ИНФОРМАЦИЯ</a>
+                    ?>
+
+                    <td class="<?=$add?>">
+
+
+
+                        <?php renderstatus($mystatus, $val['id']) ?>
+
+
 
                     </td>
                 </tr>

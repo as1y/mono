@@ -118,23 +118,25 @@ function tematika ($status){
 }
 
 
-function companytype ($status){
-    if ($status=="1") return 'ЛИД';
-    if ($status=="2") return 'ВСТРЕЧА';
-    if ($status=="3") return 'УЧАСТИЕ В АКЦИИ';
-    if ($status=="4") return 'ПРИГЛАШЕНИЕ';
-    if ($status=="5") return 'АНКЕТИРОВАНИЕ';
-    if ($status=="6") return 'ИНФОРМИРОВАНИЕ';
+
+function companytype ($status)
+{
+    if ($status == "1") return '<i class="icon-target2 mr-2" data-popup="tooltip" title="ЛИД"></i>';
+    if ($status == "2") return '<i class="icon-people mr-2" data-popup="tooltip" title="ВСТРЕЧА"></i>';
+    if ($status == "3") return '<i class="icon-price-tag mr-2" data-popup="tooltip" title="УЧАСТИЕ В АКЦИИ"></i>';
+    if ($status == "4") return '<i class="icon-theater mr-2" data-popup="tooltip" title="ПРИГЛАШЕНИЕ"></i>';
+    if ($status == "5") return '<i class="icon-magazine mr-2" data-popup="tooltip" title="АНКЕТА"></i>';
+    if ($status == "6") return '<i class="icon-info3 mr-2" data-popup="tooltip" title="ИНФОРМИРОВАНИЕ"></i>';
+
+
 }
 
 
 
-
-
 function passoperator ($status){
-	if ($status=="1") return '<span class="badge badge-warning">НА ПРОВЕРКЕ</span>';
-	if ($status=="2") return '<span class="badge badge-success">ДОПУЩЕН</span>';
-	if ($status=="3") return '<span class="badge badge-danger">ОТКЛОНЕН</span>';
+	if ($status=="1") return '<span class="badge badge-default">НА ПРОВЕРКЕ</span><br>';
+	if ($status=="2") return '<span class="badge badge-default">ДОПУЩЕН</span><br>';
+	if ($status=="3") return '<span class="badge badge-danger">ОТКЛОНЕН</span><br>';
 }
 
 function timecall ($status){
@@ -144,6 +146,164 @@ function timecall ($status){
 
 }
 
+function renderstatus($mystatus, $id){
+?>
+    <?php if($mystatus === false): ?>
+        <a href="/operator/all/?id=<?=$id?>&action=join" type="button" class="btn btn-success"><i class="icon-add mr-2"></i>ЗАЯВКА</a>
+    <?php endif;?>
+
+                        <?php if ($mystatus == 2):?>
+        <a href="/operator/call/?id=<?=$id?>" type="button" class="btn btn-danger"><i class="icon-phone-wave mr-2"></i>ЗВОНИТЬ</a>
+    <?php endif;?>
+
+    <br>
+    <?php if($mystatus != false): ?>
+        <b>СТАТУС:</b><?=passoperator($mystatus)?>
+    <?php endif;?>
+
+<?php
+
+}
+
+
+function renderacesscall($statuscall){
+?>
+
+            <div class="row">
+            <div class="col-sm-6 col-xl-3 border">
+
+                <div class="card-body">
+                    <h5 class="card-title"><?=$statuscall['text']?></h5>
+
+
+                    <? if($statuscall['acess'] === false):?>
+
+                        <i class="icon-cross2 icon-2x text-danger border-danger border-3 rounded-round p-3 mb-3"></i>
+
+                        <div class="list-feed">
+                            <?php if($statuscall['code'] == false):?>
+                                <div class="list-feed-item border-warning-400">
+                                    Подтвердите E-mail <br>
+                                </div>
+                            <?php endif;?>
+
+                            <?php if($statuscall['about'] == false):?>
+                            <div class="list-feed-item border-warning-400">
+                               Заполните информацию о себе
+                            </div>
+                            <?php endif;?>
+
+                            <?php if($statuscall['avatar'] == false):?>
+                            <div class="list-feed-item border-warning-400">
+                               Загрузите аватар
+                            </div>
+                            <?php endif;?>
+
+                            <?php if($statuscall['audio'] == false):?>
+                            <div class="list-feed-item border-warning-400">
+                               Запишите аудио презентацию
+                            </div>
+                            <?php endif;?>
+
+
+                        </div>
+
+                    <?else:?>
+
+                        <i class="icon-checkmark icon-2x text-success border-success border-3 rounded-round p-3 mb-3"></i>
+                        <h5 class="card-title">ВЫ ДОПУЩЕНЫ К ЗВОНКАМ</h5>
+
+
+                    <?endif;?>
+
+
+                </div>
+
+
+            </div>
+
+
+            <div class="col-sm-6 col-xl-3 border">
+
+
+                <div class="card-body">
+
+                    <h5 class="card-title">Информация о себе</h5>
+
+                    <? if($statuscall['about'] === false):?>
+                        <i class="icon-cross2 icon-2x text-warning border-warning border-3 rounded-round p-3 mb-3"></i>
+                        <p class="mb-3">Заполните информацию о себе в профиле</p>
+                        <a href="/panel/profile/" class="btn bg-success"><i class="icon-plus3 ml-2"></i> ДОБАВИТЬ</a>
+                    <?else:?>
+                        <i class="icon-checkmark icon-2x text-success border-success border-3 rounded-round p-3 mb-3"></i>
+                        <p class="mb-3">Информация добавлена</p>
+
+                    <?endif;?>
+
+
+
+
+
+
+
+                </div>
+
+
+            </div>
+            <div class="col-sm-6 col-xl-3 border">
+
+
+                <div class="card-body">
+
+                    <h5 class="card-title">Аватар</h5>
+                    <? if($statuscall['avatar'] === false):?>
+                        <i class="icon-cross2 icon-2x text-warning border-warning border-3 rounded-round p-3 mb-3"></i>
+                        <p class="mb-3">Загрузите Аватар в профиле</p>
+                        <a href="/panel/profile/" class="btn bg-success"><i class="icon-image2 ml-2"></i> ДОБАВИТЬ</a>
+                    <?else:?>
+                        <i class="icon-checkmark icon-2x text-success border-success border-3 rounded-round p-3 mb-3"></i>
+                        <p class="mb-3">Аватар загружен</p>
+                    <?endif;?>
+
+
+
+
+                </div>
+
+
+            </div>
+
+
+            <div class="col-sm-6 col-xl-3 border">
+
+
+                <div class="card-body">
+
+                    <h5 class="card-title">Аудио презентация</h5>
+
+                    <? if($statuscall['audio'] === false):?>
+                        <i class="icon-cross2 icon-2x text-warning border-warning border-3 rounded-round p-3 mb-3"></i>
+                        <p class="mb-3">Запишите аудио презентацию</p>
+                        <a href="/panel/profile/" class="btn bg-success"><i class="icon-mic2 ml-2"></i> ЗАПИСАТЬ</a>
+                    <?else:?>
+                        <i class="icon-checkmark icon-2x text-success border-success border-3 rounded-round p-3 mb-3"></i>
+                        <p class="mb-3">Аудио презентация загружена</p>
+                    <?endif;?>
+
+
+
+
+
+                </div>
+
+
+            </div>
+        </div>
+<hr>
+
+
+<?php
+}
 
 
 function countoperators($company, $type){

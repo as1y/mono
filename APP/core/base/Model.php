@@ -337,9 +337,6 @@ abstract class Model
 
     public function filevalidation($FILE, $PARAMS = []){
 
-        show($FILE);
-
-
         if ($FILE['size'] > 3000000) {
             $this->errors[] = ['Файл' => "Размер не должен превышать 3МБ" ];
             return false;

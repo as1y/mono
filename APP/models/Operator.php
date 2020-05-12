@@ -202,7 +202,6 @@ class Operator extends \APP\core\base\Model {
 
     public function joincompany($idc){
 
-
         $company = R::load('company', $idc);
 
         $massivoperatorov = json_decode($company['operators'], true);
@@ -234,13 +233,6 @@ class Operator extends \APP\core\base\Model {
     public function allcompanies() {
         $companyDB = R::findAll('company', 'WHERE status != 2');
 
-
-//        foreach($companyDB as $key => $company) {
-////			$company["countoperator"];
-//            $isCompanyOper = \R::getAll( "SELECT mycamid FROM users WHERE mycamid LIKE ?", ['%'.$company["id"].'%']);
-//            $moderCompanyOper = \R::getAll( "SELECT moderatecamp FROM users WHERE moderatecamp LIKE ?", ['%'.$company["id"].'%']);
-//            $companyDB[$key]["alloperator"] = ( count($isCompanyOper) + count($moderCompanyOper) );
-//        }
 
 
         return $companyDB;
@@ -368,6 +360,17 @@ class Operator extends \APP\core\base\Model {
 
     }
 
+    public static function mystatusincompany($company)
+    {
+
+        $massivoperatorov = json_decode($company['operators'], true);
+        if (!$massivoperatorov) $massivoperatorov = [];
+        $operatorInProject = array_key_exists($_SESSION['ulogin']['id'],$massivoperatorov);
+        if ($operatorInProject === false) return false;
+        return $massivoperatorov[$_SESSION['ulogin']['id']];
+
+
+    }
 
 
 }
