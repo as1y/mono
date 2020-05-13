@@ -35,6 +35,12 @@ class Panel extends \APP\core\base\Model {
 
 
 
+
+    public function deleteinvoice($id, $invoice){
+        unlink(WWW.$invoice[$id]['path']);
+        return   R::trash( $invoice[$id]);
+    }
+
     public function getsobesednik($idu){
 
 

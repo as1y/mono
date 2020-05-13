@@ -69,7 +69,8 @@
         <?php foreach ($invoicelog as $key=>$val):?>
 
         <?php if ($val['paymethod'] == "Beznal"): ?>
-                Счет № <?=$val['id']?> | Сумма: <?=$val['summa']?> | Ссылка: <a href="<?=$val['path']?>" target="_blank">ПОСМОТРЕТЬ</a>  <br>
+                Счет № <?=$val['id']?> | Сумма: <?=$val['summa']?> | Ссылка: <a href="<?=$val['path']?>" target="_blank">ПОСМОТРЕТЬ</a> |  <a href="/panel/balance/?idinvoice=<?=$val['id']?>&action=delinvoice">УДАЛИТЬ</a><br> <br>
+
         <?php endif;?>
 
 

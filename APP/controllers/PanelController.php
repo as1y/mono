@@ -114,7 +114,16 @@ class PanelController extends AppController {
         }
 
 
+        if (!empty($_GET['action']) && $_GET['action'] == "delinvoice"){
 
+            $Panel->deleteinvoice($_GET['idinvoice'], $invoicelog);
+            $_SESSION['success'] = "Счет успешно удален!<br>";
+
+            redir("/panel/balance/");
+
+
+
+        }
 
 
 
