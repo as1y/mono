@@ -8,8 +8,6 @@ class User extends \APP\core\base\Model
 	// АТРИБУТЫ КОТОРЫЕ ЗАБИРАЕМ ПРИ РЕГИСТРАЦИИ
 
 
-
-
     public function validateregistration($DATA){
 
         $rules = [
@@ -57,11 +55,11 @@ class User extends \APP\core\base\Model
 
 
 	// ПРОВЕРКА НА УНИКАЛЬНЫЙ ЕМЕЙЛ
-	public function checkUniq($table)
+	public function checkUniq($table, $email)
 	{
-		$uni = R::findOne($table, 'email = ? LIMIT 1',[$this->ATR['email']]);
+		$uni = R::findOne($table, 'email = ? LIMIT 1',[$email]);
 		if($uni){
-			if($uni->email == $this->ATR['email']){
+			if($uni->email == $email){
 				$this->errors['uniq'][] = "Пользователь с таким E-mail уже зарегистрирован";
 			}
 			return false;

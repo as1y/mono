@@ -40,7 +40,6 @@ class UserController extends AppController
         $ASSETS[] = ["js" => "/global_assets/js/demo_pages/form_checkboxes_radios.js"];
 
 
-
          \APP\core\base\View::setAssets($ASSETS);
         \APP\core\base\View::setMeta($META);
         \APP\core\base\View::setBreadcrumbs($BREADCRUMBS);
@@ -51,7 +50,7 @@ class UserController extends AppController
 
               $validate =  $user->validateregistration($_POST);
 
-            if(!$validate || !$user->checkUniq(CONFIG['USERTABLE']) )
+            if(!$validate || !$user->checkUniq(CONFIG['USERTABLE'], $_POST['email'] ))
             {
                 $user->getErrorsVali(); //Записываем ошибки в сессию
                 redir("/user/register/");
