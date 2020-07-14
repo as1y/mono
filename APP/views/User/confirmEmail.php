@@ -1,3 +1,6 @@
+<?php
+show($_SESSION);
+?>
 
     <div class="card mb-0">
         <div class="card-body">

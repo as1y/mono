@@ -1,19 +1,5 @@
 <?php
 
-// API VOXIMPLANT
-$account_id = '1895581';
-$api_key = 'a7c15131-6186-482d-a619-84c2be598655';
-// API VOXIMPLANT
-
-
-// ПОЛЬЗОВАТЕЛЬ VOXIMPLANT
-define('VOXIMPLANTUSER', 'vitya@zarabotat.victorpseo.voximplant.com');
-define('VOXuser', 'vitya');
-define('VOXpass', 'testPassword');
-// ПОЛЬЗОВАТЕЛЬ VOXIMPLANT
-define('APPNAME', 'CASHCALL');
-
-
 //Базовые переменные
 define('ERRORS', '1' ); // 0 - нет 1 - ОТОБРАЖАЮТСЯ
 define('WWW', __DIR__);
@@ -23,13 +9,7 @@ define('WWW', __DIR__);
 define('BASEAVATAR', '/assets/oper1.jpg');
 define('UrInvoicepath', '/uploads/user_invoice/');
 define('BASELOGO', '/uploads/user_logo/baselogo.jpg');
-define('AudioUploadPath', 'uploads/user_audio/');
 // Переменные для приложения
-
-
-
-
-
 
 
 
@@ -38,7 +18,9 @@ require 'lib/functions.php'; //ОБЩИЕ ФУНКЦИИ
 require 'lib/functions_app.php'; //ФУНКЦИИ ПРИЛОЖЕНИЯ
 
 //Подключаем все конфигурации. Приоритет у main-local.php
-define('CONFIG',array_merge(require 'config/main.php',require 'config/main-local.php'));
+define('CONFIG', require 'config/main.php');
+define('APPNAME', 'COUPON');
+
 
 //ВАЛИДАТОР
 require_once( 'lib/Valitron/Validator.php' );
@@ -54,9 +36,13 @@ V::lang('ru');
 
 //Почтовый сервис
 
-require_once 'APP/core/Mail.php';
-
-
+require_once 'APP/core/PHPM.php';
+//НАСТРОЙКА ПОЧТЫ НА ЯНДЕКС
+define('MAILHOST', 'ssl://smtp.yandex.ru');
+define('MAILUSERNAME', 'info@500рублей.рф');
+define('MAILPASSWORD', 'barsuk343');
+define('API', 'https://api.admitad.com');
+//НАСТРОЙКА ПОЧТЫ НА ЯНДЕКС
 
 use APP\core\Router;
 
@@ -68,7 +54,12 @@ session_start();
 $router = new Router;
 // ПУТИ ЗАДАЮТ НАДО УТОЧНИТЬ КАК РАБОТАЕТ
 $router->add( 'user/login', ['controller'=>'User', 'action'=>'index']);
-$router->add( '^project/(?P<action>[a-z-]+)/(?P<alias>[a-z-]+)$', ['controller'=>'Project']);
+$router->add( '^category/(?P<alias>[a-z-]+)$', ['controller'=>'Category', 'action'=>'index']);
+$router->add( '^shop/(?P<alias>[a-z-]+)$', ['controller'=>'Shop', 'action'=>'index']);
+$router->add( '^brands/(?P<alias>[a-z-]+)$', ['controller'=>'Brands', 'action'=>'index']);
+$router->add( '^coupons/(?P<alias>[a-z-]+)/?(?P<alias2>[a-z-]+)?$', ['controller'=>'Coupons', 'action'=>'index']);
+
+
 $router->add( '^page/(?P<action>[a-z-]+)/(?P<alias>[a-z-]+)$', ['controller'=>'Page']);
 $router->add( '^page/(?P<alias>[a-z-]+)$', ['controller'=>'Page', 'action'=>'view']);
 // ПУТИ ЗАДАЮТ НАДО УТОЧНИТЬ КАК РАБОТАЕТ

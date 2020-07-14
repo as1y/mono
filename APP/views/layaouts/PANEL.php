@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <?php \APP\core\base\Model::online()?>
     <?php \APP\core\base\View::getMeta()?>
 
 
@@ -45,7 +44,7 @@
 
     <a href="/panel/" class="navbar-nav-link " >
         <!--        <img src="/global_assets/images/dribbble.png" class="align-top mr-2 rounded" width="20" height="20" alt="">-->
-        <b><?=APPNAME?> </b>   <?= ($_SESSION['ulogin']['role'] == "O") ? '<span class="badge-secondary">Кабинет ОПЕРАТОРА</span>' : ' <span class="badge-secondary">Кабинет РЕКЛАМОДАТЕЛЯ</span>'?>
+        <b><?=APPNAME?> </b>
     </a>
 
     <div class="d-md-none">
@@ -63,42 +62,12 @@
     <div class="navbar-collapse collapse" id="navbar-demo1-mobile">
 
 
-
-        <span class="navbar-text ml-xl-3">
-   Пользователей онлайн:  <span class="badge bg-success"><b><?= \APP\core\base\Model::countonline()?></b></span>
-        </span>
-
-        <?php if ($_SESSION['ulogin']['role'] == "O"):?>
-        <a href="https://join.skype.com/boRbvQS4VOR4" target="_blank" class="navbar-nav-link dropdown-toggle caret-0">
-            <i class="icon-skype mr-2"></i>
-            ЧАТ ОПЕРАТОРОВ
-        </a>
-        <?php endif;?>
-
-
         <ul class="navbar-nav ml-xl-auto">
 
 
-            <li class="nav-item dropdown">
-                <a href="/panel/messages/?newdialog=24" class="navbar-nav-link dropdown-toggle caret-0">
-
-                    <i class="icon-comment-discussion mr-2"></i>
-                    Поддержка
-
-                </a>
-            </li>
 
 
 
-
-
-            <li class="nav-item dropdown">
-                <a href="/panel/dialog/" class="navbar-nav-link dropdown-toggle caret-0">
-                    <i class="icon-bubbles4"></i>
-                   Сообщения
-                    <span class="badge badge-pill bg-danger-400 ml-auto ml-md-0"><?= \APP\core\base\Model::countnewmessages()?></span>
-                </a>
-            </li>
 
 
             <li class="nav-item dropdown dropdown-user">
@@ -108,15 +77,7 @@
                 </a>
 
                 <div class="dropdown-menu dropdown-menu-right">
-                    <a href="/panel/balance/" class="dropdown-item"><i class="icon-wallet"></i> Баланс  &nbsp;<span class="badge badge-success"><b><?=\APP\models\Panel::getBal()?></b> Р.</span></a>
-                    <a href="/panel/profile/" class="dropdown-item"><i class="icon-user-plus"></i> Мой профиль</a>
-                    <a href="/panel/refferal/" class="dropdown-item"><i class="icon-cash"></i> Партнерскся программа</a>
-
-                    <a href="/panel/faq/" class="dropdown-item"><i class="icon-question3"></i> F.A.Q</a>
-
-                    <div class="dropdown-divider"></div>
-                    <a href="/panel/urlegal/" class="dropdown-item"><i class="icon-pencil"></i> Юр. Информация</a>
-                    <a href="/panel/settings/" class="dropdown-item"><i class="icon-cog5"></i> Настройки аккаунта</a>
+                    <a href="/panel/stat/" class="dropdown-item"><i class="icon-question3"></i> Статистика</a>
                     <a href="/user/logout/" class="dropdown-item"><i class="icon-switch2"></i> Выход</a>
                 </div>
             </li>
@@ -154,10 +115,10 @@
             <div class="breadcrumb justify-content-center">
 
 
-                <a href="#" class="btn btn-danger btn-sm">
-                    <i class="icon-reading mr-2"></i>
-                   ОБУЧЕНИЕ
-                </a>
+<!--                <a href="#" class="btn btn-danger btn-sm">-->
+<!--                    <i class="icon-reading mr-2"></i>-->
+<!--                   ОБУЧЕНИЕ-->
+<!--                </a>-->
 
 
 
@@ -183,40 +144,125 @@
 
 
 
+    <!-- Main sidebar -->
+    <div class="sidebar sidebar-dark sidebar-main sidebar-expand-md align-self-start">
 
-        <?php
-        // Вставка панели на главной странице
-
-
-        if ($_SESSION['ulogin']['role'] == "O"){
-            if ($this->route['controller'] == "Panel") require_once( 'includes/operator.php' );
-            if ($this->route['controller'] == "Pay") require_once( 'includes/operator.php' );
-            if ($this->route['controller'] == "Operator" && $this->route['action'] != "call") require_once( 'includes/operator.php' );
-        }
-
-
-        if ($_SESSION['ulogin']['role'] == "R"){
-
-            if ($this->route['controller'] == "Panel") require_once( 'includes/recl.php' );
-            if ($this->route['controller'] == "Master") require_once( 'includes/recl.php' );
-            if ($this->route['controller'] == "Project") require_once( 'includes/project.php' );
-            if ($this->route['controller'] == "Pay") require_once( 'includes/recl.php' );
-
-        }
+        <!-- Sidebar mobile toggler -->
+        <div class="sidebar-mobile-toggler text-center">
+            <a href="#" class="sidebar-mobile-main-toggle">
+                <i class="icon-arrow-left8"></i>
+            </a>
+            <a href="#" class="sidebar-mobile-expand">
+                <i class="icon-screen-full"></i>
+                <i class="icon-screen-normal"></i>
+            </a>
+        </div>
+        <!-- /sidebar mobile toggler -->
 
 
+        <!-- Sidebar content -->
+        <div class="sidebar-content nav-item-divider">
+            <div class="card card-sidebar-mobile">
+
+
+                <!-- User menu -->
+                <div class="sidebar-user">
+                    <div class="card-body">
+                        <div class="media">
+                            <div class="mr-3">
+                                <a href="/panel/profile/"><img src="<?=$_SESSION['ulogin']['avatar']?>" width="38" height="38" class="rounded-circle" alt=""></a>
+                            </div>
+
+                            <div class="media-body">
+                                <div class="media-title font-weight-semibold"> <?=$_SESSION['ulogin']['username']?> </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+                <!-- /user menu -->
+
+                <?php
+                $active[$this->route['action']] = 'active';
+
+                ?>
 
 
 
+                <!-- Main navigation -->
+                <div class="card-body p-0">
+                    <ul class="nav nav-sidebar" data-nav-type="accordion">
+
+                        <li class="nav-item-header">
+                            <div class="text-uppercase font-size-sm line-height-sm">ПАНЕЛЬ УПРАВЛЕНИЯ</div>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/master/" class="nav-link <?=isset($active['index']) ? $active['index'] : ''; ?>">
+                                <i class="icon-home4"></i>
+                                <span>	Магазины </span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/master/" class="nav-link <?=isset($active['coupons']) ? $active['coupons'] : ''; ?>">
+                                <i class="icon-home4"></i>
+                                <span>	Купоны </span>
+                            </a>
+                        </li>
+
+
+                        <li class="nav-item">
+                            <a href="/master/" class="nav-link <?=isset($active['promo']) ? $active['promo'] : ''; ?>">
+                                <i class="icon-home4"></i>
+                                <span>	Товары </span>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="/master/" class="nav-link <?=isset($active['promo']) ? $active['promo'] : ''; ?>">
+                                <i class="icon-home4"></i>
+                                <span>	Контент </span>
+                            </a>
+                        </li>
+
+
+                        <li class="nav-item-header">
+                            <div class="text-uppercase font-size-sm line-height-sm">ПАНЕЛЬ УПРАВЛЕНИЯ</div>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="/master/" class="nav-link <?=isset($active['stat']) ? $active['stat'] : ''; ?>">
+                                <i class="icon-home4"></i>
+                                <span>	Статистика </span>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="/master/" class="nav-link <?=isset($active['promo']) ? $active['promo'] : ''; ?>">
+                                <i class="icon-home4"></i>
+                                <span>	Реклама </span>
+
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="/master/" class="nav-link <?=isset($active['promo']) ? $active['promo'] : ''; ?>">
+                                <i class="icon-home4"></i>
+                                <span>	Кластера </span>
+                            </a>
+                            </a>                </li>
 
 
 
+                    </ul>
+                </div>
+                <!-- /main navigation -->
 
-        ?>
+            </div>
+        </div>
+        <!-- /sidebar content -->
 
-
-
-
+    </div>
+    <!-- /main sidebar -->
 
 
 
@@ -279,7 +325,7 @@
 
     <div class="navbar-collapse collapse" id="navbar-footer">
 			<span class="navbar-text">
-				&copy; 2020 <b><a href="/panel/"><?=APPNAME?></a></b> - Биржа удаленных операторов на телефоне.
+				&copy; 2020 <b><a href="/panel/"><?=APPNAME?></a></b> - Промокоды, купоны, скидки
 			</span>
 
         <ul class="navbar-nav ml-lg-auto">
@@ -290,21 +336,8 @@
     </div>
 </div>
 <!-- /footer -->
-<!-- Yandex.Metrika counter -->
-<script type="text/javascript" >
-    (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-        m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-    (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
 
-    ym(61998925, "init", {
-        clickmap:true,
-        trackLinks:true,
-        accurateTrackBounce:true,
-        webvisor:true
-    });
-</script>
-<noscript><div><img src="https://mc.yandex.ru/watch/61998925" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-<!-- /Yandex.Metrika counter -->
+
 
 
 </body>

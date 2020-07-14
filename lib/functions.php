@@ -108,33 +108,87 @@ function e(string $error_message): void
 }
 
 
-function skorogovorka(){
 
-    $chislo = rand(1,3);
+function monthtoday(){
+    $datetoday = date ("Y-m-d");
+    $d = date_parse_from_format("Y-m-d", $datetoday);
 
+    if ($d['month'] == 1) $d['month'] = "январь";
+    if ($d['month'] == 2) $d['month'] = "февраль";
+    if ($d['month'] == 3) $d['month'] = "март";
+    if ($d['month'] == 4) $d['month'] = "апрель";
+    if ($d['month'] == 5) $d['month'] = "май";
+    if ($d['month'] == 6) $d['month'] = "июнь";
+    if ($d['month'] == 7) $d['month'] = "июль";
+    if ($d['month'] == 8) $d['month'] = "август";
+    if ($d['month'] == 9) $d['month'] = "сентябрь";
+    if ($d['month'] == 10) $d['month'] = "октябрь";
+    if ($d['month'] == 11) $d['month'] = "ноябрь";
+    if ($d['month'] == 12) $d['month'] = "декабрь";
 
-    ?>
-
-        <?php if ($chislo == 1):?>
-        <p class="text-muted">Расскажите про покупки! — Про какие про покупки?
-            Про покупки, про покупки, про покупочки свои.</p>
-        <?php endif;?>
-
-    <?php if ($chislo == 2):?>
-        <p class="text-muted">Ядро потребителей пиастров — пираты, а пиратов — пираньи.</p>
-    <?php endif;?>
-
-    <?php if ($chislo == 3):?>
-        <p class="text-muted">На дворе — трава, на траве — дрова. Не руби дрова на траве двора!</p>
-    <?php endif;?>
-
-
-
-    <?php
+    return $d['month'];
+}
 
 
 
+function getOstatok ($expiration_date){
 
+    $d = date_parse_from_format('Y-m-d', $expiration_date);
+    $date1 = mktime(0, 0, 0, $d['month'], $d['day'], $d['year']);
+    $date1 = $date1 + 86300;
+    $datetoday = time();
+    $ostatok = $date1 - $datetoday;
+    $ostatokday = round($ostatok/86400);
+
+    return $ostatokday;
+}
+
+
+function calculate_exp($expiration_date){
+
+
+    if (!$expiration_date){
+        $answer = "<font color='green'>БЕЗ ЛИМИТА</font>" ;
+        return $answer;
+    }
+
+    $ostatokday = getOstatok($expiration_date);
+
+
+    if ($ostatokday < 0 )return $answer = "<font color='red'>ПРОСРОЧЕН</font>" ;
+    if ($ostatokday == 0) return $answer = "<font color='red'> СЕГОДНЯ! </font>" ;
+    if ($ostatokday == 1)  return $answer = "<font color='red'>ЗАВТРА</font>";
+    if ($ostatokday == 2) return $answer = $ostatokday." дня";
+    if ($ostatokday == 3) return $answer = $ostatokday." дня";
+
+//    if ($ostatokday > 30) return  $answer = date_parse_from_format('Y-m-d', $expiration_date);
+//    if ($ostatokday > 60) return   $answer = date_parse_from_format('Y-m-d', $expiration_date);
+
+     return $answer = date("d-m-Y", strtotime($expiration_date));
+
+
+}
+
+
+
+function validatebanner($WHATNEED, $WHATHAVE){
+
+    if ($WHATNEED['w']*2.2 < $WHATHAVE['w']) return false;
+    if ($WHATNEED['w'] > $WHATHAVE['w']*1.5) return false;
+
+    if ($WHATNEED['h']*2.2 < ($WHATHAVE['h'])) return false;
+    if ($WHATNEED['h'] > ($WHATHAVE['h']*1.5)) return false;
+
+    return true;
+
+}
+
+
+function obrezanie ($text, $symbols){
+
+    $result = mb_strimwidth($text, 0, $symbols, "...");
+
+    return $result;
 
 }
 
@@ -152,11 +206,11 @@ function translit_sef($value)
 
     $value = mb_strtolower($value);
     $value = strtr($value, $converter);
-    $value = mb_ereg_replace('[^-0-9a-z]', '_', $value);
-    $value = mb_ereg_replace('[-]+', '_', $value);
-    $value = trim($value, '_');
+    $value = mb_ereg_replace('[^-0-9a-z]', '-', $value);
+    $value = mb_ereg_replace('[-]+', '-', $value);
+    $value = trim($value, '-');
 
-    $value = str_replace("-", "_", $value); //Убираем тире, чтобы использовать его для IDшника
+//    $value = str_replace("-", "-", $value); //Убираем тире, чтобы использовать его для IDшника
 
 
     return $value;
@@ -175,6 +229,12 @@ function generatepayform($form){
 
     echo "</form>";
 
+}
+
+
+function getExtension($filename) {
+    $path_info = pathinfo($filename);
+    return $path_info['extension'];
 }
 
 
@@ -214,13 +274,23 @@ function getsizetypeimage($w_src, $h_src){
 
 }
 
-function fCURL($url, $PARAMS = []){
+function fCURL($url, $PARAMS = [], $headers = []){
+
 
     $ch = curl_init();
 
     if (!empty($PARAMS['GET'])){
         $url = $url."?".http_build_query($PARAMS['GET']);
     }
+
+
+    if ($headers != []){
+        curl_setopt( $ch, CURLOPT_HTTPHEADER, $headers );
+    }else{
+            curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json-patch+json'));
+    }
+
+
 
     curl_setopt($ch, CURLOPT_URL, $url);
     curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
@@ -229,23 +299,20 @@ function fCURL($url, $PARAMS = []){
 
 
     //  curl_setopt($ch, CURLOPT_COOKIE, session_name() . '=' . session_id());
-    curl_setopt($ch, CURLOPT_COOKIEFILE, $_SERVER['DOCUMENT_ROOT'].'/cookie.txt');
-    curl_setopt($ch, CURLOPT_COOKIEJAR, $_SERVER['DOCUMENT_ROOT'].'/cookie.txt');
+//    curl_setopt($ch, CURLOPT_COOKIEFILE, $_SERVER['DOCUMENT_ROOT'].'/cookie.txt');
+//    curl_setopt($ch, CURLOPT_COOKIEJAR, $_SERVER['DOCUMENT_ROOT'].'/cookie.txt');
 
 
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-    curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json-patch+json'));
     curl_setopt($ch, CURLOPT_USERAGENT, $_SERVER["HTTP_USER_AGENT"]);
 
 
     if (!empty($PARAMS['POST'])){
-        $PARAMS['POST'] = json_encode($PARAMS['POST']);
         curl_setopt($ch, CURLOPT_POST, 1);
         curl_setopt($ch, CURLOPT_POSTFIELDS, $PARAMS['POST']);
     }
 
     if (!empty($PARAMS['PATCH'])){
-        $PARAMS['PATCH'] = json_encode($PARAMS['PATCH']);
         curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "PATCH");
         curl_setopt($ch, CURLOPT_POSTFIELDS, $PARAMS['PATCH']);
     }

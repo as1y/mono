@@ -6,6 +6,8 @@ abstract class Model
 {
 	public $errors = [];
     static $USER = [];
+    static $CATEGORY = [];
+    static $CATEGORYcoupon = [];
 
 	public function __construct()
 	{
@@ -15,10 +17,13 @@ abstract class Model
 //              R::fancyDebug( TRUE );
             //  R::freeze(TRUE);
 
-            if (!empty($_SESSION['ulogin']['id'])){
-                self::$USER = $this->loaduser(CONFIG['USERTABLE'], $_SESSION['ulogin']['id']);
-            }
+//            if (!empty($_SESSION['ulogin']['id'])){
+//                self::$USER = $this->loaduser(CONFIG['USERTABLE'], $_SESSION['ulogin']['id']);
+//            }
 
+            self::$CATEGORY = R::findAll('category', 'ORDER by `countshop` DESC');
+
+            self::$CATEGORYcoupon = R::findAll('categorycoupons', 'ORDER by `count` DESC');
 
 
         }
@@ -104,134 +109,36 @@ abstract class Model
 
 
 
-    public function checkbalance($table) {
-        $balnow = R::load($table, $_SESSION['ulogin']['id']);
-        return $balnow['balance'];
+
+
+    public static function getCategory($limit = ""){
+
+        if (!$limit) return self::$CATEGORY;
+
+	    $categorylimit = self::$CATEGORY;
+
+            $i = 0;
+	        foreach ($categorylimit as $key=>$value ){
+                $i++;
+                if ($i > $limit) unset($categorylimit[$key]);
+            }
+
+
+        return $categorylimit;
     }
 
-    public function allcontact($iduser) {
-        $mass = R::find("contact", "WHERE users_id = ?", [$iduser]);
-        return $mass;
-    }
-
-    public function allresult($iduser) {
-        $mass = R::find("result", "WHERE users_id = ?", [$iduser]);
-        return $mass;
-    }
-
-
-
-    public function addbalanceuser($user, $summa, $comment = ""){
-
-        $user->bal = $user->bal + $summa;
-        R::store($user);
-
-        //Зачислить в баланслог
-        $balancelog = [
-            'users_id' => $user['id'],
-            'date' => date("Y-m-d H:i:s"),
-            'sum' => $summa,
-            'comment' => $comment,
-            'type' => "debet",
-            'status' => 1,
-        ];
-        $this->addnewBD("balancelog", $balancelog);
-        //Зачислить в баланслог
-
-        return true;
-    }
-
-
-    public function spisaniebalanceuser($user, $summa, $comment = ""){
-
-        $user->bal = $user->bal - $summa;
-        R::store($user);
-
-        //Зачислить в баланслог
-        $balancelog = [
-            'users_id' => $user['id'],
-            'date' => date("Y-m-d H:i:s"),
-            'sum' => $summa,
-            'comment' => $comment,
-            'type' => "credit",
-            'status' => 1
-        ];
-        $this->addnewBD("balancelog", $balancelog);
-        //Зачислить в баланслог
-
-        return true;
-    }
-
-
-    public static function getBal(){
-
-	    return self::$USER['bal'];
+    public static function countShops(){
+	    return R::count("companies");;
     }
 
 
 
-    public static function contact($id, $type = "company") {
-
-	    if ($type == "company") $mass = R::findAll("contact", "WHERE company_id = ?", [$id]);
-        if ($type == "user") $mass = R::findAll("contact", "WHERE users_id = ?", [$id]);
-
-
-        $contact['all'] = '0';
-        $contact['free'] = '0';
-        $contact['ready'] = '0';
-        $contact['perezvon'] = '0';
-        $contact['otkaz'] = '0';
-        $contact['bezdostupa'] = '0';
-        $contact['moderate'] = '0';
-        $contact['dorabotka'] = '0';
-        $contact['today'] = '0';
-        foreach ($mass as  $val) {
-            $contact['all']++;
-            if ($val['status'] == 0 ) $contact['free']++;
-            if ($val['status'] == 2 ) $contact['perezvon']++;
-            if ($val['status'] == 3 ) $contact['otkaz']++;
-            if ($val['status'] == 4 ) $contact['bezdostupa']++;
-            if ($val['status'] == 5 ) $contact['moderate']++;
-            if ($val['status'] == 6 ) $contact['dorabotka']++;
-            if ($val['datacall'] == date("Y-m-d") ) $contact['today']++;
-        }
-        return $contact;
-
-    }
-    public static function getres($id, $type = "company") {
-        if ($type == "company")  $mass = R::findAll("result", "WHERE company_id = ?", [$id]);
-        if ($type == "user")  $mass = R::findAll("result", "WHERE users_id = ?", [$id]);
 
 
 
-        $result['all'] = '0';
-        $result['moderation'] = '0';
-        $result['dorabotka'] = '0';
-        $result['today'] = '0';
-
-        foreach ($mass as $val) {
-            if ($val['status'] == 1 ) $result['all']++;
-            if ($val['status'] == 0 ) $result['moderation']++;
-            if ($val['date'] == date("Y-m-d") and $val['status'] == 1  ) $result['today']++;
-            if ($val['status'] == 3 ) $result['dorabotka']++;
-
-        }
-        return $result;
-    }
 
 
 
-    public function allzapis($id, $type = "company") {
-
-        if ($type == "company")  $allrecord = R::find( 'records' , 'WHERE  company_id = ?', [$id] );
-        if ($type == "user")  $allrecord = R::find( 'records' , 'WHERE  users_id = ?', [$id] );
-
-        $MASS = [];
-        foreach ($allrecord as $key=>$val){
-            $MASS[$val['contact_id']] = $val;
-        }
-        return $MASS;
-    }
 
 
     public function myresize($url, $weight, $height ){
@@ -276,7 +183,6 @@ abstract class Model
         }
 
 
-
         if ($needtype == "horizont"){
             imagecopyresampled($image_p, $src, 0, 0, 0, 0, $weight, $height, $w_src, $h_src);
         }
@@ -291,34 +197,70 @@ abstract class Model
         return true;
 
 
+    }
 
 
 
 
+    public static function LoadCustomCompany($id) {
+        return R::load("companies", $id);
+    }
+
+
+    public static function GenerateBanner($PARAMS){
+        $result = false;
+
+
+
+
+        // forma = форма
+        // type = случный или по CTR
+
+        // horizont
+        // vertikal
+        // kvadrat
+
+
+        $BANNERS = $PARAMS['company']->withCondition(' `forma` = "'.$PARAMS['forma'].'" ORDER BY `views` DESC')->ownBannersList;
+
+
+        // Фильтр на размеры. Баннер не должен быть в 2 раза больше требуемых размеров
+        foreach ($BANNERS as $key=>$val){
+          $validate = validatebanner(['w' => $PARAMS['wn'], 'h' => $PARAMS['hn']], ['w' => $val['size_width'], 'h' =>$val['size_height'] ]);
+          if ($validate == false) unset ($BANNERS[$key]);
+        }
+
+
+
+        // Если баннера не найдено, то выдаем заглушку
+        if (count($BANNERS) == 0){
+            	    $result['img'] = "/upload/banners/876398banner.jpg";
+            	    $result['link'] = "http://pafutos.com/g/notce9obzb88fe65ef3a4b9351d46e/";
+            return $result;
+        }
+
+
+        // Перемешиваем массив
+        shuffle($BANNERS);
+
+        $Banner = array_shift($BANNERS);
+
+        $Banner->views = $Banner->views+1;
+        R::store($Banner);
+
+        $result['img'] = $Banner['pictureurl'];
+        $result['link'] = $Banner['direct_link'];
+
+        return $result;
 
     }
 
 
 
 
-
-    public function  changeavatar ($url){
-        $user = R::load("users", $_SESSION['ulogin']['id']);
-        $user->avatar = $url;
-        R::store($user);
-        return true;
+    public static function LoadCompany($id) {
+        return R::load("companies", $id);
     }
-
-
-    public function  changelogo ($url, $company){
-
-        if ($company['logo'] != BASELOGO) unlink(WWW.$company['logo']);
-        $company->logo = $url;
-        R::store($company);
-        return true;
-    }
-
-
 
 
     public static function addnewBD($table, $DATA) {
@@ -381,72 +323,12 @@ abstract class Model
 
 
 
-    public static function online (){
-
-        if ($_SESSION['ulogin']) $user = $_SESSION['ulogin']['username'];
-        else $user = "guest";
-
-
-        if ($user != "guset"){
-
-            $online = R::findOne("online", "WHERE user = ?", [$user]);
-            if ($online){
-                $online->timestamp = time();
-                R::store($online);
-                return true;
-            }
-
-        }
-
-        if ($user == "guest"){
-            $online = R::findOne("online", "WHERE ip = ?", [$_SERVER['REMOTE_ADDR']]);
-            if ($online) {
-                $online->timestamp = time();
-                R::store($online);
-                return true;
-            }
-        }
-
-
-        $MASSREG = [
-            'user' => $user,
-            'ipu' => $_SERVER['REMOTE_ADDR'],
-            'timestamp' => time(),
-        ];
-
-
-        self::addnewBD("online", $MASSREG);
-
-
-        return true;
 
 
 
 
-    }
-
-    public static function countonline(){
-	    return  R::count('online') +1;
-    }
-
-
-    public static function countnewmessages(){
-        return  R::count('dialog', "WHERE uvedomlenie =?", [$_SESSION['ulogin']['id']]);
-    }
 
 
 
-    public static function countoperator(){
-        return  R::count('users', "WHERE role=?", ["O"]);
-    }
-
-
-    public static function countrekl(){
-        return  R::count('users', "WHERE role=?", ["R"]);
-    }
-
-
-
-	//ОТПРАВКА E - MAIL
 }
 ?>

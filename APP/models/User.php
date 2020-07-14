@@ -151,9 +151,6 @@ class User extends \APP\core\base\Model
         //Проверяем рефку
 		if(empty($_SESSION['confirm']['ref'])) $_SESSION['confirm']['ref'] = NULL;
 
-		// Проверяем РОЛЬ
-       $role = ($_SESSION['confirm']['role'] == "R") ? "R" : "O";
-
 
 //       $avatar = "/assets/oper1.jpg"; //Выставляем базовый аватар в зависимости от роли
 
@@ -167,10 +164,6 @@ class User extends \APP\core\base\Model
 	    	'ref' => $_SESSION['confirm']['ref'],
 	    	'datareg' => date("Y-m-d H:i:s"),
             'avatar' => BASEAVATAR, // Расположение базового аватара
-            'nnews' => 1, // Уведомления почтовые
-            'nmessages' => 1, // Уведомления почтовые
-            'role' => $role, //Роль
-            'bal' => 0, //Баланс
             'code' => $_SESSION['confirm']['code'],
 
 		];

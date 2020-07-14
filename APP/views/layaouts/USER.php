@@ -41,25 +41,13 @@
 <!-- Main navbar -->
 <div class="navbar navbar-expand-md navbar-dark">
 
-    <?php if (empty($_SESSION['ulogin'])):?>
+
         <a href="/" class="navbar-nav-link " >
             <b><?=APPNAME?></b>
         </a>
 
-    <?endif; ?>
-
-    <?php if (!empty($_SESSION['ulogin'])):?>
-    <a href="/panel/" class="navbar-nav-link " >
-        <!--        <img src="/global_assets/images/dribbble.png" class="align-top mr-2 rounded" width="20" height="20" alt="">-->
-        <b><?=APPNAME?> </b>   <?= ($_SESSION['ulogin']['role'] == "O") ? '<span class="badge-secondary">Кабинет ОПЕРАТОРА</span>' : ' <span class="badge-secondary">Кабинет РЕКЛАМОДАТЕЛЯ</span>'?>
-    </a>
-
-        <span class="navbar-text ml-xl-3">
-   Пользователей онлайн:  <span class="badge bg-success"><b><?= \APP\core\base\Model::countonline()?></b></span>
-        </span>
 
 
-    <?php endif;?>
 
 
 
@@ -90,35 +78,6 @@
             <a href="/user/register/" type="button" class="btn bg-teal-400"><i class="icon-user-plus mr-2"></i> Регистрация</a>
             <a href="/user/" type="button" class="btn btn-success"><i class="icon-circle-right2 mr-2"></i> Войти</a>
             <?php endif;?>
-
-            <?php if (!empty($_SESSION['ulogin'])):?>
-            <li class="nav-item dropdown">
-                <a href="/panel/dialog/" class="navbar-nav-link dropdown-toggle caret-0">
-                    <i class="icon-bubbles4"></i>
-                    <span class="d-md-none ml-2">Сообщения</span>
-                    <span class="badge badge-pill bg-warning-400 ml-auto ml-md-0"><?= \APP\core\base\Model::countnewmessages()?></span>
-                </a>
-
-            </li>
-            <li class="nav-item dropdown dropdown-user">
-                <a href="/panel/profile/" class="navbar-nav-link d-flex align-items-center dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                    <img src="<?=$_SESSION['ulogin']['avatar']?>" class="rounded-circle mr-2" height="34" alt="">
-                    <span><?=$_SESSION['ulogin']['username']?></span>
-                </a>
-
-                <div class="dropdown-menu dropdown-menu-right">
-                    <a href="/panel/balance/" class="dropdown-item"><i class="icon-wallet"></i> Баланс  &nbsp;<span class="badge badge-success"><b><?=$_SESSION['ulogin']['bal']?></b> Р.</span></a>
-                    <a href="/panel/profile/" class="dropdown-item"><i class="icon-user-plus"></i> Мой профиль</a>
-                    <a href="/panel/refferal/" class="dropdown-item"><i class="icon-cash"></i> Партнерскся программа</a>
-
-                    <a href="/panel/faq/" class="dropdown-item"><i class="icon-question3"></i> F.A.Q</a>
-
-                    <div class="dropdown-divider"></div>
-                    <a href="/panel/settings/" class="dropdown-item"><i class="icon-cog5"></i> Настройки аккаунта</a>
-                    <a href="/user/logout/" class="dropdown-item"><i class="icon-switch2"></i> Выход</a>
-                </div>
-            </li>
-            <?endif;?>
 
 
         </li>

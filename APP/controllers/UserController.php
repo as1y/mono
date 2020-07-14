@@ -1,9 +1,8 @@
 <?php
 namespace APP\controllers;
-use APP\core\Mail;
+use APP\core\PHPM;
 use APP\models\User;
-use APP\core\base\Model;
-use APP\models\Panel;
+
 
 class UserController extends AppController
 {
@@ -26,13 +25,9 @@ class UserController extends AppController
         $BREADCRUMBS['DATA'][] = ['Label' => "Регистрация пользователя"];
 
 
-
-
         $ASSETS[] = ["js" => "/global_assets/js/plugins/forms/styling/uniform.min.js"];
-
         $ASSETS[] = ["js" => "/global_assets/js/plugins/forms/styling/switchery.min.js"];
         $ASSETS[] = ["js" => "/global_assets/js/plugins/forms/styling/switch.min.js"];
-
         $ASSETS[] = ["js" => "/global_assets/js/plugins/forms/validation/validate.min.js"];
         $ASSETS[] = ["js" => "/global_assets/js/plugins/forms/styling/uniform.min.js"];
         $ASSETS[] = ["js" => "/assets/js/login_validation.js"];
@@ -50,6 +45,7 @@ class UserController extends AppController
 
               $validate =  $user->validateregistration($_POST);
 
+
             if(!$validate || !$user->checkUniq(CONFIG['USERTABLE'], $_POST['email'] ))
             {
                 $user->getErrorsVali(); //Записываем ошибки в сессию
@@ -59,16 +55,17 @@ class UserController extends AppController
 
             $passorig = $_POST['password'];
             $_POST['password'] = password_hash($_POST['password'], PASSWORD_DEFAULT); // Хеш пароля
-
             $_SESSION['confirm'] = $_POST; //Базовые параметры
             //Доп. Параметры в сессию
             $_SESSION['confirm']['code'] = $code = random_str(20); //Код подтверждения
-
             if(isset($_COOKIE['ref'])) $_SESSION['confirm']['ref'] = $_COOKIE['ref']; //ID реферала
             //Доп. Параметры в сессию
+            //Доп. Параметры в сессию
+
+
 
             // Отправка на почту кода подтверждения
-            Mail::sendMail("code",'Подтверждение E-MAIL в '.APPNAME.' '.CONFIG['NAME'],null,['to' => [['email' =>$_POST['email']]]]);
+          //  PHPM::sendMail("code",'Подтверждение регистрации на '.APPNAME.'',null,$_POST['email']);
 
 
 
@@ -131,8 +128,7 @@ class UserController extends AppController
 			if($user->login(CONFIG['USERTABLE'])){
 				//АВТОРИЗАЦИЯ
 
-                if ($_SESSION['ulogin']['role'] == "R") redir('/master/');
-                if ($_SESSION['ulogin']['role'] == "O") redir('/operator/');
+                redir('/panel/');
 
 
 				//АВТОРИЗАЦИЯ
@@ -255,7 +251,7 @@ class UserController extends AppController
 				if($user->checkemail(CONFIG['USERTABLE'], $_POST['email'])){
 					$_SESSION['confirm']['recode'] = random_str(20);
 					$_SESSION['confirm']['remail'] = $_POST['email'];
-                    Mail::sendMail("resetpassword",' Сборс пароля в '.CONFIG['NAME'],null,['to' => [['email' =>$_POST['email']]]]);
+                    PHPM::sendMail("resetpassword",' Сборс пароля в '.CONFIG['NAME'],null, $_POST['reminder-email']);
 
                     $_SESSION['success'] = "Код для сброса пароля отправлен на почту. ";
 
@@ -312,7 +308,7 @@ class UserController extends AppController
 				if(!empty($newpass))
 				{
 					$_SESSION['confirm']['newpass'] = $newpass;
-                    Mail::sendMail("newpass",  'Ваш новый пароль в '.CONFIG['NAME'],null,['to' => [['email' =>$_SESSION['confirm']['remail']]]]);
+                    PHPM::sendMail("newpass",  'Ваш новый пароль в '.CONFIG['NAME'],null,$_SESSION['confirm']['remail']);
 					$_SESSION = array();
 
                     $_SESSION['success'] = "Новый пароль <b>".$newpass."</b> отправлен на почту!";

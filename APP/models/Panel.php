@@ -5,574 +5,860 @@ use RedBeanPHP\R;
 
 class Panel extends \APP\core\base\Model {
 
+    public $cliend_id = "kvR0vxe27QCLAyr8imr1ljuPL2yhpD";
+    public $client_secret = "WWfPYEd9rcRgFr8MmLNVSE1KFtRB8x";
+    public $wID ="1495066";
+
+    public function AuthAdmitad(){
+
+
+        $url = API."/token/";
+        $type = "POST";
+        $headers = [
+            'Content-Type: application/x-www-form-urlencoded',
+            'Authorization: Basic ' . base64_encode( $this->cliend_id . ':' . $this->client_secret )
+        ];
+        $PARAMS = [
+            "grant_type" => "client_credentials",
+            "client_id" => $this->cliend_id,
+            "scope" => "advcampaigns_for_website coupons_for_website deeplink_generator public_data banners_for_website"
+        ];
+        $PARAMS = http_build_query($PARAMS);
+
+
+        $result = fCURL($url, [$type => $PARAMS], $headers);
+
+        return $result['access_token'];
+
+
+    }
 
 
 
-    public function invoicesuccess($id){
-        $invoice = R::load("invoice", $id);
+    public function WorkWithBanners($token){
 
-        if ($invoice['status'] == 0){
+        $companies = R::findAll('companies', "ORDER BY rand() LIMIT 20 ", [NULL]);
 
-            $user = R::load(CONFIG['USERTABLE'], $invoice['users_id']);
-            $this->addbalanceuser($user, $invoice['summa'], "Пополнение баланса через ".$invoice['paymethod'] );
-            $invoice->status = 1;
-            R::store($invoice);
-
+        foreach ($companies as $key=>$company){
+            $banners = $this->loadBanners($token, $company['idadmi']);
+            $this->addBannersinBD($banners, $company);
         }
-        return true;
-    }
 
 
 
-    public  function addpathinvoice($id, $path){
-
-        $invoice = R::load("invoice", $id);
-        $invoice->path = $path;
-        R::store($invoice);
-
-    }
-
-
-
-
-
-    public function deleteinvoice($id, $invoice){
-        unlink(WWW.$invoice[$id]['path']);
-        return   R::trash( $invoice[$id]);
-    }
-
-    public function getsobesednik($idu){
-
-
-        $sobesednik = R::findOne("users", "WHERE id = ?" , [$idu]);
-        return $sobesednik;
-
-
-    }
-
-    public function clearuvedmolenie($dialog){
-        if ($dialog->uvedomlenie == $_SESSION['ulogin']['id']){
-            $dialog->uvedomlenie = NULL;
-            R::store($dialog);
-        }
         return true;
 
     }
 
 
 
+    public function addBannersinBD($banners, $company){
 
-    public function checkdialog($idu){
+        $RS = [];
+        $BannersList = [];
 
-
-        $sobesednik = R::findOne("dialog", "WHERE p1 = ? AND p2 = ?" , [$idu, $_SESSION['ulogin']['id']]);
-        if ($sobesednik) return $sobesednik;
-
-        $sobesednik2 = R::findOne("dialog", "WHERE p1 = ? AND p2 =?" , [$_SESSION['ulogin']['id'], $idu]);
-        if ($sobesednik2) return $sobesednik2;
-
-        return false;
-
-    }
-
-
-    public function deletedialog($idd){
-
-        $dialog = R::load("dialog", $idd);
-        if ($dialog)  R::trash($dialog);
-
-
-        return true;
-    }
-
-
-    public function getdialogsinfo(){
-
-
-        // Раскладка инвойсов
-        $dialogs = [];
-
-        $dialog1 = R::findAll("dialog", "WHERE p1 = ?", [$_SESSION['ulogin']['id']]);
-
-        foreach ($dialog1 as $key=>$val) {
-            if ($val['messages'] != NULL) $dialogs[] = $val;
-
+        // Берем баннера которые уже есть в БД
+        $BannersinBD = R::findAll("banners", "WHERE companies_id = ?" , [$company['id']]);
+        foreach ($BannersinBD as $key=>$val){
+            $RS[$val['idadmi']] = 1;
         }
+        // Берем баннера которые уже есть в БД
 
-        $dialog2 = R::findAll("dialog", "WHERE p2 = ?", [$_SESSION['ulogin']['id']]);
-        foreach ($dialog2 as $key=>$val) {
-            if ($val['messages'] != NULL) $dialogs[] = $val;
-        }
+                foreach ($banners as $key => $banner){
 
-
-
-        return $dialogs;
+                    // Берем ID баннеров которые в Адмитаде
+                    $BannersList[$banner['id']] = 1;
+                    // Берем ID баннеров которые в Адмитаде
 
 
-    }
+                  if (!empty($RS[$banner['id']])) {
+                      echo "Баннер уже добавлен".$banner['id']." уже добавлена. <br>";
+                        continue;
+                 }
 
 
+                    // Копируем баннер себе
+                    $extension = getExtension($banner['banner_image_url']);
+                    $picture = '/upload/banners/'.$banner['id'].'banner.'.$extension;
+                    file_put_contents(WWW.$picture, file_get_contents($banner['banner_image_url']));
+                    // Копируем баннер себе
+
+                    $forma = getsizetypeimage($banner['size_width'], $banner['size_height']);
 
 
-    public function getoperators($limit = 100){
-        $operators = R::findALL("users", "WHERE role = ? AND aboutme != '' ORDER BY `datareg` DESC  LIMIT ".$limit." ", ["O"]);
-        return $operators;
-    }
+                    $bannerbd = R::dispense("banners");
+                    $bannerbd->idadmi = $banner['id'];
+                    $bannerbd->type = $banner['type'];
+                    $bannerbd->pictureurl = $banner['banner_image_url'];
+                    $bannerbd->direct_link = $banner['direct_link'];
+                    $bannerbd->size_width = $banner['size_width'];
+                    $bannerbd->size_height = $banner['size_height'];
+                    $bannerbd->forma = $forma;
+                    $bannerbd->views = 0;
+
+                    $company->ownBannerList[] = $bannerbd;
+
+                    echo "<b>Баннер ".$banner['name']." добавлен </b>  <br>";
+                    R::store($company);
 
 
-    public function createviplata($DATA){
-
-        self::$USER->bal = self::$USER->bal - $DATA['summa'];
-        R::store(self::$USER);
-
-        $DATA = [
-            'users_id' => $_SESSION['ulogin']['id'],
-            'date' => date("Y-m-d H:i:s"),
-            'sum' => $DATA['summa'],
-            'comment' => "Вывод средств на <b>".$DATA['sposob']."<b>",
-            'type' => "credit",
-            'status' => 0,
-            'method' => $DATA['sposob'],
-            ];
-
-        $this->addnewBD("balancelog", $DATA);
+                }
 
 
+        // Если баннер есть в БД, но нет в Адмитаде. То удаляем файл из БД
+        foreach ($RS as $key=>$val){
+            if (empty($BannersList[$key])) {
 
-        return true;
-    }
-
-
-
-    public function balancelog(){
-        $balancelog = R::findAll("balancelog", "WHERE users_id = ?" , [ $_SESSION['ulogin']['id'] ]);
-        return $balancelog;
-    }
-
-    public function invoicelog(){
-        $invoicelog = R::findAll("invoice", "WHERE users_id = ?" , [ $_SESSION['ulogin']['id'] ]);
-        return $invoicelog;
-    }
+                R::trash("banners", $val);
+                echo "<font color='red'> Баннер ".$key." есть в БД, но нет в Адмитаде!!! </font> <br>  ";
 
 
-
-    public function addrequis($DATA){
-
-        if (!empty($DATA['qiwi'])){
-            $requis = json_decode(self::$USER->requis, true);
-            $requis['qiwi'] = $DATA['qiwi'];
-            $requis = json_encode($requis, true);
-            self::$USER->requis = $requis;
-        }
-
-        if (!empty($DATA['yamoney'])){
-            $requis = json_decode(self::$USER->requis, true);
-            $requis['yamoney'] = $DATA['yamoney'];
-            $requis = json_encode($requis, true);
-            self::$USER->requis = $requis;
-        }
-
-
-        if (!empty($DATA['card'])){
-            $requis = json_decode(self::$USER->requis, true);
-            $requis['card'] = $DATA['card'];
-            $requis = json_encode($requis, true);
-            self::$USER->requis = $requis;
+            }
         }
 
 
 
-        R::store(self::$USER);
-
-        return true;
-    }
 
 
-
-
-
-    public function getrefferals(){
-        $allref = R::findAll('users', 'WHERE ref = ?', [$_SESSION['ulogin']['id']]);
-        return $allref;
-    }
-
-
-
-
-
-
-
-    public function  saverecord ($name){
-
-
-        $user = R::load("users", $_SESSION['ulogin']['id']);
-        $user->audio = $name;
-        R::store($user);
-        return true;
 
     }
 
 
+    public function loadBanners($token, $cid){
 
-    public function  resetrecord (){
+        $url = API."/banners/".$cid."/website/".$this->wID."/";
+        $type = "GET";
+        $limit = 100;
 
-        unlink(AudioUploadPath.$_SESSION['ulogin']['audio']);
+        $headers = array(
+            'Content-Type: application/x-www-form-urlencoded',
+            'Authorization: Bearer ' . $token
+        );
 
-        $user = R::load("users", $_SESSION['ulogin']['id']);
-        $user->audio = NULL;
-        R::store($user);
-        $_SESSION['ulogin']['audio'] = NULL;
-
-        return true;
-
-    }
-
-
-    public function getdialog($idd){
-        $dialog = R::findOne("dialog", "WHERE id = ? " , [$idd]);
-        return $dialog;
-    }
-
-
-    public static function lookingsobesednik($dialog){
-        $sobesednikid = ($_SESSION['ulogin']['id'] != $dialog['p1']) ? $dialog['p1'] : $dialog['p2'];
-        $sobesednik = R::findOne("users", "WHERE id = ?" , [$sobesednikid]);
-        return $sobesednik;
-
-    }
-
-
-
-
-    public function addmessage($DATA, $idd){
-
-        $dialog = R::findOne("dialog", "WHERE id = ?" , [$idd]);
-
-        // Валидация
-        if (!$dialog) return "Ошибка в ID диалога1";
-        if ($dialog['p1'] != $_SESSION['ulogin']['id'] && $dialog['p2'] != $_SESSION['ulogin']['id']) return "Ошибка в ID диалога2";
-        if (!empty(pole_valid($DATA['enter-message'], "s", 50)['error']))  return pole_valid($DATA['enter-message'], "s", 50)['error'];
-
-
-
-
-        $sendnotice = ($dialog['p1'] == $_SESSION['ulogin']['id']) ? $dialog['p2']: $dialog['p1']; //ID чувака кому нужно уведомление
-
-
-        $messages = json_decode($dialog->messages,TRUE);
-        $messages[] = ["author" => $_SESSION['ulogin']['id'] , "message" => $DATA['enter-message'], "date" => date("H:s:m")];
-
-        $messages = json_encode($messages, true);
-        $dialog->messages = $messages;
-        $dialog->uvedomlenie = $sendnotice;
-        $dialog->zagolovok = obrezanie($DATA['enter-message'], 20);
-
-        R::store($dialog);
-
-        $komyuser = R::Load("users", $sendnotice);
-        $USN = [
-            'user' => $komyuser['username'],
+        $PARAMS = [
+            'limit' => $limit,
+            'offset' => 0
         ];
 
-        if ($komyuser['nmessages'] == 1)
-        Mail::sendMail("message", "Новое сообщение на ".CONFIG['NAME'], $USN, ['to' => [['email' =>$komyuser['email']]]] );
+
+        $result = fCURL($url, [$type => $PARAMS], $headers);
+
+        $nadozagruzok = ceil($result['_meta']['count']/$result['_meta']['limit'])-1;
+
+        if ($nadozagruzok == 0)  return $result['results'];
 
 
-        return true;
+        for ($i = 1; $i <= $nadozagruzok; $i++) {
+
+            $offset = $i*$limit;
+            //  echo "Загружаем $i ... $offset<br><hr>";
+
+            $PARAMS = [
+                'limit' => $limit,
+                'offset' => $offset
+            ];
+            $add = fCURL($url, [$type => $PARAMS], $headers);
+
+            if( isset( $result['error'] ) && $result['error'] == 'invalid_token' ){
+                $token = $this->AuthAdmitad();
+                return $this->loadBanners($token);
+            }
+            $result['results'] = array_merge($result['results'], $add['results']);
+
+        }
+
+        return $result['results'];
+
+
+
+
+
+    }
+
+
+    public function getContentCategory($url){
+        return R::findOne('category', 'url = ?',[$url]);
+    }
+
+    public function getContentShop($url){
+        return R::findOne('companies', 'uri = ?',[$url]);
+    }
+
+
+    public function getCompanies($PARAMS){
+
+        if (!empty($PARAMS['custom'])){
+            return R::loadAll('companies', $PARAMS['custom']);
+        }
+
+        if ($PARAMS['sort'] == "random"){
+            $result =  R::findAll('companies', "ORDER BY rand()  LIMIT ".$PARAMS['limit']);
+            return $result;
+        }
+
+//      $result =  R::findAll('companies', "ORDER BY `".$PARAMS['sort']."` DESC LIMIT ".$PARAMS['limit']);
+
+      $result =  R::findAll('companies', "LIMIT ".$PARAMS['limit']);
+
+        return $result;
+
+    }
+
+
+
+    public function LoadallCategories($idcat){
+        if (!empty($idcat)) self::$CATEGORYcoupon[$idcat]['select'] = 1;
+
+        return self::$CATEGORYcoupon;
+    }
+
+    public function LoadCategoriesSimple($coupons, $idcat){
+
+        foreach ($coupons as $key=>$coupon){
+            $masscate = json_decode($coupon['category'],  true);
+            foreach ($masscate as $val){
+                $categoryARR[$val] = true;
+            }
+        }
+
+
+        if (!empty($idcat) && !is_array($idcat))  $categoryARR[$idcat] = "alias";
+
+        // Определение доступных категорий
+
+
+        // Загрузка описаний категорий
+        foreach (self::$CATEGORYcoupon as $key=>$category){
+            // Ставим Алисас
+
+        if ( !empty($categoryARR[$key]) && $categoryARR[$key] === "alias") self::$CATEGORYcoupon[$key]['select'] = 1;
+
+            // Убираем категории которых нет в массиве отобранном
+            if (!array_key_exists($category['id'], $categoryARR)) unset (self::$CATEGORYcoupon[$key]);
+
+        }
+
+
+        return self::$CATEGORYcoupon;
+
+
+
+    }
+
+
+    public function LoadAllCompanies($idbrand){
+
+        $compARR = [];
+            $companies = R::findAll('companies');
+
+        foreach ($companies as $key=>$company){
+
+            $compARR[$key]['url'] = $company['uri'];
+            $compARR[$key]['name'] = $company['name'];
+            $compARR[$key]['count'] = $company->countOwn("coupons");
+            if ($key == $idbrand) {
+                $compARR[$key]['select'] = 1;
+                $temp = $compARR[$key];
+                unset($compARR[$key]);
+                array_unshift ($compARR,$temp );
+            };
+
+
+        }
+
+        return $compARR;
+    }
+
+    public function LoadCompanies($coupons, $idbrand){
+
+        $compARR = [];
+
+        foreach ($coupons as $key=>$coupon){
+           if (array_key_exists($coupon['companies_id'], $compARR)) {
+               $compARR[$coupon['companies_id']]['count']++;
+           }
+            if (!array_key_exists($coupon['companies_id'], $compARR)){
+
+                if ($coupon->companies->id == $idbrand ) $compARR[$coupon['companies_id']]['select'] = 1;
+                $compARR[$coupon['companies_id']]['count'] = 1;
+                $compARR[$coupon['companies_id']]['url'] = $coupon->companies->uri;
+                $compARR[$coupon['companies_id']]['name'] = $coupon->companies->name;
+            }
+        }
+
+
+
+        return $compARR;
+
+    }
+
+    public function getContentCoupons($PARAMS){
+
+        if ($PARAMS['sort'] == "time"){
+            $result =  R::findAll('coupons', "WHERE `dateend` != '' ORDER BY `dateend` ASC  LIMIT ".$PARAMS['limit']);
+            return $result;
+        }
+
+        if ($PARAMS['sort'] == "used"){
+            $result =  R::findAll('coupons', "ORDER BY `".$PARAMS['sort']."` DESC  LIMIT ".$PARAMS['limit']);
+            return $result;
+        }
 
 
     }
 
 
 
-
-    public function generatePayeerform($DATA, $invoiceid){
-
-        $form = [];
+    public function getAllCoupons($FILTER = []){
 
 
-        $m_shop = '1009839670';
-        $m_orderid = $invoiceid;
-        $m_amount = number_format($DATA['summa'], 2, '.', '');
-        $m_curr = 'RUB';
-        $m_desc = base64_encode('Счет №'.$invoiceid.' - Пополнение баланса в сервисе '.APPNAME);
-        $m_key = 'XvmQQSVbf8aV';
+        $SORT = "";
 
-        $arHash = array(
-            $m_shop,
-            $m_orderid,
-            $m_amount,
-            $m_curr,
-            $m_desc
+
+        if ($FILTER['ORDERBY'] && $FILTER['ORDERBY'] == true) $SORT = "ORDER BY `views` DESC";
+
+
+            if ($FILTER['GET'] && $FILTER['GET']['filter'] == "promocode"){
+                return R::findAll('coupons', "WHERE `companyid` = ? AND `species` = ? ".$SORT, [$idcompany, "promocode"]);
+            }
+
+        if ($FILTER['GET'] && $FILTER['GET']['filter'] == "action"){
+            return R::findAll('coupons', "WHERE `companyid` = ? AND `species` = ? ".$SORT, [$idcompany, "action"]);
+        }
+
+
+
+
+
+        return R::findAll('coupons', "WHERE companyid = ? ".$SORT, [$idcompany]);
+
+
+    }
+
+
+
+    public function getDeepLink($token, $cid, $ulp){
+
+
+        $url = API."/deeplink/".$this->wID."/advcampaign/".$cid."/";
+        $type = "GET";
+
+
+        $headers = array(
+            'Content-Type: application/x-www-form-urlencoded',
+            'Authorization: Bearer ' . $token
         );
 
 
+        $PARAMS = [
+            'ulp' => $ulp,
+        ];
 
-        $arHash[] = $m_key;
-        $sign = strtoupper(hash('sha256', implode(':', $arHash)));
+        return fCURL($url, [$type => $PARAMS], $headers)[0];
 
-
-
-
-        $form['action'] = 'https://payeer.com/merchant/';
-        $form['input'][] = ['type' => 'hidden', 'name' => 'm_shop', 'value' => $m_shop];
-        $form['input'][] = ['type' => 'hidden', 'name' => 'm_orderid', 'value' => $m_orderid];
-        $form['input'][] = ['type' => 'hidden', 'name' => 'm_amount', 'value' => $m_amount];
-        $form['input'][] = ['type' => 'hidden', 'name' => 'm_curr', 'value' => $m_curr];
-        $form['input'][] = ['type' => 'hidden', 'name' => 'm_desc', 'value' => $m_desc];
-        $form['input'][] = ['type' => 'hidden', 'name' => 'm_sign', 'value' => $sign];
-//        $form['input'][] = ['type' => 'submit', 'm_process' => 'm_sign', 'value' => 'send'];
-
-
-//        $form['input'][] = ['type' => 'hidden', 'name' => 'm_params', 'value' => $m_params];
-
-        return $form;
 
     }
 
 
 
 
+    public function getPrograms($token){
+        $url = API."/advcampaigns/website/".$this->wID."/";
+        $type = "GET";
+        $limit = 100;
+
+        $headers = array(
+            'Content-Type: application/x-www-form-urlencoded',
+            'Authorization: Bearer ' . $token
+        );
+
+        $PARAMS = [
+            'limit' => $limit,
+            'offset' => 0
+        ];
+
+        $result = fCURL($url, [$type => $PARAMS], $headers);
+
+        if( isset( $result['error'] ) && $result['error'] == 'invalid_token' ){
+            $token = $this->AuthAdmitad();
+            return $this->getPrograms($token);
+        }
+
+        $nadozagruzok = ceil($result['_meta']['count']/$result['_meta']['limit'])-1;
+
+       // echo "Надо добавить еще  ".$nadozagruzok." загрузки <br>";
 
 
-    public function allcompany($idclient)
+
+        if ($nadozagruzok == 0)  return $result['results'];
+
+        // Дозагружаем остальные значения.
+
+        for ($i = 1; $i <= $nadozagruzok; $i++) {
+
+            $offset = $i*$limit;
+          //  echo "Загружаем $i ... $offset<br><hr>";
+
+            $PARAMS = [
+                'limit' => $limit,
+                'offset' => $offset
+            ];
+            $add = fCURL($url, [$type => $PARAMS], $headers);
+
+            if( isset( $result['error'] ) && $result['error'] == 'invalid_token' ){
+                $token = $this->AuthAdmitad();
+                return $this->getPrograms($token);
+            }
+            $result['results'] = array_merge($result['results'], $add['results']);
+
+        }
+
+        return $result['results'];
+
+
+
+
+
+    }
+
+
+    public function LoadCustomCupons($ARR) {
+        return R::loadAll("coupons", $ARR);
+    }
+
+
+    public function FindIdCategoryCoupon($url) {
+        return R::findOne('categorycoupons', 'WHERE url =?', [$url])['id'];
+    }
+
+    public function LoadCategoryCoupon($url) {
+        return R::findOne('categorycoupons', 'WHERE url =?', [$url])['id'];
+    }
+
+
+    public function FindIdBrandCoupon($url) {
+
+        $mbmass = explode(",", $url);
+
+        if ( count($mbmass) > 1){
+
+            $all = R::findAll('companies');
+            foreach ($all as $key=>$value){
+
+                if (in_array ($value['uri'], $mbmass)){
+                    unset($all[$key]);
+                    $result[] = $value['id'];
+                }
+            }
+            $result = implode(",", $result);
+            return $result;
+
+        }
+
+        return R::findOne('companies', 'WHERE `uri` =?', [$url])['id'];
+
+    }
+
+
+    public function FilterCoupons($ARR) {
+
+        $WHERE = [];
+
+        // Запрос в таблицу coupons
+        if (!empty($ARR['arrBrands'])){
+            $ARR['arrBrands'] = CheckNumericArr($ARR['arrBrands']);
+            $WHERE[] =  "`companies_id` IN (".$ARR['arrBrands'].")";
+        }
+
+
+        if ($ARR['arrType'] == "promocode" || $ARR['arrType'] == "action" ){
+                $WHERE[] =  '`species` = "'.$ARR['arrType'].'" ';
+        }
+
+
+        if (!empty($ARR['arrCategory'])){
+            $WHERE[] =  'JSON_CONTAINS(`category`, JSON_ARRAY("'.$ARR['arrCategory'].'") )';
+        }
+
+        $WHERE = constructWhere($WHERE);
+
+        $result = R::find("coupons", $WHERE);
+
+
+
+       return $result;
+
+    }
+
+
+
+    public function getCoupons($token, $cid){
+        $url = API."/coupons/website/".$this->wID."/";
+        $type = "GET";
+        $limit = 100;
+
+        $headers = array(
+            'Content-Type: application/x-www-form-urlencoded',
+            'Authorization: Bearer ' . $token
+        );
+
+        $PARAMS = [
+            'limit' => $limit,
+            'offset' => 0,
+            'campaign' =>$cid
+        ];
+
+        $result = fCURL($url, [$type => $PARAMS], $headers);
+
+
+
+        if( isset( $result['error'] ) && $result['error'] == 'invalid_token' ){
+            $token = $this->AuthAdmitad();
+            return $this->getCoupons($token);
+        }
+
+        $nadozagruzok = ceil($result['_meta']['count']/$result['_meta']['limit'])-1;
+
+//         echo "Надо добавить еще  ".$nadozagruzok." загрузки <br>";
+
+
+        if ($nadozagruzok == 0)  return $result['results'];
+
+        // Дозагружаем остальные значения.
+
+        for ($i = 1; $i <= $nadozagruzok; $i++) {
+
+            $offset = $i*$limit;
+            //  echo "Загружаем $i ... $offset<br><hr>";
+
+            $PARAMS = [
+                'limit' => $limit,
+                'offset' => $offset
+            ];
+            $add = fCURL($url, [$type => $PARAMS], $headers);
+
+            if( isset( $result['error'] ) && $result['error'] == 'invalid_token' ){
+                $token = $this->AuthAdmitad();
+                return $this->getCoupons($token);
+            }
+            $result['results'] = array_merge($result['results'], $add['results']);
+
+        }
+
+        return $result['results'];
+
+
+
+
+
+    }
+
+
+
+    public function removeFinishCoupon(){
+
+        $allCoupons = R::findAll('coupons');
+
+//        show($allCoupons);
+
+        foreach ($allCoupons as $key=>$val){
+
+            if (!$val['dateend']) continue;
+
+            if  ( getOstatok($val['dateend']) < 0 ) {
+                echo "Купон id ".$val['id']." удален т.к. уже просрочен! <br>";
+                R::trash($allCoupons[$key]);
+
+            }
+
+
+
+
+         }
+
+        return true;
+
+
+    }
+
+
+
+//    public function AddCouponsinBD($coupons, $companies){
+//
+//
+//    }
+
+
+    public function addCoupons($token){
+
+        $companies = R::findAll('companies');
+        //Смотрим все компании
+
+        foreach ($companies as $key=>$company){
+
+            // Получаем список купонов
+            $coupons = $this->getCoupons($token, $company['idadmi']);
+
+            echo "<h1>КУПОНЫ ДЛЯ ".$company['name']."</h1>";
+
+                 foreach ($coupons as $k=>$val){
+
+                     $categories =  extractcategoriesCoupons($val['categories']);
+                     $categories = $this->workcategoriesCoupons($categories);
+                     $categories = json_encode($categories, true);
+
+                     $nalichie = R::count("coupons", "WHERE idadmi = ?" , [$val['id']]);
+
+                     if ($nalichie > 0) {
+                         echo "Купон ".$val['name']." уже добавлен! <br>";
+                         continue;
+                     }
+
+
+                     $framset = (!empty($val['frameset_link'])) ?  $val['frameset_link'] : "";
+
+                     $types = json_encode($val['types'], true);
+
+                     $coupon = R::dispense("coupons");
+                     $coupon->idadmi = $val['id'];
+                     $coupon->name = $val['name'];
+                     $coupon->description = $val['description'];
+                     $coupon->category = $categories;
+                     $coupon->short_name = $val['short_name'];
+                     $coupon->used = 0;
+                     $coupon->species = $val['species'];
+                     $coupon->datestart = $val['date_start'];
+                     $coupon->dateend = $val['date_end'];
+                     $coupon->types = $types;
+                     $coupon->discount = $val['discount'];
+                     $coupon->promocode = $val['promocode'];
+                     $coupon->gotolink = $val['goto_link'];
+                     $coupon->framset = $framset;
+                     $coupon->status = $val['status'];
+
+                     $company->ownCouponList[] = $coupon;
+
+                     echo "<b>Купон ".$val['name']." добавлен </b>  <br>";
+                     R::store($company);
+
+
+                 }
+
+            // Получаем список купонов
+
+
+
+        }
+
+
+
+
+
+
+
+
+
+
+        return true;
+
+    }
+
+    public function addMagazin($admicompanies, $token){
+
+        $RS = [];
+        $allShops = R::findAll('companies');
+
+        // Записываем IDшники магазинов которые уже есть в БД
+        foreach ($allShops as $key=>$val){
+            $RS[$val['idadmi']] = 1;
+        }
+
+
+        foreach ($admicompanies as $key=>$val){
+            // Проверяем наличие магазина в БД
+            if (!empty($RS[$val['id']])) {
+                echo "Партнерская программа ".$val['name']." уже добавлена. <br>";
+                continue;
+            }
+            if ($val['status'] != "active") continue;
+
+
+            //Забираем себе лого
+            $extension = getExtension($val['image']);
+            $logo = '/upload/logos/'.$val['id'].'logo.'.$extension;
+            file_put_contents(WWW.$logo, file_get_contents($val['image']));
+
+            // Работа с категориями
+            $categories =  extractcategories($val['categories']);
+            $categories = $this->workcategories($categories);
+            $categories = json_encode($categories, true);
+            // Работа с категориями
+
+            $val['name'] = str_replace("RU", "", $val['name']);
+            $val['name'] = str_replace("WW", "", $val['name']);
+
+            $deeplink = $this->getDeepLink($token, $val['id'], $val['site_url']);
+
+
+            $DATA = [
+                'idadmi' => $val['id'],
+                'name' => $val['name'],
+                'url' => $val['site_url'],
+                'ulp' => $deeplink,
+                'uri' => translit_sef($val['name']),
+                'ecpc' => $val['ecpc'],
+                'category' => $categories,
+                'logo' => $logo,
+                'description' => "",
+                'status' => $val['status'],
+            ];
+
+            $this->addnewBD("companies", $DATA);
+
+            echo "Добавлена партнерская программа <b>".$val['name']."</b> !";
+
+
+        }
+
+
+
+
+
+
+
+        return true;
+
+    }
+
+
+    public function workcategoriesCoupons($cat){
+
+        $categoryarray = [];
+
+        foreach ($cat as $key => $val){
+
+            $categoriya = R::findOne("categorycoupons", "WHERE name = ?" , [$val]);
+
+            if (!empty($categoriya)) {
+                $categoriya->count = $categoriya->count +1;
+                $categoryarray[] = $categoriya->id;
+                R::store($categoriya);
+            }
+
+            if (empty($categoriya)){
+                $url = translit_sef($val);
+                $DATA = [
+                    'name' => $val,
+                    'url' => $url,
+                    'description' => "",
+                    'count' => 1,
+                    'countview' => 1,
+                ];
+                $categoryarray[] =  $this->addnewBD("categorycoupons", $DATA);
+            }
+
+
+
+        }
+
+
+        return $categoryarray;
+
+    }
+
+
+
+
+    public function workcategories($cat){
+
+        $categoryarray = [];
+
+        foreach ($cat as $key => $val){
+
+            $categoriya = R::findOne("category", "WHERE name = ?" , [$val]);
+
+            if (!empty($categoriya)) {
+                $categoriya->countshop = $categoriya->countshop +1;
+                $categoryarray[] = $categoriya->id;
+                R::store($categoriya);
+            }
+
+            if (empty($categoriya)){
+                $url = translit_sef($val);
+                $DATA = [
+                    'name' => $val,
+                    'url' => $url,
+                    'description' => "",
+                    'countshop' => 1,
+                    'countview' => 1,
+                ];
+                $categoryarray[] =  $this->addnewBD("category", $DATA);
+            }
+
+
+
+        }
+
+
+        return $categoryarray;
+
+    }
+
+    public function getCategories($token, $id = ""){
+
+        if (empty($id))    $url = API."/categories/";
+        if (!empty($id)) $url = API."/categories/advcampaign/".$id."/";
+        $type = "GET";
+
+        $headers = array(
+            'Content-Type: application/x-www-form-urlencoded',
+            'Authorization: Bearer ' . $token
+        );
+
+
+        $PARAMS = [];
+
+        $result = fCURL($url, [$type => $PARAMS], $headers);
+
+        return $result;
+
+    }
+
+    public function countCounpons($coupons, $idcompany)
     {
-        if($idclient == "Admin")
-        {
-            $company = R::findAll("company");
-        }
-        else
-        {
-            $company = R::find("company", "WHERE client_id = ?", [$idclient]);
-        }
-        return $company;
+
+
+        $promocode =   R::count("coupons", "WHERE `species` = ? AND `companyid` =?  ", ["promocode", $idcompany]);
+        $action =   R::count("coupons", "WHERE `species` = ? AND `companyid` =?", ["action", $idcompany]);
+
+
+        $count['promocode'] = $promocode;
+        $count['action'] = $action;
+
+        return $count;
+
     }
 
+    public function getGotoUrl($id)
+    {
 
+        $coupon = R::findOne("coupons", "WHERE id = ?" , [$id]);
 
-    public function sendallmail(){
-
-
-        $users = R::find("users");
-
-
-        foreach ($users as $key=>$val){
-
-            echo $val['username']."<br>";
-            echo $val['email']."<br>";
-
-
-
-
+        if ($coupon)  {
+            $coupon->used = $coupon + 1;
+            R::store($coupon);
+            redir($coupon['gotolink']);
 
         }
 
 
 
-    }
-
-
-
-
-    public function changepassword($DATA){
-
-
-
-        $user = R::load("users", $_SESSION['ulogin']['id']);
-
-
-        if ($DATA['newpass'] != $DATA['newpassrepeat']) return "Новые пароли не совпадают";
-
-
-        if (!password_verify($DATA['now'], $user->pass)) return "Текущий пароль не верен";
-
-        if ($DATA['now'] == $DATA['newpass']) return "Новый и старый пароль не должны быть одинаковые";
-
-        $newpass = pole_valid ($DATA['newpass'], 50, 's');
-        if (!empty($newpass['error'])) return $newpass['error'];
-
-        $user->pass =  password_hash($DATA['newpass'] , PASSWORD_DEFAULT);
-
-        R::store($user);
-
-
-        return true;
-    }
-
-
-    public  function changeprofileinfo($DATA){
-
-
-        if ($DATA['role'] != "R" && $DATA['role'] != "O") return "Ошибка в передаче данных";
-
-        $DATA['aboutme'] = trim($DATA['aboutme']);
-        $DATA['aboutme'] = strip_tags($DATA['aboutme']);
-        $DATA['aboutme'] = htmlspecialchars($DATA['aboutme']);
-        if (strlen($DATA['aboutme']) > 1000) return "Презентация должна быть не больше 1000 символов";
-
-        $username = pole_valid ($DATA['username'], 50, 's');
-        if (!empty($username['error'])) return $username['error'];
-
-
-        $user = R::load("users", $_SESSION['ulogin']['id']);
-
-
-        $user->role = $DATA['role'];
-        $user->aboutme = $DATA['aboutme'];
-        $user->username = $username;
-
-
-        $_SESSION['ulogin']['role'] = $DATA['role'];
-        $_SESSION['ulogin']['aboutme'] =$DATA['aboutme'];
-        $_SESSION['ulogin']['username'] = $username;
-
-        R::store($user);
-
-
-        return true;
+      if (!$coupon)   redir("/");
 
 
 
 
     }
-
-    public  function changenotification($DATA){
-
-
-        $user = R::load("users", $_SESSION['ulogin']['id']);
-
-        if (!empty($DATA['messages'])){
-            $user->nmessages = 1;
-        }else{
-            $user->nmessages = NULL;
-        }
-
-        if (!empty($DATA['news'])){
-            $user->nnews = 1;
-        }else{
-            $user->nnews = NULL;
-        }
-
-        $_SESSION['ulogin']['nnews'] = $user->nnews;
-        $_SESSION['ulogin']['nmessages'] = $user->nmessages;
-        R::store($user);
-
-
-
-        return true;
-
-    }
-
-
-    public  function changeurlegal($DATA){
-
-        $MASS = [
-            'company' => $DATA['company'],
-            'site' => $DATA['site'],
-            'urlico' => $DATA['urlico'],
-            'ogrn' => $DATA['ogrn'],
-            'postadress' => $DATA['postadress'],
-            'phone' => $DATA['phone'],
-            'uradres' => $DATA['uradres'],
-        ];
-
-        self::$USER->urlegal = json_encode($MASS, true);
-
-        R::store(self::$USER);
-
-
-
-        return true;
-
-    }
-
-    public  function validationur($DATA){
-
-        $rules = [
-            'required' => [
-                ['company'],
-                ['site'],
-                ['urlico'],
-                ['ogrn'],
-                ['postadress'],
-                ['phone'],
-                ['uradres'],
-
-            ],
-
-        ];
-
-        $labels = [
-            'company' => '<b>Название компании</b>',
-            'site' => '<b>САЙТ</b>',
-            'urlico' => '<b>Юридическое лицо</b>',
-            'ogrn' => '<b>ОГРН</b>',
-            'postadress' => '<b>Почтовый адрес</b>',
-            'phone' => '<b>Телефон</b>',
-            'uradres' => '<b>Юридический адрес</b>',
-
-        ];
-
-       return $this->validatenew($DATA, $rules, $labels);
-
-    }
-
-    public  function validationpayurinfo($DATA){
-
-        $rules = [
-            'required' => [
-                ['inn'],
-                ['kpp'],
-                ['bic'],
-                ['rs'],
-                ['kor'],
-                ['bank'],
-                ['fio'],
-                ['nds'],
-            ],
-
-        ];
-
-        $labels = [
-            'inn' => '<b>ИНН</b>',
-            'kpp' => '<b>КПП</b>',
-            'bic' => '<b>БИК</b>',
-            'rs' => '<b>Р\С</b>',
-            'kor' => '<b>Кор. счет</b>',
-            'bank' => '<b>Банк</b>',
-            'fio' => '<b>ФИО контактного лица</b>',
-            'nds' => '<b>НДС</b>',
-
-
-        ];
-
-        return $this->validatenew($DATA, $rules, $labels);
-
-    }
-
-    public  function cahngepayurinfo($DATA){
-
-        $MASS = [
-            'inn' => $DATA['inn'],
-            'kpp' => $DATA['kpp'],
-            'bic' => $DATA['bic'],
-            'rs' => $DATA['rs'],
-            'kor' => $DATA['kor'],
-            'bank' => $DATA['bank'],
-            'fio' => $DATA['fio'],
-            'nds' => $DATA['nds'],
-        ];
-
-        self::$USER->payurinfo = json_encode($MASS, true);
-
-        R::store(self::$USER);
-
-
-
-        return true;
-
-    }
-
 
 
 }

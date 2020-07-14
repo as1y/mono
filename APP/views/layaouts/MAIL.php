@@ -1,3 +1,3 @@
 <?=$content?>
 <hr>
-С Уважением, <?=CONFIG['NAME']?> <br>
+С Уважением, <?=APPNAME?> <br>

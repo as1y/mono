@@ -5,7 +5,7 @@ class View {
 	public $view;
 	public $layaout;
     static $assets = [];
-	static $meta = ["title"=> CONFIG['NAME'], "desc"=> "", "keywords"=> ""];
+	static $meta = ["title"=> APPNAME, "desc"=> "", "keywords"=> ""];
     static $Breadcrumbs = ["HOME" => [], "DATA" => []];
 
 	public function __construct($route, $layaout='', $view=''){
@@ -104,6 +104,12 @@ class View {
 
     public static function getBreadcrumbs(){
 
+        if ( self::$Breadcrumbs['HOME'] == false) {
+            echo "<br>";
+            return false;
+        }
+
+
         if (!isset(self::$Breadcrumbs['HOME']['Label'])) self::$Breadcrumbs['HOME']['Label'] = self::$meta['title'];
         if (!isset(self::$Breadcrumbs['HOME']['Url'])) self::$Breadcrumbs['HOME']['Url'] = "/";
 
@@ -111,8 +117,12 @@ class View {
 
         ?>
 
+                    <nav class="woocommerce-breadcrumb" >
+                    <b>
+                        <a href="<?=self::$Breadcrumbs['HOME']['Url'];?>"><?=self::$Breadcrumbs['HOME']['Label'];?></a>
+                    </b>
 
-        <a href="<?=self::$Breadcrumbs['HOME']['Url'];?>" class="breadcrumb-item"><i class="icon-home2 mr-2"></i> <?=self::$Breadcrumbs['HOME']['Label'];?></a>
+
 
 
         <?php foreach(self::$Breadcrumbs['DATA'] as $val):?>
@@ -120,11 +130,10 @@ class View {
 
             <?php if (!empty($val['Url'])):?>
 
-                    <a href="<?=$val['Url']?>" class="breadcrumb-item">  <?=$val['Label']?> </a>
-
+                        <i class="fa fa-angle-right"><a href="<?=self::$Breadcrumbs['HOME']['Url'];?>"><?=self::$Breadcrumbs['HOME']['Label'];?></a>
 
                             <?php else:?>
-                <span class="breadcrumb-item active"><?=$val['Label']?></span>
+                <span class="delimiter"><i class="fa fa-angle-right"></i></span><?=$val['Label']?>
             <?php endif;?>
 
 
@@ -132,7 +141,7 @@ class View {
         <?php endforeach;?>
 
 
-
+                    </nav>
 
 
 

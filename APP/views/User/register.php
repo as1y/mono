@@ -4,20 +4,9 @@
         <div class="card-body">
             <div class="text-center mb-3">
                 <h5 class="mb-0">Регистрация</h5>
-                <span class="d-block text-muted"><?=APPNAME?> - биржа операторов на телефоне</span>
+                <span class="d-block text-muted"><?=APPNAME?></span>
             </div>
 
-            <div class="form-group text-center  mb-3 mb-md-2">
-                <div class="custom-control custom-radio custom-control-inline">
-                    <input type="radio" class="custom-control-input" name="role" value="O" id="custom_radio_inline_unchecked" checked="">
-                    <label class="custom-control-label" for="custom_radio_inline_unchecked">Я оператор</label>
-                </div>
-
-                <div class="custom-control custom-radio custom-control-inline">
-                    <input type="radio" class="custom-control-input" name="role" value="R" id="custom_radio_inline_checked">
-                    <label class="custom-control-label" for="custom_radio_inline_checked">Я рекламодатель</label>
-                </div>
-            </div>
 
             <div class="form-group form-group-feedback form-group-feedback-left">
                 <input type="text" name="username" class="form-control" placeholder="Имя Фамилия">

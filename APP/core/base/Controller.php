@@ -15,46 +15,15 @@ abstract class Controller {
         // Роутинг ВНЕ СЕССИЙ
 
 
+
+
         //Если с сессией зашел в логин или на главную
-        if (empty($_SESSION['ulogin']) && $route['controller'] != "Main"  && $route['controller'] != "User"  ){
+        if (empty($_SESSION['ulogin']) && $route['controller'] == "Panel" ){
             redir('/user/');
         }
         //Если с сессией зашел в логин или на главную
 
 
-        //Защита от ебанутых по контроллерам
-
-        if (!empty($_SESSION['ulogin']['role']) && $_SESSION['ulogin']['role'] == "R"){
-            if ($route['controller'] == "Operator")  redir("/master");
-            if ($route['controller'] == "Main")  redir("/master");
-
-
-
-
-        }
-
-        if (!empty($_SESSION['ulogin']['role']) && $_SESSION['ulogin']['role'] == "O"){
-            if ($route['controller'] == "Master")  redir("/operator");
-            if ($route['controller'] == "Project")  redir("/operator");
-            if ($route['controller'] == "Main")  redir("/operator");
-        }
-
-
-//        if (!empty($_SESSION['ulogin']['code']))  $_SESSION['errors'] = "Подтвердите E-mail";
-
-
-//
-//		// РАСПРЕДЕЛЕНЕ ПРАВ (ПОКА ПРОСТОЕ)
-//		if (empty($_SESSION['ulogin']) && $route['controller'] != "Main"  && $route['controller'] != "User" && $route['controller'] != "Spec"  ){
-//			redir('/');
-//		}
-//		//РАСПРЕДЕЛЕНИЕ ПРАВ НА АНДИНА
-//		if ($route['controller'] == "Admin"){
-//			if( empty($_SESSION['ulogin']['woof']) || $_SESSION['ulogin']['woof'] != "1"){
-//				redir('/panel');
-//			}
-//		}
-//
 
 
 	}
