@@ -64,45 +64,45 @@ class Panel extends \APP\core\base\Model {
         }
         // Берем баннера которые уже есть в БД
 
-                foreach ($banners as $key => $banner){
+        foreach ($banners as $key => $banner){
 
-                    // Берем ID баннеров которые в Адмитаде
-                    $BannersList[$banner['id']] = 1;
-                    // Берем ID баннеров которые в Адмитаде
-
-
-                  if (!empty($RS[$banner['id']])) {
-                      echo "Баннер уже добавлен".$banner['id']." уже добавлена. <br>";
-                        continue;
-                 }
+            // Берем ID баннеров которые в Адмитаде
+            $BannersList[$banner['id']] = 1;
+            // Берем ID баннеров которые в Адмитаде
 
 
-                    // Копируем баннер себе
-                    $extension = getExtension($banner['banner_image_url']);
-                    $picture = '/upload/banners/'.$banner['id'].'banner.'.$extension;
-                    file_put_contents(WWW.$picture, file_get_contents($banner['banner_image_url']));
-                    // Копируем баннер себе
-
-                    $forma = getsizetypeimage($banner['size_width'], $banner['size_height']);
+            if (!empty($RS[$banner['id']])) {
+                echo "Баннер уже добавлен".$banner['id']." уже добавлена. <br>";
+                continue;
+            }
 
 
-                    $bannerbd = R::dispense("banners");
-                    $bannerbd->idadmi = $banner['id'];
-                    $bannerbd->type = $banner['type'];
-                    $bannerbd->pictureurl = $banner['banner_image_url'];
-                    $bannerbd->direct_link = $banner['direct_link'];
-                    $bannerbd->size_width = $banner['size_width'];
-                    $bannerbd->size_height = $banner['size_height'];
-                    $bannerbd->forma = $forma;
-                    $bannerbd->views = 0;
+            // Копируем баннер себе
+            $extension = getExtension($banner['banner_image_url']);
+            $picture = '/upload/banners/'.$banner['id'].'banner.'.$extension;
+            file_put_contents(WWW.$picture, file_get_contents($banner['banner_image_url']));
+            // Копируем баннер себе
 
-                    $company->ownBannerList[] = $bannerbd;
-
-                    echo "<b>Баннер ".$banner['name']." добавлен </b>  <br>";
-                    R::store($company);
+            $forma = getsizetypeimage($banner['size_width'], $banner['size_height']);
 
 
-                }
+            $bannerbd = R::dispense("banners");
+            $bannerbd->idadmi = $banner['id'];
+            $bannerbd->type = $banner['type'];
+            $bannerbd->pictureurl = $banner['banner_image_url'];
+            $bannerbd->direct_link = $banner['direct_link'];
+            $bannerbd->size_width = $banner['size_width'];
+            $bannerbd->size_height = $banner['size_height'];
+            $bannerbd->forma = $forma;
+            $bannerbd->views = 0;
+
+            $company->ownBannerList[] = $bannerbd;
+
+            echo "<b>Баннер ".$banner['name']." добавлен </b>  <br>";
+            R::store($company);
+
+
+        }
 
 
         // Если баннер есть в БД, но нет в Адмитаде. То удаляем файл из БД
@@ -198,7 +198,7 @@ class Panel extends \APP\core\base\Model {
 
 //      $result =  R::findAll('companies', "ORDER BY `".$PARAMS['sort']."` DESC LIMIT ".$PARAMS['limit']);
 
-      $result =  R::findAll('companies', "LIMIT ".$PARAMS['limit']);
+        $result =  R::findAll('companies', "LIMIT ".$PARAMS['limit']);
 
         return $result;
 
@@ -214,32 +214,80 @@ class Panel extends \APP\core\base\Model {
 
     public function LoadCategoriesSimple($coupons, $idcat){
 
-        foreach ($coupons as $key=>$coupon){
-            $masscate = json_decode($coupon['category'],  true);
-            foreach ($masscate as $val){
-                $categoryARR[$val] = true;
+
+        // Берем список категорий изходя из купонов
+        foreach ($coupons as $key=>$coupon) {
+            // СОВМЕСТИТЬ КАТЕГОРИИ
+            $categories = json_decode($coupon['category'], true);
+//                    echo "ID купона ".$coupon['id']." Компания  ".$coupon['companies_id']." ||| ";
+            foreach ($categories as $v) {
+                $tempARR[$coupon['companies_id']][$v] = true;
             }
         }
 
 
-        if (!empty($idcat) && !is_array($idcat))  $categoryARR[$idcat] = "alias";
+        // Получаем массив для работы
+        foreach ($tempARR as $k=>$v){
+            foreach ($v as $b=>$c){
+                $filtrArr[$b] = true;
+            }
+        }
 
-        // Определение доступных категорий
+
+        // Совмещаем если выбрано несколько брендов
+        if ( count($tempARR) > 1){
 
 
-        // Загрузка описаний категорий
-        foreach (self::$CATEGORYcoupon as $key=>$category){
-            // Ставим Алисас
+                    $filtrArr = current($tempARR);
 
-        if ( !empty($categoryARR[$key]) && $categoryARR[$key] === "alias") self::$CATEGORYcoupon[$key]['select'] = 1;
+                    foreach ($tempARR as $k=>$value){
 
-            // Убираем категории которых нет в массиве отобранном
-            if (!array_key_exists($category['id'], $categoryARR)) unset (self::$CATEGORYcoupon[$key]);
+//                        echo "first---";
+//                        show($filtrArr);
+//                        echo "val---";
+//                        show($value);
+
+//                         Функция работы схождения массивов
+                        $filtrArr =  array_intersect_key($filtrArr, $value);
+
+//                        echo "itog---";
+//                        show($filtrArr);
+
+                    }
+                }
+
+
+        $ALLCATEGORIES = [];
+        foreach ($filtrArr as $category=>$val){
+            $ALLCATEGORIES[$category] = "ok";
+            if (!empty($idcat) && $category == $idcat) $ALLCATEGORIES[$category] = "alias";
 
         }
 
 
+        // МАССИВ КАТЕГОРИЙ
+        foreach (self::$CATEGORYcoupon as $key=>$category){
+            // Ставим Алисас
+            if ( !empty($ALLCATEGORIES[$category['id']]) && $ALLCATEGORIES[$category['id']] === "alias" ) {
+                self::$CATEGORYcoupon[$key]['select'] = 1;
+            }
+            // Убираем категории которых нет в массиве отобранном
+            if (!array_key_exists($category['id'], $ALLCATEGORIES)) unset (self::$CATEGORYcoupon[$key]);
+        }
+
+
         return self::$CATEGORYcoupon;
+
+
+
+
+
+
+        return $ALLCATEGORIES;
+
+
+
+
 
 
 
@@ -249,7 +297,7 @@ class Panel extends \APP\core\base\Model {
     public function LoadAllCompanies($idbrand){
 
         $compARR = [];
-            $companies = R::findAll('companies');
+        $companies = R::findAll('companies');
 
         foreach ($companies as $key=>$company){
 
@@ -269,21 +317,85 @@ class Panel extends \APP\core\base\Model {
         return $compARR;
     }
 
-    public function LoadCompanies($coupons, $idbrand){
 
-        $compARR = [];
+    public function LoadTypes($coupons, $arrType = ""){
+
+        $typeARR['action'] = 0;
+        $typeARR['promocode']= 0;
+        $typeARR['all'] = 0;
 
         foreach ($coupons as $key=>$coupon){
-           if (array_key_exists($coupon['companies_id'], $compARR)) {
-               $compARR[$coupon['companies_id']]['count']++;
-           }
+            if ($coupon['species'] == "action" ) $typeARR['action']++;
+            if ($coupon['species'] == "promocode" ) $typeARR['promocode']++;
+            $typeARR['all']++;
+            $typeARR['select'] = $arrType;
+
+        }
+
+        return $typeARR;
+
+    }
+
+
+
+
+    public function LoadCompanies($coupons, $idbrand){
+
+        // Показывать все бренды в категории
+        // Выбрать все купоны где категория наша категория
+        // Записать и посчитать
+
+        $compARR = [];
+        $idbrand = explode(",", $idbrand);
+
+        foreach ($coupons as $key=>$coupon){
+
+            if (array_key_exists($coupon['companies_id'], $compARR)) {
+                $compARR[$coupon['companies_id']]['count']++;
+            }
+
             if (!array_key_exists($coupon['companies_id'], $compARR)){
 
-                if ($coupon->companies->id == $idbrand ) $compARR[$coupon['companies_id']]['select'] = 1;
                 $compARR[$coupon['companies_id']]['count'] = 1;
                 $compARR[$coupon['companies_id']]['url'] = $coupon->companies->uri;
                 $compARR[$coupon['companies_id']]['name'] = $coupon->companies->name;
+
+                if (in_array($coupon->companies->id, $idbrand) ) {
+                    $compARR[$coupon['companies_id']]['select'] = 1;
+                    // Перекидываем в начало массива
+
+                }
+
+
+
             }
+
+
+        }
+
+
+
+
+//        echo "ИСХОДНЫЙ МАССИВ!!";
+//        show($compARR);
+
+
+        $compARR = array_values($compARR);
+        //Поднимаем выделенные бренды на верх
+        foreach ($compARR as $key=>$val){
+
+                if (!empty($val['select']) &&  $val['select'] == true) {
+
+//                    echo "=== НАЧАЛО ИТЕРАЦИИ $key";
+//                    show($compARR);
+
+                    unset($compARR[$key]);
+
+                    array_unshift($compARR, $val);
+
+
+            }
+
         }
 
 
@@ -318,9 +430,9 @@ class Panel extends \APP\core\base\Model {
         if ($FILTER['ORDERBY'] && $FILTER['ORDERBY'] == true) $SORT = "ORDER BY `views` DESC";
 
 
-            if ($FILTER['GET'] && $FILTER['GET']['filter'] == "promocode"){
-                return R::findAll('coupons', "WHERE `companyid` = ? AND `species` = ? ".$SORT, [$idcompany, "promocode"]);
-            }
+        if ($FILTER['GET'] && $FILTER['GET']['filter'] == "promocode"){
+            return R::findAll('coupons', "WHERE `companyid` = ? AND `species` = ? ".$SORT, [$idcompany, "promocode"]);
+        }
 
         if ($FILTER['GET'] && $FILTER['GET']['filter'] == "action"){
             return R::findAll('coupons', "WHERE `companyid` = ? AND `species` = ? ".$SORT, [$idcompany, "action"]);
@@ -386,7 +498,7 @@ class Panel extends \APP\core\base\Model {
 
         $nadozagruzok = ceil($result['_meta']['count']/$result['_meta']['limit'])-1;
 
-       // echo "Надо добавить еще  ".$nadozagruzok." загрузки <br>";
+        // echo "Надо добавить еще  ".$nadozagruzok." загрузки <br>";
 
 
 
@@ -397,7 +509,7 @@ class Panel extends \APP\core\base\Model {
         for ($i = 1; $i <= $nadozagruzok; $i++) {
 
             $offset = $i*$limit;
-          //  echo "Загружаем $i ... $offset<br><hr>";
+            //  echo "Загружаем $i ... $offset<br><hr>";
 
             $PARAMS = [
                 'limit' => $limit,
@@ -428,6 +540,7 @@ class Panel extends \APP\core\base\Model {
 
 
     public function FindIdCategoryCoupon($url) {
+
         return R::findOne('categorycoupons', 'WHERE url =?', [$url])['id'];
     }
 
@@ -437,6 +550,7 @@ class Panel extends \APP\core\base\Model {
 
 
     public function FindIdBrandCoupon($url) {
+
 
         $mbmass = explode(",", $url);
 
@@ -466,13 +580,12 @@ class Panel extends \APP\core\base\Model {
 
         // Запрос в таблицу coupons
         if (!empty($ARR['arrBrands'])){
-            $ARR['arrBrands'] = CheckNumericArr($ARR['arrBrands']);
             $WHERE[] =  "`companies_id` IN (".$ARR['arrBrands'].")";
         }
 
 
         if ($ARR['arrType'] == "promocode" || $ARR['arrType'] == "action" ){
-                $WHERE[] =  '`species` = "'.$ARR['arrType'].'" ';
+            $WHERE[] =  '`species` = "'.$ARR['arrType'].'" ';
         }
 
 
@@ -486,7 +599,7 @@ class Panel extends \APP\core\base\Model {
 
 
 
-       return $result;
+        return $result;
 
     }
 
@@ -574,7 +687,7 @@ class Panel extends \APP\core\base\Model {
 
 
 
-         }
+        }
 
         return true;
 
@@ -601,48 +714,48 @@ class Panel extends \APP\core\base\Model {
 
             echo "<h1>КУПОНЫ ДЛЯ ".$company['name']."</h1>";
 
-                 foreach ($coupons as $k=>$val){
+            foreach ($coupons as $k=>$val){
 
-                     $categories =  extractcategoriesCoupons($val['categories']);
-                     $categories = $this->workcategoriesCoupons($categories);
-                     $categories = json_encode($categories, true);
+                $categories =  extractcategoriesCoupons($val['categories']);
+                $categories = $this->workcategoriesCoupons($categories);
+                $categories = json_encode($categories);
 
-                     $nalichie = R::count("coupons", "WHERE idadmi = ?" , [$val['id']]);
+                $nalichie = R::count("coupons", "WHERE idadmi = ?" , [$val['id']]);
 
-                     if ($nalichie > 0) {
-                         echo "Купон ".$val['name']." уже добавлен! <br>";
-                         continue;
-                     }
-
-
-                     $framset = (!empty($val['frameset_link'])) ?  $val['frameset_link'] : "";
-
-                     $types = json_encode($val['types'], true);
-
-                     $coupon = R::dispense("coupons");
-                     $coupon->idadmi = $val['id'];
-                     $coupon->name = $val['name'];
-                     $coupon->description = $val['description'];
-                     $coupon->category = $categories;
-                     $coupon->short_name = $val['short_name'];
-                     $coupon->used = 0;
-                     $coupon->species = $val['species'];
-                     $coupon->datestart = $val['date_start'];
-                     $coupon->dateend = $val['date_end'];
-                     $coupon->types = $types;
-                     $coupon->discount = $val['discount'];
-                     $coupon->promocode = $val['promocode'];
-                     $coupon->gotolink = $val['goto_link'];
-                     $coupon->framset = $framset;
-                     $coupon->status = $val['status'];
-
-                     $company->ownCouponList[] = $coupon;
-
-                     echo "<b>Купон ".$val['name']." добавлен </b>  <br>";
-                     R::store($company);
+                if ($nalichie > 0) {
+                    echo "Купон ".$val['name']." уже добавлен! <br>";
+                    continue;
+                }
 
 
-                 }
+                $framset = (!empty($val['frameset_link'])) ?  $val['frameset_link'] : "";
+
+                $types = json_encode($val['types'], true);
+
+                $coupon = R::dispense("coupons");
+                $coupon->idadmi = $val['id'];
+                $coupon->name = $val['name'];
+                $coupon->description = $val['description'];
+                $coupon->category = $categories;
+                $coupon->short_name = $val['short_name'];
+                $coupon->used = 0;
+                $coupon->species = $val['species'];
+                $coupon->datestart = $val['date_start'];
+                $coupon->dateend = $val['date_end'];
+                $coupon->types = $types;
+                $coupon->discount = $val['discount'];
+                $coupon->promocode = $val['promocode'];
+                $coupon->gotolink = $val['goto_link'];
+                $coupon->framset = $framset;
+                $coupon->status = $val['status'];
+
+                $company->ownCouponList[] = $coupon;
+
+                echo "<b>Купон ".$val['name']." добавлен </b>  <br>";
+                R::store($company);
+
+
+            }
 
             // Получаем список купонов
 
@@ -853,7 +966,7 @@ class Panel extends \APP\core\base\Model {
 
 
 
-      if (!$coupon)   redir("/");
+        if (!$coupon)   redir("/");
 
 
 

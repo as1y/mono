@@ -34,6 +34,48 @@ function generetuCouponinCode($coupons){
 }
 
 
+
+function renderFilter($DATA){
+    ?>
+
+<!--    КАТЕГОРИИ-->
+    <div class="border-bottom pb-4 mb-4">
+        <h4 class="font-size-14 mb-3 font-weight-bold">ФИЛЬТР ПО КАТЕГОРИИ</h4>
+        <div class="form-group">
+            <select id = "CategoryContainer" onchange="ChangeFilter()" name="category" class="form-control"   >
+                <?=renderCategory($DATA['catalogCategories'])?>
+            </select>
+        </div>
+    </div>
+<!--    БРЕНД-->
+    <div class="border-bottom pb-4 mb-4">
+        <h4 class="font-size-14 mb-3 font-weight-bold">ФИЛЬТР ПО БРЕНДУ</h4>
+        <div style=" height:200px; overflow:auto; padding-left: 0.5rem !important; border:solid 1px #818181;">
+            <?=renderBrands($DATA['catalogCompany'])?>
+        </div>
+    </div>
+<!--    ТИПА-->
+    <div class="border-bottom pb-4 mb-4">
+        <h4 class="font-size-14 mb-3 font-weight-bold">ТИП СКИДКИ</h4>
+        <div class="form-group">
+            <select onchange="ChangeFilter()" name="type" class="form-control" >
+                <?=renderType($DATA['catalogType'])?>
+            </select>
+        </div>
+
+
+
+    </div>
+
+    <a href="/coupons/vse/" class="btn px-4 btn-primary-dark-w py-2 rounded-lg">СБРОСИТЬ ФИЛЬТР</a>
+
+
+    <?php
+}
+
+
+
+
 function captiondiscount($discount){
 
 
@@ -58,14 +100,57 @@ function constructWhere($ARR){
         $WHERE .= " AND ".$ARR[$key];
     }
 
+    // Сортируем по ID компании чтобы они были выдаче по порядку!
+    $WHERE .= "ORDER BY `companies_id` DESC";
+
     return $WHERE;
 
 }
 
 
+function renderType($catalogType){
+?>
+
+    <option value="" >ВСЕ ТИПЫ</option>
+
+    <?php if (!empty($catalogType['action'])) :?>
+        <option value="action" <?= ($catalogType['select'] == "action") ? "selected" : "" ?>  >Только скидки - (<?=$catalogType['action']?>)</option>
+    <?php endif;?>
+
+    <?php if (!empty($catalogType['promocode'])) :?>
+        <option value="promocode" <?= ($catalogType['select'] == "promocode") ? "selected" : "" ?> >Только промокоды -  (<?=$catalogType['promocode']?>)</option>
+    <?php endif;?>
+
+
+    <?php
+}
+
+
+
+function renderBrands($catalogCompany){
+
+    ?>
+    <?php foreach ($catalogCompany as $key=>$val) :?>
+        <div class="form-group d-flex align-items-center justify-content-between mb-2">
+            <div class="custom-control custom-checkbox">
+                <input type="checkbox" <?= empty($val['select']) ? "" : "checked";   ?>  onclick="ChangeFilter()" name="companies" class="custom-control-input" title="<?=$val['url']?>" id="brand<?=$key?>">
+                <label class="custom-control-label" for="brand<?=$key?>"><?=$val['name']?>
+                    <span class="text-gray-25 font-size-12 font-weight-normal"> <?=$val['count']?></span>
+                </label>
+            </div>
+        </div>
+    <?php endforeach;?>
+
+
+    <?php
+
+
+}
 
 function renderCategory($catalogCategories){
 ?>
+    <option style="color: darkred" value="" >Все категории...</option>
+
     <?php foreach ($catalogCategories as $key=>$val) :?>
 
         <?php if ($val['select']) :?>

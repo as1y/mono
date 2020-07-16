@@ -34,55 +34,19 @@
                         <h3 class="section-title section-title__sm mb-0 pb-2 font-size-18">СКИДКИ, ПРОМОКОДЫ</h3>
                     </div>
 
-                    <div class="border-bottom pb-4 mb-4">
-                        <h4 class="font-size-14 mb-3 font-weight-bold">ФИЛЬТР ПО КАТЕГОРИИ</h4>
-
-                        <div class="form-group">
-                            <select id = "CategoryContainer" onchange="changeCategory()" name="category" class="form-control"   >
-                                <option style="color: darkred" value="" >Все категории...</option>
-
-                                <?=renderCategory($catalogCategories)?>
-
-                            </select>
-                        </div>
 
 
+<!--                    ФИЛЬТР-->
+                    <div id="GroupContainer">
+
+                        <?=renderFilter([
+                            'catalogCategories' => $catalogCategories,
+                            'catalogCompany' => $catalogCompany,
+                            'catalogType' => $catalogType
+                        ]);?>
 
                     </div>
 
-                    <div class="border-bottom pb-4 mb-4">
-                        <h4 class="font-size-14 mb-3 font-weight-bold">ФИЛЬТР ПО БРЕНДУ</h4>
-                        <div style=" height:200px; overflow:auto; padding-left: 0.5rem !important; border:solid 1px #818181;">
-
-                            <?php foreach ($catalogCompany as $key=>$val) :?>
-                                <div class="form-group d-flex align-items-center justify-content-between mb-2">
-                                    <div class="custom-control custom-checkbox">
-                                        <input type="checkbox" <?= empty($val['select']) ? "" : "checked";   ?>  onclick="changeBarnd()" name="companies" class="custom-control-input" title="<?=$val['url']?>" id="brand<?=$key?>">
-                                        <label class="custom-control-label" for="brand<?=$key?>"><?=$val['name']?>
-                                            <span class="text-gray-25 font-size-12 font-weight-normal"> <?=$val['count']?></span>
-                                        </label>
-                                    </div>
-                                </div>
-                            <?php endforeach;?>
-
-
-                        </div>
-                    </div>
-
-                    <div class="border-bottom pb-4 mb-4">
-                        <h4 class="font-size-14 mb-3 font-weight-bold">ТИП СКИДКИ</h4>
-
-                        <div class="form-group">
-                            <select onchange="" name="type" class="form-control" >
-                                <option value="" >Любой</option>
-                                <option value="promocode" >Промокоды</option>
-                                <option value="action">Скидки</option>
-                            </select>
-                        </div>
-
-
-
-                    </div>
 
 
 
@@ -114,11 +78,8 @@
 
                         <ul id="CouponContainer" class="row list-unstyled products-group no-gutters">
 
-                                <?php foreach ($coupons as $key=>$coupon): ?>
-                                    <li class="col-6 col-md-3 col-wd-2gdot4 product-item">
-                                        <?php renderCoupon($coupon);?>
-                                    </li>
-                                <?php endforeach; ?>
+                            <?=generetuCouponinCode($coupons)?>
+
                         </ul>
                     </div>
 

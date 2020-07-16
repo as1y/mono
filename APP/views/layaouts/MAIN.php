@@ -721,68 +721,64 @@
     var arrType = "";
     var arrCategory = "";
 
-    function changeCategory() {
 
+    function ChangeFilter() {
         str = getFilterParamsParams();
+
+        if (arrType != ""){
+            updateFilter(str);
+            return true;
+        }
 
         if (arrBrands.length == 0)   window.location.href = '/coupons/vse/' + arrCategory;
         if (arrBrands.length == 1) window.location.href = '/coupons/' + arrBrands + '/' + arrCategory;
+        if (arrBrands.length > 1) updateFilter(str);
 
-
+        return true;
 
     }
 
 
-    function changeBarnd() {
-        str = getFilterParamsParams();
 
 
-        if (arrBrands.length === 0)  window.location.href = '/coupons/vse/' + arrCategory;
-        if (arrBrands.length === 1)  window.location.href = '/coupons/' + arrBrands + '/' + arrCategory;
+    function updateFilter(str) {
 
-        if (arrBrands.length > 1){
+        $('#CouponContainer').empty();
+        $.ajax(
+            {
+                url : document.location.pathname,
+                type: 'POST',
+                data: str,
+                cache: false,
+                success: function( coupons ) {
 
-
-            $('#CouponContainer').empty();
-
-            $.ajax(
-                {
-                    url : document.location.pathname,
-                    type: 'POST',
-                    data: str,
-                    cache: false,
-                    success: function( coupons ) {
-
-                        $('#CouponContainer').append(coupons);
+                    $('#CouponContainer').append(coupons);
 
 
-                    }
                 }
-            );
+            }
+        );
 
-            $('#CategoryContainer').empty();
+        $('#GroupContainer').empty();
+        $.ajax(
+            {
+                url : document.location.pathname,
+                type: 'POST',
+                data: str + '&arrCount=1',
+                cache: false,
+                success: function( filter ) {
 
-                    $.ajax(
-                        {
-                            url : document.location.pathname,
-                            type: 'POST',
-                            data: str + '&arrCount=1',
-                            cache: false,
-                            success: function( categories ) {
-
-                                console.log(categories);
-                                // $('#CategoryContainer').append(categories);
-
-                            }
-                        }
-                    );
+                    console.log(filter);
+                    $('#GroupContainer').append(filter);
 
 
-        }
+                }
+            }
+        );
+
 
 
     }
-
 
 
 
