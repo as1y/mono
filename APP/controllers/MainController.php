@@ -32,37 +32,29 @@ class MainController extends AppController {
 
         $couponsliseder =   $Panel->LoadCustomCupons([12,111,50]);
 
-        $widget3 =   $Panel->getCompanies(['limit' => 3, 'sort' => 'ctr']);
+        $widget3 =   $Panel->getShops(['limit' => 3]);
 
 
         // Случайная сортировка
-        $widget5 =   $Panel->getCompanies(['limit' => 5, 'sort' => 'random']);
+        $widget5 =   $Panel->getShops(['limit' => 5, 'sort' => 'random']);
 
         // Задаем ID компаний в ручную
-        $widget4 =   $Panel->getCompanies(['custom' => [5,6,7,8]]);
+        $widget4 =   $Panel->getShops(['custom' => [5,6,7,8]]);
 
-        $widget20 =   $Panel->getCompanies(['limit' => 20, 'sort' => 'ctr']);
+        $widget20 =  $Panel->getShops(['limit' => 20]);
+
+        $shops = $Panel->getShops(['limit' => 13]);
+
+
 
         $widgetcoupons =   $Panel->getContentCoupons(['limit' => 10, 'sort' => 'time']);
 
-
         $widgetcoupons2 = $Panel->getContentCoupons(['limit' => 8, 'sort' => 'used']);
 
-        // Данные для слайдера
 
-        // Магазины справа
 
-        //  Баннера снизу
 
-        // 4 ТОП магазина
-
-        // Купоны которые истекут сегодня
-
-        // Купоны по категориям
-
-        $category = \APP\models\Panel::getCategory();
-
-        $this->set(compact( 'vitrina', 'couponsliseder', 'widget3', 'widget5', 'widget4', 'widgetcoupons', 'widget20', 'widgetcoupons2', 'category'));
+        $this->set(compact( 'vitrina', 'couponsliseder', 'widget3', 'widget5', 'widget4', 'widgetcoupons', 'widget20', 'widgetcoupons2', 'shops'));
 
 
 

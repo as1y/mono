@@ -46,44 +46,20 @@ class PanelController extends AppController {
 
 
            // Работа с партнерскими программами
+
 //           $campanings = $Panel->getPrograms($token);
 //           $Panel->addMagazin($campanings, $token);
+//
+//
+//         $Panel->addCoupons($token);
+
+//        $Panel->WorkWithBanners($token);
 
 
-
-//                $Panel->addCoupons($token);
-
-
-
-
-        // обновить epc
-
-// Добавление компаний
-//          $campanings = $Panel->getPrograms($token);
-//        $Panel->addMagazin($campanings, $token);
-// Добавление компаний
-
-        //Добавление купонов
-        $coupons = $Panel->addCoupons($token);
-        // Добавление купонов
 
         //Удаление старых купонов
 //        $Panel->removeFinishCoupon();
         //Удаление старых купонов
-
-
-       //Добавление баннеров
-
-//        $Panel->WorkWithBanners($token);
-
-        //Добавление баннеров
-
-
-
-
-//        $Panel->addCoupon($coupons);
-
-        // БД coupons
 
 
 

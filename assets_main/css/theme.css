@@ -8789,10 +8789,11 @@ a.badge-indigo:focus, a.badge-indigo.focus {
 
 .close {
   float: right;
-  font-size: 1.25rem;
+  font-size: 3.25rem;
   font-weight: 700;
   line-height: 1;
-  color: #1e2022;
+  /*color: #1e2022;*/
+  color: #000000;
   text-shadow: 0 1px 0 #fff;
   opacity: .5;
 }
@@ -9001,10 +9002,10 @@ a.close.disabled {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-align: start;
-      align-items: flex-start;
+      align-items: center;
   -ms-flex-pack: justify;
       justify-content: space-between;
-  padding: 1rem 1rem;
+  padding: 0.5rem 1rem;
   border-bottom: 1px solid #e7eaf3;
   border-top-left-radius: 0.4375rem;
   border-top-right-radius: 0.4375rem;
@@ -11748,7 +11749,7 @@ button.bg-indigo:focus {
 
 .mb-4,
 .my-4 {
-  margin-bottom: 1.5rem !important;
+  margin-bottom: 0.5rem !important;
 }
 
 .ml-4,
@@ -11772,7 +11773,7 @@ button.bg-indigo:focus {
 
 .mb-5,
 .my-5 {
-  margin-bottom: 2rem !important;
+  margin-bottom: 1rem !important;
 }
 
 .ml-5,
@@ -12276,7 +12277,7 @@ button.bg-indigo:focus {
 
 .pb-4,
 .py-4 {
-  padding-bottom: 1.5rem !important;
+  padding-bottom: 0.5rem !important;
 }
 
 .pl-4,

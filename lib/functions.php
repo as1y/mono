@@ -201,7 +201,17 @@ function translit_sef($value)
         'о' => 'o',    'п' => 'p',    'р' => 'r',    'с' => 's',    'т' => 't',
         'у' => 'u',    'ф' => 'f',    'х' => 'h',    'ц' => 'c',    'ч' => 'ch',
         'ш' => 'sh',   'щ' => 'sch',  'ь' => '',     'ы' => 'y',    'ъ' => '',
-        'э' => 'e',    'ю' => 'yu',   'я' => 'ya',
+        'э' => 'e',    'ю' => 'yu',   'я' => 'ya', '1' => 'odin',
+        '2' => 'dva',
+        '3' => 'tri',
+        '4' => 'chetire',
+        '5' => 'pyat',
+        '6' => 'shest',
+        '7' => 'sem',
+        '8' => 'vosem',
+        '9' => 'devyat',
+        '10' => 'desyat',
+        '0' => 'nol',
     );
 
     $value = mb_strtolower($value);
@@ -296,6 +306,8 @@ function fCURL($url, $PARAMS = [], $headers = []){
     curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
     curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
 
+
+    curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
 
 
     //  curl_setopt($ch, CURLOPT_COOKIE, session_name() . '=' . session_id());

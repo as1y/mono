@@ -185,34 +185,31 @@ class Panel extends \APP\core\base\Model {
     }
 
 
-    public function getCompanies($PARAMS){
-
-        if (!empty($PARAMS['custom'])){
-            return R::loadAll('companies', $PARAMS['custom']);
-        }
-
-        if ($PARAMS['sort'] == "random"){
-            $result =  R::findAll('companies', "ORDER BY rand()  LIMIT ".$PARAMS['limit']);
-            return $result;
-        }
-
-//      $result =  R::findAll('companies', "ORDER BY `".$PARAMS['sort']."` DESC LIMIT ".$PARAMS['limit']);
-
-        $result =  R::findAll('companies', "LIMIT ".$PARAMS['limit']);
-
-        return $result;
-
+    public static function loadOneCoupon($id){
+        return R::Load('coupons', $id);
     }
 
 
 
-    public function LoadallCategories($idcat){
+
+
+    public function LoadallCategories($idcat, $type = ""){
+
+        if (!empty($type)){
+
+
+
+
+
+        }
+
         if (!empty($idcat)) self::$CATEGORYcoupon[$idcat]['select'] = 1;
+
 
         return self::$CATEGORYcoupon;
     }
 
-    public function LoadCategoriesSimple($coupons, $idcat){
+    public function LoadCategoriesSimple($coupons, $idcat, $sizeoff = true){
 
 
         // Берем список категорий изходя из купонов
@@ -226,6 +223,9 @@ class Panel extends \APP\core\base\Model {
         }
 
 
+
+
+
         // Получаем массив для работы
         foreach ($tempARR as $k=>$v){
             foreach ($v as $b=>$c){
@@ -234,11 +234,13 @@ class Panel extends \APP\core\base\Model {
         }
 
 
-        // Совмещаем если выбрано несколько брендов
-        if ( count($tempARR) > 1){
 
+
+        // Совмещаем если выбрано несколько брендов
+        if ( $sizeoff == true){
 
                     $filtrArr = current($tempARR);
+
 
                     foreach ($tempARR as $k=>$value){
 
@@ -255,6 +257,7 @@ class Panel extends \APP\core\base\Model {
 
                     }
                 }
+
 
 
         $ALLCATEGORIES = [];
@@ -578,6 +581,48 @@ class Panel extends \APP\core\base\Model {
 
         $WHERE = [];
 
+        if (!empty($ARR['searchQuery'])){
+
+
+            // Добавляем запрос в БД
+            $DATA = [
+                'zapros' => $ARR['searchQuery'],
+            ];
+            $this->addnewBD("zaprosi",$DATA);
+
+            $result = R::findLike("companies", ['name' => [$ARR['searchQuery']]]);
+
+            $FINALcoupons = [];
+
+            if (!empty($result)){
+
+                foreach ($result as $key=>$val){
+                    $FINALcoupons = $FINALcoupons + $val->ownCouponsList;
+                }
+                return $FINALcoupons;
+            }
+
+            $result = R::findLike("companies", ['name' => [translit_sef($ARR['searchQuery'])]]);
+
+            if (!empty($result)){
+                foreach ($result as $key=>$val){
+                    $FINALcoupons = $FINALcoupons + $val->ownCouponsList;
+                }
+                return $FINALcoupons;
+            }
+
+            $result = R::findLike("coupons", ['name' => [ $ARR['searchQuery'] ]]);
+
+            if (!empty($result)) return $result;
+
+
+
+
+            return false;
+        }
+
+
+
         // Запрос в таблицу coupons
         if (!empty($ARR['arrBrands'])){
             $WHERE[] =  "`companies_id` IN (".$ARR['arrBrands'].")";
@@ -608,7 +653,7 @@ class Panel extends \APP\core\base\Model {
     public function getCoupons($token, $cid){
         $url = API."/coupons/website/".$this->wID."/";
         $type = "GET";
-        $limit = 100;
+        $limit = 300;
 
         $headers = array(
             'Content-Type: application/x-www-form-urlencoded',
@@ -707,14 +752,27 @@ class Panel extends \APP\core\base\Model {
         $companies = R::findAll('companies');
         //Смотрим все компании
 
+//        $i=0;
+
         foreach ($companies as $key=>$company){
+
+//            $i++;
+//            if ($i == 10) continue;
 
             // Получаем список купонов
             $coupons = $this->getCoupons($token, $company['idadmi']);
 
-            echo "<h1>КУПОНЫ ДЛЯ ".$company['name']."</h1>";
 
             foreach ($coupons as $k=>$val){
+
+
+//                echo "<h1>КУПОНЫ ДЛЯ ".$company['name']."</h1><br>";
+//                echo "ID компании ".$company['id']." | ID компании в admi ".$company['idadmi']." <br>";
+//                echo "ID купона компании ".$val['campaign']['id'];
+//
+//                if ($company['idadmi'] != $val['campaign']['id']) echo "<br><font color='#8b0000'>11111</font>";
+
+
 
                 $categories =  extractcategoriesCoupons($val['categories']);
                 $categories = $this->workcategoriesCoupons($categories);
@@ -728,9 +786,14 @@ class Panel extends \APP\core\base\Model {
                 }
 
 
-                $framset = (!empty($val['frameset_link'])) ?  $val['frameset_link'] : "";
+                $framset = (!empty($val['frameset_link'])) ?  $val['frameset_link'] : $val['goto_link'];
 
                 $types = json_encode($val['types'], true);
+
+                //Замена framset на https
+
+
+                $framset = str_ireplace("http", "https", $framset);
 
                 $coupon = R::dispense("coupons");
                 $coupon->idadmi = $val['id'];
@@ -746,6 +809,7 @@ class Panel extends \APP\core\base\Model {
                 $coupon->discount = $val['discount'];
                 $coupon->promocode = $val['promocode'];
                 $coupon->gotolink = $val['goto_link'];
+                $coupon->idamicompany = $val['campaign']['id'];
                 $coupon->framset = $framset;
                 $coupon->status = $val['status'];
 
@@ -776,6 +840,32 @@ class Panel extends \APP\core\base\Model {
 
     }
 
+
+
+    function RedirCoupon($coupon){
+
+
+
+        $coupon =  R::Load('coupons', $_GET['coupon']);
+
+        if (!empty($coupon)){
+            $coupon->used = $coupon->used +1;
+            R::store($coupon);
+            redir($coupon['gotolink']);
+        }
+
+        return true;
+
+
+    }
+
+
+
+
+
+
+
+
     public function addMagazin($admicompanies, $token){
 
         $RS = [];
@@ -793,7 +883,7 @@ class Panel extends \APP\core\base\Model {
                 echo "Партнерская программа ".$val['name']." уже добавлена. <br>";
                 continue;
             }
-            if ($val['status'] != "active") continue;
+            if ($val['connection_status'] != "active") continue;
 
 
             //Забираем себе лого
@@ -810,7 +900,9 @@ class Panel extends \APP\core\base\Model {
             $val['name'] = str_replace("RU", "", $val['name']);
             $val['name'] = str_replace("WW", "", $val['name']);
 
-            $deeplink = $this->getDeepLink($token, $val['id'], $val['site_url']);
+//            $deeplink = $this->getDeepLink($token, $val['id'], $val['site_url']);
+//            if (empty($deeplink)) $deeplink = "";
+        $deeplink = $val['gotolink'];
 
 
             $DATA = [

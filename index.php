@@ -57,7 +57,7 @@ $router->add( 'user/login', ['controller'=>'User', 'action'=>'index']);
 $router->add( '^category/(?P<alias>[a-z-]+)$', ['controller'=>'Category', 'action'=>'index']);
 $router->add( '^shop/(?P<alias>[a-z-]+)$', ['controller'=>'Shop', 'action'=>'index']);
 $router->add( '^brands/(?P<alias>[a-z-]+)$', ['controller'=>'Brands', 'action'=>'index']);
-$router->add( '^coupons/(?P<alias>[a-z-]+)/?(?P<alias2>[a-z-]+)?$', ['controller'=>'Coupons', 'action'=>'index']);
+$router->add( '^promocode/(?P<alias>[a-z-]+)/?(?P<alias2>[a-z-]+)?$', ['controller'=>'Promocode', 'action'=>'index']);
 
 
 $router->add( '^page/(?P<action>[a-z-]+)/(?P<alias>[a-z-]+)$', ['controller'=>'Page']);

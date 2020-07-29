@@ -22,13 +22,183 @@ return $result;
 
 }
 
-function generetuCouponinCode($coupons){
 
-    foreach ($coupons as $key=>$coupon){
-        echo '<li class="col-6 col-md-3 col-wd-2gdot4 product-item">';
-        renderCoupon($coupon);
-        echo  ' </li>';
+
+function generateResult($coupons, $PAGESLIST, $catalogCategories,  $query ="", $catalogCompany = []){
+
+
+    // Если мы используем поиск
+    if ($coupons === false){
+        echo "<h5>По вашему запросу ничего не найдено!<br> Попробуйте восползоваться умным фильтром промокодов<br></h5>  
+
+<a class='btn px-4 btn-primary-dark-w py-2 rounded-lg' href='/promocode/vse'>ПЕРЕЙТИ</a>";
+        return false;
+
     }
+    // Если мы используем поиск
+
+    // СБРАСЫВАЕМ ИНДЕКСЫ И НАЧИНАЕМ С 1
+    $coupons =  array_values($coupons);
+    array_unshift($coupons, NULL);
+    unset($coupons[0]);
+
+?>
+
+    <div class=" flex-center-between mb-3">
+        <h1 class="font-size-25 mb-2 mb-md-0">
+            <?php
+            $allcoupons = count($coupons);
+            $Pages = ceil(($allcoupons/$PAGESLIST['CouponsPerPage'] ));
+
+            if ($catalogCategories == "search"){
+                $zagolovokCategory = 'Результаты поиска по запросу:  '.' <b>"'.$query.'"</b> ';
+                echo '<input type="hidden" value = "'.$query.'" id="search" >';
+            }else{
+                $zagolovokCategory = "Умный фильтр промокодов и скидок!";
+
+                foreach ($catalogCategories as $key=>$val) :
+                    if ( $val['select'] )  $zagolovokCategory = $val['name']." - промокоды и скидки";
+                endforeach;
+
+                $i=0;
+                foreach ($catalogCompany as $key=>$val) :
+                    if ($i == 1) continue;
+                    if (!empty($val['select']) && $val['select']==1 )  $zagolovokCategory .= " в магазине ".$val['name'];
+                    $i++;
+                endforeach;
+
+
+            }
+
+            echo  $zagolovokCategory;
+
+            ?>
+        </h1>
+        <p class="font-size-14 text-gray-90 mb-0 d-none d-sm-block">Найдено купонов: <b><?=$allcoupons?></b></p>
+    </div>
+    <div class="bg-gray-1 flex-center-between borders-radius-9 py-1">
+        <div class="px-3">
+            <span class="d-lg-none .d-xl-block">   Найдено: <b><?=$allcoupons?></b></span>
+            <a href="/promocode/vse/" class="btn px-4 btn-primary-dark-w py-2 rounded-lg d-none d-sm-block">СБРОСИТЬ ФИЛЬТР</a>
+        </div>
+        <div class="d-flex ">
+
+        </div>
+        <nav class="px-3 flex-horizontal-center text-gray-20 ">
+            <?php if ($catalogCategories != "search" && $PAGESLIST['ViewPage'] > 1):?>
+                <a class="text-gray-30 font-size-20 ml-2" href="#" onclick="changePage(<?=($PAGESLIST['ViewPage']-1)?>)">←</a>
+            <?php endif;?>
+
+            <?php if ($catalogCategories == "search"):?>
+                <a class="text-gray-30 font-size-20 ml-2" href="#" onclick="changePageSearch(<?=($PAGESLIST['ViewPage']-1)?>)">→</a>
+            <?php endif; ?>
+
+            &nbsp;
+            Страница <?=$PAGESLIST['ViewPage']?> из &nbsp; <b><?=$Pages?></b>
+            <?php if ($catalogCategories != "search" && $PAGESLIST['ViewPage'] < $Pages):?>
+                <a class="text-gray-30 font-size-20 ml-2" href="#" onclick="changePage(<?=($PAGESLIST['ViewPage']+1)?>)">→</a>
+          <?php endif;?>
+
+    <?php if ($catalogCategories == "search" && $PAGESLIST['ViewPage'] < $Pages):?>
+        <a class="text-gray-30 font-size-20 ml-2" href="#" onclick="changePageSearch(<?=($PAGESLIST['ViewPage']+1)?>)">→</a>
+        <?php endif; ?>
+
+        </nav>
+    </div>
+    <!-- Shop Body -->
+    <!-- Tab Content -->
+    <div class="tab-content" id="pills-tabContent">
+        <div class="tab-pane fade pt-2 show active" id="pills-one-example1" role="tabpanel" aria-labelledby="pills-one-example1-tab" data-target-group="groups">
+            <ul class="row list-unstyled products-group no-gutters">
+
+
+                <?=generetuCouponinCode($coupons, $PAGESLIST['ViewPage'], $PAGESLIST['CouponsPerPage'])?>
+
+            </ul>
+        </div>
+
+
+
+    </div>
+    <!-- End Tab Content -->
+    <!-- End Shop Body -->
+    <!-- Shop Pagination -->
+    <nav class="d-md-flex justify-content-between align-items-center border-top pt-3" aria-label="Page navigation example">
+        <div class="text-center text-md-left mb-3 mb-md-0">Всего купонов: <b><?=$allcoupons?></b> | Страница <?=$PAGESLIST['ViewPage']?> из &nbsp; <b><?=$Pages?></b></div>
+        <ul class="pagination mb-0 pagination-shop justify-content-center justify-content-md-start">
+
+
+
+            <?php
+
+            $starpage = 1;
+            $endpage = ($Pages >= '5') ? "5" : $Pages;
+
+                if ($PAGESLIST['ViewPage'] >= 5){
+
+                    $starpage = $PAGESLIST['ViewPage'] - 2;
+                    $endpage = $PAGESLIST['ViewPage'] + 2;
+                    if ($starpage < 1) $starpage = 1;
+                    if ($endpage > $Pages) $endpage = $Pages;
+                }
+
+
+            ?>
+
+            <?php if ($PAGESLIST['ViewPage'] >= 5): ?>
+                <li  class="page-item"><a class="page-link"   onclick="changePage(1)">1</a></li>
+                <li >←</li>
+            <?php endif;?>
+
+            <?php for ($page=$starpage; $page <= $endpage; $page++) : ?>
+
+        <?php if ($catalogCategories != "search"):?>
+                    <li  class="page-item"><a class="page-link <?= ($page == $PAGESLIST['ViewPage']) ? "current" : "" ?>"   onclick="changePage(<?=$page?>)"><?=$page?></a></li>
+        <?php endif;?>
+
+            <?php endfor;?>
+
+
+            <?php if ($Pages >= 5 && $PAGESLIST['ViewPage'] <= ($Pages - 5) ) : ?>
+                <li >→</li>
+                <li  class="page-item"><a class="page-link"   onclick="changePage(<?=$Pages?>)"><?=$Pages?></a></li>
+            <?php endif;?>
+
+
+
+
+        </ul>
+    </nav>
+    <!-- End Shop Pagination -->
+
+
+<?php
+
+
+
+
+}
+
+
+
+
+
+function generetuCouponinCode($coupons, $ViewPage, $CouponsPerPage){
+
+
+
+    $start = ($ViewPage * $CouponsPerPage) - ($CouponsPerPage - 1) ;
+    $end = $ViewPage * $CouponsPerPage;
+
+    for ($key = $start; $key <= $end; $key++) {
+        if (empty($coupons[$key])) continue;
+        echo '<li class="col-6 col-md-3 col-wd-2gdot4 product-item">';
+        renderCoupon($coupons[$key]);
+        echo  ' </li>';
+
+    }
+
+
 
 
 }
@@ -36,8 +206,9 @@ function generetuCouponinCode($coupons){
 
 
 function renderFilter($DATA){
-    ?>
 
+
+    ?>
 <!--    КАТЕГОРИИ-->
     <div class="border-bottom pb-4 mb-4">
         <h4 class="font-size-14 mb-3 font-weight-bold">ФИЛЬТР ПО КАТЕГОРИИ</h4>
@@ -50,7 +221,7 @@ function renderFilter($DATA){
 <!--    БРЕНД-->
     <div class="border-bottom pb-4 mb-4">
         <h4 class="font-size-14 mb-3 font-weight-bold">ФИЛЬТР ПО БРЕНДУ</h4>
-        <div style=" height:200px; overflow:auto; padding-left: 0.5rem !important; border:solid 1px #818181;">
+        <div style=" height:300px; overflow:auto; padding-left: 0.5rem !important; border:solid 1px #818181;">
             <?=renderBrands($DATA['catalogCompany'])?>
         </div>
     </div>
@@ -62,15 +233,15 @@ function renderFilter($DATA){
                 <?=renderType($DATA['catalogType'])?>
             </select>
         </div>
-
-
-
     </div>
-
-    <a href="/coupons/vse/" class="btn px-4 btn-primary-dark-w py-2 rounded-lg">СБРОСИТЬ ФИЛЬТР</a>
-
+    <a href="/promocode/vse/" class="btn px-4 btn-primary-dark-w py-2 rounded-lg ">СБРОСИТЬ ФИЛЬТР</a>
 
     <?php
+
+
+
+    return true;
+
 }
 
 
@@ -186,61 +357,77 @@ function renderCoupon($coupon){
     ?>
 
 
-            <div class="product-item__outer h-100">
-                <div class="product-item__inner bg-white px-wd-4 p-2 p-md-3">
-                    <div class="product-item__body pb-xl-2">
 
 
-                        <div class="mb-2">
-                            <a href="../shop/single-product-fullwidth.html" class="d-block text-center"><img class="img-fluid" src="<?=$coupon->companies['logo']?>" width="250" alt="<?=$coupon['short_name']?>"></a>
-                        </div>
-                        <div class="text-lh-1 px-2 text-center">
-                            <div class="bg-white rounded-sm border border-width-2 border-primary py-2 px-2 min-width-46">
+    <div class="product-item__outer h-100">
 
-                                <div class="prodcut-price text-center">
-                                    <div class="text-gray-100"><?=captiondiscount($coupon['discount'])?></div>
-                                </div>
-                                <div class="mb-2 text-center"><a href="#" class="font-size-12 text-gray-5"><?=json_decode($coupon['types'], true)[0]['name']?></a></div>
 
-                            </div>
-                        </div>
+        <div class="product-item__inner p-md-3 row no-gutters">
 
+<!--            <div class="col col-lg-auto product-media-left">-->
+<!--                <a href="../shop/single-product-fullwidth.html" class="max-width-150 d-block" tabindex="0"><img class="img-fluid" src="--><?//=$coupon->companies['logo']?><!--" alt="Image Description"></a>-->
+<!--            </div>-->
+
+
+
+
+
+            <div class="col product-item__body pl-2 pl-lg-3 mr-xl-2 mr-wd-1">
+
+                <div class=" " style="width: 170px;  ">
+
+                    <div class="prodcut-price text-center bg-white rounded-sm border border-width-2 border-red py-2 px-2">
+                        <div class="text-gray-100"><?=captiondiscount($coupon['discount'])?></div>
+
+                        <div class="mb-2 text-center"><a href="//<?=CONFIG['DOMAIN']?>/go/?coupon=<?=$coupon['id']?>" target="_blank" class="font-size-12 text-gray-5"><?=json_decode($coupon['types'], true)[0]['name']?></a></div>
+
+                        <a href="//<?=CONFIG['DOMAIN']?>/go/?coupon=<?=$coupon['id']?>" target="_blank" class="d-block text-center"><img class="img-fluid" src="<?=$coupon->companies['logo']?>" width="100" alt="<?=$coupon['short_name']?>"></a>
+
+                    </div>
 <br>
 
+                    <div class="flex-bottom-between text-center mb-1">
 
-                        <h5 class="mb-1 text-center product-item__title"><a href="#" class="text-blue font-weight-bold"><?=obrezanie($coupon['name'],40)?></a></h5>
+                        <?php if ($coupon['species'] == "promocode"): ?>
+                            <a  href="//<?=CONFIG['DOMAIN']?>/go/?coupon=<?=$coupon['id']?>"  onclick="clck(<?=$coupon['id']?>)"  data-toggle="tooltip" data-placement="top" title="" data-original-title="Показать"  class="btn-add-cart btn-add-cart__wide btn-primary transition-3d-hover">ПРОМОКОД</a>
+                        <?php endif;?>
 
-                        <div class="flex-bottom-between text-center mb-1">
-
-
-                            <?php if ($coupon['species'] == "promocode"): ?>
-                                <a href="../shop/single-product-fullwidth.html" data-toggle="tooltip" data-placement="top" title="" data-original-title="Показать"  class="btn-add-cart btn-add-cart__wide btn-primary transition-3d-hover">ПРОМОКОД</a>
-                            <?php endif;?>
-
-                            <?php if ($coupon['species'] == "action"): ?>
-                                <a href="../shop/single-product-fullwidth.html" data-toggle="tooltip" data-placement="top" title="" data-original-title="Использовать"  class="btn btn-dark btn-sm-wide height-40 py-2">ПЕРЕЙТИ</a>
-                            <?php endif;?>
+                        <?php if ($coupon['species'] == "action"): ?>
+                            <a href="//<?=CONFIG['DOMAIN']?>/go/?coupon=<?=$coupon['id']?>" target="_blank" data-toggle="tooltip" data-placement="top" title="" data-original-title="Использовать"  class="btn btn-dark btn-sm-wide height-40 py-2">ПЕРЕЙТИ</a>
+                        <?php endif;?>
 
 
-                        </div>
                     </div>
 
-                    <div class="product-item__footer">
-                        <div class="border-top pt-2 flex-center-between flex-wrap">
 
-
-                            <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Дата истечения" class="text-gray-6 font-size-13"><i class="fa fa-hourglass-half mr-1 font-size-15"></i> <?=calculate_exp($coupon['dateend'])?></a>
-                            <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Использований" class="text-gray-6 font-size-13"><i class="fa fa-users mr-1 font-size-15"></i> <?=$coupon['used']?></a>
-
-
-
-                        </div>
+                    <div class="mb-4 text-center" style="height: 55px">
+                        <div class="mb-2"><a href="//<?=CONFIG['DOMAIN']?>/go/?go=<?=$coupon['gotolink']?>&type=<?=$coupon['species']?>" target="_blank" class="font-size-12 text-gray-5" tabindex="0"><?=obrezanie($coupon['name'], 60)?></a></a></div>
                     </div>
 
+                <hr>
+
+
+                </div>
+
+
+
+                <div class="product-item__footer">
+                    <div class="border-top pt-2 flex-center-between flex-wrap">
+
+
+                        <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Дата истечения" class="text-gray-6 font-size-13"><i class="fa fa-hourglass-half mr-1 font-size-15"></i> <?=calculate_exp($coupon['dateend'])?></a>
+                        <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Использований" class="text-gray-6 font-size-13"><i class="fa fa-users mr-1 font-size-15"></i> <?=$coupon['used']?></a>
+
+
+
+                    </div>
                 </div>
             </div>
 
 
+
+        </div>
+    </div>
 <?php
 }
 

@@ -38,7 +38,9 @@ class View {
                     require $file_layaout;
                 }else{
 			        ob_start();
+
                     require $file_layaout;
+
 			        return ob_get_clean();
                 }
 			}else{

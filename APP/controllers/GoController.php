@@ -13,9 +13,15 @@ class GoController extends AppController {
         $Panel = new Panel();
         $this->layaout = false;
 
+        if (!empty($_GET['coupon'])){
 
-        $Panel->getGotoUrl($_GET['id']);
+            $Panel->RedirCoupon($_GET['coupon']);
 
+        }
+
+
+
+        echo "gfgdfg";
 
 
 

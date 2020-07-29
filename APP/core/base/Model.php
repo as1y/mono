@@ -5,8 +5,7 @@ use RedBeanPHP\R;
 abstract class Model
 {
 	public $errors = [];
-    static $USER = [];
-    static $CATEGORY = [];
+    static $COMPANIES = [];
     static $CATEGORYcoupon = [];
 
 	public function __construct()
@@ -21,9 +20,11 @@ abstract class Model
 //                self::$USER = $this->loaduser(CONFIG['USERTABLE'], $_SESSION['ulogin']['id']);
 //            }
 
-            self::$CATEGORY = R::findAll('category', 'ORDER by `countshop` DESC');
 
             self::$CATEGORYcoupon = R::findAll('categorycoupons', 'ORDER by `count` DESC');
+
+            self::$COMPANIES = R::findAll('companies', 'ORDER by `id` ASC');
+
 
 
         }
@@ -113,9 +114,9 @@ abstract class Model
 
     public static function getCategory($limit = ""){
 
-        if (!$limit) return self::$CATEGORY;
+        if (!$limit) return self::$CATEGORYcoupon;
 
-	    $categorylimit = self::$CATEGORY;
+	    $categorylimit = self::$CATEGORYcoupon;
 
             $i = 0;
 	        foreach ($categorylimit as $key=>$value ){
@@ -123,9 +124,51 @@ abstract class Model
                 if ($i > $limit) unset($categorylimit[$key]);
             }
 
-
         return $categorylimit;
     }
+
+
+    public static function getShops($PARAMS){
+
+	    $companies = self::$COMPANIES;
+
+        if (!empty($PARAMS['custom'])){
+
+            foreach ($companies as $k=>$v){
+
+                    if (!in_array($v['id'], $PARAMS['custom'] )) {
+
+                        unset($companies[$k]);
+                    }
+
+            }
+
+        }
+
+        if (!empty($PARAMS['sort']) && $PARAMS['sort'] == "random"){
+
+           shuffle($companies);
+        }
+
+
+
+        if (empty($PARAMS['limit'])) return $companies;
+
+
+        $i = 0;
+        foreach ($companies as $key=>$company ){
+            $i++;
+            if ($i > $PARAMS['limit']) unset($companies[$key]);
+        }
+
+
+        return $companies;
+    }
+
+
+
+
+
 
     public static function countShops(){
 	    return R::count("companies");;

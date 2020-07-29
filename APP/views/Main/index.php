@@ -1,3 +1,7 @@
+<?php
+//show($_COOKIE);
+?>
+
 <main id="content" role="main">
     <!-- Vertical-Slider-Category-Banner Section -->
     <div class="mb-6 bg-gray-1 pb-4">
@@ -16,9 +20,9 @@
                                          data-target="#basicsCollapseOne"
                                          aria-expanded="true"
                                          aria-controls="basicsCollapseOne">
-                                        <span class="pl-1 text-gray-90">МАГАЗИНЫ</span>
+                                        <span class="pl-1 text-gray-90">КАТЕГОРИИ</span>
                                     </div>
-                                    <a href="#" class="d-block font-size-13 py-3 pr-4 font-weight-bold text-gray-90 ml-auto flex-shrink-0">Все</a>
+                                    <a href="/promocode/vse/" class="d-block font-size-13 py-3 pr-4 font-weight-bold text-gray-90 ml-auto flex-shrink-0">Все</a>
                                 </div>
                                 <div id="basicsCollapseOne" class="collapse show vertical-menu rounded-0"
                                      aria-labelledby="basicsHeadingOne"
@@ -31,31 +35,13 @@
                                                 <ul class="navbar-nav u-header__navbar-nav">
 
 
-                                                    <!--                                                    <li class="nav-item u-header__nav-item"-->
-                                                    <!--                                                        data-event="hover"-->
-                                                    <!--                                                        data-position="left">-->
-                                                    <!--                                                        <a href="#" class="nav-link u-header__nav-link font-weight-bold">Value of the Day</a>-->
-                                                    <!--                                                    </li>-->
-                                                    <!--                                                    <li class="nav-item u-header__nav-item"-->
-                                                    <!--                                                        data-event="hover"-->
-                                                    <!--                                                        data-position="left">-->
-                                                    <!--                                                        <a href="#" class="nav-link u-header__nav-link font-weight-bold">Top 100 Offers</a>-->
-                                                    <!--                                                    </li>-->
-                                                    <!--                                                    <li class="nav-item u-header__nav-item"-->
-                                                    <!--                                                        data-event="hover"-->
-                                                    <!--                                                        data-position="left">-->
-                                                    <!--                                                        <a href="#" class="nav-link u-header__nav-link font-weight-bold">New Arrivals</a>-->
-                                                    <!--                                                    </li>-->
-
-
-
                                                     <?php foreach (\APP\models\Panel::getCategory(13) as $val): ?>
                                                         <li class="nav-item hs-has-mega-menu u-header__nav-item"
                                                             data-event="hover"
                                                             data-animation-in="slideInUp"
                                                             data-animation-out="fadeOut"
                                                             data-position="left">
-                                                            <a class="nav-link u-header__nav-link " href="//<?=CONFIG['DOMAIN']?>/category/<?=$val['url']?>" aria-haspopup="true" aria-expanded="false"><?=obrezanie($val['name'], 25)?> <span class="text-gray-25 font-size-12 font-weight-normal"> (<?=$val['countshop']?>)</span></a>
+                                                            <a class="nav-link u-header__nav-link " href="//<?=CONFIG['DOMAIN']?>/promocode/vse/<?=$val['url']?>" aria-haspopup="true" aria-expanded="false"><?=obrezanie($val['name'], 23)?> <span class="text-gray-25 font-size-12 font-weight-normal"> (<?=$val['count']?>)</span></a>
                                                         </li>
                                                     <?php
 
@@ -98,10 +84,14 @@
                                             <div class="py-6 py-md-4 px-3 px-md-4 px-lg-9 px-xl-4 px-wd-9">
                                                 <div class="row no-gutters">
                                                     <div class="col-xl-6 col-6 mt-md-5">
+
+
                                                         <h1 class="font-size-58-sm text-lh-57 font-weight-light"
                                                             data-scs-animation-in="fadeInUp">
                                                             <?=mb_strtoupper($company['name'])?>
                                                         </h1>
+
+
                                                         <h6 class="font-size-15-sm font-weight-bold mb-2 mb-md-3"
                                                             data-scs-animation-in="fadeInUp"
                                                             data-scs-animation-delay="200"><?=$coupon['short_name']?>
@@ -109,14 +99,22 @@
                                                         <div class="mb-2 mb-md-4"
                                                              data-scs-animation-in="fadeInUp"
                                                              data-scs-animation-delay="300">
+
+                                                            <a target="_blank" style="color: #df3737 " href="<?=$coupon['framset']?>">
                                                             <span class="font-size-13"><?=json_decode($coupon['types'], true)[0]['name']?></span>
-                                                            <div class="font-size-50 font-weight-bold text-lh-45"><?=captiondiscount($coupon['discount'])?></div>
+                                                                <div class="font-size-50 font-weight-bold text-lh-45"><?=captiondiscount($coupon['discount'])?></div>
+                                                            </a>
+
                                                         </div>
                                                     </div>
                                                     <div class="col-xl-6 col-6 d-flex align-items-center"
                                                          data-scs-animation-in="zoomIn"
                                                          data-scs-animation-delay="400">
-                                                        <img class="img-fluid max-width-300-md" src="<?=$banner['img']?>" alt="Image Description">
+
+                                                        <a target="_blank" href="<?=$coupon['framset']?>">
+                                                        <img class="img-fluid max-width-300-md" src="<?=$banner['img']?>" alt="<?=$coupon['name']?>">
+                                                        </a>
+
                                                     </div>
                                                 </div>
                                             </div>
@@ -171,9 +169,12 @@
                             <?php $i=0; foreach ($widget3 as $key=>$val): ?>
 
                                 <div class="bg-white border-top">
-                                    <a href="../shop/shop.html" class="text-gray-90 position-relative d-block overflow-hidden">
+                                    <a href="//<?=CONFIG['DOMAIN']?>/promocode/<?=$val['uri']?>" class="text-gray-90 position-relative d-block overflow-hidden">
                                         <div class="position-absolute transform-rotate-16-banner">
-                                            <img class="img-fluid" src="<?=$val['logo']?>" alt="Image Description">
+
+                                       <img class="img-fluid" src="<?=$val['logo']?>" alt="<?=$val['name']?>">
+
+
                                         </div>
                                         <div class="px-4 py-6 min-height-172">
                                             <div class="mb-2 pb-1 font-size-18 font-weight-light text-ls-n1 text-lh-23">
@@ -205,40 +206,6 @@
     </div>
     <!-- End Vertical-Slider-Category-Banner Section -->
     <div class="container">
-
-
-
-
-        <!-- 4 element -->
-        <div class="row mb-6 flex-nowrap flex-xl-wrap overflow-auto overflow-xl-visble">
-
-
-            <?php $i=0;  foreach ($widget4 as $key=>$company):?>
-
-                <div class="col-md-6 mb-4 mb-xl-0 col-xl-4 col-wd-3 flex-shrink-0 flex-xl-shrink-1">
-                    <a href="../shop/shop.html" class="min-height-146 py-1 py-xl-2 py-wd-1 banner-bg d-flex align-items-center text-gray-90">
-                        <div class="col-6 col-xl-7 col-wd-6 pr-0">
-                            <img class="img-fluid" src="<?=$company['logo']?>" alt="Image Description">
-                        </div>
-                        <div class="col-6 col-xl-5 col-wd-6 pr-xl-4 pr-wd-3">
-                            <div class="mb-2 pb-1 font-size-18 font-weight-light text-ls-n1 text-lh-23">
-                                Промокоды <?=$company['name']?>
-                            </div>
-                            <div class="link text-gray-90 font-weight-bold font-size-15" href="#">
-                                Подробнее
-                                <span class="link__icon ml-1">
-                                        <span class="link__icon-inner"><i class="ec ec-arrow-right-categproes"></i></span>
-                                    </span>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-
-
-            <?php endforeach;?>
-
-        </div>
-        <!-- 4 element -->
 
         <!-- ITEKAYT -->
         <div class="bg-gray-7 mb-6 py-7">
@@ -348,55 +315,45 @@
         </div>
         <!-- ITEKAYT -->
 
-        <!-- Brand Carousel -->
-        <div class="container mb-8">
-            <div class="py-2 border-top border-bottom">
-                <div class="js-slick-carousel u-slick my-1"
-                     data-slides-show="5"
-                     data-slides-scroll="1"
-                     data-arrows-classes="d-none d-lg-inline-block u-slick__arrow-normal u-slick__arrow-centered--y"
-                     data-arrow-left-classes="fa fa-angle-left u-slick__arrow-classic-inner--left z-index-9"
-                     data-arrow-right-classes="fa fa-angle-right u-slick__arrow-classic-inner--right"
-                     data-responsive='[{
-                                "breakpoint": 992,
-                                "settings": {
-                                    "slidesToShow": 2
-                                }
-                            }, {
-                                "breakpoint": 768,
-                                "settings": {
-                                    "slidesToShow": 1
-                                }
-                            }, {
-                                "breakpoint": 554,
-                                "settings": {
-                                    "slidesToShow": 1
-                                }
-                            }]'>
+
+        <!-- 4 element -->
+        <div class="row mb-6 flex-nowrap flex-xl-wrap overflow-auto overflow-xl-visble">
 
 
+            <?php $i=0;  foreach ($widget4 as $key=>$company):?>
 
-                    <?php foreach ($widget20 as $key=>$val):?>
-                        <div class="js-slide">
-                            <a href="#" class="link-hover__brand">
-                                <img class="img-fluid m-auto max-height-50" src="<?=$val['logo']?>" alt="Image Description">
-                            </a>
+                <div class="col-md-6 mb-4 mb-xl-0 col-xl-4 col-wd-3 flex-shrink-0 flex-xl-shrink-1">
+                    <a href="//<?=CONFIG['DOMAIN']?>/promocode/<?=$company['uri']?>" class="min-height-146 py-1 py-xl-2 py-wd-1 banner-bg d-flex align-items-center text-gray-90">
+                        <div class="col-6 col-xl-7 col-wd-6 pr-0">
+                            <img class="img-fluid" src="<?=$company['logo']?>" alt="Image Description">
                         </div>
-                    <?php endforeach;?>
-
-
-
+                        <div class="col-6 col-xl-5 col-wd-6 pr-xl-4 pr-wd-3">
+                            <div class="mb-2 pb-1 font-size-18 font-weight-light text-ls-n1 text-lh-23">
+                                Промокоды <?=$company['name']?>
+                            </div>
+                            <div class="link text-gray-90 font-weight-bold font-size-15" href="#">
+                                Подробнее
+                                <span class="link__icon ml-1">
+                                        <span class="link__icon-inner"><i class="ec ec-arrow-right-categproes"></i></span>
+                                    </span>
+                            </div>
+                        </div>
+                    </a>
                 </div>
-            </div>
+
+
+            <?php endforeach;?>
+
         </div>
-        <!-- End Brand Carousel -->
+        <!-- 4 element -->
+
 
         <!-- PO KATEGORIYAM -->
         <div class="mb-6">
             <!-- Nav nav-pills -->
             <div class="position-relative text-center z-index-2">
                 <div class=" d-flex justify-content-between border-bottom border-color-1 flex-lg-nowrap flex-wrap border-md-down-top-0 border-md-down-bottom-0">
-                    <h3 class="section-title mb-0 pb-2 font-size-22">СКИДКИ ПО КАТЕГОРИЯМ</h3>
+                    <h3 class="section-title mb-0 pb-2 font-size-22">СКИДКИ ПО МАГАЗИНАМ</h3>
                 </div>
             </div>
             <!-- End Nav Pills -->
@@ -405,8 +362,8 @@
                     <div class="min-width-200 mt-xl-5">
                         <ul class="list-group list-group-flush flex-nowrap flex-xl-wrap flex-row flex-xl-column overflow-auto overflow-xl-visble mb-3 mb-xl-0 border-top border-color-1 border-lg-top-0">
 
-                            <?php foreach ($category as $val): ?>
-                                <li class="border-color-1 list-group-item border-lg-down-0 flex-shrink-0 flex-xl-shrink-1"><a class="hover-on-bold py-1 px-3 text-gray-90 d-block" href="../shop/product-categories-7-column-full-width.html"><?=$val['name']?></a></li>
+                            <?php foreach ($shops as $val): ?>
+                                <li class="border-color-1 list-group-item border-lg-down-0 flex-shrink-0 flex-xl-shrink-1"><a class="hover-on-bold py-1 px-3 text-gray-90 d-block" href="//<?=CONFIG['DOMAIN']?>/promocode/<?=$val['uri']?>"><?=$val['name']?></a></li>
                             <?php endforeach;?>
 
 
@@ -454,7 +411,48 @@
         </div>
         <!-- PO KATEGORIYAM -->
 
+        <!-- Brand Carousel -->
+        <div class="container mb-8">
+            <div class="py-2 border-top border-bottom">
+                <div class="js-slick-carousel u-slick my-1"
+                     data-slides-show="5"
+                     data-slides-scroll="1"
+                     data-arrows-classes="d-none d-lg-inline-block u-slick__arrow-normal u-slick__arrow-centered--y"
+                     data-arrow-left-classes="fa fa-angle-left u-slick__arrow-classic-inner--left z-index-9"
+                     data-arrow-right-classes="fa fa-angle-right u-slick__arrow-classic-inner--right"
+                     data-responsive='[{
+                                "breakpoint": 992,
+                                "settings": {
+                                    "slidesToShow": 2
+                                }
+                            }, {
+                                "breakpoint": 768,
+                                "settings": {
+                                    "slidesToShow": 1
+                                }
+                            }, {
+                                "breakpoint": 554,
+                                "settings": {
+                                    "slidesToShow": 1
+                                }
+                            }]'>
 
+
+
+                    <?php foreach ($widget20 as $key=>$val):?>
+                        <div class="js-slide">
+                            <a href="//<?=CONFIG['DOMAIN']?>/promocode/<?=$val['uri']?>" class="link-hover__brand">
+                                <img class="img-fluid m-auto max-height-50" src="<?=$val['logo']?>" alt="Image Description">
+                            </a>
+                        </div>
+                    <?php endforeach;?>
+
+
+
+                </div>
+            </div>
+        </div>
+        <!-- End Brand Carousel -->
 
 
 
