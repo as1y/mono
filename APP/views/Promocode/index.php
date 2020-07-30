@@ -153,7 +153,10 @@
 <br>
                 <img src="<?=$couponmodal->companies['logo']?>">
 
-                <h5 class="modal-title text-left" id="exampleModalLabel">&nbsp;&nbsp;<?=captiondiscount($couponmodal['discount'])?> <?=json_decode($couponmodal['types'], true)[0]['name']?></h5>
+                <div class="d-none d-sm-block">
+                    <h5 class="modal-title text-left" id="exampleModalLabel">&nbsp;&nbsp;<?=captiondiscount($couponmodal['discount'])?> <?=json_decode($couponmodal['types'], true)[0]['name']?></h5>
+
+                </div>
 
 
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -166,7 +169,7 @@
             <div class="modal-body text-center">
 
                 <?php if (!empty($couponmodal['short_name'])):?>
-                    <span class="font-size-12"><?=obrezanie($couponmodal['short_name'], 350)?><br><br></span>
+                    <span  class="font-size-12 "><?=obrezanie($couponmodal['short_name'], 350)?><br><br></span>
                 <?php endif; ?>
 
 

@@ -174,7 +174,6 @@
 
                                        <img class="img-fluid" src="<?=$val['logo']?>" alt="<?=$val['name']?>">
 
-
                                         </div>
                                         <div class="px-4 py-6 min-height-172">
                                             <div class="mb-2 pb-1 font-size-18 font-weight-light text-ls-n1 text-lh-23">
@@ -190,7 +189,7 @@
                                     </a>
                                 </div>
 
-                                <!--                                <li class="product-category product"><a href="//--><?//=CONFIG['DOMAIN']?><!--/shop/--><?//=$val['uri']?><!--"><img src="--><?//=$val['logo']?><!--" alt="--><?//=$val['name']?><!--" width="250" height="232"><h3>--><?//=$val['name']?><!--</h3></a></li>-->
+
                             <?php  endforeach;?>
 
 

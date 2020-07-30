@@ -254,8 +254,6 @@ abstract class Model
         $result = false;
 
 
-
-
         // forma = форма
         // type = случный или по CTR
 
@@ -264,7 +262,13 @@ abstract class Model
         // kvadrat
 
 
+
+
         $BANNERS = $PARAMS['company']->withCondition(' `forma` = "'.$PARAMS['forma'].'" ORDER BY `views` DESC')->ownBannersList;
+
+
+
+
 
 
         // Фильтр на размеры. Баннер не должен быть в 2 раза больше требуемых размеров

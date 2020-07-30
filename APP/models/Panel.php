@@ -37,18 +37,44 @@ class Panel extends \APP\core\base\Model {
 
     public function WorkWithBanners($token){
 
-        $companies = R::findAll('companies', "ORDER BY rand() LIMIT 20 ", [NULL]);
+        $companies = R::findAll('companies', "WHERE `addbanner` = ? LIMIT 40 ", ["0"]);
 
-        foreach ($companies as $key=>$company){
-            $banners = $this->loadBanners($token, $company['idadmi']);
-            $this->addBannersinBD($banners, $company);
+        if (!empty($companies)){
+
+            foreach ($companies as $key=>$company){
+                $banners = $this->loadBanners($token, $company['idadmi']);
+                $this->addBannersinBD($banners, $company);
+            }
+
+            echo "<h1><font color='red'>Загружены не все баннера. Включите скрипт еще раз</font></h1>";
+
         }
+
+
+
+
+
 
 
 
         return true;
 
     }
+
+    public function SubscribeFooter($email){
+
+        $DATA = [
+            'email' => $email,
+            'type' => "footer"
+        ];
+
+        $this->addnewBD("subscribe", $DATA);
+
+        return true;
+
+    }
+
+
 
 
 
@@ -65,6 +91,10 @@ class Panel extends \APP\core\base\Model {
         // Берем баннера которые уже есть в БД
 
         foreach ($banners as $key => $banner){
+
+            if ($banner['type'] == "html5") continue;
+            if ($banner['type'] == "flash") continue;
+
 
             // Берем ID баннеров которые в Адмитаде
             $BannersList[$banner['id']] = 1;
@@ -98,6 +128,8 @@ class Panel extends \APP\core\base\Model {
 
             $company->ownBannerList[] = $bannerbd;
 
+            $company->addbanner = 1;
+
             echo "<b>Баннер ".$banner['name']." добавлен </b>  <br>";
             R::store($company);
 
@@ -128,7 +160,7 @@ class Panel extends \APP\core\base\Model {
 
         $url = API."/banners/".$cid."/website/".$this->wID."/";
         $type = "GET";
-        $limit = 100;
+        $limit = 200;
 
         $headers = array(
             'Content-Type: application/x-www-form-urlencoded',
@@ -916,6 +948,7 @@ class Panel extends \APP\core\base\Model {
                 'logo' => $logo,
                 'description' => "",
                 'status' => $val['status'],
+                'addbanner' => 0,
             ];
 
             $this->addnewBD("companies", $DATA);

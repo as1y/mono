@@ -312,7 +312,7 @@
                             <input type="email" class="form-control border-0 height-40" name="email" id="subscribeSrEmail" placeholder="Введите E-mail" aria-label="Email address" aria-describedby="subscribeButton" required
                                    data-msg="Please enter a valid email address.">
                             <div class="input-group-append">
-                                <button type="submit" class="btn btn-dark btn-sm-wide height-40 py-2" id="subscribeButton">Подписаться</button>
+                                <button type="submit" onclick="subscribefooter()" class="btn btn-dark btn-sm-wide height-40 py-2" id="subscribeButton">Подписаться</button>
                             </div>
                         </div>
                     </form>
@@ -383,6 +383,18 @@
     <span class="fas fa-arrow-up u-go-to__inner"></span>
 </a>
 <!-- End Go to Top -->
+
+
+
+
+<div class="smallmodal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            СПАСИБО ЗА ПОДПИСКУ!
+        </div>
+    </div>
+</div>
+
 
 <!-- JS Global Compulsory -->
 <script src="/assets_main/vendor/jquery/dist/jquery.min.js"></script>
@@ -476,6 +488,30 @@ $shops = \APP\models\Panel::getShops(['limit' => 100]);
 
     }
 
+    
+    function subscribefooter() {
+
+        let email = $('[name=email]').val();
+        str =  '&email=' + email + '&type=footer';
+
+        $.ajax(
+            {
+                url : /subscribe/,
+                type: 'POST',
+                data: str,
+                cache: false,
+                success: function( ) {
+
+                    $('#smallmodal').modal('show');
+
+                }
+            }
+        );
+
+
+    }
+    
+    
     function ChangeFilter() {
         str = getFilterParamsParams();
 

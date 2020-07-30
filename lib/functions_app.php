@@ -389,7 +389,7 @@ function renderCoupon($coupon){
                     <div class="flex-bottom-between text-center mb-1">
 
                         <?php if ($coupon['species'] == "promocode"): ?>
-                            <a  href="//<?=CONFIG['DOMAIN']?>/go/?coupon=<?=$coupon['id']?>"  onclick="clck(<?=$coupon['id']?>)"  data-toggle="tooltip" data-placement="top" title="" data-original-title="Показать"  class="btn-add-cart btn-add-cart__wide btn-primary transition-3d-hover">ПРОМОКОД</a>
+                            <a  href="//<?=CONFIG['DOMAIN']?>/go/?coupon=<?=$coupon['id']?>"  onclick="clck(<?=$coupon['id']?>)"  data-toggle="tooltip" data-placement="top" title="" data-original-title="Показать"  class="btn-add-cart btn-add-cart__wide btn-primary transition-3d-hover">ОТКРЫТЬ КОД</a>
                         <?php endif;?>
 
                         <?php if ($coupon['species'] == "action"): ?>
