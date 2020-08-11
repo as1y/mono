@@ -132,23 +132,33 @@ abstract class Model
 
 	    $companies = self::$COMPANIES;
 
-        if (!empty($PARAMS['custom'])){
+        // Проверка на наличие купонов в магазине
+        foreach ($companies as $k=>$v) {
+            if ($v->countOwn("coupons") == 0) unset($companies[$k]);
+        }
 
+
+        if (!empty($PARAMS['banner'])) {
             foreach ($companies as $k=>$v){
+            // Если у Магазина нет баннеров
+            if ($v['addbanner'] == 0)  unset($companies[$k]);
+            }
+        }
 
+
+        if (!empty($PARAMS['custom'])){
+            foreach ($companies as $k=>$v){
                     if (!in_array($v['id'], $PARAMS['custom'] )) {
-
                         unset($companies[$k]);
                     }
-
             }
-
         }
 
         if (!empty($PARAMS['sort']) && $PARAMS['sort'] == "random"){
-
            shuffle($companies);
         }
+
+
 
 
 
@@ -281,8 +291,8 @@ abstract class Model
 
         // Если баннера не найдено, то выдаем заглушку
         if (count($BANNERS) == 0){
-            	    $result['img'] = "/upload/banners/876398banner.jpg";
-            	    $result['link'] = "http://pafutos.com/g/notce9obzb88fe65ef3a4b9351d46e/";
+            	    $result['img'] = "https://cdn.admitad.com/bs/2020/07/06/e907d48ee3c66da1271af4d4d817b6a2.jpg";
+            	    $result['link'] = "http://ad.admitad.com/g/jt7fikzsrg88fe65ef3aa67c98cd55/";
             return $result;
         }
 

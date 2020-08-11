@@ -252,6 +252,8 @@
                         </div>
                     </div>
                     <div class="col-md-8 col-lg-9 col-wd-10">
+
+
                         <div class="">
                             <div class="js-slick-carousel u-slick position-static overflow-hidden u-slick-overflow-visble pb-5 pt-2 px-1"
                                  data-pagi-classes="text-center right-0 bottom-1 left-0 u-slick__pagination u-slick__pagination--long mb-0 z-index-n1 mt-3 pt-1"
@@ -303,9 +305,6 @@
 
 
                             </div>
-
-
-
 
                         </div>
                     </div>

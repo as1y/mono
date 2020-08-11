@@ -24,10 +24,12 @@
     <script src="/global_assets/js/plugins/loaders/blockui.min.js"></script>
     <!-- /core JS files -->
 
+
+    <script src="/assets/js/app.js"></script>
     <?php \APP\core\base\View::getAssets("js");?>
 
 
-    <script src="/assets/js/app.js"></script>
+
 
 </head>
 
@@ -102,11 +104,7 @@
 <div class="page-header">
     <div class="breadcrumb-line breadcrumb-line-light header-elements-md-inline">
         <div class="d-flex">
-            <div class="breadcrumb">
 
-                <?php \APP\core\base\View::getBreadcrumbs();?>
-
-            </div>
 
             <a href="#" class="header-elements-toggle text-default d-md-none"><i class="icon-more"></i></a>
         </div>
@@ -195,61 +193,45 @@
                     <ul class="nav nav-sidebar" data-nav-type="accordion">
 
                         <li class="nav-item-header">
-                            <div class="text-uppercase font-size-sm line-height-sm">ПАНЕЛЬ УПРАВЛЕНИЯ</div>
-                        </li>
-                        <li class="nav-item">
-                            <a href="/master/" class="nav-link <?=isset($active['index']) ? $active['index'] : ''; ?>">
-                                <i class="icon-home4"></i>
-                                <span>	Магазины </span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="/master/" class="nav-link <?=isset($active['coupons']) ? $active['coupons'] : ''; ?>">
-                                <i class="icon-home4"></i>
-                                <span>	Купоны </span>
-                            </a>
+                            <div class="text-uppercase font-size-sm line-height-sm">ГЛАВНАЯ</div>
                         </li>
 
-
                         <li class="nav-item">
-                            <a href="/master/" class="nav-link <?=isset($active['promo']) ? $active['promo'] : ''; ?>">
+                            <a href="/panel/" class="nav-link <?=isset($active['index']) ? $active['index'] : ''; ?>">
                                 <i class="icon-home4"></i>
-                                <span>	Товары </span>
+                                <span>	Лог Конверсий </span>
                             </a>
                         </li>
 
                         <li class="nav-item">
-                            <a href="/master/" class="nav-link <?=isset($active['promo']) ? $active['promo'] : ''; ?>">
+                            <a href="/panel/update" class="nav-link <?=isset($active['update']) ? $active['update'] : ''; ?>">
                                 <i class="icon-home4"></i>
-                                <span>	Контент </span>
+                                <span>	Обновление </span>
                             </a>
                         </li>
-
 
                         <li class="nav-item-header">
-                            <div class="text-uppercase font-size-sm line-height-sm">ПАНЕЛЬ УПРАВЛЕНИЯ</div>
+                            <div class="text-uppercase font-size-sm line-height-sm">РЕКЛАМА</div>
                         </li>
 
                         <li class="nav-item">
-                            <a href="/master/" class="nav-link <?=isset($active['stat']) ? $active['stat'] : ''; ?>">
+                            <a href="/panel/flow" class="nav-link <?=isset($active['flow']) ? $active['flow'] : ''; ?>">
                                 <i class="icon-home4"></i>
-                                <span>	Статистика </span>
+                                <span>	Мои потоки </span>
                             </a>
                         </li>
 
                         <li class="nav-item">
-                            <a href="/master/" class="nav-link <?=isset($active['promo']) ? $active['promo'] : ''; ?>">
+                            <a href="/panel/addflow" class="nav-link <?=isset($active['addflow']) ? $active['addflow'] : ''; ?>">
                                 <i class="icon-home4"></i>
-                                <span>	Реклама </span>
-
+                                <span>	Добавить поток </span>
+                            </a>
                         </li>
 
-                        <li class="nav-item">
-                            <a href="/master/" class="nav-link <?=isset($active['promo']) ? $active['promo'] : ''; ?>">
-                                <i class="icon-home4"></i>
-                                <span>	Кластера </span>
-                            </a>
-                            </a>                </li>
+
+
+
+
 
 
 
@@ -336,6 +318,8 @@
     </div>
 </div>
 <!-- /footer -->
+
+
 
 
 

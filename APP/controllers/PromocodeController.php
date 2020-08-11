@@ -102,6 +102,9 @@ class PromocodeController extends AppController {
         }
         // Если запрос напрямую
 
+
+
+
         // ЗАПРОС AJAX НА ГЕНЕРАЦИЮ КОНТЕНТА
         if($this->isAjax()){
             $this->layaout = false;

@@ -1,5 +1,7 @@
 <?php
 namespace APP\core\base;
+use APP\models\Panel;
+
 abstract class Controller {
 	public $route = [];
 	public $view;
@@ -13,6 +15,24 @@ abstract class Controller {
 		// Роутинг ВНЕ СЕССИЙ
 		if ($route['controller'] == "Pay" ) return true;
         // Роутинг ВНЕ СЕССИЙ
+
+
+
+        // Пишем в сессию инукальный ID
+        if (empty($_SESSION['SystemUserId'])) {
+
+            $Panel =  new Panel();
+            $_SESSION['SystemUserId'] = SystemUserId();
+            $Panel->AddUtminBD($_GET);
+
+
+            // Парсим UTM
+            // Добавляем в Таблицу запись с Уникальым ID и параметрами UTM
+
+        }
+
+
+        // Добавить пользователя с UTM метками
 
 
 

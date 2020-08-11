@@ -9,6 +9,7 @@
     <?php \APP\core\base\View::getMeta()?>
     <meta name="verify-admitad" content="88fe65ef3a" />
 
+    <meta name="yandex-verification" content="5c533e8853746fb6" />
 
     <!-- Favicon -->
     <link rel="shortcut icon" href="/favicon.ico">
@@ -306,16 +307,23 @@
                 </div>
                 <div class="col-lg-5">
                     <!-- Subscribe Form -->
-                    <form class="js-validate js-form-message">
+
+
+
+                    <form onsubmit="subscribefooter(); return false">
                         <label class="sr-only" for="subscribeSrEmail">Введите E-mail</label>
                         <div class="input-group input-group-pill">
+
                             <input type="email" class="form-control border-0 height-40" name="email" id="subscribeSrEmail" placeholder="Введите E-mail" aria-label="Email address" aria-describedby="subscribeButton" required
                                    data-msg="Please enter a valid email address.">
+
                             <div class="input-group-append">
-                                <button type="submit" onclick="subscribefooter()" class="btn btn-dark btn-sm-wide height-40 py-2" id="subscribeButton">Подписаться</button>
+                                <button type="submit" class="btn btn-dark btn-sm-wide height-40 py-2" id="subscribeButton">Подписаться</button>
                             </div>
                         </div>
                     </form>
+
+
                     <!-- End Subscribe Form -->
                 </div>
             </div>
@@ -385,15 +393,136 @@
 <!-- End Go to Top -->
 
 
-
-
-<div class="smallmodal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-sm">
+<div class="modal fade" name="subscribemodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
         <div class="modal-content">
-            СПАСИБО ЗА ПОДПИСКУ!
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">УСПЕШНАЯ ПОДПИСКА</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                СПАСИБО ЗА ПОДПИСКУ!
+            </div>
         </div>
     </div>
 </div>
+
+
+
+<?php if (!empty($_COOKIE['runpromocode'])):
+    $couponmodal =\APP\models\Panel::loadOneCoupon($_COOKIE['runpromocode']);
+    ?>
+
+    <script>
+        function copytext() {
+            /* Get the text field */
+            var copyText = document.getElementById("myInput");
+
+            /* Select the text field */
+            copyText.select();
+
+            /* Copy the text inside the text field */
+            document.execCommand("copy");
+
+        }
+    </script>
+
+    <!-- Modal -->
+    <div class="modal fade" id="couponmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header  ">
+                    <br>
+                    <img src="<?=$couponmodal->companies['logo']?>">
+
+                    <div class="d-none d-sm-block">
+                        <h5 class="modal-title text-left" id="exampleModalLabel">&nbsp;&nbsp;<?=captiondiscount($couponmodal['discount'])?> <?=json_decode($couponmodal['types'], true)[0]['name']?></h5>
+
+                    </div>
+
+
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+
+                </div>
+
+
+                <div class="modal-body text-center" id="modalbody">
+
+                    <?php if (!empty($couponmodal['short_name'])):?>
+                        <span  class="font-size-12 "><?=obrezanie($couponmodal['short_name'], 350)?><br><br></span>
+                    <?php endif; ?>
+
+
+
+                    <div class="container-fluid">
+                        <div class="row">
+
+                            <div class="col-md-2"></div>
+                            <div class="col-md-8 ">
+                                <div class="form-group">
+                                    <input type="text" style="border-radius: unset" onclick="copytext()" class="form-control px-4 text-center"  value="<?=$couponmodal['promocode']?>"  id="myInput" >
+                                </div>
+                                <button type="button"  onclick="copytext()" class="btn btn-warning">СКОПИРОВАТЬ ПРОМОКОД</button>
+
+                            </div>
+                            <div class="col-md-2"></div>
+                        </div>
+
+
+                    </div>
+                    <hr>
+                    <span class="font-size-12 ">Не готовы покупать в магазине прямо сейчас? <br>
+              Мы отправим промокод на e-mail чтобы не потерять!</span>
+                    <br>
+
+
+                    <form onsubmit="subscribecode(<?=$couponmodal['id']?>); return false">
+                        <div class="container-fluid">
+                            <div class="row">
+
+
+                                <div class="input-group input-group-pill">
+                                    <input type="email" class="form-control border-0 height-40" name="emailcode" id="subscribeSrEmail" placeholder="Введите E-mail" aria-label="Email address" aria-describedby="subscribeButton" required="" data-msg="Please enter a valid email address.">
+
+                                    <div class="input-group-append">
+                                        <button type="submit"  class="btn btn-dark btn-sm-wide height-40 py-2" id="subscribeButton">ОТПРАВИТЬ</button>
+                                    </div>
+                                </div>
+
+
+
+                            </div>
+
+                            <hr>
+
+                        </div>
+                    </form>
+
+                    <font color="#df3737">Для Вашего удобства сайт магазина уже открыт в соседней вкладке.</font>
+                    <br>
+
+
+
+
+
+
+
+
+                </div>
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+<?php endif;?>
+
 
 
 <!-- JS Global Compulsory -->
@@ -488,7 +617,42 @@ $shops = \APP\models\Panel::getShops(['limit' => 100]);
 
     }
 
-    
+
+
+    function subscribecode(idcoupon) {
+
+        let email = $('[name=emailcode]').val();
+
+        str =  '&email=' + email + '&type=send' + '&idcoupon=' + idcoupon;
+
+
+
+        $.ajax(
+            {
+                url : /subscribe/,
+                type: 'POST',
+                data: str,
+                cache: false,
+                success: function(subs ) {
+
+                    $('#modalbody').empty();
+                    $('#modalbody').append('<h5>Промокод отправлен на e-mail!</h5>');
+
+                    // $('#modalbody').append(subs);
+
+
+
+                }
+            }
+        );
+
+
+
+
+
+    }
+
+
     function subscribefooter() {
 
         let email = $('[name=email]').val();
@@ -500,9 +664,10 @@ $shops = \APP\models\Panel::getShops(['limit' => 100]);
                 type: 'POST',
                 data: str,
                 cache: false,
-                success: function( ) {
+                success: function(subs ) {
 
-                    $('#smallmodal').modal('show');
+                    $('[name=subscribemodal]').modal('show');
+                    $('[name=email]').val("");
 
                 }
             }
@@ -605,6 +770,7 @@ $shops = \APP\models\Panel::getShops(['limit' => 100]);
 
 
         $('#CouponContainer').empty();
+
         $.ajax(
             {
                 url : document.location.pathname,
@@ -646,6 +812,8 @@ $shops = \APP\models\Panel::getShops(['limit' => 100]);
 
 
     }
+
+
 
 
     function getFilterParamsParams() {

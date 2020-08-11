@@ -37,10 +37,14 @@ V::lang('ru');
 //Почтовый сервис
 
 require_once 'APP/core/PHPM.php';
+
+// ПОЧТА promocode@coupons.gallery
+
+
 //НАСТРОЙКА ПОЧТЫ НА ЯНДЕКС
 define('MAILHOST', 'ssl://smtp.yandex.ru');
-define('MAILUSERNAME', 'info@500рублей.рф');
-define('MAILPASSWORD', 'barsuk343');
+define('MAILUSERNAME', 'promocode@coupons.gallery');
+define('MAILPASSWORD', 'Bersuk113322');
 define('API', 'https://api.admitad.com');
 //НАСТРОЙКА ПОЧТЫ НА ЯНДЕКС
 

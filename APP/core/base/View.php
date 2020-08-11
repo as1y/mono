@@ -21,6 +21,8 @@ class View {
 
 
 	public function render($DATA, $return = false){
+
+
 		if(is_array($DATA)) extract($DATA);
 		$file_view = WWW."/APP/views/".$this->route['controller']."/".$this->view.".php";
 		ob_start();

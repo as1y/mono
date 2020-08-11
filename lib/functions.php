@@ -192,6 +192,25 @@ function obrezanie ($text, $symbols){
 
 }
 
+
+
+function translitengrus($input){
+    $gost = array(
+        "a"=>"а","b"=>"б","v"=>"в","g"=>"г","d"=>"д","e"=>"е","yo"=>"ё",
+        "j"=>"ж","z"=>"з","i"=>"и","i"=>"й","k"=>"к",
+        "l"=>"л","m"=>"м","n"=>"н","o"=>"о","p"=>"п","r"=>"р","s"=>"с","t"=>"т",
+        "y"=>"у","f"=>"ф","h"=>"х","c"=>"ц",
+        "ch"=>"ч","sh"=>"ш","sh"=>"щ","i"=>"ы","e"=>"е","u"=>"у","ya"=>"я","A"=>"А","B"=>"Б",
+        "V"=>"В","G"=>"Г","D"=>"Д", "E"=>"Е","Yo"=>"Ё","J"=>"Ж","Z"=>"З","I"=>"И","I"=>"Й","K"=>"К","L"=>"Л","M"=>"М",
+        "N"=>"Н","O"=>"О","P"=>"П",
+        "R"=>"Р","S"=>"С","T"=>"Т","Y"=>"Ю","F"=>"Ф","H"=>"Х","C"=>"Ц","Ch"=>"Ч","Sh"=>"Ш",
+        "Sh"=>"Щ","I"=>"Ы","E"=>"Е", "U"=>"У","Ya"=>"Я","'"=>"ь","'"=>"Ь","''"=>"ъ","''"=>"Ъ","j"=>"ї","i"=>"и","g"=>"ґ",
+        "ye"=>"є","J"=>"Ї","I"=>"І",
+        "G"=>"Ґ","YE"=>"Є"
+    );
+    return strtr($input, $gost);
+}
+
 function translit_sef($value)
 {
     $converter = array(
@@ -283,6 +302,19 @@ function getsizetypeimage($w_src, $h_src){
 
 
 }
+
+
+
+
+function SystemUserId(){
+    return  md5(uniqid().$_SERVER['REMOTE_ADDR'].$_SERVER['UNIQUE_ID']);
+}
+
+function gaUserId(){
+    return preg_replace("/^.+\.(.+?\..+?)$/", "\\1", $_COOKIE['_ga']);
+}
+
+
 
 function fCURL($url, $PARAMS = [], $headers = []){
 

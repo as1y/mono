@@ -245,7 +245,19 @@ function renderFilter($DATA){
 }
 
 
+function textdiscount($discount){
 
+    if($discount == "1%") $discount = NULL;
+
+    if (empty($discount))   $caption = 'на скидку';
+
+    if (!empty($discount))   $caption = $discount;
+
+    return $caption;
+
+
+
+}
 
 function captiondiscount($discount){
 
@@ -264,19 +276,37 @@ function constructWhere($ARR){
 
     if (empty($ARR)) return "";
 
-    if (count($ARR) == 1) return "WHERE ".$ARR[0];
+    if (count($ARR) == 1) return "WHERE ".$ARR[0]."";
 
     $WHERE = "WHERE ".$ARR[0];
     for ($key = 1; $key < count($ARR); $key++) {
         $WHERE .= " AND ".$ARR[$key];
     }
 
-    // Сортируем по ID компании чтобы они были выдаче по порядку!
-    $WHERE .= "ORDER BY `companies_id` DESC";
-
     return $WHERE;
 
 }
+
+
+
+
+
+
+function addsubid($url, $id){
+
+    $url .= "?subid=".$id."&subid4="."";
+
+
+    return $url;
+}
+
+
+
+
+
+
+
+
 
 
 function renderType($catalogType){
@@ -339,17 +369,60 @@ function renderCategory($catalogCategories){
 }
 
 
-function CheckNumericArr($ARR){
 
-    $ARRcheck = explode(",", $ARR);
-//         Проверка на число
-    foreach ($ARRcheck as $key){
-        if (is_numeric($key) == false) unset($ARR[$key]);
-    }
-//         Проверка на число
+function AuthAdmitad(){
 
-    return $ARR;
+
+    $url = API."/token/";
+    $type = "POST";
+    $headers = [
+        'Content-Type: application/x-www-form-urlencoded',
+        'Authorization: Basic ' . base64_encode( CONFIG['ADMITAD']['cliend_id'] . ':' . CONFIG['ADMITAD']['cliend_secret'] )
+    ];
+    $PARAMS = [
+        "grant_type" => "client_credentials",
+        "client_id" => CONFIG['ADMITAD']['cliend_id'],
+        "scope" => "advcampaigns_for_website coupons_for_website deeplink_generator public_data banners_for_website"
+    ];
+    $PARAMS = http_build_query($PARAMS);
+
+    $result = fCURL($url, [$type => $PARAMS], $headers);
+
+    return $result['access_token'];
+
+
 }
+
+
+
+
+
+
+
+function RenderCouponsinADD($coupons){
+?>
+
+        <label>ОФФЕР: <span class="text-danger">*</span> </label>
+
+    <select name="coupon" class="form-control">
+        <?php foreach ($coupons as $key=>$val):?>
+            <option value="<?=$val['id']?>"><?=$val['name']?></option>
+        <?php endforeach;?>
+    </select>
+
+
+
+
+
+        </select>
+
+
+<?php
+}
+
+
+
+
 
 
 
@@ -374,40 +447,78 @@ function renderCoupon($coupon){
 
             <div class="col product-item__body pl-2 pl-lg-3 mr-xl-2 mr-wd-1">
 
-                <div class=" " style="width: 170px;  ">
 
-                    <div class="prodcut-price text-center bg-white rounded-sm border border-width-2 border-red py-2 px-2">
-                        <div class="text-gray-100"><?=captiondiscount($coupon['discount'])?></div>
-
-                        <div class="mb-2 text-center"><a href="//<?=CONFIG['DOMAIN']?>/go/?coupon=<?=$coupon['id']?>" target="_blank" class="font-size-12 text-gray-5"><?=json_decode($coupon['types'], true)[0]['name']?></a></div>
-
-                        <a href="//<?=CONFIG['DOMAIN']?>/go/?coupon=<?=$coupon['id']?>" target="_blank" class="d-block text-center"><img class="img-fluid" src="<?=$coupon->companies['logo']?>" width="100" alt="<?=$coupon['short_name']?>"></a>
-
-                    </div>
-<br>
-
-                    <div class="flex-bottom-between text-center mb-1">
-
-                        <?php if ($coupon['species'] == "promocode"): ?>
-                            <a  href="//<?=CONFIG['DOMAIN']?>/go/?coupon=<?=$coupon['id']?>"  onclick="clck(<?=$coupon['id']?>)"  data-toggle="tooltip" data-placement="top" title="" data-original-title="Показать"  class="btn-add-cart btn-add-cart__wide btn-primary transition-3d-hover">ОТКРЫТЬ КОД</a>
-                        <?php endif;?>
-
-                        <?php if ($coupon['species'] == "action"): ?>
-                            <a href="//<?=CONFIG['DOMAIN']?>/go/?coupon=<?=$coupon['id']?>" target="_blank" data-toggle="tooltip" data-placement="top" title="" data-original-title="Использовать"  class="btn btn-dark btn-sm-wide height-40 py-2">ПЕРЕЙТИ</a>
-                        <?php endif;?>
+    <?php if ($coupon['species'] == "promocode"): ?>
 
 
-                    </div>
+        <!-- PROMOCODE -->
+
+        <div  style="width: 170px;  ">
+
+            <div class="prodcut-price text-center bg-white rounded-sm border border-width-2 border-red py-2 px-2">
+                <div class="text-gray-100"><?=captiondiscount($coupon['discount'])?></div>
+
+                <div class="mb-2 text-center"><a href="//<?=CONFIG['DOMAIN']?>/go/?coupon=<?=$coupon['id']?>" onclick="clck(<?=$coupon['id']?>)" class="font-size-12 text-gray-5"><?=json_decode($coupon['types'], true)[0]['name']?></a></div>
+
+                <a href="//<?=CONFIG['DOMAIN']?>/go/?coupon=<?=$coupon['id']?>" onclick="clck(<?=$coupon['id']?>)"  class="d-block text-center"><img class="img-fluid" src="<?=$coupon->companies['logo']?>" width="100" alt="<?=$coupon['short_name']?>"></a>
+
+            </div>
+            <br>
+
+            <div class="flex-bottom-between text-center mb-1">
+                    <a  href="//<?=CONFIG['DOMAIN']?>/go/?coupon=<?=$coupon['id']?>"  onclick="clck(<?=$coupon['id']?>)"  data-toggle="tooltip" data-placement="top" title="" data-original-title="Показать"  class="btn-add-cart btn-add-cart__wide btn-primary transition-3d-hover">ОТКРЫТЬ КОД</a>
+            </div>
 
 
-                    <div class="mb-4 text-center" style="height: 55px">
-                        <div class="mb-2"><a href="//<?=CONFIG['DOMAIN']?>/go/?go=<?=$coupon['gotolink']?>&type=<?=$coupon['species']?>" target="_blank" class="font-size-12 text-gray-5" tabindex="0"><?=obrezanie($coupon['name'], 60)?></a></a></div>
-                    </div>
+            <div class="mb-4 text-center" style="height: 55px">
+                <div class="mb-2"><a href="//<?=CONFIG['DOMAIN']?>/go/?coupon=<?=$coupon['id']?>" onclick="clck(<?=$coupon['id']?>)" class="font-size-12 text-gray-5" tabindex="0"><?=obrezanie($coupon['name'], 60)?></a></a></div>
+            </div>
 
-                <hr>
+            <hr>
 
 
-                </div>
+        </div>
+
+    <?php endif;?>
+
+
+    <?php if ($coupon['species'] == "action"): ?>
+
+    <!-- ACTION -->
+        <div  style="width: 170px;  ">
+
+            <div class="prodcut-price text-center bg-white rounded-sm border border-width-2 border-red py-2 px-2">
+                <div class="text-gray-100"><?=captiondiscount($coupon['discount'])?></div>
+
+                <div class="mb-2 text-center"><a href="//<?=CONFIG['DOMAIN']?>/go/?coupon=<?=$coupon['id']?>" target="_blank" class="font-size-12 text-gray-5"><?=json_decode($coupon['types'], true)[0]['name']?></a></div>
+
+                <a href="//<?=CONFIG['DOMAIN']?>/go/?coupon=<?=$coupon['id']?>" target="_blank" class="d-block text-center"><img class="img-fluid" src="<?=$coupon->companies['logo']?>" width="100" alt="<?=$coupon['short_name']?>"></a>
+
+            </div>
+            <br>
+
+            <div class="flex-bottom-between text-center mb-1">
+                <a href="//<?=CONFIG['DOMAIN']?>/go/?coupon=<?=$coupon['id']?>" target="_blank" data-toggle="tooltip" data-placement="top" title="" data-original-title="Использовать"  class="btn btn-dark btn-sm-wide height-40 py-2">ПЕРЕЙТИ</a>
+
+            </div>
+
+
+            <div class="mb-4 text-center" style="height: 55px">
+                <div class="mb-2"><a href="//<?=CONFIG['DOMAIN']?>/go/?coupon=<?=$coupon['id']?>" target="_blank" class="font-size-12 text-gray-5" tabindex="0"><?=obrezanie($coupon['name'], 60)?></a></a></div>
+            </div>
+
+            <hr>
+
+
+        </div>
+
+
+    <?php endif;?>
+
+
+
+
+
 
 
 

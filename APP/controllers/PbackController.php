@@ -22,11 +22,31 @@ class PbackController extends AppController {
 
             // Получение постбека
 
-            $dat = json_encode($_POST);
+            $couponid = $_POST['subid1'];
+            $uid = $_POST['subid2'];
+            $gaid = $_POST['subid4'];
+
+            $coupon = $Panel->loadOneCoupon($couponid);
+            $coupontext = json_encode($coupon, true);
+
+            $UTM = $Panel->getUTM($uid);
+            $UTM = json_encode($UTM, true);
 
             $DATA = [
-                'mass' => $dat,
+                'coupon' => $coupontext,
+                'UTM' => $UTM,
+                'zarabotok' => $_POST['payment_sum'],
+                'offer' => $_POST['offer_name'],
+                'action' => $_POST['action'],
+                'conversiontime' => $_POST['conversion_time'],
+                'date' => date("Y-m-d H:i:s"),
+                'gaid' => $gaid,
+                'uid' => $uid,
+
             ];
+
+
+            $Panel->SendGoogleTransaction($coupon, $_POST);
 
             $Panel->addnewBD("conversion", $DATA);
 

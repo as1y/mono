@@ -27,7 +27,12 @@ class PHPM
     public static function sendMail($view,$subject, $data, $recipient, $layout = 'MAIL')
     {
         $vObj = new View(['controller' => 'Mail'], $layout, $view);
+
+
         $mailHtml = $vObj->render($data,true);
+
+
+
         $mail = new PHPMailer(true);
 
         try {

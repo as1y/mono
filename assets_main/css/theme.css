@@ -9988,7 +9988,7 @@ button.bg-indigo:focus {
 }
 
 .border-0 {
-  border: 0 !important;
+  border: 2 !important;
 }
 
 .border-top-0 {
@@ -32948,7 +32948,7 @@ sup {
 }
 
 strong {
-  font-weight: 700;
+  /*font-weight: 700;*/
 }
 
 body {

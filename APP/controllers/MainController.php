@@ -36,7 +36,7 @@ class MainController extends AppController {
 
 
         // Случайная сортировка
-        $widget5 =   $Panel->getShops(['limit' => 5, 'sort' => 'random']);
+        $widget5 =   $Panel->getShops(['limit' => 5, 'sort' => 'random', 'banner' => 1]);
 
         // Задаем ID компаний в ручную
         $widget4 =   $Panel->getShops(['custom' => [5,6,7,8]]);

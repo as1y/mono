@@ -5,39 +5,14 @@ use RedBeanPHP\R;
 
 class Panel extends \APP\core\base\Model {
 
-    public $cliend_id = "kvR0vxe27QCLAyr8imr1ljuPL2yhpD";
-    public $client_secret = "WWfPYEd9rcRgFr8MmLNVSE1KFtRB8x";
     public $wID ="1495066";
-
-    public function AuthAdmitad(){
-
-
-        $url = API."/token/";
-        $type = "POST";
-        $headers = [
-            'Content-Type: application/x-www-form-urlencoded',
-            'Authorization: Basic ' . base64_encode( $this->cliend_id . ':' . $this->client_secret )
-        ];
-        $PARAMS = [
-            "grant_type" => "client_credentials",
-            "client_id" => $this->cliend_id,
-            "scope" => "advcampaigns_for_website coupons_for_website deeplink_generator public_data banners_for_website"
-        ];
-        $PARAMS = http_build_query($PARAMS);
-
-
-        $result = fCURL($url, [$type => $PARAMS], $headers);
-
-        return $result['access_token'];
-
-
-    }
-
 
 
     public function WorkWithBanners($token){
 
         $companies = R::findAll('companies', "WHERE `addbanner` = ? LIMIT 40 ", ["0"]);
+
+        show($companies);
 
         if (!empty($companies)){
 
@@ -61,7 +36,30 @@ class Panel extends \APP\core\base\Model {
 
     }
 
+    public function SendCouponEmail($DATA){
+
+
+            $DATA = [
+                'email' => $DATA['email'],
+                'idcoupon' => $DATA['idcoupon'],
+            ];
+
+            $this->addnewBD("sendcoupons", $DATA);
+
+
+
+            return  R::Load('coupons', $DATA['idcoupon']);
+
+
+
+    }
+
+
     public function SubscribeFooter($email){
+
+        // Отсекаем дубли
+        $dubl = R::findOne("subscribe", "WHERE email = ?" , [$email]);
+        if (!empty($dubl)) return true;
 
         $DATA = [
             'email' => $email,
@@ -73,9 +71,6 @@ class Panel extends \APP\core\base\Model {
         return true;
 
     }
-
-
-
 
 
     public function addBannersinBD($banners, $company){
@@ -208,35 +203,13 @@ class Panel extends \APP\core\base\Model {
     }
 
 
-    public function getContentCategory($url){
-        return R::findOne('category', 'url = ?',[$url]);
-    }
-
-    public function getContentShop($url){
-        return R::findOne('companies', 'uri = ?',[$url]);
-    }
-
-
     public static function loadOneCoupon($id){
         return R::Load('coupons', $id);
     }
 
-
-
-
-
     public function LoadallCategories($idcat, $type = ""){
 
-        if (!empty($type)){
-
-
-
-
-
-        }
-
         if (!empty($idcat)) self::$CATEGORYcoupon[$idcat]['select'] = 1;
-
 
         return self::$CATEGORYcoupon;
     }
@@ -329,27 +302,29 @@ class Panel extends \APP\core\base\Model {
     }
 
 
-    public function LoadAllCompanies($idbrand){
-
-        $compARR = [];
-        $companies = R::findAll('companies');
-
-        foreach ($companies as $key=>$company){
-
-            $compARR[$key]['url'] = $company['uri'];
-            $compARR[$key]['name'] = $company['name'];
-            $compARR[$key]['count'] = $company->countOwn("coupons");
-            if ($key == $idbrand) {
-                $compARR[$key]['select'] = 1;
-                $temp = $compARR[$key];
-                unset($compARR[$key]);
-                array_unshift ($compARR,$temp );
-            };
+    public function LoadAddInfo(){
 
 
+        $ADDINFO['source'] = [1 => "googlecpc"];
+        $ADDINFO['companies'] =  $this->LoadAllCompanies();
+
+
+       return $ADDINFO;
+
+    }
+
+
+    public function LoadAllCompanies(){
+
+        $ARR = R::findAll('companies');
+
+        foreach ($ARR as $k=>$v){
+
+            if ($v->countOwn("coupons") == 0) unset($ARR[$k]);
         }
 
-        return $compARR;
+        return $ARR;
+
     }
 
 
@@ -452,32 +427,108 @@ class Panel extends \APP\core\base\Model {
         }
 
 
+
+
+
+    }
+
+
+    public function getRandomPassage(){
+
+        $text = "Рандомный кусок текста для вставки в объявление";
+
+
+        return $text;
+    }
+
+    public function GeneratetextAds($DATA){
+
+//        show($DATA['company']);
+
+        $coupons = $this->getAllCoupons($DATA['company']);
+
+        $keywordmass = explode("\n", $DATA['keywords']);
+
+        $randomtext = $this->getRandomPassage();
+
+        for ($i = 0; $i < count($keywordmass)-1; $i++) {
+
+            foreach ($coupons as $coupon){
+                $dlinnastroki = strlen($coupon['name']);
+                $discount = textdiscount($coupon['discount']);
+                $OBJAVA['keyword'] = $keywordmass[$i];
+                $OBJAVA['zagolovok'] = $keywordmass[$i]." ".trim($discount);
+
+                // Создание текста объявления
+                $OBJAVA['text'] = $coupon['name'];
+                // Создание текста объявления
+
+                $ADS[] = $OBJAVA;
+            }
+
+        }
+
+
+
+
+
+
+         return $ADS;
+
+    }
+
+    public function GenerateKeyWords($idcompany){
+
+
+        $company = R::Load('companies', $idcompany);
+
+        $company = ucfirst($company['name']);
+
+        $company = str_replace(".ru", "", $company);
+
+
+        $symbols = "lat";
+        if (preg_match('/[a-z]/i',$company)) { $symbols = "lat"; } else { $symbols = "kyr"; }
+
+
+        $translit = mb_strtoupper(translit_sef($company));
+
+        if ($symbols == "lat") $translit = translitengrus($company);
+
+        // Транслит с русского на английский
+
+        // Транслит с английсского на русский
+
+
+        $keywords = $company." промокод\n";
+        $keywords .= "Промокод ".$company."\n";
+        $keywords .= $translit." промокод\n";
+        $keywords .= "Промокод ".$translit."\n";
+        $keywords .= $company." купон\n";
+        $keywords .= "Купон ".$company."\n";
+        $keywords .= $translit." купон\n";
+        $keywords .= "Купон ".$translit."\n";
+
+
+
+
+        return $keywords;
+
+
+
     }
 
 
 
-    public function getAllCoupons($FILTER = []){
+    public function getAllCoupons($idcompany, $FILTER = ""){
 
 
         $SORT = "";
 
-
-        if ($FILTER['ORDERBY'] && $FILTER['ORDERBY'] == true) $SORT = "ORDER BY `views` DESC";
-
-
-        if ($FILTER['GET'] && $FILTER['GET']['filter'] == "promocode"){
-            return R::findAll('coupons', "WHERE `companyid` = ? AND `species` = ? ".$SORT, [$idcompany, "promocode"]);
-        }
-
-        if ($FILTER['GET'] && $FILTER['GET']['filter'] == "action"){
-            return R::findAll('coupons', "WHERE `companyid` = ? AND `species` = ? ".$SORT, [$idcompany, "action"]);
-        }
+        if ($FILTER == "ORDERBY") $SORT = "ORDER BY `views` DESC";
 
 
-
-
-
-        return R::findAll('coupons', "WHERE companyid = ? ".$SORT, [$idcompany]);
+        return R::findAll('coupons', "WHERE companies_id = ? ".$SORT, [$idcompany]);
 
 
     }
@@ -672,6 +723,10 @@ class Panel extends \APP\core\base\Model {
 
         $WHERE = constructWhere($WHERE);
 
+        // Добавляем сортировку
+        $WHERE .= "ORDER BY `used` DESC";
+
+
         $result = R::find("coupons", $WHERE);
 
 
@@ -781,6 +836,10 @@ class Panel extends \APP\core\base\Model {
 
     public function addCoupons($token){
 
+        //Удаляем таблицу категории купонов
+
+        R::wipe('categorycoupons');
+
         $companies = R::findAll('companies');
         //Смотрим все компании
 
@@ -807,26 +866,45 @@ class Panel extends \APP\core\base\Model {
 
 
                 $categories =  extractcategoriesCoupons($val['categories']);
+
                 $categories = $this->workcategoriesCoupons($categories);
                 $categories = json_encode($categories);
 
-                $nalichie = R::count("coupons", "WHERE idadmi = ?" , [$val['id']]);
 
-                if ($nalichie > 0) {
-                    echo "Купон ".$val['name']." уже добавлен! <br>";
+
+                // Загрузка базовых параметров
+                $framset = (!empty($val['frameset_link'])) ?  $val['frameset_link'] : $val['goto_link'];
+                $types = json_encode($val['types'], true);
+                $framset = str_ireplace("http", "https", $framset);
+                // Загрузка базовых параметров
+
+
+                $coupon = R::findOne("coupons", "WHERE idadmi = ?" , [$val['id']]);
+                if (!empty($coupon)){
+                    echo "Купон ".$val['name']." уже добавлен! Но мы его обновим! <br>";
+                    $coupon->idadmi = $val['id'];
+                    $coupon->name = $val['name'];
+                    $coupon->description = $val['description'];
+                    $coupon->category = $categories;
+                    $coupon->short_name = $val['short_name'];
+                    $coupon->species = $val['species'];
+                    $coupon->dateend = $val['date_end'];
+                    $coupon->types = $types;
+                    $coupon->discount = $val['discount'];
+                    $coupon->promocode = $val['promocode'];
+                    $coupon->gotolink = $val['goto_link'];
+                    $coupon->idamicompany = $val['campaign']['id'];
+                    $coupon->framset = $framset;
+                    $coupon->status = $val['status'];
+                    R::store($coupon);
+
                     continue;
                 }
 
 
-                $framset = (!empty($val['frameset_link'])) ?  $val['frameset_link'] : $val['goto_link'];
-
-                $types = json_encode($val['types'], true);
-
-                //Замена framset на https
 
 
-                $framset = str_ireplace("http", "https", $framset);
-
+                // Добавление
                 $coupon = R::dispense("coupons");
                 $coupon->idadmi = $val['id'];
                 $coupon->name = $val['name'];
@@ -844,7 +922,6 @@ class Panel extends \APP\core\base\Model {
                 $coupon->idamicompany = $val['campaign']['id'];
                 $coupon->framset = $framset;
                 $coupon->status = $val['status'];
-
                 $company->ownCouponList[] = $coupon;
 
                 echo "<b>Купон ".$val['name']." добавлен </b>  <br>";
@@ -858,8 +935,6 @@ class Panel extends \APP\core\base\Model {
 
 
         }
-
-
 
 
 
@@ -883,7 +958,16 @@ class Panel extends \APP\core\base\Model {
         if (!empty($coupon)){
             $coupon->used = $coupon->used +1;
             R::store($coupon);
-            redir($coupon['gotolink']);
+
+            // Отправка ПОСТБЕКА
+            // subid1 = couponID
+            // subid2 = uniqID наш
+            // subid4 = subID google
+
+            $link = $coupon['gotolink']."&subid1=".$coupon['id']."&subid2=".$_SESSION['SystemUserId']."&subid4=".gaUserId();
+            // Отправка ПОСТБЕКА
+
+            redir($link);
         }
 
         return true;
@@ -893,7 +977,32 @@ class Panel extends \APP\core\base\Model {
 
 
 
+    public function updatestatus(){
 
+     return R::findAll("updatestatus");
+
+    }
+
+    public function updatecheck($type){
+
+            $zapis = R::findOne("updatestatus", "WHERE type = ?" , [$type]);
+
+            if (!empty($zapis)){
+                $zapis->date = date("Y-m-d H:i:s");
+                R::store($zapis);
+            }else{
+                $DATA = [
+                    'type' => $type,
+                    'date' => date("Y-m-d H:i:s"),
+                ];
+                $this->addnewBD("updatestatus", $DATA);
+
+            }
+
+            return true;
+
+
+    }
 
 
 
@@ -931,6 +1040,10 @@ class Panel extends \APP\core\base\Model {
 
             $val['name'] = str_replace("RU", "", $val['name']);
             $val['name'] = str_replace("WW", "", $val['name']);
+            $val['name'] = str_replace("[CPS]", "", $val['name']);
+
+
+
 
 //            $deeplink = $this->getDeepLink($token, $val['id'], $val['site_url']);
 //            if (empty($deeplink)) $deeplink = "";
@@ -953,7 +1066,7 @@ class Panel extends \APP\core\base\Model {
 
             $this->addnewBD("companies", $DATA);
 
-            echo "Добавлена партнерская программа <b>".$val['name']."</b> !";
+//            echo "Добавлена партнерская программа <b>".$val['name']."</b> !";
 
 
         }
@@ -1095,6 +1208,87 @@ class Panel extends \APP\core\base\Model {
 
 
 
+
+    }
+
+    public function AddUtminBD($DATA)
+    {
+
+
+        $UTM = [
+            'utm_source' => "",
+            'utm_medium' => "",
+            'utm_campaign' => "",
+            'utm_content' => "",
+            'utm_term' => "",
+        ];
+
+        foreach ($UTM as $key=>$value){
+
+            if (!empty($DATA[$key])) $UTM[$key] = $DATA[$key];
+        }
+
+        $UTM['sysuserid'] = $_SESSION['SystemUserId'];
+        $UTM['date'] = date("Y-m-d H:i:s");
+
+
+
+
+        $this->addnewBD("usertoday", $UTM);
+
+
+
+        return $UTM;
+
+
+
+    }
+
+
+
+    public function Getlastconversion(){
+        return R::findALL("conversion", "ORDER BY `id` DESC LIMIT 50");
+    }
+
+
+
+    public function getUTM($uid)
+    {
+        $UTM = R::findOne("usertoday", "WHERE sysuserid = ?" , [$uid]);
+
+        return $UTM;
+
+    }
+
+    public function SendGoogleTransaction($coupon, $DATA)
+    {
+
+
+        $url = "http://www.google-analytics.com/collect";
+        $type = "GET";
+
+        $company = $coupon->companies['name'];
+
+
+        $PARAMS = [
+            'v' => 1,
+            't' => 'pageview',
+            'tid' => CONFIG['UA'],
+            'cid' => $DATA['subid4'],
+            'dp' => 'postbackconvert',
+            'ti'=> $coupon['name'],
+            'ta' => $company,
+            'tr'=> $DATA['payment_sum'],
+            'pa'=> 'purchase',
+            'pr1id'=> 'Admi',
+            'pr1nm'=> $DATA['offer_name'],
+
+        ];
+
+        $result = fCURL($url, [$type => $PARAMS]);
+
+
+        return $result;
 
     }
 

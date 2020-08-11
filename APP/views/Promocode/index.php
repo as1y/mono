@@ -1,3 +1,8 @@
+<script>
+    let ref = document.referrer;
+    console.log(ref);
+</script>
+
 <main id="content" role="main">
     <!-- breadcrumb -->
     <div class="bg-gray-13 bg-md-transparent">
@@ -82,9 +87,7 @@
 
 
                 <?php
-//
-//                show($_COOKIE);
-//                show($_SESSION);
+
 
             if (empty($_COOKIE['runpromocode'])){
 
@@ -103,7 +106,7 @@
 
                     $_SESSION['POST'] = [];
                     // Генерируем попап
-                   $couponmodal =\APP\models\Panel::loadOneCoupon($_COOKIE['runpromocode']);
+
 
                         //Загружаем купон по ID
 
@@ -128,86 +131,3 @@
 
     </div>
 </main>
-
-<?php if (!empty($_COOKIE['runpromocode'])): ?>
-
-<script>
-    function copytext() {
-        /* Get the text field */
-        var copyText = document.getElementById("myInput");
-
-        /* Select the text field */
-        copyText.select();
-
-        /* Copy the text inside the text field */
-        document.execCommand("copy");
-
-    }
-</script>
-
-<!-- Modal -->
-<div class="modal fade" id="couponmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header  ">
-<br>
-                <img src="<?=$couponmodal->companies['logo']?>">
-
-                <div class="d-none d-sm-block">
-                    <h5 class="modal-title text-left" id="exampleModalLabel">&nbsp;&nbsp;<?=captiondiscount($couponmodal['discount'])?> <?=json_decode($couponmodal['types'], true)[0]['name']?></h5>
-
-                </div>
-
-
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-
-            </div>
-
-
-            <div class="modal-body text-center">
-
-                <?php if (!empty($couponmodal['short_name'])):?>
-                    <span  class="font-size-12 "><?=obrezanie($couponmodal['short_name'], 350)?><br><br></span>
-                <?php endif; ?>
-
-
-
-                <div class="container-fluid">
-                    <div class="row">
-
-                        <div class="col-md-2"></div>
-                        <div class="col-md-8 ">
-                            <div class="form-group">
-                                <input type="text" style="border-radius: unset" onclick="copytext()" class="form-control px-4 text-center"  value="<?=$couponmodal['promocode']?>"  id="myInput" >
-                            </div>
-                            <button type="button"  onclick="copytext()" class="btn btn-warning">СКОПИРОВАТЬ ПРОМОКОД</button>
-
-                        </div>
-                        <div class="col-md-2"></div>
-                    </div>
-
-
-                </div>
-                <hr>
-                <span class="font-size-12 text-gray-8">Для Вашего удобства сайт магазина уже автоматически открыт в соседней вкладке.
-                Вставьте промо-код в корзине выбранного магазина.</span>
-
-
-
-
-
-
-
-
-            </div>
-
-
-
-
-
-        </div>
-    </div>
-</div>
-<?php endif;?>
