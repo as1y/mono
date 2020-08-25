@@ -101,11 +101,11 @@ class Panel extends \APP\core\base\Model {
                 continue;
             }
 
-
+ 
             // Копируем баннер себе
-            $extension = getExtension($banner['banner_image_url']);
-            $picture = '/upload/banners/'.$banner['id'].'banner.'.$extension;
-            file_put_contents(WWW.$picture, file_get_contents($banner['banner_image_url']));
+//            $extension = getExtension($banner['banner_image_url']);
+//            $picture = '/upload/banners/'.$banner['id'].'banner.'.$extension;
+//            file_put_contents(WWW.$picture, file_get_contents($banner['banner_image_url']));
             // Копируем баннер себе
 
             $forma = getsizetypeimage($banner['size_width'], $banner['size_height']);
@@ -964,7 +964,7 @@ class Panel extends \APP\core\base\Model {
             // subid2 = uniqID наш
             // subid4 = subID google
 
-            $link = $coupon['gotolink']."&subid1=".$coupon['id']."&subid2=".$_SESSION['SystemUserId']."&subid4=".gaUserId();
+            $link = $coupon['gotolink']."&subid1=".$coupon['id']."&subid2=".$_SESSION['SystemUserId']."&subid4=".gaUserId()."&subid3=".gaUserIdGA();
             // Отправка ПОСТБЕКА
 
             redir($link);
@@ -1229,6 +1229,10 @@ class Panel extends \APP\core\base\Model {
         }
 
         $UTM['sysuserid'] = $_SESSION['SystemUserId'];
+        $UTM['gaid'] = gaUserIdGA();
+        $UTM['cid'] = gaUserId();
+
+
         $UTM['date'] = date("Y-m-d H:i:s");
 
 
@@ -1260,37 +1264,142 @@ class Panel extends \APP\core\base\Model {
 
     }
 
-    public function SendGoogleTransaction($coupon, $DATA)
+
+    public function sendPostBackGA(){
+
+        $PostBacks = R::findAll("sendpostback", "WHERE `status` =?", [1]);
+
+        if (empty($PostBacks)){
+            echo "Постбеков на отправку нет!<br>";
+            return true;
+        }
+
+
+            foreach ($PostBacks as $postBack){
+
+                $PARAMS = json_decode($postBack['params'], true);
+
+
+                $url = "https://www.google-analytics.com/collect";
+                $url = $url."?".http_build_query($PARAMS);
+
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
+        curl_setopt($ch, CURLOPT_USERAGENT, $_SERVER["HTTP_USER_AGENT"]);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $PARAMS);
+        curl_exec($ch);
+        curl_close($ch);
+
+                $postBack->status = 2;
+                R::store($postBack);
+
+                echo "Постбек отправлен!<br>";
+
+            }
+
+
+
+
+
+
+
+
+
+    }
+
+
+    public function GetParamSendGoogleTransaction($coupon, $DATA)
     {
 
 
-        $url = "http://www.google-analytics.com/collect";
-        $type = "GET";
-
         $company = $coupon->companies['name'];
 
+        $cid = $DATA['subid4'];
+        if (empty($cid)) $cid = $DATA['subid3'];
+        if (empty($cid)) $cid = $DATA['subid2'];
 
         $PARAMS = [
             'v' => 1,
             't' => 'pageview',
             'tid' => CONFIG['UA'],
-            'cid' => $DATA['subid4'],
-            'dp' => 'postbackconvert',
+            'cid' => $cid,
+            'dp' => 'postbackconvert2',
             'ti'=> $coupon['name'],
             'ta' => $company,
             'tr'=> $DATA['payment_sum'],
             'pa'=> 'purchase',
             'pr1id'=> 'Admi',
             'pr1nm'=> $DATA['offer_name'],
+        ];
+
+
+        $DATA = [
+            'status' => 1,
+            'params' => json_encode($PARAMS),
+            'source' => "google",
+            'sysid' => $DATA['subid2'],
+            'summa' => $DATA['payment_sum'],
+        ];
+
+        $this->addnewBD("sendpostback", $DATA);
+
+        return true;
+
+    }
+
+
+
+    public function SendGoogleTransactionTest()
+    {
+
+
+        $url = "https://www.google-analytics.com/collect";
+
+        $cid = gaUserId();
+
+        $PARAMS = [
+            'v' => 1,
+            't' => 'pageview',
+            'tid' => 'UA-174357261-1',
+            'cid' => $cid,
+            'dp' => 'postbackconvert',
+            'ti' => 'Скидка 35% на все!',
+            'ta' => 'Domino\'s Pizza',
+            'tr' => 20.11,
+            'pa' => 'purchase',
+            'pr1id' => 'Admi',
+            'pr1nm' => 'Domino\'s Pizza',
+
 
         ];
 
-        $result = fCURL($url, [$type => $PARAMS]);
+        $url = $url."?".http_build_query($PARAMS);
+
+        show($PARAMS);
 
 
-        return $result;
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
+        curl_setopt($ch, CURLOPT_USERAGENT, $_SERVER["HTTP_USER_AGENT"]);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $PARAMS);
+        curl_exec($ch);
+        curl_close($ch);
+
+
+        return true;
 
     }
+
+
+
 
 
 }

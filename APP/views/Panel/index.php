@@ -12,8 +12,7 @@
                 <thead>
                 <tr>
                     <th>#</th>
-                    <th>Источник</th>
-                    <th>Ключевое слово</th>
+                    <th>Дата</th>
                     <th>Оффер</th>
                     <th>Купон</th>
                     <th>Действие</th>
@@ -27,8 +26,7 @@
                 foreach ($lastconversion as $key=>$value):?>
                     <tr>
                         <td><?=$value['id']?></td>
-                        <td><?=json_decode($value['utm'], true)['utm_source']?></td>
-                        <td><?=json_decode($value['utm'], true)['utm_term']?></td>
+                        <td><?=$value['date']?></td>
                         <td><?=$value['offer']?></td>
                         <td><?=json_decode($value['coupon'], true)['name']?></td>
                         <td><?=$value['action']?></td>

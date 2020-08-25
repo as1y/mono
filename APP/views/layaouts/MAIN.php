@@ -982,5 +982,10 @@ $shops = \APP\models\Panel::getShops(['limit' => 100]);
         $.HSCore.components.HSSelectPicker.init('.js-select');
     });
 </script>
+
+<?php \APP\core\base\Model::SaveUsr();?>
+
+
+
 </body>
 </html>

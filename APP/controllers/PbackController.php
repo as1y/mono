@@ -15,10 +15,9 @@ class PbackController extends AppController {
 
         $Panel =  new Panel();
 
-//        if (empty($_POST)) redir("/");
 
 
-        if (!empty([$_POST])){
+        if (!empty($_POST)){
 
             // Получение постбека
 
@@ -26,11 +25,19 @@ class PbackController extends AppController {
             $uid = $_POST['subid2'];
             $gaid = $_POST['subid4'];
 
+
+
             $coupon = $Panel->loadOneCoupon($couponid);
+            $Panel->GetParamSendGoogleTransaction($coupon, $_POST);
+
+
             $coupontext = json_encode($coupon, true);
 
             $UTM = $Panel->getUTM($uid);
             $UTM = json_encode($UTM, true);
+
+            if ($_POST['currency'] == "USD") $_POST['payment_sum'] = ConvertRUB($_POST['payment_sum'], "USD");
+
 
             $DATA = [
                 'coupon' => $coupontext,
@@ -46,12 +53,17 @@ class PbackController extends AppController {
             ];
 
 
-            $Panel->SendGoogleTransaction($coupon, $_POST);
+
 
             $Panel->addnewBD("conversion", $DATA);
 
+            exit();
+
         }
 
+
+
+//                $Panel->SendGoogleTransactionTest();
 
 
 

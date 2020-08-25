@@ -1,5 +1,6 @@
 <?php
 namespace APP\core\base;
+use APP\models\Panel;
 use RedBeanPHP\R;
 
 abstract class Model
@@ -177,6 +178,23 @@ abstract class Model
 
 
 
+    public static function SaveUsr (){
+
+	    if (empty($_SESSION['utmget'])) $_SESSION['utmget'] = $_GET;
+
+        if (empty($_SESSION['SystemUserId']) && !empty($_COOKIE) ) {
+            $Panel =  new Panel();
+            $_SESSION['SystemUserId'] = SystemUserId();
+            $Panel->AddUtminBD($_SESSION['utmget']);
+
+            // Парсим UTM
+            // Добавляем в Таблицу запись с Уникальым ID и параметрами UTM
+
+        }
+
+
+
+    }
 
 
 

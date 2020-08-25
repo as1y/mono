@@ -292,12 +292,23 @@ function constructWhere($ARR){
 
 
 
-function addsubid($url, $id){
 
-    $url .= "?subid=".$id."&subid4="."";
+function ConvertRUB($value, $cur){
 
 
-    return $url;
+    //          echo ConvertRUB(10, "USD");
+
+    $url = "https://www.cbr-xml-daily.ru/latest.js";
+    $rates = fCURL($url)['rates'];
+
+    $result = $value/$rates[$cur];
+
+    $result =  round($result, 2);
+
+
+return $result;
+
+
 }
 
 

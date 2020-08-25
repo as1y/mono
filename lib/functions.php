@@ -310,8 +310,29 @@ function SystemUserId(){
     return  md5(uniqid().$_SERVER['REMOTE_ADDR'].$_SERVER['UNIQUE_ID']);
 }
 
+
+function gaUserIdGA(){
+
+    if (!empty($_COOKIE['_ga']))   return preg_replace("/^.+\.(.+?\..+?)$/", "\\1", $_COOKIE['_ga']);
+
+    return false;
+
+}
+
+
 function gaUserId(){
-    return preg_replace("/^.+\.(.+?\..+?)$/", "\\1", $_COOKIE['_ga']);
+
+
+    if (!empty($_COOKIE['dscid'])) return $_COOKIE['dscid'];
+
+
+    return false;
+
+
+
+//    return preg_replace("/^.+\.(.+?\..+?)$/", "\\1", $_COOKIE['_ga']);
+
+
 }
 
 

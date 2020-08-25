@@ -38,8 +38,6 @@ class UpdateController extends AppController {
 
             $Panel->addCoupons($token);
 
-
-
             $Panel->updatecheck("coupons");
             echo "<h1>КУПОНЫ ОБНОВЛЕНЫ!</h1>";
 

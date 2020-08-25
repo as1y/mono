@@ -19,17 +19,7 @@ abstract class Controller {
 
 
         // Пишем в сессию инукальный ID
-        if (empty($_SESSION['SystemUserId'])) {
 
-            $Panel =  new Panel();
-            $_SESSION['SystemUserId'] = SystemUserId();
-            $Panel->AddUtminBD($_GET);
-
-
-            // Парсим UTM
-            // Добавляем в Таблицу запись с Уникальым ID и параметрами UTM
-
-        }
 
 
         // Добавить пользователя с UTM метками
@@ -47,6 +37,7 @@ abstract class Controller {
 
 
 	}
+
 
 
 	public function getView(){
