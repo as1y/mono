@@ -1,23 +1,16 @@
 <div class="card">
     <div class="card-header bg-dark text-white header-elements-inline">
-        <h5 class="card-title">ДОБАВЛЕНИЕ ПОТОКА</h5>
+        <h5 class="card-title">ГЕНЕРАТОР ССЫЛОК</h5>
 
     </div>
 
     <div class="card-body">
 
 
-        <form action="/panel/addflow/" method="post" data-fouc>
+        <form action="/panel/generatelink/" method="post" data-fouc>
 
                 <div class="row">
 
-
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label>Название потока: <span class="text-danger">*</span></label>
-                            <input type="text" name="company" class="form-control required" placeholder="Пример: Dominos Google">
-                        </div>
-                    </div>
 
                     <div class="col-md-6">
                         <div class="form-group">
@@ -25,6 +18,7 @@
                             <select name="traffictype" data-placeholder="Источник ТРАФИКА" class="form-control form-control-select2 required" data-fouc>
                                 <option></option>
                                 <option value="googlesearch">Google Adwords Search</option>
+                                <option value="yandexsearch">Яндекс.Директ Поиск</option>
                             </select>
                         </div>
                     </div>
@@ -48,64 +42,48 @@
                     </div>
 
 
+                    <button id="go" type="submit" class="btn btn-success btn-labeled btn-labeled-left btn-lg">
+                        <b><i class="icon-notification2"></i></b>
+                        ПОЛУЧИТЬ ССЫЛКУ
+                    </button>
+
+                    <hr>
+
+
+
+                    <?php if (!empty($link)) :?>
+
+                        <script>
+                            function copytext() {
+                                /* Get the text field */
+                                var copyText = document.getElementById("myInput");
+
+                                /* Select the text field */
+                                copyText.select();
+
+                                /* Copy the text inside the text field */
+                                document.execCommand("copy");
+
+                            }
+                        </script>
+
 
                         <div class="col-md-12">
-
                             <div class="form-group">
-                                <label>URL страницы: <span class="text-danger">*</span></label>
-                                <input type="text" name="url" class="form-control required" placeholder="https://<?=CONFIG['DOMAIN']?>">
+                                <label>Ссылка для объявления: </label>
+                                <input type="text" onclick="copytext()"  name="link" class="form-control" id="myInput" value="<?=$link?>">
                             </div>
-
                         </div>
-
-
-
-
+                    <?php endif;?>
 
 
 
                 </div>
 
-                <div class="row">
-
-                    <div class="col-md-6">
-
-                        <div class="form-group">
-                            <label>Ключевые слова: <span class="text-danger">*</span></label>
-                            <textarea rows="5" cols="5" id="keywords" class="form-control required" ></textarea>
-                        </div>
-
-                        <a onclick="generatekeywords()" class="btn btn-success btn-labeled btn-labeled-left btn-lg">
-                            <b><i class="icon-key"></i></b>
-                            Сгенерировать ключевые слова
-                        </a>
-
-                    </div>
-
-                </div>
-
-
-<hr>
-
-            <a onclick="generateads()" class="btn btn-success btn-labeled btn-labeled-left btn-lg">
-                <b><i class="icon-file-text"></i></b>
-                Генерировать объявления
-            </a>
-
-
-            <div id="ads" class="row">
 
 
 
-            </div>
 
-            <button id="go" type="submit" class="btn btn-danger btn-labeled btn-labeled-left btn-lg">
-                <b><i class="icon-notification2"></i></b>
-                ПОЕХАЛИ!
-            </button>
-            <script>
-                $("#go").hide();
-            </script>
 
 
 

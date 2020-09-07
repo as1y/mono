@@ -1,8 +1,3 @@
-<script>
-    let ref = document.referrer;
-    console.log(ref);
-</script>
-
 <main id="content" role="main">
     <!-- breadcrumb -->
     <div class="bg-gray-13 bg-md-transparent">
@@ -88,35 +83,9 @@
 
                 <?php
 
-
-            if (empty($_COOKIE['runpromocode'])){
-
                 generateResult($coupons, $PAGESLIST, $catalogCategories, $query = "", $catalogCompany);
 
-            }
-
-
-                if (!empty($_COOKIE['runpromocode'])  ){
-
-
-                    generateResult($coupons, $PAGESLIST, $catalogCategories, $query = "", $catalogCompany);
-
-
-                    // Удаляем КУКУ
-
-                    $_SESSION['POST'] = [];
-                    // Генерируем попап
-
-
-                        //Загружаем купон по ID
-
-                    // Функция открытия попапа
-                    // Генерируем попап
-
-
-
-
-                }
+                if (!empty($_COOKIE['runmodal']))  $_SESSION['POST'] = [];
 
 
                 ?>

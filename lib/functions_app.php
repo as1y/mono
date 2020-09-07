@@ -26,8 +26,7 @@ return $result;
 
 function generateResult($coupons, $PAGESLIST, $catalogCategories,  $query ="", $catalogCompany = []){
 
-
-    // Если мы используем поиск
+    // Если ЧТО-ТО ПОШЛО НЕ ТАК
     if ($coupons === false){
         echo "<h5>По вашему запросу ничего не найдено!<br> Попробуйте восползоваться умным фильтром промокодов<br></h5>  
 
@@ -35,20 +34,26 @@ function generateResult($coupons, $PAGESLIST, $catalogCategories,  $query ="", $
         return false;
 
     }
-    // Если мы используем поиск
+    // Если ЧТО-ТО ПОШЛО НЕ ТАК
+
 
     // СБРАСЫВАЕМ ИНДЕКСЫ И НАЧИНАЕМ С 1
     $coupons =  array_values($coupons);
     array_unshift($coupons, NULL);
     unset($coupons[0]);
 
+    // Всего купонов
+    $allcoupons = count($coupons);
+    // Всего страниц
+    $Pages = ceil(($allcoupons/$PAGESLIST['CouponsPerPage'] ));
+
+
+
 ?>
 
     <div class=" flex-center-between mb-3">
         <h1 class="font-size-25 mb-2 mb-md-0">
             <?php
-            $allcoupons = count($coupons);
-            $Pages = ceil(($allcoupons/$PAGESLIST['CouponsPerPage'] ));
 
             if ($catalogCategories == "search"){
                 $zagolovokCategory = 'Результаты поиска по запросу:  '.' <b>"'.$query.'"</b> ';
@@ -106,6 +111,9 @@ function generateResult($coupons, $PAGESLIST, $catalogCategories,  $query ="", $
         </nav>
     </div>
     <!-- Shop Body -->
+
+
+
     <!-- Tab Content -->
     <div class="tab-content" id="pills-tabContent">
         <div class="tab-pane fade pt-2 show active" id="pills-one-example1" role="tabpanel" aria-labelledby="pills-one-example1-tab" data-target-group="groups">
@@ -123,30 +131,24 @@ function generateResult($coupons, $PAGESLIST, $catalogCategories,  $query ="", $
     <!-- End Tab Content -->
     <!-- End Shop Body -->
     <!-- Shop Pagination -->
+
+
     <nav class="d-md-flex justify-content-between align-items-center border-top pt-3" aria-label="Page navigation example">
         <div class="text-center text-md-left mb-3 mb-md-0">Всего купонов: <b><?=$allcoupons?></b> | Страница <?=$PAGESLIST['ViewPage']?> из &nbsp; <b><?=$Pages?></b></div>
+
+        <?php
+        $starpage = generateStartEndPage($PAGESLIST, $Pages)['starpage'];
+        $endpage = generateStartEndPage($PAGESLIST, $Pages)['endpage'];
+       // require_once( 'includes/bootstrapnav.php' );
+
+        ?>
+
+
+
         <ul class="pagination mb-0 pagination-shop justify-content-center justify-content-md-start">
 
-
-
-            <?php
-
-            $starpage = 1;
-            $endpage = ($Pages >= '5') ? "5" : $Pages;
-
-                if ($PAGESLIST['ViewPage'] >= 5){
-
-                    $starpage = $PAGESLIST['ViewPage'] - 2;
-                    $endpage = $PAGESLIST['ViewPage'] + 2;
-                    if ($starpage < 1) $starpage = 1;
-                    if ($endpage > $Pages) $endpage = $Pages;
-                }
-
-
-            ?>
-
             <?php if ($PAGESLIST['ViewPage'] >= 5): ?>
-                <li  class="page-item"><a class="page-link"   onclick="changePage(1)">1</a></li>
+                <li  class="page-item"><a class="page-link"  onclick="changePage(1)">1</a></li>
                 <li >←</li>
             <?php endif;?>
 
@@ -181,17 +183,35 @@ function generateResult($coupons, $PAGESLIST, $catalogCategories,  $query ="", $
 
 
 
+function generateStartEndPage($PAGESLIST, $Pages){
+
+    $starpage = 1;
+    $endpage = ($Pages >= '5') ? "5" : $Pages;
+    // Если больше стандартный пяти
+    if ($PAGESLIST['ViewPage'] >= 5){
+        $starpage = $PAGESLIST['ViewPage'] - 2;
+        $endpage = $PAGESLIST['ViewPage'] + 2;
+        if ($starpage < 1) $starpage = 1;
+        if ($endpage > $Pages) $endpage = $Pages;
+    }
+
+    $result['starpage'] = $starpage;
+    $result['endpage'] = $endpage;
+
+    return $result;
+
+}
+
 
 
 function generetuCouponinCode($coupons, $ViewPage, $CouponsPerPage){
-
-
 
     $start = ($ViewPage * $CouponsPerPage) - ($CouponsPerPage - 1) ;
     $end = $ViewPage * $CouponsPerPage;
 
     for ($key = $start; $key <= $end; $key++) {
         if (empty($coupons[$key])) continue;
+
         echo '<li class="col-6 col-md-3 col-wd-2gdot4 product-item">';
         renderCoupon($coupons[$key]);
         echo  ' </li>';
@@ -225,7 +245,7 @@ function renderFilter($DATA){
             <?=renderBrands($DATA['catalogCompany'])?>
         </div>
     </div>
-<!--    ТИПА-->
+<!--    ТИП-->
     <div class="border-bottom pb-4 mb-4">
         <h4 class="font-size-14 mb-3 font-weight-bold">ТИП СКИДКИ</h4>
         <div class="form-group">
@@ -312,8 +332,115 @@ return $result;
 }
 
 
+function popUPcoupon (){
+
+     if (!empty($_COOKIE['runmodal'])) $couponmodal =\APP\models\Panel::loadOneCoupon($_COOKIE['runmodal']);
+      ?>
+
+        <script>
+            function copytext() {
+                /* Get the text field */
+                var copyText = document.getElementById("myInput");
+
+                /* Select the text field */
+                copyText.select();
+
+                /* Copy the text inside the text field */
+                document.execCommand("copy");
+
+            }
+        </script>
+
+        <!-- Modal -->
+        <div class="modal fade" id="couponmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header  ">
+                        <br>
+                        <img src="<?=$couponmodal->companies['logo']?>">
 
 
+
+
+                        <div class="d-none d-sm-block">
+                            <h5 class="modal-title text-left" id="exampleModalLabel">&nbsp;&nbsp;<?=captiondiscount($couponmodal['discount'])?> <?=json_decode($couponmodal['types'], true)[0]['name']?></h5>
+
+                        </div>
+
+
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+
+                    </div>
+
+
+                    <div class="modal-body text-center" id="modalbody">
+                        <font color="#df3737">Для Вашего удобства сайт магазина уже открыт в соседней вкладке.</font>
+<hr>
+
+                        <?php if (!empty($couponmodal['short_name'])):?>
+                            <span  class="font-size-12 "><?=obrezanie($couponmodal['short_name'], 350)?><br><br></span>
+                        <?php endif; ?>
+
+
+
+                        <div class="container-fluid">
+                            <div class="row">
+
+                                <div class="col-md-2"></div>
+                                <div class="col-md-8 ">
+
+                                    <?php if ($couponmodal['species'] == "promocode"):?>
+                                        <div class="form-group">
+                                            <input type="text" style="border-radius: unset" onclick="copytext()" class="form-control px-4 text-center"  value="<?=$couponmodal['promocode']?>"  id="myInput" >
+                                        </div>
+                                        <button type="button"  onclick="copytext()" class="btn btn-warning">СКОПИРОВАТЬ ПРОМОКОД</button>
+                                    <?php endif;?>
+
+                                    <?php if ($couponmodal['species'] == "action"):?>
+                                        <div class="form-group">
+                                            <input type="text" style="border-radius: unset"  class="form-control px-4 text-center"  value="УЖЕ АКТИВИРОВАН"  id="myInput" >
+                                        </div>
+                                        <a type="button" href="//<?=CONFIG['DOMAIN']?>/go/?coupon=<?=$couponmodal['id']?>"  target="_blank" class="btn btn-warning">ОТКРЫТЬ САЙТ В НОВОЙ ВКЛАДКЕ</a>
+                                    <?php endif;?>
+
+
+                                </div>
+                                <div class="col-md-2"></div>
+                            </div>
+
+                        </div>
+
+
+                        <span class="font-size-12 ">Не готовы покупать в магазине прямо сейчас? <br>
+              Мы отправим промокод на e-mail чтобы не потерять!</span>
+                        <br>
+
+
+                        <form onsubmit="subscribecode(<?=$couponmodal['id']?>); return false">
+                            <div class="container-fluid">
+                                <div class="row">
+
+                                    <div class="input-group input-group-pill">
+                                        <input type="email" class="form-control border-0 height-40" name="emailcode" id="subscribeSrEmail" placeholder="Введите E-mail" aria-label="Email address" aria-describedby="subscribeButton" required="" data-msg="Please enter a valid email address.">
+
+                                        <div class="input-group-append">
+                                            <button type="submit"  class="btn btn-dark btn-sm-wide height-40 py-2" id="subscribeButton">ОТПРАВИТЬ</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr>
+                            </div>
+                        </form>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+<?php
+}
 
 
 
@@ -440,96 +567,42 @@ function RenderCouponsinADD($coupons){
 function renderCoupon($coupon){
     ?>
 
-
-
-
     <div class="product-item__outer h-100">
-
-
         <div class="product-item__inner p-md-3 row no-gutters">
-
-<!--            <div class="col col-lg-auto product-media-left">-->
-<!--                <a href="../shop/single-product-fullwidth.html" class="max-width-150 d-block" tabindex="0"><img class="img-fluid" src="--><?//=$coupon->companies['logo']?><!--" alt="Image Description"></a>-->
-<!--            </div>-->
-
-
-
-
 
             <div class="col product-item__body pl-2 pl-lg-3 mr-xl-2 mr-wd-1">
 
+                <div  style="width: 170px;  ">
+
+                    <div class="prodcut-price text-center bg-white rounded-sm border border-width-2 border-red py-2 px-2">
+                        <div class="text-gray-100"><?=captiondiscount($coupon['discount'])?></div>
+
+                        <div class="mb-2 text-center"><a href="//<?=CONFIG['DOMAIN']?>/go/?coupon=<?=$coupon['id']?>" onclick="clck(<?=$coupon['id']?>)" class="font-size-12 text-gray-5"><?=json_decode($coupon['types'], true)[0]['name']?></a></div>
+
+                        <a href="//<?=CONFIG['DOMAIN']?>/go/?coupon=<?=$coupon['id']?>" onclick="clck(<?=$coupon['id']?>)"  class="d-block text-center"><img class="img-fluid" src="<?=$coupon->companies['logo']?>" width="100" alt="<?=$coupon['short_name']?>"></a>
+
+                    </div>
+                    <br>
+
+                    <div class="flex-bottom-between text-center mb-1">
 
     <?php if ($coupon['species'] == "promocode"): ?>
-
-
-        <!-- PROMOCODE -->
-
-        <div  style="width: 170px;  ">
-
-            <div class="prodcut-price text-center bg-white rounded-sm border border-width-2 border-red py-2 px-2">
-                <div class="text-gray-100"><?=captiondiscount($coupon['discount'])?></div>
-
-                <div class="mb-2 text-center"><a href="//<?=CONFIG['DOMAIN']?>/go/?coupon=<?=$coupon['id']?>" onclick="clck(<?=$coupon['id']?>)" class="font-size-12 text-gray-5"><?=json_decode($coupon['types'], true)[0]['name']?></a></div>
-
-                <a href="//<?=CONFIG['DOMAIN']?>/go/?coupon=<?=$coupon['id']?>" onclick="clck(<?=$coupon['id']?>)"  class="d-block text-center"><img class="img-fluid" src="<?=$coupon->companies['logo']?>" width="100" alt="<?=$coupon['short_name']?>"></a>
-
-            </div>
-            <br>
-
-            <div class="flex-bottom-between text-center mb-1">
-                    <a  href="//<?=CONFIG['DOMAIN']?>/go/?coupon=<?=$coupon['id']?>"  onclick="clck(<?=$coupon['id']?>)"  data-toggle="tooltip" data-placement="top" title="" data-original-title="Показать"  class="btn-add-cart btn-add-cart__wide btn-primary transition-3d-hover">ОТКРЫТЬ КОД</a>
-            </div>
-
-
-            <div class="mb-4 text-center" style="height: 55px">
-                <div class="mb-2"><a href="//<?=CONFIG['DOMAIN']?>/go/?coupon=<?=$coupon['id']?>" onclick="clck(<?=$coupon['id']?>)" class="font-size-12 text-gray-5" tabindex="0"><?=obrezanie($coupon['name'], 60)?></a></a></div>
-            </div>
-
-            <hr>
-
-
-        </div>
-
+        <a  href="//<?=CONFIG['DOMAIN']?>/go/?coupon=<?=$coupon['id']?>"  onclick="clck(<?=$coupon['id']?>)"  data-toggle="tooltip" data-placement="top" title="" data-original-title="Открыть код"  class="btn-add-cart btn-add-cart__wide btn-primary transition-3d-hover">ОТКРЫТЬ КОД</a>
     <?php endif;?>
-
 
     <?php if ($coupon['species'] == "action"): ?>
-
-    <!-- ACTION -->
-        <div  style="width: 170px;  ">
-
-            <div class="prodcut-price text-center bg-white rounded-sm border border-width-2 border-red py-2 px-2">
-                <div class="text-gray-100"><?=captiondiscount($coupon['discount'])?></div>
-
-                <div class="mb-2 text-center"><a href="//<?=CONFIG['DOMAIN']?>/go/?coupon=<?=$coupon['id']?>" target="_blank" class="font-size-12 text-gray-5"><?=json_decode($coupon['types'], true)[0]['name']?></a></div>
-
-                <a href="//<?=CONFIG['DOMAIN']?>/go/?coupon=<?=$coupon['id']?>" target="_blank" class="d-block text-center"><img class="img-fluid" src="<?=$coupon->companies['logo']?>" width="100" alt="<?=$coupon['short_name']?>"></a>
-
-            </div>
-            <br>
-
-            <div class="flex-bottom-between text-center mb-1">
-                <a href="//<?=CONFIG['DOMAIN']?>/go/?coupon=<?=$coupon['id']?>" target="_blank" data-toggle="tooltip" data-placement="top" title="" data-original-title="Использовать"  class="btn btn-dark btn-sm-wide height-40 py-2">ПЕРЕЙТИ</a>
-
-            </div>
-
-
-            <div class="mb-4 text-center" style="height: 55px">
-                <div class="mb-2"><a href="//<?=CONFIG['DOMAIN']?>/go/?coupon=<?=$coupon['id']?>" target="_blank" class="font-size-12 text-gray-5" tabindex="0"><?=obrezanie($coupon['name'], 60)?></a></a></div>
-            </div>
-
-            <hr>
-
-
-        </div>
-
-
+        <a href="//<?=CONFIG['DOMAIN']?>/go/?coupon=<?=$coupon['id']?>" onclick="clck(<?=$coupon['id']?>)" data-toggle="tooltip" data-placement="top" title="" data-original-title="Использовать"  class="btn btn-dark btn-sm-wide height-40 py-2">АКТИВИРОВАТЬ</a>
     <?php endif;?>
+                    </div>
+
+                    <div class="mb-4 text-center" style="height: 55px">
+                        <div class="mb-2"><a href="//<?=CONFIG['DOMAIN']?>/go/?coupon=<?=$coupon['id']?>" onclick="clck(<?=$coupon['id']?>)" class="font-size-12 text-gray-5" tabindex="0"><?=obrezanie($coupon['name'], 60)?></a></a></div>
+                    </div>
+
+                    <hr>
 
 
-
-
-
+                </div>
 
 
 

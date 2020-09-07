@@ -7,9 +7,13 @@ define('WWW', __DIR__);
 
 // Переменные для приложения
 define('BASEAVATAR', '/assets/oper1.jpg');
-define('UrInvoicepath', '/uploads/user_invoice/');
 define('BASELOGO', '/uploads/user_logo/baselogo.jpg');
+define('APPNAME', 'COUPON');
 // Переменные для приложения
+
+
+//Подключаем все конфигурации.
+define('CONFIG', require 'config/main.php');
 
 
 
@@ -17,9 +21,6 @@ require 'vendor/autoload.php';
 require 'lib/functions.php'; //ОБЩИЕ ФУНКЦИИ
 require 'lib/functions_app.php'; //ФУНКЦИИ ПРИЛОЖЕНИЯ
 
-//Подключаем все конфигурации. Приоритет у main-local.php
-define('CONFIG', require 'config/main.php');
-define('APPNAME', 'COUPON');
 
 
 //ВАЛИДАТОР

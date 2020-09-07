@@ -200,7 +200,7 @@ function translitengrus($input){
         "j"=>"ж","z"=>"з","i"=>"и","i"=>"й","k"=>"к",
         "l"=>"л","m"=>"м","n"=>"н","o"=>"о","p"=>"п","r"=>"р","s"=>"с","t"=>"т",
         "y"=>"у","f"=>"ф","h"=>"х","c"=>"ц",
-        "ch"=>"ч","sh"=>"ш","sh"=>"щ","i"=>"ы","e"=>"е","u"=>"у","ya"=>"я","A"=>"А","B"=>"Б",
+        "ch"=>"ч","sh"=>"ш","sh"=>"ш","i"=>"ы","e"=>"е","u"=>"у","ya"=>"я","A"=>"А","B"=>"Б",
         "V"=>"В","G"=>"Г","D"=>"Д", "E"=>"Е","Yo"=>"Ё","J"=>"Ж","Z"=>"З","I"=>"И","I"=>"Й","K"=>"К","L"=>"Л","M"=>"М",
         "N"=>"Н","O"=>"О","P"=>"П",
         "R"=>"Р","S"=>"С","T"=>"Т","Y"=>"Ю","F"=>"Ф","H"=>"Х","C"=>"Ц","Ch"=>"Ч","Sh"=>"Ш",
@@ -336,6 +336,38 @@ function gaUserId(){
 }
 
 
+function delDir($dir) {
+    $files = array_diff(scandir($dir), ['.','..']);
+    foreach ($files as $file) {
+        (is_dir($dir.'/'.$file)) ? delDir($dir.'/'.$file) : unlink($dir.'/'.$file);
+    }
+    return rmdir($dir);
+}
+
+function gtmBODY(){
+    ?>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NC7T4PT"
+                      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <?php
+}
+
+
+
+function gtmHEAD(){
+    ?>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+                new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-NC7T4PT');</script>
+    <!-- End Google Tag Manager -->
+
+    <?php
+}
 
 function fCURL($url, $PARAMS = [], $headers = []){
 

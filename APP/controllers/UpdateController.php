@@ -17,10 +17,28 @@ class UpdateController extends AppController {
 
       if (!empty($_GET))   $token = AuthAdmitad();
 
+
+
+      // Взять все программы
+
+
+
+
         if (!empty($_GET) && ($_GET['action'] == "updatecompany")){
 
+            // Если нет файла, то создаем
+            if (!file_exists(WWW."/upload/logos/")){
+                mkdir(WWW."/upload/logos/", 0777, true);
+            }
+            // Если нет файла, то создаем
+
+
+
             $campanings = $Panel->getPrograms($token);
+
+
             $Panel->addMagazin($campanings, $token);
+
             $Panel->updatecheck("company");
             echo "<h1>КОМПАНИИ ОБНОВЛЕНЫ!</h1>";
 
@@ -34,10 +52,7 @@ class UpdateController extends AppController {
 
 
             $Panel->removeFinishCoupon();
-
-
             $Panel->addCoupons($token);
-
             $Panel->updatecheck("coupons");
             echo "<h1>КУПОНЫ ОБНОВЛЕНЫ!</h1>";
 

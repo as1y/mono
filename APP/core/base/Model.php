@@ -180,17 +180,21 @@ abstract class Model
 
     public static function SaveUsr (){
 
-	    if (empty($_SESSION['utmget'])) $_SESSION['utmget'] = $_GET;
 
-        if (empty($_SESSION['SystemUserId']) && !empty($_COOKIE) ) {
+	    if (!empty($_GET) && $_GET['cmpid']){
+
+
             $Panel =  new Panel();
             $_SESSION['SystemUserId'] = SystemUserId();
-            $Panel->AddUtminBD($_SESSION['utmget']);
+            $Panel->AddUtminBD($_GET);
 
-            // Парсим UTM
-            // Добавляем в Таблицу запись с Уникальым ID и параметрами UTM
+
+
 
         }
+
+
+
 
 
 

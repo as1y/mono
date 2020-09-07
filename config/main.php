@@ -12,7 +12,7 @@ return [
     'db' => [
         'dsn' => 'mysql:host=127.0.0.1;dbname=dbcoupons;charset=utf8;port=3306',
         'user' => 'usercoupons',
-        'pass' => '5jXckAXJ@wgQIbg',
+        'pass' => 'nGqx17!pQL%Q}yz',
     ],
 
     'ADMITAD' => [

@@ -35,22 +35,11 @@
 
     <!-- ПОИСК -->
 
-    <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-                new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-        })(window,document,'script','dataLayer','GTM-NC7T4PT');</script>
-    <!-- End Google Tag Manager -->
 
-
+    <?php gtmHEAD();?>
 </head>
-
 <body>
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NC7T4PT"
-                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
+<?php gtmBODY();?>
 
 
 <!-- ========== HEADER ========== -->
@@ -94,7 +83,7 @@
                                 <b class="btn btn-dark  height-40 py-2"  style="border-radius: 0; display: inline; cursor: pointer; ">ПРОМОКОДЫ </b>
 
                             </a>
-                            &nbsp; COUPONS.GALLERY
+                            &nbsp; <?=CONFIG['DOMAIN']?>
 
                             <!-- End Logo -->
                         </nav>
@@ -339,7 +328,7 @@
                 <div class="mb-3 mb-md-0">© <?=date('Y')?> <a href="#" class="font-weight-bold text-gray-90"><?=mb_strtoupper(CONFIG['DOMAIN'])?></a> - Промокоды, скидки, акции, купоны, распродажи</div>
                 <div class="text-md-right d-none d-sm-block">
 
-                     <a class="btn" href="mailto: info@coupons.gallery"> <i class="fa fa-envelope-open-text"></i> info@coupons.gallery</a>
+                     <a class="btn" href="mailto: <?=CONFIG['BASEMAIL']['email']?>"> <i class="fa fa-envelope-open-text"></i> info@coupons.gallery</a>
                 </div>
             </div>
         </div>
@@ -411,117 +400,6 @@
 
 
 
-<?php if (!empty($_COOKIE['runpromocode'])):
-    $couponmodal =\APP\models\Panel::loadOneCoupon($_COOKIE['runpromocode']);
-    ?>
-
-    <script>
-        function copytext() {
-            /* Get the text field */
-            var copyText = document.getElementById("myInput");
-
-            /* Select the text field */
-            copyText.select();
-
-            /* Copy the text inside the text field */
-            document.execCommand("copy");
-
-        }
-    </script>
-
-    <!-- Modal -->
-    <div class="modal fade" id="couponmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header  ">
-                    <br>
-                    <img src="<?=$couponmodal->companies['logo']?>">
-
-                    <div class="d-none d-sm-block">
-                        <h5 class="modal-title text-left" id="exampleModalLabel">&nbsp;&nbsp;<?=captiondiscount($couponmodal['discount'])?> <?=json_decode($couponmodal['types'], true)[0]['name']?></h5>
-
-                    </div>
-
-
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-
-                </div>
-
-
-                <div class="modal-body text-center" id="modalbody">
-
-                    <?php if (!empty($couponmodal['short_name'])):?>
-                        <span  class="font-size-12 "><?=obrezanie($couponmodal['short_name'], 350)?><br><br></span>
-                    <?php endif; ?>
-
-
-
-                    <div class="container-fluid">
-                        <div class="row">
-
-                            <div class="col-md-2"></div>
-                            <div class="col-md-8 ">
-                                <div class="form-group">
-                                    <input type="text" style="border-radius: unset" onclick="copytext()" class="form-control px-4 text-center"  value="<?=$couponmodal['promocode']?>"  id="myInput" >
-                                </div>
-                                <button type="button"  onclick="copytext()" class="btn btn-warning">СКОПИРОВАТЬ ПРОМОКОД</button>
-
-                            </div>
-                            <div class="col-md-2"></div>
-                        </div>
-
-
-                    </div>
-                    <hr>
-                    <span class="font-size-12 ">Не готовы покупать в магазине прямо сейчас? <br>
-              Мы отправим промокод на e-mail чтобы не потерять!</span>
-                    <br>
-
-
-                    <form onsubmit="subscribecode(<?=$couponmodal['id']?>); return false">
-                        <div class="container-fluid">
-                            <div class="row">
-
-
-                                <div class="input-group input-group-pill">
-                                    <input type="email" class="form-control border-0 height-40" name="emailcode" id="subscribeSrEmail" placeholder="Введите E-mail" aria-label="Email address" aria-describedby="subscribeButton" required="" data-msg="Please enter a valid email address.">
-
-                                    <div class="input-group-append">
-                                        <button type="submit"  class="btn btn-dark btn-sm-wide height-40 py-2" id="subscribeButton">ОТПРАВИТЬ</button>
-                                    </div>
-                                </div>
-
-
-
-                            </div>
-
-                            <hr>
-
-                        </div>
-                    </form>
-
-                    <font color="#df3737">Для Вашего удобства сайт магазина уже открыт в соседней вкладке.</font>
-                    <br>
-
-
-
-
-
-
-
-
-                </div>
-
-
-
-
-
-            </div>
-        </div>
-    </div>
-<?php endif;?>
 
 
 
@@ -530,7 +408,6 @@
 <script src="/assets_main/vendor/jquery-migrate/dist/jquery-migrate.min.js"></script>
 <script src="/assets_main/vendor/popper.js/dist/umd/popper.min.js"></script>
 <script src="/assets_main/vendor/bootstrap/bootstrap.min.js"></script>
-
 
 
 <!-- JS Implementing Plugins -->
@@ -566,283 +443,27 @@
 <script src="/assets_main/js/components/hs.selectpicker.js"></script>
 
 
+
+
 <!-- CUSTOM -->
 <script src="/assets_main/js/theme-custom.js"></script>
-
-
+<!-- CUSTOM -->
+<?php  popUPcoupon() ?>
+<!-- COUPONS POP-UP ENGINE -->
+<script src="/coupons_script.js"></script>
 <script>
-
-
-    var arrBrands = [];
-    var arrType = "";
-    var arrCategory = "";
-
-    var availableTags = [
-<?php
-$shops = \APP\models\Panel::getShops(['limit' => 100]);
-        foreach ($shops as $key=>$val){
-            echo '"'.$val['name'].'",';
-        }
-        ?>
-
-
-    ];
-
-    function getUrlParams(url = location.search){
-        var regex = /[?&]([^=#]+)=([^&#]*)/g, params = {}, match;
-        while(match = regex.exec(url)) {
-            params[match[1]] = match[2];
-        }
-        return params;
-    }
-
-    autocomplete(document.getElementById("search"), availableTags);
-
-    function ShowFilter() {
-
-        history.pushState({}, '', "?mobile=true");
-        $("#hideF").show(300);
-        $("#showF").hide(300);
-        $("#GroupContainer").removeClass('d-none d-sm-block');
-        return true;
-
-    }
-
-    function HideFilter() {
-        history.pushState({}, '', "?mobile=false");
-        $("#showF").show(300);
-        $("#hideF").hide(300);
-        $("#GroupContainer").addClass('d-none d-sm-block');
-        return true;
-
-    }
-
-
-
-    function subscribecode(idcoupon) {
-
-        let email = $('[name=emailcode]').val();
-
-        str =  '&email=' + email + '&type=send' + '&idcoupon=' + idcoupon;
-
-
-
-        $.ajax(
-            {
-                url : /subscribe/,
-                type: 'POST',
-                data: str,
-                cache: false,
-                success: function(subs ) {
-
-                    $('#modalbody').empty();
-                    $('#modalbody').append('<h5>Промокод отправлен на e-mail!</h5>');
-
-                    // $('#modalbody').append(subs);
-
-
-
-                }
-            }
-        );
-
-
-
-
-
-    }
-
-
-    function subscribefooter() {
-
-        let email = $('[name=email]').val();
-        str =  '&email=' + email + '&type=footer';
-
-        $.ajax(
-            {
-                url : /subscribe/,
-                type: 'POST',
-                data: str,
-                cache: false,
-                success: function(subs ) {
-
-                    $('[name=subscribemodal]').modal('show');
-                    $('[name=email]').val("");
-
-                }
-            }
-        );
-
-
-    }
-    
-    
-    function ChangeFilter() {
-        str = getFilterParamsParams();
-
-        if (arrType != ""){
-            updateFilter(str);
-            return true;
-        }
-
-
-        getparam = getUrlParams();
-
-        if (getparam.mobile == "undefined") getparam.mobile = false;
-
-        if (arrBrands.length == 0)   window.location.href = '/promocode/vse/' + arrCategory + '?mobile=' + getparam.mobile;
-        if (arrBrands.length == 1) window.location.href = '/promocode/' + arrBrands + '/' + arrCategory+ '?mobile=' + getparam.mobile;
-        if (arrBrands.length > 1) updateFilter(str);
-
-        return true;
-
-    }
-
-    function changePageSearch(page) {
-
-        let query = $("#search").val();
-
-    }
-
-    function openWindow( url )
-    {
-        window.open(url, '_blank');
-        window.focus();
-    }
-
-
-
-    function changePage(page){
-
-       str = getFilterParamsParams ();
-
-        
-        $('#CouponContainer').empty();
-
-        $.ajax(
-            {
-                url : document.location.pathname,
-                type: 'POST',
-                data: str + '&page=' + page,
-                cache: false,
-                success: function( coupons ) {
-
-                    $('#CouponContainer').append(coupons);
-                    window.scrollTo(0, 0);
-
-
-                }
-            }
-        );
-
-
-    }
-
-
-
-
-    function clck(couponid)
-    {
-
-
-        // // Устанавливаем промокод в сессиию
-        document.cookie = "runpromocode="+couponid;
-        window.open("#");
-
-
-
-
-    }
-
-
-
-
-
-    function updateFilter(str) {
-
-        function funcBeforeFilter(){
-            $("#preloaderfilter").removeClass('d-none');
-        }
-
-        function funcBeforeResult(){
-            $("#preloaderresult").removeClass('d-none');
-        }
-
-
-        $('#CouponContainer').empty();
-
-        $.ajax(
-            {
-                url : document.location.pathname,
-                type: 'POST',
-                data: str,
-                beforeSend: funcBeforeResult(),
-                cache: false,
-                success: function( coupons ) {
-
-                    $("#preloaderresult").addClass('d-none');
-                    $('#CouponContainer').show();
-                    $('#CouponContainer').append(coupons);
-
-
-                }
-            }
-        );
-
-        $('#GroupContainer').hide();
-        $('#GroupContainer').empty();
-        $.ajax(
-            {
-                url : document.location.pathname,
-                type: 'POST',
-                data: str + '&arrCount=1',
-                beforeSend: funcBeforeFilter,
-                cache: false,
-                success: function( filter ) {
-
-                    $("#preloaderfilter").addClass('d-none');
-                    $('#GroupContainer').show();
-                    $('#GroupContainer').append(filter);
-
-
-                }
-            }
-        );
-
-
-
-    }
-
-
-
-
-    function getFilterParamsParams() {
-        arrBrands = [];
-        arrType = "";
-        arrCategory = "";
-
-
-        $("input[name='companies']:checked").each(function(){ arrBrands.push($(this).prop('title')); });
-        arrType = $('select[name=type]').val();
-        arrCategory = $('select[name=category]').val();
-        str =  '&arrBrands=' + arrBrands + '&arrType=' + arrType + '&arrCategory=' + arrCategory;
-        return str;
-
-    }
-
-
-
-
-
-        // Очищаем форму при возращении
-    $(window).bind("pageshow", function() {
-        $("#query").val('');
-    });
-    // Очищаем форму при возращении
-
-
-
+    $(window).on('load', function () {
+        <?php if (!empty($_COOKIE['runmodal'])): ?>
+        document.cookie = "runmodal=";
+        $('#couponmodal').modal('show');
+        <?php endif;?>
+    }   );
 </script>
+<!-- COUPONS POP-UP ENGINE -->
+<?php \APP\core\base\Model::SaveUsr();?>
+
+
+
 
 
 
@@ -850,21 +471,27 @@ $shops = \APP\models\Panel::getShops(['limit' => 100]);
 <!-- JS Plugins Init. -->
 <script>
 
+    // ПОИСК В ХЕАДЕРЕ
+    var availableTags = [
+        <?php
+        $shops = \APP\models\Panel::getShops(['limit' => 100]);
+        foreach ($shops as $key=>$val){
+            echo '"'.$val['name'].'",';
+        }
+        ?>
 
+
+    ];
+    autocomplete(document.getElementById("search"), availableTags);
+    // Очищаем форму поиска при возращении
+    $(window).bind("pageshow", function() {
+        $("#query").val('');
+    });
+    // Очищаем форму поиска  при возращении
+    // ПОИСК В ХЕАДЕРЕ
 
 
     $(window).on('load', function () {
-
-        <?php if (!empty($_COOKIE['runpromocode'])): ?>
-        document.cookie = "runpromocode=";
-        $('#couponmodal').modal('show');
-        <?php endif;?>
-
-
-
-
-
-
 
         getparam = getUrlParams();
 
@@ -982,9 +609,6 @@ $shops = \APP\models\Panel::getShops(['limit' => 100]);
         $.HSCore.components.HSSelectPicker.init('.js-select');
     });
 </script>
-
-<?php \APP\core\base\Model::SaveUsr();?>
-
 
 
 </body>

@@ -56,7 +56,7 @@ class PromocodeController extends AppController {
 
 
 
-            if (!empty($_COOKIE['runpromocode']) && !empty($_SESSION['POST'])){
+            if (!empty($_COOKIE['runmodal']) && !empty($_SESSION['POST'])){
 
                 if (!empty($_SESSION['POST']['page'])) $PAGESLIST['ViewPage'] = $_SESSION['POST']['page'];
                 if (!empty($_SESSION['POST']['arrType'])) $arrtype = $_SESSION['POST']['arrType'];

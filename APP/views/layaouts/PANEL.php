@@ -215,21 +215,37 @@
                         </li>
 
                         <li class="nav-item">
-                            <a href="/panel/flow" class="nav-link <?=isset($active['flow']) ? $active['flow'] : ''; ?>">
-                                <i class="icon-home4"></i>
-                                <span>	Мои потоки </span>
+                            <a href="/panel/generatelink" class="nav-link <?=isset($active['generatelink']) ? $active['generatelink'] : ''; ?>">
+                                <i class="icon-link"></i>
+                                <span>	Генератор ссылок </span>
                             </a>
                         </li>
 
                         <li class="nav-item">
-                            <a href="/panel/addflow" class="nav-link <?=isset($active['addflow']) ? $active['addflow'] : ''; ?>">
-                                <i class="icon-home4"></i>
-                                <span>	Добавить поток </span>
+                            <a href="/panel/generateadvert" class="nav-link <?=isset($active['generateadvert']) ? $active['generateadvert'] : ''; ?>">
+                                <i class="icon-file-text2"></i>
+                                <span>	Генератор объявлений </span>
                             </a>
                         </li>
 
+                        
+                        <li class="nav-item-header">
+                            <div class="text-uppercase font-size-sm line-height-sm">КАСТОМНЫЕ КУПОНЫ</div>
+                        </li>
 
+                        <li class="nav-item">
+                            <a href="/panel/listcoupons" class="nav-link <?=isset($active['listcoupons']) ? $active['listcoupons'] : ''; ?>">
+                                <i class="icon-list-numbered"></i>
+                                <span>	Список купонов </span>
+                            </a>
+                        </li>
 
+                        <li class="nav-item">
+                            <a href="/panel/addcoupon" class="nav-link <?=isset($active['addcoupon']) ? $active['addcoupon'] : ''; ?>">
+                                <i class="icon-plus3"></i>
+                                <span>	Добавить купон </span>
+                            </a>
+                        </li>
 
 
 
