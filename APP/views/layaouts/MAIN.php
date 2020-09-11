@@ -234,117 +234,6 @@
 </div>
 
 
-<<<<<<< HEAD
-<!-- Modal -->
-<div id="coupon-code" class="modal fade" role="dialog">
-    <div class="modal-dialog">
-
-        <!-- Modal content-->
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&#xD7;</button>
-                <h4 class="modal-title">Special Flash Sale</h4>
-            </div>
-            <div class="modal-body">
-                <div class="coupon-modal-content">
-                    <div class="row">
-                        <div class="col-md-5 col-sm-5 col-xs-12">
-                            <div class="single-coupon-thumb">
-                                <img src="//placehold.it/600x400" alt="Coupon" class="img-thumbnail img-responsive">
-                            </div>
-                        </div>
-                        <div class="col-md-7 col-sm-7 col-xs-12">
-                            <p>COPY THIS CODE AND USE AT CHECKOUT</p>
-                            <div class="input-group">
-                                <input type="text" class="form-control" autocomplete="off" readonly value="HFRESH10">
-                                <div class="input-group-btn">
-                                    <button class="clipboard btn btn-default" data-clipboard-text="HFRESH10"><i class="fa fa-clipboard" aria-hidden="true"></i> Copy to Clipboard</button>
-                                </div>
-                            </div>
-                            <a class="btn btn-brand pull-right" href="#">Go To Store</a>
-                        </div>
-                    </div>
-=======
-                     <a class="btn" href="mailto: <?=CONFIG['BASEMAIL']['email']?>"> <i class="fa fa-envelope-open-text"></i> <?=CONFIG['BASEMAIL']['email']?></a>
->>>>>>> 7616b42ba8cf5f9c3c6758c09ca168792f7447ca
-                </div>
-            </div>
-            <div class="modal-footer">
-                <img src="//placehold.it/1000x172" alt="Coupon" class="img-responsive">
-            </div>
-        </div>
-
-    </div>
-</div>
-
-<!-- Modal -->
-<div id="coupon-printable" class="modal fade" role="dialog">
-    <div class="modal-dialog">
-
-        <!-- Modal content-->
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&#xD7;</button>
-                <h4 class="modal-title">Special Flash Sale</h4>
-            </div>
-            <div class="modal-body">
-                <div class="coupon-modal-content">
-                    <div class="row">
-                        <div class="col-md-5 col-sm-5 col-xs-12">
-                            <div class="single-coupon-thumb">
-                                <img src="//placehold.it/600x400" alt="Coupon" class="img-thumbnail img-responsive">
-                            </div>
-                        </div>
-                        <div class="col-md-7 col-sm-7 col-xs-12">
-                            <p>PRINT THIS COUPON AND REDEEM IT IN-STORE</p>
-                            <a class="btn btn-brand" href="#">Print Now</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <img src="//placehold.it/1000x172" alt="Coupon" class="img-responsive">
-            </div>
-        </div>
-
-    </div>
-</div>
-
-<!-- Modal -->
-<div id="coupon-deal" class="modal fade" role="dialog">
-    <div class="modal-dialog">
-
-        <!-- Modal content-->
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&#xD7;</button>
-                <h4 class="modal-title">Special Flash Sale</h4>
-            </div>
-            <div class="modal-body">
-                <div class="coupon-modal-content">
-                    <div class="row">
-                        <div class="col-md-5 col-sm-5 col-xs-12">
-                            <div class="single-coupon-thumb">
-                                <img src="//placehold.it/600x400" alt="Coupon" class="img-thumbnail img-responsive">
-                            </div>
-                        </div>
-                        <div class="col-md-7 col-sm-7 col-xs-12">
-                            <p>DEAL ACTIVATED, NO COUPON CODE REQUIRED!</p>
-                            <a class="btn btn-brand" href="#">Go To Store</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <img src="//placehold.it/1000x172" alt="Coupon" class="img-responsive">
-            </div>
-        </div>
-
-    </div>
-</div>
-
-
-
 <!-- SITE SCRIPT  -->
 
 <!-- jquery -->
@@ -352,9 +241,6 @@
 
 <!-- BOOTSTRAP JS -->
 <script src="/assets_main/vendor/bootstrap/js/bootstrap.min.js"></script>
-
-<!-- if load google maps then load this api -->
-<script src="//maps.googleapis.com/maps/api/js?key=AIzaSyChihC--Jb_QURoXd2MugyC53cDQjrV2MY"></script>
 
 <!-- load if our contact form or email subscribe options is used -->
 <script src="/assets_main/vendor/validation/jquery.validate.js"></script>

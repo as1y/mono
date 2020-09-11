@@ -65,7 +65,6 @@ class PanelController extends AppController {
         $BREADCRUMBS['DATA'][] = ['Label' => "FAQ"];
         \APP\core\base\View::setBreadcrumbs($BREADCRUMBS);
 
-<<<<<<< HEAD
         $ASSETS[] = ["js" => "/global_assets/js/plugins/tables/datatables/datatables.min.js"];
         $ASSETS[] = ["js" => "/assets/js/datatables_basic.js"];
         \APP\core\base\View::setAssets($ASSETS);
@@ -107,10 +106,7 @@ class PanelController extends AppController {
         $BREADCRUMBS['DATA'][] = ['Label' => "FAQ"];
         \APP\core\base\View::setBreadcrumbs($BREADCRUMBS);
 
-=======
->>>>>>> 7616b42ba8cf5f9c3c6758c09ca168792f7447ca
-//        $ASSETS[] = ["js" => "/global_assets/js/plugins/tables/datatables/datatables.min.js"];
-//        \APP\core\base\View::setAssets($ASSETS);
+
 
         \APP\core\base\View::setMeta($META);
         \APP\core\base\View::setBreadcrumbs($BREADCRUMBS);

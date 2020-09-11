@@ -13,24 +13,6 @@
 
             ?>
 
-
-<<<<<<< HEAD
-
-
-
-
-=======
-                        renderFilter([
-                            'catalogCategories' => $catalogCategories,
-                            'catalogCompany' => $catalogCompany,
-                            'catalogType' => $catalogType
-                        ]);
-
-                        ?>
->>>>>>> 7616b42ba8cf5f9c3c6758c09ca168792f7447ca
-
-
-
         </div>
 
 

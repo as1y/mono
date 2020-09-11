@@ -43,53 +43,7 @@
                 <b><i class="icon-notification2"></i></b>
                 ГЕНЕРИРОВАТЬ ОБЪЯВЛЕНИЯ
             </button>
-<<<<<<< HEAD
-=======
 
-
-
-
-
-            <?php if (!empty($ADV)):?>
-            <div class="row">
-                <h2>ОБЪЯВЛЕНИЯ</h2>
-
-                <table width="100%">
-
-                <?php foreach ($ADV as $objavlenie):?>
-
-                    <tr>
-                        <td>  <b>Заголовок</b><br>
-                            <textarea rows="3" cols="3" class="form-control" ><?=$objavlenie['zagolovok']?></textarea>
-                        </td>
-                        <td>  <b>Объявление</b><br>
-                            <textarea rows="3" cols="3" class="form-control" ><?=$objavlenie['text']?></textarea>
-                        </td>
-                        <td>  <b>Ключевые слова</b><br>
-                            <textarea rows="3" cols="3" class="form-control" ><?php
-                    foreach ($objavlenie['keyword'] as $kw){
-                        echo $kw."\n";
-                    }
-
-                        ?></textarea>
-                        </td>
-
-
-
-                    </tr>
-
-
-                <?php endforeach; ?>
-
-                </table>
-
-
-
-            </div>
-            <?php endif; ?>
-
-
->>>>>>> 7616b42ba8cf5f9c3c6758c09ca168792f7447ca
         </form>
 
 

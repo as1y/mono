@@ -167,18 +167,3 @@ function generatecsv() {
 
 }
 
-function copytext() {
-    /* Get the text field */
-    var copyText = document.getElementById("myInput");
-
-<<<<<<< HEAD
-    /* Select the text field */
-    copyText.select();
-
-    /* Copy the text inside the text field */
-    document.execCommand("copy");
-
-}
-
-=======
->>>>>>> 7616b42ba8cf5f9c3c6758c09ca168792f7447ca

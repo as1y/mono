@@ -69,35 +69,30 @@ function generateResult($coupons, $PAGESLIST, $catalogCategories,  $query ="", $
 
 
 
-function generateStartEndPage($PAGESLIST, $Pages){
+function generateStartEndPage($PAGESLIST, $Pages)
+{
 
     $starpage = 1;
-<<<<<<< HEAD
     $items = 3;
-
+ 
     $endpage = ($Pages >= $items) ? $items : $Pages;
     // Если больше стандартный пяти
-    if ($PAGESLIST['ViewPage'] >= $items){
-=======
-    $item = 5;
-    $endpage = ($Pages >= $item) ? $item : $Pages;
-    // Если больше стандартный пяти
-    if ($PAGESLIST['ViewPage'] >= $item){
->>>>>>> 7616b42ba8cf5f9c3c6758c09ca168792f7447ca
-        $starpage = $PAGESLIST['ViewPage'] - 2;
-        $endpage = $PAGESLIST['ViewPage'] + 2;
+    if ($PAGESLIST['ViewPage'] >= $items) {
+
+        // Если больше стандартный пяти
+        $starpage = $PAGESLIST['ViewPage'] - 1;
+        $endpage = $PAGESLIST['ViewPage'] + 1;
         if ($starpage < 1) $starpage = 1;
         if ($endpage > $Pages) $endpage = $Pages;
     }
 
-    $result['starpage'] = $starpage;
-    $result['endpage'] = $endpage;
+        $result['starpage'] = $starpage;
+        $result['endpage'] = $endpage;
 
-    return $result;
+        return $result;
+
 
 }
-
-
 
 function generetuCouponinCode($coupons, $ViewPage, $CouponsPerPage){
 

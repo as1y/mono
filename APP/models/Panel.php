@@ -13,12 +13,6 @@ class Panel extends \APP\core\base\Model {
 
         $companies = R::findAll('companies', "WHERE `addbanner` = ? LIMIT 40 ", ["0"]);
 
-<<<<<<< HEAD
-//        show($companies);
-=======
-       // show($companies);
->>>>>>> 7616b42ba8cf5f9c3c6758c09ca168792f7447ca
-
         if (!empty($companies)){
 
             foreach ($companies as $key=>$company){
