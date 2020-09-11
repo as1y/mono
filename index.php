@@ -9,6 +9,7 @@ define('WWW', __DIR__);
 define('BASEAVATAR', '/assets/oper1.jpg');
 define('BASELOGO', '/uploads/user_logo/baselogo.jpg');
 define('APPNAME', 'COUPON');
+define('MORDA', 'true');
 // Переменные для приложения
 
 

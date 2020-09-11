@@ -49,20 +49,6 @@
     <!-- lity -->
     <link rel="stylesheet" href="/assets_main/vendor/lity/lity.min.css" media="all">
 
-<<<<<<< HEAD
-    <!-- Bootstrap Slider -->
-    <link rel="stylesheet" href="/assets_main/vendor/bootstrap-slider/css/bootstrap-slider.min.css" media="all">
-=======
-                                                <a style="color: #df3737  " href="/">главная</a>
-                                                <hr>
-                                                <!-- Logo -->
-                                                <b>ФИЛЬТР ПО КАТЕОРИЯМ</b>
-                                                <!-- End Logo -->
-                                                <!-- List -->
-                                                <ul id="headerSidebarList" class="u-header-collapse__nav">
-                                                    <!-- Home Section -->
-                                                    <li class="u-has-submenu ">
->>>>>>> 7616b42ba8cf5f9c3c6758c09ca168792f7447ca
 
     <!-- CUSTOM  CSS  -->
     <link id="cbx-style" rel="stylesheet" href="/assets_main/css/style-red.css" media="all">
