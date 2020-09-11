@@ -9,7 +9,7 @@ define('WWW', __DIR__);
 define('BASEAVATAR', '/assets/oper1.jpg');
 define('BASELOGO', '/uploads/user_logo/baselogo.jpg');
 define('APPNAME', 'COUPON');
-define('MORDA', 'true');
+define('MORDA', true);
 // Переменные для приложения
 
 
@@ -61,8 +61,6 @@ $router = new Router;
 // ПУТИ ЗАДАЮТ НАДО УТОЧНИТЬ КАК РАБОТАЕТ
 $router->add( 'user/login', ['controller'=>'User', 'action'=>'index']);
 $router->add( '^category/(?P<alias>[a-z-]+)$', ['controller'=>'Category', 'action'=>'index']);
-$router->add( '^shop/(?P<alias>[a-z-]+)$', ['controller'=>'Shop', 'action'=>'index']);
-$router->add( '^brands/(?P<alias>[a-z-]+)$', ['controller'=>'Brands', 'action'=>'index']);
 $router->add( '^promocode/(?P<alias>[a-z-]+)/?(?P<alias2>[a-z-]+)?$', ['controller'=>'Promocode', 'action'=>'index']);
 
 
@@ -70,7 +68,11 @@ $router->add( '^page/(?P<action>[a-z-]+)/(?P<alias>[a-z-]+)$', ['controller'=>'P
 $router->add( '^page/(?P<alias>[a-z-]+)$', ['controller'=>'Page', 'action'=>'view']);
 // ПУТИ ЗАДАЮТ НАДО УТОЧНИТЬ КАК РАБОТАЕТ
 //ДЕФОЛТНЫЕ ПРАВИЛА
-$router->add( '^$', ['controller'=>'Main', 'action'=>'index']);
+
+if (MORDA == true) $router->add( '^$', ['controller'=>'Main', 'action'=>'index']);
+if (MORDA == false) $router->add( '^$', ['controller'=>'Promocode', 'action'=>'index']);
+
+
 $router->add( '^(?P<controller>[a-z-]+)/?(?P<action>[a-z-]+)?$');
 //ДЕФОЛТНЫЕ ПРАВИЛА
 $router->run(); // ЗАПУСКАЕМ РОУТЕР

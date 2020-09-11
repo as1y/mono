@@ -74,7 +74,7 @@ function generateStartEndPage($PAGESLIST, $Pages)
 
     $starpage = 1;
     $items = 3;
- 
+
     $endpage = ($Pages >= $items) ? $items : $Pages;
     // Если больше стандартный пяти
     if ($PAGESLIST['ViewPage'] >= $items) {
