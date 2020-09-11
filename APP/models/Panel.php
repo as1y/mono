@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 namespace APP\models;
 use APP\core\Mail;
 use Psr\Log\NullLogger;
@@ -1523,6 +1523,8 @@ class Panel extends \APP\core\base\Model {
             $compname['zarabotok'] = 0;
             $allcompanies[$companytemp['id']] = $compname;
         }
+
+        if (empty($allcompanies)) $allcompanies = [];
 
         // Берем клики
         foreach ($allcompanies as $key=>$val){
