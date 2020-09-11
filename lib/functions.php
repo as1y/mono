@@ -245,20 +245,6 @@ function translit_sef($value)
     return $value;
 }
 
-function generatepayform($form){
-
-    echo '<form method="post" action="'.$form['action'].'">
-    ';
-
-    foreach ($form['input'] as $key=>$val) {
-        ?>
-        <input type="<?= $val['type'] ?>" name="<?= $val['name'] ?>" value="<?= $val['value'] ?>">
-        <?php
-    }
-
-    echo "</form>";
-
-}
 
 
 function getExtension($filename) {
@@ -266,22 +252,6 @@ function getExtension($filename) {
     return $path_info['extension'];
 }
 
-
-function teleph($tel){
-	$tel = str_replace("'", "", $tel); // Убираем +
-	$tel = str_replace("+", "", $tel); // Убираем +
-	$tel = str_replace("(", "", $tel); // Убираем (
-	$tel = str_replace(")", "", $tel); // Убираем )
-	$tel = str_replace("-", "", $tel); // Убираем )
-	$tel = str_replace(".", "", $tel); // Убираем .
-	$tel = str_replace(" ", "", $tel); // Убираем пробелы
-	$tel = trim($tel);
-	if ($tel['0'] == '8'){
-		$tel = substr($tel, 1);
-	}
-	if ($tel['0'] != '7') $tel = "7".$tel."";
-	return $tel;
-}
 
 
 function getconversion ($value1, $value2){
@@ -347,10 +317,9 @@ function delDir($dir) {
 function gtmBODY(){
     ?>
     <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NC7T4PT"
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T8RXKZ6"
                       height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
-
     <?php
 }
 
@@ -363,9 +332,8 @@ function gtmHEAD(){
                 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
             j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-        })(window,document,'script','dataLayer','GTM-NC7T4PT');</script>
+        })(window,document,'script','dataLayer','GTM-T8RXKZ6');</script>
     <!-- End Google Tag Manager -->
-
     <?php
 }
 

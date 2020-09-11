@@ -6,14 +6,18 @@ use RedBeanPHP\R;
 
 class Panel extends \APP\core\base\Model {
 
-    public $wID ="1495066";
+    public $wID = CONFIG['ADMITAD']['WID'];
 
 
     public function WorkWithBanners($token){
 
         $companies = R::findAll('companies', "WHERE `addbanner` = ? LIMIT 40 ", ["0"]);
 
-        show($companies);
+<<<<<<< HEAD
+//        show($companies);
+=======
+       // show($companies);
+>>>>>>> 7616b42ba8cf5f9c3c6758c09ca168792f7447ca
 
         if (!empty($companies)){
 
@@ -349,6 +353,7 @@ class Panel extends \APP\core\base\Model {
             $gotolink = $company['ulp'];
         }
 
+            $gotolink .= "?i=3";
 
 
         $coupon = R::dispense("coupons");
@@ -380,7 +385,7 @@ class Panel extends \APP\core\base\Model {
     }
 
 
-    public function LoadAddInfo(){
+    public function LoadAddInfo($offers = false){
 
         $ADDINFO['source'] = [1 => "googlecpc"];
         $ADDINFO['companies'] =  $this->LoadAllCompanies();
@@ -566,38 +571,69 @@ class Panel extends \APP\core\base\Model {
 
 
 
+    public function exportcsvgoogle($DATA){
+
+        // Первая строка
+        echo "Campaign,AdGroup,KeyWord,Criterion Type,Final URL,Headline 1,Headline 2,Headline 3,Description Line 1,Path 1,Path 2,Max CPC,Max CPM,Target CPM,Display Network Custom Bid Type,Targeting expansion,Ad Group Type"."<br>";
+        // Вторая строка
+        echo "".$DATA['namecompany'].",".$_SESSION['ADV']['rekl'].",,,,,,,,,,0.01,0.01,0.01,None,Disabled,Default"."<br>";
+
+        // Строки с Ключевыми словами
+        $keywordsMASS = explode("\n", $DATA['keywords']);
+        foreach ($keywordsMASS as $keyword){
+            $keyword = trim($keyword);
+            if ($keyword == " " || empty($keyword) || $keyword == "" ) continue;
+
+             echo "".$DATA['namecompany'].",".$_SESSION['ADV']['rekl'].",".$keyword.",phrase,,,,,,,,,,,,,"."<br>";
+        }
+
+        // Строки с объявлениями
+        foreach ($_SESSION['ADV']['description'] as $key=>$objavl){
+            echo "".$DATA['namecompany'].",".$_SESSION['ADV']['rekl'].",,,".$_SESSION['ADV']['url'].",".$_SESSION['ADV']['zagolovok1'][$key].",".$_SESSION['ADV']['zagolovok2'][$key].",".$_SESSION['ADV']['zagolovok3'][$key].",".$_SESSION['ADV']['description'][$key].",".$_SESSION['ADV']['path1'][$key].",".$_SESSION['ADV']['path2'][$key].",,,,,,"."<br>";
+        }
+
+
+    }
+
+
 
     public function GenerateAdvert($DATA){
 
         if (empty($DATA['company'])) return false;
 
-
         $companybd =  R::load("companies", $DATA['company']);
         $coupons = $companybd->ownCouponsList;
-
         if (empty($coupons)) return "nooffers";
-
         $keywords = $this->GenerateKeyWords($DATA['company']);
 
 
-        // Ключевые слова
-        // Заголовки
+        $mass['company'] = $DATA['company'];
+        $mass['traffictype'] = "googlesearch";
+        $ADVMASS['url'] = $this->GenerateLink($mass);
+
+        $ADVMASS['rekl'] = $companybd['name'];
+        $ADVMASS['keywords'] = $keywords;
 
         foreach ($coupons as $coupon){
+            if (mb_strlen($coupon['short_name']) < 20) continue;
+
+            if ($coupon['discount'] == "1%") $coupon['discount'] = "";
 
 
-            foreach ($keywords as $keyword){
-                $ADV['zagolovok'] = mb_convert_case($keyword, MB_CASE_TITLE, "UTF-8");
-                $ADV['text'] = $coupon['short_name'];
-                $ADV['keyword'] = $keywords;
-                $ADVMASS[] = $ADV;
-            }
+            $ADVMASS['description'][] = trim(obrezanie($coupon['short_name'], 90));
+            $ADVMASS['zagolovok1'][] = $coupon->companies['name'];
+            $ADVMASS['zagolovok2'][] =  ($coupon['species'] = "promocode") ? "Акция" : "Промокод";
+            $ADVMASS['zagolovok3'][] = $coupon['discount']." ".json_decode($coupon['types'], true)[0]['name'];
+
+            $ADVMASS['path1'][] = mb_strtolower(obrezanie($coupon->companies['name'], 15));
+            $ADVMASS['path2'][] = mb_strtolower(($coupon['species'] = "promocode") ? "Акция" : "Промокод");
+
 
         }
 
 
 
-
+        // $ADV['zagolovok'] = mb_convert_case($keyword, MB_CASE_TITLE, "UTF-8");
         return $ADVMASS;
 
 
@@ -776,6 +812,12 @@ class Panel extends \APP\core\base\Model {
     public function LoadCustomCupons($ARR) {
         return R::loadAll("coupons", $ARR);
     }
+
+
+    public function LoadCustomBanners($ARR) {
+        return R::loadAll("banners", $ARR);
+    }
+
 
 
     public function FindIdCategoryCoupon($url) {
@@ -958,7 +1000,7 @@ class Panel extends \APP\core\base\Model {
 
         $DATA = [
             'action' => $action,
-            'company' => $coupon->companies['name'],
+            'company' => $coupon['companies_id'],
             'name' => $coupon['name'],
             'shortname' => $coupon['short_name'],
             'discount' => $coupon['discount'],
@@ -1136,7 +1178,6 @@ class Panel extends \APP\core\base\Model {
 
 
     function RedirCoupon($coupon){
-
 
 
         $coupon =  R::Load('coupons', $_GET['coupon']);
@@ -1437,6 +1478,82 @@ class Panel extends \APP\core\base\Model {
 
     }
 
+    public function detalstat($id){
+
+        // Раскладка кликов
+        $zaprosi = R::findAll("usertoday", "WHERE `cmpid` =? GROUP BY `utm_term` ", [$id]);
+
+        // Получаем список запросов
+        foreach ($zaprosi as $zapros){
+            if ($zapros['utm_term'] == "{keyword}") continue;
+            $massivdata[$zapros['utm_term']]['clicks'] = R::count("usertoday", "WHERE `utm_term` = ? ", [$zapros['utm_term']]);
+            $massivdata[$zapros['utm_term']]['zarabotok'] = 0;
+            $massivdata[$zapros['utm_term']]['conversion'] = 0;
+
+        }
+
+
+
+        // Раскладка конверсий
+        $converstion = R::findAll("conversion");
+        foreach ($converstion as $key=>$value){
+            $coupon = json_decode($value['coupon'], true);
+            $utm = json_decode($value['utm'], true);
+
+            if ($coupon['companies']['id'] != $id) continue;
+
+            $massivdata[$utm['utm_term']]['name'][] = $coupon['name'];
+
+
+            $massivdata[$utm['utm_term']]['conversion'] = $massivdata[$utm['utm_term']]['conversion'] +1;
+            $massivdata[$utm['utm_term']]['zarabotok'] = $massivdata[$utm['utm_term']]['zarabotok'] + $value['zarabotok'];
+
+
+        }
+
+
+
+
+        return $massivdata;
+
+    }
+    public function companiestoday(){
+
+        $listcompanies = R::find("usertoday", "GROUP BY `cmpid` ");
+
+        // Определяем по каким проектам были сегодня КЛИКИ
+        foreach ($listcompanies as $company){
+            $companytemp = R::load("companies", $company['cmpid']);
+            $compname['name'] = $companytemp['name'];
+            $compname['conversion'] = 0;
+            $compname['zarabotok'] = 0;
+            $allcompanies[$companytemp['id']] = $compname;
+        }
+
+        // Берем клики
+        foreach ($allcompanies as $key=>$val){
+            $clicks = R::count("usertoday", "WHERE `cmpid` =? ", [$key]);
+            $allcompanies[$key]['clicks'] = $clicks;
+        }
+
+        // Записываем конверсии
+        $conversion = R::findAll("conversion");
+        foreach ($conversion as $key=>$val){
+
+            $coupon = json_decode($val['coupon'], true);
+            $cid = $coupon['companies']['id'];
+            $allcompanies[$cid]['conversion'] = $allcompanies[$cid]['conversion']+1;
+            $allcompanies[$cid]['zarabotok'] = $allcompanies[$cid]['zarabotok'] + $val['zarabotok'];
+
+
+
+        }
+
+
+
+        return $allcompanies;
+
+    }
 
 
     public function Getlastconversion(){
@@ -1572,7 +1689,7 @@ class Panel extends \APP\core\base\Model {
 
         $url = $url."?".http_build_query($PARAMS);
 
-        show($PARAMS);
+      //  show($PARAMS);
 
 
         $ch = curl_init();

@@ -3,24 +3,6 @@ var arrBrands = [];
 var arrType = "";
 var arrCategory = "";
 
-function ShowFilter() {
-
-    history.pushState({}, '', "?mobile=true");
-    $("#hideF").show(300);
-    $("#showF").hide(300);
-    $("#GroupContainer").removeClass('d-none d-sm-block');
-    return true;
-
-}
-
-function HideFilter() {
-    history.pushState({}, '', "?mobile=false");
-    $("#showF").show(300);
-    $("#hideF").hide(300);
-    $("#GroupContainer").addClass('d-none d-sm-block');
-    return true;
-
-}
 
 function subscribecode(idcoupon) {
 
@@ -79,32 +61,44 @@ function subscribefooter() {
 function ChangeFilter() {
     str = getFilterParamsParams();
 
-    if (arrType != ""){
-        updateFilter(str);
-        return true;
+    let addr;
+    getparam = getUrlParams();
+
+    // Конструктор URL
+
+    // Если выбран только бренд
+
+    if (arrBrands != "" && arrCategory == ""){
+        addr = '/promocode/' + arrBrands;
+    }
+
+    if (arrBrands != "" && arrCategory != ""){
+        addr = '/promocode/' + arrBrands + '/' + arrCategory;
+    }
+
+    if (arrBrands == "" && arrCategory != ""){
+        addr = '/promocode/vse/' + arrCategory;
+    }
+
+    if (arrBrands == "" && arrCategory == ""){
+        addr= '/promocode/vse/';
     }
 
 
-    getparam = getUrlParams();
+    if (arrType != ""){
 
-    if (getparam.mobile == "undefined") getparam.mobile = false;
+        addr = addr + "?type=" + arrType;
+        alert(addr);
+    }
 
-    if (arrBrands.length == 0)   window.location.href = '/promocode/vse/' + arrCategory + '?mobile=' + getparam.mobile;
-    if (arrBrands.length == 1) window.location.href = '/promocode/' + arrBrands + '/' + arrCategory+ '?mobile=' + getparam.mobile;
-    if (arrBrands.length > 1) updateFilter(str);
+    window.location.href = addr;
 
     return true;
 
 }
 
-function changePageSearch(page) {
-
-    let query = $("#search").val();
-
-}
-
-
 function changePage(page){
+
 
     str = getFilterParamsParams ();
 
@@ -137,68 +131,13 @@ function clck(couponid)
     window.open("#");
 }
 
-function updateFilter(str) {
-
-    function funcBeforeFilter(){
-        $("#preloaderfilter").removeClass('d-none');
-    }
-
-    function funcBeforeResult(){
-        $("#preloaderresult").removeClass('d-none');
-    }
-
-
-    $('#CouponContainer').empty();
-
-    $.ajax(
-        {
-            url : document.location.pathname,
-            type: 'POST',
-            data: str,
-            beforeSend: funcBeforeResult(),
-            cache: false,
-            success: function( coupons ) {
-
-                $("#preloaderresult").addClass('d-none');
-                $('#CouponContainer').show();
-                $('#CouponContainer').append(coupons);
-
-
-            }
-        }
-    );
-
-    $('#GroupContainer').hide();
-    $('#GroupContainer').empty();
-    $.ajax(
-        {
-            url : document.location.pathname,
-            type: 'POST',
-            data: str + '&arrCount=1',
-            beforeSend: funcBeforeFilter,
-            cache: false,
-            success: function( filter ) {
-
-                $("#preloaderfilter").addClass('d-none');
-                $('#GroupContainer').show();
-                $('#GroupContainer').append(filter);
-
-
-            }
-        }
-    );
-
-
-
-}
 
 function getFilterParamsParams() {
-    arrBrands = [];
+    arrBrands = "";
     arrType = "";
     arrCategory = "";
 
-
-    $("input[name='companies']:checked").each(function(){ arrBrands.push($(this).prop('title')); });
+    arrBrands = $('select[name=companies]').val();
     arrType = $('select[name=type]').val();
     arrCategory = $('select[name=category]').val();
     str =  '&arrBrands=' + arrBrands + '&arrType=' + arrType + '&arrCategory=' + arrCategory;
@@ -214,7 +153,32 @@ function getUrlParams(url = location.search){
     return params;
 }
 
+ 
+
+function generatecsv() {
 
 
+    namecompany = $('[name=namecompany]').val();
+
+    keywords = $('[name=keywords]').text();
 
 
+    alert(keywords);
+
+}
+
+function copytext() {
+    /* Get the text field */
+    var copyText = document.getElementById("myInput");
+
+<<<<<<< HEAD
+    /* Select the text field */
+    copyText.select();
+
+    /* Copy the text inside the text field */
+    document.execCommand("copy");
+
+}
+
+=======
+>>>>>>> 7616b42ba8cf5f9c3c6758c09ca168792f7447ca

@@ -14,9 +14,6 @@ class GoController extends AppController {
         $this->layaout = false;
 
 
-        \APP\core\base\Model::SaveUsr();
-
-
 
         if (!empty($_GET['coupon'])){
 

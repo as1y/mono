@@ -15,9 +15,9 @@ class PromocodeController extends AppController {
         $CouponsPerPage = 20;
 
         $META = [
-            'title' => 'Галлеря промокодов и скидок '.APPNAME,
-            'description' => 'Галлеря купонов'.APPNAME,
-            'keywords' => 'Галлеря купонов'.APPNAME,
+            'title' => 'Витрина промокодов и скидок '.APPNAME,
+            'description' => 'Витрина промокодов и скидок'.APPNAME,
+            'keywords' => 'Витрина промокодов и скидок'.APPNAME,
         ];
         \APP\core\base\View::setMeta($META);
 
@@ -26,55 +26,36 @@ class PromocodeController extends AppController {
 //        \APP\core\base\View::setBreadcrumbs($BREADCRUMBS);
 
 
-        if (empty($this->route['alias'])) $this->route['alias'] = "";
-
-
-
-        //ЗАБОР АЛИАСОВ
-
-    // Если запрос напрямую
+        // Запрос на прямую
         if ($this->isAjax() == false){
 
-//            show($_COOKIE);
-//            echo "СЕССИЯ<br>";
-//            show($_SESSION);
+            if (empty($this->route['alias'])) $this->route['alias'] = "";
+            if (empty($this->route['alias2'])) $this->route['alias2'] = "";
 
+            // Базовые страницы
             $PAGESLIST['ViewPage'] = 1;
             $PAGESLIST['CouponsPerPage'] = $CouponsPerPage;
-            $arrtype=  "";
+            // Базовые страницы
 
-            // Бренд/Категория
-            //brand/category
-            if (empty($this->route['alias2'])) $this->route['alias2'] = "";
-            // ЗАБОР АЛИАСОВ
-                $idbrand = $Panel->FindIdBrandCoupon($this->route['alias']);
-                $idcat = $Panel->FindIdCategoryCoupon($this->route['alias2']);
-            // ЗАБОР АЛИАСОВ
+            // Забираем Определяем ID бренда или Категории
+            $idbrand = $Panel->FindIdBrandCoupon($this->route['alias']);
+            $idcat = $Panel->FindIdCategoryCoupon($this->route['alias2']);
 
-            // Редирект с несуществующих страниц
+            // Обработка GET параметров
+            $arrtype = (!empty($_GET['type'])) ? $_GET['type'] : "";
+
             if (empty($idbrand) && $this->route['alias'] != "vse") redir("/promocode/vse/");
 
-
-
+            // Если запущена модалка
             if (!empty($_COOKIE['runmodal']) && !empty($_SESSION['POST'])){
-
                 if (!empty($_SESSION['POST']['page'])) $PAGESLIST['ViewPage'] = $_SESSION['POST']['page'];
                 if (!empty($_SESSION['POST']['arrType'])) $arrtype = $_SESSION['POST']['arrType'];
                 $idbrand = $_SESSION['POST']['arrBrands'];
-
             }
-
-
+            // Если запущена модалка
 
             // Отбираем купоны
             $coupons = $Panel->FilterCoupons(['arrCategory' => $idcat, 'arrType' => $arrtype, 'arrBrands' => $idbrand]);
-
-//            echo "Найдено купонов: ".count($coupons)."<br>";
-//            echo "ID категории : ".$idcat."<br>";
-//            echo "ID отмеченного бренда: ".$idbrand."<br>";
-
-
-
 
             // Если не выбран бренд
             if (empty($idbrand)){
@@ -90,111 +71,45 @@ class PromocodeController extends AppController {
 
             }
 
-            $catalogType = $Panel->LoadTypes($coupons);
-
+            $catalogType = $Panel->LoadTypes($coupons, $arrtype);
 
             $this->set(compact( 'coupons', 'catalogCompany', 'catalogCategories', 'catalogType', 'PAGESLIST'));
-
-            return true;
 
 
 
         }
-        // Если запрос напрямую
+        // Запрос на прямую
 
 
-
-
-        // ЗАПРОС AJAX НА ГЕНЕРАЦИЮ КОНТЕНТА
         if($this->isAjax()){
+
             $this->layaout = false;
 
-            // Преобразование Алиаса категории в ID
-            $countfilter = 0;
-            if (!empty($_POST['arrCategory'])){
-                $_POST['arrCategory'] = $Panel->FindIdCategoryCoupon($_POST['arrCategory']);
-                $countfilter++;
-            }
+            if (!empty($_POST['arrCategory'])) $_POST['arrCategory'] = $Panel->FindIdCategoryCoupon($_POST['arrCategory']);
+            if (!empty($_POST['arrBrands'])) $_POST['arrBrands'] = $Panel->FindIdBrandCoupon($_POST['arrBrands']);
 
-            if (!empty($_POST['arrBrands'])){
-                $_POST['arrBrands'] = $Panel->FindIdBrandCoupon($_POST['arrBrands']);
-                $countfilter++;
-            }
-
-            if (!empty($_POST['arrType']))  $countfilter++;
-
-
-
-            // Загрузка купоно`в
+            // Загрузка купонов
             $coupons = $Panel->FilterCoupons(['arrCategory' => $_POST['arrCategory'], 'arrType' => $_POST['arrType'], 'arrBrands' => $_POST['arrBrands']]);
 
-            // Если обращение просто за набором купонов
+            // Пагинация
             if (empty($_POST['arrCount'])){
-
 
                 $PAGESLIST['CouponsPerPage'] = $CouponsPerPage;
                 $PAGESLIST['ViewPage'] = (!empty($_POST['page'])) ? $_POST['page']  : 1;
 
-
                 $catalogCategories = $Panel->LoadCategoriesSimple($coupons, $_POST['arrCategory']);
-
 
                 generateResult($coupons, $PAGESLIST, $catalogCategories);
                 $_SESSION['POST'] = $_POST;
-
                 return true;
             }
-
-
-
-
-            // Если выбрана только скидка
-            if (!empty($_POST['arrType']) && $countfilter == 1){
-                $list = $Panel->FilterCoupons(['arrCategory' => $_POST['arrCategory'], 'arrType' => "", 'arrBrands' => ""]);
-
-
-                $catalogCategories = $Panel->LoadCategoriesSimple($coupons, $_POST['arrCategory'], false);
-
-
-                $catalogCompany = $Panel->LoadCompanies($coupons, $_POST['arrBrands']);
-                $catalogType = $Panel->LoadTypes($list,$_POST['arrType']);
-
-                renderFilter([
-                    'catalogCategories' => $catalogCategories,
-                    'catalogCompany' => $catalogCompany,
-                    'catalogType' => $catalogType
-                ]);
-                return true;
-
-            }
-
-
-            // Если выбрано все остальное
-            $list = $Panel->FilterCoupons(['arrCategory' => $_POST['arrCategory'], 'arrType' => $_POST['arrType'], 'arrBrands' => ""]);
-            $catalogCategories = $Panel->LoadCategoriesSimple($coupons, $_POST['arrCategory']);
-            $catalogType = $Panel->LoadTypes($coupons, $_POST['arrType']);
-            $catalogCompany = $Panel->LoadCompanies($list, $_POST['arrBrands']);
-
-            renderFilter([
-                'catalogCategories' => $catalogCategories,
-                'catalogCompany' => $catalogCompany,
-                'catalogType' => $catalogType
-            ]);
-
-            $_SESSION['POST'] = $_POST;
-
-            return true;
-
-
-
-
-
-
-
+            // Пагинация
 
 
         }
-        // ЕСЛИ ЕСТЬ ЗАПРОС AJAX
+
+
+        return true;
 
 
 

@@ -39,10 +39,50 @@ class PanelController extends AppController {
         \APP\core\base\View::setBreadcrumbs($BREADCRUMBS);
 
 
-        $lastconversion = $Panel->Getlastconversion();
+        $companiestoday = $Panel->companiestoday();
 
 
-        $this->set(compact('lastconversion'));
+        $this->set(compact('companiestoday'));
+
+
+
+    }
+
+    public function statAction(){
+
+        //Информация о компаниях клиента
+
+        $Panel =  new Panel();
+
+
+        $META = [
+            'title' => 'Статистика по компании',
+            'description' => 'Статистика по компании',
+            'keywords' => 'Статистика по компании',
+        ];
+
+        $BREADCRUMBS['HOME'] = ['Label' => $this->BreadcrumbsControllerLabel, 'Url' => $this->BreadcrumbsControllerUrl];
+        $BREADCRUMBS['DATA'][] = ['Label' => "FAQ"];
+        \APP\core\base\View::setBreadcrumbs($BREADCRUMBS);
+
+<<<<<<< HEAD
+        $ASSETS[] = ["js" => "/global_assets/js/plugins/tables/datatables/datatables.min.js"];
+        $ASSETS[] = ["js" => "/assets/js/datatables_basic.js"];
+        \APP\core\base\View::setAssets($ASSETS);
+
+        \APP\core\base\View::setMeta($META);
+        \APP\core\base\View::setBreadcrumbs($BREADCRUMBS);
+
+
+        if (empty($_GET['company'])){
+            exit("error");
+        }
+
+
+        $detalstat = $Panel->detalstat($_GET['company']);
+
+
+        $this->set(compact('detalstat'));
 
 
 
@@ -67,6 +107,8 @@ class PanelController extends AppController {
         $BREADCRUMBS['DATA'][] = ['Label' => "FAQ"];
         \APP\core\base\View::setBreadcrumbs($BREADCRUMBS);
 
+=======
+>>>>>>> 7616b42ba8cf5f9c3c6758c09ca168792f7447ca
 //        $ASSETS[] = ["js" => "/global_assets/js/plugins/tables/datatables/datatables.min.js"];
 //        \APP\core\base\View::setAssets($ASSETS);
 
@@ -86,154 +128,6 @@ class PanelController extends AppController {
 
     }
 
-    public function flowAction()
-    {
-
-        //Информация о компаниях клиента
-
-        $Panel =  new Panel();
-
-
-        $META = [
-            'title' => 'Мои потоки',
-            'description' => 'Мои потоки',
-            'keywords' => 'Мои потоки',
-        ];
-
-        $ASSETS[] = ["js" => "/global_assets/js/plugins/tables/datatables/datatables.min.js"];
-        $ASSETS[] = ["js" => "/assets/js/datatables_basic.js"];
-        \APP\core\base\View::setAssets($ASSETS);
-
-
-        \APP\core\base\View::setMeta($META);
-
-
-
-//        $flows = $Panel->getFlow();
-
-        $this->set(compact('flows'));
-
-
-
-
-        // Работа с партнерскими программами
-
-
-
-        // Работа с партнерскими программами
-
-        // Работа по купонам
-
-//         $Panel->addCoupons($token);
-//         $Panel->removeFinishCoupon();
-
-        /// //Удаление старых купонов
-
-
-//
-//        $Panel->WorkWithBanners($token);
-
-
-//        $Panel->addCoupons($token);
-
-
-
-
-
-
-
-
-    }
-
-    public function addflowAction()
-    {
-
-        //Информация о компаниях клиента
-
-        $Panel =  new Panel();
-
-
-        $META = [
-            'title' => 'Добавить поток',
-            'description' => 'Добавить поток',
-            'keywords' => 'Добавить поток',
-        ];
-
-
-        $ASSETS[] = ["js" => "/global_assets/js/plugins/extensions/jquery_ui/interactions.min.js"];
-
-
-        $ASSETS[] = ["js" => "/global_assets/js/plugins/forms/wizards/steps.min.js"];
-        $ASSETS[] = ["js" => "/global_assets/js/plugins/forms/selects/select2.min.js"];
-        $ASSETS[] = ["js" => "/global_assets/js/plugins/forms/styling/uniform.min.js"];
-        $ASSETS[] = ["js" => "/global_assets/js/plugins/forms/inputs/inputmask.js"];
-        $ASSETS[] = ["js" => "/global_assets/js/plugins/forms/validation/validate.min.js"];
-        $ASSETS[] = ["js" => "/global_assets/js/plugins/extensions/cookie.js"];
-
-        $ASSETS[] = ["js" => "/assets/js/form_wizard.js"];
-           $ASSETS[] = ["js" => "/global_assets/js/demo_pages/form_select2.js"];
-
-
-
-
-        if ($this->isAjax() == true){
-
-            if ($_POST['type'] == "rendercoupons"){
-                $coupons = $Panel->getAllCoupons($_POST['company']);
-                $this->layaout = false;
-                RenderCouponsinADD($coupons);
-            }
-
-
-            if ($_POST['type'] == "generatekeywords"){
-                $this->layaout = false;
-                $keywords = $Panel->GenerateKeyWords($_POST['company']);
-                echo $keywords;
-
-            }
-
-
-            if ($_POST['type'] == "generateads"){
-                $this->layaout = false;
-
-                if ($_POST['traffictype'] == "googlesearch")  $ADS = $Panel->GeneratetextAds($_POST);
-
-                show($ADS);
-
-
-            }
-
-
-
-
-
-        }
-
-
-
-
-
-
-
-        \APP\core\base\View::setAssets($ASSETS);
-
-
-        \APP\core\base\View::setMeta($META);
-
-
-
-        $ADDINFO = $Panel->LoadAddInfo();
-
-
-
-
-        $this->set(compact('ADDINFO'));
-
-
-
-
-    }
-
 
     public function generatelinkAction()
     {
@@ -244,9 +138,9 @@ class PanelController extends AppController {
 
 
         $META = [
-            'title' => 'Добавить поток',
-            'description' => 'Добавить поток',
-            'keywords' => 'Добавить поток',
+            'title' => 'Создание ссылки для',
+            'description' => 'Создание ссылки',
+            'keywords' => 'Создание ссылки',
         ];
 
 
@@ -266,16 +160,15 @@ class PanelController extends AppController {
 
 
         if ($_POST){
-
-
             $link = $Panel->GenerateLink($_POST);
-
             if ($link === false){
                 $_SESSION['errors'] = "Заполните все поля";
                 redir();
             }
 
         }
+
+
 
 
 
@@ -311,9 +204,9 @@ class PanelController extends AppController {
 
 
         $META = [
-            'title' => 'Добавить поток',
-            'description' => 'Добавить поток',
-            'keywords' => 'Добавить поток',
+            'title' => 'Генерация объявлений',
+            'description' => 'Генерация объявлений',
+            'keywords' => 'Генерация объявлений',
         ];
 
 
@@ -330,13 +223,12 @@ class PanelController extends AppController {
         $ASSETS[] = ["js" => "/assets/js/form_wizard.js"];
         $ASSETS[] = ["js" => "/global_assets/js/demo_pages/form_select2.js"];
 
-        $link = "";
 
 
-        if ($_POST){
-
+        if ($_POST && $_GET['action'] == "generate"){
 
             $ADV = $Panel->GenerateAdvert($_POST);
+            $_SESSION['ADV'] = $ADV;
 
             if ($ADV === false){
                 $_SESSION['errors'] = "Заполните все поля";
@@ -352,6 +244,22 @@ class PanelController extends AppController {
 
 
 
+        if ($_POST && $_GET['action'] == "export"){
+
+            // Если нет файла, то создаем
+            if (!file_exists(WWW."/upload/exportcsv/")){
+                mkdir(WWW."/upload/exportcsv/", 0777, true);
+            }
+            // Если нет файла, то создаем
+
+            $Panel->exportcsvgoogle($_POST);
+
+
+
+
+            exit();
+
+        }
 
 
 
@@ -363,9 +271,7 @@ class PanelController extends AppController {
 
 
 
-        $ADDINFO = $Panel->LoadAddInfo();
-
-
+        $ADDINFO = $Panel->LoadAddInfo(true);
 
 
         $this->set(compact('ADDINFO', 'ADV'));
@@ -374,8 +280,6 @@ class PanelController extends AppController {
 
 
     }
-
-
 
     public function addcouponAction()
     {
@@ -449,7 +353,6 @@ class PanelController extends AppController {
 
 
     }
-
 
     public function listcouponsAction()
     {

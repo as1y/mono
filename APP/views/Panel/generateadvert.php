@@ -7,11 +7,9 @@
     <div class="card-body">
 
 
-        <form action="/panel/generateadvert/" method="post" data-fouc>
+        <form action="/panel/generateadvert/?action=generate" method="post" data-fouc>
 
                 <div class="row">
-
-
 
                     <div class="col-md-6">
                         <div class="form-group">
@@ -19,14 +17,18 @@
                             <select name="company"  data-placeholder="Выберете компанию" class="form-control select-search required" data-fouc>
                                 <option></option>
 
-                                <?php foreach ($ADDINFO['companies'] as $key=>$val):?>
+                                <?php
+                                $all = 0;
+                                foreach ($ADDINFO['companies'] as $key=>$val):
+
+                                    if ($val->countOwn("coupons") == 0) continue;
+                                     $all++;
+                                    ?>
                                     <option value="<?=$val['id']?>"><?=$val['name']?></option>
                                 <?php endforeach;?>
 
-
-
                             </select>
-
+                            <b>ВСЕГО:</b> <?=$all?>
                         </div>
                     </div>
 
@@ -41,6 +43,10 @@
                 <b><i class="icon-notification2"></i></b>
                 ГЕНЕРИРОВАТЬ ОБЪЯВЛЕНИЯ
             </button>
+<<<<<<< HEAD
+=======
+
+
 
 
 
@@ -83,7 +89,88 @@
             <?php endif; ?>
 
 
+>>>>>>> 7616b42ba8cf5f9c3c6758c09ca168792f7447ca
         </form>
+
+
+
+
+            <?php if (!empty($ADV)): ?>
+
+        <form action="/panel/generateadvert/?action=export" method="post" data-fouc>
+
+
+            <div class="row">
+                <div class="col-md-12">
+                    <h2>КАМПАНИЯ</h2>
+                    <input type="text"  name="namecompany" class="form-control"  value="ПОИСК FULL">
+
+                    <input type="hidden"  name="namerekl" class="form-control"  value="<?=$ADV['rekl']?>">
+
+                    <h2>КЛЮЧЕВЫЕ СЛОВА</h2>
+                    <textarea rows="10" cols="3" name="keywords" class="form-control" ><?php
+                        foreach ($ADV['keywords'] as $keyword) echo $keyword."\n";   ?>
+                       </textarea>
+
+
+                    <div class="form-group">
+                        <label>URL: </label>
+                        <input type="text" disabled  name="urlcompany" class="form-control"  value="<?=$ADV['url']?>">
+                    </div>
+                </div>
+
+
+                <table width="100%">
+                <?php foreach ($ADV['description'] as $key=>$val):?>
+
+                    <tr>
+
+                        <td>  <b>Description</b><br>
+                            <textarea disabled rows="3" cols="3" class="form-control" ><?=$ADV['description'][$key]?></textarea>
+                        </td>
+
+
+                        <td>  <b>Заголовок1</b><br>
+                            <textarea disabled rows="3" cols="3" class="form-control" ><?=$ADV['zagolovok1'][$key]?></textarea>
+                        </td>
+
+                        <td>  <b>Заголовок2</b><br>
+                            <textarea disabled rows="3" cols="3" class="form-control" ><?=$ADV['zagolovok2'][$key]?></textarea>
+                        </td>
+
+                        <td>  <b>Заголовок3</b><br>
+                            <textarea disabled rows="3" cols="3" class="form-control" ><?=$ADV['zagolovok3'][$key]?></textarea>
+                        </td>
+
+                        <td>  <b>Путь1</b><br>
+                            <textarea disabled rows="3" cols="3" class="form-control" ><?=$ADV['path1'][$key]?></textarea>
+                        </td>
+
+
+                        <td>  <b>Путь2</b><br>
+                            <textarea disabled rows="3" cols="3" class="form-control" ><?=$ADV['path2'][$key]?></textarea>
+                        </td>
+
+
+                    </tr>
+
+
+                <?php endforeach; ?>
+                </table>
+                <br>
+
+                <button type="submit" class="btn btn-primary btn-labeled btn-labeled-left btn-lg">
+                    <b><i class="icon-notification2"></i></b>
+                    ИМПОРТ GOOGLE ADWORDS
+                </button>
+
+
+            </div>
+
+
+        </form>
+            <?php endif; ?>
+
 
 
 
@@ -97,94 +184,3 @@
 
 </div>
 
-
-<script>
-
-
-    function generatekeywords() {
-
-        let  company = "";
-        let coupon = "";
-
-        company = $('select[name=company]').val();
-        coupon = $('select[name=coupon]').val();
-
-        str =  '&company=' + company + '&coupon=' + coupon + '&type=generatekeywords';
-
-        $.ajax(
-            {
-                url : "/panel/addflow/",
-                type: 'POST',
-                data: str,
-                cache: false,
-                success: function( keywords ) {
-
-                    $("#keywords").val(keywords);
-
-
-                }
-            }
-        );
-
-
-
-
-    }
-
-    function generateads() {
-
-        let  company = "";
-        let keywords = "";
-        let traffictype = "";
-
-        traffictype = $('select[name=traffictype]').val();
-
-        company = $('select[name=company]').val();
-        keywords = $('#keywords').val();
-
-        if (company === ""){
-            alert("Выберите компанию");
-            return false;
-        }
-
-        if (traffictype === ""){
-            alert("Выберите типа трафика");
-            return false;
-        }
-
-
-        if (keywords === ""){
-            alert("Заполните ключевые слова");
-            return false;
-        }
-
-
-
-
-        str =  '&company=' + company + '&keywords=' + keywords + '&traffictype=' + traffictype + '&type=generateads';
-
-
-        $.ajax(
-            {
-                url : "/panel/addflow/",
-                type: 'POST',
-                data: str,
-                cache: false,
-                success: function( ads ) {
-
-                    $("#ads").append(ads);
-                    $("#go").show();
-
-                }
-            }
-        );
-
-
-
-
-    }
-
-
-
-
-</script>

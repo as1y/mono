@@ -28,7 +28,7 @@
     <script src="/assets/js/app.js"></script>
     <?php \APP\core\base\View::getAssets("js");?>
 
-
+    <script src="/coupons_script.js"></script>
 
 
 </head>

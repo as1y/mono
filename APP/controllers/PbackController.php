@@ -21,6 +21,7 @@ class PbackController extends AppController {
 
             // Получение постбека
 
+
             $couponid = $_POST['subid1'];
             $uid = $_POST['subid2'];
             $gaid = $_POST['subid4'];
@@ -38,9 +39,11 @@ class PbackController extends AppController {
 
             if ($_POST['currency'] == "USD") $_POST['payment_sum'] = ConvertRUB($_POST['payment_sum'], "USD");
 
+            $cid = $coupon->companies['id'];
 
             $DATA = [
                 'coupon' => $coupontext,
+                'cid' => $cid,
                 'UTM' => $UTM,
                 'zarabotok' => $_POST['payment_sum'],
                 'offer' => $_POST['offer_name'],

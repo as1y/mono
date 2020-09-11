@@ -181,7 +181,7 @@ abstract class Model
     public static function SaveUsr (){
 
 
-	    if (!empty($_GET) && $_GET['cmpid']){
+	    if (!empty($_GET['cmpid']) && $_GET['cmpid']){
 
 
             $Panel =  new Panel();
