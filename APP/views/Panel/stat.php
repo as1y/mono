@@ -15,6 +15,7 @@
                 <th>#</th>
                 <th>Купоны</th>
                 <th>Заработок</th>
+                <th>AVG</th>
                 <th>Конверсий</th>
                 <th>Кликов</th>
                 <th>%</th>
@@ -41,12 +42,23 @@
 
                             ?>
 
-
+ 
                     <?php endif;?>
 
 
                     </td>
                     <td><b><?=$value['zarabotok']?></b> руб.</td>
+                    <td><?php
+
+                        if (!empty($value['conversion'])){
+                            echo round(($value['zarabotok']/$value['conversion']),2);
+                        }
+                        if (empty($value['conversion'])) echo "0";
+
+                        ?></td>
+
+
+
                     <td><?=$value['conversion']?></td>
                     <td><?=$value['clicks']?></td>
                     <td>

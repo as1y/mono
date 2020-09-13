@@ -57,7 +57,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <h2>КАМПАНИЯ</h2>
-                    <input type="text"  name="namecompany" class="form-control"  value="ПОИСК FULL">
+                    <input type="text"  name="namecompany" class="form-control"  value="ПОИСК ТЕСТ">
 
                     <input type="hidden"  name="namerekl" class="form-control"  value="<?=$ADV['rekl']?>">
 
@@ -66,51 +66,40 @@
                         foreach ($ADV['keywords'] as $keyword) echo $keyword."\n";   ?>
                        </textarea>
 
-
                     <div class="form-group">
-                        <label>URL: </label>
+                        <label><b>URL:</b> </label>
                         <input type="text" disabled  name="urlcompany" class="form-control"  value="<?=$ADV['url']?>">
                     </div>
+
+                    <h2>ПАРАМЕТРЫ</h2>
+                    <b>ЗАГОЛОВОК1: </b> <?=$ADV['zagolovok1']?> <br>
+                    <b>ЗАГОЛОВОК2: </b> <?=$ADV['zagolovok2']?> <br>
+                    <b>ЗАГОЛОВОК3: </b> <?=$ADV['zagolovok3']?> <br>
+
+                    <b>URL1: </b> <?=$ADV['path1']?> <br>
+                    <b>URL2: </b> <?=$ADV['path2']?> <br>
+
+
                 </div>
 
 
                 <table width="100%">
-                <?php foreach ($ADV['description'] as $key=>$val):?>
+                    <?php foreach ($ADV['description'] as $key=>$val):?>
 
-                    <tr>
+                        <tr>
 
-                        <td>  <b>Description</b><br>
-                            <textarea disabled rows="3" cols="3" class="form-control" ><?=$ADV['description'][$key]?></textarea>
-                        </td>
-
-
-                        <td>  <b>Заголовок1</b><br>
-                            <textarea disabled rows="3" cols="3" class="form-control" ><?=$ADV['zagolovok1'][$key]?></textarea>
-                        </td>
-
-                        <td>  <b>Заголовок2</b><br>
-                            <textarea disabled rows="3" cols="3" class="form-control" ><?=$ADV['zagolovok2'][$key]?></textarea>
-                        </td>
-
-                        <td>  <b>Заголовок3</b><br>
-                            <textarea disabled rows="3" cols="3" class="form-control" ><?=$ADV['zagolovok3'][$key]?></textarea>
-                        </td>
-
-                        <td>  <b>Путь1</b><br>
-                            <textarea disabled rows="3" cols="3" class="form-control" ><?=$ADV['path1'][$key]?></textarea>
-                        </td>
+                            <td>  <b>Description</b><br>
+                                <textarea disabled rows="3" cols="3" class="form-control" ><?=$ADV['description'][$key]?></textarea>
+                            </td>
 
 
-                        <td>  <b>Путь2</b><br>
-                            <textarea disabled rows="3" cols="3" class="form-control" ><?=$ADV['path2'][$key]?></textarea>
-                        </td>
+                        </tr>
 
-
-                    </tr>
-
-
-                <?php endforeach; ?>
+                    <?php endforeach; ?>
                 </table>
+
+
+
                 <br>
 
                 <button type="submit" class="btn btn-primary btn-labeled btn-labeled-left btn-lg">

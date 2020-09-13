@@ -29,6 +29,7 @@
                         <td><?=$key?></td>
                         <td><?=$value['name']?></td>
                         <td><b><?=$value['zarabotok']?></b> руб.</td>
+
                         <td><?=$value['conversion']?></td>
                         <td><?=$value['clicks']?></td>
                         <td><a href="/panel/stat?company=<?=$key?>">ДЕТАЛЬНО</a></td>

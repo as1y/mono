@@ -87,7 +87,6 @@ class PanelController extends AppController {
 
     }
 
-
     public function updateAction()
     {
 

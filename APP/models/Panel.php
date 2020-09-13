@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 namespace APP\models;
 use APP\core\Mail;
 use Psr\Log\NullLogger;
@@ -568,9 +568,9 @@ class Panel extends \APP\core\base\Model {
     public function exportcsvgoogle($DATA){
 
         // Первая строка
-        echo "Campaign,AdGroup,KeyWord,Criterion Type,Final URL,Headline 1,Headline 2,Headline 3,Description Line 1,Path 1,Path 2,Max CPC,Max CPM,Target CPM,Display Network Custom Bid Type,Targeting expansion,Ad Group Type"."<br>";
+        echo "Campaign,AdGroup,KeyWord,Criterion Type,Final URL,Headline 1,Headline 2,Headline 3,Description Line 1,Description Line 2,Path 1,Path 2,Max CPC,Max CPM,Target CPM,Display Network Custom Bid Type,Targeting expansion,Ad Group Type"."<br>";
         // Вторая строка
-        echo "".$DATA['namecompany'].",".$_SESSION['ADV']['rekl'].",,,,,,,,,,0.01,0.01,0.01,None,Disabled,Default"."<br>";
+        echo "".$DATA['namecompany'].",".$_SESSION['ADV']['rekl'].",,,,,,,,,,,0.01,0.01,0.01,None,Disabled,Default"."<br>";
 
         // Строки с Ключевыми словами
         $keywordsMASS = explode("\n", $DATA['keywords']);
@@ -578,13 +578,32 @@ class Panel extends \APP\core\base\Model {
             $keyword = trim($keyword);
             if ($keyword == " " || empty($keyword) || $keyword == "" ) continue;
 
-             echo "".$DATA['namecompany'].",".$_SESSION['ADV']['rekl'].",".$keyword.",phrase,,,,,,,,,,,,,"."<br>";
+             echo "".$DATA['namecompany'].",".$_SESSION['ADV']['rekl'].",".$keyword.",phrase,,,,,,,,,,,,,,"."<br>";
         }
 
         // Строки с объявлениями
-        foreach ($_SESSION['ADV']['description'] as $key=>$objavl){
-            echo "".$DATA['namecompany'].",".$_SESSION['ADV']['rekl'].",,,".$_SESSION['ADV']['url'].",".$_SESSION['ADV']['zagolovok1'][$key].",".$_SESSION['ADV']['zagolovok2'][$key].",".$_SESSION['ADV']['zagolovok3'][$key].",".$_SESSION['ADV']['description'][$key].",".$_SESSION['ADV']['path1'][$key].",".$_SESSION['ADV']['path2'][$key].",,,,,,"."<br>";
+
+        foreach ($_SESSION['ADV']['description'] as $key=>$obja){
+
+            if ( ($key % 2) != 0) continue;
+            echo "".$DATA['namecompany'].",".$_SESSION['ADV']['rekl'].",,,".$_SESSION['ADV']['url'].",".$_SESSION['ADV']['zagolovok1'].",".$_SESSION['ADV']['zagolovok2'].",".$_SESSION['ADV']['zagolovok3'].",".$_SESSION['ADV']['description'][$key].",".$_SESSION['ADV']['description'][$key+1].",".$_SESSION['ADV']['path1'].",".$_SESSION['ADV']['path2'].",,,,,,"."<br>";
+
         }
+
+//        for ($key = 0; $key<= count($_SESSION['ADV']['description']); $key = $key + 2){
+//
+//
+//
+//
+//        }
+
+
+
+
+
+
+
+
 
 
     }
@@ -608,22 +627,59 @@ class Panel extends \APP\core\base\Model {
         $ADVMASS['rekl'] = $companybd['name'];
         $ADVMASS['keywords'] = $keywords;
 
+
+
+        //bestdiskount
+
+        $bestdiscount = 0; // лучший размер скидки
+        $nowdescription = $companybd['name'].": "; // Текущая строка описания
+        $actuald = 0; // Текущий актуальный элемент массива для записи дескрипшена
+
         foreach ($coupons as $coupon){
-            if (mb_strlen($coupon['short_name']) < 20) continue;
 
             if ($coupon['discount'] == "1%") $coupon['discount'] = "";
 
+            $cd =  mb_substr($coupon['discount'], 0, -1);
+            if ($bestdiscount < $cd) $bestdiscount = $coupon['discount'];
+            $coupon['short_name'] = obrezanie($coupon['short_name'], 90);
 
-            $ADVMASS['description'][] = trim(obrezanie($coupon['short_name'], 90));
-            $ADVMASS['zagolovok1'][] = $coupon->companies['name'];
-            $ADVMASS['zagolovok2'][] =  ($coupon['species'] = "promocode") ? "Акция" : "Промокод";
-            $ADVMASS['zagolovok3'][] = $coupon['discount']." ".json_decode($coupon['types'], true)[0]['name'];
+            // Если кол-во текущих символов плюс новые больше 90, то
+            $counsymbols = iconv_strlen($coupon['short_name']); // Длинна описания которое хотим добавить
+            $coutnow = iconv_strlen($nowdescription); // Текущая длинна
 
-            $ADVMASS['path1'][] = mb_strtolower(obrezanie($coupon->companies['name'], 15));
-            $ADVMASS['path2'][] = mb_strtolower(($coupon['species'] = "promocode") ? "Акция" : "Промокод");
+            if (($counsymbols + $coutnow) > 90){
+                // Убираем точку в конце
+                $ADVMASS['description'][$actuald] = trim($ADVMASS['description'][$actuald]);
+                $nowdescription = "";
+                $actuald++;
+            }
 
+            $nowdescription .= $coupon['short_name']." ";
+            $ADVMASS['description'][$actuald] = $nowdescription;
 
         }
+
+
+        foreach ($ADVMASS['description'] as $key=>$val){
+            $ADVMASS['description'][$key] = substr($val, 0, -1);
+        }
+//
+        $coundescription = count($ADVMASS['description']);
+
+        if ( ($coundescription % 2) != 0){
+            $ADVMASS['description'][] = "На нашем сайте собраны купоны и промокоды для покупок в интернет магазине ".$companybd['name'];
+        }
+
+
+
+
+        $ADVMASS['zagolovok1'] = "{Keyword:".$companybd['name']."}";
+        $ADVMASS['zagolovok2'] = "Промокоды/Акции";
+        $ADVMASS['zagolovok3'] = "".$bestdiscount." скидка на заказ";
+        $ADVMASS['path1'] =  mb_strtolower(obrezanie($companybd['name'], 15));
+        $ADVMASS['path2'] = "акция";
+
+
 
 
 
@@ -1264,7 +1320,7 @@ class Panel extends \APP\core\base\Model {
             $val['name'] = str_replace("RU", "", $val['name']);
             $val['name'] = str_replace("WW", "", $val['name']);
             $val['name'] = str_replace("[CPS]", "", $val['name']);
-
+            $val['name'] = str_replace("Many GEOs", "", $val['name']);
 
 
 
