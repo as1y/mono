@@ -123,7 +123,6 @@ class PanelController extends AppController {
 
     }
 
-
     public function generatelinkAction()
     {
 
@@ -217,6 +216,26 @@ class PanelController extends AppController {
 
         $ASSETS[] = ["js" => "/assets/js/form_wizard.js"];
         $ASSETS[] = ["js" => "/global_assets/js/demo_pages/form_select2.js"];
+
+
+
+        if (!empty($_GET) && $_GET['action'] == "generateall"){
+
+            $_SESSION['ADV'] = $Panel->GenerateAdvertAll();
+
+
+            // Если нет файла, то создаем
+            if (!file_exists(WWW."/upload/exportcsv/")){
+                mkdir(WWW."/upload/exportcsv/", 0777, true);
+            }
+            // Если нет файла, то создаем
+
+
+            $Panel->exportcsvgoogle(['namecompany' => 'ПОИСК ТЕСТ']);
+
+            exit();
+
+        }
 
 
 

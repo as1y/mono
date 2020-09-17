@@ -452,11 +452,12 @@ class Panel extends \APP\core\base\Model {
 
             if (!array_key_exists($coupon['companies_id'], $compARR)){
 
-                $compARR[$coupon['companies_id']]['count'] = 1;
-                $compARR[$coupon['companies_id']]['url'] = $coupon->companies->uri;
-                $compARR[$coupon['companies_id']]['name'] = $coupon->companies->name;
 
-                if (in_array($coupon->companies->id, $idbrand) ) {
+                $compARR[$coupon['companies_id']]['count'] = 1;
+                $compARR[$coupon['companies_id']]['url'] = $coupon['companies']['uri'];
+                $compARR[$coupon['companies_id']]['name'] = $coupon['companies']['name'];
+
+                if (in_array($coupon['companies']['id'], $idbrand) ) {
                     $compARR[$coupon['companies_id']]['select'] = 1;
                     // Перекидываем в начало массива
 
@@ -563,47 +564,65 @@ class Panel extends \APP\core\base\Model {
 
     }
 
+    public function exportcsvgoogleALL($DATA){
 
+
+
+    }
 
     public function exportcsvgoogle($DATA){
 
         // Первая строка
         echo "Campaign,AdGroup,KeyWord,Criterion Type,Final URL,Headline 1,Headline 2,Headline 3,Description Line 1,Description Line 2,Path 1,Path 2,Max CPC,Max CPM,Target CPM,Display Network Custom Bid Type,Targeting expansion,Ad Group Type"."<br>";
         // Вторая строка
-        echo "".$DATA['namecompany'].",".$_SESSION['ADV']['rekl'].",,,,,,,,,,,0.01,0.01,0.01,None,Disabled,Default"."<br>";
 
-        // Строки с Ключевыми словами
-        $keywordsMASS = explode("\n", $DATA['keywords']);
-        foreach ($keywordsMASS as $keyword){
-            $keyword = trim($keyword);
-            if ($keyword == " " || empty($keyword) || $keyword == "" ) continue;
-
-             echo "".$DATA['namecompany'].",".$_SESSION['ADV']['rekl'].",".$keyword.",phrase,,,,,,,,,,,,,,"."<br>";
+        // Если только 1 элмент
+        if (empty($_SESSION['ADV'][1])){
+            generatecsvAdwords($_SESSION['ADV'],$DATA);
+            return true;
         }
 
-        // Строки с объявлениями
 
-        foreach ($_SESSION['ADV']['description'] as $key=>$obja){
+        // Если генерируем сразу массив
 
-            if ( ($key % 2) != 0) continue;
-            echo "".$DATA['namecompany'].",".$_SESSION['ADV']['rekl'].",,,".$_SESSION['ADV']['url'].",".$_SESSION['ADV']['zagolovok1'].",".$_SESSION['ADV']['zagolovok2'].",".$_SESSION['ADV']['zagolovok3'].",".$_SESSION['ADV']['description'][$key].",".$_SESSION['ADV']['description'][$key+1].",".$_SESSION['ADV']['path1'].",".$_SESSION['ADV']['path2'].",,,,,,"."<br>";
+        $i=0;
+        foreach ($_SESSION['ADV'] as $ADV){
+
+
+            // СЧЕТЧИК МАГАЗИНОВ
+            $i++;
+            if ($i < 60) continue; //Ограничение на кол-во магазинов
+
+
+            generatecsvAdwords($ADV,$DATA);
+        }
+
+        return true;
+
+
+    }
+
+
+    public function GenerateAdvertAll(){
+
+
+        $companies =  R::findAll("companies");
+
+        foreach ($companies as $key=>$company){
+
+            $coupons = $company->ownCouponsList;
+            if (empty($coupons)) continue;
+
+            $ADVMASS[$key]['keywords'] = $this->GenerateKeyWords($company['id']);
+            $ADVMASS[$key]['url'] = $this->GenerateLink(['company' => $company['id'], 'traffictype' => 'googlesearch']);
+            $ADVMASS[$key]['rekl'] = $company['name'];
+
+            $ADVMASS[$key] = $ADVMASS[$key] + generatestrAdwords($coupons, $company);
+
 
         }
 
-//        for ($key = 0; $key<= count($_SESSION['ADV']['description']); $key = $key + 2){
-//
-//
-//
-//
-//        }
-
-
-
-
-
-
-
-
+        return $ADVMASS;
 
 
     }
@@ -619,68 +638,15 @@ class Panel extends \APP\core\base\Model {
         if (empty($coupons)) return "nooffers";
         $keywords = $this->GenerateKeyWords($DATA['company']);
 
-
         $mass['company'] = $DATA['company'];
         $mass['traffictype'] = "googlesearch";
         $ADVMASS['url'] = $this->GenerateLink($mass);
 
+        $ADVMASS = generatestrAdwords($coupons, $companybd);
+
+        $ADVMASS['url'] = $this->GenerateLink(['company' => $companybd['id'], 'traffictype' => 'googlesearch']);
         $ADVMASS['rekl'] = $companybd['name'];
         $ADVMASS['keywords'] = $keywords;
-
-
-
-        //bestdiskount
-
-        $bestdiscount = 0; // лучший размер скидки
-        $nowdescription = $companybd['name'].": "; // Текущая строка описания
-        $actuald = 0; // Текущий актуальный элемент массива для записи дескрипшена
-
-        foreach ($coupons as $coupon){
-
-            if ($coupon['discount'] == "1%") $coupon['discount'] = "";
-
-            $cd =  mb_substr($coupon['discount'], 0, -1);
-            if ($bestdiscount < $cd) $bestdiscount = $coupon['discount'];
-            $coupon['short_name'] = obrezanie($coupon['short_name'], 90);
-
-            // Если кол-во текущих символов плюс новые больше 90, то
-            $counsymbols = iconv_strlen($coupon['short_name']); // Длинна описания которое хотим добавить
-            $coutnow = iconv_strlen($nowdescription); // Текущая длинна
-
-            if (($counsymbols + $coutnow) > 90){
-                // Убираем точку в конце
-                $ADVMASS['description'][$actuald] = trim($ADVMASS['description'][$actuald]);
-                $nowdescription = "";
-                $actuald++;
-            }
-
-            $nowdescription .= $coupon['short_name']." ";
-            $ADVMASS['description'][$actuald] = $nowdescription;
-
-        }
-
-
-        foreach ($ADVMASS['description'] as $key=>$val){
-            $ADVMASS['description'][$key] = substr($val, 0, -1);
-        }
-//
-        $coundescription = count($ADVMASS['description']);
-
-        if ( ($coundescription % 2) != 0){
-            $ADVMASS['description'][] = "На нашем сайте собраны купоны и промокоды для покупок в интернет магазине ".$companybd['name'];
-        }
-
-
-
-
-        $ADVMASS['zagolovok1'] = "{Keyword:".$companybd['name']."}";
-        $ADVMASS['zagolovok2'] = "Промокоды/Акции";
-        $ADVMASS['zagolovok3'] = "".$bestdiscount." скидка на заказ";
-        $ADVMASS['path1'] =  mb_strtolower(obrezanie($companybd['name'], 15));
-        $ADVMASS['path2'] = "акция";
-
-
-
 
 
         // $ADV['zagolovok'] = mb_convert_case($keyword, MB_CASE_TITLE, "UTF-8");
@@ -726,31 +692,22 @@ class Panel extends \APP\core\base\Model {
 
         $company = str_replace(".ru", "", $company);
 
-
-        $symbols = "lat";
-        if (preg_match('/[a-z]/i',$company)) { $symbols = "lat"; } else { $symbols = "kyr"; }
-
-
-        $translit = mb_strtolower(translit_sef($company));
-        if ($symbols == "lat") $translit = mb_strtolower(translitengrus($company));
-
-        // Транслит с русского на английский
-
-        // Транслит с английсского на русский
-
+        $company = trim($company);
 
         $keywords[] = $company." промокод";
         $keywords[] = "промокод ".$company;
-        $keywords[] = $translit." промокод";
-        $keywords[] = "промокод ".$translit;
         $keywords[] = $company." скидки";
         $keywords[] = "скидки ".$company;
-        $keywords[] = $translit." скидки";
-        $keywords[] = "скидки ".$translit;
-
-
-
-
+        $keywords[] = $company." коды";
+        $keywords[] = $company." дисконт";
+        $keywords[] = $company." распродажа";
+        $keywords[] = $company." промокод на скидку";
+        $keywords[] = "промокод на скидку ".$company;
+        $keywords[] = "купон ".$company;
+        $keywords[] = $company." купон ";
+        $keywords[] = $company." каталог";
+        $keywords[] = $company." отзывы";
+        
         return $keywords;
 
 
@@ -1570,6 +1527,9 @@ class Panel extends \APP\core\base\Model {
     public function companiestoday(){
 
         $listcompanies = R::find("usertoday", "GROUP BY `cmpid` ");
+
+        if (empty($listcompanies)) return [];;
+
 
         // Определяем по каким проектам были сегодня КЛИКИ
         foreach ($listcompanies as $company){

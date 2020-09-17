@@ -88,7 +88,7 @@ function ChangeFilter() {
     if (arrType != ""){
 
         addr = addr + "?type=" + arrType;
-        alert(addr);
+
     }
 
     window.location.href = addr;
@@ -155,15 +155,4 @@ function getUrlParams(url = location.search){
 
  
 
-function generatecsv() {
-
-
-    namecompany = $('[name=namecompany]').val();
-
-    keywords = $('[name=keywords]').text();
-
-
-    alert(keywords);
-
-}
 

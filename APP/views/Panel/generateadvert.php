@@ -7,11 +7,23 @@
     <div class="card-body">
 
 
-        <form action="/panel/generateadvert/?action=generate" method="post" data-fouc>
+
+
+        <div class="col-md-6">
+            <form action="/panel/generateadvert/?action=generateall" method="post" data-fouc>
+
+                <button  type="submit" class="btn btn-warning btn-labeled btn-labeled-left btn-lg">
+                    <b><i class="icon-notification2"></i></b>
+                    TOTAL
+                </button>
+
+            </form>
+        </div>
 
                 <div class="row">
 
                     <div class="col-md-6">
+                        <form action="/panel/generateadvert/?action=generate" method="post" data-fouc>
                         <div class="form-group">
                             <label>КОМПАНИЯ: <span class="text-danger">*</span> </label>
                             <select name="company"  data-placeholder="Выберете компанию" class="form-control select-search required" data-fouc>
@@ -29,7 +41,15 @@
 
                             </select>
                             <b>ВСЕГО:</b> <?=$all?>
+                            <button  type="submit" class="btn btn-success btn-labeled btn-labeled-left btn-lg">
+                                <b><i class="icon-notification2"></i></b>
+                                ГЕНЕРИРОВАТЬ ОБЪЯВЛЕНИЯ
+                            </button>
+
+                        </form>
                         </div>
+
+
                     </div>
 
                     <hr>
@@ -39,12 +59,7 @@
 
 
 
-            <button id="go" type="submit" class="btn btn-success btn-labeled btn-labeled-left btn-lg">
-                <b><i class="icon-notification2"></i></b>
-                ГЕНЕРИРОВАТЬ ОБЪЯВЛЕНИЯ
-            </button>
 
-        </form>
 
 
 
@@ -60,11 +75,6 @@
                     <input type="text"  name="namecompany" class="form-control"  value="ПОИСК ТЕСТ">
 
                     <input type="hidden"  name="namerekl" class="form-control"  value="<?=$ADV['rekl']?>">
-
-                    <h2>КЛЮЧЕВЫЕ СЛОВА</h2>
-                    <textarea rows="10" cols="3" name="keywords" class="form-control" ><?php
-                        foreach ($ADV['keywords'] as $keyword) echo $keyword."\n";   ?>
-                       </textarea>
 
                     <div class="form-group">
                         <label><b>URL:</b> </label>

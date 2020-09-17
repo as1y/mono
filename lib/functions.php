@@ -183,10 +183,21 @@ function validatebanner($WHATNEED, $WHATHAVE){
 
 }
 
+function clearurl($url){
+
+    $url = str_replace("https://", "", $url);
+    $url = str_replace("http://", "", $url);
+    $url = str_replace("/", "", $url);
+    $url = str_replace("www.", "", $url);
+    $url = str_replace(".com", "", $url);
+    $url = str_replace(".ru", "", $url);
+    $url = str_replace(".net", "", $url);
+    return $url;
+}
 
 function obrezanie ($text, $symbols){
 
-    $result = mb_strimwidth($text, 0, $symbols, "...");
+    $result = mb_strimwidth($text, 0, $symbols, ".");
 
     return $result;
 

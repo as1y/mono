@@ -69,6 +69,100 @@ function generateResult($coupons, $PAGESLIST, $catalogCategories,  $query ="", $
 
 
 
+function generatecsvAdwords($ADV, $DATA){
+
+    echo "".$DATA['namecompany'].",".$ADV['rekl'].",,,,,,,,,,,0.01,0.01,0.01,None,Disabled,Default"."<br>";
+    // Строки с Ключевыми словами
+
+    foreach ($ADV['keywords'] as $keyword){
+        $keyword = trim($keyword);
+        if ($keyword == " " || empty($keyword) || $keyword == "" ) continue;
+
+        echo "".$DATA['namecompany'].",".$ADV['rekl'].",".$keyword.",phrase,,,,,,,,,,,,,,"."<br>";
+    }
+
+    // Строки с объявлениями
+
+    foreach ($ADV['description'] as $key=>$obja){
+        if ( ($key % 2) != 0) continue;
+        echo "".$DATA['namecompany'].",".$ADV['rekl'].",,,".$ADV['url'].",".$ADV['zagolovok1'].",".$ADV['zagolovok2'].",".$ADV['zagolovok3'].",".$ADV['description'][$key].",".$ADV['description'][$key+1].",".$ADV['path1'].",".$ADV['path2'].",,,,,,"."<br>";
+    }
+
+
+
+}
+
+
+function generatestrAdwords($coupons, $company){
+
+    // Функция генерации записей для адвордса
+    $bestdiscount = 0; // лучший размер скидки
+    $nowdescription = $company['name'].": "; // Текущая строка описания
+    $actuald = 0; // Текущий актуальный элемент массива для записи дескрипшена
+
+    $ADVMASS = [];
+
+    foreach ($coupons as $coupon){
+
+        if ($coupon['discount'] == "1%") $coupon['discount'] = "";
+
+        $cd =  mb_substr($coupon['discount'], 0, -1);
+        if ($bestdiscount < $cd) $bestdiscount = $coupon['discount'];
+        $coupon['short_name'] = obrezanie($coupon['short_name'], 90);
+
+        // Если кол-во текущих символов плюс новые больше 90, то
+        $counsymbols = iconv_strlen($coupon['short_name']); // Длинна описания которое хотим добавить
+        $coutnow = iconv_strlen($nowdescription); // Текущая длинна
+
+        if ( (($counsymbols + $coutnow) > 90) ){
+
+            if (!empty($ADVMASS['description'][$actuald]))    $ADVMASS['description'][$actuald] = trim($ADVMASS['description'][$actuald]);
+            if (empty($ADVMASS['description'][$actuald])) $ADVMASS['description'][$actuald] = "{Keyword:".$company['name']."} - каталог действующих скидок, акций, промокодов ";
+
+            $nowdescription = "";
+            $actuald++;
+        }
+
+        $nowdescription .= $coupon['short_name']." ";
+        $ADVMASS['description'][$actuald] = $nowdescription;
+
+    }
+
+
+    foreach ($ADVMASS['description'] as $key=>$val){
+
+        $val = trim($val);
+        $val = str_replace("\n", '', $val);
+        $val = str_replace("\r", '', $val);
+        $val = str_replace(",", '', $val);
+
+        $ADVMASS['description'][$key] = $val;
+//        $ADVMASS['description'][$key] = substr($val, 0, -1);
+    }
+//
+    $coundescription = count($ADVMASS['description']);
+
+    $company['url'] = clearurl($company['url']);
+
+
+
+    if ( ($coundescription % 2) != 0){
+        $ADVMASS['description'][] = "На портале купоны и промокоды для покупок в интернет магазине ".$company['url'];
+    }
+
+    $ADVMASS['zagolovok1'] = "{Keyword:".$company['name']."}";
+    $ADVMASS['zagolovok2'] = "Промокоды/Акции";
+    $ADVMASS['zagolovok3'] = "".$bestdiscount." скидка на заказ";
+    $ADVMASS['path1'] =  mb_strtolower(obrezanie($company['name'], 15));
+    $ADVMASS['path2'] = "акция";
+
+    return $ADVMASS;
+
+}
+
+
+
+
 function generateStartEndPage($PAGESLIST, $Pages)
 {
 
