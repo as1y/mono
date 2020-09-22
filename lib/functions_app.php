@@ -68,6 +68,65 @@ function generateResult($coupons, $PAGESLIST, $catalogCategories,  $query ="", $
 }
 
 
+function generatecsvYandex($ADV, $DATA){
+
+
+    // Строки с объявления
+    foreach ($ADV['description'] as $key=>$obja){
+        ?>
+        <tr>
+            <td><?=$DATA['namecompany']?></td>
+            <td>Текстово-графическое</td>
+            <td><?=$ADV['rekl']?></td>
+            <td></td>
+            <td><?=$ADV['zagolovok1']?></td>
+            <td><?=$ADV['zagolovok2']?></td>
+            <td>
+                <?=$obja?>
+            </td>
+            <td><?=$ADV['url']?></td>
+            <td><?=$ADV['path1']?></td>
+            <td>Москва и область, Санкт-Петербург и Ленинградская область</td>
+            <td>Действующие промокоды||Ежедневный контроль||Каталог купонов</td>
+            <td></td>
+        </tr>
+        <?php
+    }
+
+
+    foreach ($ADV['keywords'] as $keyword){
+
+        $keyword = trim($keyword);
+        if ($keyword == " " || empty($keyword) || $keyword == "" ) continue;
+
+        ?>
+
+        <tr>
+            <td><?=$DATA['namecompany']?></td>
+            <td>Текстово-графическое</td>
+            <td><?=$ADV['rekl']?></td>
+            <td><?='"'.$keyword.'"'?></td>
+            <td></td>
+            <td></td>
+            <td>
+            </td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>300</td>
+        </tr>
+
+        <?php
+
+    }
+
+
+
+}
+
+
+
 
 function generatecsvAdwords($ADV, $DATA){
 
@@ -78,7 +137,7 @@ function generatecsvAdwords($ADV, $DATA){
         $keyword = trim($keyword);
         if ($keyword == " " || empty($keyword) || $keyword == "" ) continue;
 
-        echo "".$DATA['namecompany'].",".$ADV['rekl'].",".$keyword.",phrase,,,,,,,,,,,,,,"."<br>";
+        echo "".$DATA['namecompany'].",".$ADV['rekl'].",".$keyword.",exact,,,,,,,,,,,,,,"."<br>";
     }
 
     // Строки с объявлениями
@@ -160,7 +219,69 @@ function generatestrAdwords($coupons, $company){
 
 }
 
+function generatestrYandex($coupons, $company){
 
+    // Функция генерации записей для адвордса
+    $bestdiscount = 0; // лучший размер скидки
+    $nowdescription = $company['name'].": "; // Текущая строка описания
+    $actuald = 0; // Текущий актуальный элемент массива для записи дескрипшена
+
+    $ADVMASS = [];
+
+    foreach ($coupons as $coupon){
+
+        if ($coupon['discount'] == "1%") $coupon['discount'] = "";
+        $cd =  mb_substr($coupon['discount'], 0, -1);
+        if ($bestdiscount < $cd) $bestdiscount = $coupon['discount'];
+
+
+        $coupon['short_name'] = obrezanie($coupon['short_name'], 80);
+
+        // Если кол-во текущих символов плюс новые больше 90, то
+        $counsymbols = iconv_strlen($coupon['short_name']); // Длинна описания которое хотим добавить
+        $coutnow = iconv_strlen($nowdescription); // Текущая длинна
+
+        if ( (($counsymbols + $coutnow) > 80) ){
+
+            if (!empty($ADVMASS['description'][$actuald]))    $ADVMASS['description'][$actuald] = trim($ADVMASS['description'][$actuald]);
+            if (empty($ADVMASS['description'][$actuald])) $ADVMASS['description'][$actuald] = "#".$company['name']."# - каталог действующих скидок, акций, промокодов ";
+
+            $nowdescription = "";
+            $actuald++;
+        }
+
+        $nowdescription .= $coupon['short_name']." ";
+        $ADVMASS['description'][$actuald] = $nowdescription;
+
+    }
+
+
+
+
+    foreach ($ADVMASS['description'] as $key=>$val){
+
+        $val = trim($val);
+        $val = str_replace("\n", '', $val);
+        $val = str_replace("\r", '', $val);
+        $val = str_replace(",", '', $val);
+
+        $ADVMASS['description'][$key] = $val;
+//        $ADVMASS['description'][$key] = substr($val, 0, -1);
+    }
+//
+
+    $company['url'] = clearurl($company['url']);
+    $ADVMASS['description'][] = "Промокоды до ".$bestdiscount." для покупок в интернет магазине ".$company['url'];
+
+
+    $ADVMASS['zagolovok1'] = "#".$company['name']."#";
+    $ADVMASS['zagolovok2'] = "купоны до ".$bestdiscount."";
+    $ADVMASS['path1'] =  mb_strtolower(obrezanie($company['url'], 20));
+
+
+    return $ADVMASS;
+
+}
 
 
 function generateStartEndPage($PAGESLIST, $Pages)
@@ -222,9 +343,11 @@ function renderFilter($DATA){
                     <div class="col-md-3">
                         <h4>ВЫБРАТЬ БРЕНД</h4>
                         <select class="selectpicker" id = "CategoryContainer" onchange="ChangeFilter()" name="companies" data-live-search="true">
-                            <option style="color: darkred" value="" >Все бренды...</option>
-                            <?php foreach ($DATA['catalogCompany'] as $key=>$val) :?>
-                                <?php if ($val['select']) :?>
+                            <option style="color: darkred" value=""  >Все бренды...</option>
+                            <?php foreach ($DATA['catalogCompany'] as $key=>$val) :
+
+                                ?>
+                                <?php if ($val['select'] && !empty($val['name'])) :?>
                                     <option  selected value="<?=$val['url']?>" ><?=$val['name']?></option>
                                 <?php endif;?>
 

@@ -38,8 +38,33 @@ class PromocodeController extends AppController {
             // Базовые страницы
 
             // Забираем Определяем ID бренда или Категории
-            $idbrand = $Panel->FindIdBrandCoupon($this->route['alias']);
-            $idcat = $Panel->FindIdCategoryCoupon($this->route['alias2']);
+            $brand = $Panel->FindIdBrandCoupon($this->route['alias']);
+            $idbrand = $brand['id'];
+            $category = $Panel->FindIdCategoryCoupon($this->route['alias2']);
+            $idcat = $category['id'];
+
+            //Генерируем META и H1
+
+            if (!empty($idbrand)){
+                $META = [
+                    'title' => $brand['name']." - промокоды, купоны, скидки, акции",
+                    'H1' => $brand['name']." - промокоды, купоны, скидки, акции"
+                ];
+                \APP\core\base\View::setMeta($META);
+            }
+
+            if (!empty($category)){
+                $META = [
+                    'title' => "Промокоды, купоны и скидки в категории ".$category['name'],
+                    'H1' => "Промокоды, купоны и скидки в категории ".$category['name']
+                ];
+                \APP\core\base\View::setMeta($META);
+            }
+
+
+
+            //Генерируем META и H1
+
 
             // Обработка GET параметров
             $arrtype = (!empty($_GET['type'])) ? $_GET['type'] : "";
@@ -81,6 +106,10 @@ class PromocodeController extends AppController {
         // Запрос на прямую
 
 
+
+
+
+        // Перелистывание страниц
         if($this->isAjax()){
 
             $this->layaout = false;
@@ -107,7 +136,7 @@ class PromocodeController extends AppController {
 
 
         }
-
+        // Перелистывание страниц
 
         return true;
 

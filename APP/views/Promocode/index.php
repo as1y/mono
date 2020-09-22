@@ -1,6 +1,8 @@
 
 <div class="category-wrapper">
     <div class="container">
+
+
         <div class="row">
 
             <?php
@@ -13,9 +15,10 @@
 
             ?>
 
+
         </div>
 
-
+        <p class="text-center"><?php \APP\core\base\View::getH1()?></p>
         <div class="row col-md-12" id="CouponContainer">
 
 

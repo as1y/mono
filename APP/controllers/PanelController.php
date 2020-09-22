@@ -295,6 +295,113 @@ class PanelController extends AppController {
 
     }
 
+    public function generateadvertyaAction()
+    {
+
+        //Информация о компаниях клиента
+
+        $Panel =  new Panel();
+
+
+        $META = [
+            'title' => 'Генерация объявлений ЯНДЕКС',
+            'description' => 'Генерация объявлений ЯНДЕКС',
+            'keywords' => 'Генерация объявлений ЯНДЕКС',
+        ];
+
+
+        $ASSETS[] = ["js" => "/global_assets/js/plugins/extensions/jquery_ui/interactions.min.js"];
+
+
+        $ASSETS[] = ["js" => "/global_assets/js/plugins/forms/wizards/steps.min.js"];
+        $ASSETS[] = ["js" => "/global_assets/js/plugins/forms/selects/select2.min.js"];
+        $ASSETS[] = ["js" => "/global_assets/js/plugins/forms/styling/uniform.min.js"];
+        $ASSETS[] = ["js" => "/global_assets/js/plugins/forms/inputs/inputmask.js"];
+        $ASSETS[] = ["js" => "/global_assets/js/plugins/forms/validation/validate.min.js"];
+        $ASSETS[] = ["js" => "/global_assets/js/plugins/extensions/cookie.js"];
+
+        $ASSETS[] = ["js" => "/assets/js/form_wizard.js"];
+        $ASSETS[] = ["js" => "/global_assets/js/demo_pages/form_select2.js"];
+
+
+
+        if (!empty($_GET) && $_GET['action'] == "generateall"){
+
+            $_SESSION['ADV'] = $Panel->GenerateAdvertAllya();
+
+
+            // Если нет файла, то создаем
+            if (!file_exists(WWW."/upload/exportcsv/")){
+                mkdir(WWW."/upload/exportcsv/", 0777, true);
+            }
+            // Если нет файла, то создаем
+
+
+            $Panel->exportcsvyandex(['namecompany' => 'ПОИСК ТЕСТ']);
+
+            exit();
+
+        }
+
+
+
+        if ($_POST && $_GET['action'] == "generate"){
+
+            $ADV = $Panel->GenerateAdvertYA($_POST);
+            $_SESSION['ADV'] = $ADV;
+
+            if ($ADV === false){
+                $_SESSION['errors'] = "Заполните все поля";
+                redir();
+            }
+
+            if ($ADV == "nooffers"){
+                $_SESSION['errors'] = "У компании нет офферов";
+                redir();
+            }
+
+        }
+
+
+
+        if ($_POST && $_GET['action'] == "export"){
+
+            // Если нет файла, то создаем
+            if (!file_exists(WWW."/upload/exportcsv/")){
+                mkdir(WWW."/upload/exportcsv/", 0777, true);
+            }
+            // Если нет файла, то создаем
+
+            $Panel->exportcsvyandex($_POST);
+
+
+
+
+            exit();
+
+        }
+
+
+
+
+        \APP\core\base\View::setAssets($ASSETS);
+
+
+        \APP\core\base\View::setMeta($META);
+
+
+
+        $ADDINFO = $Panel->LoadAddInfo(true);
+
+
+        $this->set(compact('ADDINFO', 'ADV'));
+
+
+
+
+    }
+
+
     public function addcouponAction()
     {
 
@@ -408,6 +515,43 @@ class PanelController extends AppController {
 
 
         $this->set(compact('customcoupons'));
+
+
+
+    }
+
+    public function withoutcouponsAction()
+    {
+
+        //Информация о компаниях клиента
+
+        $Panel =  new Panel();
+
+
+        $META = [
+            'title' => 'Магазины без купонов',
+            'description' => 'Магазины без купонов',
+            'keywords' => 'Магазины без купонов',
+        ];
+
+        $BREADCRUMBS['HOME'] = ['Label' => $this->BreadcrumbsControllerLabel, 'Url' => $this->BreadcrumbsControllerUrl];
+        $BREADCRUMBS['DATA'][] = ['Label' => "FAQ"];
+        \APP\core\base\View::setBreadcrumbs($BREADCRUMBS);
+
+        $ASSETS[] = ["js" => "/global_assets/js/plugins/tables/datatables/datatables.min.js"];
+        $ASSETS[] = ["js" => "/assets/js/datatables_basic.js"];
+        \APP\core\base\View::setAssets($ASSETS);
+
+        \APP\core\base\View::setMeta($META);
+        \APP\core\base\View::setBreadcrumbs($BREADCRUMBS);
+
+
+        $companywithoutcoupons = $Panel->Getshopswithoutcoupons();
+
+
+
+
+        $this->set(compact('companywithoutcoupons'));
 
 
 

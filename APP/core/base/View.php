@@ -5,7 +5,7 @@ class View {
 	public $view;
 	public $layaout;
     static $assets = [];
-	static $meta = ["title"=> APPNAME, "desc"=> "", "keywords"=> ""];
+	static $meta = ["title"=> APPNAME, "desc"=> "", "keywords"=> "", "H1" =>""];
     static $Breadcrumbs = ["HOME" => [], "DATA" => []];
 
 	public function __construct($route, $layaout='', $view=''){
@@ -62,15 +62,18 @@ class View {
 	}
 
 
-
+    public static function getH1(){
+	    echo self::$meta['H1'];
+    }
 
 
     public static function setMeta($META){
 
-
         if (!empty($META['title'])) self::$meta['title'] = $META['title'];
         if (!empty($META['description'])) self::$meta['description'] = $META['description'];
         if (!empty($META['keywords'])) self::$meta['keywords'] = $META['keywords'];
+        if (!empty($META['H1'])) self::$meta['H1'] = $META['H1'];
+
 
     }
 

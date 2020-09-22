@@ -228,8 +228,12 @@ class Panel extends \APP\core\base\Model {
         // Берем список категорий изходя из купонов
         foreach ($coupons as $key=>$coupon) {
             // СОВМЕСТИТЬ КАТЕГОРИИ
-            $categories = json_decode($coupon['category'], true);
+
+            $categories = json_decode(utf8_encode($coupon['category']), true);
+
 //                    echo "ID купона ".$coupon['id']." Компания  ".$coupon['companies_id']." ||| ";
+
+            if (empty($categories)) continue;
             foreach ($categories as $v) {
                 $tempARR[$coupon['companies_id']][$v] = true;
             }
@@ -570,6 +574,52 @@ class Panel extends \APP\core\base\Model {
 
     }
 
+
+    public function exportcsvyandex($DATA){
+        ?>
+
+
+        <table border="1">
+            <tr>
+                <td>Название кампании</td>
+                <td>Тип объявления</td>
+                <td>Название группы</td>
+                <td>Фраза (с минус-словами)</td>
+                <td>Заголовок 1</td>
+                <td>Заголовок 2</td>
+                <td>Текст</td>
+                <td>Ссылка</td>
+                <td>Отображаемая ссылка</td>
+                <td>Регион</td>
+                <td>Уточнения</td>
+                <td>Ставка</td>
+            </tr>
+<?php
+
+        // Если только 1 элмент
+        if (empty($_SESSION['ADV'][1])){
+            generatecsvYandex($_SESSION['ADV'],$DATA);
+            echo "</table>";
+            return true;
+        }
+
+
+        // Если генерируем сразу массив
+
+        $i=0;
+        foreach ($_SESSION['ADV'] as $ADV){
+            // СЧЕТЧИК МАГАЗИНОВ
+            $i++;
+            if ($i < 60) continue; //Ограничение на кол-во магазинов
+            generatecsvYandex($ADV,$DATA);
+        }
+        echo "</table>";
+        return true;
+
+
+    }
+
+
     public function exportcsvgoogle($DATA){
 
         // Первая строка
@@ -590,8 +640,8 @@ class Panel extends \APP\core\base\Model {
 
 
             // СЧЕТЧИК МАГАЗИНОВ
-            $i++;
-            if ($i < 60) continue; //Ограничение на кол-во магазинов
+//            $i++;
+//            if ($i < 60) continue; //Ограничение на кол-во магазинов
 
 
             generatecsvAdwords($ADV,$DATA);
@@ -602,13 +652,63 @@ class Panel extends \APP\core\base\Model {
 
     }
 
+    public function GenerateAdvertAllya(){
 
-    public function GenerateAdvertAll(){
+        // Берем список компаний у которых уже были клики
+        $listcompanies = R::find("usertoday", "GROUP BY `cmpid` ");
+        if (empty($listcompanies)) return [];
+        foreach ($listcompanies as $company){
+            if ($company['utm_source'] == "yandex") $workcompany[] = $company['cmpid'];
+        }
+        // Берем список компаний у которых уже были клики
+
 
 
         $companies =  R::findAll("companies");
 
         foreach ($companies as $key=>$company){
+
+            // Не загружаем компании по которым уже были клики по рекламе
+            if (array_search($company['id'], $workcompany)) continue;
+
+
+            $coupons = $company->ownCouponsList;
+            if (empty($coupons)) continue;
+
+            $ADVMASS[$key]['keywords'] = $this->GenerateKeyWords($company['id']);
+            $ADVMASS[$key]['url'] = $this->GenerateLink(['company' => $company['id'], 'traffictype' => 'googlesearch']);
+            $ADVMASS[$key]['rekl'] = $company['name'];
+
+            $ADVMASS[$key] = $ADVMASS[$key] + generatestrYandex($coupons, $company);
+
+
+        }
+
+        return $ADVMASS;
+
+
+    }
+
+
+    public function GenerateAdvertAll(){
+
+
+        // Берем список компаний у которых уже были клики
+        $listcompanies = R::find("usertoday", "GROUP BY `cmpid` ");
+        if (empty($listcompanies)) return [];
+        foreach ($listcompanies as $company){
+            if ($company['utm_source'] == "google") $workcompany[] = $company['cmpid'];
+        }
+        // Берем список компаний у которых уже были клики
+
+
+        $companies =  R::findAll("companies");
+        foreach ($companies as $key=>$company){
+
+            // Не загружаем компании по которым уже были клики по рекламе
+            if (array_search($company['id'], $workcompany)) continue;
+
+
 
             $coupons = $company->ownCouponsList;
             if (empty($coupons)) continue;
@@ -626,6 +726,39 @@ class Panel extends \APP\core\base\Model {
 
 
     }
+
+
+    public function GenerateAdvertYA($DATA){
+
+        if (empty($DATA['company'])) return false;
+
+        $companybd =  R::load("companies", $DATA['company']);
+        $coupons = $companybd->ownCouponsList;
+        if (empty($coupons)) return "nooffers";
+        $keywords = $this->GenerateKeyWords($DATA['company']);
+
+        $mass['company'] = $DATA['company'];
+        $mass['traffictype'] = "yandexsearch";
+        $ADVMASS['url'] = $this->GenerateLink($mass);
+
+
+        $ADVMASS = generatestrYandex($coupons, $companybd);
+
+
+
+        $ADVMASS['url'] = $this->GenerateLink(['company' => $companybd['id'], 'traffictype' => $mass['traffictype']]);
+        $ADVMASS['rekl'] = $companybd['name'];
+        $ADVMASS['keywords'] = $keywords;
+
+
+        // $ADV['zagolovok'] = mb_convert_case($keyword, MB_CASE_TITLE, "UTF-8");
+
+
+        return $ADVMASS;
+
+
+    }
+
 
 
 
@@ -707,7 +840,8 @@ class Panel extends \APP\core\base\Model {
         $keywords[] = $company." купон ";
         $keywords[] = $company." каталог";
         $keywords[] = $company." отзывы";
-        
+
+
         return $keywords;
 
 
@@ -829,11 +963,11 @@ class Panel extends \APP\core\base\Model {
 
     public function FindIdCategoryCoupon($url) {
 
-        return R::findOne('categorycoupons', 'WHERE url =?', [$url])['id'];
+        return R::findOne('categorycoupons', 'WHERE url =?', [$url]);
     }
 
     public function LoadCategoryCoupon($url) {
-        return R::findOne('categorycoupons', 'WHERE url =?', [$url])['id'];
+        return R::findOne('categorycoupons', 'WHERE url =?', [$url]);
     }
 
 
@@ -857,7 +991,7 @@ class Panel extends \APP\core\base\Model {
 
         }
 
-        return R::findOne('companies', 'WHERE `uri` =?', [$url])['id'];
+        return R::findOne('companies', 'WHERE `uri` =?', [$url]);
 
     }
 
@@ -1496,7 +1630,6 @@ class Panel extends \APP\core\base\Model {
             $massivdata[$zapros['utm_term']]['clicks'] = R::count("usertoday", "WHERE `utm_term` = ? ", [$zapros['utm_term']]);
             $massivdata[$zapros['utm_term']]['zarabotok'] = 0;
             $massivdata[$zapros['utm_term']]['conversion'] = 0;
-
         }
 
 
@@ -1509,7 +1642,10 @@ class Panel extends \APP\core\base\Model {
 
             if ($coupon['companies']['id'] != $id) continue;
 
-            $massivdata[$utm['utm_term']]['name'][] = $coupon['name'];
+            $massivdata[$utm['utm_term']]['conversions'][$key] ['name']= $coupon['name'];
+            $massivdata[$utm['utm_term']]['conversions'][$key] ['zarabotok']= $value['zarabotok'];
+            $massivdata[$utm['utm_term']]['conversions'][$key]['utm_term'] = $utm['utm_term'];;
+            $massivdata[$utm['utm_term']]['conversions'][$key]['utm_source'] = $utm['utm_source'];
 
 
             $massivdata[$utm['utm_term']]['conversion'] = $massivdata[$utm['utm_term']]['conversion'] +1;
@@ -1528,7 +1664,7 @@ class Panel extends \APP\core\base\Model {
 
         $listcompanies = R::find("usertoday", "GROUP BY `cmpid` ");
 
-        if (empty($listcompanies)) return [];;
+        if (empty($listcompanies)) return [];
 
 
         // Определяем по каким проектам были сегодня КЛИКИ
@@ -1571,6 +1707,29 @@ class Panel extends \APP\core\base\Model {
     public function Getlastconversion(){
         return R::findALL("conversion", "ORDER BY `id` DESC LIMIT 50");
     }
+
+
+
+
+    public function Getshopswithoutcoupons(){
+        $companies = R::findALL("companies");
+
+        foreach ($companies as $company){
+
+//            echo $company['name']." - ".$company->countOwn("coupons")."<br>";
+
+            if ($company->countOwn("coupons") > 0) continue;
+            $companywithoutcoupons[] = $company;
+
+        }
+
+
+
+        return $companywithoutcoupons;
+
+
+    }
+
 
     public function GetCustomCoupons(){
         return R::findALL("coupons", "WHERE type=?", ["custom"]);

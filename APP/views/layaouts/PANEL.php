@@ -224,14 +224,31 @@
                         <li class="nav-item">
                             <a href="/panel/generateadvert" class="nav-link <?=isset($active['generateadvert']) ? $active['generateadvert'] : ''; ?>">
                                 <i class="icon-file-text2"></i>
-                                <span>	Генератор объявлений </span>
+                                <span>	Генератор GOOGLE </span>
                             </a>
                         </li>
+
+
+                        <li class="nav-item">
+                            <a href="/panel/generateadvertya" class="nav-link <?=isset($active['generateadvertya']) ? $active['generateadvertya'] : ''; ?>">
+                                <i class="icon-file-text2"></i>
+                                <span>	Генератор ЯНДЕКС </span>
+                            </a>
+                        </li>
+
 
                         
                         <li class="nav-item-header">
                             <div class="text-uppercase font-size-sm line-height-sm">КАСТОМНЫЕ КУПОНЫ</div>
                         </li>
+
+                        <li class="nav-item">
+                            <a href="/panel/withoutcoupons" class="nav-link <?=isset($active['withoutcoupons']) ? $active['withoutcoupons'] : ''; ?>">
+                                <i class="icon-question3"></i>
+                                <span>	Без купонов </span>
+                            </a>
+                        </li>
+
 
                         <li class="nav-item">
                             <a href="/panel/listcoupons" class="nav-link <?=isset($active['listcoupons']) ? $active['listcoupons'] : ''; ?>">

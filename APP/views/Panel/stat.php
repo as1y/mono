@@ -8,12 +8,11 @@
 
         <a href="/panel/" type="button" class="btn btn-primary">НАЗАД</a><br>
 
-
+        <h2>ОБЩАЯ</h2>
         <table  class="table datatable-basic text-center">
             <thead>
             <tr>
-                <th>#</th>
-                <th>Купоны</th>
+                <th>Запрос</th>
                 <th>Заработок</th>
                 <th>AVG</th>
                 <th>Конверсий</th>
@@ -26,27 +25,15 @@
 
             <?php
 
-            foreach ($detalstat as $key=>$value):?>
+            $conversions = [];
+            foreach ($detalstat as $key=>$value):
+
+                if (!empty($value['conversions']))  $conversions = $conversions + $value['conversions'];
+
+                ?>
                 <tr>
                     <td><?=$key?></td>
-                    <td>
 
-                        <?php if (!empty($value['name'])) :
-                            $r = array_count_values($value['name']);
-                            ?>
-
-
-                        <?php
-                            foreach ($r as $k=>$v) echo $k." - ".$v."<br>";
-
-
-                            ?>
-
- 
-                    <?php endif;?>
-
-
-                    </td>
                     <td><b><?=$value['zarabotok']?></b> руб.</td>
                     <td><?php
 
@@ -71,6 +58,36 @@
                     </td>
                 </tr>
                 <?php
+            endforeach;?>
+            </tbody>
+        </table>
+
+        <h2>ПО КОНВЕРСИЯМ</h2>
+        <table  class="table datatable-basic text-center">
+            <thead>
+            <tr>
+
+                <th>utm_source</th>
+                <th>utm_term</th>
+                <th>Заработок</th>
+                <th>Имя</th>
+
+            </tr>
+            </thead>
+            <tbody>
+
+            <?php
+
+            foreach ($conversions as $key=>$value):?>
+                <tr>
+
+                    <td><?=$value['utm_source']?></td>
+                    <td><?=$value['utm_term']?></td>
+                    <td><?=$value['zarabotok']?></td>
+                    <td><?=$value['name']?></td>
+
+                </tr>
+            <?php
             endforeach;?>
             </tbody>
         </table>
