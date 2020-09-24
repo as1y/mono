@@ -262,22 +262,34 @@
 
 <!-- switcher -->
 
+<script>
+    $(window).on('load', function () {
+        document.cookie = "runmodal=";
+        $('#couponmodal').modal('show');
 
+    }   );
+</script>
 
+<?php
+unset($_COOKIE['runmodal']) ;
 
+if (!empty($_COOKIE['runmodal'])): ?>
 
 <?php  popUPcoupon() ?>
+<script>
+    $(window).on('load', function () {
+        document.cookie = "runmodal=";
+        $('#couponmodal').modal('show');
+
+    }   );
+</script>
+<?php endif;?>
+
+
 <!-- COUPONS NGINE -->
 <script src="/vendor/snapappointments/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
 <script src="/coupons_script.js"></script>
-<script>
-    $(window).on('load', function () {
-        <?php if (!empty($_COOKIE['runmodal'])): ?>
-        document.cookie = "runmodal=";
-        $('#couponmodal').modal('show');
-        <?php endif;?>
-    }   );
-</script>
+
 <!-- COUPONS POP-UP ENGINE -->
 <?php \APP\core\base\Model::SaveUsr();?>
 

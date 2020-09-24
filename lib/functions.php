@@ -24,6 +24,16 @@ function not_found() { // ЕСЛИ НЕ НАЙДЕНА СТРАНЦИА
 } // ЕСЛИ НЕ НАЙДЕНА СТРАНЦИА
 
 
+function checkfilelogos(){
+
+    // Если нет файла, то создаем
+    if (!file_exists(WWW."/upload/logos/")){
+        mkdir(WWW."/upload/logos/", 0777, true);
+    }
+    // Если нет файла, то создаем
+}
+
+
 // Функция вывода сообщений в обработчике форм
 function message( $text ) {
 	exit('{ "message" : "'.$text.'"}');

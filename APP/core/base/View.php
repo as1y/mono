@@ -57,7 +57,7 @@ class View {
 
 	public static function getMeta(){
 		echo '<title>'.self::$meta['title'].'</title>
-			<meta name="description" content="'.self::$meta['desc'].'" />
+			<meta name="description" content="'.self::$meta['description'].'" />
 			<meta name="keywords" content="'.self::$meta['keywords'].'" />';
 	}
 

@@ -1,13 +1,8 @@
 <?php
 return [
     'LAYOUT' => 'MAIN',
-    'DOMAIN' => 'kodypromo.ru',
-    'UA' => '',
+    'DOMAIN' => 'eldorado-promocod.xyz',
     'USERTABLE' => 'users',
-    'BASEMAIL' => [
-        'name' => 'ДЕЙСТВУЮЩИЕ ПРОМОКОДЫ',
-        'email' => 'promocode@kodypromo.ru'
-    ],
 
     'db' => [
         'dsn' => 'mysql:host=127.0.0.1;dbname=hf8qq2mdb;charset=utf8;port=3306',

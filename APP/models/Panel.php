@@ -9,6 +9,13 @@ class Panel extends \APP\core\base\Model {
     public $wID = CONFIG['ADMITAD']['WID'];
 
 
+
+    public function checksetup(){
+        $companies = R::findAll('companies');
+        if (!empty($companies)) return true;
+        return false;
+    }
+
     public function WorkWithBanners($token){
 
         $companies = R::findAll('companies', "WHERE `addbanner` = ? LIMIT 40 ", ["0"]);
@@ -34,43 +41,6 @@ class Panel extends \APP\core\base\Model {
         return true;
 
     }
-
-    public function SendCouponEmail($DATA){
-
-
-            $DATA = [
-                'email' => $DATA['email'],
-                'idcoupon' => $DATA['idcoupon'],
-            ];
-
-            $this->addnewBD("sendcoupons", $DATA);
-
-
-
-            return  R::Load('coupons', $DATA['idcoupon']);
-
-
-
-    }
-
-
-    public function SubscribeFooter($email){
-
-        // Отсекаем дубли
-        $dubl = R::findOne("subscribe", "WHERE email = ?" , [$email]);
-        if (!empty($dubl)) return true;
-
-        $DATA = [
-            'email' => $email,
-            'type' => "footer"
-        ];
-
-        $this->addnewBD("subscribe", $DATA);
-
-        return true;
-
-    }
-
 
     public function addBannersinBD($banners, $company){
 
@@ -100,7 +70,7 @@ class Panel extends \APP\core\base\Model {
                 continue;
             }
 
- 
+
             // Копируем баннер себе
 //            $extension = getExtension($banner['banner_image_url']);
 //            $picture = '/upload/banners/'.$banner['id'].'banner.'.$extension;
@@ -111,6 +81,7 @@ class Panel extends \APP\core\base\Model {
 
 
             $bannerbd = R::dispense("banners");
+            $bannerbd->companyadmi = $company['idadmi'];
             $bannerbd->idadmi = $banner['id'];
             $bannerbd->type = $banner['type'];
             $bannerbd->pictureurl = $banner['banner_image_url'];
@@ -148,7 +119,6 @@ class Panel extends \APP\core\base\Model {
 
 
     }
-
 
     public function loadBanners($token, $cid){
 
@@ -200,7 +170,6 @@ class Panel extends \APP\core\base\Model {
 
 
     }
-
 
     public static function loadOneCoupon($id){
         return R::Load('coupons', $id);
@@ -891,7 +860,7 @@ class Panel extends \APP\core\base\Model {
 
 
     public function getPrograms($token){
-        $url = API."/advcampaigns/website/".$this->wID."/";
+        $url = API."/advcampaigns/".IDCOMPANY."/";
         $type = "GET";
         $limit = 100;
 
@@ -902,50 +871,18 @@ class Panel extends \APP\core\base\Model {
 
         $PARAMS = [
             'limit' => $limit,
-            'offset' => 0
+            'offset' => 0,
         ];
 
         $result = fCURL($url, [$type => $PARAMS], $headers);
+
 
         if( isset( $result['error'] ) && $result['error'] == 'invalid_token' ){
             $token = $this->AuthAdmitad();
             return $this->getPrograms($token);
         }
 
-        $nadozagruzok = ceil($result['_meta']['count']/$result['_meta']['limit'])-1;
-
-        // echo "Надо добавить еще  ".$nadozagruzok." загрузки <br>";
-
-
-
-        if ($nadozagruzok == 0)  return $result['results'];
-
-        // Дозагружаем остальные значения.
-
-        for ($i = 1; $i <= $nadozagruzok; $i++) {
-
-            $offset = $i*$limit;
-            //  echo "Загружаем $i ... $offset<br><hr>";
-
-            $PARAMS = [
-                'limit' => $limit,
-                'offset' => $offset
-            ];
-            $add = fCURL($url, [$type => $PARAMS], $headers);
-
-            if( isset( $result['error'] ) && $result['error'] == 'invalid_token' ){
-                $token = $this->AuthAdmitad();
-                return $this->getPrograms($token);
-            }
-            $result['results'] = array_merge($result['results'], $add['results']);
-
-        }
-
-        return $result['results'];
-
-
-
-
+        return $result;
 
     }
 
@@ -995,60 +932,27 @@ class Panel extends \APP\core\base\Model {
 
     }
 
+    public function getBestDiscount($coupons) {
 
-    public function FilterCoupons($ARR) {
+        $bestdiscount = 10;
+
+        foreach ($coupons as $coupon){
+            if ($coupon['discount'] == "1%") $coupon['discount'] = "";
+
+            $cd =  mb_substr($coupon['discount'], 0, -1);
+            if ($bestdiscount < $cd) $bestdiscount = $coupon['discount'];
+        }
+
+        return $bestdiscount;
+
+
+    }
+    public function FilterCoupons($ARR = []) {
 
         $WHERE = [];
 
-        if (!empty($ARR['searchQuery'])){
 
-
-            // Добавляем запрос в БД
-            $DATA = [
-                'zapros' => $ARR['searchQuery'],
-            ];
-            $this->addnewBD("zaprosi",$DATA);
-
-            $result = R::findLike("companies", ['name' => [$ARR['searchQuery']]]);
-
-            $FINALcoupons = [];
-
-            if (!empty($result)){
-
-                foreach ($result as $key=>$val){
-                    $FINALcoupons = $FINALcoupons + $val->ownCouponsList;
-                }
-                return $FINALcoupons;
-            }
-
-            $result = R::findLike("companies", ['name' => [translit_sef($ARR['searchQuery'])]]);
-
-            if (!empty($result)){
-                foreach ($result as $key=>$val){
-                    $FINALcoupons = $FINALcoupons + $val->ownCouponsList;
-                }
-                return $FINALcoupons;
-            }
-
-            $result = R::findLike("coupons", ['name' => [ $ARR['searchQuery'] ]]);
-
-            if (!empty($result)) return $result;
-
-
-
-
-            return false;
-        }
-
-
-
-        // Запрос в таблицу coupons
-        if (!empty($ARR['arrBrands'])){
-            $WHERE[] =  "`companies_id` IN (".$ARR['arrBrands'].")";
-        }
-
-
-        if ($ARR['arrType'] == "promocode" || $ARR['arrType'] == "action" ){
+        if (!empty($ARR['arrType'])){
             $WHERE[] =  '`species` = "'.$ARR['arrType'].'" ';
         }
 
@@ -1136,12 +1040,13 @@ class Panel extends \APP\core\base\Model {
 
 
 
-    public function addnewscoupon($action, $coupon){
+    public function addnewscoupon($action, $coupon, $company){
 
 
         $DATA = [
             'action' => $action,
-            'company' => $coupon['companies_id'],
+            'date' => date("Y-m-d H:i:s"),
+            'company' => $company['id'],
             'name' => $coupon['name'],
             'shortname' => $coupon['short_name'],
             'discount' => $coupon['discount'],
@@ -1151,6 +1056,7 @@ class Panel extends \APP\core\base\Model {
 
         return true;
     }
+
 
 
 
@@ -1291,7 +1197,7 @@ class Panel extends \APP\core\base\Model {
 
                 echo "<b>Купон ".$val['name']." добавлен </b>  <br>";
 
-                $this->addnewscoupon("add", $val);
+                $this->addnewscoupon("add", $val, $company);
 
 
                 R::store($company);
@@ -1375,77 +1281,47 @@ class Panel extends \APP\core\base\Model {
 
 
 
-    public function addMagazin($admicompanies, $token){
-
-        $RS = [];
-        $allShops = R::findAll('companies');
+    public function addMagazin($campanings, $token){
 
 
-        // Записываем IDшники магазинов которые уже есть в БД
-        foreach ($allShops as $key=>$val){
-            $RS[$val['idadmi']] = 1;
-        }
+        //Забираем себе лого
+        $extension = getExtension($campanings['image']);
+        $logo = '/upload/logos/'.$campanings['id'].'logo.'.$extension;
+        file_put_contents(WWW.$logo, file_get_contents($campanings['image']));
 
+        // Работа с категориями
+        $categories =  extractcategories($campanings['categories']);
+        $categories = $this->workcategories($categories);
+        $categories = json_encode($categories, true);
+        // Работа с категориями
 
-        foreach ($admicompanies as $key=>$val){
-            // Проверяем наличие магазина в БД
-            if (!empty($RS[$val['id']])) {
-                echo "Партнерская программа ".$val['name']." уже добавлена. <br>";
-                continue;
-            }
-            if ($val['connection_status'] != "active") continue;
-
-
-
-            //Забираем себе лого
-            $extension = getExtension($val['image']);
-            $logo = '/upload/logos/'.$val['id'].'logo.'.$extension;
-            file_put_contents(WWW.$logo, file_get_contents($val['image']));
-
-            // Работа с категориями
-            $categories =  extractcategories($val['categories']);
-            $categories = $this->workcategories($categories);
-            $categories = json_encode($categories, true);
-            // Работа с категориями
-
-            $val['name'] = str_replace("RU", "", $val['name']);
-            $val['name'] = str_replace("WW", "", $val['name']);
-            $val['name'] = str_replace("[CPS]", "", $val['name']);
-            $val['name'] = str_replace("Many GEOs", "", $val['name']);
+        $val['name'] = str_replace("RU", "", $campanings['name']);
+        $val['name'] = str_replace("WW", "", $campanings['name']);
+        $val['name'] = str_replace("[CPS]", "", $campanings['name']);
+        $val['name'] = str_replace("Many GEOs", "", $campanings['name']);
 
 
 
-//            $deeplink = $this->getDeepLink($token, $val['id'], $val['site_url']);
-//            if (empty($deeplink)) $deeplink = "";
-        $deeplink = $val['gotolink'];
+            $deeplink = $this->getDeepLink($token, $campanings['id'], $campanings['site_url']);
+            if (empty($deeplink)) $deeplink = "";
+//        $deeplink = $campanings['gotolink'];
 
 
-            $DATA = [
-                'idadmi' => $val['id'],
-                'name' => $val['name'],
-                'url' => $val['site_url'],
-                'ulp' => $deeplink,
-                'uri' => translit_sef($val['name']),
-                'ecpc' => $val['ecpc'],
-                'category' => $categories,
-                'logo' => $logo,
-                'description' => "",
-                'status' => $val['status'],
-                'addbanner' => 0,
-            ];
+        $DATA = [
+            'idadmi' => $campanings['id'],
+            'name' => $campanings['name'],
+            'url' => $campanings['site_url'],
+            'ulp' => $deeplink,
+            'uri' => translit_sef($campanings['name']),
+            'ecpc' => $campanings['ecpc'],
+            'category' => $categories,
+            'logo' => $logo,
+            'description' => "",
+            'status' => $campanings['status'],
+            'addbanner' => 0,
+        ];
 
-            $this->addnewBD("companies", $DATA);
-
-//            echo "Добавлена партнерская программа <b>".$val['name']."</b> !";
-
-
-        }
-
-
-
-
-
-
+        $this->addnewBD("companies", $DATA);
 
         return true;
 

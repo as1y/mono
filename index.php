@@ -6,10 +6,8 @@ define('WWW', __DIR__);
 // Базовые переменные
 
 // Переменные для приложения
-define('BASEAVATAR', '/assets/oper1.jpg');
-define('BASELOGO', '/uploads/user_logo/baselogo.jpg');
-define('APPNAME', 'COUPON');
-define('MORDA', true);
+define('APPNAME', 'Эльдорадо');
+define('IDCOMPANY', '19364');
 // Переменные для приложения
 
 
@@ -59,18 +57,13 @@ session_start();
 
 $router = new Router;
 // ПУТИ ЗАДАЮТ НАДО УТОЧНИТЬ КАК РАБОТАЕТ
-$router->add( 'user/login', ['controller'=>'User', 'action'=>'index']);
-$router->add( '^category/(?P<alias>[a-z-]+)$', ['controller'=>'Category', 'action'=>'index']);
-$router->add( '^promocode/(?P<alias>[a-z-]+)/?(?P<alias2>[a-z-]+)?$', ['controller'=>'Promocode', 'action'=>'index']);
 
 
-$router->add( '^page/(?P<action>[a-z-]+)/(?P<alias>[a-z-]+)$', ['controller'=>'Page']);
-$router->add( '^page/(?P<alias>[a-z-]+)$', ['controller'=>'Page', 'action'=>'view']);
-// ПУТИ ЗАДАЮТ НАДО УТОЧНИТЬ КАК РАБОТАЕТ
+$router->add( '^(?P<alias>[a-z-]+)$', ['controller'=>'Main', 'action'=>'index']);
+
+
 //ДЕФОЛТНЫЕ ПРАВИЛА
-
-if (MORDA == true) $router->add( '^$', ['controller'=>'Main', 'action'=>'index']);
-if (MORDA == false) $router->add( '^$', ['controller'=>'Promocode', 'action'=>'index']);
+$router->add( '^$', ['controller'=>'Main', 'action'=>'index']);
 
 
 $router->add( '^(?P<controller>[a-z-]+)/?(?P<action>[a-z-]+)?$');

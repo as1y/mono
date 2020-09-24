@@ -9,48 +9,108 @@ class MainController extends AppController {
 
     public $BreadcrumbsControllerLabel = "Главная";
     public $BreadcrumbsControllerUrl = "/";
-
+    public $CouponsPerPage = 20;
 
 	public function indexAction(){
 
         $Panel = new Panel();
 
+        $PAGESLIST['ViewPage'] = 1;
+        $PAGESLIST['CouponsPerPage'] = $this->CouponsPerPage;
+
+        $ABOUTCOMPANY = $Panel->LoadCompany(IDCOMPANY);
+
+
+        // Перелистывание страниц
+        if($this->isAjax()){
+
+            $this->layaout = false;
+
+            if (!empty($_POST['arrCategory'])) $_POST['arrCategory'] = $Panel->FindIdCategoryCoupon($_POST['arrCategory']);
+
+            // Загрузка купонов
+            $coupons = $Panel->FilterCoupons(['arrCategory' => $_POST['arrCategory'], 'arrType' => $_POST['arrType']]);
+
+            // Пагинация
+            if (empty($_POST['arrCount'])){
+
+                $PAGESLIST['CouponsPerPage'] = $this->CouponsPerPage;
+                $PAGESLIST['ViewPage'] = (!empty($_POST['page'])) ? $_POST['page']  : 1;
+
+                generateResult($coupons, $PAGESLIST);
+                $_SESSION['POST'] = $_POST;
+                return true;
+            }
+            // Пагинация
+
+
+        }
+        // Перелистывание страниц
+
+        if (empty($this->route['alias'])) $this->route['alias'] = "";
+
+        // Забираем Определяем ID бренда или Категории
+        $arrtype = "";
+        if ($this->route['alias'] == "promocode") $arrtype = "promocode";
+        if ($this->route['alias'] == "sale") $arrtype = "action";
+
+        $category = $Panel->FindIdCategoryCoupon($this->route['alias']);
+        $idcat = $category['id'];
+
+
+        $coupons = $Panel->FilterCoupons(['arrCategory' => $idcat, 'arrType' => $arrtype]);
+
+        $bestdiscount =$Panel->getBestDiscount($coupons);
+
+
         $META = [
-            'title' => 'Витрина промокодов и скидок '.APPNAME,
-            'description' => 'Витрина промокодов и скидок'.APPNAME,
-            'keywords' => 'Витрина промокодов и скидок'.APPNAME,
+            'title' => 'Промокоды '.APPNAME.' 📌 купоны, акции. Скидки до '.$bestdiscount,
+            'H1' => 'Промокоды '.APPNAME,
+            'description' => 'Промокоды '.APPNAME,
+            'keywords' => 'Все промокоды и скидки в магазине '.APPNAME,
         ];
+
+
+        if (!empty($idcat)){
+            $META = [
+                'title' => $category['name']. '📌 промокоды в '.APPNAME.'. Скидки до '.$bestdiscount,
+                'H1' => 'Промокоды в категории  "'.$category['name'].'" ',
+                'description' => 'Промокоды '.APPNAME,
+                'keywords' => 'Все промокоды и скидки в магазине '.APPNAME,
+            ];
+        }
+
+        if ($arrtype == "promocode"){
+            $META = [
+                'title' =>  APPNAME.' промокоды. Скидки до '.$bestdiscount,
+                'H1' => 'ФИЛЬТР: (промокоды) "'.APPNAME.'" ',
+                'description' => 'Промокоды '.APPNAME,
+                'keywords' => 'Все промокоды и скидки в магазине '.APPNAME,
+            ];
+        }
+
+        if ($arrtype == "action"){
+            $META = [
+                'title' =>  APPNAME.' акции. Скидки до '.$bestdiscount,
+                'H1' => 'ФИЛЬТР: (акции) "'.APPNAME.'" ',
+                'description' => 'Промокоды '.APPNAME,
+                'keywords' => 'Все промокоды и скидки в магазине '.APPNAME,
+            ];
+        }
+
+
 
 
 
         $BREADCRUMBS['HOME'] = false;
         \APP\core\base\View::setBreadcrumbs($BREADCRUMBS);
-
         \APP\core\base\View::setMeta($META);
 
 
 
 
 
-        $couponsliseder =   $Panel->LoadCustomBanners([1520]);
-
-
-        $couponsliseder2 =   $Panel->LoadCustomBanners([3159, 344]);
-
-
-        // GetShops
-
-        $widget8 =   $Panel->getShops(['limit' => 8]);
-
-
-
-        $widgetcoupons =   $Panel->getContentCoupons(['limit' => 10, 'sort' => 'time']);
-        $widgetcoupons2 = $Panel->getContentCoupons(['limit' => 8, 'sort' => 'used']);
-
-
-
-
-        $this->set(compact( 'vitrina', 'couponsliseder',  'couponsliseder2', 'widget8', 'widget5', 'widget4', 'widgetcoupons', 'widget20', 'widgetcoupons2', 'shops'));
+        $this->set(compact( 'ABOUTCOMPANY', 'coupons', 'PAGESLIST', 'idcat' , 'arrtype'));
 
 
 
@@ -63,7 +123,73 @@ class MainController extends AppController {
 
 
 
+    public function newsAction(){
 
+        $Panel = new Panel();
+
+        $META = [
+            'title' => 'Информация об обновлениях промокодов и купонов '.APPNAME,
+            'description' => 'Информация об обновлениях промокодов и купонов '.APPNAME,
+            'keywords' => 'Информация об обновлениях промокодов и купонов '.APPNAME,
+        ];
+
+        $BREADCRUMBS['HOME'] = false;
+        \APP\core\base\View::setBreadcrumbs($BREADCRUMBS);
+        \APP\core\base\View::setMeta($META);
+
+
+        $PAGESLIST['ViewPage'] = 1;
+        $PAGESLIST['CouponsPerPage'] = $this->CouponsPerPage;
+
+        $ABOUTCOMPANY = $Panel->LoadCompany(IDCOMPANY);
+
+
+        // Перелистывание страниц
+        if($this->isAjax()){
+
+            $this->layaout = false;
+
+            if (!empty($_POST['arrCategory'])) $_POST['arrCategory'] = $Panel->FindIdCategoryCoupon($_POST['arrCategory']);
+
+            // Загрузка купонов
+            $coupons = $Panel->FilterCoupons(['arrCategory' => $_POST['arrCategory'], 'arrType' => $_POST['arrType']]);
+
+            // Пагинация
+            if (empty($_POST['arrCount'])){
+
+                $PAGESLIST['CouponsPerPage'] = $this->CouponsPerPage;
+                $PAGESLIST['ViewPage'] = (!empty($_POST['page'])) ? $_POST['page']  : 1;
+
+                generateResult($coupons, $PAGESLIST);
+                $_SESSION['POST'] = $_POST;
+                return true;
+            }
+            // Пагинация
+
+
+        }
+        // Перелистывание страниц
+
+        if (empty($this->route['alias'])) $this->route['alias'] = "";
+
+        // Забираем Определяем ID бренда или Категории
+        $arrtype = "";
+        if ($this->route['alias'] == "promocode") $arrtype = "promocode";
+        if ($this->route['alias'] == "sale") $arrtype = "action";
+
+        $category = $Panel->FindIdCategoryCoupon($this->route['alias']);
+        $idcat = $category['id'];
+
+
+        $coupons = $Panel->FilterCoupons(['arrCategory' => $idcat, 'arrType' => $arrtype]);
+
+
+
+        $this->set(compact( 'ABOUTCOMPANY', 'coupons', 'PAGESLIST', 'idcat' , 'arrtype'));
+
+
+
+    }
 
 
 }

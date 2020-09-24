@@ -2045,7 +2045,7 @@ html.sticky-header-active .hamburguer-btn.hamburguer-btn-sticky-dark .close span
 	display: flex;
 	flex-wrap: wrap;
 	position: relative;
-	padding: 32px 55px;
+	padding: 20px 5px;
 	clear: both;
 }
 
@@ -2069,16 +2069,16 @@ html.sticky-header-active .hamburguer-btn.hamburguer-btn-sticky-dark .close span
 }
 
 .call-to-action p {
-	font-size: 1.2em;
+	/*font-size: 1.2em;*/
 }
 
 .call-to-action > [class*="col-"] {
 	display: flex;
-	align-items: center;
+	/*align-items: center;*/
 }
 
 .call-to-action > [class*="col-"]:nth-child(2) {
-	justify-content: flex-end;
+	justify-content: flex-start;
 	text-align: center;
 }
 
@@ -2120,7 +2120,7 @@ html.sticky-header-active .hamburguer-btn.hamburguer-btn-sticky-dark .close span
 }
 
 .call-to-action .call-to-action-content {
-	text-align: center;
+	text-align: left;
 }
 
 .call-to-action.call-to-action-big {
@@ -3358,7 +3358,7 @@ html.ie9 .call-to-action.button-centered .container > .row > [class*="col-"], ht
 .counters strong {
 	display: block;
 	font-weight: bold;
-	font-size: 50px;
+	font-size: 35px;
 	line-height: 50px;
 }
 
@@ -3816,15 +3816,15 @@ hr.pattern.pattern-2:after, .divider.pattern.pattern-2:after {
 	display: inline-block;
 	font-size: 0;
 	margin: 15px;
-	width: 110px;
-	height: 110px;
+	width: 50px;
+	height: 50px;
 	border-radius: 50%;
 	text-align: center;
 	position: relative;
 	z-index: 1;
 	color: #FFF;
 	font-size: 2.3em;
-	line-height: 110px;
+	line-height: 50px;
 }
 
 .icon-featured:after {
@@ -6019,7 +6019,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-	font-size: 2.6em;
+	font-size: 2.0em;
 	line-height: 44px;
 	margin: 0 0 32px 0;
 }
@@ -6032,7 +6032,7 @@ h2 {
 }
 
 h3 {
-	font-size: 1.8em;
+	font-size: 1.4em;
 	font-weight: 400;
 	line-height: 24px;
 	margin-bottom: 33px;

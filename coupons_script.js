@@ -102,7 +102,6 @@ function changePage(page){
 
     str = getFilterParamsParams ();
 
-
     $('#CouponContainer').empty();
 
     $.ajax(
@@ -133,14 +132,13 @@ function clck(couponid)
 
 
 function getFilterParamsParams() {
-    arrBrands = "";
+
     arrType = "";
     arrCategory = "";
 
-    arrBrands = $('select[name=companies]').val();
-    arrType = $('select[name=type]').val();
-    arrCategory = $('select[name=category]').val();
-    str =  '&arrBrands=' + arrBrands + '&arrType=' + arrType + '&arrCategory=' + arrCategory;
+    arrType = $('#arrtype').val();
+    arrCategory = $('#idcat').val();
+    str =  '&arrType=' + arrType + '&arrCategory=' + arrCategory;
     return str;
 
 }

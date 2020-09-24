@@ -24,17 +24,7 @@ return $result;
 
 
 
-function generateResult($coupons, $PAGESLIST, $catalogCategories,  $query ="", $catalogCompany = []){
-
-    // Если ЧТО-ТО ПОШЛО НЕ ТАК
-    if ($coupons === false){
-        echo "<h5>По вашему запросу ничего не найдено!<br> Попробуйте восползоваться умным фильтром промокодов<br></h5>  
-
-<a class='btn px-4 btn-primary-dark-w py-2 rounded-lg' href='/promocode/vse'>ПЕРЕЙТИ</a>";
-        return false;
-
-    }
-    // Если ЧТО-ТО ПОШЛО НЕ ТАК
+function generateResult($coupons, $PAGESLIST){
 
 
     // СБРАСЫВАЕМ ИНДЕКСЫ И НАЧИНАЕМ С 1
@@ -68,220 +58,8 @@ function generateResult($coupons, $PAGESLIST, $catalogCategories,  $query ="", $
 }
 
 
-function generatecsvYandex($ADV, $DATA){
 
 
-    // Строки с объявления
-    foreach ($ADV['description'] as $key=>$obja){
-        ?>
-        <tr>
-            <td><?=$DATA['namecompany']?></td>
-            <td>Текстово-графическое</td>
-            <td><?=$ADV['rekl']?></td>
-            <td></td>
-            <td><?=$ADV['zagolovok1']?></td>
-            <td><?=$ADV['zagolovok2']?></td>
-            <td>
-                <?=$obja?>
-            </td>
-            <td><?=$ADV['url']?></td>
-            <td><?=$ADV['path1']?></td>
-            <td>Москва и область, Санкт-Петербург и Ленинградская область</td>
-            <td>Действующие промокоды||Ежедневный контроль||Каталог купонов</td>
-            <td></td>
-        </tr>
-        <?php
-    }
-
-
-    foreach ($ADV['keywords'] as $keyword){
-
-        $keyword = trim($keyword);
-        if ($keyword == " " || empty($keyword) || $keyword == "" ) continue;
-
-        ?>
-
-        <tr>
-            <td><?=$DATA['namecompany']?></td>
-            <td>Текстово-графическое</td>
-            <td><?=$ADV['rekl']?></td>
-            <td><?='"'.$keyword.'"'?></td>
-            <td></td>
-            <td></td>
-            <td>
-            </td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td>300</td>
-        </tr>
-
-        <?php
-
-    }
-
-
-
-}
-
-
-
-
-function generatecsvAdwords($ADV, $DATA){
-
-    echo "".$DATA['namecompany'].",".$ADV['rekl'].",,,,,,,,,,,0.01,0.01,0.01,None,Disabled,Default"."<br>";
-    // Строки с Ключевыми словами
-
-    foreach ($ADV['keywords'] as $keyword){
-        $keyword = trim($keyword);
-        if ($keyword == " " || empty($keyword) || $keyword == "" ) continue;
-
-        echo "".$DATA['namecompany'].",".$ADV['rekl'].",".$keyword.",exact,,,,,,,,,,,,,,"."<br>";
-    }
-
-    // Строки с объявлениями
-
-    foreach ($ADV['description'] as $key=>$obja){
-        if ( ($key % 2) != 0) continue;
-        echo "".$DATA['namecompany'].",".$ADV['rekl'].",,,".$ADV['url'].",".$ADV['zagolovok1'].",".$ADV['zagolovok2'].",".$ADV['zagolovok3'].",".$ADV['description'][$key].",".$ADV['description'][$key+1].",".$ADV['path1'].",".$ADV['path2'].",,,,,,"."<br>";
-    }
-
-
-
-}
-
-
-function generatestrAdwords($coupons, $company){
-
-    // Функция генерации записей для адвордса
-    $bestdiscount = 0; // лучший размер скидки
-    $nowdescription = $company['name'].": "; // Текущая строка описания
-    $actuald = 0; // Текущий актуальный элемент массива для записи дескрипшена
-
-    $ADVMASS = [];
-
-    foreach ($coupons as $coupon){
-
-        if ($coupon['discount'] == "1%") $coupon['discount'] = "";
-
-        $cd =  mb_substr($coupon['discount'], 0, -1);
-        if ($bestdiscount < $cd) $bestdiscount = $coupon['discount'];
-        $coupon['short_name'] = obrezanie($coupon['short_name'], 90);
-
-        // Если кол-во текущих символов плюс новые больше 90, то
-        $counsymbols = iconv_strlen($coupon['short_name']); // Длинна описания которое хотим добавить
-        $coutnow = iconv_strlen($nowdescription); // Текущая длинна
-
-        if ( (($counsymbols + $coutnow) > 90) ){
-
-            if (!empty($ADVMASS['description'][$actuald]))    $ADVMASS['description'][$actuald] = trim($ADVMASS['description'][$actuald]);
-            if (empty($ADVMASS['description'][$actuald])) $ADVMASS['description'][$actuald] = "{Keyword:".$company['name']."} - каталог действующих скидок, акций, промокодов ";
-
-            $nowdescription = "";
-            $actuald++;
-        }
-
-        $nowdescription .= $coupon['short_name']." ";
-        $ADVMASS['description'][$actuald] = $nowdescription;
-
-    }
-
-
-    foreach ($ADVMASS['description'] as $key=>$val){
-
-        $val = trim($val);
-        $val = str_replace("\n", '', $val);
-        $val = str_replace("\r", '', $val);
-        $val = str_replace(",", '', $val);
-
-        $ADVMASS['description'][$key] = $val;
-//        $ADVMASS['description'][$key] = substr($val, 0, -1);
-    }
-//
-    $coundescription = count($ADVMASS['description']);
-
-    $company['url'] = clearurl($company['url']);
-
-
-
-    if ( ($coundescription % 2) != 0){
-        $ADVMASS['description'][] = "На портале купоны и промокоды для покупок в интернет магазине ".$company['url'];
-    }
-
-    $ADVMASS['zagolovok1'] = "{Keyword:".$company['name']."}";
-    $ADVMASS['zagolovok2'] = "Промокоды/Акции";
-    $ADVMASS['zagolovok3'] = "".$bestdiscount." скидка на заказ";
-    $ADVMASS['path1'] =  mb_strtolower(obrezanie($company['name'], 15));
-    $ADVMASS['path2'] = "акция";
-
-    return $ADVMASS;
-
-}
-
-function generatestrYandex($coupons, $company){
-
-    // Функция генерации записей для адвордса
-    $bestdiscount = 0; // лучший размер скидки
-    $nowdescription = $company['name'].": "; // Текущая строка описания
-    $actuald = 0; // Текущий актуальный элемент массива для записи дескрипшена
-
-    $ADVMASS = [];
-
-    foreach ($coupons as $coupon){
-
-        if ($coupon['discount'] == "1%") $coupon['discount'] = "";
-        $cd =  mb_substr($coupon['discount'], 0, -1);
-        if ($bestdiscount < $cd) $bestdiscount = $coupon['discount'];
-
-
-        $coupon['short_name'] = obrezanie($coupon['short_name'], 80);
-
-        // Если кол-во текущих символов плюс новые больше 90, то
-        $counsymbols = iconv_strlen($coupon['short_name']); // Длинна описания которое хотим добавить
-        $coutnow = iconv_strlen($nowdescription); // Текущая длинна
-
-        if ( (($counsymbols + $coutnow) > 80) ){
-
-            if (!empty($ADVMASS['description'][$actuald]))    $ADVMASS['description'][$actuald] = trim($ADVMASS['description'][$actuald]);
-            if (empty($ADVMASS['description'][$actuald])) $ADVMASS['description'][$actuald] = "#".$company['name']."# - каталог действующих скидок, акций, промокодов ";
-
-            $nowdescription = "";
-            $actuald++;
-        }
-
-        $nowdescription .= $coupon['short_name']." ";
-        $ADVMASS['description'][$actuald] = $nowdescription;
-
-    }
-
-
-
-
-    foreach ($ADVMASS['description'] as $key=>$val){
-
-        $val = trim($val);
-        $val = str_replace("\n", '', $val);
-        $val = str_replace("\r", '', $val);
-        $val = str_replace(",", '', $val);
-
-        $ADVMASS['description'][$key] = $val;
-//        $ADVMASS['description'][$key] = substr($val, 0, -1);
-    }
-//
-
-    $company['url'] = clearurl($company['url']);
-    $ADVMASS['description'][] = "Промокоды до ".$bestdiscount." для покупок в интернет магазине ".$company['url'];
-
-
-    $ADVMASS['zagolovok1'] = "#".$company['name']."#";
-    $ADVMASS['zagolovok2'] = "купоны до ".$bestdiscount."";
-    $ADVMASS['path1'] =  mb_strtolower(obrezanie($company['url'], 20));
-
-
-    return $ADVMASS;
-
-}
 
 
 function generateStartEndPage($PAGESLIST, $Pages)
@@ -317,9 +95,8 @@ function generetuCouponinCode($coupons, $ViewPage, $CouponsPerPage){
     for ($key = $start; $key <= $end; $key++) {
         if (empty($coupons[$key])) continue;
 
-        echo '<div class="col-md-3 col-sm-4 col-xs-12">';
         renderCoupon($coupons[$key]);
-        echo  ' </div>';
+
 
     }
 
@@ -431,14 +208,34 @@ function textdiscount($discount){
 
 }
 
-function captiondiscount($discount){
+function captiondiscount($discount, $coupon){
 
 
     if($discount == "1%") $discount = NULL;
 
-    if (empty($discount))   $caption = '<i class="fa fa-check-circle"> </i>';
+    if (empty($discount))   $caption = '
 
-    if (!empty($discount))   $caption = '<i class="fa fa-gift"> '.$discount.'</i>';
+<div class="row counters">
+									<div class="counter counter-primary">
+										<label>'.json_decode($coupon['types'], true)[0]['name'].'</label>
+										<strong ><i class=" fa fa-gift"></i></strong>
+										 
+									</div>
+							</div>
+							
+   
+                
+                ';
+
+    if (!empty($discount))   $caption = '
+<div class="row counters">
+									<div class="counter counter-primary">
+										<label>'.json_decode($coupon['types'], true)[0]['name'].'</label>
+										<strong >'.$discount.'</strong>
+									</div>
+							</div>
+
+';
 
     return $caption;
 
@@ -566,7 +363,7 @@ function AuthAdmitad(){
     $PARAMS = [
         "grant_type" => "client_credentials",
         "client_id" => CONFIG['ADMITAD']['cliend_id'],
-        "scope" => "advcampaigns_for_website coupons_for_website deeplink_generator public_data banners_for_website"
+        "scope" => "advcampaigns coupons_for_website deeplink_generator public_data banners_for_website"
     ];
     $PARAMS = http_build_query($PARAMS);
 
@@ -617,12 +414,95 @@ function toWindow($ii){
 function renderCoupon($coupon){
     ?>
 
+    <section class="call-to-action with-full-borders mb-2">
+
+        <div class="col-sm-3 col-lg-3">
+
+            <div class="call-to-action-btn">
+
+
+                <?=captiondiscount($coupon['discount'], $coupon)?>
+            </div>
+        </div>
+
+
+        <div class="col-sm-9 col-lg-6">
+
+            <div class="call-to-action-content">
+
+                <h3><?=$coupon['short_name']?></h3>
+                <p>
+                    <?php if (empty($coupon['description'])): ?>
+                        Подробности на сайте
+                        <?php endif ?>
+
+                    <?php if (!empty($coupon['description'])): ?>
+                        <?=$coupon['description']?>
+                    <?php endif ?>
+
+
+                </p>
+            </div>
+        </div>
+
+        <div class="col-sm-3 col-lg-3">
+
+            <div class="call-to-action-btn">
+
+                <?php if ($coupon['species'] == "promocode"): ?>
+                    <a href="//<?=CONFIG['DOMAIN']?>/go/?coupon=<?=$coupon['id']?>"  onclick="clck(<?=$coupon['id']?>)" class="btn btn-modern text-2 btn-danger">ОТКРЫТЬ ПРОМОКОД</a>
+
+                <?php endif;?>
+
+                <?php if ($coupon['species'] == "action"): ?>
+                    <a href="//<?=CONFIG['DOMAIN']?>/go/?coupon=<?=$coupon['id']?>" onclick="clck(<?=$coupon['id']?>)"class="btn btn-modern text-2 btn-danger" >АКТИВИРОВАТЬ</a>
+                <?php endif;?>
+                <br>
+                <p><i class="fa fa-users"></i> <?=$coupon['used']?>
+                    <i class="fa fa-clock"></i> <?=calculate_exp($coupon['dateend'])?>
+                </p>
+            </div>
+
+
+        </div>
+
+
+    </section>
+
+
+
+
+
+
+
+<?php
+}
+
+
+function renderCoupon2($coupon){
+    ?>
+
+    <section class="call-to-action with-full-borders mb-2">
+        <div class="col-sm-9 col-lg-9">
+            <div class="col-sm-3 col-lg-3">11</div>
+            <div class="col-sm-9 col-lg-9">22</div>
+        </div>
+        <div class="col-sm-3 col-lg-3">
+            <div class="call-to-action-btn">
+                <a href="http://themeforest.net/item/porto-responsive-html5-template/4106987" target="_blank" class="btn btn-modern text-2 btn-primary">Buy Now</a>
+            </div>
+        </div>
+    </section>
+
+
+
+
 
     <!-- Coupon Single Item Start -->
     <div class="item coupon-item">
         <div class="coupon-thumb">
 
-                <img src="<?=$coupon->companies['logo']?>" alt="" class="img-responsive">
+            <img src="<?=$coupon->companies['logo']?>" alt="" class="img-responsive">
 
 
             <div class="coupon-badge">
@@ -660,11 +540,8 @@ function renderCoupon($coupon){
 
 
 
-<?php
+    <?php
 }
-
-
-
 
 
 

@@ -335,11 +335,35 @@ abstract class Model
     }
 
 
-
-
     public static function LoadCompany($id) {
-        return R::load("companies", $id);
+
+        $result['company'] = R::findOne("companies", "WHERE `idadmi` =? ", [$id]);
+
+        $categoriesid = json_decode($result['company']['category'], true);
+
+        $result['category'] = R::loadAll("category", $categoriesid);
+        $result['categorycoupons'] = R::findAll("categorycoupons");
+        $result['banners'] =  R::findOne("banners", "WHERE (`size_width` < 300) AND (`companyadmi` =?) ORDER BY rand()" , [$id]);
+
+
+        return $result;
+
+
+
     }
+
+
+
+
+
+
+
+    public static function LoadAllCoupons() {
+
+        return R::findAll("coupons");
+
+    }
+
 
 
     public static function addnewBD($table, $DATA) {
