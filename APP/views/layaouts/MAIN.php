@@ -39,7 +39,7 @@
 
 
     <!-- Skin CSS -->
-    <link rel="stylesheet" href="/assets_main/css/skins/default.css">
+    <link rel="stylesheet" href="/assets_main/css/skins/skin-seo.css">
 
     <!-- Theme Custom CSS -->
     <link rel="stylesheet" href="/assets_main/css/custom.css">

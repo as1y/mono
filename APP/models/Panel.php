@@ -191,8 +191,10 @@ class Panel extends \APP\core\base\Model {
 
 
 
-    public function LoadCategoriesSimple($coupons, $idcat, $sizeoff = true){
+    public function LoadCategoriesSimple($idcat){
 
+
+        $coupons = R::findall("coupons", "WHERE `idamicompany` = ?", [IDCOMPANY]);
 
         // Берем список категорий изходя из купонов
         foreach ($coupons as $key=>$coupon) {
@@ -935,6 +937,10 @@ class Panel extends \APP\core\base\Model {
         if (!empty($ARR['arrCategory'])){
             $WHERE[] =  'JSON_CONTAINS(`category`, JSON_ARRAY("'.$ARR['arrCategory'].'") )';
         }
+
+
+        $WHERE[] =  '`idamicompany` = "'.IDCOMPANY.'" ';
+
 
         $WHERE = constructWhere($WHERE);
 

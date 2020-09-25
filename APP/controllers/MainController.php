@@ -72,7 +72,7 @@ class MainController extends AppController {
         $coupons = $Panel->FilterCoupons(['arrCategory' => $idcat, 'arrType' => $arrtype]);
         $bestdiscount =$Panel->getBestDiscount($coupons);
 
-        $catalogCategories = $Panel->LoadCategoriesSimple($coupons, $idcat);
+        $catalogCategories = $Panel->LoadCategoriesSimple($idcat);
 
         $META = writemeta($category, $bestdiscount, $arrtype, $idcat);
 

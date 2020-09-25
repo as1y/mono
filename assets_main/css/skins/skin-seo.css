@@ -4635,7 +4635,7 @@ html .testimonial-quotes-light blockquote:after {
 html .counters .counter-primary [class*="fa-"],
 html .counters .counter-primary .icons,
 html .counters .counter-primary strong {
-	color: #0088cc;
+	color: darkred;
 }
 
 html .counters .counter-secondary [class*="fa-"],
