@@ -58,12 +58,15 @@ session_start();
 $router = new Router;
 // ПУТИ ЗАДАЮТ НАДО УТОЧНИТЬ КАК РАБОТАЕТ
 
+$router->add( 'setup/setup', ['controller'=>'Setup', 'action'=>'index']);
+
 
 $router->add( '^(?P<alias>[a-z-]+)$', ['controller'=>'Main', 'action'=>'index']);
 
-
 //ДЕФОЛТНЫЕ ПРАВИЛА
 $router->add( '^$', ['controller'=>'Main', 'action'=>'index']);
+
+
 
 
 $router->add( '^(?P<controller>[a-z-]+)/?(?P<action>[a-z-]+)?$');

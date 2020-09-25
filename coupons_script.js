@@ -125,6 +125,7 @@ function changePage(page){
 
 function clck(couponid)
 {
+
     // // Устанавливаем промокод в сессиию
     document.cookie = "runmodal="+couponid;
     window.open("#");

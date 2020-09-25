@@ -5,7 +5,7 @@ class View {
 	public $view;
 	public $layaout;
     static $assets = [];
-	static $meta = ["title"=> APPNAME, "desc"=> "", "keywords"=> "", "H1" =>""];
+	static $meta = ["title"=> APPNAME, "description"=> "", "keywords"=> "", "H1" =>""];
     static $Breadcrumbs = ["HOME" => [], "DATA" => []];
 
 	public function __construct($route, $layaout='', $view=''){

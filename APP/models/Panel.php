@@ -211,7 +211,6 @@ class Panel extends \APP\core\base\Model {
 
 
 
-
         // Получаем массив для работы
         foreach ($tempARR as $k=>$v){
             foreach ($v as $b=>$c){
@@ -219,30 +218,6 @@ class Panel extends \APP\core\base\Model {
             }
         }
 
-
-
-
-        // Совмещаем если выбрано несколько брендов
-        if ( $sizeoff == true){
-
-                    $filtrArr = current($tempARR);
-
-
-                    foreach ($tempARR as $k=>$value){
-
-//                        echo "first---";
-//                        show($filtrArr);
-//                        echo "val---";
-//                        show($value);
-
-//                         Функция работы схождения массивов
-                        $filtrArr =  array_intersect_key($filtrArr, $value);
-
-//                        echo "itog---";
-//                        show($filtrArr);
-
-                    }
-                }
 
 
 
@@ -1228,6 +1203,7 @@ class Panel extends \APP\core\base\Model {
 
 
         $coupon =  R::Load('coupons', $_GET['coupon']);
+
 
         if (!empty($coupon)){
             $coupon->used = $coupon->used +1;

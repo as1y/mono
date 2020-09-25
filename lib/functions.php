@@ -34,6 +34,8 @@ function checkfilelogos(){
 }
 
 
+
+
 // Функция вывода сообщений в обработчике форм
 function message( $text ) {
 	exit('{ "message" : "'.$text.'"}');
@@ -427,6 +429,55 @@ function fCURL($url, $PARAMS = [], $headers = []){
 
 
 }
+
+
+
+function writemeta($category, $bestdiscount, $arrtype, $idcat){
+    $META = [
+        'title' => 'Промокоды '.APPNAME.' 📌 купоны, акции. Скидки до '.$bestdiscount,
+        'H1' => 'Промокоды '.APPNAME,
+        'description' => 'Промокоды '.APPNAME,
+        'keywords' => 'Все промокоды и скидки в магазине '.APPNAME,
+    ];
+
+
+    if (!empty($idcat)){
+        $META = [
+            'title' => $category['name']. '📌 промокоды в '.APPNAME.'. Скидки до '.$bestdiscount,
+            'H1' => 'Промокоды в категории  "'.$category['name'].'" ',
+            'description' => 'Промокоды '.APPNAME,
+            'keywords' => 'Все промокоды и скидки в магазине '.APPNAME,
+        ];
+    }
+
+    if ($arrtype == "promocode"){
+        $META = [
+            'title' =>  APPNAME.' промокоды. Скидки до '.$bestdiscount,
+            'H1' => 'ФИЛЬТР: (промокоды) "'.APPNAME.'" ',
+            'description' => 'Промокоды '.APPNAME,
+            'keywords' => 'Все промокоды и скидки в магазине '.APPNAME,
+        ];
+    }
+
+    if ($arrtype == "action"){
+        $META = [
+            'title' =>  APPNAME.' акции. Скидки до '.$bestdiscount,
+            'H1' => 'ФИЛЬТР: (акции) "'.APPNAME.'" ',
+            'description' => 'Промокоды '.APPNAME,
+            'keywords' => 'Все промокоды и скидки в магазине '.APPNAME,
+        ];
+    }
+
+
+    return $META;
+
+}
+
+
+
+
+
+
 
 function validationpay($data, $type){
 

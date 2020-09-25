@@ -82,17 +82,11 @@
                                             </a>
                                         </li>
 
-                                        <li>
-                                            <a class="dropdown-item " href="/main/news">
-                                                НОВОСТИ
-                                            </a>
-                                        </li>
-
-
-
-
-
-
+<!--                                        <li>-->
+<!--                                            <a class="dropdown-item " href="/main/news">-->
+<!--                                                НОВОСТИ-->
+<!--                                            </a>-->
+<!--                                        </li>-->
 
                                     </ul>
 
@@ -117,7 +111,7 @@
                     </div>
                     <div class="header-column justify-content-center w-100-mobile w-50 order-2 order-lg-3">
                         <div class="header-row justify-content-end">
-                            <b><?=APPNAME?></b> &nbsp; промокоды, купоны, скидки
+                            <b><?=APPNAME?></b> &nbsp; промокоды, купоны
 
                             <a href="<?=$ABOUTCOMPANY['company']['ulp']?>" target="_blank" class="btn btn-lg btn-outline btn-dark font-weight-semibold line-height-1 text-1 ml-2 d-none d-md-inline-block">ПЕРЕЙТИ В <?=APPNAME?></a>
                         </div>
@@ -141,15 +135,10 @@
                     <div class="blog-posts" id="CouponContainer">
 
                         <?php
-
                         generateResult($coupons, $PAGESLIST);
-
                         ?>
 
-
-
                     </div>
-
 
 
                 </div>
@@ -163,7 +152,7 @@
                         <ul class="nav nav-list flex-column mb-5">
 
                             <li class="nav-item"><a class="nav-link <?= (empty($idcat)) ? "active" : ""; ?>" href="/ ">ВСЕ КАТЕГОРИИ</a></li>
-                            <?php foreach ($ABOUTCOMPANY['categorycoupons'] as $val): ?>
+                            <?php foreach ($catalogCategories as $val): ?>
                                 <li class="nav-item"><a class="nav-link  <?= ($val['id'] == $idcat) ? "active" : ""; ?>   " href="/<?=$val['url']?> "><?=$val['name']?>  (<?=$val['count']?> )</a></li>
                             <?php endforeach;?>
 
@@ -272,7 +261,7 @@
 
 <!-- COUPONS NGINE -->
 <?php if (!empty($_COOKIE['runmodal'])): ?>
-<?php  popUPcoupon() ?>
+<?php  popUPcoupon(); ?>
 <script>
     $(window).on('load', function () {
         document.cookie = "runmodal=";

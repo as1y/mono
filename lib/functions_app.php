@@ -285,24 +285,39 @@ return $result;
 function popUPcoupon (){
 
     if (!empty($_COOKIE['runmodal'])) $couponmodal =\APP\models\Panel::loadOneCoupon($_COOKIE['runmodal']);
+
     ?>
 
+    <script>
+        function copytext() {
+            /* Get the text field */
+            var copyText = document.getElementById("myInput");
 
-    <div id="couponmodal" class="modal fade" role="dialog">
+            /* Select the text field */
+            copyText.select();
+
+            /* Copy the text inside the text field */
+            document.execCommand("copy");
+
+        }
+    </script>
+
+
+    <div class="modal fade" id="couponmodal" tabindex="-1" role="dialog" aria-labelledby="defaultModalLabel" style="display: none;" aria-hidden="true">
         <div class="modal-dialog">
-
-            <!-- Modal content-->
             <div class="modal-content">
                 <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&#xD7;</button>
-                    <h4 class="modal-title"><?=$couponmodal->companies['name']?> - <?=captiondiscount($couponmodal['discount'])?></h4>
+                    <h4 class="modal-title" id="defaultModalLabel"><?=$couponmodal->companies['name']?> - <?=$couponmodal['discount']?> </h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                 </div>
+
+
                 <div class="modal-body">
                     <div class="coupon-modal-content">
                         <div class="row">
                             <div class="col-md-12">
-                                <font color="#df3737">Для Вашего удобства сайт магазина уже открыт в соседней вкладке.</font>
-                                <hr>
+                                <font color="#df3737">Для удобства сайт магазина уже открыт в соседней вкладке.</font>
+                                <h3><?=$couponmodal['short_name']?></h3>
                             </div>
 
                             <div class="col-md-5 col-sm-5 col-xs-12">
@@ -313,27 +328,25 @@ function popUPcoupon (){
                             <div class="col-md-7 col-sm-7 col-xs-12">
 
                                 <?php if (!empty($couponmodal['short_name'])):?>
-                                    <p><?=$couponmodal['short_name']?><br></p>
+                                    <h4>ПРОМОКОД:</h4>
                                 <?php endif; ?>
 
-                             <?php if ($couponmodal['species'] == "promocode"):?>
-                                <div class="input-group">
-                                    <input type="text" class="form-control" autocomplete="off" readonly value="<?=$couponmodal['promocode']?>">
-                                    <div class="input-group-btn">
-                                        <button class="clipboard btn btn-default" data-clipboard-text="<?=$couponmodal['promocode']?>"><i class="fa fa-clipboard" aria-hidden="true"></i> КОПИРОВАТЬ</button>
+                                <?php if ($couponmodal['species'] == "promocode"):?>
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" onclick="copytext()"  id="myInput"  value="<?=$couponmodal['promocode']?>">
+
                                     </div>
-                                </div>
-                              <?php endif; ?>
+                                <?php endif; ?>
 
                                 <?php if ($couponmodal['species'] == "action"):?>
                                     <div class="input-group">
-                                        <input type="text" class="form-control" autocomplete="off" readonly value="<?=$couponmodal['promocode']?>">
+                                        <input type="text" class="form-control" autocomplete="off" readonly value="ПРОМОКОД <?=$couponmodal['promocode']?>">
                                     </div>
                                 <?php endif; ?>
 
+<hr>
 
-
-                                <a class="btn btn-brand" href="//<?=CONFIG['DOMAIN']?>/go/?coupon=<?=$couponmodal['id']?>">ПЕРЕЙТИ В МАГАЗИН</a>
+                                <a class="btn btn-danger" href="//<?=CONFIG['DOMAIN']?>/go/?coupon=<?=$couponmodal['id']?>">ПЕРЕЙТИ В МАГАЗИН</a>
 
                             </div>
 
@@ -342,11 +355,17 @@ function popUPcoupon (){
                 </div>
 
 
-
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-light" data-dismiss="modal">ЗАКРЫТЬ</button>
+                </div>
             </div>
-
         </div>
     </div>
+
+
+
+
+
 
     <?php
 }

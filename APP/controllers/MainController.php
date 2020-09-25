@@ -15,11 +15,15 @@ class MainController extends AppController {
 
         $Panel = new Panel();
 
+        // Пагинация и навигация
+        if (empty($this->route['alias'])) $this->route['alias'] = "";
         $PAGESLIST['ViewPage'] = 1;
         $PAGESLIST['CouponsPerPage'] = $this->CouponsPerPage;
+        // Пагинация и навигация
 
+        // Загрузка информации о компании
         $ABOUTCOMPANY = $Panel->LoadCompany(IDCOMPANY);
-
+        // Загрузка информации о компании
 
         // Перелистывание страниц
         if($this->isAjax()){
@@ -47,7 +51,14 @@ class MainController extends AppController {
         }
         // Перелистывание страниц
 
-        if (empty($this->route['alias'])) $this->route['alias'] = "";
+
+
+        // Редиректим на КУПОН
+        if ($this->route['alias'] == "go"){
+            if (!empty($_GET['coupon'])) $Panel->RedirCoupon($_GET['coupon']);
+        }
+        // Редиректим на КУПОН
+
 
         // Забираем Определяем ID бренда или Категории
         $arrtype = "";
@@ -59,47 +70,11 @@ class MainController extends AppController {
 
 
         $coupons = $Panel->FilterCoupons(['arrCategory' => $idcat, 'arrType' => $arrtype]);
-
         $bestdiscount =$Panel->getBestDiscount($coupons);
 
+        $catalogCategories = $Panel->LoadCategoriesSimple($coupons, $idcat);
 
-        $META = [
-            'title' => 'Промокоды '.APPNAME.' 📌 купоны, акции. Скидки до '.$bestdiscount,
-            'H1' => 'Промокоды '.APPNAME,
-            'description' => 'Промокоды '.APPNAME,
-            'keywords' => 'Все промокоды и скидки в магазине '.APPNAME,
-        ];
-
-
-        if (!empty($idcat)){
-            $META = [
-                'title' => $category['name']. '📌 промокоды в '.APPNAME.'. Скидки до '.$bestdiscount,
-                'H1' => 'Промокоды в категории  "'.$category['name'].'" ',
-                'description' => 'Промокоды '.APPNAME,
-                'keywords' => 'Все промокоды и скидки в магазине '.APPNAME,
-            ];
-        }
-
-        if ($arrtype == "promocode"){
-            $META = [
-                'title' =>  APPNAME.' промокоды. Скидки до '.$bestdiscount,
-                'H1' => 'ФИЛЬТР: (промокоды) "'.APPNAME.'" ',
-                'description' => 'Промокоды '.APPNAME,
-                'keywords' => 'Все промокоды и скидки в магазине '.APPNAME,
-            ];
-        }
-
-        if ($arrtype == "action"){
-            $META = [
-                'title' =>  APPNAME.' акции. Скидки до '.$bestdiscount,
-                'H1' => 'ФИЛЬТР: (акции) "'.APPNAME.'" ',
-                'description' => 'Промокоды '.APPNAME,
-                'keywords' => 'Все промокоды и скидки в магазине '.APPNAME,
-            ];
-        }
-
-
-
+        $META = writemeta($category, $bestdiscount, $arrtype, $idcat);
 
 
         $BREADCRUMBS['HOME'] = false;
@@ -110,7 +85,7 @@ class MainController extends AppController {
 
 
 
-        $this->set(compact( 'ABOUTCOMPANY', 'coupons', 'PAGESLIST', 'idcat' , 'arrtype'));
+        $this->set(compact( 'ABOUTCOMPANY', 'coupons', 'PAGESLIST', 'idcat' , 'arrtype', 'catalogCategories'));
 
 
 
@@ -153,6 +128,8 @@ class MainController extends AppController {
 
             // Загрузка купонов
             $coupons = $Panel->FilterCoupons(['arrCategory' => $_POST['arrCategory'], 'arrType' => $_POST['arrType']]);
+
+
 
             // Пагинация
             if (empty($_POST['arrCount'])){
