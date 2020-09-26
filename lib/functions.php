@@ -444,7 +444,7 @@ function writemeta($category, $bestdiscount, $arrtype, $idcat){
     if (!empty($idcat)){
         $META = [
             'title' => $category['name']. '📌 промокоды в '.APPNAME.'. Скидки до '.$bestdiscount,
-            'H1' => 'Промокоды в категории  "'.$category['name'].'" ',
+            'H1' => 'Промокоды '.APPNAME.' в категории  "'.$category['name'].'" ',
             'description' => 'Промокоды '.APPNAME,
             'keywords' => 'Все промокоды и скидки в магазине '.APPNAME,
         ];

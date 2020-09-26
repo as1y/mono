@@ -102,7 +102,7 @@
                         <div class="header-row">
                             <div class="header-logo" style="width: 100px; height: 48px;">
                                 <a href="/">
-                                    <img alt="<?=APPNAME?>" width="100" height="48" data-sticky-width="82" data-sticky-height="40" src="<?=$ABOUTCOMPANY['company']['logo']?>" style="top: 0px; width: 100px; height: 48px;">
+                                    <img alt="<?=APPNAME?>" width="100" height="48" data-sticky-width="82" data-sticky-height="40" src="<?=MAINSITE.$ABOUTCOMPANY['company']['logo']?>" style="top: 0px; width: 100px; height: 48px;">
                                 </a>
 
                             </div>
@@ -153,7 +153,7 @@
 
                             <li class="nav-item"><a class="nav-link <?= (empty($idcat)) ? "active" : ""; ?>" href="/ ">ВСЕ КАТЕГОРИИ</a></li>
                             <?php foreach ($catalogCategories as $val): ?>
-                                <li class="nav-item"><a class="nav-link  <?= ($val['id'] == $idcat) ? "active" : ""; ?>   " href="/<?=$val['url']?> "><?=$val['name']?>  (<?=$val['count']?> )</a></li>
+                                <li class="nav-item"><a class="nav-link  <?= ($val['id'] == $idcat) ? "active" : ""; ?>   " href="/<?=$val['url']?> "><?=$val['name']?> </a></li>
                             <?php endforeach;?>
 
                         </ul>
@@ -199,7 +199,7 @@
                 <div class="row py-4">
                     <div class="col-lg-1 d-flex align-items-center justify-content-center justify-content-lg-start mb-2 mb-lg-0">
                         <a href="index.html" class="logo pr-0 pr-lg-3">
-                            <img alt="<?=APPNAME?> промокод" src="<?=$ABOUTCOMPANY['company']['logo']?>" class="opacity-5" height="33">
+                            <img alt="<?=APPNAME?> промокод" src="<?=MAINSITE.$ABOUTCOMPANY['company']['logo']?>" class="opacity-5" height="33">
                         </a>
                     </div>
                     <div class="col-lg-7 d-flex align-items-center justify-content-center justify-content-lg-start mb-4 mb-lg-0">

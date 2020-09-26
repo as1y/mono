@@ -1,13 +1,13 @@
 <?php
 return [
     'LAYOUT' => 'MAIN',
-    'DOMAIN' => 'eldorado-promocod.xyz',
+    'DOMAIN' => 'englex.promocode.plus', // ОБЯЗАТЕЛЬНО УКАЗАТЬ
     'USERTABLE' => 'users',
 
     'db' => [
-        'dsn' => 'mysql:host=127.0.0.1;dbname=hf8qq2mdb;charset=utf8;port=3306',
-        'user' => 'hf8qq2muser',
-        'pass' => '6mq1f43)UkC5h}5',
+        'dsn' => 'mysql:host=127.0.0.1;dbname=dbpromocode;charset=utf8;port=3306',
+        'user' => 'userpromocode',
+        'pass' => 'VxW@E=RKquSgR6J',
     ],
 
     'ADMITAD' => [

@@ -6,8 +6,9 @@ define('WWW', __DIR__);
 // Базовые переменные
 
 // Переменные для приложения
-define('APPNAME', 'Эльдорадо');
-define('IDCOMPANY', '19364');
+define('MAINSITE', '//promocode.plus');
+define('APPNAME', 'ИНГЛЕКС');
+define('IDCOMPANY', '18326');
 // Переменные для приложения
 
 

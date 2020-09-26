@@ -69,12 +69,17 @@ class MainController extends AppController {
         $idcat = $category['id'];
 
 
+        show($idcat);
+
         $coupons = $Panel->FilterCoupons(['arrCategory' => $idcat, 'arrType' => $arrtype]);
+
         $bestdiscount =$Panel->getBestDiscount($coupons);
 
         $catalogCategories = $Panel->LoadCategoriesSimple($idcat);
 
         $META = writemeta($category, $bestdiscount, $arrtype, $idcat);
+
+
 
 
         $BREADCRUMBS['HOME'] = false;

@@ -322,7 +322,7 @@ function popUPcoupon (){
 
                             <div class="col-md-5 col-sm-5 col-xs-12">
                                 <div class="single-coupon-thumb">
-                                    <img src="<?=$couponmodal->companies['logo']?>" width="600" class="img-thumbnail img-responsive">
+                                    <img src="<?=MAINSITE.$couponmodal->companies['logo']?>" width="600" class="img-thumbnail img-responsive">
                                 </div>
                             </div>
                             <div class="col-md-7 col-sm-7 col-xs-12">

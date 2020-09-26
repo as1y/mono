@@ -935,7 +935,8 @@ class Panel extends \APP\core\base\Model {
 
 
         if (!empty($ARR['arrCategory'])){
-            $WHERE[] =  'JSON_CONTAINS(`category`, JSON_ARRAY("'.$ARR['arrCategory'].'") )';
+            show($ARR['arrCategory']);
+            $WHERE[] =  'JSON_CONTAINS(`category`, JSON_ARRAY("'.[$ARR['arrCategory']].'") )';
         }
 
 
